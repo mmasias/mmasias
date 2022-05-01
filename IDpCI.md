@@ -1,7 +1,7 @@
 # Interfaz, diseño por contrato e implantación
 Mis apuntes de [esta clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-objetos/clase/interfaz-diseno-por-contrato-e-implantacion)
 
-### Introducción
+## INTRODUCCION
 - Diseñar es dar forma
 - Pero hay que dar forma de distintas piezas
 - Las piezas deben ser de alta cohesión, bajo acoplamiento y tamaño pequeño
@@ -113,3 +113,21 @@ Es lícito diseño-programa-diseño-programa (para ir aprendiendo)
 	- Hay clases y relaciones que salen *directas* del modelo del dominio
 	- A veces, una clase perezosa puede ayudar aquí.
 - **Métodos largos**: 
+- **Atributos temporales**: 
+
+## PATRON DE INDIRECCION
+Si tengo un problema de gran acoplamiento, una clase que encapsule tres clases reduce en tres el acomplamiento. Y también se resuelven problemas de cohesión.
+
+- **Invención pura**: Ej. Intervalo y FormateadorDeIntervalo. Otro: Clase String y clase StringPoetica. Cualquier cosa que arregle un problema en una clase sacarlo a otra clase que lo resuelva.
+
+Modularizamos cualquier proyecto en Vista, Modelo y Controlador.
+
+- **Vista separada**: Una clase que gestiona cierta información e interactua con el usuario, se parte en dos. (Usuario: usuario, comunciaciones). Vista: cualquier presentación de datos o recepción de datos, a través de cualquier canal. La vista se acopla a la tecnología y devuelve los datos puros como modelos. 
+
+- **Controlador**: 
+
+- **Creador**: Dado que partimos el proyecto en muchas clases, ¿quién la crea? Factorias / Builders
+
+### Q&A
+- Los endpoints de un API Rest son los métodos de la clase controlador. En Sprint, resources. En Node, controllers.
+- Debate de validaciones: ¿quién valida y como? ¿Vistas o controladores? Reflexión & compromiso.
