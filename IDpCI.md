@@ -1,7 +1,7 @@
 # Interfaz, diseño por contrato e implantación
 Apuntes de [esta clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-objetos/clase/interfaz-diseno-por-contrato-e-implantacion)
 
-
+### Introducción
 - Diseñar es dar forma
 - Pero hay que dar forma de distintas piezas
 - Las piezas deben ser de alta cohesión, bajo acoplamiento y tamaño pequeño
@@ -17,7 +17,6 @@ Apuntes de [esta clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-ob
 - Repaso los nombres
 - Código
 - Vuelta arriba
-
 ---
 
 - Los diagramas son para leer, no para abrumar
@@ -29,7 +28,6 @@ Apuntes de [esta clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-ob
 xq? xq cuando el código esté hecho, entre otras cosas debe ser legible, inteligible
 
 ---
-
 ### INTERFAZ
 
 - Nombres coherentes
@@ -38,7 +36,7 @@ xq? xq cuando el código esté hecho, entre otras cosas debe ser legible, inteli
 - ¿Cada cosas está en su sitio?
 - ¿Hay que mover las responsabilidadaes?
 - Repasar / Revisar
-
+---
 ### MENOR COMPROMISO / MENOR SORPRESA
 
 -Ejemplo de Violacion: 
@@ -48,5 +46,37 @@ xq? xq cuando el código esté hecho, entre otras cosas debe ser legible, inteli
 	- Ejemplo del pedal del freno
 
 ---
-
 ### INTERFAZ SUFICIENTE / COMPLETA / PRIMITIVA
+
+- Suficiente:  
+- Completa:
+- Primitiva: Ejemplo de la pila. La clase debe quedar primitiva
+
+---
+## Diseño por contrato
+
+- Saber los límites del software para delimitar Excepcion o Assert
+- Las piezas deben protegerse tanto como sea posible, sin exagerar
+- Programacion defensiva es una forma inaecuada de gesstionarlo
+	- IFs por todos lados
+- Aserciones como forma correcta de gestionar
+	- Reemplaza IFs por assert: condiciones
+	- No es tratamiento de errores sino de despistes
+	- Los assert se pueden habilitar o deshabilitar
+
+### Definición
+- Protocolo: vista pública de la clase y responsabilidades
+	- Precondicion: antes de la acción
+	- Postcondición: resultado
+- Resultó efectivo el uso de precondiciones. Las poscondiciones fueron complejas de implementar. Se implementaron como pruebas: valores en pruebas.
+
+Invariante de una clase: restriccion general a aplicar a cada objeto, junto con las precondiciones y poscondiciones
+
+## IMPLEMENTACION
+###Cohesión
+- Cohesión de métodos
+- Princiìo de única responsabilidad
+No se cumple cuando
+- Responsabilidad fuera de lugar
+- Sin clase para una responsabilidad
+- Clase sin responsabilidad
