@@ -80,4 +80,5 @@ No se cumple cuando
 - Responsabilidad fuera de lugar
 - Sin clase para una responsabilidad
 - Clase sin responsabilidad
-Tener muchos motivos de cambios es consecuencia de la falta de cohesión
+
+- Tener muchos motivos de cambios es consecuencia de la falta de cohesión
