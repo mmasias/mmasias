@@ -73,7 +73,7 @@ xq? xq cuando el código esté hecho, entre otras cosas debe ser legible, inteli
 Invariante de una clase: restriccion general a aplicar a cada objeto, junto con las precondiciones y poscondiciones
 ## COHESION
 - Cohesión de métodos
-- Princiìo de única responsabilidad
+- Principìo de única responsabilidad
 
 No se cumple cuando
 
@@ -93,3 +93,7 @@ Entonces:
 - **Grupo de datos**: Muchos elementos similares en muchas clases: deberían componer su propio objeto (ejemplo fila-columna) 
 - **Obsesión por tipos primitivos**: ejemplo [codigo postal](https://es.wikipedia.org/wiki/C%C3%B3digo_postal_de_Espa%C3%B1a)
 - **Clase perezosa**: Una clase que no hace nada (ejemplo clase ficha)
+
+---
+A partir de aquí, [esta otra clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-objetos/clase/principios-smell-codes-de-encapsulacion-y-tamano)
+
