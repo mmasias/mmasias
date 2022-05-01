@@ -97,3 +97,19 @@ Entonces:
 ---
 A partir de aquí, [esta otra clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-objetos/clase/principios-smell-codes-de-encapsulacion-y-tamano)
 
+Es lícito diseño-programa-diseño-programa (para ir aprendiendo)
+
+## ACOPLAMIENTO Y TAMAÑO
+### Acomplamiento
+- **Inapropiada intimidad**: No hagas cíclos, relaciones bidireccionales: "*Trabaja de forma jerárquica, no ciclica*"
+	- Creando un nivel superior que "cosifique"
+	- Extraer en una nueva clase
+	- Excepción: ciclos con una interfaz
+- **Leyes de Demeter**: "*No hables con extraños*"
+- **Libreria imcompleta**: La clase debe encapsular la librería que expone la funcionalidad, exponiendola de forma cohesiva. Esto además resuelve/tieneQueVer con la cirugía a escopetazos. (La solución es el patrón *fachada*)
+### Tamaño
+- **Lista de parámetros larga**: 
+	- Importante tener la asociación bien hecha desde el principio.
+	- Hay clases y relaciones que salen *directas* del modelo del dominio
+	- A veces, una clase perezosa puede ayudar aquí.
+- **Métodos largos**: 
