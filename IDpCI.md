@@ -1,5 +1,5 @@
 # Interfaz, diseño por contrato e implantación
-Apuntes de [esta clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-objetos/clase/interfaz-diseno-por-contrato-e-implantacion)
+Mis apuntes de [esta clase](https://escuela.it/cursos/curso-de-diseno-orientado-a-objetos/clase/interfaz-diseno-por-contrato-e-implantacion)
 
 ### Introducción
 - Diseñar es dar forma
