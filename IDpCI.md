@@ -71,14 +71,25 @@ xq? xq cuando el código esté hecho, entre otras cosas debe ser legible, inteli
 - Resultó efectivo el uso de precondiciones. Las poscondiciones fueron complejas de implementar. Se implementaron como pruebas: valores en pruebas.
 
 Invariante de una clase: restriccion general a aplicar a cada objeto, junto con las precondiciones y poscondiciones
-
-## IMPLEMENTACION
-### Cohesión
+## COHESION
 - Cohesión de métodos
 - Princiìo de única responsabilidad
+
 No se cumple cuando
+
 - Responsabilidad fuera de lugar
 - Sin clase para una responsabilidad
 - Clase sin responsabilidad
 
+Entonces:
+
 - Tener muchos motivos de cambios es consecuencia de la falta de cohesión
+
+#### SMELL CODES relacionados
+- **Envidia de características**: Una clase get o set a muchas clases para hacer cálculos... Igual el cálculo lo debía de hacer la otra clase.
+- **Clase de datos**: Clases que no tienen responsabilidades (solo métodos get y/o set)
+- **Cambios divergentes**: Muchos cambios se resuelven cambiando una única clase
+- **Cirugia a escopetazos**: al tener la responsabilidad distribuida en muchas clases
+- **Grupo de datos**: Muchos elementos similares en muchas clases: deberían componer su propio objeto (ejemplo fila-columna) 
+- **Obsesión por tipos primitivos**: ejemplo [codigo postal](https://es.wikipedia.org/wiki/C%C3%B3digo_postal_de_Espa%C3%B1a)
+- **Clase perezosa**: Una clase que no hace nada (ejemplo clase ficha)
