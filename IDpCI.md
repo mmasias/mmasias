@@ -73,10 +73,11 @@ xq? xq cuando el código esté hecho, entre otras cosas debe ser legible, inteli
 Invariante de una clase: restriccion general a aplicar a cada objeto, junto con las precondiciones y poscondiciones
 
 ## IMPLEMENTACION
-###Cohesión
+### Cohesión
 - Cohesión de métodos
 - Princiìo de única responsabilidad
 No se cumple cuando
 - Responsabilidad fuera de lugar
 - Sin clase para una responsabilidad
 - Clase sin responsabilidad
+Tener muchos motivos de cambios es consecuencia de la falta de cohesión
