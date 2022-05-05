@@ -12,6 +12,7 @@
 - Metaverso
 - Inteligencia artificial - Desarrollo de aplicaciones de análisis
 - Estado del arte del proceso de desarrollo de software
+- Ciberseguridad
 
 Aprovechar la experiencia de los expositores y las inquietudes que uno pueda tener sobre el tema.
 
