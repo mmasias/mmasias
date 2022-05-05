@@ -10,8 +10,16 @@
 - Aprovechamos los profesores también para reunirnos y reflexionar
 # Las charlas
 - Metaverso
-- Inteligencia artificial
+- Inteligencia artificial - Desarrollo de aplicaciones de análisis
 - Estado del arte del proceso de desarrollo de software
+
+Aprovechar la experiencia de los expositores y las inquietudes que uno pueda tener sobre el tema.
 
 # Agradecer
 - No olvidarse ;)
+- Diego López, Salvador Alfaro, Andrés Serrano
+- Jorge Crespo, Francisco Calatayud, Rodrigo Zaldaña, Luis Fernandez
+- Elena Palacios, Mayte Galán, Alejandro Sanz & comunicación
+- David García Obeso
+- El Corte Inglés
+- Y todos los alumnos, expositores, participantes
