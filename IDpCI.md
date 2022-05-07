@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: uncover // gaia
+theme: uncover 
 class: lead
 
 ---
