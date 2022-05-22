@@ -7,6 +7,9 @@
 - No era [Margaret Hamilton](https://es.wikipedia.org/wiki/Margaret_Hamilton_(cient%C3%ADfica)) a quién me refería, sino a Grace Hooper, inventora del primer compilador [Un artículo](https://docs.google.com/document/d/1TdEgFlxxWLzTfL2_ctv574mVRHvsD889b09kNj_jhrE/edit?usp=sharing)  [, otro artículo](https://docs.google.com/document/d/1h-j-Uw5oEoF5sOfXCdxxlJ7PgvnCSgxvSEc2-6wOV-g/edit?usp=sharing)
 - Visita de Steve Jobs a Xerox [contada por Larry Tesler, de Xerox](https://www.youtube.com/watch?v=ferle2Uovks). A propósito, a Larry Tesler se le atribuye el invento de copiar/pegar...
 
+# Definiciones curiosas (xUsar en algunas charlas o artículos)
+- [Holón](https://es.wikipedia.org/wiki/Hol%C3%B3n_(filosof%C3%ADa)): Un holón es algo que es a la vez un todo y una parte (...) Cada sistema puede considerarse un holón, ya sea una partícula subatómica o un planeta. En un ámbito no físico, las palabras, ideas, sonidos, emociones y todo lo que puede identificarse es a la vez parte de algo y a la vez está conformado por partes.
+
 # 2Do...
 - Ejemplo del director de orquesta #xPulir
 - Problemas de exámenes para explicar Análisis y Diseño (Fecha prevista: curso 22-23)
