@@ -1,8 +1,10 @@
 # Escalas y acordes
 
-La escala cromática, también llamada escala dodecáfona, dodecafónica o duodécuple, en música es una escala o modo musical constituido por una sucesión de doce sonidos, alturas o notas diferentes dentro de una octava. Contiene los doce semitonos de la escala temperada occidental.
+La escala cromática, también llamada escala dodecáfona, dodecafónica o duodécuple, en música es una escala o modo musical constituido por una sucesión de doce sonidos, alturas o notas diferentes. Contiene los doce semitonos de la escala temperada occidental.
 
 ![](../../imagenes/escalas001.png)
+
+**T** = tono  / **S** = semitono
 
 ![](../../imagenes/escalas002.png)
 
