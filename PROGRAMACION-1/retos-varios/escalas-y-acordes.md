@@ -46,7 +46,7 @@ De acuerdo a esto, tendríamos que el acorde de **Do Mayor** lo conforman las no
 # Retos
 
 - Escriba un programa que le pregunte al usuario una nota y a continuación construya y le muestre la escala mayor a partir de dicha nota.
-- A continuación, dote al programa de la capacidad de mostrar, además de la escala, el acorde mayor de la nota elegida.
+- A continuación, dote al programa de la capacidad de mostrar, además de la escala, el acorde mayor.
 
 # Sugerencia de presentación
 ```
