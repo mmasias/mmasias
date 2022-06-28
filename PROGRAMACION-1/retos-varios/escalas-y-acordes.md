@@ -8,6 +8,8 @@ La escala cromática, también llamada escala dodecáfona, dodecafónica o duod�
 
 La construcción de acordes y las escalas son conceptos que están muy relacionados.
 
+## Escala mayor
+
 Una ***escala mayor*** es aquella que se construye empezando por una nota (nota base) y eligiendo a continuación las notas que se obtienen de aplicar el siguiente patrón: 
 
 tono – tono – semitono – tono – tono – tono - semitono
@@ -25,6 +27,8 @@ La escala de ***Re mayor*** sería:
 Y finalmente la escala de ***Si mayor*** sería:
 
 ![](../../imagenes/escalas005.png)
+
+## Acorde mayor
 
 A partir de la ***escala mayor*** podemos obtener el ***acorde mayor***, que resulta de unir la primera nota (la base) junto con la tercera nota y la quinta nota de la escala. 
 
