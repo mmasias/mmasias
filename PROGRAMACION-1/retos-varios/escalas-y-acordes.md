@@ -6,6 +6,8 @@ La escala cromática, también llamada escala dodecáfona, dodecafónica o duod�
 
 **T** = tono  / **S** = semitono
 
+1 Tono = 2 semitonos
+
 ![](../../imagenes/escalas002.png)
 
 La construcción de acordes y las escalas son conceptos que están muy relacionados.
