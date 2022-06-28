@@ -8,11 +8,11 @@ Edlin fue creado por Tim Paterson en dos semanas en 1980, y se esperaba que tuvi
 
 ![](../../imagenes/edlin001.png) 
  
-# RETO
+# Reto
 
 Implementar una primera versión de edlin, que pueda gestionar un fichero de 10 líneas
 
-## RETOS BASE
+## Retos base
 
 - Defina e implemente una manera de representar la información a almacenar, teniendo en cuenta que gestionará un fichero de texto de hasta 10 líneas.
 - Implemente la salida de información en pantalla, mostrando el fichero y las líneas que lo conforman.
@@ -20,33 +20,34 @@ Implementar una primera versión de edlin, que pueda gestionar un fichero de 10 
 - Agregue a su versión de edlin la capacidad de editar el contenido de la línea activa.
 - Agregue a su versión de edlin la capacidad de eliminar el contenido de una línea.
 
-## MEJORAS – PARTE 1
+## Mejoras, parte 1
 
 Agregue a su versión de edlin la capacidad de intercambiar el contenido de dos líneas.
 
-## MEJORAS – PARTE 2
+## Mejoras, parte 2
 
 En base a lo definido arriba, plantee como implementaría la opción de deshacer. (CTRL+Z). Esto no hace falta codificarlo, basta con explicarlo (con letra clara) en función a lo que ha programado.
 
 # Sugerencias de presentación
-Edlin con dos líneas de texto ingresadas, teniendo la segunda línea como línea activa.
+
+## Edlin con dos líneas de texto ingresadas, teniendo la segunda línea como línea activa.
 
 ![](../../imagenes/edlin002.png)
 
 ---
 
-Proceso de cambio de línea activa
+## Proceso de cambio de línea activa
 
 ![](../../imagenes/edlin003.png)
 
 ---
 
-Proceso de ingreso de información:
+## Proceso de ingreso de información:
 
 ![](../../imagenes/edlin004.png) 
 
 ---
 
-Edición de información
+## Edición de información
 
 ![](../../imagenes/edlin005.png)
