@@ -10,7 +10,7 @@ La construcción de acordes y las escalas son conceptos que están muy relaciona
 
 ## Escala mayor
 
-Una ***escala mayor*** es aquella que se construye empezando por una nota (nota base) y eligiendo a continuación las notas que se obtienen de aplicar el siguiente patrón: 
+Una ***escala mayor*** es aquella que se construye empezando por una nota (nota base o fundamental) y eligiendo a continuación las notas que se obtienen de aplicar el siguiente patrón: 
 
 tono – tono – semitono – tono – tono – tono - semitono
 
