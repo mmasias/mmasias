@@ -30,7 +30,7 @@ Y finalmente la escala de ***Si mayor*** sería:
 
 ## Acorde mayor
 
-A partir de la ***escala mayor*** podemos obtener el ***acorde mayor***, que resulta de unir la primera nota (la base) junto con la tercera nota y la quinta nota de la escala. 
+A partir de la ***escala mayor*** podemos obtener el ***acorde mayor***, que resulta de la superposición de la primera nota (la fundamental) con la tercera nota y la quinta nota de la escala. 
 
 De acuerdo a esto, tendríamos que el acorde de Do Mayor lo conforman las notas DO, MI y SOL:
 
