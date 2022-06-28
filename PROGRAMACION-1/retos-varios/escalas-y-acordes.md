@@ -4,7 +4,7 @@ La escala cromática, también llamada escala dodecáfona, dodecafónica o duod�
 
 ![](../../imagenes/escalas002.png)
 
-En un piano, cada tecla contígua está a una distancia de un semitono.
+En un piano, cada tecla contigua está a una distancia de un semitono.
 
 ![](../../imagenes/escalas001.png)
 
