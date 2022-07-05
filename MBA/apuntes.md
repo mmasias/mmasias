@@ -1,10 +1,12 @@
 ## Presentación(es)
 
+- Me presento: Manuel Masías, Ing. Industrial y de Sistemas por la Universidad de Piura. Dr. en Proyectos por la Universidad Internacional Iberoamericana.
+- ¿Nos presentamos?
+
 # MBA
 
-## ¿Qué han visto hasta ahora?
-
-## ¿Por qué están estudiando un MBA?
+- ¿Qué han visto hasta ahora?
+- ¿Por qué están estudiando un MBA?
 
 ## ¿Qué era / Qué es un MBA?
 
