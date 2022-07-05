@@ -1,6 +1,9 @@
 ## Línea de tiempo / Nuestra línea de tiempo...
 
-[Una sencilla presentación...](https://docs.google.com/presentation/d/1c-qJ0cIbaMGAj04NR0v5Y3pGTMGMmJC3rqAb_28B34A/edit?usp=sharing)
+- [Una sencilla presentación...](https://docs.google.com/presentation/d/1c-qJ0cIbaMGAj04NR0v5Y3pGTMGMmJC3rqAb_28B34A/edit?usp=sharing)
+- [La línea de tiempo, ampliada](https://docs.google.com/spreadsheets/d/1YLe5zTt8rf565U_-fE9ZZ_Wac3VV0mnihwVSv-hbuWw/edit?usp=sharing)
+
+
 ## Presentación(es)
 
 - Me presento: [Manuel Masías](https://www.linkedin.com/in/mmasias/), [Ing. Industrial y de Sistemas por UDEP](https://www.udep.edu.pe/ingenieria/carrera/ingenieria-industrial-y-de-sistemas/) - Universidad de [Piura](https://es.wikipedia.org/wiki/Piura). Dr. en Proyectos por la [Universidad Internacional Iberoamericana](https://www.unib.org/).
@@ -33,7 +36,7 @@
 
 ## La transformación digital
 
-[Una sencilla presentación...](https://docs.google.com/presentation/d/1PxBcCihyPK1mwv9PErElJVNbQcRhRhwyPoZAv-U_Ees/edit?usp=sharing)
+[Otra sencilla presentación...](https://docs.google.com/presentation/d/1PxBcCihyPK1mwv9PErElJVNbQcRhRhwyPoZAv-U_Ees/edit?usp=sharing)
 
 # Manifiesto cluetrain
 
@@ -54,7 +57,7 @@
 - **I**nnovación
 - **S**ociedad
 
-[Otra sencilla presentación...](https://docs.google.com/presentation/d/1qQXZE0g10PZHzisHxJbp32Dkxx9gktXhPHh3fNLmgDs/edit?usp=sharing)
+[Y una sencilla presentación más...](https://docs.google.com/presentation/d/1qQXZE0g10PZHzisHxJbp32Dkxx9gktXhPHh3fNLmgDs/edit?usp=sharing)
 
 ## Dinámica de "La idea", parte II
 
