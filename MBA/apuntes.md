@@ -3,7 +3,7 @@
 [Una sencilla presentación...](https://docs.google.com/presentation/d/1c-qJ0cIbaMGAj04NR0v5Y3pGTMGMmJC3rqAb_28B34A/edit?usp=sharing)
 ## Presentación(es)
 
-- Me presento: Manuel Masías, Ing. Industrial y de Sistemas por la Universidad de Piura. Dr. en Proyectos por la Universidad Internacional Iberoamericana.
+- Me presento: [Manuel Masías](https://www.linkedin.com/in/mmasias/), [Ing. Industrial y de Sistemas por UDEP](https://www.udep.edu.pe/ingenieria/carrera/ingenieria-industrial-y-de-sistemas/) - Universidad de [Piura](https://es.wikipedia.org/wiki/Piura). Dr. en Proyectos por la [Universidad Internacional Iberoamericana](https://www.unib.org/).
 - ¿Nos presentamos?
 
 # MBA
