@@ -39,6 +39,8 @@
 
 [95 tesis](https://web.archive.org/web/19990828010639/http://tremendo.com/cluetrain/) que conviene revisar de vez en cuando
 
+- Reflexionemos sobre algunas de ellas...
+
 # Dinámica de "La idea", parte I
 
 - Grupos de 3 personas, pensar una idea
@@ -55,3 +57,5 @@
 [Otra sencilla presentación...](https://docs.google.com/presentation/d/1qQXZE0g10PZHzisHxJbp32Dkxx9gktXhPHh3fNLmgDs/edit?usp=sharing)
 
 ## Dinámica de "La idea", parte II
+
+- ;)
