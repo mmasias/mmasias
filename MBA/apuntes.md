@@ -1,3 +1,6 @@
+## Línea de tiempo / Nuestra línea de tiempo...
+
+[Una sencilla presentación...](https://docs.google.com/presentation/d/1c-qJ0cIbaMGAj04NR0v5Y3pGTMGMmJC3rqAb_28B34A/edit?usp=sharing)
 ## Presentación(es)
 
 - Me presento: Manuel Masías, Ing. Industrial y de Sistemas por la Universidad de Piura. Dr. en Proyectos por la Universidad Internacional Iberoamericana.
@@ -32,10 +35,6 @@
 
 [Una sencilla presentación...](https://docs.google.com/presentation/d/1PxBcCihyPK1mwv9PErElJVNbQcRhRhwyPoZAv-U_Ees/edit?usp=sharing)
 
-## Línea de tiempo / Nuestra línea de tiempo...
-
-[Una sencilla presentación...](https://docs.google.com/presentation/d/1c-qJ0cIbaMGAj04NR0v5Y3pGTMGMmJC3rqAb_28B34A/edit?usp=sharing)
-
 # Manifiesto cluetrain
 
 [95 tesis](https://web.archive.org/web/19990828010639/http://tremendo.com/cluetrain/) que conviene revisar de vez en cuando
@@ -53,6 +52,6 @@
 - **I**nnovación
 - **S**ociedad
 
-[Otra sencilla presentación...](https://docs.google.com/presentation/d/1Wpn3CNTTCOiWrxPrAQqk9kxW4bPwwUY4gDARso-AjcM/edit?usp=sharing)
+[Otra sencilla presentación...](https://docs.google.com/presentation/d/1qQXZE0g10PZHzisHxJbp32Dkxx9gktXhPHh3fNLmgDs/edit?usp=sharing)
 
 ## Dinámica de "La idea", parte II
