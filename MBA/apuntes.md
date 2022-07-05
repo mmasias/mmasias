@@ -6,7 +6,7 @@
 
 ## ¿Por qué están estudiando un MBA?
 
-## ¿Qué era y qué es un MBA?
+## ¿Qué era / Qué es un MBA?
 
 - 1881: *Escuela de Negocios de Wharton*, primera escuela de negocios.
 - 1900: *Escuela de Gestión Tuck (Universidad de Dartmouth)*, primer MBA.
@@ -25,7 +25,12 @@
 - Heterogeneidad en los equipos de impartición
     - Edades
     - Países
-## Línea de tiempo
+
+## La transformación digital
+
+[Una sencilla presentación...](https://docs.google.com/presentation/d/1PxBcCihyPK1mwv9PErElJVNbQcRhRhwyPoZAv-U_Ees/edit?usp=sharing)
+
+## Línea de tiempo / Nuestra línea de tiempo...
 
 [Una sencilla presentación...](https://docs.google.com/presentation/d/1c-qJ0cIbaMGAj04NR0v5Y3pGTMGMmJC3rqAb_28B34A/edit?usp=sharing)
 
@@ -45,6 +50,7 @@
 - **TR**ansformación
 - **I**nnovación
 - **S**ociedad
+
 [Otra sencilla presentación...](https://docs.google.com/presentation/d/1Wpn3CNTTCOiWrxPrAQqk9kxW4bPwwUY4gDARso-AjcM/edit?usp=sharing)
 
 ## Dinámica de "La idea", parte II
