@@ -113,6 +113,7 @@ public class Edlin {
     private static String pideString() {
         Scanner entrada = new Scanner(System.in);
         return entrada.nextLine();
+        entrada.close();
     }
 
     private static int pideInt() {
