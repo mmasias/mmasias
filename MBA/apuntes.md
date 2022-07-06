@@ -8,7 +8,7 @@
 
 ## Presentación(es)
 
-- Me presento: [Manuel Masías](https://www.linkedin.com/in/mmasias/), [Ing. Industrial y de Sistemas por UDEP](https://www.udep.edu.pe/ingenieria/carrera/ingenieria-industrial-y-de-sistemas/) - Universidad de [Piura](https://es.wikipedia.org/wiki/Piura). Dr. en Proyectos por la [Universidad Internacional Iberoamericana](https://www.unib.org/).
+- Me presento: [Manuel Masías](https://www.linkedin.com/in/mmasias/) [![manuel@masiasweb.com](../imagenes/Gmail-icon-16x16.png)](mailto:manuel@masiasweb.com)  [![](../imagenes/twitter-icon-16x16.png)](https://twitter.com/mmasias)  [![](../imagenes/linkedin-icon-16x16.png)](https://www.linkedin.com/in/mmasias/), [Ing. Industrial y de Sistemas por UDEP](https://www.udep.edu.pe/ingenieria/carrera/ingenieria-industrial-y-de-sistemas/) - Universidad de [Piura](https://es.wikipedia.org/wiki/Piura). Dr. en Proyectos por la [Universidad Internacional Iberoamericana](https://www.unib.org/).
 - ¿Nos presentamos?
 
 # MBA
@@ -80,8 +80,3 @@ Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿
 # pyNutriber
 
 - Si nos da el tiempo, [lo comentamos](https://docs.google.com/presentation/d/0B0tHzaS3tbKpLTlJREpFa2xXM0k/edit?usp=sharing&ouid=109884286478208474474&resourcekey=0-VIZ2KaCLuVfvuTRnbYFYAQ&rtpof=true&sd=true).
-
-
-
----
-[![manuel@masiasweb.com](../imagenes/Gmail-icon.png)](mailto:manuel@masiasweb.com)
