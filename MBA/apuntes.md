@@ -83,3 +83,5 @@ Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿
 
 
 
+---
+[![manuel@masiasweb.com](../imagenes/Gmail-icon.png)](mailto:manuel@masiasweb.com)
