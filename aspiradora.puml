@@ -19,8 +19,8 @@ class Bateria100
 class Bateria200
 class Bateria500
 
-Aspiradora .r.> IBateria
-Bateria .u.> IBateria
+Aspiradora -r-> IBateria
+Bateria .u.|> IBateria
 
 Romba -u-|> Aspiradora
 Conga -u-|> Aspiradora
