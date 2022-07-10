@@ -12,12 +12,15 @@ cargar()
 descargar()
 }
 
+interface IBateriaSolar{}
+
 class Romba
 class Conga
 
 class Bateria100
 class Bateria200
 class Bateria500
+class BateriaSolar
 
 Aspiradora -r-> IBateria
 Bateria .u.|> IBateria
@@ -28,4 +31,8 @@ Conga -u-|> Aspiradora
 Bateria100 -u-|> Bateria
 Bateria200 -u-|> Bateria
 Bateria500 -u-|> Bateria
+
+BateriaSolar -u-|> Bateria
+BateriaSolar .u.|> IBateriaSolar
+
 @enduml
