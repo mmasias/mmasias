@@ -1,0 +1,31 @@
+@startuml
+abstract class Bateria{
+int carga
+}
+abstract class Aspiradora {
+Aspiradora(IBateria bateria)
+limpiar()
+}
+
+interface IBateria {
+cargar()
+descargar()
+}
+
+class Romba
+class Conga
+
+class Bateria100
+class Bateria200
+class Bateria500
+
+Aspiradora .r.> IBateria
+Bateria .u.> IBateria
+
+Romba -u-|> Aspiradora
+Conga -u-|> Aspiradora
+
+Bateria100 -u-|> Bateria
+Bateria200 -u-|> Bateria
+Bateria500 -u-|> Bateria
+@enduml
