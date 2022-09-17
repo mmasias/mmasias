@@ -1,6 +1,6 @@
 # Sistemas complejos *#2Think*
 
-Una cita Richard Dawkins donde se aborda el tema de sistemas complejos
+Una cita de [Richard Dawkins](https://es.wikipedia.org/wiki/Richard_Dawkins) donde se aborda el tema de [sistemas complejos](https://es.wikipedia.org/wiki/Sistema_complejo)
 
 ---
 Los biólogos tratábamos de señalar qué es lo que tienen en común los humanos, los topos, las lombrices de tierra, los aviones y los relojes, pero no con el Mont Blanc o la luna. La respuesta a la que hemos llegado es que las cosas complicadas tienen alguna cualidad, especificable de antemano, que es muy poco probable que haya sido adquirida solo por casualidad.
