@@ -1,0 +1,12 @@
+# Hilos de @DaniNovorama (et al)
+
+- [GMT (Goal, mean, tool / Objetivo, medio, herramienta)](https://twitter.com/DaniNovarama/status/1541686055123943426)
+- [Hábitos](https://twitter.com/DaniNovarama/status/1542061229589630976)
+- [BATNA](https://twitter.com/DaniNovarama/status/1571757479029100549)
+- [Conseguir objetivos y organizar el tiempo](https://twitter.com/DaniNovarama/status/1494939143985577985)
+- [IA y comics](https://twitter.com/DaniNovarama/status/1568198043282849795)
+- [Popularidad en redes sociales](https://twitter.com/Don_Sopalajo/status/1563821549077012481)
+- [Lovelock & Gaia (cambio climático)](https://twitter.com/DaniNovarama/status/1553281283387805697)
+- [Receta de macarrones](https://twitter.com/DaniNovarama/status/1544232573479620608)
+- [Hábitos II](https://twitter.com/DaniNovarama/status/1543860205473222656)
+- [Negociación](https://twitter.com/DaniNovarama/status/1542776558041055233)
