@@ -1,0 +1,133 @@
+@startuml
+
+package objetos <<A>> {
+object TuParticulaElemtal
+object TuAtomo
+object TuMolecula
+object TuOrganulo
+object TuCelula
+object TuMusculo
+object TuCorazon
+object TuSistemaCirculatorio
+object Tu {
+peso = 50 kg
+altura = 1,50 m
+nacimiento = 25/12/2000
+}
+object Yo {
+peso = 90 kg
+altura = 1,83 m
+nacimiento = 12/6/1968
+}
+object LaLitosfera
+object LaHidrosfera
+object LaBiosfera
+object LaTierra
+object Jupiter
+object ElSistemaSolar
+object Kepler444
+object LaViaLactea
+object Andromeda
+object ElGrupoLocal
+object GrupoVirgo
+object ElUniverso
+}
+
+package clases <<B>> {
+class ParticulaElemental
+class Átomo
+class Molécula
+class Orgánulo
+class Célula
+class Músculo
+class Corazón
+class SistemaCirculatorio
+class SerVivo
+class Planta
+class Animal {
+peso : positivo
+altura : positivo
+nacimiento : Fecha
+comer()
+reprodurir()
+}
+class HomoSapiens {
+coeficiente: 0..100%
+hablar()
+aprender()
+razonar()
+crear()
+}
+class Esfera
+class Planeta
+class SistemaSolar
+class Galaxia
+class Grupo
+class Universo
+}
+
+Átomo  *-down-> ParticulaElemental
+Molécula  *-down-> Átomo
+Orgánulo  *-down-> Molécula
+Célula  *-down-> Orgánulo
+Músculo  *-down-> Célula
+Corazón  *-down-> Músculo
+SistemaCirculatorio  *-down-> Corazón
+HomoSapiens  *-down-> SistemaCirculatorio
+Esfera  *-down-> SerVivo
+SerVivo <|-- Planta
+SerVivo <|-- Animal
+Animal <|-- HomoSapiens
+Planeta  *-down-> Esfera
+SistemaSolar  *-down-> Planeta
+Galaxia  *-down-> SistemaSolar
+Grupo  *-down-> Galaxia
+Universo  *-down-> Grupo
+
+TuAtomo *-down-> TuParticulaElemtal
+TuMolecula *-down-> TuAtomo
+TuOrganulo *-down-> TuMolecula
+TuCelula *-down-> TuOrganulo
+TuMusculo *-down-> TuCelula
+TuCorazon *-down-> TuMusculo
+TuSistemaCirculatorio *-down-> TuCorazon
+Tu *-down-> TuSistemaCirculatorio
+LaBiosfera *-down-> Tu
+LaBiosfera *-down-> Yo
+LaTierra *-down-> LaLitosfera
+LaTierra *-down-> LaHidrosfera
+LaTierra *-down-> LaBiosfera
+ElSistemaSolar *-down-> LaTierra
+ElSistemaSolar *-down-> Jupiter
+LaViaLactea *-down-> ElSistemaSolar
+LaViaLactea *-down-> Kepler444
+ElGrupoLocal *-down-> LaViaLactea
+ElGrupoLocal *-down-> Andromeda
+ElUniverso *-down-> ElGrupoLocal
+ElUniverso *-down-> GrupoVirgo
+
+ParticulaElemental <.down. TuParticulaElemtal
+Átomo <.down. TuAtomo
+Molécula <.down. TuMolecula
+Orgánulo <.down. TuOrganulo
+Célula <.down. TuCelula
+Músculo <.down. TuMusculo
+Corazón <.down. TuCorazon
+SistemaCirculatorio <.down. TuSistemaCirculatorio
+HomoSapiens <.down. Tu
+HomoSapiens <.down. Yo
+Esfera <.down. LaLitosfera
+Esfera <.down. LaHidrosfera
+Esfera <.down. LaBiosfera
+Planeta <.down. LaTierra
+Planeta <.down. Jupiter
+SistemaSolar <.down. ElSistemaSolar
+SistemaSolar <.down. Kepler444
+Galaxia <.down. LaViaLactea
+Galaxia <.down. Andromeda
+Grupo <.down. ElGrupoLocal
+Grupo <.down. GrupoVirgo
+Universo <.down. ElUniverso
+
+@enduml
+
