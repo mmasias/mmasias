@@ -1,5 +1,6 @@
 # Hilos de @DaniNovorama (et al)
 
+- [Elon Musk y agilismo](https://twitter.com/DaniNovarama/status/1592294082814017539)
 - [GMT (Goal, mean, tool / Objetivo, medio, herramienta)](https://twitter.com/DaniNovarama/status/1541686055123943426)
 - [Hábitos](https://twitter.com/DaniNovarama/status/1542061229589630976)
 - [BATNA](https://twitter.com/DaniNovarama/status/1571757443193143296)
