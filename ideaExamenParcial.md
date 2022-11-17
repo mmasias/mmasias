@@ -1,7 +1,10 @@
 ## Idea para un examen parcial
 
-1. :m::construction_worker:
-1. :m::busts_in_silhouette:
-1. :m::technologist:
-1. :m::construction_worker::arrows_counterclockwise:
-1. :m::busts_in_silhouette::arrows_counterclockwise:
+
+|Actividad|Tiempo
+|:-:|-
+|:m::construction_worker:|20 min.
+|:m::busts_in_silhouette:|20 min.
+|:m::technologist:|20 min.
+|:m::construction_worker::arrows_counterclockwise:|20 min.
+|:m::busts_in_silhouette::arrows_counterclockwise:|20 min.
