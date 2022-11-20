@@ -4,6 +4,7 @@ Aquí, en desorden, ideas que voy pillando y que utilizaré en diversos document
 
 ## Generales
 
+- [Mapa de todo el internet, 1973](/imagenes/mapaInternet_1973.jpg)
 - Manifiesto Cluetrain [Link](https://personal.us.es/mbmarquez/textos/cluetrain.pdf)
 - Poesía de Jesús Lizano [Las personas curvas](https://www.youtube.com/watch?v=XfUDrorit-k)
 - Ejemplo de Don Pepito y Don José para explicar Ingeniería Inversa
