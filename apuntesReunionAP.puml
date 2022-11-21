@@ -1,0 +1,39 @@
+@startmindmap
+
+
+* <b>Reunión</b>
+
+** Revistas MLS
+
+** Sexenios
+*** f(tiempo@U)
+
+-- Investigar
+--- Tiempo
+--- Equipo grande
+--- Publicar
+---- A partir de investigación
+---- Impacto
+---- jcrr q1 q2
+
+---- quehacer
+----- formar un equipo
+----- cada area su revista
+
+----- conocer las revistas de ref de su campo
+------ cantidad: f(revistas)
+------ penalizan por cantidad de autores
+------ % de aceptación
+------ hacer un listado in:(SJR JCR)
+
+---- Publicar & publicar en otras revistas
+
+--- Requerimientos de inv en privada != publica
+
+* bases de datos
+** wos (Indicadores: JCR)
+** scopus (Indicadores: SJR)
+*** Ej. referencia: <i>Educación XX1</i>
+
+
+@endmindmap
