@@ -25,4 +25,4 @@
 
 ---
 
-> Ver también: [Virtudes Gárgolas](virtudesGargolas.md)
+> Ver también: [Virtudes Gárgolas](virtudesGargolas.md) / [Virtudes de Mandrake](virtudesMandrake.md)

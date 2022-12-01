@@ -31,4 +31,4 @@
 
 ---
 
-> Ver también: [Virtudes de Britannia](virtudesBritannia.md)
+> Ver también: [Virtudes de Britannia](virtudesBritannia.md) / [Virtudes de Mandrake](virtudesMandrake.md)
