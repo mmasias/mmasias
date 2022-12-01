@@ -23,4 +23,6 @@
 |Verdad & Amor & Coraje|Espiritualidad
 |La ausencia de Verdad & Amor & Coraje nos lleva al Orgullo, cuyo opuesto apunta a la séptima virtud|Humildad
 
+---
+
 > Ver también: [Virtudes Gárgolas](virtudesGargolas.md)

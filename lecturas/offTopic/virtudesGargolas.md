@@ -29,4 +29,6 @@
 |Control & Pasión & Diligencia|Singularidad
 |La ausencia de Control, Pasión y Diligencia es Caos, lo que apunta a la séptima virtud|Orden
 
+---
+
 > Ver también: [Virtudes de Britannia](virtudesBritannia.md)
