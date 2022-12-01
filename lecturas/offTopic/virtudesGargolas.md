@@ -16,7 +16,7 @@
 
 *Nuestra sociedad es la misma. También continúa para siempre, con todos los miembros (y todas las virtudes) partes iguales del todo unificado*
 
-# Virtudes 
+# Virtudes Gárgolas
 
 |Principio|Virtud
 |-|-
@@ -28,3 +28,5 @@
 |Control & Diligencia|Precisión
 |Control & Pasión & Diligencia|Singularidad
 |La ausencia de Control, Pasión y Diligencia es Caos, lo que apunta a la séptima virtud|Orden
+
+> Ver también: [Virtudes de Britannia](virtudesBritannia.md)
