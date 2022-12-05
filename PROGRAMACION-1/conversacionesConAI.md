@@ -228,6 +228,8 @@ El laberinto se representa en la consola de la siguiente manera:
 [ ][ . ][ . ][ ]
 [ ][ . ][ . ][ ]
 ```
+> <font color="red"><b><i>COMENTARIO:</i></b></font>  Por alguna razón, la implementación que hace OpenAI de la máquina virtual de Java muestra erróneamente el laberinto (aunque el código está bien, salvo lo de public class Laberinto, mis alumnos ya me entienden :wink:)
+
 
 ## Vale! Ahora amplia el laberinto a una matriz de 10x10
 
