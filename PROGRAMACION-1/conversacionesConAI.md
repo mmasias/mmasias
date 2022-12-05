@@ -1,11 +1,14 @@
 # Jugando con OpenAI
 
-A continuación una transcripción literal de una charla con el bot de OpenAI, proponiéndole uno de los retos que trabajamos en clase y pidiéndole diversas cosas, como extensiones)
+A continuación una transcripción literal de una charla con el bot de OpenAI, proponiéndole uno de los retos de los que habitualmente trabajamos en clase y extendiendo su complejidad poco a poco (lo mismo, tal y como lo trabajamos en clase).
 
-El código se pone sin cambios, tal y como lo proporcionó OpenAI, pero incluyo algunos extras:
+Las repuestas y el código se pone sin cambios, tal y como lo proporcionó OpenAI, incluyendo adicionalmente algunos extras para representar de manera más clara la interacción:
 
 |Símbolo|Significado 
 |-|-
+|Titulo en grande|Mi pregunta o planteamiento
+|Texto en tamaño normal|La respuesta de OpenAI
+|Texto dentro de cuadro gris|El código que devolvió
 |:collision:| Cuando la respuesta es incompleta o se ha interrumpido (debido, sin duda, al exceso de peticiones al que estará sometido el chat)
 |:speaker:| Comentario a la conversación
 
@@ -271,7 +274,7 @@ public class Laberinto {
 
 > :speaker: <b><i>COMENTARIO:</i></b> Aunque el código se corta, lo interesante de esta evolución es la ampliación de la matriz de 5x5 a 10x10
 
-# Y si además de pared y camino agregamos, por ejemplo, agua: ¿cómo la representarías?
+## Y si además de pared y camino agregamos, por ejemplo, agua: ¿cómo la representarías?
 
 Si quieres añadir agua al laberinto, puedes utilizar un nuevo valor en la matriz que represente este elemento. Por ejemplo, si utilizas el valor 2 para representar agua, podrías modificar el código de la siguiente manera:
 
