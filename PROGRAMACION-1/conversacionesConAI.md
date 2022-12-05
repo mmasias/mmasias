@@ -60,6 +60,8 @@ El laberinto se representa en la consola de la siguiente manera:
 
 ## en el codigo anterior, utiliza esto como laberinto:
 
+> <font color="red"><b><i>COMENTARIO:</i></b></font> Aquí se me fue el ENTER antes de proponerle un laberinto. OpenAI empezó a trabajar igual, de momento no tiene la opción de detener la petición.
+
 Aquí tienes una implementación en Java del laberinto que has indicado. En lugar de utilizar una matriz de 10x10 para representar el laberinto, se han utilizado caracteres ASCII para dibujar el laberinto directamente en la consola. Además, se han añadido algunas condiciones adicionales para que el laberinto sea más complejo y difícil de resolver.
 
 ```
