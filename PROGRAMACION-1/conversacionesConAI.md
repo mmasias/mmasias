@@ -1,6 +1,6 @@
 # Jugando con ChatGPT
 
-A continuación una transcripción literal de una charla con el [bot de OpenAI])(https://openai.com/blog/chatgpt/), proponiéndole uno de los retos de los que habitualmente trabajamos en clase y extendiendo su complejidad poco a poco (lo mismo, tal y como lo trabajamos en clase).
+A continuación una transcripción literal de una charla con el [bot de OpenAI](https://openai.com/blog/chatgpt/), proponiéndole uno de los retos de los que habitualmente trabajamos en clase y extendiendo su complejidad poco a poco (lo mismo, tal y como lo trabajamos en clase).
 
 Las repuestas y el código se pone sin cambios, tal y como lo proporcionó OpenAI, incluyendo adicionalmente algunos extras para representar de manera más clara la interacción:
 
