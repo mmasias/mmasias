@@ -229,7 +229,7 @@ El laberinto se representa en la consola de la siguiente manera:
 [ ][ . ][ . ][ ]
 ```
 
-> Vale! Ahora amplia el laberinto a una matriz de 10x10
+## Vale! Ahora amplia el laberinto a una matriz de 10x10
 
 Aquí tienes una implementación en Java del laberinto que has indicado. En lugar de utilizar una matriz de 5x5, se ha utilizado una matriz de 10x10 para almacenar el estado de cada posición del laberinto. Para inicializar la matriz, se han utilizado los valores que has indicado para las primeras 5 filas y se han duplicado estos valores para las 5 filas restantes. Además, se han utilizado bucles for para recorrer la matriz y mostrar su contenido en la consola.
 
