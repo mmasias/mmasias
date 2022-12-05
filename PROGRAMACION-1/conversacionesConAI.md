@@ -1,6 +1,13 @@
 # Jugando con OpenAI
 
-A continuación una transcripción literal de una charla con el bot de OpenAI. El código se pone tal como lo proporcionó OpenAI e indico con :collision: cuando la respuesta es incompleta o se ha interrumpido (debido, sin duda, al exceso de peticiones al que estará sometido el chat). 
+A continuación una transcripción literal de una charla con el bot de OpenAI. 
+
+El código se pone sin cambios, tal y como lo proporcionó OpenAI, pero incluyo algunos extras:
+
+|Símbolo|Significado 
+|-|-
+|:collision:| Cuando la respuesta es incompleta o se ha interrumpido (debido, sin duda, al exceso de peticiones al que estará sometido el chat)
+|:speaker:| Comentario a la conversación
 
 Conforme tenga tiempo iré poniendo mis comentarios. ¡Se anima a los lectores a dejar los suyos!
 
