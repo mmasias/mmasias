@@ -8,7 +8,7 @@ Las repuestas y el código se pone sin cambios, tal y como lo proporcionó OpenA
 |-|-
 |Titulo en grande|Mi pregunta o planteamiento
 |Texto en tamaño normal|La respuesta de OpenAI
-|Texto dentro de cuadro gris|El código que devolvió
+|Texto dentro de cuadro gris|El código fuente que devolvió
 |:collision:| Cuando la respuesta es incompleta o se ha interrumpido (debido, sin duda, al exceso de peticiones al que estará sometido el chat)
 |:speaker: <b><i>COMENTARIO:</i></b> | Comentario mio a la conversación, incluido *a posteriori*
 
