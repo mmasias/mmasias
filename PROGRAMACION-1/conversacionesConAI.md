@@ -1,6 +1,6 @@
 # Jugando con OpenAI
 
-A continuación una transcripción literal de una charla con el bot de OpenAI. 
+A continuación una transcripción literal de una charla con el bot de OpenAI, proponiéndole uno de los retos que trabajamos en clase y pidiéndole diversas cosas, como extensiones)
 
 El código se pone sin cambios, tal y como lo proporcionó OpenAI, pero incluyo algunos extras:
 
@@ -269,3 +269,4 @@ public class Laberinto {
 ```
 :collision:
 
+> :speaker: <b><i>COMENTARIO:</i></b> Aunque el código se corta, lo interesante de esta evolución es la ampliación de la matriz de 5x5 a 10x10
