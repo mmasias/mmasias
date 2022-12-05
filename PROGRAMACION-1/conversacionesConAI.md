@@ -317,3 +317,49 @@ En este caso, se ha utilizado la cadena de caracteres "~~~" para representar agu
 ~~~ ~~~ ~~
 ```
 
+## vale: extendamos el código para permitir pared, camino, agua, césped y montañas...
+
+Si quieres añadir más elementos al laberinto, como césped y montañas, puedes utilizar nuevos valores en la matriz que representen estos elementos. Por ejemplo, si utilizas el valor 3 para representar césped y el valor 4 para representar montañas, podrías modificar el código de la siguiente manera:
+
+```
+public class Laberinto {
+    // Tamaño del laberinto (10x10)
+    private static final int FILAS = 10;
+    private static final int COLUMNAS = 10;
+    // Matriz que almacena el laberinto
+    private static int[][] laberinto = new int[FILAS][COLUMNAS];
+
+    public static void main(String[] args) {
+        // Inicializa la matriz con valores aleatorios
+        for (int fila = 0; fila < FILAS; fila++) {
+            for (int columna = 0; columna < COLUMNAS; columna++) {
+                // Genera un valor aleatorio entre 0 y 4
+                laberinto[fila][columna] = (int) (Math.random() * 5);
+            }
+        }
+
+        // Muestra el laberinto en la consola
+        for (int fila = 0; fila < FILAS; fila++) {
+            for (int columna = 0; columna < COLUMNAS; columna++) {
+                // Muestra una pared, un camino, agua, césped o montañas en función del valor de la matriz
+                if (laberinto[fila][columna] == 0) {
+                    System.out.print(" . ");
+                } else if (laberinto[fila][columna] == 1) {
+                    System.out.print("[ ]");
+                } else if (laberinto[fila][columna] == 2) {
+                    System.out.print("~~~");
+                } else if (laberinto[fila][columna] == 3) {
+                    System.out.print(";;;");
+                } else {
+                    System.out.print("/\\/\\");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+```
+En este caso, se han utilizado las cadenas de caracteres ";;;" para representar césped y "/\/\" 
+
+:collision:
+
