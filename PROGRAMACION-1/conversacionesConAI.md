@@ -56,6 +56,7 @@ El laberinto se representa en la consola de la siguiente manera:
 1 1 1 1 1 1 1 1 1 1
 1 1 1 1 1 1 1 1
 ```
+:collision:
 
 ## en el codigo anterior, utiliza esto como laberinto:
 
@@ -254,3 +255,6 @@ public class Laberinto {
         for (int fila = 0; fila < FILAS; fila++) {
             for (int columna = 0; columna < COLUMNAS; columna++) {
                 // Muestra una pared o un camino en función del valor de la
+```
+:collision:
+
