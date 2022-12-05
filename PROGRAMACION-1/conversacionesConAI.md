@@ -270,3 +270,50 @@ public class Laberinto {
 :collision:
 
 > :speaker: <b><i>COMENTARIO:</i></b> Aunque el código se corta, lo interesante de esta evolución es la ampliación de la matriz de 5x5 a 10x10
+
+# Y si además de pared y camino agregamos, por ejemplo, agua: ¿cómo la representarías?
+
+Si quieres añadir agua al laberinto, puedes utilizar un nuevo valor en la matriz que represente este elemento. Por ejemplo, si utilizas el valor 2 para representar agua, podrías modificar el código de la siguiente manera:
+
+
+```
+public class Laberinto {
+    // Tamaño del laberinto (10x10)
+    private static final int FILAS = 10;
+    private static final int COLUMNAS = 10;
+    // Matriz que almacena el laberinto
+    private static int[][] laberinto = new int[FILAS][COLUMNAS];
+
+    public static void main(String[] args) {
+        // Inicializa la matriz con valores aleatorios
+        for (int fila = 0; fila < FILAS; fila++) {
+            for (int columna = 0; columna < COLUMNAS; columna++) {
+                // Genera un valor aleatorio entre 0 y 2
+                laberinto[fila][columna] = (int) (Math.random() * 3);
+            }
+        }
+
+        // Muestra el laberinto en la consola
+        for (int fila = 0; fila < FILAS; fila++) {
+            for (int columna = 0; columna < COLUMNAS; columna++) {
+                // Muestra una pared, un camino o agua en función del valor de la matriz
+                if (laberinto[fila][columna] == 0) {
+                    System.out.print(" . ");
+                } else if (laberinto[fila][columna] == 1) {
+                    System.out.print("[ ]");
+                } else {
+                    System.out.print("~~~");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+En este caso, se ha utilizado la cadena de caracteres "~~~" para representar agua en el laberinto. El laberinto se representa en la consola de la siguiente manera (el laberinto mostrado es un ejemplo y puede variar en cada ejecución del programa):
+
+```
+~~~ ~~~ ~~
+```
+
