@@ -10,7 +10,7 @@ Las repuestas y el código se pone sin cambios, tal y como lo proporcionó OpenA
 |Texto en tamaño normal|La respuesta de OpenAI
 |Texto dentro de cuadro gris|El código que devolvió
 |:collision:| Cuando la respuesta es incompleta o se ha interrumpido (debido, sin duda, al exceso de peticiones al que estará sometido el chat)
-|:speaker:| Comentario a la conversación
+|:speaker: <b><i>COMENTARIO:</i></b> | Comentario mio a la conversación, incluido *a posteriori*
 
 Conforme tenga tiempo iré poniendo mis comentarios. ¡Se anima a los lectores a dejar los suyos!
 
