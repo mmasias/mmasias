@@ -47,3 +47,20 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt-get update && sudo apt-get install spotify-client
 ```
 
+## Instalar VLC
+
+```
+sudo apt install vlc
+```
+
+## Otras cosas...
+
+* Configurar captura de pantalla (WIN+MAYUSC+S)
+
+### Instalar elementary Tweaks
+
+```
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
+sudo apt update
+sudo apt install pantheon-tweaks
