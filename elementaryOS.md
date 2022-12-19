@@ -64,3 +64,15 @@ sudo apt install software-properties-common
 sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
 sudo apt update
 sudo apt install pantheon-tweaks
+```
+
+### Instalar la impresora
+
+Instalar el [Driver CQue DEB](https://www.canon.es/support/products/imagerunner/imagerunner-advance-c5235i.html?type=drivers&driverdetailid=tcm:86-1894069&os=linux%20%2864-bit%29&language=es)
+
+```
+sudo systemctl stop cups
+sudo vi /etc/cups/printers.conf
+# Editar la IP
+sudo systemctl restart cups
+```
