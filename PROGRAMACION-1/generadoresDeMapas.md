@@ -14,3 +14,6 @@ Link: **[aquí](https://docs.google.com/spreadsheets/d/1d9UC03syn03oDDp1CU8s0rqL
 |-|-
 |![](/imagenes/2020-mapaTipoTerreno.png)|![](/imagenes/2020-mapaTotal.png)
 
+### 2022 - Mapas de Ultima III 64x64
+
+Link: **[aquí](https://docs.google.com/spreadsheets/d/1wgDUYuLw5eu9Ri_1ppY6vDm5-ph5FQRgp9-ZWiNIB-A/edit?usp=sharing)**
