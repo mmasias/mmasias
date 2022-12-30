@@ -1,7 +1,26 @@
 import java.util.*;
-public class ArrayAsociativo002 {
-    final static int FILA = 0;
-    final static int COLUMNA = 1;
+
+public class ArrayAsociativo003 {
+
+	static final int FILA = 0;
+	static final int COLUMNA = 1;
+
+	
+    static final int ARRIBA = 0;
+	static final int ABAJO = 1;
+	static final int IZQUIERDA = 2;
+	static final int DERECHA = 3;
+    static final int SALIR = 4;
+
+	static final int[][] MOVIMIENTO = {
+		{-1,0},
+		{1,0},
+		{0,-1},
+		{0,1}
+	};
+
+    static boolean jugando = true;
+
     public static void main(String[] args) {
 
 		String[] castilloLB = {
@@ -135,36 +154,40 @@ public class ArrayAsociativo002 {
 			"                               +++                              "			
 		};
 
-		int[] posicionPersonaje = {20,20};
-        int viewPort = 10;
+		int[] elPersonaje = {20,20};
+        int viewPort = 5;
 
-		imprimeMundo(castilloLB, posicionPersonaje, viewPort);
+		do {
+			imprimirMundo(castilloLB, elPersonaje, viewPort);
+			verAccion(elPersonaje);
+		} while (jugando);
+
     }
 
-	static void imprimeMundo(String[] castillo, int[] personaje, int viewPort){
+	static void imprimirMundo(String[] castillo, int[] personaje, int viewPort){
         String elemento;
-        imprimeLinea(viewPort);
-		for (int fila=personaje[FILA]-viewPort; fila<personaje[FILA]+viewPort; fila++){
-			for (int columna=personaje[COLUMNA]-viewPort; columna<personaje[COLUMNA]+viewPort; columna++) {
+        imprimirLinea(viewPort);
+		for (int fila=personaje[FILA]-viewPort; fila<=personaje[FILA]+viewPort; fila++){
+			for (int columna=personaje[COLUMNA]-viewPort; columna<=personaje[COLUMNA]+viewPort; columna++) {
 				
                 if (fila==personaje[FILA] && columna==personaje[COLUMNA]) {
                     elemento = "_O_";
                 } else {
-                    elemento = mapea(castillo[fila].charAt(columna));
+                    elemento = mapear(castillo[fila].charAt(columna));
                 }
                 
                 System.out.print(elemento);
 			}
 			System.out.println();
 		}	
-        imprimeLinea(viewPort);
+        imprimirLinea(viewPort);
 	}
 
-    static void imprimeLinea(int viewPort){
-        System.out.println(mapea('_').repeat(viewPort*2));
+    static void imprimirLinea(int viewPort){
+        System.out.println(mapear('B').repeat(viewPort*2+1));
     }
 
-	static String mapea(char elemento){
+	static String mapear(char elemento){
 
         HashMap<String, String> tiles = new HashMap<>();
 		
@@ -182,9 +205,45 @@ public class ArrayAsociativo002 {
 		tiles.put("X", "XXX");
 		tiles.put("%", "%%%");
         tiles.put("_", "___");
+        tiles.put("B", "===");
 
 		return tiles.get("" + elemento);
 
+	}
+
+	static void mover(int[] unPersonaje, int direccion){
+		
+		unPersonaje[FILA] +=  MOVIMIENTO[direccion][FILA];
+		unPersonaje[COLUMNA] += MOVIMIENTO[direccion][COLUMNA];
+	}
+
+    static void verAccion(int[] elPersonaje) {
+
+		switch (capturarMovimiento()) {
+			case ARRIBA:	mover(elPersonaje, ARRIBA);		break;	
+			case ABAJO:		mover(elPersonaje, ABAJO); 		break;
+			case IZQUIERDA:	mover(elPersonaje, IZQUIERDA);	break;
+			case DERECHA:	mover(elPersonaje, DERECHA);	break;
+            case SALIR:     jugando = !jugando;             break;
+		}
+	}
+
+	static int capturarMovimiento() {
+
+		switch (pedirChar()) {
+			case 's', 'S', '8':	return ABAJO;
+			case 'w', 'W', '2':	return ARRIBA;
+			case 'a', 'A', '4':	return IZQUIERDA;
+			case 'd', 'D', '6':	return DERECHA;
+            case 'f', 'F'     : return SALIR;
+		}
+		return 0;
+	}
+
+    static char pedirChar() {
+
+		Scanner entrada = new Scanner(System.in);
+		return entrada.next().charAt(0);
 	}
 
 }
