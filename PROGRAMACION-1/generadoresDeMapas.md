@@ -21,3 +21,9 @@ Link: **[aquí](https://docs.google.com/spreadsheets/d/1wgDUYuLw5eu9Ri_1ppY6vDm5
 |Mapa|Mapa
 |-|-
 |![](/imagenes/2022-mapaU3-001.png)|![](/imagenes/2022-mapaU3-002.png)
+
+### ASCII Mapper 
+
+Link a web de [noTimeToPlay](https://notimetoplay.org/engines/ascii-mapper/index.html)
+
+![](https://notimetoplay.org/engines/ascii-mapper/ascii-mapper-20190816.png)
