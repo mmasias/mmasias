@@ -3,7 +3,7 @@
 Aquí, en desorden, ideas que voy pillando y que utilizaré en diversos documentos/presentaciones/clases/charlas
 
 ## Generales
-
+- [Tierra no-plana, historia de USA, origen de término "lotes"](https://twitter.com/giraldeo/status/1608871794475429888)
 - [Cómo enseñarle a los niños a hackear](https://www.microsiervos.com/archivo/hackers/como-ensenar-a-los-ninos-a-hackear.html)
 -  [Mapa de todo el internet, 1973](/imagenes/mapaInternet_1973.jpg)
 - [Why Everything Looks the Same](https://medium.com/knowable/why-everything-looks-the-same-bad80133dd6e)
