@@ -1,8 +1,9 @@
 
 |Version|Implementa
 |-|-
-|1|Versión básica
-|2|
-|3|
-|4|
-|5|Hora y sol
+|[Versión 1](ArrayAsociativo001.java)|Versión básica
+|Versión 2|
+|Versión 3|
+|Versión 4|
+|[Versión 5](ArrayAsociativo005.java)|Hora y sol
+|[Versión 6](ArrayAsociativo006.java)|Alcance de visión en función a la hora y el sol / Corrección del "error" del método estático pedirChar() y justificación de porqué aquí si es pertinente un comentario. 
