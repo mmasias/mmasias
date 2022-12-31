@@ -160,8 +160,8 @@ public class ArrayAsociativo006 {
                 "                               +++                              "
         };
 
-        int[] elPersonaje = { 24, 9 };
-        viewPort = 7;
+        int[] elPersonaje = { 24, 12 };
+        viewPort = 5;
         alcanceVision = viewPort / 2;
 
         do {
@@ -185,13 +185,13 @@ public class ArrayAsociativo006 {
         alcanceVision = viewPort * 2;
 
         if (hora < 3 || hora > 21) {
-            alcanceVision = alcanceVision / 5;
+            alcanceVision = alcanceVision / 5 ;
         } else if (hora < 4 || hora > 20) {
             alcanceVision = alcanceVision / 5 * 2;
         } else if (hora < 5 || hora > 19) {
             alcanceVision = alcanceVision / 5 * 3;
         } else if (hora < 6 || hora > 18) {
-            alcanceVision = alcanceVision / 5 * 4;
+            alcanceVision = alcanceVision / 5 * 4 ;
         }
 
     }
