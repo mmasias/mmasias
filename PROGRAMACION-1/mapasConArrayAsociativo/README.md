@@ -121,15 +121,26 @@ MOVIMIENTO[ARRIBA]
 
 Y como anteriormente hemos abstraido fila y columna en las constantes FILA y COLUMNA, el movimiento de la fila sería ```MOVIMIENTO[ARRIBA][FILA]``` y en la columna sería ```MOVIMIENTO[ARRIBA][COLUMNA]```
 
-Con esto en mente podemos crear un método que se responsabilice por mover el personaje. Lo que le haría falta saber es la posición del personaje y dirección hacia la que se mueve.
+Con esto en mente podemos crear un método *mover* que se responsabilice por mover el personaje. Lo que le haría falta saber es la posición del personaje y dirección hacia la que se mueve.
 
 ```
 static void mover(int[] unPersonaje, int direccion) {
 
-    unPersonaje[FILA] += MOVIMIENTO[direccion][FILA];
-    unPersonaje[COLUMNA] += MOVIMIENTO[direccion][COLUMNA];
+    unPersonaje[FILA] = unPersonaje[FILA] + MOVIMIENTO[direccion][FILA];
+    unPersonaje[COLUMNA] = unPersonaje[COLUMNA] + MOVIMIENTO[direccion][COLUMNA];
 }
 ```
+
+Definido esto, los métodos *verAccion*, *capturaMovimiento* y *pedirChar* colaboran entre ellos para permitir al usuario indicar adónde moverse usando los numeros direccionales (8/4/6/2) o las teclas habituales (w/a/s/d).
+
+En el main del programa se agrega un bucle que se encarga de imprimir el mapa y pedirle al usuario que indique una dirección de movimiento (o de terminar, cuando el booleano ```jugando``` pasa a false, tarea de la que se encarga el método *verAccion*):
+
+```
+do {
+    imprimirMundo(castilloLB, elPersonaje, viewPort);
+    verAccion(elPersonaje);
+} while (jugando);
+``` 
 
 <div align=center>
     <img src="../../imagenes/ArrayAsociativoV3.png" width="50%" />
