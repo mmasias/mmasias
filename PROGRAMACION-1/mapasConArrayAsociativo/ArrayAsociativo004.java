@@ -160,11 +160,10 @@ public class ArrayAsociativo004 {
             imprimirMundo(castilloLB, elPersonaje, viewPort);
             verAccion(elPersonaje);
         } while (jugando);
-
     }
 
     static void imprimirMundo(String[] castillo, int[] personaje, int viewPort) {
-        
+
         String elemento;
         limpiarPantalla();
         imprimirLinea(viewPort);
@@ -210,7 +209,6 @@ public class ArrayAsociativo004 {
         tiles.put("B", "===");
 
         return tiles.get("" + elemento);
-
     }
 
     static void mover(int[] unPersonaje, int direccion) {
@@ -264,6 +262,7 @@ public class ArrayAsociativo004 {
     }
 
     static void limpiarPantalla() {
+
         System.out.print("\033[H\033[2J");
     }
 }

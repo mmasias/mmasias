@@ -150,7 +150,10 @@ Esta versión mueve al personaje pero ni verifica límites ni tampoco verifica e
 
 ### Versión 4
 
-[Versión 4](ArrayAsociativo004.java)
+> [Versión 4](ArrayAsociativo004.java)
+
+Igual que la versión 3, salvo que esta en lugar de acumular la impresión del mapa, limpiar pantalla mediante códigos ANSI y hace más interesante el efecto de "movimiento".
+
 
 ### Versión 5
 
@@ -173,9 +176,20 @@ Esta versión mueve al personaje pero ni verifica límites ni tampoco verifica e
 
 [Versión 9](ArrayAsociativo009.java): Opción de skins (se activa con la letra **v**), como ayuda para el desarrollo de la detección de por dónde puede y no puede caminar. 
 
-De una forma básica (o sea, *hardcoded*) verifica si puede ir al sitio que le piden: no permite traspasar paredes ni agua. En la siguiente versión debería generalizarlo a un "medio de transporte"
+
 
 |Skin 0|Skin 1|Skin 2|Skin 3
 |-|-|-|-
 |![](/imagenes/ArrayAsociativoV9SKIN0.png)|![](/imagenes/ArrayAsociativoV9SKIN1.png)|![](/imagenes/ArrayAsociativoV9SKIN2.png)|![](/imagenes/ArrayAsociativoV9SKIN3.png)
 |Full color|Sin color|Tiles puros|Matriz colisiones
+
+* Las skin 1 y 2 son similares en el concepto de parsear el mapa almacenado, con la diferencia de la inclusión del color. 
+* La skin 2 muestra el mapa con los tiles tal y como los tiene almacenados el programa. 
+* La skin 3 muestra la "matriz de colisiones", es decir, los puntos por los que no debería permitirse el paso al personaje.
+
+De una forma básica (o sea, *hardcoded*) verifica si puede ir al sitio que le piden: no permite traspasar paredes ni agua. 
+
+    Ideas para las siguientes versiones: 
+    - Generalizarlo a un "medio de transporte"
+    - ¿Incluir altura y profundidad?
+    - ¿Poder crear un puente?
