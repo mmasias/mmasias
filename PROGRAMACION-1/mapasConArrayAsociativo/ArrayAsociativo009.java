@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ArrayAsociativo008 {
+public class ArrayAsociativo009 {
 
     static final int FILA = 0;
     static final int COLUMNA = 1;
@@ -10,7 +10,12 @@ public class ArrayAsociativo008 {
     static final int IZQUIERDA = 2;
     static final int DERECHA = 3;
     static final int SALIR = 4;
+    static final int CAMBIA_VISUALIZACION = 5;
     static final int NADA = 999;
+
+    static final int VISUALIZACION_NORMAL = 0;
+    static final int VISUALIZACION_SIN_COLOR = 1;
+    static final int VISUALIZACION_RAW = 2;
 
     static final int[][] MOVIMIENTO = {
             { -1, 0 },
@@ -22,6 +27,7 @@ public class ArrayAsociativo008 {
     static double hora = 12.0;
     static int alcanceVision;
     static int viewPort;
+    static int modoVisualizacion = VISUALIZACION_NORMAL;
 
     static int minFila, minColumna, maxFila, maxColumna;
 
@@ -248,14 +254,14 @@ public class ArrayAsociativo008 {
         for (int fila = personaje[FILA] - viewPort; fila <= personaje[FILA] + viewPort; fila++) {
             for (int columna = personaje[COLUMNA] - viewPort; columna <= personaje[COLUMNA] + viewPort; columna++) {
 
-                elemento = mapear('P');
+                elemento = mapear('P', modoVisualizacion);
                 if (!(fila == personaje[FILA] && columna == personaje[COLUMNA])) {
-                    elemento = mapear(castillo[fila].charAt(columna));
+                    elemento = mapear(castillo[fila].charAt(columna), modoVisualizacion);
                 }
 
                 if (!(Math.pow((personaje[FILA] - fila), 2)
                         + Math.pow((personaje[COLUMNA] - columna), 2) <= alcanceVision * alcanceVision)) {
-                    elemento = mapear('D');
+                    elemento = mapear('D', modoVisualizacion);
                 }
 
                 System.out.print(elemento);
@@ -274,10 +280,77 @@ public class ArrayAsociativo008 {
 
     static void imprimirLinea() {
 
-        System.out.println(mapear('B').repeat(viewPort * 2 + 1));
+        System.out.println(mapear('B', modoVisualizacion).repeat(viewPort * 2 + 1));
     }
 
-    static String mapear(char elemento) {
+    static String mapear(char elemento, int modoVisualizacion) {
+        
+        switch (modoVisualizacion) {
+            case VISUALIZACION_NORMAL: return mapearNormal(elemento);
+            case VISUALIZACION_SIN_COLOR: return mapearSinColor(elemento);
+            case VISUALIZACION_RAW: return mapearRaw(elemento);
+        }
+        
+        return "";
+    }
+
+    private static String mapearRaw(char elemento) {
+        
+        HashMap<String, String> tiles = new HashMap<>();
+
+        tiles.put(" ", " ");
+        tiles.put(".", ".");
+        tiles.put("-", "-");
+        tiles.put("=", "=");
+        tiles.put("|", "|");
+        tiles.put(":", ":");
+        tiles.put("+", "+");
+        tiles.put("O", "O");
+        tiles.put("#", "#");
+        tiles.put("*", "*");
+        tiles.put("$", "$");
+        tiles.put("X", "X");
+        tiles.put("%", "%");
+        tiles.put("_", "_");
+        tiles.put("~", "~");
+        tiles.put("B", "B");
+        tiles.put("P", "P");
+        tiles.put("D", "D");
+        tiles.put("S", "S");
+        tiles.put("C", "C");
+
+        return tiles.get("" + elemento);
+    }
+
+    static String mapearSinColor(char elemento) {
+
+        HashMap<String, String> tiles = new HashMap<>();
+
+        tiles.put(" ", " ~~ ");
+        tiles.put(".", " . .");
+        tiles.put("-", "[##]");
+        tiles.put("=", "||||");
+        tiles.put("|", "[##]");
+        tiles.put(":", "oO*o");
+        tiles.put("+", "..:.");
+        tiles.put("O", "[  ]");
+        tiles.put("#", "::::");
+        tiles.put("*", "    ");
+        tiles.put("$", "$$$$");
+        tiles.put("X", "||||");
+        tiles.put("%", "%%%%");
+        tiles.put("_", "____");
+        tiles.put("~", " ~ ~");
+        tiles.put("B", "====");
+        tiles.put("P", "_()_");
+        tiles.put("D", "    ");
+        tiles.put("S", " () ");
+        tiles.put("C", "    ");
+
+        return tiles.get("" + elemento);
+    }
+
+    static String mapearNormal(char elemento) {
 
         HashMap<String, String> tiles = new HashMap<>();
 
@@ -301,6 +374,34 @@ public class ArrayAsociativo008 {
         tiles.put("D", BLACK_BACKGROUND_BRIGHT                      + "    " + RESET);
         tiles.put("S", YELLOW_BOLD_BRIGHT + BLUE_BACKGROUND         + " () " + RESET);
         tiles.put("C", BLUE_BACKGROUND                              + "    " + RESET);
+
+        return tiles.get("" + elemento);
+    }
+
+    static String tipoTerreno(char elemento) {
+
+        HashMap<String, String> tiles = new HashMap<>();
+
+        tiles.put(" ", "0");
+        tiles.put(".", "0");
+        tiles.put("-", "");
+        tiles.put("=", "");
+        tiles.put("|", "");
+        tiles.put(":", "");
+        tiles.put("+", "");
+        tiles.put("O", "");
+        tiles.put("#", "");
+        tiles.put("*", "");
+        tiles.put("$", "");
+        tiles.put("X", "");
+        tiles.put("%", "");
+        tiles.put("_", "");
+        tiles.put("~", "");
+        tiles.put("B", "");
+        tiles.put("P", "");
+        tiles.put("D", "");
+        tiles.put("S", "");
+        tiles.put("C", "");
 
         return tiles.get("" + elemento);
     }
@@ -343,8 +444,18 @@ public class ArrayAsociativo008 {
             case SALIR:
                 jugando = !jugando;
                 break;
+            case CAMBIA_VISUALIZACION:
+                cambiaVisualizacion();
+                break;
             case NADA:
                 break;
+        }
+    }
+
+    static void cambiaVisualizacion() {
+        modoVisualizacion++;
+        if (modoVisualizacion>2) {
+            modoVisualizacion=0;
         }
     }
 
@@ -361,6 +472,8 @@ public class ArrayAsociativo008 {
                 return DERECHA;
             case 'f', 'F':
                 return SALIR;
+            case 'v', 'V':
+                return CAMBIA_VISUALIZACION;
         }
         return NADA;
     }
@@ -382,9 +495,9 @@ public class ArrayAsociativo008 {
 
         for (int i = 0; i < viewPort * 2 + 1; i = i + 1) {
             if ((hora > 6) && (hora <= 18) && (i == (int) (((viewPort * 2)) - ((hora - 7) * (viewPort * 2) / 12)))) {
-                System.out.print(mapear('S'));
+                System.out.print(mapear('S', modoVisualizacion));
             } else {
-                System.out.print(mapear('C'));
+                System.out.print(mapear('C', modoVisualizacion));
             }
         }
         System.out.println();
