@@ -152,7 +152,7 @@ Esta versión mueve al personaje pero ni verifica límites ni tampoco verifica e
 
 > [Versión 4](ArrayAsociativo004.java)
 
-Igual que la versión 3, salvo que esta en lugar de acumular la impresión del mapa, limpiar pantalla mediante códigos ANSI y hace más interesante el efecto de "movimiento".
+Igual que la versión 3, salvo que esta en lugar de acumular la impresión del mapa, limpia la pantalla mediante códigos ANSI y hace más interesante el "efecto de movimiento".
 
 
 ### Versión 5
