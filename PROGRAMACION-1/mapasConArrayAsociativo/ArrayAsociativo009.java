@@ -38,13 +38,13 @@ public class ArrayAsociativo009 {
 
         String[] castilloLB = {
                 "..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
                 "..............................................................................",
                 "..............                                                   .............",
                 "............                                                       ...........",
@@ -107,24 +107,24 @@ public class ArrayAsociativo009 {
                 "...........                           +++                           ..........",
                 "............                          +++                          ...........",
                 "..............                        +++                        .............",
-				"......................................+++.....................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
-				"..............................................................................",
+                "......................................+++.....................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
+                "..............................................................................",
                 ".............................................................................."
         };
         String[] castilloEX = {
                 "                                                                              ",
-				"                                                                              ",
-				"                                                                              ",
-				"                                                                              ",
-				"                                                                              ",
-				"                                                                              ",
-				"                                                                              ",
-				"                                                                              ",
+                "                                                                              ",
+                "                                                                              ",
+                "                                                                              ",
+                "                                                                              ",
+                "                                                                              ",
+                "                                                                              ",
+                "                                                                              ",
                 "                                                 %%%%%%%%%%%%%%%%%%%%%%       ",
                 "                                                 %%%%%%%%%%%%%%%%%%%%%%       ",
                 "                                                 %%%%%%%%%%%%%%%%%%%%%%       ",
@@ -184,13 +184,13 @@ public class ArrayAsociativo009 {
                 "                                      +++                                     ",
                 "                                      +++                                     ",
                 "                                      +++                                     ",
-				"                                      +++                                     ",
-				"                                      +++                                     ",
-				"                                      +++                                     ",
-				"                                      +++                                     ",
-				"                                      +++                                     ",
-				"                                      +++                                     ",
-				"                                      +++                                     ",
+                "                                      +++                                     ",
+                "                                      +++                                     ",
+                "                                      +++                                     ",
+                "                                      +++                                     ",
+                "                                      +++                                     ",
+                "                                      +++                                     ",
+                "                                      +++                                     ",
                 "                                      +++                                     "
         };
 
@@ -203,7 +203,7 @@ public class ArrayAsociativo009 {
         do {
             actualizarTiempo();
             imprimirMundo(mundo, elPersonaje);
-            verAccion(elPersonaje);
+            verAccion(elPersonaje, mundo);
         } while (jugando);
 
     }
@@ -277,7 +277,7 @@ public class ArrayAsociativo009 {
     private static void imprimirStatus(int[] personaje) {
         System.out.print("HORA: [" + (int) hora + "] ");
         System.out.print("/ (" + personaje[FILA] + "," + personaje[COLUMNA] + ")");
-        System.out.println(" / SKIN["+modoVisualizacion+"]");
+        System.out.println(" / SKIN[" + modoVisualizacion + "]");
     }
 
     static void imprimirLinea() {
@@ -286,13 +286,17 @@ public class ArrayAsociativo009 {
     }
 
     static String mapear(char elemento, int modoVisualizacion) {
-        
+
         switch (modoVisualizacion) {
-            case VISUALIZACION_NORMAL: return mapearNormal(elemento);
-            case VISUALIZACION_SIN_COLOR: return mapearSinColor(elemento);
-            case VISUALIZACION_RAW: return mapearRaw(elemento);
-            case VISUALIZACION_COLISIONES: return tipoTerreno(elemento);
-        }   
+            case VISUALIZACION_NORMAL:
+                return mapearNormal(elemento);
+            case VISUALIZACION_SIN_COLOR:
+                return mapearSinColor(elemento);
+            case VISUALIZACION_RAW:
+                return mapearRaw(elemento);
+            case VISUALIZACION_COLISIONES:
+                return tipoTerreno(elemento);
+        }
         return "";
     }
 
@@ -356,26 +360,26 @@ public class ArrayAsociativo009 {
 
         HashMap<String, String> tiles = new HashMap<>();
 
-        tiles.put(" ", BLUE_BOLD_BRIGHT + BLUE_BACKGROUND_BRIGHT    + " ~~ " + RESET);
-        tiles.put(".", YELLOW_BRIGHT + GREEN_BACKGROUND             + " . ." + RESET);
-        tiles.put("-", WHITE + WHITE_BACKGROUND                     + "[##]" + RESET);
-        tiles.put("=", BLACK_BACKGROUND_BRIGHT                      + "||||" + RESET);
-        tiles.put("|", WHITE + WHITE_BACKGROUND                     + "[##]" + RESET);
-        tiles.put(":", YELLOW_BRIGHT + GREEN_BACKGROUND             + "oO*o" + RESET);
-        tiles.put("+", GREEN_BOLD + YELLOW_BACKGROUND               + "..:." + RESET);
-        tiles.put("O", WHITE_BACKGROUND_BRIGHT                      + "[  ]" + RESET);
-        tiles.put("#", BLACK + RED_BACKGROUND                       + "::::" + RESET);
-        tiles.put("*", YELLOW + YELLOW_BACKGROUND                   + "    " + RESET);
-        tiles.put("$", RED_BRIGHT + YELLOW_BACKGROUND               + "$$$$" + RESET);
-        tiles.put("X", RED_UNDERLINED + YELLOW_BACKGROUND           + "||||" + RESET);
-        tiles.put("%", GREEN_BOLD + YELLOW_BACKGROUND               + "%%%%" + RESET);
-        tiles.put("_", BLACK                                        + "____" + RESET);
-        tiles.put("~", BLUE_BACKGROUND_BRIGHT                       + " ~ ~" + RESET);
-        tiles.put("B", BLUE + BLUE_BACKGROUND                       + "====" + RESET);
-        tiles.put("P", RED                                          + "_()_" + RESET);
-        tiles.put("D", BLACK_BACKGROUND_BRIGHT                      + "    " + RESET);
-        tiles.put("S", YELLOW_BOLD_BRIGHT + BLUE_BACKGROUND         + " () " + RESET);
-        tiles.put("C", BLUE_BACKGROUND                              + "    " + RESET);
+        tiles.put(" ", BLUE_BOLD_BRIGHT + BLUE_BACKGROUND_BRIGHT + " ~~ " + RESET);
+        tiles.put(".", YELLOW_BRIGHT + GREEN_BACKGROUND + " . ." + RESET);
+        tiles.put("-", WHITE + WHITE_BACKGROUND + "[##]" + RESET);
+        tiles.put("=", BLACK_BACKGROUND_BRIGHT + "||||" + RESET);
+        tiles.put("|", WHITE + WHITE_BACKGROUND + "[##]" + RESET);
+        tiles.put(":", YELLOW_BRIGHT + GREEN_BACKGROUND + "oO*o" + RESET);
+        tiles.put("+", GREEN_BOLD + YELLOW_BACKGROUND + "..:." + RESET);
+        tiles.put("O", WHITE_BACKGROUND_BRIGHT + "[  ]" + RESET);
+        tiles.put("#", BLACK + RED_BACKGROUND + "::::" + RESET);
+        tiles.put("*", YELLOW + YELLOW_BACKGROUND + "    " + RESET);
+        tiles.put("$", RED_BRIGHT + YELLOW_BACKGROUND + "$$$$" + RESET);
+        tiles.put("X", RED_UNDERLINED + YELLOW_BACKGROUND + "||||" + RESET);
+        tiles.put("%", GREEN_BOLD + YELLOW_BACKGROUND + "%%%%" + RESET);
+        tiles.put("_", BLACK + "____" + RESET);
+        tiles.put("~", BLUE_BACKGROUND_BRIGHT + " ~ ~" + RESET);
+        tiles.put("B", BLUE + BLUE_BACKGROUND + "====" + RESET);
+        tiles.put("P", RED + "_()_" + RESET);
+        tiles.put("D", BLACK_BACKGROUND_BRIGHT + "    " + RESET);
+        tiles.put("S", YELLOW_BOLD_BRIGHT + BLUE_BACKGROUND + " () " + RESET);
+        tiles.put("C", BLUE_BACKGROUND + "    " + RESET);
 
         return tiles.get("" + elemento);
     }
@@ -384,7 +388,7 @@ public class ArrayAsociativo009 {
 
         HashMap<String, String> tiles = new HashMap<>();
 
-        tiles.put(" ", "0");
+        tiles.put(" ", "1");
         tiles.put(".", "0");
         tiles.put("-", "1");
         tiles.put("=", "0");
@@ -408,10 +412,18 @@ public class ArrayAsociativo009 {
         return tiles.get("" + elemento);
     }
 
-    static void mover(int[] unPersonaje, int direccion) {
+    static void mover(int[] unPersonaje, int direccion, String[] mapa) {
+
+        int oldFila = unPersonaje[FILA];
+        int oldColumna = unPersonaje[COLUMNA];
 
         unPersonaje[FILA] += MOVIMIENTO[direccion][FILA];
         unPersonaje[COLUMNA] += MOVIMIENTO[direccion][COLUMNA];
+
+        if (!tipoTerreno(mapa[unPersonaje[FILA]].charAt(unPersonaje[COLUMNA])).equals("0")) {
+            unPersonaje[FILA] = oldFila;
+            unPersonaje[COLUMNA] = oldColumna;
+        }
 
         if (unPersonaje[FILA] < minFila) {
             unPersonaje[FILA] = unPersonaje[FILA] + 1;
@@ -428,20 +440,20 @@ public class ArrayAsociativo009 {
 
     }
 
-    static void verAccion(int[] elPersonaje) {
+    static void verAccion(int[] elPersonaje, String[] elMundo) {
 
         switch (capturarMovimiento()) {
             case ARRIBA:
-                mover(elPersonaje, ARRIBA);
+                mover(elPersonaje, ARRIBA, elMundo);
                 break;
             case ABAJO:
-                mover(elPersonaje, ABAJO);
+                mover(elPersonaje, ABAJO, elMundo);
                 break;
             case IZQUIERDA:
-                mover(elPersonaje, IZQUIERDA);
+                mover(elPersonaje, IZQUIERDA, elMundo);
                 break;
             case DERECHA:
-                mover(elPersonaje, DERECHA);
+                mover(elPersonaje, DERECHA, elMundo);
                 break;
             case SALIR:
                 jugando = !jugando;
@@ -456,8 +468,8 @@ public class ArrayAsociativo009 {
 
     static void cambiaVisualizacion() {
         modoVisualizacion++;
-        if (modoVisualizacion>3) {
-            modoVisualizacion=0;
+        if (modoVisualizacion > 3) {
+            modoVisualizacion = 0;
         }
     }
 

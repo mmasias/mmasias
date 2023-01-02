@@ -46,6 +46,8 @@ Versión del laberinto implementado con arrays asociativos, para contrastarlo co
 
 [Versión 9](ArrayAsociativo009.java): Opción de skins (se activa con la letra **v**), como ayuda para el desarrollo de la detección de por dónde puede y no puede caminar. 
 
+De una forma básica (o sea, *hardcoded*) verifica si puede ir al sitio que le piden: no permite traspasar paredes ni agua. En la siguiente versión debería generalizarlo a un "medio de transporte"
+
 |Skin 0|Skin 1|Skin 2|Skin 3
 |-|-|-|-
 |![](/imagenes/ArrayAsociativoV9SKIN0.png)|![](/imagenes/ArrayAsociativoV9SKIN1.png)|![](/imagenes/ArrayAsociativoV9SKIN2.png)|![](/imagenes/ArrayAsociativoV9SKIN3.png)
