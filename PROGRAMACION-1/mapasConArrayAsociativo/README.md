@@ -43,7 +43,7 @@ Ajuste en la implementación de la impresión del mapa, mediante la inclusión d
 
 > [Versión 3](ArrayAsociativo003.java)
 
-Partimos de la premisa que hemos abstraido a nuestro personaje y el dato que nos interesa de él, **la posición**, en el vector posicionPersonaje, de modo que *fila=5 columna=3* queda almacenada así:
+Partimos de la premisa que hemos abstraido a nuestro personaje y el dato que nos interesa de él, **la posición**, en el vector posicionPersonaje, de modo que *fila=5, columna=3* queda almacenada así:
 
 ```
     int[] posicionPersonaje = {5,3}
@@ -53,10 +53,10 @@ Partimos de la premisa que hemos abstraido a nuestro personaje y el dato que nos
 
 A partir de esta abstracción, moverse sería cambiar dichas coordenadas. Con esto en mente:
 
-- Si queremos que el personaje suba, restamos 1 a la fila: ```{4,3}```
-- Si queremos que el personaje baje, sumamos 1 a la fila: ```{6,3}```
-- Si queremos que el personaje vaya a la izquierda, restamos 1 a la columna: ```{5,2}```
-- Si queremos que el personaje vaya a la derecha, sumamos 1 a la columna: ```{5,4}```
+- Si queremos que el personaje suba, restamos 1 a la fila y nos queda: ```{4,3}```
+- Si queremos que el personaje baje, sumamos 1 a la fila y nos queda: ```{6,3}```
+- Si queremos que el personaje vaya a la izquierda, restamos 1 a la columna y nos queda: ```{5,2}```
+- Si queremos que el personaje vaya a la derecha, sumamos 1 a la columna y nos queda: ```{5,4}```
 
 Por tanto, moverse sería sumar una unidad a la dimensión adecuada del vector del personaje.
 
@@ -86,7 +86,50 @@ Es decir que moverse significaría elegir una dirección y sumar ese vector al v
 
 </div>
 
-Y si además 
+##### Abstracción del movimiento
+
+Podemos hacer que la fórmula ***Moverse = Posición + Dirección*** quede abstraida tal que la nueva posición del personaje sea la posicion actual más la suma de la dirección a la que 
+
+nuevaPosicion = posicionPersonaje + vectorMovimiento(unaDirección)
+
+Si hacemos que el vector movimiento sea:
+
+```
+MOVIMIENTO = { 
+	{ -1, 0 },
+	{ 1, 0 },
+	{ 0, -1 },
+	{ 0, 1 }
+};
+```
+
+Y si además definimos las siguientes constantes:
+
+```
+static final int ARRIBA = 0;
+static final int ABAJO = 1;
+static final int IZQUIERDA = 2;
+static final int DERECHA = 3;
+static final int SALIR = 4;
+```
+
+Entonces, el vector de movimiento hacia arriba ```{-1,0}``` quedaría referenciado de esta manera:
+
+```
+MOVIMIENTO[ARRIBA] 
+```
+
+Y como anteriormente hemos abstraido fila y columna en las constantes FILA y COLUMNA, el movimiento de la fila sería ```MOVIMIENTO[ARRIBA][FILA]``` y en la columna sería ```MOVIMIENTO[ARRIBA][COLUMNA]```
+
+Con esto en mente podemos crear un método que se responsabilice por mover el personaje. Lo que le haría falta saber es la posición del personaje y dirección hacia la que se mueve.
+
+```
+static void mover(int[] unPersonaje, int direccion) {
+
+    unPersonaje[FILA] += MOVIMIENTO[direccion][FILA];
+    unPersonaje[COLUMNA] += MOVIMIENTO[direccion][COLUMNA];
+}
+```
 
 <div align=center>
     <img src="../../imagenes/ArrayAsociativoV3.png" width="50%" />
