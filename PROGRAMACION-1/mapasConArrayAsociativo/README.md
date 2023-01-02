@@ -35,7 +35,11 @@ Ajuste en la implementación de la impresión del mapa, mediante la inclusión d
     * Se le da la responsabilidad adicional de imprimir al personaje en la posición especificada. ```_O_```
 * Se agrega la funcion *imprimeLinea* que imprime una línea horizontal del tamaño del viewport.  
 
-![](/imagenes/ArrayAsociativoV2.png)
+<div align=center>
+
+<img src="../../imagenes/ArrayAsociativoV2.png" width="50%" />
+
+</div>
 
 ### Versión 3
 
