@@ -1,7 +1,7 @@
 
 Versión del laberinto implementado con arrays asociativos, para contrastarlo con la solución que se implementa con arrays.
 
-Se utilizan los mapas de Ultima III: [Castillo de Lord British](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/british.html), [Castillo de Timelord](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/time.html)
+Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/british.html) y el del [Castillo de Timelord](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/time.html), de [Ultima III: Exodus](https://es.wikipedia.org/wiki/Ultima_III:_Exodus)
 
 ## Restricciones autoimpuestas
 
