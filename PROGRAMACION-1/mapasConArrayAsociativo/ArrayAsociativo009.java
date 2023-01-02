@@ -16,6 +16,7 @@ public class ArrayAsociativo009 {
     static final int VISUALIZACION_NORMAL = 0;
     static final int VISUALIZACION_SIN_COLOR = 1;
     static final int VISUALIZACION_RAW = 2;
+    static final int VISUALIZACION_COLISIONES = 3;
 
     static final int[][] MOVIMIENTO = {
             { -1, 0 },
@@ -290,8 +291,8 @@ public class ArrayAsociativo009 {
             case VISUALIZACION_NORMAL: return mapearNormal(elemento);
             case VISUALIZACION_SIN_COLOR: return mapearSinColor(elemento);
             case VISUALIZACION_RAW: return mapearRaw(elemento);
-        }
-        
+            case VISUALIZACION_COLISIONES: return tipoTerreno(elemento);
+        }   
         return "";
     }
 
@@ -385,24 +386,24 @@ public class ArrayAsociativo009 {
 
         tiles.put(" ", "0");
         tiles.put(".", "0");
-        tiles.put("-", "");
-        tiles.put("=", "");
-        tiles.put("|", "");
-        tiles.put(":", "");
-        tiles.put("+", "");
-        tiles.put("O", "");
-        tiles.put("#", "");
-        tiles.put("*", "");
-        tiles.put("$", "");
-        tiles.put("X", "");
-        tiles.put("%", "");
-        tiles.put("_", "");
-        tiles.put("~", "");
-        tiles.put("B", "");
-        tiles.put("P", "");
-        tiles.put("D", "");
-        tiles.put("S", "");
-        tiles.put("C", "");
+        tiles.put("-", "1");
+        tiles.put("=", "0");
+        tiles.put("|", "1");
+        tiles.put(":", "0");
+        tiles.put("+", "0");
+        tiles.put("O", "0");
+        tiles.put("#", "0");
+        tiles.put("*", "0");
+        tiles.put("$", "0");
+        tiles.put("X", "0");
+        tiles.put("%", "0");
+        tiles.put("_", "0");
+        tiles.put("~", "1");
+        tiles.put("B", "0");
+        tiles.put("P", "*");
+        tiles.put("D", "0");
+        tiles.put("S", "0");
+        tiles.put("C", "0");
 
         return tiles.get("" + elemento);
     }
@@ -455,7 +456,7 @@ public class ArrayAsociativo009 {
 
     static void cambiaVisualizacion() {
         modoVisualizacion++;
-        if (modoVisualizacion>2) {
+        if (modoVisualizacion>3) {
             modoVisualizacion=0;
         }
     }
