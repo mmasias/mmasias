@@ -274,8 +274,9 @@ public class ArrayAsociativo009 {
     }
 
     private static void imprimirStatus(int[] personaje) {
-        System.out
-                .println("HORA: [" + (int) hora + "] / Posicion: (" + personaje[FILA] + "," + personaje[COLUMNA] + ")");
+        System.out.print("HORA: [" + (int) hora + "] ");
+        System.out.print("/ (" + personaje[FILA] + "," + personaje[COLUMNA] + ")");
+        System.out.println(" / SKIN["+modoVisualizacion+"]");
     }
 
     static void imprimirLinea() {
@@ -295,7 +296,7 @@ public class ArrayAsociativo009 {
     }
 
     private static String mapearRaw(char elemento) {
-        
+
         HashMap<String, String> tiles = new HashMap<>();
 
         tiles.put(" ", " ");
