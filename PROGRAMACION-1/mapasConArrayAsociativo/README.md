@@ -13,7 +13,10 @@ Se utilizan los mapas de Ultima III: [Castillo de Lord British](https://userpage
 
 ### Versión 1
 
-[Versión de partida](ArrayAsociativo001.java)
+> [Versión de partida](ArrayAsociativo001.java)
+
+* Impresión completa del mapa mediante imprimeMapa()
+* Traducción (parseo) de los tiles mediante mapea()
 
 ![](/imagenes/ArrayAsociativoV1.png)
 
