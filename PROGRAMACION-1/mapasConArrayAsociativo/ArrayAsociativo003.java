@@ -160,10 +160,10 @@ public class ArrayAsociativo003 {
 			imprimirMundo(castilloLB, elPersonaje, viewPort);
 			verAccion(elPersonaje);
 		} while (jugando);
-
 	}
 
 	static void imprimirMundo(String[] castillo, int[] personaje, int viewPort) {
+		
 		String elemento;
 		imprimirLinea(viewPort);
 		for (int fila = personaje[FILA] - viewPort; fila <= personaje[FILA] + viewPort; fila++) {
@@ -174,7 +174,6 @@ public class ArrayAsociativo003 {
 				} else {
 					elemento = mapear(castillo[fila].charAt(columna));
 				}
-
 				System.out.print(elemento);
 			}
 			System.out.println();
@@ -183,6 +182,7 @@ public class ArrayAsociativo003 {
 	}
 
 	static void imprimirLinea(int viewPort) {
+
 		System.out.println(mapear('B').repeat(viewPort * 2 + 1));
 	}
 
@@ -207,7 +207,6 @@ public class ArrayAsociativo003 {
 		tiles.put("B", "===");
 
 		return tiles.get("" + elemento);
-
 	}
 
 	static void mover(int[] unPersonaje, int direccion) {
@@ -259,5 +258,4 @@ public class ArrayAsociativo003 {
 		Scanner entrada = new Scanner(System.in);
 		return entrada.next().charAt(0);
 	}
-
 }

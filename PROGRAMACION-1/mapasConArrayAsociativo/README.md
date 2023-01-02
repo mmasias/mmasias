@@ -41,7 +41,11 @@ Ajuste en la implementación de la impresión del mapa, mediante la inclusión d
 
 ### Versión 3
 
-[Versión 3](ArrayAsociativo003.java)
+> [Versión 3](ArrayAsociativo003.java)
+
+<div align=center>
+    <img src="../../imagenes/ArrayAsociativoV3.png" width="50%" />
+</div>
 
 ### Versión 4
 
