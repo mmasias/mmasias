@@ -5,9 +5,8 @@ Se utilizan los mapas de Ultima III: [Castillo de Lord British](https://userpage
 
 ## Restricciones autoimpuestas
 
-- KISS
+- Intentar KISS
 - CNC / ANC
-
 
 ## Versiones
 
@@ -18,8 +17,9 @@ Se utilizan los mapas de Ultima III: [Castillo de Lord British](https://userpage
 * Impresión completa del mapa mediante imprimeMapa()
 * Traducción (parseo) de los tiles mediante mapea()
 
-![](/imagenes/ArrayAsociativoV1.png)
-
+<div align=center>
+    <img src="../../imagenes/ArrayAsociativoV1.png" width="50%" />
+</div>
 
 ### Versión 2
 
@@ -36,9 +36,7 @@ Ajuste en la implementación de la impresión del mapa, mediante la inclusión d
 * Se agrega la funcion *imprimeLinea* que imprime una línea horizontal del tamaño del viewport.  
 
 <div align=center>
-
-<img src="../../imagenes/ArrayAsociativoV2.png" width="50%" />
-
+    <img src="../../imagenes/ArrayAsociativoV2.png" width="50%" />
 </div>
 
 ### Versión 3
