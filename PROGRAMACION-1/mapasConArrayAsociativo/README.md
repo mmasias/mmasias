@@ -23,7 +23,19 @@ Se utilizan los mapas de Ultima III: [Castillo de Lord British](https://userpage
 
 ### Versión 2
 
-[Versión 2](ArrayAsociativo002.java)
+> [Versión 2](ArrayAsociativo002.java)
+
+Ajuste en la implementación de la impresión del mapa, mediante la inclusión de un viewport, que muestra una parte del mundo centrada alrededor de un punto. En los juegos, habitualmente este punto es el personaje principal, por lo que:
+
+* Se crea una estructura de datos que almacene la posición del personaje, en la forma de un array posicionPersonaje que almacenará como primer elemento la fila y como segundo elemento la columna.
+* Se crean las constantes *FILA* y *COLUMNA* para poder referirnos de manera clara a la posición: *posicionPersonaje[FILA]* y *posicionPersonaje[COLUMNA]*. 
+* Se modifica *imprimeMapa*:
+    * Cambio de nombre a *imprimeMundo*, más adecuado a su función dado que ya no imprime únicamente el mapa, sino que además ubica al personaje.
+    * Se le pasan parámetros adicionales: *posicionPersonaje* y tamaño del *viewport*.
+    * Se le da la responsabilidad adicional de imprimir al personaje en la posición especificada. ```_O_```
+* Se agrega la funcion *imprimeLinea* que imprime una línea horizontal del tamaño del viewport.  
+
+![](/imagenes/ArrayAsociativoV2.png)
 
 ### Versión 3
 
