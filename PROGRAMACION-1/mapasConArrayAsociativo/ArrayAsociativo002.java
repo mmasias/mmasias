@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class ArrayAsociativo002 {
+
 	final static int FILA = 0;
 	final static int COLUMNA = 1;
 
@@ -186,7 +187,5 @@ public class ArrayAsociativo002 {
 		tiles.put("_", "___");
 
 		return tiles.get("" + elemento);
-
 	}
-
 }
