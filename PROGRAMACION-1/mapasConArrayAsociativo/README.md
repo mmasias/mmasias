@@ -13,6 +13,9 @@ Versión del laberinto implementado con arrays asociativos, para contrastarlo co
 
 [Versión de partida](ArrayAsociativo001.java)
 
+![](/imagenes/ArrayAsociativoV1.png)
+
+
 ### Versión 2
 
 [Versión 2](ArrayAsociativo002.java)
