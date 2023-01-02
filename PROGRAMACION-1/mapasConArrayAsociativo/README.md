@@ -157,7 +157,13 @@ Igual que la versión 3, salvo que esta en lugar de acumular la impresión del m
 
 ### Versión 5
 
-[Hora y sol](ArrayAsociativo005.java)
+> [Hora y sol](ArrayAsociativo005.java)
+
+Implementamos el tiempo (que avanza en cada turno). En la parte inferior, un reloj (que de momento muestra solo la hora). Y un sol en la parte superior, que se mueve a lo largo del día (sale a las 6:00h, a las 12:00h está en lo alto y se oculta a las 18:00h). 
+
+<div align=center>
+    <img src="../../imagenes/ArrayAsociativoV5.png" width="50%" />
+</div>
 
 
 ### Versión 6
