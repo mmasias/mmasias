@@ -136,7 +136,6 @@ public class ArrayAsociativo001 {
 
 		imprimeMapa(castilloLB);
 		imprimeMapa(castilloEX);
-
 	}
 
 	static void imprimeMapa(String[] castillo) {
@@ -168,7 +167,5 @@ public class ArrayAsociativo001 {
 		tiles.put("%", "%%%");
 
 		return tiles.get("" + elemento);
-
 	}
-
 }
