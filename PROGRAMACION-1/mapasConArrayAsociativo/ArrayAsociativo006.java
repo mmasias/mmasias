@@ -170,6 +170,7 @@ public class ArrayAsociativo006 {
     }
 
     static void actualizarTiempo() {
+        
         hora = hora + 0.25;
         if (hora >= 24) {
             hora = 0;
@@ -182,13 +183,13 @@ public class ArrayAsociativo006 {
         alcanceVision = viewPort * 2;
 
         if (hora < 3 || hora > 21) {
-            alcanceVision = alcanceVision / 5 ;
+            alcanceVision = alcanceVision / 5;
         } else if (hora < 4 || hora > 20) {
             alcanceVision = alcanceVision / 5 * 2;
         } else if (hora < 5 || hora > 19) {
             alcanceVision = alcanceVision / 5 * 3;
         } else if (hora < 6 || hora > 18) {
-            alcanceVision = alcanceVision / 5 * 4 ;
+            alcanceVision = alcanceVision / 5 * 4;
         }
     }
 
@@ -208,9 +209,10 @@ public class ArrayAsociativo006 {
                     elemento = mapear(castillo[fila].charAt(columna));
                 }
 
-                if (!(Math.pow((personaje[FILA] - fila), 2) + Math.pow((personaje[COLUMNA] - columna), 2) <= alcanceVision * alcanceVision)) {
+                if (!(Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 2) <= alcanceVision * alcanceVision)) {
                     elemento = "   ";
                 }
+
 
                 System.out.print(elemento);
             }
@@ -303,8 +305,8 @@ public class ArrayAsociativo006 {
     static char pedirChar() {
 
         Scanner entrada = new Scanner(System.in);
-        String inputUsuario =  entrada.nextLine() + "x"; // Este es un caso que justifica un comentario!
-        return inputUsuario.charAt(0);                   // Lo comentamos en clase ;) 
+        String inputUsuario = entrada.nextLine() + "x"; // Este es un caso que justifica un comentario!
+        return inputUsuario.charAt(0); // Lo comentamos en clase ;)
     }
 
     static void limpiarPantalla() {
