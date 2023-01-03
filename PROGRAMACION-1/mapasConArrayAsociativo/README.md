@@ -27,13 +27,13 @@ Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://
 
 Ajuste en la implementación de la impresión del mapa, mediante la inclusión de un viewport, que muestra una parte del mundo centrada alrededor de un punto. En los juegos, habitualmente este punto es el personaje principal, por lo que:
 
-* Se crea una estructura de datos que almacene la posición del personaje, en la forma de un array posicionPersonaje que almacenará como primer elemento la fila y como segundo elemento la columna.
-* Se crean las constantes *FILA* y *COLUMNA* para poder referirnos de manera clara a la posición: *posicionPersonaje[FILA]* y *posicionPersonaje[COLUMNA]*. 
+* [Se crea una estructura de datos que almacene la posición del personaje](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo002.java#L141), en la forma de un array posicionPersonaje que almacenará como primer elemento la fila y como segundo elemento la columna.
+* [Se crean las constantes](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo002.java#L5-L6) *FILA* y *COLUMNA* para poder referirnos de manera clara a la posición: *posicionPersonaje[FILA]* y *posicionPersonaje[COLUMNA]*. 
 * Se modifica *imprimeMapa*:
-    * Cambio de nombre a *imprimeMundo*, más adecuado a su función dado que ya no imprime únicamente el mapa, sino que además ubica al personaje.
+    * [Cambio de nombre a *imprimeMundo*](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo002.java#L147), más adecuado a su función dado que ya no imprime únicamente el mapa, sino que además ubica al personaje.
     * Se le pasan parámetros adicionales: *posicionPersonaje* y tamaño del *viewport*.
     * Se le da la responsabilidad adicional de imprimir al personaje en la posición especificada. ```_O_```
-* Se agrega la funcion *imprimeLinea* que imprime una línea horizontal del tamaño del viewport.  
+* [Se agrega la funcion *imprimeLinea*](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo002.java#L165) que imprime una línea horizontal del tamaño del viewport.  
 
 <div align=center>
     <img src="../../imagenes/ArrayAsociativoV2.png" width="50%" />
@@ -159,7 +159,11 @@ Igual que la versión 3, salvo que esta en lugar de acumular la impresión del m
 
 > [Hora y sol](ArrayAsociativo005.java)
 
-Implementamos el tiempo (que avanza en cada turno). En la parte inferior, un reloj (que de momento muestra solo la hora). Y un sol en la parte superior, que se mueve a lo largo del día (sale a las 6:00h, a las 12:00h está en lo alto y se oculta a las 18:00h). 
+Implementamos:
+
+* [El tiempo](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo005.java#L169), que avanza en cada turno. 
+* En la parte inferior, [agregamos una barra de estado](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo005.java#L199) que muestre el reloj (que de momento muestra solo la hora) y la posición del personaje. 
+* [El cielo en la parte superior](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo005.java#L286), que muestra el sol en el día (sale a las 6:00h, a las 12:00h está en mitad del cielo y se oculta a las 18:00h).
 
 <div align=center>
     <img src="../../imagenes/ArrayAsociativoV5.png" width="50%" />
