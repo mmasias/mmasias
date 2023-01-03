@@ -174,6 +174,24 @@ Implementamos:
 
 [Versión 6](ArrayAsociativo006.java): alcance de visión en función a la hora y el sol / Corrección del "error" del método estático pedirChar() y justificación de por qué aquí sí es pertinente un comentario. 
 
+#### Alcance de visión (o, para qué sirven las matemáticas...)
+
+Teniendo en el centro al personaje P y definiendo además un alcance de visión Av, los puntos que pueden verse son los que están dentro del alcance de visión (α); mientras que las que estén fuera de este alcance (β) no. El problema entonces consiste en determinar cuáles son los puntos que están dentro y cuales fuera, lo cual puede hacerse por trigonometría: el límite es Av² (hipotenusa de un triángulo rectángulo y a la vez radio del círculo) y las coordenadas de los puntos serían la posición del punto menos la posición del personaje (α-P), tal que:
+
+
+<div align=center>
+    <img src="../../imagenes/alcanceVision.jpg" width="50%" />
+</div>
+
+Aterrizándolo a código, con las variables que manejamos, la condición de visibilidad a comprobar sería:
+
+```
+Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 2) <= alcanceVision * alcanceVision
+```
+
+Condición que se ha incluido en la función *imprimirMundo* para "apagar" los puntos que no caen dentro de este rango.
+
+
 ### Versión 7
 
 [Versión 7](ArrayAsociativo007.java): un poco de color y ajustes menores de código
