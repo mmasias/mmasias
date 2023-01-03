@@ -163,10 +163,10 @@ public class ArrayAsociativo005 {
             imprimirMundo(castilloEX, elPersonaje, viewPort);
             verAccion(elPersonaje);
         } while (jugando);
-
     }
 
     static void actualizarTiempo() {
+
         hora=hora+0.1; 
         if(hora>24){hora=0;}
     }
@@ -196,7 +196,8 @@ public class ArrayAsociativo005 {
         imprimirLinea(viewPort);
     }
 
-    private static void imprimirStatus(int[] personaje) {
+    static void imprimirStatus(int[] personaje) {
+
         System.out.println("HORA: ["+(int)hora+"] / Posicion: ("+personaje[FILA]+","+personaje[COLUMNA]+")"); 
     }
 
@@ -226,7 +227,6 @@ public class ArrayAsociativo005 {
         tiles.put("B", "===");
 
         return tiles.get("" + elemento);
-
     }
 
     static void mover(int[] unPersonaje, int direccion) {
@@ -280,6 +280,7 @@ public class ArrayAsociativo005 {
     }
 
     static void limpiarPantalla() {
+
         System.out.print("\033[H\033[2J");
     }
 
@@ -294,5 +295,4 @@ public class ArrayAsociativo005 {
 		}
         System.out.println();
 	}
-
 }

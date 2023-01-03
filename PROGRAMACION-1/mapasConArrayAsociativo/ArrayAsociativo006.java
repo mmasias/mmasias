@@ -167,7 +167,6 @@ public class ArrayAsociativo006 {
             imprimirMundo(castilloEX, elPersonaje);
             verAccion(elPersonaje);
         } while (jugando);
-
     }
 
     static void actualizarTiempo() {
@@ -191,7 +190,6 @@ public class ArrayAsociativo006 {
         } else if (hora < 6 || hora > 18) {
             alcanceVision = alcanceVision / 5 * 4 ;
         }
-
     }
 
     static void imprimirMundo(String[] castillo, int[] personaje) {
@@ -210,8 +208,7 @@ public class ArrayAsociativo006 {
                     elemento = mapear(castillo[fila].charAt(columna));
                 }
 
-                if (!(Math.pow((personaje[FILA] - fila), 2)
-                        + Math.pow((personaje[COLUMNA] - columna), 2) <= alcanceVision * alcanceVision)) {
+                if (!(Math.pow((personaje[FILA] - fila), 2) + Math.pow((personaje[COLUMNA] - columna), 2) <= alcanceVision * alcanceVision)) {
                     elemento = "   ";
                 }
 
@@ -225,8 +222,8 @@ public class ArrayAsociativo006 {
     }
 
     private static void imprimirStatus(int[] personaje) {
-        System.out
-                .println("HORA: [" + (int) hora + "] / Posicion: (" + personaje[FILA] + "," + personaje[COLUMNA] + ")");
+
+        System.out.println("HORA: [" + (int) hora + "] / Posicion: (" + personaje[FILA] + "," + personaje[COLUMNA] + ")");
     }
 
     static void imprimirLinea() {
@@ -255,7 +252,6 @@ public class ArrayAsociativo006 {
         tiles.put("B", "===");
 
         return tiles.get("" + elemento);
-
     }
 
     static void mover(int[] unPersonaje, int direccion) {
@@ -312,6 +308,7 @@ public class ArrayAsociativo006 {
     }
 
     static void limpiarPantalla() {
+
         System.out.print("\033[H\033[2J");
     }
 
@@ -326,5 +323,4 @@ public class ArrayAsociativo006 {
         }
         System.out.println();
     }
-
 }
