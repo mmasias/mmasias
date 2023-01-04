@@ -201,8 +201,8 @@ El programa no avanzaba el tiempo si únicamente se pulsaba enter. Las deliberac
 static char pedirChar() {
 
     Scanner entrada = new Scanner(System.in);
-    String inputUsuario = entrada.nextLine() + "x"; // Este es un caso que justifica un comentario!
-    return inputUsuario.charAt(0); // Lo comentamos en clase ;)
+    String inputUsuario = entrada.nextLine() + "x"; // Este es un caso sí que justifica un comentario!
+    return inputUsuario.charAt(0); 
 }
 ```
 
