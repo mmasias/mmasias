@@ -208,12 +208,18 @@ static char pedirChar() {
 
 Si el usuario no ingresa nada, el primer caracter será 'x'. Si el usuario ingresa algo, el primer caracter será precisamente lo ingresado por el usuario. Esta breve explicación sí califica como algo que deba dejarse comentado en la función.
 
-
-
-
 ### Versión 7
 
 [Versión 7](ArrayAsociativo007.java): un poco de color y ajustes menores de código
+
+#### Cómo agregamos color
+
+#### Ajustes menores de código
+
+* [Reducción de la velocidad de paso del tiempo](https://github.com/mmasias/misApuntes/blob/36983d6b1b5fa8d5ce8cede0c8fc4ba6b4707eeb/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo007.java#L174) (igual lo puedo cambiar a una constante luego)
+* *elemento* [asume un valor por defecto](https://github.com/mmasias/misApuntes/blob/36983d6b1b5fa8d5ce8cede0c8fc4ba6b4707eeb/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo007.java#L207) y solo cambia si es necesario.
+
+
 
 ### Versión 8
 
