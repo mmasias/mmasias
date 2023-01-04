@@ -260,7 +260,7 @@ public class ArrayAsociativo009 {
                     elemento = mapear(castillo[fila].charAt(columna), modoVisualizacion);
                 }
 
-                if (!(Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 2) <= alcanceVision * alcanceVision))
+                if (!(Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 2) <= alcanceVision * alcanceVision)) {
                     elemento = mapear('D', modoVisualizacion);
                 }
 
