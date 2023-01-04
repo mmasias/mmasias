@@ -212,6 +212,10 @@ Si el usuario no ingresa nada, el primer caracter será 'x'. Si el usuario ingre
 
 [Versión 7](ArrayAsociativo007.java): un poco de color y ajustes menores de código
 
+<div align=center>
+    <img src="../../imagenes/ArrayAsociativoV7.png" width="50%" />
+</div>
+
 #### Cómo agregamos color
 
 #### Ajustes menores de código
