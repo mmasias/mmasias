@@ -191,6 +191,25 @@ Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 
 
 Condición que se ha incluido en la función *imprimirMundo* para "apagar" los puntos que no caen dentro de este rango.
 
+#### Corrección de pedirChar()
+
+El programa no avanzaba el tiempo si únicamente se pulsaba enter. Las deliberaciones técnicas (que incluyen un debate que abordaba la identificación de un salto de línea, retorno de carro, dependencia de la plataforma, etc.) pueden ser excesivas para este documento: si me da el tiempo las extiendo en otro readme. 
+
+¡Pero! El tema se ha resuelto construyendo un string conformado por lo que ingresa el usuario y un carácter cualquiera ('x' en este caso) y capturando el primer caracter. 
+
+```
+static char pedirChar() {
+
+    Scanner entrada = new Scanner(System.in);
+    String inputUsuario = entrada.nextLine() + "x"; // Este es un caso que justifica un comentario!
+    return inputUsuario.charAt(0); // Lo comentamos en clase ;)
+}
+```
+
+Si el usuario no ingresa nada, el primer caracter será 'x'. Si el usuario ingresa algo, el primer caracter será precisamente lo ingresado por el usuario. Esta breve explicación sí califica como algo que deba dejarse comentado en la función.
+
+
+
 
 ### Versión 7
 

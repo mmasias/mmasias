@@ -257,7 +257,7 @@ public class ArrayAsociativo005 {
     }
 
     static int capturarMovimiento() {
-
+        System.out.println("CM");
         switch (pedirChar()) {
             case 's', 'S', '8':
                 return ABAJO;
@@ -276,7 +276,7 @@ public class ArrayAsociativo005 {
     static char pedirChar() {
 
         Scanner entrada = new Scanner(System.in);
-        return entrada.next().charAt(0);
+        return entrada.nextLine().charAt(0);
     }
 
     static void limpiarPantalla() {

@@ -209,7 +209,7 @@ public class ArrayAsociativo007 {
                     elemento = mapear(castillo[fila].charAt(columna));
                 }
 
-                if (!(Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 2) <= alcanceVision * alcanceVision))
+                if (!(Math.pow((fila - personaje[FILA]), 2)+ Math.pow((columna - personaje[COLUMNA]), 2) <= alcanceVision * alcanceVision)){
                     elemento = "   ";
                 }
 
@@ -306,7 +306,7 @@ public class ArrayAsociativo007 {
     static char pedirChar() {
 
         Scanner entrada = new Scanner(System.in);
-        String inputUsuario =  entrada.nextLine() + "x"; // Este es un caso que justifica un comentario!
+        String inputUsuario =  entrada.nextLine() + " "; // Este es un caso que justifica un comentario!
         return inputUsuario.charAt(0);                   // Lo comentamos en clase ;) 
     }
 
