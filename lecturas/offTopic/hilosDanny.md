@@ -11,3 +11,4 @@
 - [Receta de macarrones](https://twitter.com/DaniNovarama/status/1544232539610615810)
 - [Hábitos II](https://twitter.com/DaniNovarama/status/1543860205473222656)
 - [Negociación](https://twitter.com/DaniNovarama/status/1542776558041055233)
+- Éxitos y [fracasos](https://twitter.com/DaniNovarama/status/1610555924527079424) tecnológicos de 2022
