@@ -10,14 +10,14 @@ Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://
 
 ## Versiones
 
-|Versión|Detalle
-|-|-
-|[Versión 1](docs/version1.md)|Mapas en arrays de String y parseo de mosaicos (en ASCII) utilizando un array asociativo
-|[Versión 2](docs/version2.md)|Un viewport de 7x7 centrado en el personaje
-|[Versión 3](docs/version3.md)|Permitimos mover al personaje (w/a/s/d o 8/4/6/2)
-|[Versión 4](docs/version4.md)|Códigos ANSI I: limpiar pantalla
-|[Versión 5](docs/version5.md)|Tiempo, un reloj y el sol en el cielo (moviéndose en función al tiempo)
-|[Versión 6](docs/version6.md)|Dia y noche, de acuerdo a la hora
-|[Versión 7](docs/version7.md)|Códigos ANSI II: ¡colores!
-|[Versión 8](docs/version8.md)|Protección en los límites del mapa y otros pequeños ajustes
-|[Versión 9](docs/version9.md)|Definición de zonas infranqueables (paredes, agua, etc). Y temas ;)
+|Versión|Código fuente|Resumen
+|-|-|-
+|[Versión 1](docs/version1.md)|[:scroll:](ArrayAsociativo001.java)|Mapas en arrays de String y parseo de mosaicos (en ASCII) utilizando un array asociativo
+|[Versión 2](docs/version2.md)|[:scroll:](ArrayAsociativo002.java)|Un viewport de 7x7 centrado en el personaje
+|[Versión 3](docs/version3.md)|[:scroll:](ArrayAsociativo003.java)|Permitimos mover al personaje (w/a/s/d o 8/4/6/2)
+|[Versión 4](docs/version4.md)|[:scroll:](ArrayAsociativo004.java)|Códigos ANSI I: limpiar pantalla
+|[Versión 5](docs/version5.md)|[:scroll:](ArrayAsociativo005.java)|Tiempo, un reloj y el sol en el cielo (moviéndose en función al tiempo)
+|[Versión 6](docs/version6.md)|[:scroll:](ArrayAsociativo006.java)|Dia y noche, de acuerdo a la hora
+|[Versión 7](docs/version7.md)|[:scroll:](ArrayAsociativo007.java)|Códigos ANSI II: ¡colores!
+|[Versión 8](docs/version8.md)|[:scroll:](ArrayAsociativo008.java)|Protección en los límites del mapa y otros pequeños ajustes
+|[Versión 9](docs/version9.md)|[:scroll:](ArrayAsociativo009.java)|Definición de zonas infranqueables (paredes, agua, etc). Y temas ;)
