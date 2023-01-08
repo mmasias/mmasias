@@ -1,6 +1,6 @@
 # Versión 2: viewport de 7x7 centrado en el personaje
 
-> [Versión 2](ArrayAsociativo002.java)
+> [Versión 2](../ArrayAsociativo002.java)
 
 Ajuste en la implementación de la impresión del mapa, mediante la inclusión de un viewport, que muestra una parte del mundo centrada alrededor de un punto. En los juegos, habitualmente este punto es el personaje principal, por lo que:
 

@@ -1,6 +1,6 @@
 # Versión 5: tiempo, un reloj y el sol en el cielo (moviéndose en función al tiempo)
 
-> [Hora y sol](ArrayAsociativo005.java)
+> [Hora y sol](../ArrayAsociativo005.java)
 
 Implementamos:
 

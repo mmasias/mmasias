@@ -1,6 +1,6 @@
 # Versión 9: temas y colisiones
 
-> [Versión 9](ArrayAsociativo009.java): Opción de temas (se activa con la letra **v**), como ayuda para el desarrollo de la detección de por dónde puede y no puede caminar. 
+> [Versión 9](../ArrayAsociativo009.java): Opción de temas (se activa con la letra **v**), como ayuda para el desarrollo de la detección de por dónde puede y no puede caminar. 
 
 |Tema 0|Tema 1|Tema 2|Tema 3
 |-|-|-|-

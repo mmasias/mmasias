@@ -1,6 +1,6 @@
 # Versión 8: límites en los bordes del mapa
 
-> [Límites en los bordes](ArrayAsociativo008.java)
+> [Límites en los bordes](../ArrayAsociativo008.java)
 
 ## Definir límites al mapa
 

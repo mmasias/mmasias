@@ -1,6 +1,6 @@
 # Versión 6: día y noche en función de la hora
 
-> [Dia y noche](ArrayAsociativo006.java): iluminación y alcance de visión en función a la hora y el sol / Corrección del "error" del método estático pedirChar() y justificación de por qué aquí sí es pertinente un comentario. 
+> [Dia y noche](../ArrayAsociativo006.java): iluminación y alcance de visión en función a la hora y el sol / Corrección del "error" del método estático pedirChar() y justificación de por qué aquí sí es pertinente un comentario. 
 
 ## Alcance de visión (o para qué sirven las matemáticas...)
 

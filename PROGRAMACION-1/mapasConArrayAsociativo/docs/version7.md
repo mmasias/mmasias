@@ -1,6 +1,6 @@
 # Versión 7: Color mediante códigos ANSI
 
-> [Color](ArrayAsociativo007.java): un poco de color y ajustes menores de código.
+> [Color](../ArrayAsociativo007.java): un poco de color y ajustes menores de código.
 
 <div align=center>
     <img src="../../../imagenes/ArrayAsociativoV7.png" width="50%" />

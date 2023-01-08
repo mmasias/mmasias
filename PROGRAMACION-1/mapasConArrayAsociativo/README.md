@@ -10,6 +10,8 @@ Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://
 
 ## Versiones
 
+<div align="center">
+
 |Versión|.java|Resumen
 |-|:-:|-
 |[Versión 1](docs/version1.md)|[:scroll:](ArrayAsociativo001.java)|Mapas en arrays de String y parseo de mosaicos (en ASCII) utilizando un array asociativo
@@ -21,3 +23,5 @@ Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://
 |[Versión 7](docs/version7.md)|[:scroll:](ArrayAsociativo007.java)|Códigos ANSI II: ¡colores!
 |[Versión 8](docs/version8.md)|[:scroll:](ArrayAsociativo008.java)|Protección en los límites del mapa y otros pequeños ajustes
 |[Versión 9](docs/version9.md)|[:scroll:](ArrayAsociativo009.java)|Definición de zonas infranqueables (paredes, agua, etc). Y temas ;)
+
+</div>

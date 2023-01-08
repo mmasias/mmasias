@@ -1,6 +1,6 @@
 # Versión 3: permitimos mover al personaje (w/a/s/d o 8/4/6/2)
 
-> [Versión 3](ArrayAsociativo003.java)
+> [Versión 3](../ArrayAsociativo003.java)
 
 Partimos de la premisa que hemos abstraido a nuestro personaje y el dato que nos interesa de él, **la posición**, en el vector posicionPersonaje, de modo que *fila=5, columna=3* queda almacenada así:
 
