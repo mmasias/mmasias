@@ -1,4 +1,4 @@
-class ZzzPrueba {
+class ZZZExperimentosConMatrices {
 
     static int[] primerArray = {1,2,3,4};
     static int[] segundoArray = {5,6,7,8};
