@@ -10,8 +10,8 @@ Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://
 
 ## Versiones
 
-|Versión|Código fuente|Resumen
-|-|-|-
+|Versión|.java|Resumen
+|-|:-:|-
 |[Versión 1](docs/version1.md)|[:scroll:](ArrayAsociativo001.java)|Mapas en arrays de String y parseo de mosaicos (en ASCII) utilizando un array asociativo
 |[Versión 2](docs/version2.md)|[:scroll:](ArrayAsociativo002.java)|Un viewport de 7x7 centrado en el personaje
 |[Versión 3](docs/version3.md)|[:scroll:](ArrayAsociativo003.java)|Permitimos mover al personaje (w/a/s/d o 8/4/6/2)
