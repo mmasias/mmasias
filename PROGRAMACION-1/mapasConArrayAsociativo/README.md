@@ -1,5 +1,5 @@
 
-![](/imagenes/mapa.mp4)
+![](/imagenes/ArrayAsociativoV9SKIN0.png)
 
 Versión del laberinto implementado con arrays de string y parseo mediante arrays asociativos, para contrastarlo con la solución que habitualmente he implementado con arrays de enteros. Y vale: he usado switch/case...
 
