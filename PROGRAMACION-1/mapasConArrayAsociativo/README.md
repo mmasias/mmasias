@@ -1,9 +1,14 @@
 
-![](/imagenes/ArrayAsociativoV9SKIN0.png)
 
-Versión del laberinto implementado con arrays de string y parseo mediante arrays asociativos, para contrastarlo con la solución que habitualmente he implementado con arrays de enteros. Y vale: he usado switch/case...
+<div align=center>
 
-Se utilizan como inspiracióin los mapas del [Castillo de Lord British](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/british.html) y el del [Castillo de Timelord](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/time.html), de [Ultima III: Exodus](https://es.wikipedia.org/wiki/Ultima_III:_Exodus)
+| &nbsp; | &nbsp; 
+|-|-
+|Versión del laberinto implementado con arrays de string y parseo mediante arrays asociativos, para contrastarlo con la solución que habitualmente he implementado con arrays de enteros.<br/><br/>Se utilizan como inspiración los mapas del [Castillo de Lord British](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/british.html) y el del [Castillo de Timelord](https://userpages.monmouth.com/~colonel/videogames/ultimaexodus/time.html), de [Ultima III: Exodus](https://es.wikipedia.org/wiki/Ultima_III:_Exodus).<br/><br/>Y vale, lo admito: he usado *switch/case*... | <img src="../../imagenes/ArrayAsociativoV9SKIN0.png"/>
+
+</div>
+
+
 
 ## Restricciones autoimpuestas
 
