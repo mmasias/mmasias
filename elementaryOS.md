@@ -76,3 +76,17 @@ sudo vi /etc/cups/printers.conf
 # Editar la IP
 sudo systemctl restart cups
 ```
+
+### Instalar oh-my-posh
+
+```
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.omp.*
+rm ~/.poshthemes/themes.zip
+
+oh-my-posh font install // e instalar MeslLGSDZ Ners font mono bold
+```
