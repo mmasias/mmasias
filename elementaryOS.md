@@ -90,3 +90,9 @@ rm ~/.poshthemes/themes.zip
 
 oh-my-posh font install // e instalar MeslLGSDZ Ners font mono bold
 ```
+
+Tema: nordtron
+<img width="434" alt="image" src="https://user-images.githubusercontent.com/8528047/215170894-5f288539-7a31-45c2-b4fb-bd557a14e3b5.png">
+
+
+
