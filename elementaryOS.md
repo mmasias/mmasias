@@ -82,6 +82,9 @@ sudo vi /etc/cups/printers.conf
 sudo systemctl restart cups
 ```
 
+> #notaMental: 213, iR-ADV C5235/5240 UFR II
+
+
 ### Instalar oh-my-posh
 
 ```
