@@ -43,6 +43,9 @@ sudo apt install openjdk-17-jdk-headless
 ```
 sudo apt install graphviz
 ```
+## Instalar Visual Studio Code
+
+[Link](https://code.visualstudio.com/)
 
 
 ## Instalar Spotify
