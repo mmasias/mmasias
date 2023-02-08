@@ -12,6 +12,10 @@ sudo apt install google-chrome-stable
 
 ```
 sudo apt install git
+
+git config --global user.name "mmasias"
+git config --global user.email "manuel@masiasweb.com"
+
 ```
 
 ## Instalar gdebi
