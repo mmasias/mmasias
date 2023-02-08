@@ -1,4 +1,6 @@
 
+TsP / TpR: 20 min / 7 min
+
 ## Instalar Chrome
 
 ``` 
