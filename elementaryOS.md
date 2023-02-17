@@ -96,16 +96,21 @@ unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
 chmod u+rw ~/.poshthemes/*.omp.*
 rm ~/.poshthemes/themes.zip
 
-sudo oh-my-posh font install // e instalar MeslLGSDZ Ners font mono bold
 ```
+
+1. Download a [Nerd Font](http://nerdfonts.com/)
+1. Unzip and copy to ```~/.fonts```
+1. Run the command ```fc-cache -fv``` to manually rebuild the font cache
+
 
 > #notaMental: el tipo de letra se ajusta en los elementaryTweaks
 
 Tema: nordtron
+
 <img width="434" alt="image" src="https://user-images.githubusercontent.com/8528047/215170894-5f288539-7a31-45c2-b4fb-bd557a14e3b5.png">
 
 En ```.bashrc```
 ```
-eval "$(oh-my-posh init bash --config /home/mmasias/.poshthemes/jandedobbeleer.omp.json)"
+eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
 ```
 
