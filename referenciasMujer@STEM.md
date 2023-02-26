@@ -22,6 +22,10 @@ Su enfoque del diseño de software fue pionero para la época, ya que los requis
 
 ### Un dato
 
+Según las estadísticas revisadas de la Secretaría General de Universidades, en España hay 65.5265 personas estudiando Ingeniería Informática, un 16% mujeres, que en los últimos años ha tenido una evolución ascendente, con un incremento del 34,6%. El crecimiento es particularmente relevante en los estudios de post grado, con aumentos del 69,3% en el caso de los máster y del 52,4% en el caso de estudios de doctorado.
+
+Fuente: [IV edición del estudio anual de Empleabilidad y Talento Digital](https://www.fundacionvass.org/wp-content/uploads/2022/06/Informe-Empleabilidad-Talento-Digital_-Web-comprimida-1.pdf) de la [Fundación VASS](https://www.fundacionvass.org/investigacion/), página 55.
+
 ## Ingeniería de las industrias agrarias y alimentarias
 
 ### Una persona: Isabel Torán Carre
