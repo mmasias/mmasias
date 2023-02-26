@@ -1,4 +1,6 @@
 
+TsP / TpR: 20 min / 7 min
+
 ## Instalar Chrome
 
 ``` 
@@ -12,6 +14,10 @@ sudo apt install google-chrome-stable
 
 ```
 sudo apt install git
+
+git config --global user.name "mmasias"
+git config --global user.email "manuel@masiasweb.com"
+
 ```
 
 ## Instalar gdebi
@@ -37,15 +43,14 @@ sudo apt install openjdk-17-jdk-headless
 ```
 sudo apt install graphviz
 ```
+## Instalar Visual Studio Code
+
+[Link](https://code.visualstudio.com/)
 
 
 ## Instalar Spotify
 
-```
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client
-```
+[Link](https://www.spotify.com/es/download/linux/)
 
 ## Instalar VLC
 
@@ -76,3 +81,36 @@ sudo vi /etc/cups/printers.conf
 # Editar la IP
 sudo systemctl restart cups
 ```
+
+> #notaMental: 213, iR-ADV C5235/5240 UFR II
+
+
+### Instalar oh-my-posh
+
+```
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.omp.*
+rm ~/.poshthemes/themes.zip
+
+```
+
+1. Download a [Nerd Font](http://nerdfonts.com/)
+1. Unzip and copy to ```~/.fonts```
+1. Run the command ```fc-cache -fv``` to manually rebuild the font cache
+
+
+> #notaMental: el tipo de letra se ajusta en los elementaryTweaks
+
+Tema: nordtron
+
+<img width="434" alt="image" src="https://user-images.githubusercontent.com/8528047/215170894-5f288539-7a31-45c2-b4fb-bd557a14e3b5.png">
+
+En ```.bashrc```
+```
+eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
+```
+
