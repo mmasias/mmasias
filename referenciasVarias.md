@@ -3,11 +3,12 @@
 Aquí, en desorden, ideas que voy pillando y que utilizaré en diversos documentos/presentaciones/clases/charlas
 
 ## Generales
+
 - [Prompt engineering](https://www.saxifrage.xyz/post/prompt-engineering): *el arte de dar instrucciones a grandes modelos lingüísticos de tal manera que ofrezca los mejores resultados*
 - [Techno panic timeline](/imagenes/technopanic-timeline.png) (#notaMental: comprar [el libro](https://www.amazon.com/Bad-You-Exposing-War-Fun/dp/0805092897))
 - [Tierra no-plana, historia de USA, origen de término "lotes"](https://twitter.com/giraldeo/status/1608871794475429888)
 - [Cómo enseñarle a los niños a hackear](https://www.microsiervos.com/archivo/hackers/como-ensenar-a-los-ninos-a-hackear.html)
--  [Mapa de todo el internet, 1973](/imagenes/mapaInternet_1973.jpg)
+- [Mapa de todo el internet, 1973](/imagenes/mapaInternet_1973.jpg)
 - [Why Everything Looks the Same](https://medium.com/knowable/why-everything-looks-the-same-bad80133dd6e)
 - [Ley de la trivialidad](https://es.wikipedia.org/wiki/Ley_de_Parkinson_de_la_trivialidad): las organizaciones dan un peso desproporcionado a asuntos triviales.
 - Manifiesto Cluetrain [Link](https://personal.us.es/mbmarquez/textos/cluetrain.pdf)
@@ -27,7 +28,7 @@ Aquí, en desorden, ideas que voy pillando y que utilizaré en diversos document
 - [Dilema del prisionero](https://es.wikipedia.org/wiki/Dilema_del_prisionero) y [Alegoría de las cucharas largas](https://es.wikipedia.org/wiki/Alegor%C3%ADa_de_las_cucharas_largas) / [En un examen...](https://www.microsiervos.com/archivo/ciencia/profesor-dilema-del-prisionero.html)
 - 
 
-## 2Do...
+## 2Do
 
 - Ejemplo del director de orquesta #xPulir
 - Problemas de exámenes para explicar Análisis y Diseño (Fecha prevista: curso 22-23)
