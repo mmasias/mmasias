@@ -45,21 +45,13 @@ gitGraph
 </td></tr></table>
 </div>
   
-
-
-## Grosor de líneas
-
-```mermaid
-flowchart LR
- a ---> b
- c ===> d
- e -.- f
-
-```
-
 ## User journey
 
-```mermaid
+<div align=center>
+
+<table><tr><td>
+
+```
 journey
     title My working day
     section Go to work
@@ -70,9 +62,39 @@ journey
       Go downstairs: 5: Me
       Sit down: 5: Me
 ```
+</td><td>
+  
+```mermaid
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+
+```
+</td></tr></table>
+</div>
 
 ## "Quesitos"
 
+<div align=center>
+
+<table><tr><td>
+
+```
+pie showData
+    title Key elements in Product X
+    "Calcium" : 42.96
+    "Potassium" : 50.05
+    "Magnesium" : 10.01
+    "Iron" :  5
+```
+</td><td>
+  
 ```mermaid
 pie showData
     title Key elements in Product X
@@ -81,7 +103,8 @@ pie showData
     "Magnesium" : 10.01
     "Iron" :  5
 ```
-
+</td></tr></table>
+</div>
 
 ## Característica
 
@@ -89,11 +112,11 @@ pie showData
 
 <table><tr><td>
 
-```mermaid
+```
 ```
 </td><td>
   
-```
+```mermaid
 ```
 </td></tr></table>
 </div>
