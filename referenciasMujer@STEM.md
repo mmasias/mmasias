@@ -30,7 +30,7 @@ La primera alumna de la Escuela y la primera mujer que se graduó como ingeniero
 
 |||
 -|-
-*Creo que el papel de la mujer en la cultura moderna no es imitar las actividades del hombre, sino crear otras nuevas, específicamente femeninas. En nuestra carrera tiene la mujer grandes horizontes, principalmente en la experimentación, que yo creo es lo más apropiado a sus aptitudes.*|![](https://ingenieroarrue.files.wordpress.com/2021/01/isabel-toran_48379384326_o.jpg)
+*Creo que el papel de la mujer en la cultura moderna no es imitar las actividades del hombre, sino crear otras nuevas, específicamente femeninas. En nuestra carrera tiene la mujer grandes horizontes, principalmente en la experimentación, que yo creo es lo más apropiado a sus aptitudes.*|<a data-flickr-embed="true" href="https://www.flickr.com/photos/etsiaab/48379384326/in/album-72157709895559282/" title="Isabel Toran"><img src="https://live.staticflickr.com/65535/48379384326_19aed90a70_n.jpg" width="320" height="277" alt="Isabel Toran"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 
 Fuentes: [Blog](https://jaeinnova.wordpress.com/2021/09/05/isabel-toran-carre-y-otros-alumnos-de-la-escuela-superior-de-ingenieros-agronomos-en-el-curso-1935-1936/), [Blog ingeniero Arrue](https://ingenieroarrue.wordpress.com/2021/01/29/mujeres-en-la-escuela-de-agronomos-las-pioneras/)
