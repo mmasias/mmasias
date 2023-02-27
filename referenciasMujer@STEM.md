@@ -14,9 +14,9 @@ Acuñó el término «ingeniería de software» para distinguir entre el trabajo
 
 Su enfoque del diseño de software fue pionero para la época, ya que los requisitos de robustez y tolerancia a fallos eran una prioridad para la seguridad y supervivencia de los astronautas durante los viajes a la Luna.
 
-|||
+|![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Margaret_Hamilton_-_restoration.jpg/800px-Margaret_Hamilton_-_restoration.jpg)|![](https://www.lego.com/cdn/cs/set/assets/blt138c3236c6261f91/21312_alt2.jpg)|
 :-:|:-:
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Margaret_Hamilton_-_restoration.jpg/800px-Margaret_Hamilton_-_restoration.jpg) Hamilton con el código del software de navegación del Apolo impreso en doce libros.|![](https://www.lego.com/cdn/cs/set/assets/blt138c3236c6261f91/21312_alt2.jpg)Homenaje de LEGO a la figura de Margaret Hamilton
+Hamilton con el código del software de navegación del Apolo impreso en doce libros.|Homenaje de LEGO a la figura de Margaret Hamilton
 
 ***Fuente:*** [Wikipedia](https://es.wikipedia.org/wiki/Margaret_Hamilton_(cient%C3%ADfica)), [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Margaret_Hamilton_-_restoration.jpg/800px-Margaret_Hamilton_-_restoration.jpg), [Sitio web de LEGO](https://www.lego.com/es-us/product/women-of-nasa-21312#blt138c3236c6261f91)
 
@@ -32,10 +32,8 @@ Fuente: [IV edición del estudio anual de Empleabilidad y Talento Digital](https
 
 La primera alumna de la Escuela y la primera mujer que se graduó como ingeniero agrónomo en España, fue Isabel Torán Carre. Nacida en Madrid, el 4 de enero de 1914, de familia originaria de Teruel, era hija del ingeniero de Caminos, Dámaso Torán Garzarán. Prima de José Torán de la Rad, también ingeniero de Caminos y alcalde de Teruel, era tía segunda, aunque de la misma edad, del que fue muy conocido ingeniero de Caminos José Torán Peláez. Isabel Torán se graduó en 1939. 
 
-|||
--|-
 *Creo que el papel de la mujer en la cultura moderna no es imitar las actividades del hombre, sino crear otras nuevas, específicamente femeninas. En nuestra carrera tiene la mujer grandes horizontes, principalmente en la experimentación, que yo creo es lo más apropiado a sus aptitudes.*|![](https://live.staticflickr.com/65535/48379384326_19aed90a70_n.jpg)<br />Foto: [Archivo histórico de la ETS de la UPM](https://www.flickr.com/photos/etsiaab/albums/72157709895559282/with/48379384326/)
-
+-|-
 
 Fuentes: [Blog](https://jaeinnova.wordpress.com/2021/09/05/isabel-toran-carre-y-otros-alumnos-de-la-escuela-superior-de-ingenieros-agronomos-en-el-curso-1935-1936/), [Blog ingeniero Arrue](https://ingenieroarrue.wordpress.com/2021/01/29/mujeres-en-la-escuela-de-agronomos-las-pioneras/)
 
