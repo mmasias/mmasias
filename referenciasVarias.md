@@ -4,6 +4,7 @@ Aquí, en desorden, ideas que voy pillando y que utilizaré en diversos document
 
 ## Generales
 
+- Preguntar para obtener buenos requisitos: [ejemplo](https://twitter.com/mmasias/status/1631937132494200832)
 - [Prompt engineering](https://www.saxifrage.xyz/post/prompt-engineering): *el arte de dar instrucciones a grandes modelos lingüísticos de tal manera que ofrezca los mejores resultados*
 - [Techno panic timeline](/imagenes/technopanic-timeline.png) (#notaMental: comprar [el libro](https://www.amazon.com/Bad-You-Exposing-War-Fun/dp/0805092897))
 - [Tierra no-plana, historia de USA, origen de término "lotes"](https://twitter.com/giraldeo/status/1608871794475429888)
