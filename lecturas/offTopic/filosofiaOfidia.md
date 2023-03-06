@@ -9,7 +9,7 @@
 |CAOS|sin|ORDEN|=|DESEQUILIBRIO
 -|-|-|-|-
 **TOLERANCIA**|sin|**ÉTICA**|=|**ANARQUIA**<br />Una falta de estándares de conducta
-**ENTUSIASMO**|sin|DISCIPLINA|=|**LIBERTINAJE**<br />Actuar sin autocontrol
+**ENTUSIASMO**|sin|**DISCIPLINA**|=|**LIBERTINAJE**<br />Actuar sin autocontrol
 **EMOCIÓN**|sin|**LÓGICA**|=|**LOCURA**<br/>Una incapacidad para superar los impulsos emocionales con pensamientos racionales
 
 ---
