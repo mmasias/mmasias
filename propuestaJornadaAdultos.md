@@ -17,7 +17,7 @@ Seguridad en línea|Medidas de seguridad más importantes a tener en cuenta al n
 
 |Actividades|Ordenador|Tablet|Móvil|Asistente Virtual|
 -|:-:|:-:|:-:|:-:|
-Noticias | [ ] | [ ] | [ ] | [ ] 
+Noticias | - [ ] | [ ] | [ ] | [ ] 
 Hablar con mis amigos | [ ] | [ ] | [ ] | [ ] 
 El tiempo | [ ] | [ ] | [ ] | [ ] 
 El supermercado | [ ] | [ ] | [ ] | [ ] 
