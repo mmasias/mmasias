@@ -1,6 +1,6 @@
 # Unas breves palabras acerca de un esquema
 
-A menudo, para impartir un tema lo esquematizo dividiendo y presentando los conceptos como respuestas a las preguntas "¿Por qué?", "¿Qué?", "¿Para qué?" y "¿Cómo?". 
+A menudo, para impartir un tema lo esquematizo dividiendo y presentando los conceptos como respuestas a las preguntas "¿Por qué?", "¿Qué?", "¿Para qué?" y "¿Cómo?".
 
 Esta aproximación aborda diferentes aspectos clave del aprendizaje y la comprensión:
 
