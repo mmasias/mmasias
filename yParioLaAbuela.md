@@ -106,7 +106,7 @@ pie showData
 </td></tr></table>
 </div>
 
-## Característica
+## PlantillaParaAgregarUnaCaracterística
 
 <div align=center>
 
