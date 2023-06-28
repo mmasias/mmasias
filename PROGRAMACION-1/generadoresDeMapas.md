@@ -27,3 +27,7 @@ Link: **[aquí](https://docs.google.com/spreadsheets/d/1wgDUYuLw5eu9Ri_1ppY6vDm5
 Link a web de [noTimeToPlay](https://notimetoplay.org/engines/ascii-mapper/index.html)
 
 ![](https://notimetoplay.org/engines/ascii-mapper/ascii-mapper-20190816.png)
+
+### Fuente de mapas
+
+[Página con mapas de Ultima III](https://web.archive.org/web/20100831051524/http://userpages.monmouth.com/~colonel/videogames/ultimaexodus/index.html).
