@@ -1,68 +1,38 @@
-                            SIM CITY
-INTRODUCTION
+# SIM CITY
 
-FOREWORD:
-Enter Simcity and take control. Be the undisputed ruler of a sophisticated
-real-time City simulation. Become the master of existing cities such as
-San Francisco, Tokyo, and Rio de Janeiro, or create your own dream city
-(or dream slum) from the ground up.
+## INTRODUCTION
 
-Whether you take over an existing city or build your own, you are the Mayor
-and City Planner with complete authority.
+### FOREWORD:
 
-Your city is populated by Sims - Simulated citizens. Like their human
-counterparts, they build houses, condos, churches, stores and factories.
-And, also like humans, they complain about things like taxes, mayors, taxes,
-city planners, and taxes. If they get too unhappy, they move out; you
-collect less taxes, the city deteriorates.
+Enter Simcity and take control. Be the undisputed ruler of a sophisticated real-time City simulation. Become the master of existing cities such as San Francisco, Tokyo, and Rio de Janeiro, or create your own dream city (or dream slum) from the ground up.
 
-The next few sections will explain the overall concept of simcity and give
-information that will help you win Scenarios and design and build better
-cities.
+Whether you take over an existing city or build your own, you are the Mayor and City Planner with complete authority.
 
-ABOUT SYSTEM SIMULATIONS:
-Simcity is the first of a new type of entertainment/education software,
-called SYSTEM SIMULATIONS. We provide you with a set of RULES and TOOLS
-that describe, create and control a system. In the case of Simcity, the
-system is a city.
+Your city is populated by Sims - Simulated citizens. Like their human counterparts, they build houses, condos, churches, stores and factories. And, also like humans, they complain about things like taxes, mayors, taxes, city planners, and taxes. If they get too unhappy, they move out; you collect less taxes, the city deteriorates.
 
-The challenge of playing a SYSTEM SIMULATION game is to figure out how the
-system works and take control of it. As master of the game, you are free
-to use the TOOLS to create and control an unlimited number of systems (in
-this case, cities) within the framework and limits provided by the RULES.
+The next few sections will explain the overall concept of simcity and give information that will help you win Scenarios and design and build better cities.
 
-In Simcity, the RULES to learn are based on city planning and management,
-including:
-        Human factors - residential space and amenities, availability of
-                        jobs, and quality of life;
-        Economic factors - land value, industrial and commercial space,
-                           unemployment, internal and external markets,
-                           electric power, taxation, and funding for city
-                           services;
-        Survival factors - strategies for dealing with disasters, crime,
-                           and pollution;
-        Political factors - public opinion, zoning, and keeping residents
-                            and businesses satisfied with your city and
-                            your performance;
+### ABOUT SYSTEM SIMULATIONS:
 
-The TOOLS provide you with the ability to plan, layout, zone, build,
-bulldoze, rezone, and manage a city.
+Simcity is the first of a new type of entertainment/education software, called SYSTEM SIMULATIONS. We provide you with a set of RULES and TOOLS that describe, create and control a system. In the case of Simcity, the system is a city.
 
-Plan - Mapping systems give physical and demographic overviews of the
-       entire city.
-Layout - Design living and working areas, road and transit systems, and
-         recreational areas.
-Zone - Set zoning boundaries for parks, residential, commercial and
-       industrial areas.
-Build - Place roads, rails, airports, sea ports, fire and police stations,
-        sports stadiums, and power plants.
-Bulldoze - Clear forests for city growth, build landfill along waterways,
-           clear and rezone developed areas.
-Manage - Using the mapping and graphing systems, gather up-to-date
-         information on traffic density, population trends, power grid
-         status, pollution, crime, land value, police and fire department
-         efficiency, and cash flow. Set the tax rate and funding levels for
-         city services.
+The challenge of playing a SYSTEM SIMULATION game is to figure out how the system works and take control of it. As master of the game, you are free to use the TOOLS to create and control an unlimited number of systems (in this case, cities) within the framework and limits provided by the RULES.
+
+In Simcity, the RULES to learn are based on city planning and management, including:
+
+- Human factors - residential space and amenities, availability of jobs, and quality of life;
+- Economic factors - land value, industrial and commercial space, unemployment, internal and external markets, electric power, taxation, and funding for city services;
+- Survival factors - strategies for dealing with disasters, crime, and pollution;
+- Political factors - public opinion, zoning, and keeping residents and businesses satisfied with your city and your performance;
+
+The TOOLS provide you with the ability to plan, layout, zone, build, bulldoze, rezone, and manage a city.
+
+- Plan - Mapping systems give physical and demographic overviews of the entire city.
+- Layout - Design living and working areas, road and transit systems, and recreational areas.
+- Zone - Set zoning boundaries for parks, residential, commercial and industrial areas.
+- Build - Place roads, rails, airports, sea ports, fire and police stations, sports stadiums, and power plants.
+- Bulldoze - Clear forests for city growth, build landfill along waterways, clear and rezone developed areas.
+- Manage - Using the mapping and graphing systems, gather up-to-date information on traffic density, population trends, power grid status, pollution, crime, land value, police and fire department efficiency, and cash flow. Set the tax rate and funding levels for city services.
 
 But the most important TOOL of all is the simulator itself. Test your plans
 and ideas as you watch the city grow or shrink through the immigration and
@@ -100,7 +70,7 @@ As long as your city can provide places for people to live, work, shop, and
 play, it will attract residents. And as long as traffic, pollution,
 overcrowding, crime or taxes don't drive them away, your city will live.
 
-GETTING STARTED
+## GETTING STARTED
 
 SIMULATOR REACTION TIME:
 The simulator is a very complex multi-tasking piece of software. It is
@@ -269,7 +239,7 @@ function. Inside simcity explains the inner workings of the simulator, and
 gives some hints & tips for using it. There is also an essay on the History
 of Cities and City Planning, and a Bibliography for serious City Planners.
 
-USER REFERENCE
+## USER REFERENCE
 
 MENUS
 Simcity Menus follow the standard Amiga interface.Use the RIGHT mouse button
