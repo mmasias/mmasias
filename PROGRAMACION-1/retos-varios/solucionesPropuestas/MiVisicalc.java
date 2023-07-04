@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 class MiVisicalc {
 
@@ -20,28 +20,20 @@ class MiVisicalc {
 			{ 0, 1 }
 	};
 
+	static String unaCelda = "";
+
 	public static void main(String[] args){
 		
+		String unaCelda = "";
 		String hojaDeCalculo[][] = {
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""},
-			{"", "", "", "", "", "", "", "", "", ""}
+			{"","","","","","","","","",""},
+			{"","","","","","","","","",""},
+			{"","","","","","","","","",""},
+			{"","","","","","","","","",""},
+			{"","","","","","","","","",""}
 		};
 		
 		int[] elCursor = { 0, 0 };
-		String orden;
 		
 		do {
 			imprimir(hojaDeCalculo, elCursor);
@@ -69,7 +61,17 @@ class MiVisicalc {
 			case SALIR:
 				return false;
 		}
+		corrige(posicion, hoja);
 		return true;
+	}
+
+	private static void corrige(int[] posicion, String[][] hoja) {
+
+		if (posicion[0]<0) posicion[0]=0;
+		if (posicion[0]>=hoja.length) posicion[0]=hoja.length-1;
+		if (posicion[1]<0) posicion[1]=0;
+		if (posicion[1]>=hoja[0].length) posicion[1]=hoja[0].length-1;
+
 	}
 
 	static void modificar(String[][] hoja, int[] posicion){
