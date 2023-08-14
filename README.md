@@ -1,6 +1,2 @@
+![](/desktopBackgrounds/2Monitors/ultima_vi_desktop_background_wallpaper_5760x1080_by_mecandes_d87e0fg.png)
 # mmasias@github
-
-
-[¿Un ☕?](https://www.buymeacoffee.com/mmasias)
-
-*[theEsquema](acercaDeEsquema.md)*
