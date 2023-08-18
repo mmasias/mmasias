@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="178px" preserveAspectRatio="none" style="width:839px;height:178px;background:#FFFFFF;" version="1.1" viewBox="0 0 839 178" width="839px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="29.0679" id="_title" style="stroke:none;stroke-width:1.0;" width="118" x="353.75" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="108" x="358.75" y="24.9659">Empty Diagram</text><!--MD5=[371134888c57114941920a2e54cdc767]
+class 5Primeros--><g id="elem_5Primeros"><rect codeLine="4" fill="#F1F1F1" height="124.2717" id="5Primeros" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="306" x="7" y="47.0679"/><ellipse cx="101.75" cy="63.0679" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M101.2188,69.9898 Q99.4688,69.9898 98.3281,69.2554 Q97.2031,68.5054 96.6406,67.1617 Q96.0938,65.8023 96.0938,64.0054 Q96.0938,61.9742 96.75,60.521 Q97.4063,59.0679 98.6875,58.2867 Q99.9688,57.5054 101.8438,57.5054 Q102.7344,57.5054 103.4063,57.6929 Q104.0781,57.8648 104.7656,58.2085 L103.9531,60.2242 Q103.3281,59.9117 102.7813,59.7867 Q102.25,59.6617 101.7656,59.6617 Q100.5938,59.6617 99.8906,60.1929 Q99.1875,60.7242 98.8906,61.6773 Q98.5938,62.6304 98.5938,63.896 Q98.5938,65.9117 99.3125,66.8804 Q100.0313,67.8335 101.625,67.8335 Q102.2188,67.8335 102.8438,67.6773 Q103.4688,67.521 104.2969,67.146 L104.2969,69.3648 Q103.5625,69.6773 102.7656,69.8335 Q101.9844,69.9898 101.2188,69.9898 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="122.25" y="68.4999">Primeros 5 años</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="312" y1="79.0679" y2="79.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="13" y="98.0339">Escopeta de feria</text><line style="stroke:#181818;stroke-width:1.0;" x1="8" x2="312" y1="106.1358" y2="106.1358"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="118.1698"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="280" x="27" y="125.1018">Lo acaban de inventar/descubrir/publicar</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="137.2377"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="218" x="27" y="144.1697">Alguien lo aplica donde no debe</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="156.3056"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="240" x="27" y="163.2376">Facciones que pelean por la autoria</text></g><!--MD5=[1691341f5b603015402afa10dc3ec13a]
+class 5Siguientes--><g id="elem_5Siguientes"><rect codeLine="13" fill="#F1F1F1" height="124.2717" id="5Siguientes" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="246" x="348" y="47.0679"/><ellipse cx="425.75" cy="63.0679" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M425.2188,69.9898 Q423.4688,69.9898 422.3281,69.2554 Q421.2031,68.5054 420.6406,67.1617 Q420.0938,65.8023 420.0938,64.0054 Q420.0938,61.9742 420.75,60.521 Q421.4063,59.0679 422.6875,58.2867 Q423.9688,57.5054 425.8438,57.5054 Q426.7344,57.5054 427.4063,57.6929 Q428.0781,57.8648 428.7656,58.2085 L427.9531,60.2242 Q427.3281,59.9117 426.7813,59.7867 Q426.25,59.6617 425.7656,59.6617 Q424.5938,59.6617 423.8906,60.1929 Q423.1875,60.7242 422.8906,61.6773 Q422.5938,62.6304 422.5938,63.896 Q422.5938,65.9117 423.3125,66.8804 Q424.0313,67.8335 425.625,67.8335 Q426.2188,67.8335 426.8438,67.6773 Q427.4688,67.521 428.2969,67.146 L428.2969,69.3648 Q427.5625,69.6773 426.7656,69.8335 Q425.9844,69.9898 425.2188,69.9898 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="446.25" y="68.4999">5 siguientes</text><line style="stroke:#181818;stroke-width:0.5;" x1="349" x2="593" y1="79.0679" y2="79.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="234" x="354" y="98.0339">Reduce significativamente el ruido</text><line style="stroke:#181818;stroke-width:1.0;" x1="349" x2="593" y1="106.1358" y2="106.1358"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="356" y="118.1698"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="368" y="125.1018">Se estudia</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="356" y="137.2377"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="368" y="144.1697">Se contraestudia</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="356" y="156.3056"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="170" x="368" y="163.2376">Tesis - Antítesis - Síntesis</text></g><!--MD5=[2a97822da792db6bedde74460323ccc4]
+class 5Posteriores--><g id="elem_5Posteriores"><rect codeLine="21" fill="#F1F1F1" height="124.2717" id="5Posteriores" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="203" x="629.5" y="47.0679"/><ellipse cx="683.75" cy="63.0679" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M683.2188,69.9898 Q681.4688,69.9898 680.3281,69.2554 Q679.2031,68.5054 678.6406,67.1617 Q678.0938,65.8023 678.0938,64.0054 Q678.0938,61.9742 678.75,60.521 Q679.4063,59.0679 680.6875,58.2867 Q681.9688,57.5054 683.8438,57.5054 Q684.7344,57.5054 685.4063,57.6929 Q686.0781,57.8648 686.7656,58.2085 L685.9531,60.2242 Q685.3281,59.9117 684.7813,59.7867 Q684.25,59.6617 683.7656,59.6617 Q682.5938,59.6617 681.8906,60.1929 Q681.1875,60.7242 680.8906,61.6773 Q680.5938,62.6304 680.5938,63.896 Q680.5938,65.9117 681.3125,66.8804 Q682.0313,67.8335 683.625,67.8335 Q684.2188,67.8335 684.8438,67.6773 Q685.4688,67.521 686.2969,67.146 L686.2969,69.3648 Q685.5625,69.6773 684.7656,69.8335 Q683.9844,69.9898 683.2188,69.9898 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="708.25" y="68.4999">5 siguientes</text><line style="stroke:#181818;stroke-width:0.5;" x1="630.5" x2="831.5" y1="79.0679" y2="79.0679"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="69" x="635.5" y="98.0339">Se asienta</text><line style="stroke:#181818;stroke-width:1.0;" x1="630.5" x2="831.5" y1="106.1358" y2="106.1358"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="637.5" y="118.1698"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="649.5" y="125.1018">Se conoce dónde es válido</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="637.5" y="137.2377"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="649.5" y="144.1697">Se sabe utilizarlo</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="637.5" y="156.3056"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="649.5" y="163.2376">Se estandariza</text></g><!--MD5=[584194bab92e8124e381127c8dc5d0a1]
+link 5Primeros to 5Siguientes--><g id="link_5Primeros_5Siguientes"><path codeLine="29" d="M313.07,109.0679 C322.96,109.0679 332.86,109.0679 342.75,109.0679 " fill="none" id="5Primeros-to-5Siguientes" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="347.93,109.0679,338.93,105.0679,342.93,109.0679,338.93,113.0679,347.93,109.0679" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[54fb031e488d65ce7debc9bb3ebdbed9]
+link 5Siguientes to 5Posteriores--><g id="link_5Siguientes_5Posteriores"><path codeLine="30" d="M594.14,109.0679 C604.16,109.0679 614.18,109.0679 624.19,109.0679 " fill="none" id="5Siguientes-to-5Posteriores" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="629.43,109.0679,620.43,105.0679,624.43,109.0679,620.43,113.0679,629.43,109.0679" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[173fc8e86b29520ea05e3111b9518f11]
+@startuml
+
+title Empty Diagram
+
+class 5Primeros as "Primeros 5 años" {
+Escopeta de feria
+- - -
+- Lo acaban de inventar/descubrir/publicar
+- Alguien lo aplica donde no debe
+- Facciones que pelean por la autoria
+}
+
+
+class 5Siguientes as "5 siguientes" {
+Reduce significativamente el ruido
+- - -
+- Se estudia
+- Se contraestudia
+- Tesis - Antítesis - Síntesis
+}
+
+class 5Posteriores as " 5 siguientes" {
+Se asienta
+- - -
+- Se conoce dónde es válido
+- Se sabe utilizarlo
+- Se estandariza
+}
+
+5Primeros- -r->5Siguientes
+5Siguientes- -r->5Posteriores
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 19:01:30 CEST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: es
+Country: ES
+--></g></svg>
