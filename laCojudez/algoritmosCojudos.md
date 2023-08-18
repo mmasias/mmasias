@@ -1,4 +1,4 @@
-# Algoritmos Cojudos:
+# Algoritmos Cojudos
 
 1. **Búsqueda Infinita**: Este algoritmo busca un elemento en una lista... ¡sin parar nunca! Aunque encuentre el elemento en el primer intento, seguirá buscando eternamente, solo por si acaso.
 1. **Ordenamiento Desordenado**: Cada vez que intentas ordenar una lista con este algoritmo, la desordena aún más. Ideal para aquellos que aman el caos.
