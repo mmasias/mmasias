@@ -4,6 +4,7 @@
 
 |||
 |-|-|
+[Teaching with AI](https://openai.com/blog/teaching-with-ai)|
 [La vuelta al cole con ChatGPT: ¿ignorar, permitir o integrar?](https://www.technologyreview.es//s/15659/la-vuelta-al-cole-con-chatgpt-ignorar-permitir-o-integrar)|*En general, los estudiantes van muy por delante del profesorado. Ya que han crecido en un mundo donde las nuevas tecnologías van y vienen, y lo prueban todo. Por supuesto, ChatGPT es la última novedad, así que lo utilizan. Y quieren hacerlo de forma responsable. Se preguntan: "¿Qué está permitido? Mira todo lo que puedo hacer. ¿Puedo hacer esto?".<br><br>Así que el consejo que di a los profesores fue que debían probarlo. Al menos, tienen que estar al tanto de lo que pueden hacer sus alumnos, y pensar en las tareas y todo lo que permite esta herramienta. ¿Qué políticas u orientaciones darán a los estudiantes sobre el uso permitido? ¿De qué manera les permitirán utilizarla?*
 
 ## Formación en línea y orientación sobre el uso de la IA en la educación|
