@@ -11,6 +11,11 @@ Si estás listo para un viaje por el lado cojudo del desarrollo, abróchate el c
 - [Frameworks](frameworksCojudos.md): Frameworks que utilizan los lenguajes y algoritmos anteriormente mencionados.
 - [Hardware y software](hardwareSoftwareCojudo.md): Herramientas con las que se trabaja.
 - [Arquitecturas](arquitecturasCojudas.md): Cómo se estructura lo anterior al construir sistemas más grandes.
+- [Metodologías](metodologiasCojudas.md): Organización del trabajo.
 - [Roles y cargos](rolesCojudos.md): Una profundización en los títulos más absurdos y específicos.
 - [Dinámicas](dinamicasCojudas.md): Con los roles y cargos establecidos, es hora de ver cómo estos personajes interactúan entre sí.
 - [Actitudes Motivacionales](actitudesMotivacionalesCojudas.md): Una vez que tengamos una idea de cómo funcionan estos equipos, podemos hablar de sus actitudes y cómo se motivan (o desmotivan).
+
+### Addenda
+
+- [Excusas](excusasCojudas.md)
