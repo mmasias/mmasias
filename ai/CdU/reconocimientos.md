@@ -1,20 +1,48 @@
-# Prompts
+# CdU > Reconocimientos
 
-|PROMPTS|Procesos Recursivos de Optimización y Modelado con Prompts: Técnicas y Soluciones|
-|:-:|-|
-|🤖💬|Experimentos que hago con prompts, pa' no olvidarlos
+## ¿Para qué?
 
+Evaluar y comparar el contenido de guías docentes de asignaturas de dos universidades para determinar si cumplen con al menos un 70% de similitud en términos de contenidos.
 
-## Reconocimientos
+## ¿Qué?
 
-Motor: Claude.ai
+- Proceso:
+  - Utilizar ChatGPT para procesar y analizar el contenido de Documento A y Documento B.
+  - Comparar y evaluar la similitud entre los dos documentos.
+  - Calcular el grado de similitud entre los contenidos, expresado como un porcentaje.
+  - Generar un informe de evaluación que muestre el grado de similitud encontrado.
+- Entradas:
+  - Documento A (Guía Docente de Universidad A).
+  - Documento B (Guía Docente de Universidad B).
+- Salida:
+  - Informe de Evaluación:
+  - Porcentaje de similitud entre Documento A y Documento B.
+  - Confirmación de si la similitud es igual o superior al 70%.
+
+## ¿Por qué?
+
+- Automatizar el proceso de evaluación y comparación de guías docentes de asignaturas de diferentes universidades para determinar si cumplen con un nivel mínimo de similitud del 70%.
+- Ahorrar tiempo y esfuerzo en la revisión manual de los contenidos de las guías docentes.
+- Facilitar la toma de decisiones sobre la equivalencia de asignaturas entre universidades o la transferencia de créditos.
+
+## ¿Cómo?
+
+|||
+|-|-|
+Paso 1: Preparación de Datos|Obtener los documentos (Guías Docentes) de las dos universidades que se desean comparar.
+Paso 2: Procesamiento de Datos|Utilizar un LLM de procesamiento de lenguaje natural basada para analizar y procesar los contenidos de ambos documentos.
+Paso 3: Comparación de Contenidos|Comparar el resultado del procesamiento para ambos documentos.<br>Calcular la similitud entre los contenidos utilizando métricas adecuadas.
+Paso 4: Generación de Informe|Generar un informe que incluya el porcentaje de similitud calculado.<br>Confirmar si el porcentaje de similitud es igual o superior al 70%.
+Paso 5: Toma de Decisiones|Basándose en el informe, tomar decisiones sobre la equivalencia de asignaturas o la transferencia de créditos entre las dos universidades.
+
+### 🤖: Claude.ai
 
 |Prompt|Pa' qué|Comentario
 |-|-|-
 Compara los contenidos de las asignaturas que te envío y dime si coinciden en al menos en un 70%, utilizando como referencia los contenidos del documento de la Universidad Europea del Atlántico. Crea una tabla que muestre esta comparación, con una columna por asignatura y los contenidos en las filas. En los encabezados de las columnas pones los nombres de cada archivo y agrega una columna adicional que diga si hay coincidencia o no. Luego compara también las competencias especificas y los resultados de aprendizaje|Ayuda para evaluar el reconocimiento de asignaturas|Necesita supervisión
 Compara las competencias y los resultados de aprendizaje|Extender la comparación|
 
-### Respuesta 
+#### Respuesta 
 ---
 
 Aquí está la tabla comparativa de los contenidos de las dos asignaturas de Programación I:
@@ -36,5 +64,3 @@ En cuanto a las competencias específicas y los resultados de aprendizaje, ambas
 - Manejo de variables, tipos de datos, sentencias de control, funciones, etc.
 
 En conclusión, diría que el contenido de las dos asignaturas tiene aproximadamente un 70-80% de coincidencia en los conceptos centrales de programación imperativa y estructurada en un lenguaje como Java/C. Las diferencias se encuentran en algunos contenidos específicos de cada una.
-
----

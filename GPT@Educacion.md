@@ -14,3 +14,7 @@ El Día de la IA del MIT ofrece un [currículo gratuito](https://www.dayofai.org
 La Escuela de Graduados de Educación de Stanford, el Acelerador de Aprendizaje de Stanford y el Instituto de IA Centrada en el Ser Humano ofrecen [CRAFT](https://craft.stanford.edu/), una colección en línea gratuita de recursos de alfabetización en IA basados en la investigación, desarrollada con profesores de secundaria, que pueden usar para ayudar a los estudiantes a explorar, cuestionar y criticar la IA.
 
 > *De [OpenAI](https://help.openai.com/en/articles/8313434-are-there-any-resources-for-educators-to-learn-more-about-ai)*
+
+## Casos de Uso
+
+- [Reconocimientos](ai/CdU/reconocimientos.md)
