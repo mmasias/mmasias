@@ -16,7 +16,7 @@ El Grado en Ingeniería Informática proporciona a los estudiantes las competenc
 
 |||
 |-|-|
-La Cátedra Jean Monnet analiza la política de telecomunicaciones de la UE y su impacto en la sociedad de la información.|El Grado en Ingeniería Informática de la Universidad Europea del Atlántico forma profesionales con visión estratégica para aplicar las tecnologías en las organizaciones.
+El Grado en Ingeniería Informática de la Universidad Europea del Atlántico forma profesionales con visión estratégica para aplicar las tecnologías en las organizaciones.|La Cátedra Jean Monnet analiza la política de telecomunicaciones de la UE y su impacto en la sociedad de la información.
 
 
 ## ¿Para qué?
