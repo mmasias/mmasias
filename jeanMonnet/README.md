@@ -12,7 +12,7 @@ La Cátedra Jean Monnet resalta la necesidad de una Europa unida y conectada|La 
 
 ## ¿Qué?
 
-El Grado en Ingeniería Informática proporciona a los estudiantes las competencias necesarias en ciencias de la computación, electrónica y software. Esta formación no solo se centra en los aspectos técnicos, sino también en la visión estratégica y analítica necesaria para enfrentar los desafíos del mundo actual. Además, se enfatiza la importancia del inglés como herramienta de comunicación global.
+El Grado en Ingeniería Informática proporciona a los estudiantes las competencias necesarias en ciencias de la computación, electrónica y software. Esta formación no solo se centra en los aspectos técnicos, sino también en la visión estratégica y analítica necesaria para enfrentar los desafíos del mundo actual. 
 
 |||
 |-|-|
