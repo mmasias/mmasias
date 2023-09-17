@@ -6,6 +6,10 @@ Aquí, si me acuerdo, iré dejando los generadores de mapas. Para empezar, los q
 
 ## Lista de generadores de mapas
 
+### 2023 - Mapa del mundo (basado en Ultima II)
+
+[🗺](https://docs.google.com/spreadsheets/d/14nYqSdmO0wLZ5X3pFiSyJfq34Xu8qa-eXCSv0EJGCPo/edit?usp=sharing)
+
 ### 2020 - Mapa de 63x43
 
 Link: **[aquí](https://docs.google.com/spreadsheets/d/1d9UC03syn03oDDp1CU8s0rqLhh3_M5KHtXwGMQzVq8w/edit?usp=sharing)**
