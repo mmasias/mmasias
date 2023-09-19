@@ -1,14 +1,25 @@
 # Grado en ingenieria informática & Cátedra Jean Monnet
 
+## Prefacio
+
+<div align=center>
+
+||
+|-|
+Fragmentarismo
+Facilismo
+Superficialismo
+Inmediatismo
+
+</div>
+
+[4 ismos de la era digital](https://www.youtube.com/watch?v=L1_Y-CkBIvU)
+
 ## ¿Por qué?
 
 La transformación digital está cambiando el mundo y la sociedad. Las tecnologías de la información son cruciales para el desarrollo económico y social.
 
 Las organizaciones buscan individuos que no solo tengan habilidades técnicas, sino también una visión estratégica y analítica para afrontar los retos del futuro.
-
-|||
-|-|-|
-La Cátedra Jean Monnet resalta la necesidad de una Europa unida y conectada|La Ingeniería Informática juega un papel crucial en este objetivo, siendo un pilar fundamental para la integración y la comunicación.
 
 ## ¿Qué?
 
@@ -33,6 +44,11 @@ La Universidad Europea del Atlántico ha diseñado un programa que combina la te
 - Con una formación integral, que combina fundamentos tecnológicos, desarrollo de competencias y entendimiento del contexto socioeconómico.
 - Mediante el aprendizaje activo, la colaboración universidad-empresa y la participación en proyectos reales.
 - A través de un enfoque multidisciplinar, con visión holística de la tecnología y sus aplicaciones.
+
+|||
+|-|-|
+La Ingeniería Informática juega un papel crucial en este objetivo, siendo un pilar fundamental para la integración y la comunicación.|La Cátedra Jean Monnet resalta la necesidad de una Europa unida y conectada
+
 
 ||Ingeniería Informática|Cátedra Jean Monnet|Relación|
 |-|-|-|-|
