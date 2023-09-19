@@ -13,7 +13,11 @@ Inmediatismo
 
 </div>
 
+<div align=right>
+
 [4 ismos era digital](https://www.youtube.com/watch?v=L1_Y-CkBIvU)
+
+</div>
 
 ## ¿Por qué?
 
@@ -26,11 +30,6 @@ Las organizaciones buscan individuos que no solo tengan **habilidades técnicas*
 ## ¿Qué?
 
 El Grado en Ingeniería Informática proporciona a los estudiantes las competencias necesarias en ciencias de la computación, electrónica y software. Esta formación no solo se centra en los aspectos técnicos, sino también en la visión estratégica y analítica necesaria para enfrentar los desafíos del mundo actual. 
-
-|||
-|-|-|
-El Grado en Ingeniería Informática de la Universidad Europea del Atlántico forma profesionales con visión estratégica para aplicar las tecnologías en las organizaciones.|La Cátedra Jean Monnet analiza la política de telecomunicaciones de la UE y su impacto en la sociedad de la información.
-
 
 ## ¿Para qué?
 
@@ -47,10 +46,14 @@ La Universidad Europea del Atlántico ha diseñado un programa que combina la te
 - Mediante el aprendizaje activo, la colaboración universidad-empresa y la participación en proyectos reales.
 - A través de un enfoque multidisciplinar, con visión holística de la tecnología y sus aplicaciones.
 
-|||
-|-|-|
-La Ingeniería Informática juega un papel crucial en este objetivo, siendo un pilar fundamental para la integración y la comunicación.|La Cátedra Jean Monnet resalta la necesidad de una Europa unida y conectada
+---
 
+|Grado en Ingeniería Informática de la Universidad Europea del Atlántico|Cátedra Jean Monnet|
+|-|-|
+Pilar fundamental para la integración y la comunicación.|Resalta la necesidad de una Europa unida y conectada
+Forma profesionales con visión estratégica para aplicar las tecnologías en las organizaciones.|Analiza la política de telecomunicaciones de la UE y su impacto en la sociedad de la información.
+
+---
 
 ||Ingeniería Informática|Cátedra Jean Monnet|Relación|
 |-|-|-|-|
