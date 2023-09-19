@@ -1,4 +1,4 @@
-# Grado en ingenieria informática & Cátedra Jean Monnet
+# Universidad y el reto docente en la era digital
 
 ## Prefacio
 
@@ -17,9 +17,11 @@ Inmediatismo
 
 ## ¿Por qué?
 
-La transformación digital está cambiando el mundo y la sociedad. Las tecnologías de la información son cruciales para el desarrollo económico y social.
+La transformación digital está cambiando el mundo y la sociedad. 
 
-Las organizaciones buscan individuos que no solo tengan habilidades técnicas, sino también una visión estratégica y analítica para afrontar los retos del futuro.
+Las tecnologías de la información son cruciales para el desarrollo económico y social.
+
+Las organizaciones buscan individuos que no solo tengan **habilidades técnicas**, sino también una **visión estratégica y analítica** para afrontar los retos del futuro.
 
 ## ¿Qué?
 
