@@ -13,7 +13,7 @@ Inmediatismo
 
 </div>
 
-[4 ismos de la era digital](https://www.youtube.com/watch?v=L1_Y-CkBIvU)
+[4 ismos era digital](https://www.youtube.com/watch?v=L1_Y-CkBIvU)
 
 ## ¿Por qué?
 
