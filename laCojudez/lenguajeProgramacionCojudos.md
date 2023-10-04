@@ -1,3 +1,6 @@
+[Lenguajes](lenguajeProgramacionCojudos.md)|[Algoritmos](algoritmosCojudos.md)|[Frameworks](frameworksCojudos.md)|[Hardware y software](hardwareSoftwareCojudo.md)|[Arquitecturas](arquitecturasCojudas.md)|[Metodologías](metodologiasCojudas.md)|[Roles y cargos](rolesCojudos.md)|[Dinámicas](dinamicasCojudas.md)|[Actitudes motivacionales](actitudesMotivacionalesCojudas.md)|
+|-|-|-|-|-|-|-|-|-|
+
 # Lenguajes de Programación Cojudos
 
 1. **Desesperanto**: Un lenguaje diseñado especialmente para aquellos programadores que desean comunicarse con sus computadoras, pero sin que estas les entiendan. Ideal para proyectos que nunca deben terminar.

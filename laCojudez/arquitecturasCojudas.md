@@ -1,3 +1,6 @@
+[Lenguajes](lenguajeProgramacionCojudos.md)|[Algoritmos](algoritmosCojudos.md)|[Frameworks](frameworksCojudos.md)|[Hardware y software](hardwareSoftwareCojudo.md)|[Arquitecturas](arquitecturasCojudas.md)|[Metodologías](metodologiasCojudas.md)|[Roles y cargos](rolesCojudos.md)|[Dinámicas](dinamicasCojudas.md)|[Actitudes motivacionales](actitudesMotivacionalesCojudas.md)|
+|-|-|-|-|-|-|-|-|-|
+
 # Arquitecturas Cojudas
 
 1. **"Monolito móvil"**: Una arquitectura donde todo, desde la base de datos hasta la interfaz de usuario, se ejecuta en tu smartphone. ¡Adiós servidores!

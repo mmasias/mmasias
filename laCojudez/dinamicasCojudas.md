@@ -1,3 +1,6 @@
+[Lenguajes](lenguajeProgramacionCojudos.md)|[Algoritmos](algoritmosCojudos.md)|[Frameworks](frameworksCojudos.md)|[Hardware y software](hardwareSoftwareCojudo.md)|[Arquitecturas](arquitecturasCojudas.md)|[Metodologías](metodologiasCojudas.md)|[Roles y cargos](rolesCojudos.md)|[Dinámicas](dinamicasCojudas.md)|[Actitudes motivacionales](actitudesMotivacionalesCojudas.md)|
+|-|-|-|-|-|-|-|-|-|
+
 # Dinámicas cojudas
 
 1. **"Código a ciegas"**: Todos escriben una línea de código con los ojos vendados y luego intentan que el programa funcione.

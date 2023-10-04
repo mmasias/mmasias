@@ -1,3 +1,6 @@
+[Lenguajes](lenguajeProgramacionCojudos.md)|[Algoritmos](algoritmosCojudos.md)|[Frameworks](frameworksCojudos.md)|[Hardware y software](hardwareSoftwareCojudo.md)|[Arquitecturas](arquitecturasCojudas.md)|[Metodologías](metodologiasCojudas.md)|[Roles y cargos](rolesCojudos.md)|[Dinámicas](dinamicasCojudas.md)|[Actitudes motivacionales](actitudesMotivacionalesCojudas.md)|
+|-|-|-|-|-|-|-|-|-|
+
 # Roles Cojudos
 
 1. **Optimizador de espacios en blanco**: Se asegura de que haya suficientes espacios en blanco en el código para que se vea "limpio", pero sin preocuparse por la funcionalidad.

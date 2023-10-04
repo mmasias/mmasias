@@ -1,3 +1,6 @@
+[Lenguajes](lenguajeProgramacionCojudos.md)|[Algoritmos](algoritmosCojudos.md)|[Frameworks](frameworksCojudos.md)|[Hardware y software](hardwareSoftwareCojudo.md)|[Arquitecturas](arquitecturasCojudas.md)|[Metodologías](metodologiasCojudas.md)|[Roles y cargos](rolesCojudos.md)|[Dinámicas](dinamicasCojudas.md)|[Actitudes motivacionales](actitudesMotivacionalesCojudas.md)|
+|-|-|-|-|-|-|-|-|-|
+
 # Actitudes Motivacionales Cojudas
 
 1. **"Optimista ciego"**: "No importa que nuestro servidor esté en llamas y hayamos perdido todos los datos. ¡Al menos ahora tenemos una oportunidad de empezar de cero!"
