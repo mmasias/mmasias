@@ -1,7 +1,9 @@
 # Manifiesto del Día del Día sin Día [DIA][DIA][^DIA]
 
-> Propuesta de "logo": [DIA][DIA][^DIA]
-> Otra propuesta más formal, menos visual: \bDIA\b\bDIA\b(?!DIA)
+||
+|-|
+Propuesta de "logo": [DIA][DIA][^DIA]
+Otra propuesta más formal, menos visual: \bDIA\b\bDIA\b(?!DIA)
 
 En un mundo lleno de efemérides, conmemoraciones y celebraciones constantes, proponemos una pausa, un respiro, un momento de reflexión. Proponemos el Día del Día sin Día, una invitación a apreciar el silencio entre los ruidos, a reencontrarse con la esencia de la vida y a abrazar la belleza de la simplicidad. 
 
