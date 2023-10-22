@@ -1,4 +1,4 @@
-# Manifiesto del Día del Día sin Día [DIA][DIA][^DIA]
+# Manifiesto del Día del Día sin Día
 
 | | |
 |-|-|
