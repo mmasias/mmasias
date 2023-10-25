@@ -104,6 +104,8 @@ rm ~/.poshthemes/themes.zip
 
 
 > #notaMental: el tipo de letra se ajusta en los elementaryTweaks
+> #notaMental: Ya no... Ahora es ```gsettings set io.elementary.terminal.settings font 'MesloLGS Nerd Font Regular 10'```
+> Usabilidad... bah!
 
 Tema: nordtron
 
