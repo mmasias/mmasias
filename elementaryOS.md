@@ -1,18 +1,16 @@
+# :robot:
+
+Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distribución de elementaryOS en un ordenador nuevo, ha crecido hasta convertirse en un chuletón de cosas por hacer cuando instale casi que cualquier distribución de GNU/Linux en un ordenador nuevo.
 
 TsP / TpR: 20 min / 7 min
 
 ## Instalar Chrome
 
-``` 
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt update
-sudo apt install google-chrome-stable
-```
+Del canal oficial de la distro 
 
 ## Instalar GIT
 
-```
+```bash
 sudo apt install git
 
 git config --global user.name "mmasias"
@@ -22,31 +20,31 @@ git config --global user.email "manuel@masiasweb.com"
 
 ## Instalar gdebi
 
-```
+```bash
 sudo apt install gdebi
 ```
 
 ## Instalar curl
 
-```
+```bash
 sudo apt install curl
 ```
 
 ## Instalar jdk
 
-```
+```bash
 sudo apt install openjdk-17-jdk-headless
 ```
 
 ## Instalar graphviz
 
-```
+```bash
 sudo apt install graphviz
 ```
+
 ## Instalar Visual Studio Code
 
 [Link](https://code.visualstudio.com/)
-
 
 ## Instalar Spotify
 
@@ -54,7 +52,7 @@ sudo apt install graphviz
 
 ## Instalar VLC
 
-```
+```bash
 sudo apt install vlc
 ```
 
@@ -64,7 +62,7 @@ sudo apt install vlc
 
 ### Instalar elementary Tweaks
 
-```
+```bash
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
 sudo apt update
@@ -75,7 +73,7 @@ sudo apt install pantheon-tweaks
 
 Instalar el [Driver CQue DEB](https://www.canon.es/support/products/imagerunner/imagerunner-advance-c5235i.html?type=drivers&driverdetailid=tcm:86-1894069&os=linux%20%2864-bit%29&language=es)
 
-```
+```bash
 sudo systemctl stop cups
 sudo vi /etc/cups/printers.conf
 # Editar la IP
@@ -87,7 +85,7 @@ sudo systemctl restart cups
 
 ### Instalar oh-my-posh
 
-```
+```bash
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
 mkdir ~/.poshthemes
@@ -115,4 +113,3 @@ En ```.bashrc```
 ```
 eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
 ```
-
