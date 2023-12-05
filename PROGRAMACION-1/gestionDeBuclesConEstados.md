@@ -1,7 +1,5 @@
 # Refinando la estructura de bucles en programación para mejorar la claridad y mantenibilidad del código
 
-Por supuesto, aquí tienes un resumen estructurado del enfoque de utilizar variables de estado en bucles, siguiendo el esquema de ¿por qué?, ¿qué?, ¿para qué? y ¿cómo?:
-
 ## ¿Por qué?
 
 - **Claridad y mantenibilidad**: Emplear variables de estado en bucles, como `hayaVida`, en lugar de condiciones directas (como `energia > 0`), hace que el código sea más legible y comprensible. Esto facilita tanto la comprensión del código por parte de otros programadores como su mantenimiento a largo plazo.
