@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 class EscalasAcordes {
+    
+    static final String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
 
     public static void main(String[] args) {
 
@@ -10,7 +12,6 @@ class EscalasAcordes {
     }
 
     private static int obtenerIndice(String nota) {
-        String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
         for (int i = 0; i < notas.length; i++) {
             if (notas[i].equalsIgnoreCase(nota)) {
                 return i;
@@ -20,8 +21,6 @@ class EscalasAcordes {
     }
 
     private static String obtenerNota(int indice) {
-        String[] notas = { "Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si" };
         return notas[indice];
     }
-
 }
