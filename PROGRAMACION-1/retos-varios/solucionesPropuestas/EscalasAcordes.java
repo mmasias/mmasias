@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class EscalasAcordes {
     
-    static final String[] notas = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
+    static final String[] NOTAS = {"Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"};
 
     public static void main(String[] args) {
 
@@ -12,8 +12,8 @@ class EscalasAcordes {
     }
 
     private static int obtenerIndice(String nota) {
-        for (int i = 0; i < notas.length; i++) {
-            if (notas[i].equalsIgnoreCase(nota)) {
+        for (int i = 0; i < NOTAS.length; i++) {
+            if (NOTAS[i].equalsIgnoreCase(nota)) {
                 return i;
             }
         }
@@ -21,6 +21,6 @@ class EscalasAcordes {
     }
 
     private static String obtenerNota(int indice) {
-        return notas[indice];
+        return NOTAS[indice];
     }
 }
