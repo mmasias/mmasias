@@ -7,9 +7,17 @@ class EscalasAcordes {
     public static void main(String[] args) {
 
         String[] escalaMayor;
+        String[] acorde;
 
         escalaMayor = escalaMayor("Do");
         mostrarNotas(escalaMayor);
+        acorde = construirAcorde(escalaMayor);
+        mostrarNotas(acorde);
+    }
+
+    private static String[] construirAcorde(String[] escala) {
+        String[] acorde = { escala[0], escala[2], escala[4] };
+        return acorde;
     }
 
     private static String[] escalaMayor(String nota) {
@@ -27,7 +35,6 @@ class EscalasAcordes {
                 }
             }
         }
-
         return escala;
     }
 
