@@ -150,22 +150,34 @@ public class ArrayAsociativo001 {
 
 	static String mapea(char elemento) {
 
-		HashMap<String, String> tiles = new HashMap<>();
-
-		tiles.put(" ", "   ");
-		tiles.put(".", " . ");
-		tiles.put("-", "[#]");
-		tiles.put("=", "|||");
-		tiles.put("|", "[#]");
-		tiles.put(":", "oOo");
-		tiles.put("+", "...");
-		tiles.put("O", "[ ]");
-		tiles.put("#", ".:.");
-		tiles.put("*", "***");
-		tiles.put("$", "$$$");
-		tiles.put("X", "XXX");
-		tiles.put("%", "%%%");
-
-		return tiles.get("" + elemento);
+		if (elemento == ' ') {
+			return "   ";
+		} else if (elemento == '.') {
+			return " . ";
+		} else if (elemento == '-') {
+			return "[#]";
+		} else if (elemento == '=') {
+			return "|||";
+		} else if (elemento == '|') {
+			return "[#]";
+		} else if (elemento == ':') {
+			return "oOo";
+		} else if (elemento == '+') {
+			return "...";
+		} else if (elemento == 'O') {
+			return "[ ]";
+		} else if (elemento == '#') {
+			return ".:.";
+		} else if (elemento == '*') {
+			return "***";
+		} else if (elemento == '$') {
+			return "$$$";
+		} else if (elemento == 'X') {
+			return "XXX";
+		} else if (elemento == '%') {
+			return "%%%";
+		}
+	
+		return "???";
 	}
 }
