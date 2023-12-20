@@ -167,12 +167,14 @@ public class ArrayAsociativo005 {
 
     static void actualizarTiempo() {
 
-        hora=hora+0.1; 
-        if(hora>24){hora=0;}
+        hora = hora + 0.1;
+        if (hora > 24) {
+            hora = 0;
+        }
     }
 
     static void imprimirMundo(String[] castillo, int[] personaje, int viewPort) {
-        
+
         String elemento;
         limpiarPantalla();
         imprimirLinea(viewPort);
@@ -198,7 +200,8 @@ public class ArrayAsociativo005 {
 
     static void imprimirStatus(int[] personaje) {
 
-        System.out.println("HORA: ["+(int)hora+"] / Posicion: ("+personaje[FILA]+","+personaje[COLUMNA]+")"); 
+        System.out
+                .println("HORA: [" + (int) hora + "] / Posicion: (" + personaje[FILA] + "," + personaje[COLUMNA] + ")");
     }
 
     static void imprimirLinea(int viewPort) {
@@ -284,15 +287,19 @@ public class ArrayAsociativo005 {
         System.out.print("\033[H\033[2J");
     }
 
-	static void imprimirElCielo(int viewport){
+    static void imprimirElCielo(int viewPort) {
+        String cielo;
+        if ((hora > 6) && (hora <= 18)) {
+            cielo = "···".repeat(posicionDelSol(hora, viewPort)) +
+                    " O " +
+                    "···".repeat(viewPort * 2 - posicionDelSol(hora, viewPort));
+        } else {
+            cielo = "···".repeat(viewPort);
+        }
+        System.out.println(cielo);
+    }
 
-		for(int i=0;i<=viewport*2+1;i=i+1){
-			if ((hora>6)&&(hora<=18)&&(i==(int)(((viewport*2))-((hora-7)*(viewport*2)/12)))){
-				System.out.print(" O ");
-			} else {
-				System.out.print("   ");
-			}
-		}
-        System.out.println();
-	}
+    static int posicionDelSol(double hora, int viewPort) {
+        return ((viewPort * 2)) - (((int) hora - 6) * (viewPort * 2) / 12);
+    }
 }
