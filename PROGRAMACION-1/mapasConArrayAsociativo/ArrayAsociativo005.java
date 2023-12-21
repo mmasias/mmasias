@@ -289,10 +289,10 @@ public class ArrayAsociativo005 {
 
     static void imprimirElCielo(int viewPort) {
         String cielo;
-        if ((hora > 6) && (hora <= 18)) {
-            cielo = "···".repeat(posicionDelSol(hora, viewPort)) +
-                    " O " +
-                    "···".repeat(viewPort * 2 - posicionDelSol(hora, viewPort));
+        if((hora > 6) && (hora <= 18) ){
+            cielo = "···".repeat(posicionDelSol(hora, viewPort)) + 
+            " O " + 
+            "···".repeat(viewPort*2 - posicionDelSol(hora, viewPort));
         } else {
             cielo = "···".repeat(viewPort);
         }
