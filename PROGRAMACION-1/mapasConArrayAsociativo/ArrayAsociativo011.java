@@ -278,7 +278,7 @@ public class ArrayAsociativo011 {
 
         int[] elPersonaje = { 31, 33 };
 
-        inicializarMundo(castilloLB);
+        inicializarMundo(dosCastillos);
 
         do {
             actualizarTiempo();
@@ -351,17 +351,17 @@ static void imprimirMundo(String[] castillo, int[] personaje) {
 static boolean estaEnCampoDeVisionTipoEmbudo(int fila, int columna, int[] personaje) {
     int deltaFila = fila - personaje[FILA];
     int deltaColumna = columna - personaje[COLUMNA];
-    int distancia = Math.max(Math.abs(deltaFila), Math.abs(deltaColumna));
+    double distancia = Math.max(Math.abs(deltaFila), Math.abs(deltaColumna))/1.000000000000001;
     
     switch (direccionPersonaje) {
         case ARRIBA:
-            return deltaFila <= 0 && Math.abs(deltaColumna) <= distancia / 2;
+            return deltaFila <= 0 && Math.abs(deltaColumna) <= distancia ;
         case ABAJO:
-            return deltaFila >= 0 && Math.abs(deltaColumna) <= distancia / 2;
+            return deltaFila >= 0 && Math.abs(deltaColumna) <= distancia;
         case IZQUIERDA:
-            return deltaColumna <= 0 && Math.abs(deltaFila) <= distancia / 2;
+            return deltaColumna <= 0 && Math.abs(deltaFila) <= distancia;
         case DERECHA:
-            return deltaColumna >= 0 && Math.abs(deltaFila) <= distancia / 2;
+            return deltaColumna >= 0 && Math.abs(deltaFila) <= distancia;
     }
     return false;
 }
@@ -473,7 +473,7 @@ static boolean estaEnCampoDeVisionTipoEmbudo(int fila, int columna, int[] person
         tiles.put("B", BLUE + BLUE_BACKGROUND + "====" + RESET);
         tiles.put("P", RED + "_()_" + RESET);
         tiles.put("D", BLACK_BACKGROUND_BRIGHT + "    " + RESET);
-        tiles.put("S", YELLOW_BOLD_BRIGHT + BLUE_BACKGROUND + " () " + RESET);
+        tiles.put("S", YELLOW_BRIGHT + YELLOW_BACKGROUND  + " () " + RESET);
         tiles.put("C", BLUE_BACKGROUND + "    " + RESET);
 
         return tiles.get("" + elemento);
