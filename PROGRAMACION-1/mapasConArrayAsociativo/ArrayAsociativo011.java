@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ArrayAsociativo010 {
+public class ArrayAsociativo011 {
 
     static final int FILA = 0;
     static final int COLUMNA = 1;
@@ -289,7 +289,7 @@ public class ArrayAsociativo010 {
 
     private static void inicializarMundo(String[] mundo) {
 
-        viewPort = 7;
+        viewPort = 10;
         alcanceVision = viewPort / 2;
 
         minFila = 0 + viewPort;
@@ -328,8 +328,8 @@ static void imprimirMundo(String[] castillo, int[] personaje) {
     String elemento;
     limpiarPantalla();
     imprimirElCielo();
-    for (int fila = personaje[FILA] - alcanceVision; fila <= personaje[FILA] + alcanceVision; fila++) {
-        for (int columna = personaje[COLUMNA] - alcanceVision; columna <= personaje[COLUMNA] + alcanceVision; columna++) {
+    for (int fila = personaje[FILA] - viewPort; fila <= personaje[FILA] + viewPort; fila++) {
+        for (int columna = personaje[COLUMNA] - viewPort; columna <= personaje[COLUMNA] + viewPort; columna++) {
 
             boolean enCampoDeVision = estaEnCampoDeVisionTipoEmbudo(fila, columna, personaje);
 
@@ -365,9 +365,6 @@ static boolean estaEnCampoDeVisionTipoEmbudo(int fila, int columna, int[] person
     }
     return false;
 }
-
-
-
 
     private static void imprimirStatus(int[] personaje) {
 
