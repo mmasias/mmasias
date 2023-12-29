@@ -113,3 +113,55 @@ En ```.bashrc```
 ```
 eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
 ```
+
+### fix de emojis
+
+Algunas distribuciones no traen los emojis por defecto. Asegurarse de tener instalada la tipografía noto-fonts-emoji 
+
+```bash
+sudo apt install noto-fonts-emoji
+sudo nano /etc/fonts/local.conf
+```
+
+Agregar
+
+```
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+ <alias>
+  <family>sans-serif</family>
+  <prefer>
+   <family>Noto Sans</family>
+   <family>Noto Color Emoji</family>
+   <family>Noto Emoji</family>
+   <family>DejaVu Sans</family>
+  </prefer>
+ </alias>
+ <alias>
+  <family>serif</family>
+  <prefer>
+   <family>Noto Serif</family>
+   <family>Noto Color Emoji</family>
+   <family>Noto Emoji</family>
+   <family>DejaVu Serif</family>
+  </prefer>
+ </alias>
+ <alias>
+  <family>monospace</family>
+  <prefer>
+   <family>Noto Mono</family>
+   <family>Noto Color Emoji</family>
+   <family>Noto Emoji</family>
+  </prefer>
+ </alias>
+ <dir>/usr/local/share/fonts</dir>
+</fontconfig>
+```
+
+Y regenerar cache de fuentes
+
+```bash
+fc-cache -f -v
+```
+
