@@ -101,9 +101,9 @@ rm ~/.poshthemes/themes.zip
 1. Run the command ```fc-cache -fv``` to manually rebuild the font cache
 
 
-> #notaMental: el tipo de letra se ajusta en los elementaryTweaks
-> #notaMental: Ya no... Ahora es ```gsettings set io.elementary.terminal.settings font 'MesloLGS Nerd Font Regular 10'```
-> Usabilidad... bah!
+> ~~#notaMental: el tipo de letra se ajusta en los elementaryTweaks~~
+> ~~#notaMental: Ya no... Ahora es ```gsettings set io.elementary.terminal.settings font 'MesloLGS Nerd Font Regular 10'```~~
+> ~~Usabilidad... bah!~~
 
 Tema: nordtron
 
