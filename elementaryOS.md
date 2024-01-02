@@ -165,3 +165,7 @@ Y regenerar cache de fuentes
 fc-cache -f -v
 ```
 
+### Tema (KDE)
+
+[Future](https://store.kde.org/p/1491484)
+
