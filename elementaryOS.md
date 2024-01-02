@@ -44,11 +44,11 @@ sudo apt install graphviz
 
 ## Instalar Visual Studio Code
 
-[Link](https://code.visualstudio.com/)
+~~[Link](https://code.visualstudio.com/)~~ snap
 
 ## Instalar Spotify
 
-[Link](https://www.spotify.com/es/download/linux/)
+~~[Link](https://www.spotify.com/es/download/linux/)~~ snap
 
 ## Instalar VLC
 
