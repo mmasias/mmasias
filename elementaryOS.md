@@ -108,6 +108,10 @@ En ```.bashrc```
 eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
 ```
 
+### Abuelo cebolleta corner
+
+- [Tipografías de 8 bits](https://damieng.com/blog/2011/02/20/typography-in-8-bits-system-fonts/)
+
 ### fix de emojis
 
 Algunas distribuciones no traen los emojis por defecto. Asegurarse de tener instalada la tipografía noto-fonts-emoji 
