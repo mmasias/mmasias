@@ -167,3 +167,6 @@ fc-cache -f -v
 
 [Future](https://store.kde.org/p/1491484)
 
+### dosbox.conf
+
+[fullscreen fixed](dosbox.conf)
