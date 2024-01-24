@@ -1,0 +1,6 @@
+a -d-> b
+a -d-> c
+b -d-> d
+b -d-> e
+e -d-> f
+e -d-> g

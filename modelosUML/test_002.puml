@@ -1,0 +1,12 @@
+package a {
+    package b {
+        package d
+        package e {
+            package f
+            package g
+        }
+    }
+    package c {
+
+    }
+}
