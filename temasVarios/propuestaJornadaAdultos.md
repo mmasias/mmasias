@@ -17,18 +17,9 @@ Seguridad en línea|Medidas de seguridad más importantes a tener en cuenta al n
 
 |Actividades|Ordenador|Tablet|Móvil|Asistente Virtual|
 -|:-:|:-:|:-:|:-:|
-<<<<<<< HEAD
-Noticias | [ ] | [ ] | [ ] | [ ]
-Hablar con mis amigos | [ ] | [ ] | [ ] | [ ]
-El tiempo | [ ] | [ ] | [ ] | [ ]
-El supermercado | [ ] | [ ] | [ ] | [ ]
-Averiguar precios | [ ] | [ ] | [ ] | [ ]
-??? | [ ] | [ ] | [ ] | [ ]
-=======
 Noticias | ✔️ | ✔️ | ✔️ | ✔️ 
 Hablar con mis amigos | ✔️ | ✔️ | ✔️ | ⬜ 
 El tiempo | [ ] | [ ] | [ ] | ✔️ 
 El supermercado | [ ] | [ ] | [ ] | [ ] 
 Averiguar precios | [ ] | [ ] | [ ] | [ ] 
 ??? | [ ] | [ ] | [ ] | [ ] 
->>>>>>> 8fe77e6402d8936a11351711506cbaae3ed727c2
