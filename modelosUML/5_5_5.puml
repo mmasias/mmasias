@@ -1,13 +1,11 @@
 @startuml
 
-title Empty Diagram
-
 class 5Primeros as "Primeros 5 años" {
 Escopeta de feria
 ---
 - Lo acaban de inventar/descubrir/publicar
 - Alguien lo aplica donde no debe
-- Facciones que pelean por la autoria
+- Facciones que pelean por la autoría
 }
 
 
