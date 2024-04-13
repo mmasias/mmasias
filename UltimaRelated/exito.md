@@ -1,4 +1,3 @@
-
 # Principios fundamentales
 
 - **Confianza**: Creer en las propias habilidades y en las de los demás; esencial para cualquier relación o emprendimiento colaborativo.
