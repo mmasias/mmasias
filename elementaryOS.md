@@ -95,7 +95,7 @@ chmod u+rw ~/.poshthemes/*.omp.*
 rm ~/.poshthemes/themes.zip
 ```
 
-1. Download a [Nerd Font](http://nerdfonts.com/): (FiraCode](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) && [MesloLG](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip)
+1. Download a [Nerd Font](http://nerdfonts.com/): [FiraCode](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) && [MesloLG](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip)
 1. Unzip and copy to ```~/.fonts```
 1. Run the command ```fc-cache -fv``` to manually rebuild the font cache
 
