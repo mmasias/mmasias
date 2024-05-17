@@ -2,7 +2,18 @@
 
 **Las Ocho Virtudes del Avatar** es un sistema de virtudes que aparece en la serie Ultima y que el jugador debe seguir.
 
-## Los juegos
+## Sistemas de virtudes
+
+- [Ultima IV](virtudesBritannia.md), virtudes de Britannia
+- [Ultima VI](virtudesGargolas.md), virtudes gárgolas
+
+### Derivadas lúdicas a partir de la idea de virtudes
+
+- [Virtudes del programador](virtudesProgramador.md)
+- [Virtudes MVC](../../UltimaRelated/modeloVistaControlador.md)
+
+
+## Contexto: los juegos
 
 ### Ultima IV
 
@@ -48,12 +59,3 @@ En una entrevista con Computer Games Online, Richard Garriott reveló algunos as
 
 *Así que fui virtud por virtud y traté de crear estos tipos de experiencias.*
 
-## Sistemas de virtudes
-
-- [Ultima IV](virtudesBritannia.md), virtudes de Britannia
-- [Ultima VI](virtudesGargolas.md), virtudes gárgolas
-
-### Derivadas lúdicas a partir de la idea de virtudes
-
-- [Virtudes del programador](virtudesProgramador.md)
-- [Virtudes MVC](../../UltimaRelated/modeloVistaControlador.md)
