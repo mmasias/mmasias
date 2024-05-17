@@ -4,9 +4,9 @@
 - De la Escuela nace el **Aprendizaje**.
 - De la Sociedad se desprende la **Solidaridad**.
 
-- El Cuidado unido con el Aprendizaje producen la virtud de la **Educación**.
-- El Aprendizaje combinado con la Solidaridad generan la virtud de la **Ciudadanía**.
-- La Sociedad junto con el Cuidado dan origen a la virtud de la **Asistencia**.
+- La Familia unida con la Escuela producen la virtud de la **Educación**.
+- La Escuela combinada con la Sociedad generan la virtud de la **Ciudadanía**.
+- La Sociedad junto con la Familia dan origen a la virtud de la **Asistencia**.
 
 - La falta de Familia, Escuela y Sociedad llevan al *Individualismo*. Por ello, la séptima virtud es la **Fraternidad**.
 
