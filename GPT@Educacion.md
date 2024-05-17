@@ -22,12 +22,9 @@
 
 > *De [OpenAI](https://help.openai.com/en/articles/8313434-are-there-any-resources-for-educators-to-learn-more-about-ai)*
 
-<<<<<<< HEAD
 ## Casos de Uso
 
 - [Reconocimientos](ai/CdU/reconocimientos.md)
-=======
 ## Citas
 
 - Mas que preuntarnos si la AI es inteligente, preguntémonos ¿nuestra relación con la tecnologia es inteligente? (*Daniel Innerarity*)
->>>>>>> ea4ea10be58de6c7b8b5f6ed027b8c550fe1129b
