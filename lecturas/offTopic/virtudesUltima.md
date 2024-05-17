@@ -11,7 +11,9 @@
 
 - [Virtudes del programador](virtudesProgramador.md)
 - [Virtudes MVC](../../UltimaRelated/modeloVistaControlador.md)
-
+- [Estados de la materia](../../UltimaRelated/estadosMateria.md)
+- [Familia, Escuela y Sociedad](../../UltimaRelated/FamEscSoc.md)
+- [Ver, Pensar, Actuar](../../UltimaRelated/VerPensarActuar.md)
 
 ## Contexto: los juegos
 
