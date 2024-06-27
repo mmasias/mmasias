@@ -32,12 +32,13 @@ La educación en la ingeniería informática, y en campos técnicos en general, 
 |Dirección de sistemas de información||[[22][23]](https://github.com/mmasias/DSI-22-23)||[[23][24]](https://github.com/mmasias/23-24-DSI)
 
 - [Trazabilidad](https://github.com/mmasias/23-24-prg1/pulls?q=is%3Apr+is%3Aclosed).
-- Transparencia.
-  - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-Andecochea/commits/main/)
-  - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-alejandrofondo/commits/main/)
-  - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-Bruno-MBl/commits/main/)
+- Proceso de creación:
+  - Individual
+    - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-Andecochea/commits/main/)
+    - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-alejandrofondo/commits/main/)
+    - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-Bruno-MBl/commits/main/)
+  - colaborativo [1](https://github.com/MRSergio21/IdSw1-CORE_TiCKET/pulse/monthly)
 - [Evaluación](https://docs.google.com/spreadsheets/d/1J-Dh75a0I21p3nmVXEu0oj_WXAjow1_dhvWaRyiYXv0/edit#gid=1583792376)
-- Trabajo colaborativo [1](https://github.com/MRSergio21/IdSw1-CORE_TiCKET/pulse/monthly)
 - [Mejora continua & evolución](https://github.com/puntoReflex)
 
 ## Bibliografía y enlaces externos
