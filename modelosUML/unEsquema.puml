@@ -1,0 +1,51 @@
+@startmindmap
+
++ <b>DSI</b>
+++ Modelos de negocio e innovación
++++ Economía Digital
++++ Herramientas y marcos de trabajo
+++++ El lienzo de modelo de negocio
+++++ DAFO
+++++ Cinco fuerzas de Porter
+++++ Otros marcos de trabajo
++++ Innovación
+++++ Tipos de innovación
+++++ Innovación como proceso
+++++ Enfoques para innovar
++++++ Océano Azul
++++++ Innovación abierta (Open innovation)
++++++ Teoría de los trabajos por realizar (Jobs to be done)
++++++ Innovación de plataformas
+++ Funciones de la dirección de sistemas de información
++++ Definición de Sistemas de la información en las organizaciones
++++ Evolución histórica
++++ Componentes
++++ Personas: como nos organizamos
+++++ Funciones
+++++ Conocimiento
++++ Actividades de la DSI
++- Estrategia y planificación de los sistemas de información
++-- Transformación digital
++-- Etapas
++-- Planificación de las TI
++-- Frameworks de arquitectura empresarial
++-- El capital humano de TI
++-- Ciberseguridad
++- Gestión de proyectos de integración de sistemas
++- Herramientas
++-- Lenguajes de programación
++-- No-code
++-- Metodologías de desarrollo
++-- Tipología de aplicaciones
++-- Sistemas ERP
++- Diseño
++-- Requisitos
++-- Arquitectura
++- Implantación
++-- Gestión del cambio
++-- Gestión de seguridad e integridad de datos
++- Valoración
++-- Indicadores
++-- Gestión de riesgos
+
+@endmindmap
