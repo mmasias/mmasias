@@ -32,20 +32,20 @@
 +-- El capital humano de TI
 +-- Ciberseguridad
 +- Gestión de proyectos de integración de sistemas
-+- Herramientas
-+-- Lenguajes de programación
-+-- No-code
-+-- Metodologías de desarrollo
-+-- Tipología de aplicaciones
-+-- Sistemas ERP
-+- Diseño
-+-- Requisitos
-+-- Arquitectura
-+- Implantación
-+-- Gestión del cambio
-+-- Gestión de seguridad e integridad de datos
-+- Valoración
-+-- Indicadores
-+-- Gestión de riesgos
++-- Herramientas
++--- Lenguajes de programación
++--- No-code
++--- Metodologías de desarrollo
++---- Tipología de aplicaciones
++--- Sistemas ERP
++-- Diseño
++--- Requisitos
++--- Arquitectura
++-- Implantación
++--- Gestión del cambio
++--- Gestión de seguridad e integridad de datos
++-- Valoración
++--- Indicadores
++--- Gestión de riesgos
 
 @endmindmap
