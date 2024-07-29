@@ -1,5 +1,8 @@
 # mmasias@UNEATLANTICO
 
+- [IngenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO)
+- [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico)
+
 ## [23][24]
 
 - [Programación 1](https://github.com/mmasias/23-24-prg1)

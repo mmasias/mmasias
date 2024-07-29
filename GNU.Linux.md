@@ -6,14 +6,15 @@ TsP / TpR: 20 min / 7 min
 
 ## Instalar Chrome
 
-Del canal oficial de la distro 
+Del [canal oficial](https://www.google.com/chrome/?platform=linux) de la distro.
 
 ## Instalar GIT
 
 ```bash
 sudo apt install git
 
-git config --global user.name "mmasias"
+git config --global user.name "mmasias
+"
 git config --global user.email "manuel@masiasweb.com"
 
 ```
