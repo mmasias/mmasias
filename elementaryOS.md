@@ -82,6 +82,10 @@ sudo systemctl restart cups
 
 > #notaMental: 213, iR-ADV C5235/5240 UFR II
 
+#### Semi-Auto
+
+- [Drivers](https://drive.google.com/drive/folders/1HjncE-cJPyxzEuDZsfUW21V7-b5mSSA3?usp=sharing)
+- [Config](imagenes/impresoraCanonGNU.png)
 
 ### Instalar oh-my-posh
 
