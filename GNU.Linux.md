@@ -13,8 +13,7 @@ Del [canal oficial](https://www.google.com/chrome/?platform=linux) de la distro.
 ```bash
 sudo apt install git
 
-git config --global user.name "mmasias
-"
+git config --global user.name "manuel@dondeSea"
 git config --global user.email "manuel@masiasweb.com"
 
 ```
