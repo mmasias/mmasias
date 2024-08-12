@@ -4,6 +4,4 @@
 |:-:|-|
 |🤖💬|Experimentos que hago con prompts, pa' no olvidarlos
 
-
 - [Reconocimientos](reconocimientos.md)
-
