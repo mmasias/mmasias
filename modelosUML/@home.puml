@@ -58,15 +58,16 @@ node "Casa" {
     }
 }
 
-Movistar -- router : Cable
-router -- tv : Cable Ethernet
-router ...> sdf1 : WiFi
-router ...> daedalus : WiFi
-router ...> prometeus : WiFi
-router ...> Switch : WiFi
-router ...> WiiU : WiFi
-router ...> Macbook : WiFi
-daedalus -- tv : Cable HDMI
+Movistar --> router 
+router --> tv 
+router ...> sdf1
+router --> daedalus
+router ...> prometeus
+router ...> Switch 
+router ...> WiiU 
+router ...> Macbook
+daedalus --> tv : " HDMI"
+
 
 
 @enduml

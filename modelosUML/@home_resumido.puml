@@ -1,0 +1,33 @@
+@startuml
+
+cloud "Internet" {
+    [Movistar]
+}
+
+node "Casa" {
+    RECTANGLE "Router" as router
+
+    node Switch 
+    node WiiU
+    node "Macbook" as Macbook 
+
+    node "Smart TV" as tv 
+    
+    node "SDF1" as sdf1 
+    
+    node "Daedalus" as daedalus 
+    
+    node "Prometeus (Portátil)" as prometeus 
+}
+
+Movistar --> router 
+router --> tv 
+router ...> sdf1
+router --> daedalus
+router ...> prometeus
+router ...> Switch 
+router ...> WiiU 
+router ...> Macbook
+daedalus --> tv : " HDMI"
+
+@enduml
