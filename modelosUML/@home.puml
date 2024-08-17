@@ -1,0 +1,72 @@
+@startuml
+
+cloud "Internet" {
+    [Movistar]
+}
+
+node "Casa" {
+    RECTANGLE "Router" as router
+
+    node Switch 
+    node WiiU
+    node "Macbook" as Macbook {
+        RECTANGLE MacOS {
+            [LogicPro]
+            [MainStage]
+        }
+    }
+
+    node "Smart TV" as tv {
+        [Función TV]
+        [Función Pantalla]
+    }
+    
+    node "SDF1" as sdf1 {
+        RECTANGLE "Windows" as winSDF1 {
+            [Firefox] as winFirefoxSDF1
+            [Visual Studio Code] as winVSCodeSDF1
+            [Java] as winJavaSDF1
+        }
+        RECTANGLE "Fedora" as fedoraSDF1 {
+            RECTANGLE "Firefox" as fedFirefoxSDF1 {
+                [RemoveElement Plugin]
+            }
+            [Visual Studio Code] as fedVSCodeSDF1
+            [Java] as fedJavaSDF1
+        }
+    }
+    
+    node "Daedalus" as daedalus {
+        RECTANGLE "Fedora" as fedoraDaedalus {
+            [Firefox] as firefoxDaedalus
+            [Visual Studio Code] as vscodeDaedalus
+            [Java] as javaDaedalus
+        }
+    }
+    
+    node "Prometeus (Portátil)" as prometeus {
+        RECTANGLE "Windows" as winPrometeus {
+            [Firefox] as winFirefoxPrometeus
+            [Visual Studio Code] as winVSCodePrometeus
+            [Java] as winJavaPrometeus
+        }
+        RECTANGLE "Ubuntu" as ubuntuPrometeus {
+            [Firefox] as ubuntuFirefoxPrometeus
+            [Visual Studio Code] as ubuntuVSCodePrometeus
+            [Java] as ubuntuJavaPrometeus
+        }
+    }
+}
+
+Movistar -- router : Cable
+router -- tv : Cable Ethernet
+router ...> sdf1 : WiFi
+router ...> daedalus : WiFi
+router ...> prometeus : WiFi
+router ...> Switch : WiFi
+router ...> WiiU : WiFi
+router ...> Macbook : WiFi
+daedalus -- tv : Cable HDMI
+
+
+@enduml
