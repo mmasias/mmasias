@@ -85,19 +85,6 @@ sudo apt install vlc
 sudo snap install vlc
 ```
 
-## Otras cosas...
-
-* Configurar captura de pantalla (WIN+MAYUSC+S)
-
-### Instalar elementary Tweaks
-
-```bash
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
-sudo apt update
-sudo apt install pantheon-tweaks
-```
-
 ### Instalar la impresora
 
 Instalar el [Driver CQue DEB](https://www.canon.es/support/products/imagerunner/imagerunner-advance-c5235i.html?type=drivers&driverdetailid=tcm:86-1894069&os=linux%20%2864-bit%29&language=es)
@@ -144,7 +131,3 @@ eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.js
 
 [Future](https://store.kde.org/p/1491484)
 Utterly Nord Ligth Solid
-
-### dosbox.conf
-
-[fullscreen fixed](dosbox.conf)
