@@ -131,3 +131,7 @@ eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.js
 
 [Future](https://store.kde.org/p/1491484)
 Utterly Nord Ligth Solid
+
+## Notas adicionales
+
+- DOSBOX de Flatpak
