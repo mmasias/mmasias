@@ -1,5 +1,7 @@
 # CHARLY GARCÍA - Análisis Discográfico
 
+> by https://jesusgran.wixsite.com/clasicosdelrock/charly-garcia
+
 ## Sui Generis
 
 ### VIDA (1972)
@@ -188,3 +190,27 @@ El ritmo introductorio de '¿Qué se puede hacer salvo ver películas?' está cl
 
 Así pues, habiendo mejorado ligeramente el nivel del disco anterior pero sin margen para progresar demasiado respecto a lo que ya habían hecho, el destino de La Máquina de Hacer Pájaros no podía ser otro que disolverse para que Charly García siguiera su progresión y no tuviera que lidiar con las tensiones que ya habían aflorado en el seno de la banda y que le estaban minando la moral. Solo seguiría con él el batería Óscar Moro para su siguiente proyecto: Serú Girán.
 
+## Serú Girán
+
+### SERÚ GIRÁN (1978)
+
+**Puntuación:** ★★★★☆
+
+1. Eiti Leda
+2. El mendigo en el andén
+3. Separata
+4. Autos, Jets, Aviones, Barcos
+5. Serú Girán
+6. Seminare
+7. Voy a mil
+8. Cosmigonón
+
+Como hemos visto hasta ahora, la trayectoria profesional de Charly García era casi tan convulsa como el devenir sociopolítico de su país, abocado a una miserable y asesina dictadura que ensombreció el mundial de fútbol que ganó Argentina en 1978 como anfitriona y con el valencianista Kempes como goleador. Meses después de aquel evento, saldría a la luz el debut de este supergrupo que aunaba a Charly junto al habilidoso guitarrista David Lebón (quien llegó a tocar con Sui Generis), el bajista Pedro Aznar y el batería que le había acompañado en La Máquina de Hacer Pájaros, Óscar Moro. Charly nunca había tenido a su vera a un bajista de la impresionante técnica del entonces jovencísimo Pedro Aznar, lo que unido a la rápida evolución de Lebón, confería a esta nueva banda un aura de grandeza incluso superior a PorSuiGieco, pues donde aquello se trataba de un proyecto común puntual por parte de unos amigos, en el caso de Serú Girán era un proyecto serio y con perspectiva de futuro. Los compositores únicos son García y Lebón, sobre todo el primero, marcando así una suerte de liderazgo en la práctica que se mantendría a lo largo de los años, con algunas aportaciones de Aznar en el futuro.
+
+Cuando comenzamos a escuchar 'Eiti Leda', nada parece haber cambiado desde la etapa de Sui Generis por tratarse de un tranquilo folk cantado a dos voces. Esto es debido a que este tema pertenece en realidad a la época de Sui Generis bajo el título de 'Nena' aunque nunca fue grabado en el estudio, pero formó parte del repertorio con el que se despidieron en el concierto luego publicado como Adiós Sui Generis, en concreto del tercer volumen que sería publicado más tarde en los noventa. No es hasta que entra el deslumbrante bajo de Pedro Aznar que este tema se vuelve realmente interesante al conjuntar las tiernas melodías vocales con un dinámico acompañamiento instrumental. Eso sí, la recta final parece una imitación de los excesos sintetizados de los Genesis post-Hackett. Si nos fijamos en 'Seminare', en ella se aúna el folk de voces corales de Sui Generis con los sintetizadores de La Máquina de Hacer Pájaros, siendo una balada muy reverenciada en Argentina, algo lacrimosa quizá.
+
+'Separata' podría haber sido la mejor canción de todas porque apunta muy buenas maneras, pero cuando percibimos que comienza a despegar de verdad es cuando de repente se acaba. Un escaso minuto y medio que nos deja con la miel en los labios. La voz de Lebón no es precisamente uno de sus mejores atributos, como podemos comprobar en las canciones cantadas por él. En 'El mendigo en el andén' demuestra que sabe hacer falsetes pero no es ni la mitad de expresivo que García. Lo mejor es su segunda mitad, al acelerar el ritmo en una especie de funk relajado. Es lo más discreto del álbum junto al cuasi instrumental de mismo nombre que la banda, pues aun tratándose de una composición multiparte, en buena parte suena a vulgar banda sonora mientras que la sección cantada apenas transmite nada y no es hasta pasados los cinco minutos que por fin los músicos se dedican a engranar sus instrumentos de forma cohesionada para crear una sección épica y a la altura de lo que se espera de esta banda. Solo cantan un batiburrillo de palabras sin significado, entre ellas algunos títulos de canciones aquí incluidas, parece ser que como una manera de burlarse de la censura implantada por la sanguinaria dictadura que azotaba a Argentina.
+
+Mejor resultado consiguen cuando dirigen su mirada a otras músicas, como la brasileña que se cuela en 'Autos, Jets, Aviones, Barcos', reflejo de su estancia en Brasil, donde originalmente había acudido Charly para la gestación de este álbum. Por medio de tan frenética percusión incluyen un pasaje más calmado de rock progresivo con un solo de guitarra bastante blusero. Los acordes que inician 'Voy a mil' parecen inspirados en 'Long Cool Woman (In A Black Dress)' de The Hollies, pero lo que hace verdadera gracia es escuchar los famosos acordes de 'Foxy Lady' de Jimi Hendrix un poco más rápidos. Menos mal que luego ya no los vuelven a repetir y se dedican a ir cambiando de ritmo continuamente para darle algo de interés. Siguiendo con las fuentes de inspiración, el breve instrumental 'Cosmigonón' suena a Bach pasado por sintetizadores y loops, una extravagancia experimental que queda bien como epílogo.
+
+En resumen, las maneras que apuntaban en este debut eran muy buenas, con una apertura estilística en la que todo tenía cabida, reflejo por otro lado de los nuevos tiempos musicales, puesto que esa amalgama estilística de las nuevas bandas derivaría en la incipiente New Wave que revitalizaría la música popular a nivel mundial en esos años. Serú Girán se postularán de esta manera como un prometedor grupo llamado a revitalizar el rock hispano. Como siempre, faltaba que colmaran esas expectativas.
