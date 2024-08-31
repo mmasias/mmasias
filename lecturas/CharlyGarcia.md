@@ -1,6 +1,6 @@
 # CHARLY GARCÍA - Análisis Discográfico
 
-> by https://jesusgran.wixsite.com/clasicosdelrock/charly-garcia
+> Página original de [Jesus Gran](https://jesusgran.wixsite.com/clasicosdelrock/charly-garcia)
 
 ## Sui Generis
 
@@ -214,3 +214,109 @@ Cuando comenzamos a escuchar 'Eiti Leda', nada parece haber cambiado desde la et
 Mejor resultado consiguen cuando dirigen su mirada a otras músicas, como la brasileña que se cuela en 'Autos, Jets, Aviones, Barcos', reflejo de su estancia en Brasil, donde originalmente había acudido Charly para la gestación de este álbum. Por medio de tan frenética percusión incluyen un pasaje más calmado de rock progresivo con un solo de guitarra bastante blusero. Los acordes que inician 'Voy a mil' parecen inspirados en 'Long Cool Woman (In A Black Dress)' de The Hollies, pero lo que hace verdadera gracia es escuchar los famosos acordes de 'Foxy Lady' de Jimi Hendrix un poco más rápidos. Menos mal que luego ya no los vuelven a repetir y se dedican a ir cambiando de ritmo continuamente para darle algo de interés. Siguiendo con las fuentes de inspiración, el breve instrumental 'Cosmigonón' suena a Bach pasado por sintetizadores y loops, una extravagancia experimental que queda bien como epílogo.
 
 En resumen, las maneras que apuntaban en este debut eran muy buenas, con una apertura estilística en la que todo tenía cabida, reflejo por otro lado de los nuevos tiempos musicales, puesto que esa amalgama estilística de las nuevas bandas derivaría en la incipiente New Wave que revitalizaría la música popular a nivel mundial en esos años. Serú Girán se postularán de esta manera como un prometedor grupo llamado a revitalizar el rock hispano. Como siempre, faltaba que colmaran esas expectativas.
+
+### LA GRASA DE LAS CAPITALES (1979)
+
+**Puntuación:** ★★★★☆
+
+1. La grasa de las capitales
+2. San Francisco y el Lobo
+3. Perro andaluz
+4. Frecuencia modulada
+5. Paranoia y soledad
+6. Noche de perros
+7. Viernes 3 am
+8. Los sobrevivientes
+9. Canción de Hollywood
+
+Después de haberse presentado mediante un debut que denotaba algo de inseguridad en lo que estaban haciendo, en este segundo álbum de Serú Girán reflejan una evolución muy positiva. Con mayor confianza y, sobre todo, conociéndose mejor los miembros entre ellos, comienza a aflorar la calidad atesorada en estos célebres músicos para que las impecables ejecuciones no se limiten a demostrar su valía técnica, sino también a desplegar originales melodías mediante las cuales elevarse por encima de otras bandas de estilo similar. Esa confianza les sirve igualmente para mostrar en la portada su humor satírico hacia una sociedad atemorizada que, como en toda dictadura, era amaestrada y manipulada de forma conductista para desviar su atención hacia el sensacionalismo y el deporte.
+
+El disco comienza de manera potente mediante el tema que le da título, una crítica a la despersonalización de las grandes ciudades, donde la mezcla de asfalto y polución ayuda a provocar una alienación de la persona, de tal manera que en muchas ocasiones la sume en una indiferencia (o incluso desprecio) hacia el prójimo, motivo de fondo de los conflictos cotidianos. Esa alienación se trata también desde otra perspectiva en la acústica y más discreta 'San Francisco y el Lobo', ya que una experiencia traumática puede distorsionar por completo la concepción que un@ tiene del mundo y generalizar lo que era una situación concreta, modificando las propias pautas de comportamiento. Una velada crítica a la situación político-social del momento la encontramos en 'Los sobrevivientes', que en lo musical es más convencional (es decir, dentro de su complejidad) y sirve de recordatorio del rock progresivo que había desarrollado Charly.
+
+Al menos por la letra, 'Perro andaluz' no tiene nada que ver con Buñuel (ni siquiera con Lorca, si se permite la broma), pero como carece de mordiente y las pocas melodías incluidas son bastante discretas, mejor que se quede así la cosa. Luis Buñuel se merece un homenaje surrealista al nivel de 'Debaser' de los Pixies. Tampoco es una crítica velada como la otra canción de perros ('Noche de perros'), la cual recrea además una atmósfera opresiva y desesperante al estilo de 'Hey You' de Pink Floyd, además de poseer una excepcional coda muy emocionante donde los cuatro músicos brillan. Esta coda trae ecos de la de 'I Want You' de The Beatles. Es la mejor composición de este disco junto a la poesía de amor de tintes surrealistas que nos regala Charly en su balada 'Viernes 3 am', de emotiva parte vocal en la que despliega varias melodías de primer nivel.
+
+La vertiente de jazz asoma preferentemente hacia la mitad del álbum, en primer lugar mediante 'Frecuencia modulada', muy influenciada por los Steely Dan que habían triunfado con Aja. Sintiéndose cómodo en ese mundo, Pedro Aznar aporta su primera composición propia, 'Paranoia y soledad', que previsiblemente es la más jazzística de todas las de este disco. Transcurre por diferentes segmentos pero se hace demasiado larga, sin que nada de lo escuchado nos indique más que los músicos tienen una envidiable técnica, en especial Pedro con su bajo. También la final 'Canción de Hollywood' tiene sus toques de jazz y diversos cambios de ritmo que, junto a una parte vocal donde paulatinamente va elevándose el tono, hacia la mitad se llega a un clímax bien conseguido que luego continúa con una extensa sección instrumental al estilo de Frank Zappa. Como toque de humor (o de homenaje, o ambas cosas), al final suenan las famosas notas de 'On Broadway'.
+
+Se volvía a repetir la historia de las anteriores bandas de Charly García en el sentido de que, salvo el proyecto puntual de PorSuiGieco, siempre conseguía evolucionar en sentido ascendente. Por tanto, el interés principal que suscitaba Serú Girán era saber hasta qué punto lograrían evolucionar o si se acabaría todo en cualquier momento, tal como había ocurrido con anterioridad. Afortunadamente, todo iría mejorando.
+
+### BICICLETA (1980)
+
+**Puntuación:** ★★★★☆
+
+1. A los jóvenes de ayer
+2. Cuánto tiempo más llevará
+3. Canción de Alicia en el país
+4. La Luna de Marzo
+5. Mientras miro las nuevas olas
+6. Desarma y sangra
+7. Tema de Nayla
+8. Encuentro con el diablo
+
+El tercer disco de Serú Girán, cuyo título hace recordar a los Pink Floyd de Syd Barrett aunque nada tenga que ver, denota que el cuarteto estaba evolucionando favorablemente pero todavía no acababa de despegar del todo ese potencial que atesoraba, en parte porque como compositor el verdadero genio era Charly y el resto poseía otras virtudes diferentes. El estilo de la banda se asentaba en esa fusión/complementación de rock progresivo, rock más clásico y jazz.
+
+Precisamente el jazz asoma de entrada en 'A los jóvenes de ayer' mediante una extensa introducción de varios minutos (con paradas incluidas) que no se sabe bien dónde quiere llegar. Pasados los dos minutos y medio todo se anima gracias a una potente sección de prominente percusión, aunque luego se difumina al desviarse hacia un sonido más jazzístico que luego nos lleva a la calmada parte donde canta Charly. Las dos últimas secciones son también interesantes al ser instrumentales (con algún que otro coro) que sirven de perfecta excusa para que los músicos desplieguen su envidiable técnica. Pocas bandas de rock habría en esa época en Argentina con tanto nivel. De hecho, 'Cuánto tiempo más llevará' sería la típica canción de pop si no fuera porque hay unos grandes músicos detrás que realizan una impecable ejecución instrumental. El último minuto es para enmarcar.
+
+La canción más política es 'Canción de Alicia en el país', muy exigua en lo instrumental quizá para reforzar el impacto del mensaje camuflado bajo las referencias a la novela del matemático Lewis Carroll. Su autor no podía ser otro que Charly García, quien más adelante, a solas con su piano y un refuerzo de sintetizadores en tono orquestal, vuelve a dejar otra gran canción aquí, 'Desarma y sangra', que es como si el Dylan de New Morning le hubiera dejado tocar el piano al Cat Stevens de esa misma época.
+
+La crítica no es solo política sino también cultural, como a la música que se estaba poniendo de moda bajo la etiqueta de Nueva Ola (New Wave) que nutre la letra de 'Mientras miro las nuevas olas'. Eso es un daño colateral inherente a todo movimiento musical: quienes se suben al carro de la moda para aprovecharse del tirón comercial y hacerse famosos con lamentables canciones que luego caerán en el olvido más absoluto por su intrascendencia. Si a ello le sumamos el boom de la imagen como elemento primordial de marketing con el que se empezó a comercializar la música por esas fechas (aunque todavía faltaba un año para la irrupción de la MTV), tenemos la génesis del panorama musical actual. A los tres minutos introducen el estribillo instrumental de 'Sultans Of Swing' de Dire Straits, quién sabe si para reclamar música más auténtica como la que había desarrollado la banda de Mark Knopfler en contra de las modas del momento.
+
+La composición de Pedro Aznar, 'La luna de marzo', vuelve a ser otra demostración de virtuosismo en forma de instrumental que evoca a la perfección visiones nocturnas. Al tener una duración normal, demuestra mayor tino que Lebón con su 'Tema de Nayla', que llega casi a los siete minutos y resulta imposible no perder la concentración mientras tanto, ya que primero es demasiado lenta y luego, hacia la mitad, se acelera el ritmo para pasar a un inexpresivo tramo instrumental. Una lástima que un disco tan bien facturado acabe sonando más vulgar en su recta final, tanto por la citada 'Tema de Nayla' como por 'Encuentro con el diablo', que no es más que una copia menor y en castellano de 'Sweet Home Alabama' de Lynyrd Skynyrd, aunque al menos su ejecución instrumental supera a lo mismo que hicieron Siniestro Total en 'Miña terra galega'. Lo gracioso es que aparecen como autores García y Lebón, una errata del impresor o un gesto muy feo por su parte.
+
+Es una vergonzosa manera de finalizar un álbum con música original de tanta calidad, pero tampoco se les puede exigir más porque se intuye que han sabido sacar el máximo partido a las composiciones existentes. Quedaba claro que, para intentar mejorar lo hecho hasta ahora, debían superar la barrera de la composición, que en el caso de Charly no era un problema pero sí para el 40% restante del contenido de cada uno de los álbumes de Serú Girán, es decir, que a Lebón y Aznar les faltaba una mayor creatividad melódica.
+
+## Charly García
+
+### MÚSICA DEL ALMA (1980)
+
+**Puntuación:** ★★★☆☆
+
+1. Variaciones sobre música del alma
+2. Dos Edificios dorados
+3. Hombre de mala sangre
+4. Sentado en el umbral de Dios
+5. El fantasma de Canterville
+6. Las dulces promesas
+7. Iba acabándose el vino
+8. Tema de los devotos
+9. Boletos, pases y abonos
+10. Gaby
+11. Bienvenidos al tren
+12. Studio Jam
+13. Música del alma
+
+El primer álbum en solitario bajo el nombre de Charly García recoge en realidad un concierto acaecido en noviembre de 1977, justo en el momento en que había finalizado la etapa de La Máquina de Hacer Pájaros y todavía no había comenzado la de Serú Girán. Para ello, realiza un recorrido por todo lo que había sido su carrera hasta entonces y en el escenario aparecen desfilando quienes le habían acompañado en cada fase concreta, como si fuera El último vals de The Band pero no como despedida sino más bien a la inversa. Dos de los músicos participantes son el guitarrista David Lebón y el batería Óscar Moro, por lo que puede decirse que el germen de Serú Girán está aquí. Pero también están aquí los músicos de Sui Generis y PorSuiGieco, no falta absolutamente nadie.
+
+Hasta que no han transcurrido un par de minutos, 'Variaciones sobre música del alma' parece que sea la grabación de Charly mientras afina el piano antes de comenzar a tocar. El título es adecuado, ya que 'Música del alma', que se encuentra al final, suena muy parecida aunque mejorada con guitarras y parte cantada, todo muy al estilo de folk coral de Sui Generis. Si la decisión de juntarse con Lebón no estuviera ya tomada de antemano, seguro que hubiera podido venir motivada porque dos de las mejores interpretaciones de este concierto son composiciones suyas, además de que realiza un espeluznante trabajo de guitarra. No solo porque la repetición de la mitad del famoso riff de guitarra de 'Layla' de Eric Clapton es lo primero que escuchamos en la potente 'Dos Edificios dorados', ya que luego todo eso se olvida, sino que aparte de una épica parte vocal complementada por el teclado progresivo de García, encontramos unos solos de guitarra de primerísimo nivel. Muy diferente pero igualmente genial es 'Hombre de mala sangre', en el mejor estilo de balada de aires góspel que pudiera haber tenido Elton John.
+
+PorSuiGieco en conjunto suenan en realidad más a Sui Generis cuando interpretan 'Iba acabándose el vino', al tratarse de un folk acústico de voces cristalinas. También encontramos una versión más rockera de 'El fantasma de Canterville'. Dos de los componentes de esta formación tienen igualmente la oportunidad de lucirse con su número propio: Raúl Porchetto toca una bonita balada de piano y algo de sintetizadores y coros ('Sentado en el umbral de Dios'), mientras que León Gieco no falla con la interpretación de 'Las dulces promesas' a la guitarra y el acompañamiento de García en el teclado. Nito Mestre reaparece para recomponer Sui Generis y cantar en primer lugar la inédita 'Gaby', una balada de piano donde lo único destacable es precisamente este instrumento. Se resarcen luego realizando una sensacional interpretación de 'Bienvenidos al tren' tan solo con el piano de acompañamiento, pero con esa magia especial que transmiten dos viejos amigos que se han vuelto a juntar.
+
+El turno de La Máquina de Hacer Pájaros lo ocupan con una extensísima interpretación de 'Boletos, pases y abonos' en la cual se le da cabida al inevitable solo de batería que entretenía al público pero abochorna al oyente posterior, para luego pasar por turnos al solo de bajo y al solo de guitarra. Todo muy excesivo y superfluo, hubiera quedado mejor una versión extremadamente más reducida. En el polo opuesto de lo que debería ser una improvisación, si es que de verdad lo es, el instrumental 'Studio Jam' denota que sí había músicos que estaban bien inspirados esa noche.
+
+En definitiva, se trata de un interesante concierto donde los compañeros participantes no se dedican simplemente a pasar el rato de manera amena, sino que realizan interpretaciones notables en la mayoría de casos. Debió ser todo un acontecimiento en Argentina, dada la categoría de los músicos intervinientes y la dura época que se estaba viviendo. Cuenta la historia que, tras este concierto, Charly García y David Lebón se refugiaron en Brasil para aislarse de la dictadura y dedicarse a componer para conformar lo que llegaría a ser Serú Girán.
+
+### PEPERINA (1981)
+
+**Puntuación:** ★★★☆☆
+
+1. Peperina
+2. Llorando en el espejo
+3. Parado en el medio de la vida
+4. Cara de velocidad
+5. Esperando nacer
+6. Veinte trajes verdes
+7. Cinema verité
+8. En la vereda del sol
+9. José Mercado
+10. Salir de la melancolía
+11. Lo que dice la lluvia
+
+Aunque en ese momento no eran conscientes de ellos, este iba a ser el último álbum de estudio de Serú Girán hasta la próxima década. De haberlo sabido, quizá se hubieran esforzado todos un poco más, ya que da la sensación de que se lo habían tomado de forma relajada y básicamente son las partes de piano de Charly las que elevan el nivel global del álbum. No es normal ver en esta banda composiciones tan lineales, siendo en esta ocasión excepciones honrosas las que son más complejas.
+
+La estructura cambiante dota de diversidad melódica a 'Peperina', aunque en ningún momento logran alcanzar ese grado sublime de sus mejores logros. En su letra se encuentra una referencia a "la grasa de las capitales" y es en conjunto una especie de respuesta hacia una periodista argentina que criticaba duramente la música de la banda. También es buena señal volver a encontrar la influencia de los Steely Dan de Aja, los del jazz-rock estilizado e interpretado con gusto, que es le idea que transmite 'Salir de la melancolía'. Lo que no se entiende es que, poseyendo estos músicos una técnica muy buena, en la segunda mitad de 'Llorando en el espejo' se dediquen a completar el tiempo con una lamentable parte instrumental que parece un insulto por su simpleza. Parecería más apropiado para una banda de tercera fila, pero no para Serú Girán. En sentido inverso, la pieza acústica de Lebón 'Parado en el medio de la vida' comienza bien pero luego acaba sonando bastante convencional sin rematar en un estribillo que tenga gancho. Tampoco auguraban nada prometedor otros temas como 'Esperando nacer', una convencional balada pop, y la más rítmica 'En la vereda del sol' que tampoco se aleja de ese convencionalismo, en parte por los sobrecargados teclados que se escuchan.
+
+Este álbum contiene tres temas instrumentales, cada uno de ellos acreditado a uno de los miembros de la banda, con la excepción obvia del baterista Moro. Aunque comience con un schubertiano piano, esta introducción no deja de ser un punto de humor porque 'Cara de velocidad' representa la incursión en el rock duro que se puso tan de moda en el rock hispano de principios de los ochenta, donde el grupo acaba pareciendo un trasunto de AC/DC conforme avanza, ya que Lebón, su autor, va incrementando la energía con su guitarra hasta la desaforada parte final. En su instrumental, Charly sigue dirigiendo la mirada a los clásicos, por lo que en el caso de 'Veinte trajes verdes' puede que se fijara en Debussy, que sería un magnífico ejemplo a seguir. La aportación de Aznar es el instrumental que cierra el álbum, 'Lo que dice la lluvia', aunque parecería más bien de Charly porque es el teclado el que domina y casi monopoliza este tema, sin escuchar apenas el bajo de Aznar, si bien es sorprendentemente el propio Aznar quien toca el teclado. Siguiendo con la equiparación a los pianos clásicos, en esta ocasión la influencia principal podría ser Erik Satie. Es la mejor pieza del álbum y se aleja por completo de toda connotación rock. Está perfectamente estructurada y en ella hay cabida para la entrada del moog y algunas delicadas partes de bajo y guitarra, de manera que todos, salvo Moro, ponen su granito de arena.
+
+El teclado de García crea una envoltura intimista en su canción 'Cinema verité', otro ejemplo de que ya comenzaba a vislumbrar su futuro alejado de sus compañeros, aunque el motivo de la ruptura vendría por otro lado. La crítica al consumismo, uno de los temas recurrentes en Serú Girán, aparece de manera más evidente y mordaz en 'José Mercado', de marcado tono satírico también en la interpretación, si bien la parte instrumental es bastante extravagante (incluido un comienzo de percusión tribal) y suena algo anticuada en el empleo de sintetizadores.
+
+La marcha de Pedro Aznar a Estados Unidos precipitó la disolución del grupo, si bien Charly y Lebón ya tenían en mente tomarse un respiro con sus respectivas carreras en solitario antes de proseguir con Serú Girán. Al final, Charly seguiría en solitario, no sin antes realizar un concierto como despedida de Aznar (y al final, de la banda también) que saldría publicado en disco, todo durante el año siguiente.
+
