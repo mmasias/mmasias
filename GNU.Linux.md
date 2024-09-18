@@ -127,6 +127,14 @@ En ```.bashrc```
 ```
 eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
 ```
+
+## Otros utilitarios interesantes
+
+```bash
+sudo apt install tree # tree -pugh
+sudo apt install eza  # eza -l --tree --group --header
+```
+
 ### Tema (KDE)
 
 [Future](https://store.kde.org/p/1491484)
