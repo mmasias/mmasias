@@ -1,0 +1,43 @@
+@startuml EcoTrackMDD
+
+hide circle
+
+class Usuario {
+  nombre
+  perfil ecológico
+}
+
+class HuellaCarbono {
+  período
+  valor total
+}
+
+class Actividad {
+  tipo
+  impacto carbono
+}
+
+class Recomendación {
+  descripción
+  potencial de reducción
+}
+
+class Objetivo {
+  descripción
+  meta de reducción
+}
+
+class ComunidadEcológica {
+  nombre
+  enfoque ambiental
+}
+
+Usuario "1" -- "1..*" HuellaCarbono : genera
+Usuario "1" -- "0..*" Actividad : realiza
+Usuario "1" -- "0..*" Objetivo : establece
+Usuario "1..*" -- "0..*" ComunidadEcológica : participa en
+
+HuellaCarbono "1" -- "1..*" Actividad : compuesta por
+Recomendación "0..*" -l- "1" Actividad : basada en
+
+@enduml

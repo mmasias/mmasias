@@ -89,3 +89,7 @@ Si además tengo una metodología, entonces puedo organizar una lista de element
 1. **Documentación de API**: Descripción técnica de cómo interactuar con una API, incluyendo endpoints, métodos, parámetros y respuestas.
 1. **Registro de problemas**: Lista documentada de defectos, errores o problemas identificados en el software.
 1. **Lista de control de acceso**: Especificación de los permisos adjuntos a un objeto del sistema.
+
+### Ejemplo
+
+[Caso EcoTrack](caso/README.md)
