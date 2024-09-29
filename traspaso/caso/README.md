@@ -6,7 +6,6 @@ Una aplicación móvil para rastrear y reducir la huella de carbono personal.
 
 - [Backlog](backlog.md)
 - [Alcance](alcance.md)
-
 - [Arquitectura](arquitectura.md)
-
+- [Base de datos](baseDeDatos.md)
 

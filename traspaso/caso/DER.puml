@@ -1,0 +1,69 @@
+@startuml EcoTrack ER Diagram
+
+!define Table(name,desc) class name as "desc" << (T,#FFAAAA) >>
+!define primary_key(x) <u>x</u>
+!define foreign_key(x) #x#
+
+Table(USUARIO, "USUARIO") {
+    primary_key(id) : string
+    nombre : string
+    email : string
+    fecha_registro : date
+    ubicacion : string
+}
+
+Table(ACTIVIDAD, "ACTIVIDAD") {
+    primary_key(id) : string
+    foreign_key(usuario_id) : string
+    foreign_key(categoria_id) : string
+    valor : float
+    fecha : date
+    descripcion : string
+}
+
+Table(CATEGORIA, "CATEGORIA") {
+    primary_key(id) : string
+    nombre : string
+    factor_emision : float
+}
+
+Table(HUELLA_CARBONO, "HUELLA_CARBONO") {
+    primary_key(id) : string
+    foreign_key(actividad_id) : string
+    valor : float
+    fecha_calculo : date
+}
+
+Table(OBJETIVO, "OBJETIVO") {
+    primary_key(id) : string
+    foreign_key(usuario_id) : string
+    valor_objetivo : float
+    fecha_inicio : date
+    fecha_fin : date
+    estado : string
+}
+
+Table(LOGRO, "LOGRO") {
+    primary_key(id) : string
+    foreign_key(usuario_id) : string
+    nombre : string
+    fecha_obtencion : date
+    descripcion : string
+}
+
+Table(RECOMENDACION, "RECOMENDACION") {
+    primary_key(id) : string
+    foreign_key(usuario_id) : string
+    contenido : string
+    fecha_generacion : date
+    estado : string
+}
+
+USUARIO ||--o{ ACTIVIDAD : realiza
+USUARIO ||--o{ OBJETIVO : establece
+USUARIO ||--o{ LOGRO : obtiene
+ACTIVIDAD ||--|{ CATEGORIA : pertenece
+ACTIVIDAD }o--|| HUELLA_CARBONO : genera
+USUARIO ||--o{ RECOMENDACION : recibe
+
+@enduml
