@@ -1,0 +1,46 @@
+@startuml
+left to right direction
+actor "Usuario No Registrado" as UNR
+actor "Usuario Registrado" as UR
+actor "Administrador" as ADM
+actor "Dispositivo Externo" as DE
+
+rectangle EcoTrack {
+  usecase "Crear cuenta de usuario" as UC1
+  usecase "Autenticar usuario" as UC2
+  usecase "Calcular huella de carbono" as UC3
+  usecase "Revisar estadísticas" as UC4
+  usecase "Definir metas de reducción" as UC5
+  usecase "Registrar actividades" as UC6
+  usecase "Unirse a retos" as UC7
+  usecase "Vincular dispositivos" as UC8
+  usecase "Obtener sugerencias personalizadas" as UC9
+  usecase "Generar informes mensuales" as UC10
+  usecase "Gestionar cuentas" as UC11
+  usecase "Moderar retos" as UC12
+  usecase "Analizar tendencias globales" as UC13
+  usecase "Enviar datos de consumo" as UC14
+  usecase "Configurar parámetros del sistema" as UC15
+}
+
+UNR --> UC1
+UR --> UC2
+UR --> UC3
+UR --> UC4
+UR --> UC5
+UR --> UC6
+UR --> UC7
+UR --> UC8
+UR --> UC9
+UR --> UC10
+ADM --> UC11
+ADM --> UC12
+ADM --> UC13
+ADM --> UC15
+DE --> UC14
+
+UC3 ..> UC4 : <<include>>
+UC3 ..> UC9 : <<include>>
+UC10 ..> UC4 : <<include>>
+UC13 ..> UC10 : <<include>>
+@enduml

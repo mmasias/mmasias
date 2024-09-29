@@ -1,0 +1,22 @@
+@startgantt
+
+project starts the 2024-01-01
+saturday are closed
+sunday are closed
+
+-- Fase de Pruebas --
+
+[Pruebas Unitarias y de Integración] as [PUI] lasts 2 weeks
+[Pruebas de API y UI] as [PAUI] lasts 2 weeks
+[Pruebas de Rendimiento y Seguridad] as [PRS] lasts 1 week
+[Pruebas de Usabilidad y Compatibilidad] as [PUC] lasts 1 week
+[Pruebas de Recuperación y Localización] as [PRL] lasts 1 week
+[Revisión y pruebas de regresión] as [RPR] lasts 1 week
+
+[PUI] -> [PAUI]
+[PAUI] -> [PRS]
+[PRS] -> [PUC] 
+[PUC] -> [PRL] 
+[PRL] -> [RPR]
+
+@endgantt
