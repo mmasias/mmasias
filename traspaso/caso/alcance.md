@@ -1,4 +1,4 @@
-# EcoTrack - Documento de Alcance
+# Documento de alcance
 
 ## Visión
 

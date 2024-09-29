@@ -1,0 +1,57 @@
+@startuml EcoTrack Architecture
+
+!define RECTANGLE class
+
+skinparam componentStyle uml2
+skinparam linetype ortho
+
+package "Clientes" {
+    [Cliente Móvil]
+    [Admin Web Panel]
+}
+
+package "Servicios de Entrada" {
+    [API Gateway]
+    [Load Balancer]
+}
+
+package "Servidores de Aplicación" {
+    [Servidor de Aplicación 1]
+    [Servidor de Aplicación 2]
+}
+
+package "Servicios Especializados" {
+    [Servicio de Cálculo de Huella]
+    [Servicio de Recomendaciones]
+}
+
+package "Servicios de Soporte" {
+    [Servicio de Autenticación]
+    [Servicio de Almacenamiento]
+}
+
+database "Base de Datos" {
+    [Base de Datos Principal]
+}
+
+cloud "Servicios Externos" {
+    [APIs Externas]
+}
+
+[Cliente Móvil] --> [API Gateway] : HTTP/HTTPS
+[Admin Web Panel] --> [API Gateway] : HTTP/HTTPS
+[API Gateway] --> [Load Balancer] : HTTP/HTTPS
+[Load Balancer] --> [Servidor de Aplicación 1] : HTTP/HTTPS
+[Load Balancer] --> [Servidor de Aplicación 2] : HTTP/HTTPS
+[Servidor de Aplicación 1] --> [Base de Datos Principal] : SQL/NoSQL
+[Servidor de Aplicación 2] --> [Base de Datos Principal] : SQL/NoSQL
+[Servidor de Aplicación 1] --> [Servicio de Cálculo de Huella] : RPC
+[Servidor de Aplicación 2] --> [Servicio de Cálculo de Huella] : RPC
+[Servidor de Aplicación 1] --> [Servicio de Recomendaciones] : RPC
+[Servidor de Aplicación 2] --> [Servicio de Recomendaciones] : RPC
+[API Gateway] ..> [Servicio de Autenticación] : HTTPS
+[Servidor de Aplicación 1] ..> [Servicio de Almacenamiento] : API
+[Servidor de Aplicación 2] ..> [Servicio de Almacenamiento] : API
+[API Gateway] ..> [APIs Externas] : HTTPS
+
+@enduml
