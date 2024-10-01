@@ -1,0 +1,60 @@
+allow_mixing
+hide empty members
+hide circle
+
+actor "Agente activo" as persona 
+actor "Agente reactivo" as persona2
+
+persona -r-> actuacion
+actuacion .r.> persona2
+
+persona .d. produccion
+produccion .u. resultados
+produccion .l. percepcion
+persona .d. actuacion
+
+persona .. percepcion
+
+
+package motivacion {
+
+    package mecanicista {
+        class extrinseca {
+            qué
+            cuánto
+        }
+
+        incentivo --> retribucion
+        incentivo -l-> extrinseca
+        retribucion .. produccion
+        persona ... incentivo
+
+    }
+
+    actuacion .. resultados
+    resultados --> percepcion
+
+    package psicosociologico {
+        class intrinseca {
+            logros
+            aprendizaje
+            responsabilidad
+        }
+
+
+        percepcion --> intrinseca
+    }
+
+    package antropologico {
+        class trascendente {
+            logros
+            aprendizaje
+            resposabilidad
+        }
+        persona2 .... trascendente
+        
+        percepcion --> trascendente
+    }
+
+}
+
