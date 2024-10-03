@@ -16,6 +16,8 @@ Se requiere la lista de alumnos y, para cada uno de ellos, su correspondiente us
 
 La función `verificaPR()` devuelve TRUE o FALSE en función a si un usuario de github ha realizado un pull request a la rama de un repo. Se puede utilizar esta información combinándola con el resto de funciones de la hoja de cálculo para construir un enlace que se active únicamente si el usuario lo entregó bajo determinadas condiciones.
 
+En la imagen inferior, para dos actividades, se pueden ver la lista de alumnos que han entregado a tiempo (columnas M y P), los que entregaron pero fuera de tiempo (columnas N y Q) y el enlace a las entregas de los que lo hicieron a tiempo (columnas O y R). Asimismo, información adicional en las columnas O y R como número de entregas, etc.
+
 <div align=center>
 
 |![](/imagenes/asistenciaGIT.png)
