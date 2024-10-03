@@ -1,0 +1,426 @@
+together {
+object ":Square" as Square11{
+    piece: NONE
+}
+object ":Square" as Square12 #grey{
+    piece: BLACK
+}
+object ":Square" as Square13{
+    piece: NONE
+}
+object ":Square" as Square14 #grey{
+    piece: BLACK
+}
+object ":Square" as Square15{
+    piece: NONE
+}
+object ":Square" as Square16 #grey{
+    piece: BLACK
+}
+object ":Square" as Square17{
+    piece: NONE
+}
+object ":Square" as Square18 #grey{
+    piece: BLACK
+}
+
+object ":Square" as Square21 #grey{
+    piece: BLACK
+}
+object ":Square" as Square22{
+    piece: NONE
+}
+object ":Square" as Square23 #grey{
+    piece: BLACK
+}
+object ":Square" as Square24{
+    piece: NONE
+}
+object ":Square" as Square25 #grey{
+    piece: BLACK
+}
+object ":Square" as Square26{
+    piece: NONE
+}
+object ":Square" as Square27 #grey{
+    piece: BLACK
+}
+object ":Square" as Square28{
+    piece: NONE
+}
+
+object ":Square" as Square31{
+    piece: NONE
+}
+object ":Square" as Square32 #grey{
+    piece: BLACK
+}
+object ":Square" as Square33{
+    piece: NONE
+}
+object ":Square" as Square34 #grey{
+    piece: BLACK
+}
+object ":Square" as Square35{
+    piece: NONE
+}
+object ":Square" as Square36 #grey{
+    piece: BLACK
+}
+object ":Square" as Square37{
+    piece: NONE
+}
+object ":Square" as Square38 #grey{
+    piece: BLACK
+}
+
+object ":Square" as Square41{
+    piece: NONE
+}
+object ":Square" as Square42{
+    piece: NONE
+}
+object ":Square" as Square43{
+    piece: NONE
+}
+object ":Square" as Square44{
+    piece: NONE
+}
+object ":Square" as Square45{
+    piece: NONE
+}
+object ":Square" as Square46{
+    piece: NONE
+}
+object ":Square" as Square47{
+    piece: NONE
+}
+object ":Square" as Square48{
+    piece: NONE
+}
+
+object ":Square" as Square51{
+    piece: NONE
+}
+object ":Square" as Square52{
+    piece: NONE
+}
+object ":Square" as Square53{
+    piece: NONE
+}
+object ":Square" as Square54{
+    piece: NONE
+}
+object ":Square" as Square55{
+    piece: NONE
+}
+object ":Square" as Square56{
+    piece: NONE
+}
+object ":Square" as Square57{
+    piece: NONE
+}
+object ":Square" as Square58{
+    piece: NONE
+}
+
+object ":Square" as Square61 #white{
+    piece: WHITE
+}
+object ":Square" as Square62{
+    piece: NONE
+}
+object ":Square" as Square63 #white{
+    piece: WHITE
+}
+object ":Square" as Square64{
+    piece: NONE
+}
+object ":Square" as Square65 #white{
+    piece: WHITE
+}
+object ":Square" as Square66{
+    piece: NONE
+}
+object ":Square" as Square67 #white{
+    piece: WHITE
+}
+object ":Square" as Square68 {
+    piece: NONE
+}
+
+object ":Square" as Square71{
+    piece: NONE
+}
+object ":Square" as Square72 #white{
+    piece: WHITE
+}
+object ":Square" as Square73{
+    piece: NONE
+}
+object ":Square" as Square74 #white{
+    piece: WHITE
+}
+object ":Square" as Square75{
+    piece: NONE
+}
+object ":Square" as Square76 #white{
+    piece: WHITE
+}
+object ":Square" as Square77{
+    piece: NONE
+}
+object ":Square" as Square78 #white{
+    piece: WHITE
+}
+
+
+object ":Square" as Square81 #white{
+    piece: WHITE
+}
+object ":Square" as Square82{
+    piece: NONE
+}
+object ":Square" as Square83 #white{
+    piece: WHITE
+}
+object ":Square" as Square84{
+    piece: NONE
+}
+object ":Square" as Square85 #white{
+    piece: WHITE
+}
+object ":Square" as Square86{
+    piece: NONE
+}
+object ":Square" as Square87 #white{
+    piece: WHITE
+}
+object ":Square" as Square88{
+    piece: NONE
+}
+
+}
+
+note "8x8" as dimensionNote
+
+object ":Coordinate" as Coordinate11 {
+row = 1
+column = 7
+}
+object ":Coordinate" as Coordinate12 {
+row = 1
+column = 6
+}
+object ":Coordinate" as Coordinate13 {
+row = 1
+column = 5
+}
+object ":Coordinate" as Coordinate14 {
+row = 1
+column = 4
+}
+object ":Coordinate" as Coordinate15 {
+row = 1
+column = 3
+}
+object ":Coordinate" as Coordinate16 {
+row = 1
+column = 2
+}
+object ":Coordinate" as Coordinate17 {
+row = 1
+column = 1
+}
+object ":Coordinate" as Coordinate18 {
+row = 1
+column = 8
+}
+
+object ":Coordinate" as Coordinate81 {
+row = 8
+column = 7
+}
+object ":Coordinate" as Coordinate82 {
+row = 8
+column = 6
+}
+object ":Coordinate" as Coordinate83 {
+row = 8
+column = 5
+}
+object ":Coordinate" as Coordinate84 {
+row = 8
+column = 4
+}
+object ":Coordinate" as Coordinate85 {
+row = 8
+column = 3
+}
+object ":Coordinate" as Coordinate86 {
+row = 8
+column = 2
+}
+object ":Coordinate" as Coordinate87 {
+row = 8
+column = 1
+}
+object ":Coordinate" as Coordinate88 {
+row = 8
+column = 8
+}
+
+object ":Board" as Board
+
+Board -[hidden]->  Square11
+Board -->  Square18
+Board -[hidden]->  Square21
+Board -[hidden]->  Square28
+Board -[hidden]->  Square81
+Board -->  Square88
+
+Square11 *-up-> Coordinate11
+Square12 *-up-> Coordinate12
+Square13 *-up-> Coordinate13
+Square14 *-up-> Coordinate14
+Square15 *-up-> Coordinate15
+Square16 *-up-> Coordinate16
+Square17 *-up-> Coordinate17
+Square18 *-up-> Coordinate18
+
+Square81 *-down-> Coordinate81
+Square82 *-down-> Coordinate82
+Square83 *-down-> Coordinate83
+Square84 *-down-> Coordinate84
+Square85 *-down-> Coordinate85
+Square86 *-down-> Coordinate86
+Square87 *-down-> Coordinate87
+Square88 *-down-> Coordinate88
+
+Square11 -[hidden]right-> Square12
+Square12 -[hidden]right-> Square13
+Square13 -[hidden]right-> Square14
+Square14 -[hidden]right-> Square15
+Square15 -[hidden]right-> Square16
+Square16 -[hidden]right-> Square17
+Square17 -[hidden]right-> Square18
+
+Square21 -[hidden]right-> Square22
+Square22 -[hidden]right-> Square23
+Square23 -[hidden]right-> Square24
+Square24 -[hidden]right-> Square25
+Square25 -[hidden]right-> Square26
+Square26 -[hidden]right-> Square27
+Square27 -[hidden]right-> Square28
+
+Square31 -[hidden]right-> Square32
+Square32 -[hidden]right-> Square33
+Square33 -[hidden]right-> Square34
+Square34 -[hidden]right-> Square35
+Square35 -[hidden]right-> Square36
+Square36 -[hidden]right-> Square37
+Square37 -[hidden]right-> Square38
+
+Square41 -[hidden]right-> Square42
+Square42 -[hidden]right-> Square43
+Square43 -[hidden]right-> Square44
+Square44 -[hidden]right-> Square45
+Square45 -[hidden]right-> Square46
+Square46 -[hidden]right-> Square47
+Square47 -[hidden]right-> Square48
+
+Square51 -[hidden]right-> Square52
+Square52 -[hidden]right-> Square53
+Square53 -[hidden]right-> Square54
+Square54 -[hidden]right-> Square55
+Square55 -[hidden]right-> Square56
+Square56 -[hidden]right-> Square57
+Square57 -[hidden]right-> Square58
+
+Square61 -[hidden]right-> Square62
+Square62 -[hidden]right-> Square63
+Square63 -[hidden]right-> Square64
+Square64 -[hidden]right-> Square65
+Square65 -[hidden]right-> Square66
+Square66 -[hidden]right-> Square67
+Square67 -[hidden]right-> Square68
+
+Square71 -[hidden]right-> Square72
+Square72 -[hidden]right-> Square73
+Square73 -[hidden]right-> Square74
+Square74 -[hidden]right-> Square75
+Square75 -[hidden]right-> Square76
+Square76 -[hidden]right-> Square77
+Square77 -[hidden]right-> Square78
+
+Square81 -[hidden]right-> Square82
+Square82 -[hidden]right-> Square83
+Square83 -[hidden]right-> Square84
+Square84 -[hidden]right-> Square85
+Square85 -[hidden]right-> Square86
+Square86 -[hidden]right-> Square87
+Square87 -[hidden]right-> Square88
+
+Square11 -[hidden]down-> Square21
+Square12 -[hidden]down-> Square22
+Square13 -[hidden]down-> Square23
+Square14 -[hidden]down-> Square24
+Square15 -[hidden]down-> Square25
+Square16 -[hidden]down-> Square26
+Square17 -[hidden]down-> Square27
+Square18 -[hidden]down-> Square28
+
+Square21 -[hidden]down-> Square31
+Square22 -[hidden]down-> Square32
+Square23 -[hidden]down-> Square33
+Square24 -[hidden]down-> Square34
+Square25 -[hidden]down-> Square35
+Square26 -[hidden]down-> Square36
+Square27 -[hidden]down-> Square37
+Square28 -[hidden]down-> Square38
+
+Square31 -[hidden]down-> Square41
+Square32 -[hidden]down-> Square42
+Square33 -[hidden]down-> Square43
+Square34 -[hidden]down-> Square44
+Square35 -[hidden]down-> Square45
+Square36 -[hidden]down-> Square46
+Square37 -[hidden]down-> Square47
+Square38 -[hidden]down-> Square48
+
+Square41 -[hidden]down-> Square51
+Square42 -[hidden]down-> Square52
+Square43 -[hidden]down-> Square53
+Square44 -[hidden]down-> Square54
+Square45 -[hidden]down-> Square55
+Square46 -[hidden]down-> Square56
+Square47 -[hidden]down-> Square57
+Square48 -[hidden]down-> Square58
+
+Square51 -[hidden]down-> Square61
+Square52 -[hidden]down-> Square62
+Square53 -[hidden]down-> Square63
+Square54 -[hidden]down-> Square64
+Square55 -[hidden]down-> Square65
+Square56 -[hidden]down-> Square66
+Square57 -[hidden]down-> Square67
+Square58 -[hidden]down-> Square68
+
+Square61 -[hidden]down-> Square71
+Square62 -[hidden]down-> Square72
+Square63 -[hidden]down-> Square73
+Square64 -[hidden]down-> Square74
+Square65 -[hidden]down-> Square75
+Square66 -[hidden]down-> Square76
+Square67 -[hidden]down-> Square77
+Square68 -[hidden]down-> Square78
+
+Square71 -[hidden]down-> Square81
+Square72 -[hidden]down-> Square82
+Square73 -[hidden]down-> Square83
+Square74 -[hidden]down-> Square84
+Square75 -[hidden]down-> Square85
+Square77 -[hidden]down-> Square87
+Square78 -[hidden]down-> Square88
+
+Square11 .[hidden]. dimensionNote

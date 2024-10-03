@@ -1,0 +1,46 @@
+hide circle
+hide empty members
+
+class Draught
+class Piece
+class Pawn
+class Board
+class Square
+class Coordinate
+class Player
+class WasteStack
+class Color
+class White
+class Black
+class Draughts
+class Move
+class Turn
+class Goal
+class WasteStackLooser
+class Jump
+
+Draughts *-down- "2" Player
+Draughts *-down- Board
+Draughts *-down- Turn
+Turn *-down- "2" Player
+
+WasteStack o--down- "0..23" Piece
+
+Piece *-down- Color
+Piece <|-down-  Pawn
+Piece <|-down- Draught
+Color <|-down- White
+Color <|-down- Black
+Move  <|-down- Jump
+WasteStack  <|-down- WasteStackLooser
+
+Board o--down- "8x8" Square
+Square o--right- "0..1" Piece
+Square *-down- Coordinate
+Goal -down-> WasteStackLooser
+Board *-down- WasteStack
+Player *-down- Goal
+Player -down-> Board
+WasteStackLooser o--right- "12+0..11" Piece
+Goal ..> "*" Move
+Move ..> Coordinate

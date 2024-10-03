@@ -1,0 +1,16 @@
+hide circle
+hide stereotype
+
+class Natural
+class Unidad
+class Primo
+class Compuesto
+
+Natural <|-down- Unidad
+Natural <|-down- Primo
+Natural <|-down- Compuesto
+
+Natural "1" --> "1" Unidad : divisor
+Primo "1" --> "1" Primo : divisor
+Compuesto "1" --> "1..p" Primo : divisor
+Compuesto "1" --> "1..c" Compuesto : divisor
