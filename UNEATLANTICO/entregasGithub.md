@@ -1,6 +1,20 @@
-# Asistencia mediante GIT
+# Control de entregas mediante GIT
 
-La función verificaPR devuelve TRUE o FALSE en función a si un usuario de github ha realizado un pull request a la rama de un repo 
+El siguiente artículo propone un método para realizar un seguimiento de la entrega de trabajos mediante github y la hoja de cálculo de Google.
+
+## Requisitos
+
+Se requiere la lista de alumnos y, para cada uno de ellos, su correspondiente usuario de Github
+
+## Uso
+
+<div align=center>
+
+`verificaPR(nombreUsuario, URLRepo, rama, diaLimite, horaLimite)`
+
+</div>
+
+La función `verificaPR()` devuelve TRUE o FALSE en función a si un usuario de github ha realizado un pull request a la rama de un repo. Se puede utilizar esta información combinándola con el resto de funciones de la hoja de cálculo para construir un enlace que se active únicamente si el usuario lo entregó bajo determinadas condiciones.
 
 <div align=center>
 
