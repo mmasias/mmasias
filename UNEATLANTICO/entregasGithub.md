@@ -10,7 +10,15 @@ La función verificaPR devuelve TRUE o FALSE en función a si un usuario de gith
 
 </div>
 
-Se propone que en el encabezado esté la información requerida, y en la celda A1 la información del repositorio:
+## Configuración
+
+Se propone que el encabezado de la actividad tenga la información requerida (en el ejemplo, la columna M):
+
+- M2: Fecha límite de entrega
+- M3: Hora límite de entrega
+- M4: Rama de entrega
+
+Y la celda A1 tenga la URL del repositorio
 
 <div align=center>
 
@@ -18,6 +26,8 @@ Se propone que en el encabezado esté la información requerida, y en la celda A
 
 
 </div>
+
+Se pueden configurar columnas adicionales que permiten decisiones adicionales: en el ejemplo de arriba, la segunda columa del grupo de entrega (columna N) tiene una fecha muy futura (31/12/2024 en N2). Con esta configuración, podemos saber quién ha entregado a tiempo (en la columna M) y quién ha entregado fuera de tiempo (columna N)
 
 ## Código
 
