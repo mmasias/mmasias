@@ -1,0 +1,25 @@
+@startuml
+
+left to right direction
+
+actor "Miembro" as member
+actor "Supervisor" as supervisor
+supervisor -d-|> member
+
+rectangle "Sistema Gestión Tareas" {
+    package "Gestión de Usuarios" {
+        usecase "Crear Usuario" as UCU1
+        usecase "Activar Usuario" as UCU2
+        usecase "Suspender Usuario" as UCU3
+        usecase "Reactivar Usuario" as UCU4
+        usecase "Desactivar Usuario" as UCU5
+    }
+}
+
+supervisor --> UCU1
+supervisor --> UCU2
+supervisor --> UCU3
+supervisor --> UCU4
+supervisor --> UCU5
+
+@enduml

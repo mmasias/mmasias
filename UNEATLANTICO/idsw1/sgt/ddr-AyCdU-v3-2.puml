@@ -1,0 +1,37 @@
+@startuml
+
+left to right direction
+
+actor "Miembro" as member
+actor "Supervisor" as supervisor
+supervisor -u-|> member
+
+rectangle "Sistema Gestión Tareas" {
+    package "Gestión de Tareas" {
+        usecase "Crear Tarea" as UC1
+        usecase "Consultar Tarea" as UC2
+        usecase "Aceptar Tarea" as UC3
+        usecase "Solicitar Revisión" as UC4
+        usecase "Consultar Mis Tareas" as UC5
+        usecase "Asignar Tarea" as UC6
+        usecase "Aprobar Tarea" as UC7
+        usecase "Rechazar Tarea" as UC8
+        usecase "Cancelar Tarea" as UC9
+        usecase "Consultar Todas\nlas Tareas" as UC10
+    }
+
+}
+
+member --> UC1
+member --> UC2
+member --> UC3
+member --> UC4
+member --> UC5
+
+supervisor --> UC6
+supervisor --> UC7
+supervisor --> UC8
+supervisor --> UC9
+supervisor --> UC10
+
+@enduml
