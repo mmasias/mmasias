@@ -1,0 +1,20 @@
+@startuml
+
+class Usuario {
+    -nombre
+    -email
+    -rol
+}
+
+class Tarea {
+    -titulo
+    -descripcion
+    -fechaCreacion
+    -fechaVencimiento
+    -estado
+}
+
+Usuario "1" -- "*" Tarea : crea >
+Usuario "1" -- "*" Tarea : asignado a >
+
+@enduml

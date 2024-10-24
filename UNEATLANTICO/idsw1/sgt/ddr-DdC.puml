@@ -1,0 +1,43 @@
+@startuml
+skinparam state {
+    BackgroundColor white
+    BorderColor black
+    ArrowColor black
+}
+
+state "Usuario Activo" as UA {
+    state "Tarea" as T {
+        [*] --> Nueva : Crear Tarea
+        Nueva --> Asignada : Asignar Tarea
+        Asignada --> EnProgreso : Aceptar Tarea
+        EnProgreso --> EnRevision : Solicitar Revisión
+        EnRevision --> Completada : Aprobar Tarea
+        EnRevision --> EnProgreso : Rechazar Tarea
+
+        Nueva --> Cancelada : Cancelar
+        Asignada --> Cancelada : Cancelar
+        EnProgreso --> Cancelada : Cancelar
+        EnRevision --> Cancelada : Cancelar
+
+        Completada --> [*]
+        Cancelada --> [*]
+    }
+}
+
+state "Usuario Pendiente" as UP
+state "Usuario Suspendido" as US 
+state "Usuario Inactivo" as UI
+
+[*] --> UP : Crear Usuario
+UP --> UA : Activar Usuario
+UA --> US : Suspender Usuario
+US --> UA : Reactivar Usuario
+
+UP --> UI : Desactivar
+UA --> UI : Desactivar
+US --> UI : Desactivar
+UI --> [*]
+
+note right of UA : Solo usuarios Activos\npueden gestionar Tareas
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+
+[*] --> Pendiente
+
+Pendiente --> Activo
+Activo --> Suspendido
+Suspendido --> Activo
+
+Activo --> Inactivo
+Suspendido --> Inactivo
+Pendiente --> Inactivo
+
+Inactivo --> [*]
+
+note right of Activo : Solo usuarios Activos\npueden realizar acciones
+
+@enduml

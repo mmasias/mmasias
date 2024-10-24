@@ -1,0 +1,19 @@
+@startuml
+
+[*] --> Nueva 
+
+Nueva --> Asignada 
+Asignada --> EnProgreso 
+EnProgreso --> EnRevision 
+EnRevision --> Completada 
+EnRevision --> EnProgreso 
+
+Nueva --> Cancelada 
+Asignada --> Cancelada 
+EnProgreso --> Cancelada 
+EnRevision --> Cancelada 
+
+Completada --> [*]
+Cancelada --> [*]
+
+@enduml

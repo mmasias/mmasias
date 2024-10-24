@@ -1,0 +1,13 @@
+@startuml
+skinparam actor {
+    BackgroundColor white
+    BorderColor black
+}
+
+actor "Miembro" as member
+actor "Supervisor" as supervisor
+
+supervisor -up-|> member
+note right of supervisor : Puede hacer todo\nlo que hace un Miembro\nmás las acciones de\nsupervisión
+
+@enduml
