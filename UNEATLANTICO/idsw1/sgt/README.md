@@ -10,7 +10,7 @@
 
 |De un usuario|De una tarea|
 |:-:|:-:|
-|![](/images/UNEATLANTICO/idsw1/sgt/mdd-dE-T.svg)|![](/images/UNEATLANTICO/idsw1/sgt/mdd-dE-U.svg)
+|![](/images/UNEATLANTICO/idsw1/sgt/mdd-dE-U.svg)|![](/images/UNEATLANTICO/idsw1/sgt/mdd-dE-T.svg)|
 
 ## Disciplina de requisitos
 
