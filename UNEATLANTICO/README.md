@@ -3,6 +3,21 @@
 - [IngenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO)
 - [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico)
 
+<div align=center>
+
+|Programación|Estructura de datos y algoritmos|Ingeniería de Software|
+|-|-|-|
+|[Programación 1](https://github.com/mmasias/prg1)|[Estructuras de datos y algoritmos 1](https://github.com/mmasias/eda1)|[Ingeniería del software 1](https://github.com/mmasias/idsw1)|
+|Programación 2|Estructuras de datos y algoritmos 2|Ingeniería del software 2
+
+</div>
+
+## [24][25]
+- [Programación 1](https://github.com/mmasias/24-25-prg1)
+- [Estructura de datos 1](https://github.com/mmasias/24-25-eda1)
+- [Ingeniería del software 1](https://github.com/mmasias/24-25-idsw1)
+  - [Sesiones de requisitado](https://github.com/mmasias/24-25-idsw1-sdr) / [Tracker (*beta*)](https://manuel.masiasweb.com/github-stats-page-contributors.html)
+
 ## [23][24]
 
 - [Programación 1](https://github.com/mmasias/23-24-prg1)
