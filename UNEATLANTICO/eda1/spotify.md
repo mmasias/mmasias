@@ -6,7 +6,7 @@ Se requiere implementar un sistema de reproducción de música similar a Spotify
 
 El sistema debe gestionar tanto la reproducción de música como la organización de la biblioteca musical del usuario.
 
-## Clases Base
+## Clases base
 
 Se proporcionan *fragmentos significativos* de las siguientes clases base:
 
@@ -42,9 +42,9 @@ class Album {
 }
 ```
 
-## Requisitos Funcionales Básicos
+## Requisitos
 
-### 1. Sistema de Reproducción
+### Sistema de reproducción
 
 El sistema debe implementar:
 
@@ -58,7 +58,7 @@ El sistema debe implementar:
   - Reproducción aleatoria (shuffle).
   - Repetición (repeat).
 
-### 2. Gestión de Biblioteca
+### Biblioteca
 
 El sistema debe permitir:
 
@@ -66,7 +66,7 @@ El sistema debe permitir:
 - Crear y gestionar playlists.
 - Visualizar biblioteca personal.
 
-### Menú de Operaciones
+### Operaciones
 
 El programa debe implementar el siguiente menú de opciones:
 
@@ -88,7 +88,7 @@ El programa debe implementar el siguiente menú de opciones:
    - Ver playlists.
    - Ver canciones de una playlist.
 
-## Requisitos Técnicos
+## Restricciones (o no...)
 
 1. Se deben utilizar ÚNICAMENTE las estructuras de datos implementadas en clase:
    - Listas enlazadas, doblemente enlazadas y circulares.
@@ -99,22 +99,13 @@ El programa debe implementar el siguiente menú de opciones:
    - Estructuras de datos de la biblioteca estándar.
 1. La entrada/salida debe ser por consola.
 
-## Apartado Extra (Opcional)
+## Opcional
 
 Implementar funcionalidades sociales:
 
 - Compartir playlists
 - Seguir playlists de otros usuarios
 - Ver playlists compartidas
-
-## Evaluación
-
-Se valorará:
-
-1. El correcto uso de las estructuras de datos apropiadas para cada funcionalidad
-1. La justificación de la elección de cada estructura
-1. La eficiencia de las operaciones implementadas
-1. La claridad y organización del código
 
 ### Propuesta de interfaz
 
