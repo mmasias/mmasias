@@ -16,7 +16,10 @@
 - [Programación 1](https://github.com/mmasias/24-25-prg1)
 - [Estructura de datos 1](https://github.com/mmasias/24-25-eda1)
 - [Ingeniería del software 1](https://github.com/mmasias/24-25-idsw1)
-  - [Sesiones de requisitado](https://github.com/mmasias/24-25-idsw1-sdr) / [Tracker (*beta*)](https://manuel.masiasweb.com/github-stats-page-contributors.html)
+  - [Sesiones de requisitado](https://github.com/mmasias/24-25-idsw1-sdr)
+    - [Tracker v0 (*beta*)](https://manuel.masiasweb.com/gh-s-v0/github-stats-page-contributors.html)
+    - [Tracker v1 (*beta*)](https://manuel.masiasweb.com/gh-s-v1/github-stats-page-contributors.html)
+    - [Tracker v2 (*beta*)](https://manuel.masiasweb.com/github-stats-page-contributors.html)
 
 ## [23][24]
 
