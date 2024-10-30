@@ -1,0 +1,23 @@
+left to right direction
+
+actor "Desarrollador" as Developer
+
+package "Gestión de archivos" {
+    usecase "Crear archivo" as GA1
+    usecase "Abrir archivo" as GA2
+    usecase "Guardar archivo" as GA3
+    usecase "Gestionar\nworkspace" as GA4
+    usecase "Buscar\narchivos" as GA5
+    usecase "Gestionar\ncarpetas" as GA6
+    usecase "Previsualizar\narchivos" as GA7
+    usecase "Comparar\narchivos" as GA8    
+}
+
+Developer  --> GA1
+Developer  --> GA2
+Developer  --> GA3
+Developer  --> GA4
+Developer  --> GA5
+Developer  --> GA6
+Developer  --> GA7
+Developer  --> GA8

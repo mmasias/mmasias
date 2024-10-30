@@ -1,0 +1,23 @@
+left to right direction
+
+actor "Desarrollador" as Developer
+
+package "Edición de código" {
+    usecase "Editar código" as EC1
+    usecase "Autocompletar\ncódigo" as EC2
+    usecase "Refactorizar\ncódigo" as EC3
+    usecase "Formatear\ncódigo" as EC4
+    usecase "Gestionar\nmulticursor" as EC5
+    usecase "Plegar/Desplegar\ncódigo" as EC6
+    usecase "Gestionar\nsnippets" as EC7
+    usecase "Renombrar\nsímbolos" as EC8
+    
+    Developer --> EC1
+    Developer --> EC2
+    Developer --> EC3
+    Developer --> EC4
+    Developer --> EC5
+    Developer --> EC6
+    Developer --> EC7
+    Developer --> EC8
+}
