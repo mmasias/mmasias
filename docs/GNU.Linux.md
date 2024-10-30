@@ -101,7 +101,7 @@ sudo systemctl restart cups
 #### Semi-Auto
 
 - [Drivers](https://drive.google.com/drive/folders/1HjncE-cJPyxzEuDZsfUW21V7-b5mSSA3?usp=sharing)
-- [Config](imagenes/impresoraCanonGNU.png)
+- [Config](../imagenes/impresoraCanonGNU.png)
 
 ### Instalar oh-my-posh
 
