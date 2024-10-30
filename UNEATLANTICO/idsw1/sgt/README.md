@@ -1,6 +1,13 @@
 # Disciplina de requisitos
 
-## Modelo del dominio
+0. **Modelo del dominio**
+1. **Encontrar actores y casos de uso**
+2. Priorizar casos de uso
+3. Detallar caso de uso
+4. Prototipar casos de uso
+5. Estructurar casos de uso
+
+## 0. Modelo del dominio
 
 ### Clases
 
@@ -16,7 +23,7 @@
 |:-:|:-:|
 |![](/images/UNEATLANTICO/idsw1/sgt/mdd-dE-U.svg)|![](/images/UNEATLANTICO/idsw1/sgt/mdd-dE-T.svg)|
 
-## Disciplina de requisitos
+## 1. Encontrar actores y casos de uso
 
 ### Encontrar actores
 
