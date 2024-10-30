@@ -1,0 +1,83 @@
+@startuml
+
+state " " as Estado1
+state " " as Estado2
+state " " as Estado3
+state " " as Estado4
+state " " as Estado5
+state " " as Estado6
+state " " as Estado7
+state " " as Estado8
+state "MENU_PRINCIPAL" as MenuPrincipal
+
+state Condicion1 <<choice>>
+state Condicion2 <<choice>>
+
+[*] --> Estado1
+    note on link
+        Usuario solicita comprar paquetes
+    end note
+
+Estado1 --> Estado2
+    note on link
+        Sistema muestra paquetes disponibles
+    end note
+
+Estado2 --> Estado3
+    note on link
+        Usuario selecciona paquete a comprar
+    end note
+
+Estado3 -d-> Estado4
+    note on link
+        Sistema muestra el acceso a la pasarela
+        de pago (email y contraseña)
+    end note
+
+Estado4 --> Condicion1
+    note on link
+        Usuario introduce email y contraseña
+    end note
+
+Condicion1 -l-> Estado3
+    note on link
+        [datos incorrectos]
+    end note
+
+Condicion1 --> Estado5
+    note on link
+        Sistema muestra pantalla de confirmación
+    end note
+
+Estado5 --> Condicion2
+
+Condicion2 -l-> Estado6
+    note on link
+        Usuario cancela el pedido
+    end note
+
+Condicion2 --> Estado7
+    note on link
+        Usuario confirma el pedido
+    end note
+
+Estado6 --> Estado8
+    note on link
+        Sistema muestra mensaje
+        avisando de la cancelación
+    end note
+
+Estado7 --> Estado8
+    note on link
+        Sistema muestra mensaje
+        confirmando la compra
+    end note
+
+Estado8 --> MenuPrincipal
+    note on link
+        Sistema muestra las acciones ir al menú
+        principal, reiniciar paquetes, comprar paquetes
+        y desvincular cuenta
+    end note
+
+@enduml

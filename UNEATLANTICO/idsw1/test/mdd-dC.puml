@@ -1,0 +1,21 @@
+@startuml
+
+class Usuario
+class Test
+class Pregunta
+class Paquete
+class Tema
+class Respuesta
+class RespuestaDisponible
+class RespuestaMarcada
+
+Usuario -r-> Test : Utiliza
+Test  *-d- Pregunta
+Paquete  *-l-  Pregunta
+Pregunta  -l-  Tema
+Pregunta  *--  Respuesta
+
+Respuesta <|-- RespuestaDisponible
+Respuesta <|-- RespuestaMarcada
+
+@enduml

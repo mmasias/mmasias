@@ -1,0 +1,24 @@
+@startuml
+
+state INICIO
+state "MENU PRINCIPAL" as MENU_PRINCIPAL
+state FINAL
+state " " as Estado1
+state " " as Estado2
+state " " as Estado3
+
+state Condicion1 <<choice>>
+state Condicion2 <<choice>>
+
+INICIO --> Condicion1 
+Condicion1 --> Estado1 : Usuario solicita iniciar aplicación
+Condicion1 --> MENU_PRINCIPAL : Sistema muestra las acciones ir al menú\nprincipal, reiniciar paquetes, comprar paquetes\ny desvincular cuenta
+Estado1 --> Estado2 : Sistema permite introducir el email\ny solicitar continuar
+Estado2 --> Condicion2 : Usuario introduce email
+Condicion2 --> MENU_PRINCIPAL : Sistema muestra las acciones ir al menú\nprincipal, reiniciar paquetes, comprar paquetes\ny desvincular cuenta
+Condicion2 --> Estado3 : [datos incorrectos]
+Estado3 --> Estado1:Sistema presenta error Email
+
+MENU_PRINCIPAL --> FINAL
+
+@enduml

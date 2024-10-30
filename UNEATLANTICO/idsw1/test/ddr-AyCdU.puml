@@ -1,0 +1,33 @@
+@startuml
+
+left to right direction
+
+
+actor Usuario
+actor Tiempo
+
+rectangle "Sistema de Tests" {
+  usecase "Iniciar sesión" as UC1
+  usecase "Cerrar sesión" as UC2
+  usecase "Realizar test" as UC3
+  usecase "Ver test corregido" as UC4
+  usecase "Ver estadísticas" as UC5
+  usecase "Comprar paquetes" as UC6
+  usecase "Resincronizar paquetes" as UC7
+  usecase "Realizar Duda" as UC8
+}
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+Usuario --> UC5
+Usuario --> UC6
+Usuario --> UC7
+
+Tiempo --> UC3
+
+UC3 ..> UC8 : extends
+UC4 ..> UC8 : extends
+
+@enduml

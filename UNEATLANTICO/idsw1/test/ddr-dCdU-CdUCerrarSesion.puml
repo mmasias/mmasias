@@ -1,0 +1,27 @@
+@startuml
+
+state " " as Estado1
+state " " as Estado2
+state "INICIAR_SESION" as Estado3
+
+state Condicion1 <<choice>>
+
+[*] --> Estado1
+    note on link
+        El usuario solicita cerrar sesión
+    end note
+Estado1 --> Estado2
+    note on link
+        El Sistema muestra la confirmación de la operación
+    end note
+Estado2 --> Condicion1
+Condicion1 -d-> Estado3
+    note on link
+        El usuario confirma la operación
+    end note
+Condicion1 -l-> [*]
+    note on link
+        El usuario cancela la operación
+    end note
+
+@enduml

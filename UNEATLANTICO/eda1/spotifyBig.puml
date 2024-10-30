@@ -1,0 +1,81 @@
+
+    class Cancion {
+        -String titulo
+        -String artista
+        -int duracion
+        -boolean favorita
+        +Cancion(titulo, artista, duracion)
+        +getTitulo()
+        +getArtista()
+        +getDuracion()
+        +isFavorita()
+        +setFavorita()
+        +toString()
+    }
+
+    class Album {
+        -String titulo
+        -String artista
+        -int año
+        -ListaEnlazada~Cancion~ canciones
+        +Album(titulo, artista, año)
+        +agregarCancion(Cancion)
+        +eliminarCancion(Cancion)
+        +getCanciones()
+    }
+
+    class Playlist {
+        -String nombre
+        -ListaEnlazada~Cancion~ canciones
+        +Playlist(nombre)
+        +agregarCancion(Cancion)
+        +eliminarCancion(Cancion)
+        +getCanciones()
+        +getNombre()
+    }
+
+    class ReproductorMusica {
+        -Cola~Cancion~ colaReproduccion
+        -Pila~Cancion~ historial
+        -boolean modoAleatorio
+        -boolean modoRepeticion
+        -Cancion cancionActual
+        +reproducir(Cancion)
+        +siguiente()
+        +anterior()
+        +activarAleatorio()
+        +activarRepeticion()
+        +getCancionActual()
+        +getColaReproduccion()
+        +getHistorial()
+    }
+
+    class BibliotecaMusical {
+        -ListaEnlazada~Album~ albumes
+        -ListaDoblementeEnlazada~Playlist~ playlists
+        -ListaEnlazada~Cancion~ favoritos
+        +agregarAlbum(Album)
+        +crearPlaylist(String)
+        +agregarAFavoritos(Cancion)
+        +getPlaylists()
+        +getFavoritos()
+        +getAlbumes()
+    }
+
+    class Sistema {
+        -BibliotecaMusical biblioteca
+        -ReproductorMusica reproductor
+        +mostrarMenu()
+        +procesarOpcion(int)
+        +reproducirCancion(Cancion)
+        +gestionarBiblioteca()
+    }
+
+BibliotecaMusical *-- Album
+BibliotecaMusical *--  Playlist
+Album  *--  Cancion
+Playlist  o--  Cancion
+BibliotecaMusical  o--  Cancion : favoritos
+Sistema  *--  BibliotecaMusical
+Sistema  o--  ReproductorMusica
+ReproductorMusica  -->  Cancion : cancionActual

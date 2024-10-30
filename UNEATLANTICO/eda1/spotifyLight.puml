@@ -1,0 +1,8 @@
+BibliotecaMusical *-- Album
+BibliotecaMusical *--  Playlist
+Album  *--  Cancion
+Playlist  o--  Cancion
+BibliotecaMusical  o--  Cancion : favoritos
+Sistema  *--  BibliotecaMusical
+Sistema  o--  ReproductorMusica
+ReproductorMusica  -->  Cancion : cancionActual

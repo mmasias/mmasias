@@ -1,0 +1,47 @@
+@startuml
+
+state xyz as " "  {
+    state " " as Estado1
+    state " " as  Estado2
+    state " " as  Estado3
+    state "MENU PRINCIPAL" as MENU_PRINCIPAL
+
+    [*] --> Estado1
+        note on link
+            Usuario solicita ver
+            estadísticas globales
+        end note
+    Estado1 --> Estado2
+        note on link
+            Sistema muestra las estadísticas
+            del usuario y las acciones reiniciar
+            estadísticas y volver al menú principal
+        end note
+    Estado2 --> Estado1
+        note on link
+            El usuario solicita
+            reiniciar los datos estadísticos
+        end note
+    Estado2 --> Estado3
+    Estado3 --> MENU_PRINCIPAL
+        note on link
+            El usuario solicita volver al menú
+        end note
+}
+
+ note as N1
+    <b><i>Estadísticas usuario</i></b>
+    - Nota media
+    - Número test realizados
+    - Número test aprobados
+    - Número test fallados
+    - Porcentaje test aprobados
+    - Porcentaje test fallados
+    - Preguntas contestadas
+    - Preguntas acertadas
+    - Preguntas falladas
+    - Porcentaje de acierto en preguntas
+    - Porcentaje de fallo en preguntas
+ end note
+
+@enduml
