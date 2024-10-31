@@ -6,38 +6,18 @@ Desarrollador
 
 ## Casos de uso
 
-1. Editar código
-1. Autocompletar
-1. Refactorizar
-1. Formatear código
-1. Gestionar multicursor
-1. Plegar/desplegar bloques de código
-1. Gestionar snippets
-1. Renombrar símbolos
-1. Crear archivo
-1. Abrir archivo
-1. Guardar archivo
-1. Gestionar workspace
-1. Buscar archivos
-1. Gestionar carpetas
-1. Previsualizar archivos
-1. Comparar archivos
-1. Realizar commit
-1. Gestionar ramas
-1. Resolver conflictos
-1. Sincronizar cambios
-1. Visualizar historial
-1. Gestionar stash
-1. Crear pull request
-1. Gestionar tags
-1. Iniciar depuración
-1. Establecer breakpoint
-1. Ejecutar paso a paso
-1. Inspeccionar variables
-1. Evaluar expresiones
-1. Gestionar puntos de observación
-1. Configurar lanzamiento
-1. Depurar en producción
+### [🚬 completa para llegar a esto](🚬.md)
+
+|||||
+|-|-|-|-|
+|Editar código|Crear archivo|Gestionar ramas|Ejecutar paso a paso
+|Autocompletar|Abrir archivo|Resolver conflictos|Inspeccionar variables
+|Refactorizar|Guardar archivo|Sincronizar cambios|Evaluar expresiones
+|Formatear código|Gestionar workspace|Visualizar historial|Gestionar puntos de observación
+|Gestionar multicursor|Buscar archivos|Gestionar stash|Configurar lanzamiento
+|Plegar/desplegar bloques de código|Gestionar carpetas|Crear pull request|Depurar en producción
+|Gestionar snippets|Previsualizar archivos|Gestionar tags|Realizar commit
+|Renombrar símbolos|Comparar archivos|Iniciar depuración|Establecer breakpoint
 
 ### Iteración 000
 
