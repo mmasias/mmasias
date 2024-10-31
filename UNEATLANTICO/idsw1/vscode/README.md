@@ -10,13 +10,13 @@ Desarrollador
 
 |||||
 |-|-|-|-|
-|Editar código|Crear archivo|Gestionar ramas|Ejecutar paso a paso
+|Editar código|Crear archivo|Mostrar ramas|Ejecutar paso a paso
 |Autocompletar|Abrir archivo|Resolver conflictos|Inspeccionar variables
 |Refactorizar|Guardar archivo|Sincronizar cambios|Evaluar expresiones
-|Formatear código|Gestionar workspace|Visualizar historial|Gestionar puntos de observación
-|Gestionar multicursor|Buscar archivos|Gestionar stash|Configurar lanzamiento
-|Plegar/desplegar bloques de código|Gestionar carpetas|Crear pull request|Depurar en producción
-|Gestionar snippets|Previsualizar archivos|Gestionar tags|Realizar commit
+|Formatear código|Mostrar workspace|Visualizar historial|Mostrar puntos de observación
+|Iniciar multicursor|Buscar archivos|Mostrar stash|Configurar lanzamiento
+|Plegar/desplegar bloques de código|Mostrar carpetas|Crear pull request|Depurar en producción
+|Mostrar snippets|Previsualizar archivos|Mostrar tags|Realizar commit
 |Renombrar símbolos|Comparar archivos|Iniciar depuración|Establecer breakpoint
 
 ### Iteración 000

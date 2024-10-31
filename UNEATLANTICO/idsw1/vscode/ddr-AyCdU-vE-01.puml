@@ -6,9 +6,9 @@ package "Edición de código" {
     usecase "Autocompletar\ncódigo" as EC2
     usecase "Refactorizar\ncódigo" as EC3
     usecase "Formatear\ncódigo" as EC4
-    usecase "Gestionar\nmulticursor" as EC5
+    usecase "Iniciar\nmulticursor" as EC5
     usecase "Plegar/Desplegar\ncódigo" as EC6
-    usecase "Gestionar\nsnippets" as EC7
+    usecase "Mostrar\nsnippets" as EC7
     usecase "Renombrar\nsímbolos" as EC8
     
     EC2 ..> EC1 : <<extend>>

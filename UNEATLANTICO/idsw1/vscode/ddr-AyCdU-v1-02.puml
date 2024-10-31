@@ -6,9 +6,9 @@ package "Gestión de archivos" {
     usecase "Crear archivo" as GA1
     usecase "Abrir archivo" as GA2
     usecase "Guardar archivo" as GA3
-    usecase "Gestionar\nworkspace" as GA4
+    usecase "Mostrar\nworkspace" as GA4
     usecase "Buscar\narchivos" as GA5
-    usecase "Gestionar\ncarpetas" as GA6
+    usecase "Mostrar\ncarpetas" as GA6
     usecase "Previsualizar\narchivos" as GA7
     usecase "Comparar\narchivos" as GA8    
 }
