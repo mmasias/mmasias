@@ -1,5 +1,7 @@
 # Fábulas sin moraleja
 
+> *ocho cuentos nocturnos sin redención*
+
 <div align=center>
   
 ![image](https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7)
