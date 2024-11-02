@@ -1,0 +1,46 @@
+hide circle
+    class FuenteAudio {
+        marca
+        modelo
+        reproducir()
+        detener()
+    }
+    
+    class Amplificador {
+        marca
+        modelo
+        potencia
+        impedancia
+        entradas[]
+        ajustarVolumen()
+        seleccionarEntrada()
+        ajustarTono()
+    }
+    
+    class Parlante {
+        marca
+        modelo
+        potenciaNominal
+        potenciaMaxima
+        impedancia
+        reproducirSonido()
+    }
+    
+    class Tocadiscos {
+        tipoCorriente
+        prePhono
+        cambiarVelocidad()
+        activarPrePhono()
+    }
+    
+    class Ordenador {
+        sistemaOperativo
+        conexiones[] 
+        enviarAudio()
+    }
+    
+    FuenteAudio <|-- Tocadiscos
+    FuenteAudio <|-- Ordenador
+    FuenteAudio -r--> Amplificador : envía señal
+    Amplificador -r--> Parlante : amplifica
+    

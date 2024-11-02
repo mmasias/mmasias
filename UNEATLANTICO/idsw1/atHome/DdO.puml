@@ -1,0 +1,44 @@
+
+    object "Tocadiscos: AudioTechnica_LP120X" as tocadiscos {
+        marca = "Audio-Technica"
+        modelo = "LP120XUSB"
+        tipoCorriente = "Direct Drive"
+        prePhono = true
+    }
+    
+    object "Ordenador: MacBookPro2017" as ordenador {
+        marca = "Apple"
+        modelo = "MacBook Pro 2017"
+        sistemaOperativo = "macOS"
+        conexiones = ["USB-C", "Jack 3.5mm"]
+    }
+    
+    object "Amplificador: Yamaha_AS301" as amplificador {
+        marca = "Yamaha"
+        modelo = "A-S301"
+        potencia = 60
+        impedancia = 6
+        entradas = ["optical", "phono", "line1", "line2"]
+    }
+    
+    object "Parlante: Yamaha_NSBP300" as parlante_izquierdo {
+        marca = "Yamaha"
+        modelo = "NS-BP300"
+        potenciaNominal = 60
+        potenciaMaxima = 110
+        impedancia = 6
+    }
+    
+    object "Parlante: Yamaha_NSBP300" as parlante_derecho {
+        marca = "Yamaha"
+        modelo = "NS-BP300"
+        potenciaNominal = 60
+        potenciaMaxima = 110
+        impedancia = 6
+    }
+
+
+tocadiscos -u-> amplificador : RCA
+ordenador -u-> amplificador : Optical
+amplificador -l-> parlante_izquierdo : "cable parlante izq"
+amplificador -r-> parlante_derecho : "cable parlante der"
