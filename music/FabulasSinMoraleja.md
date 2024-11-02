@@ -1,15 +1,18 @@
 # Fábulas sin moraleja
 
-> *ocho cuentos nocturnos sin redención*
-
 <div align=center>
-  
-![image](https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7)
+
+|||
+|-|-|
+|*Ocho cuentos nocturnos sin redención*|[*Reseña del álbum*](analisis.md)|
+
+<img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
 
 </div>
 
+## Temas
 
-## Las ventanas
+### Las ventanas
 
 ```markdown
 Las ventanas de aquel cuarto no conocían al sol
@@ -33,7 +36,7 @@ escribiendo alejandrinos carentes de convicción
 A menudo se imagina sin angustia en el salón
 ```
 
-## Plácida insurrección
+### Plácida insurrección
 
 ```markdown
 Media mañana perdida en una estación
@@ -59,7 +62,7 @@ esos que años atrás le sentaban tan mal
 y cuyos puntos finales terminaban en perversos bares
 ```
 
-## Hay poesía
+### Hay poesía
 
 ```markdown
 Hay poesía en tus ojos tan serenos
@@ -81,7 +84,7 @@ Hay poesía en nuestras formas de fondo tan absurdo
 Hay poesía en tu mundo que no quiero perder...
 ```
 
-## Av. Meridiana
+### Av. Meridiana
 
 ```markdown
 Me alcanzó una lluvia fría
@@ -115,7 +118,7 @@ No me llama la atención
 que mi casa esté vacía
 ```
 
-## Obituario
+### Obituario
 
 ```markdown
 Anoche que estaba pasado de copas
@@ -149,7 +152,7 @@ Me perdían el rastro cada fin de semana
 Me encontraba los lunes si me daba la gana...
 ```
 
-## 27, y sigue...
+### 27, y sigue...
 
 ```markdown
 Se despertó a la ventana al llegar la puesta del sol
@@ -177,7 +180,7 @@ se hunde en la playa ignorando el frío, la lluvia y a dios
 Y adios...
 ```
 
-## Que una línea traiga tu voz
+### Que una línea traiga tu voz
 
 ```markdown
 Me duermo cada vez que me levanto
@@ -209,7 +212,7 @@ oh Dios
 que una línea traiga tu voz
 ```
 
-## Diógenes
+### Diógenes
 
 ```markdown
 Diógenes frota su vientre en la esquina muy cerca a la estación de Sants
