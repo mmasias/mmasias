@@ -2,9 +2,9 @@
 
 <div align=center>
 
-|||
-|-|-|
-|*Ocho cuentos nocturnos sin redención*|[*Reseña del álbum*](analisis.md)|
+||Reseñas|
+|-|:-:|
+|*Ocho cuentos nocturnos sin redención*|[*1*](analisis.md) - [*2*](analisis2.md)|
 
 <img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
 
