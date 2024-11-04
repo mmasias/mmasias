@@ -124,6 +124,7 @@ Tema: nordtron
 <img width="434" alt="image" src="https://user-images.githubusercontent.com/8528047/215170894-5f288539-7a31-45c2-b4fb-bd557a14e3b5.png">
 
 En ```.bashrc```
+
 ```
 eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.json)"
 ```
@@ -140,13 +141,9 @@ sudo apt install eza  # eza -l --tree --group --header
 [Future](https://store.kde.org/p/1491484)
 Utterly Nord Ligth Solid
 
-## Notas adicionales
-
-- DOSBOX de Flatpak
-
 ## Configuración Github classroom
 
-```console
+```bash
 sudo apt install gh
 gh auth login
 gh extension install github/gh-classroom
