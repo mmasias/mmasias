@@ -143,3 +143,13 @@ Utterly Nord Ligth Solid
 ## Notas adicionales
 
 - DOSBOX de Flatpak
+
+## Configuración Github classroom
+
+```console
+sudo apt install gh
+gh auth login
+gh extension install github/gh-classroom
+gh classroom list
+gh classroom clone student-repos
+```
