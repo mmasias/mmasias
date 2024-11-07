@@ -1,0 +1,55 @@
+[*] --> Nueva
+note on link
+    Miembro solicita iniciar
+    la creación de una tarea
+end note
+
+Nueva --> EnEdicion
+note on link
+    Sistema presenta formulario
+    de nueva tarea
+end note
+
+EnEdicion --> Validacion
+note on link
+    Miembro ingresa datos:
+    - Título
+    - Descripción
+    - Fecha límite
+    - Prioridad
+end note
+
+Validacion --> Borrador
+note on link
+    Miembro solicita 
+    guardar como borrador
+end note
+
+EnEdicion --> Borrador
+note on link
+    Miembro solicita 
+    guardar como borrador
+end note
+
+
+Validacion --> Pendiente
+note on link
+    Miembro solicita 
+    envíar tarea
+    para asignación
+end note
+
+Validacion --> EnEdicion
+note on link
+    Sistema muestra 
+    que hay datos
+    incompletos o inválidos
+end note
+
+Borrador --> EnEdicion
+note on link
+    Miembro solicita
+    continuar edición
+end note
+
+

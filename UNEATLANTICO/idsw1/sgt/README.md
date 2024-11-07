@@ -74,3 +74,4 @@
 |-|
 |![](/images/UNEATLANTICO/idsw1/sgt/ddr-dCdu-CdUCrearTarea-DdE.svg)
 |![](/images/UNEATLANTICO/idsw1/sgt/ddr-dCdu-CdUCrearTarea-DdE-2.svg)
+|![](/images/UNEATLANTICO/idsw1/sgt/ddr-dCdu-CdUCrearTarea-DdE-3.svg)
