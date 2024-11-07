@@ -61,3 +61,16 @@
 
 |![](/images/UNEATLANTICO/idsw1/sgt/ddr-AyCdU-v3-1.svg)|![](/images/UNEATLANTICO/idsw1/sgt/ddr-AyCdU-v3-2.svg)|
 |-|-|
+
+## Priorizar casos de uso
+
+🤔 🗣️ 🗣️ 🗣️ 🗣️
+
+## Detallar casos de uso
+
+### 🚬 CdU Crear tarea
+
+||
+|-|
+|![](/images/UNEATLANTICO/idsw1/sgt/ddr-dCdu-CdUCrearTarea-DdE.svg)
+|![](/images/UNEATLANTICO/idsw1/sgt/ddr-dCdu-CdUCrearTarea-DdE-2.svg)
