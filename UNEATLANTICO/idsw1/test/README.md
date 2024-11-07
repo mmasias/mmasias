@@ -21,18 +21,20 @@
 
 ### Detallar CdU
 
-|Iniciar sesión
-|:-:
-|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUIniciarSesion.svg)
+#### Iniciar sesión
 
-|Cerrar sesión
-|:-:
-|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUCerrarSesion.svg)
+![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUIniciarSesion.svg)
 
-|Ver estadísticas
-|:-:
-|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUVerEstadisticas.svg)
+#### Cerrar sesión
 
-|Comprar paquetes
-|:-:
-|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUComprarPaquetes.svg)
+![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUCerrarSesion.svg)
+
+#### Ver estadísticas
+
+![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUVerEstadisticas.svg)
+
+#### Comprar paquetes
+
+|Texto|Diagrama de actividades|Actividades con carriles|Estados|
+|:-:|:-:|:-:|:-:|
+![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUComprarPaquetes-texto.png)|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUComprarPaquetes-DdA.svg)|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUComprarPaquetes-DdAcC.svg)|![](/images/UNEATLANTICO/idsw1/test/ddr-dCdU-CdUComprarPaquetes-DdE.svg)

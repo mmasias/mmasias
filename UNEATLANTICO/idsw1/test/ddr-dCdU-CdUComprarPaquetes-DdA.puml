@@ -1,0 +1,36 @@
+@startuml
+
+start
+
+:Usuario solicita comprar paquetes;
+
+:Sistema muestra paquetes disponibles;
+
+:Usuario selecciona paquete a comprar;
+
+:Sistema muestra acceso a pasarela de pago;
+
+repeat
+    :Usuario introduce email y contraseña;
+    if (Datos correctos?) then (sí)
+        :Sistema muestra pantalla de confirmación;
+        break
+    else (no)
+    endif
+repeat while (Datos incorrectos)
+
+if (Usuario confirma?) then (sí)
+    :Sistema muestra mensaje confirmando la compra;
+else (no)
+    :Sistema muestra mensaje avisando de la cancelación;
+endif
+
+:Sistema muestra opciones:
+* Ir al menú principal
+* Reiniciar paquetes
+* Comprar paquetes
+* Desvincular cuenta;
+
+stop
+
+@enduml
