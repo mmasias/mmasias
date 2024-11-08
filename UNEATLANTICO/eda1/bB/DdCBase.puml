@@ -1,0 +1,16 @@
+class SpotifyApp
+
+SpotifyApp --> ListaCanciones
+SpotifyApp --> ColaReproduccion
+SpotifyApp --> PilaHistorial
+SpotifyApp --> ListaPlaylists
+SpotifyApp --> Cancion
+
+ListaCanciones --> NodoCancion
+ColaReproduccion --> NodoCancion
+PilaHistorial --> NodoCancion
+ListaPlaylists --> NodoPlaylist
+   
+NodoCancion --> Cancion
+NodoPlaylist --> Playlist
+Playlist --> ListaCanciones

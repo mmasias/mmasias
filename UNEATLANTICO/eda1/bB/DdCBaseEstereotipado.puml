@@ -1,0 +1,51 @@
+
+    class SpotifyApp {
+        <<main>>
+    }
+
+    class Cancion {
+        <<entity>>
+    }
+
+    class NodoCancion {
+        <<node>>
+    }
+
+    class ColaReproduccion {
+        <<queue>>
+    }
+
+    class PilaHistorial {
+        <<stack>>
+    }
+
+    class ListaCanciones {
+        <<list>>
+    }
+
+    class Playlist {
+        <<entity>>
+    }
+
+    class ListaPlaylists {
+        <<list>>
+    }
+
+    class NodoPlaylist {
+        <<node>>
+    }
+
+SpotifyApp --> ListaCanciones
+SpotifyApp --> ColaReproduccion
+SpotifyApp --> PilaHistorial
+SpotifyApp --> ListaPlaylists
+SpotifyApp --> Cancion
+
+ListaCanciones --> NodoCancion
+ColaReproduccion --> NodoCancion
+PilaHistorial --> NodoCancion
+ListaPlaylists --> NodoPlaylist
+   
+NodoCancion --> Cancion
+NodoPlaylist --> Playlist
+Playlist --> ListaCanciones

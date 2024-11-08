@@ -1,0 +1,76 @@
+
+    class SpotifyApp {
+    }
+
+    class Cancion {
+        +Cancion(String titulo, String artista, int duracion)
+        +getTitulo() String
+        +marcarComoFavorita()
+        +desmarcarComoFavorita()
+        +isFavorita() boolean
+        +toString() String
+    }
+
+    class NodoCancion {
+        +Cancion cancion
+        +NodoCancion siguiente
+        +NodoCancion(Cancion cancion)
+    }
+
+    class ColaReproduccion {
+        +ColaReproduccion()
+        +encolar(Cancion cancion)
+        +desencolar() Cancion
+        +mostrarCola(Cancion cancionActual)
+    }
+
+    class PilaHistorial {
+        +PilaHistorial()
+        +apilar(Cancion cancion)
+        +desapilar() Cancion
+        +mostrarHistorial()
+    }
+
+    class ListaCanciones {
+        +ListaCanciones()
+        +agregarCancion(Cancion cancion)
+        +eliminarCancion(String titulo)
+        +mostrarCanciones()
+        +getNodo(int index) NodoCancion
+        +getTamaño() int
+    }
+
+    class Playlist {
+        +Playlist(String nombre)
+        +getNombre() String
+        +agregarCancion(Cancion cancion)
+        +eliminarCancion(String titulo)
+        +mostrarCanciones()
+    }
+
+    class ListaPlaylists {
+        +ListaPlaylists()
+        +agregarPlaylist(Playlist playlist)
+        +obtenerPlaylist(int index) Playlist
+        +mostrarPlaylists()
+        +getTamaño() int
+    }
+
+    class NodoPlaylist {
+        +NodoPlaylist(Playlist playlist)
+    }
+
+SpotifyApp --> ListaCanciones
+SpotifyApp --> ColaReproduccion
+SpotifyApp --> PilaHistorial
+SpotifyApp --> ListaPlaylists
+SpotifyApp --> Cancion
+
+ListaCanciones --> NodoCancion
+ColaReproduccion --> NodoCancion
+PilaHistorial --> NodoCancion
+ListaPlaylists --> NodoPlaylist
+   
+NodoCancion --> Cancion
+NodoPlaylist --> Playlist
+Playlist --> ListaCanciones

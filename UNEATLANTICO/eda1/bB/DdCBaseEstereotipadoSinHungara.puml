@@ -1,0 +1,50 @@
+    class ReproductorMusical {
+        <<main>>
+    }
+
+    class Cancion {
+        <<entity>>
+    }
+
+    class ElementoMusical {
+        <<node>>
+    }
+
+    class Reproductor {
+        <<queue>>
+    }
+
+    class Historial {
+        <<stack>>
+    }
+
+    class Biblioteca {
+        <<list>>
+    }
+
+    class Playlist {
+        <<entity>>
+    }
+
+    class Catalogo {
+        <<list>>
+    }
+
+    class ElementoPlaylist {
+        <<node>>
+    }
+
+    ReproductorMusical -->Biblioteca
+    ReproductorMusical -->Reproductor
+    ReproductorMusical -->Historial
+    ReproductorMusical -->Catalogo
+    ReproductorMusical --> Cancion
+
+    Biblioteca --> ElementoMusical
+    Reproductor --> ElementoMusical
+    Historial --> ElementoMusical
+    Catalogo --> ElementoPlaylist
+    
+    ElementoMusical --> Cancion
+    ElementoPlaylist --> Playlist
+    Playlist --> Biblioteca
