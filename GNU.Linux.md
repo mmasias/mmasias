@@ -21,6 +21,8 @@ git config --global user.name "manuel@dondeSea"
 git config --global user.email "manuel@masiasweb.com"
 ```
 
+> [Configurar GPG para firma](GNU.Linux.GPG.md)
+
 ## Instalar gdebi
 
 ```bash
