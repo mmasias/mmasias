@@ -1,0 +1,106 @@
+@startuml
+
+object "Música Popular" as root
+
+object "Country" as country
+object "Gospel" as gospel
+object "Blues" as blues
+object "Jazz" as jazz
+
+object "Folk Rock" as folkrock
+object "Southern Rock" as southern
+object "Heartland Rock" as heartland
+
+object "Rock Psicodélico" as psychedelic
+object "Rock Progresivo" as progrock
+object "Krautrock" as kraut
+object "Glam Rock" as glam
+
+object "New Wave" as newwave
+object "Punk" as punk
+object "Rock Alternativo" as altrock
+object "Grunge" as grunge
+object "Emo" as emo
+object "Electrónica" as electronica
+object "Ambient" as ambient
+
+object "Soul" as soul
+object "Doo Wop" as doowop
+object "Funk" as funk
+object "Ska" as ska
+object "Reggae" as reggae
+object "Rocksteady" as rocksteady
+object "Dub" as dub
+object "Disco" as disco
+object "Hip Hop" as hiphop
+
+object "Blues Rock" as bluesrock
+object "Hard Rock" as hardrock
+object "Heavy Metal" as metal
+object "Trash Metal" as trash
+object "Nu Metal" as numetal
+object "Groove Metal" as groove
+
+' Rama R&B/Rock clásico
+object "Rhythm & Blues" as randb
+object "Rockabilly" as rockabilly
+object "Boogie Woogie" as boogie
+object "Surf Music" as surf
+object "Garage Rock" as garage
+object "British Invasion" as british
+object "Pop Rock" as poprock
+object "Soft Rock" as softrock
+object "Britpop" as britpop
+
+object "Skiffle" as skiffle
+
+root --> country
+root --> gospel
+root --> blues
+root --> jazz
+
+country --> folkrock
+folkrock --> southern
+southern --> heartland
+folkrock --> psychedelic
+psychedelic --> progrock
+progrock --> kraut
+progrock --> glam
+progrock --> newwave
+newwave --> electronica
+electronica --> ambient
+newwave --> punk
+punk --> altrock
+altrock --> grunge
+grunge --> emo
+altrock --> britpop
+
+gospel --> soul
+gospel --> doowop
+soul --> funk
+funk --> ska
+ska --> rocksteady
+rocksteady --> reggae
+rocksteady --> dub
+funk --> disco
+disco --> hiphop
+
+blues --> bluesrock
+bluesrock --> hardrock
+hardrock --> metal
+metal --> trash
+metal --> numetal
+metal --> groove
+
+blues --> randb
+randb --> rockabilly
+randb --> boogie
+rockabilly --> surf
+rockabilly --> garage
+british --> poprock
+poprock --> softrock
+
+jazz --> skiffle
+skiffle --> british
+
+@enduml

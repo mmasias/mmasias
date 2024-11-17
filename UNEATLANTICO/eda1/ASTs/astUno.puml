@@ -1,0 +1,16 @@
+@startuml
+object "=" as assign
+object "x" as x
+object "+" as plus
+object "5" as five
+object "*" as mult
+object "3" as three
+object "2" as two
+
+assign -- x
+assign -- plus
+plus -- five
+plus -- mult
+mult -- three
+mult -- two
+@enduml

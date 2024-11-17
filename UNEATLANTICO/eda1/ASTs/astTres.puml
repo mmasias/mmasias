@@ -1,0 +1,32 @@
+@startuml
+object "while" as while
+object "<" as less
+object "i" as i1
+object "10" as ten
+object "bloque" as block
+object "=" as assign1
+object "sum" as sum1
+object "+" as plus1
+object "sum" as sum2
+object "i" as i2
+object "=" as assign2
+object "i" as i3
+object "+" as plus2
+object "i" as i4
+object "1" as one
+
+while -- less
+less -- i1
+less -- ten
+while -- block
+block -- assign1
+assign1 -- sum1
+assign1 -- plus1
+plus1 -- sum2
+plus1 -- i2
+block -- assign2
+assign2 -- i3
+assign2 -- plus2
+plus2 -- i4
+plus2 -- one
+@endum

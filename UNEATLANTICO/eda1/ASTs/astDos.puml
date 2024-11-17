@@ -1,0 +1,22 @@
+@startuml
+object "if" as if
+object ">" as greater
+object "x" as x1
+object "0" as zero
+object "then-else" as thenelse
+object "return" as ret1
+object "x" as x2
+object "return" as ret2
+object "negativo" as neg
+object "x" as x3
+
+if -- greater
+greater -- x1
+greater -- zero
+if -- thenelse
+thenelse -- ret1
+ret1 -- x2
+thenelse -- ret2
+ret2 -- neg
+neg -- x3
+@enduml
