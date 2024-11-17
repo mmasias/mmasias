@@ -1,0 +1,43 @@
+@startuml
+
+class Spotify
+class GestorPrincipal
+class GestorBiblioteca
+class GestorReproduccion
+class BibliotecaMusical
+class Reproductor
+class ListaPlaylists
+class ListaCanciones
+class Cola
+class Cancion
+class NodoCancion
+class Playlist
+class NodoPlaylist
+
+Spotify --> GestorPrincipal
+
+GestorPrincipal --> GestorBiblioteca
+GestorPrincipal --> GestorReproduccion
+GestorPrincipal --> BibliotecaMusical
+
+GestorBiblioteca --> BibliotecaMusical
+GestorReproduccion --> Reproductor
+GestorReproduccion --> BibliotecaMusical
+
+BibliotecaMusical --> ListaPlaylists
+BibliotecaMusical --> Cancion
+
+Reproductor --> BibliotecaMusical
+Reproductor --> Cola
+Reproductor --> ListaCanciones
+
+ListaPlaylists o-- NodoPlaylist
+ListaCanciones o-- NodoCancion
+Cola o-- NodoCancion
+
+NodoCancion -u-|> Cancion
+NodoPlaylist -u-|> Playlist
+
+Playlist --> ListaCanciones
+
+@enduml

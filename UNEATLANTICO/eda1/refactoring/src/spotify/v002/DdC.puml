@@ -1,0 +1,125 @@
+class Spotify {
+    +main(String[] args)
+}
+
+class Cancion {
+    -String titulo
+    -int id
+    -String artista
+    -int duracion
+    -boolean favorita
+    +Cancion(int id, String titulo, String artista, int duracion)
+    +Cancion(Cancion cancion)
+    +toString() String
+    +setFavorita()
+    +unsetFavorita()
+    +esFavorita() boolean
+    +getId() int
+}
+
+class NodoCancion {
+    -NodoCancion siguiente
+    -NodoCancion anterior
+    +NodoCancion(NodoCancion anterior, Cancion cancion, NodoCancion siguiente)
+    +getSiguiente() NodoCancion
+    +getAnterior() NodoCancion
+    +setSiguiente(NodoCancion siguiente)
+    +setAnterior(NodoCancion anterior)
+    +getCancion() Cancion
+}
+
+class Playlist {
+    -String nombre
+    -int id
+    -ListaCanciones canciones
+    +Playlist(String nombre, int id)
+    +getNombre() String
+    +getId() int
+    +getCanciones() ListaCanciones
+    +añadirCancion(Cancion cancion)
+    +eliminarCancion(Cancion cancion)
+    +toString() String
+    +mostrar() String
+}
+
+class NodoPlaylist {
+    -NodoPlaylist siguiente
+    -NodoPlaylist anterior
+    +NodoPlaylist(NodoPlaylist anterior, String nombrePlaylist, NodoPlaylist siguiente, int id)
+    +getSiguiente() NodoPlaylist
+    +getAnterior() NodoPlaylist
+    +setSiguiente(NodoPlaylist siguiente)
+    +setAnterior(NodoPlaylist anterior)
+}
+
+class ListaPlaylists {
+    -NodoPlaylist primero
+    -NodoPlaylist ultimo
+    -int contadorIds
+    +ListaPlaylists()
+    +isEmpty() boolean
+    +insertUltimo(String nombrePlaylist)
+    +mostrar()
+    +encontrar(int playlistID) NodoPlaylist
+}
+
+class ListaCanciones {
+    -NodoCancion primero
+    -NodoCancion ultimo
+    +ListaCanciones()
+    +isEmpty() boolean
+    +insertPrimero(Cancion cancion)
+    +insertUltimo(Cancion cancion)
+    +eliminarCancion(Cancion cancion)
+    +mostrar() String
+    +getUltimoNodo() NodoCancion
+}
+
+class Cola {
+    -NodoCancion primero
+    -NodoCancion ultimo
+    +Cola()
+    +enqueue(Cancion cancion)
+    +desenqueue()
+    +mostrar()
+    +isEmpty() boolean
+    +getPrimero() NodoCancion
+}
+
+class Reproductor {
+    -Cola colaReproduccion
+    -ListaCanciones historial
+    -Cancion cancionActual
+    -boolean repetir
+    -boolean aleatorio
+    -Cancion[] cancionesDisponibles
+    -NodoCancion cancionEnHistorial
+    +Reproductor(Cancion[] cancionesDisponibles)
+    +getCancionActual() Cancion
+    +reproducirCancion(Cancion cancion)
+    +siguienteCancion()
+    +cancionAnterior()
+    +verCola()
+    +verHistorial()
+    +activarDesactivarAleatorio()
+    +activarDesactivarRepeticion()
+    -mostrarEstado()
+    +añadirCancionCola(int idCancion)
+}
+
+Spotify --> "1" Reproductor : uses
+Spotify --> "1" ListaPlaylists : uses
+Spotify --> "1..*" Cancion : uses
+
+NodoCancion --|> Cancion
+NodoPlaylist --|> Playlist
+
+ListaPlaylists o-- NodoPlaylist
+ListaCanciones o-- NodoCancion
+Cola o-- NodoCancion
+
+Playlist o-- ListaCanciones
+
+Reproductor o-- Cola
+Reproductor o-- ListaCanciones
+Reproductor --> Cancion
