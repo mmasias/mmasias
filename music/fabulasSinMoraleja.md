@@ -230,8 +230,8 @@ acólito blando de la sacristía del templo de esta sociedad
 que lucra en sus fieles, induce su alogia y luego no duda en dictar
 retórica oscura en frases que exudan hedor espiritual
 
-Sale esta noche muy débil a un viaje del cual no va a regresar
-su oscura linterna le arrastra a tientas: no sabe el porqué se va
-buscando las dudas para sus respuestas, alguna allí encontrará
-cargó en la mochila sus mejores penas, y durmiendo se va....
+Sale esta noche inseguro a un viaje del cual no va a regresar
+con frágil linterna va casi a cuestas: no sabe ni por qué se va
+buscando más dudas para sus respuestas, alguna ya encontrará
+cargó su mochila con todas sus penas, durmiendo se irá..."
 ```
