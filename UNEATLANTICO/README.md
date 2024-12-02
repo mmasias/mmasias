@@ -17,9 +17,18 @@
 - [Estructura de datos 1](https://github.com/mmasias/24-25-eda1)
 - [Ingeniería del software 1](https://github.com/mmasias/24-25-idsw1)
   - [Sesiones de requisitado](https://github.com/mmasias/24-25-idsw1-sdr)
-    - [Tracker v0 (*beta*)](https://manuel.masiasweb.com/gh-s-v0/github-stats-page-contributors.html)
-    - [Tracker v1 (*beta*)](https://manuel.masiasweb.com/gh-s-v1/github-stats-page-contributors.html)
-    - [Tracker v2 (*beta*)](https://manuel.masiasweb.com/github-stats-page-contributors.html)
+
+### Herramientas desarrolladas
+
+<div align=center>
+
+|Tracker|Navegador de commits|
+|-|-|
+|[v2](https://manuel.masiasweb.com/github-stats-page-contributors.html)|[v0](https://manuel.masiasweb.com/gh-history-v0/)
+|[v1](https://manuel.masiasweb.com/gh-s-v1/github-stats-page-contributors.html)
+|[v0](https://manuel.masiasweb.com/gh-s-v0/github-stats-page-contributors.html)
+
+</div>
 
 ## [23][24]
 
