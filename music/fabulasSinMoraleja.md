@@ -155,7 +155,7 @@ Me encontraba los lunes si me daba la gana...
 ### 27, y sigue...
 
 ```markdown
-Se despertó a la ventana al llegar la puesta del sol
+Se abalanzó a la mañana al llegar la puesta del sol
 y se juró que mañana lo haría un poco peor
 desayunando las drogas que hacía para cenar
 ya entraría en calor en el trecho que aún tiene que andar
@@ -168,7 +168,7 @@ y adorno sus muñecas con sendas sonrisas sin luz
 Sin luz...
 
 Oye venir a la lluvia como el que está haciendo un favor
-y si santigua es con la convicción del que nunca creyó
+y se santigua con la convicción del que nunca creyó
 odia a la gente que odia las cosas que él aún no odió
 piensa en vacío mientras reflexiona lo que se perdió
 
