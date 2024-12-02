@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Commit Player</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Prism.js para resaltado de sintaxis -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+
+    <!-- Configuración -->
+    <script src="config.js"></script>
+
+    <style>
+        pre[class*="language-"] {
+            margin: 0;
+            background: #1a1a1a;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        code[class*="language-"] {
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: inherit;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 pt-4">
+        <div id="root"></div>
+    </div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const CommitPlayer = () => {
+            const [isPlaying, setIsPlaying] = useState(false);
+            const [currentIndex, setCurrentIndex] = useState(0);
+            const [repoInput, setRepoInput] = useState('');
+            const [filePathInput, setFilePathInput] = useState('');
+            const [commits, setCommits] = useState([]);
+            const [loading, setLoading] = useState(false);
+            const [error, setError] = useState(null);
+
+            const GITHUB_TOKEN = CONFIG.GITHUB_TOKEN;
+
+            const getTimeDifference = (oldDate, newDate) => {
+                const diff = new Date(newDate) - new Date(oldDate);
+                const minutes = Math.floor(diff / 1000 / 60);
+                const hours = Math.floor(minutes / 60);
+                const days = Math.floor(hours / 24);
+
+                const remainingHours = hours % 24;
+                const remainingMinutes = minutes % 60;
+
+                const parts = [];
+
+                if (days > 0) {
+                    parts.push(`${days} ${days === 1 ? 'día' : 'días'}`);
+                }
+                if (remainingHours > 0) {
+                    parts.push(`${remainingHours} ${remainingHours === 1 ? 'hora' : 'horas'}`);
+                }
+                if (remainingMinutes > 0) {
+                    parts.push(`${remainingMinutes} ${remainingMinutes === 1 ? 'minuto' : 'minutos'}`);
+                }
+
+                if (parts.length === 0) {
+                    return "Menos de un minuto después";
+                }
+
+                return parts.join(', ') + " después";
+            };
+
+            useEffect(() => {
+                if (commits.length > 0) {
+                    Prism.highlightAll();
+                }
+            }, [currentIndex, commits]);
+
+            const fetchWithAuth = async (url) => {
+                const response = await fetch(url, {
+                    headers: {
+                        'Authorization': `token ${GITHUB_TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+                }
+
+                return response.json();
+            };
+
+            const fetchFileContent = async (repo, filePath, sha) => {
+                try {
+                    const [owner, repoName] = repo.split('/');
+                    const data = await fetchWithAuth(
+                        `https://api.github.com/repos/${owner}/${repoName}/contents/${filePath}?ref=${sha}`
+                    );
+
+                    if (data.content) {
+                        return atob(data.content);
+                    } else {
+                        throw new Error('No se pudo obtener el contenido del archivo');
+                    }
+                } catch (error) {
+                    console.error('Error fetching file content:', error);
+                    throw error;
+                }
+            };
+
+            const loadFileHistory = async (repo, filePath) => {
+                setLoading(true);
+                setError(null);
+                try {
+                    const [owner, repoName] = repo.split('/');
+
+                    if (!owner || !repoName) {
+                        throw new Error('Formato de repositorio inválido. Usa formato: usuario/repo');
+                    }
+
+                    const commitsData = await fetchWithAuth(
+                        `https://api.github.com/repos/${owner}/${repoName}/commits?path=${filePath}`
+                    );
+
+                    const commitsWithContent = await Promise.all(
+                        commitsData.reverse().map(async (commit) => {
+                            try {
+                                const content = await fetchFileContent(repo, filePath, commit.sha);
+                                return {
+                                    hash: commit.sha.substring(0, 7),
+                                    date: new Date(commit.commit.author.date).toLocaleString(),
+                                    timestamp: commit.commit.author.date,
+                                    author: commit.commit.author.name,
+                                    message: commit.commit.message,
+                                    content: content
+                                };
+                            } catch (error) {
+                                console.error('Error processing commit:', error);
+                                return null;
+                            }
+                        })
+                    );
+
+                    const validCommits = commitsWithContent.filter(commit => commit !== null);
+
+                    if (validCommits.length === 0) {
+                        throw new Error('No se pudo obtener la historia del archivo');
+                    }
+
+                    setCommits(validCommits);
+                    setCurrentIndex(0);
+                } catch (error) {
+                    setError(error.message);
+                } finally {
+                    setLoading(false);
+                }
+            };
+
+            const NavigationControls = () => (
+                <div className="flex gap-2">
+                    <button
+                        onClick={goToPrevious}
+                        disabled={currentIndex === 0}
+                        className="p-1 rounded hover:bg-slate-200 disabled:opacity-50"
+                        title="Commit anterior"
+                    >
+                        ⏮️
+                    </button>
+                    <button
+                        onClick={togglePlay}
+                        className="p-1 rounded hover:bg-slate-200"
+                        title={isPlaying ? "Pausar" : "Reproducir"}
+                    >
+                        {isPlaying ? '⏸️' : '▶️'}
+                    </button>
+                    <button
+                        onClick={goToNext}
+                        disabled={currentIndex === commits.length - 1}
+                        className="p-1 rounded hover:bg-slate-200 disabled:opacity-50"
+                        title="Siguiente commit"
+                    >
+                        ⏭️
+                    </button>
+                </div>
+            );
+
+            const ProgressBar = () => (
+                <div className="w-full bg-slate-200 rounded-full h-1 mt-3">
+                    <div
+                        className="bg-blue-600 h-1 rounded-full transition-all duration-300"
+                        style={{
+                            width: `${(currentIndex / (commits.length - 1)) * 100}%`
+                        }}
+                    />
+                </div>
+            );
+
+            const togglePlay = () => setIsPlaying(!isPlaying);
+            const goToNext = () => setCurrentIndex(prev => Math.min(prev + 1, commits.length - 1));
+            const goToPrevious = () => setCurrentIndex(prev => Math.max(prev - 1, 0));
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (repoInput && filePathInput) {
+                    loadFileHistory(repoInput, filePathInput);
+                }
+            };
+
+            return (
+                <div className="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-6">
+                    <form onSubmit={handleSubmit} className="mb-4 flex gap-4 items-end">
+                        <div className="flex-1">
+                            <label className="block text-sm font-medium mb-1">
+                                Repositorio
+                            </label>
+                            <input
+                                type="text"
+                                value={repoInput}
+                                onChange={(e) => setRepoInput(e.target.value)}
+                                placeholder="usuario/repo"
+                                className="w-full p-2 border rounded"
+                            />
+                        </div>
+
+                        <div className="flex-1">
+                            <label className="block text-sm font-medium mb-1">
+                                Ruta del archivo
+                            </label>
+                            <input
+                                type="text"
+                                value={filePathInput}
+                                onChange={(e) => setFilePathInput(e.target.value)}
+                                placeholder="src/main.js"
+                                className="w-full p-2 border rounded"
+                            />
+                        </div>
+
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+                        >
+                            {loading ? 'Cargando...' : 'Cargar'}
+                        </button>
+                    </form>
+
+                    {error && (
+                        <div className="mb-4 p-4 bg-red-50 border-l-4 border-red-500 text-red-700">
+                            {error}
+                        </div>
+                    )}
+
+                    {commits.length > 0 && (
+                        <>
+                            <div className="mb-4 p-3 bg-slate-100 rounded-lg">
+                                <div className="flex items-center justify-between mb-2">
+                                    <div className="flex gap-4 items-center">
+                                        <div className="text-sm">
+                                            <span className="font-medium">{commits[currentIndex].hash}</span>
+                                            <span className="mx-2 text-slate-400">·</span>
+                                            <span className="text-slate-600">{commits[currentIndex].author}</span>
+                                            <span className="mx-2 text-slate-400">·</span>
+                                            <span className="text-slate-600">{new Date(commits[currentIndex].timestamp).toLocaleString()}</span>
+                                        </div>
+                                    </div>
+                                    <NavigationControls />
+                                </div>
+                                {currentIndex > 0 && (
+                                    <div className="text-xs text-slate-500">
+                                        {getTimeDifference(
+                                            commits[currentIndex-1].timestamp,
+                                            commits[currentIndex].timestamp
+                                        )}
+                                    </div>
+                                )}
+                                <div className="text-sm mt-1">{commits[currentIndex].message}</div>
+                                <ProgressBar />
+                            </div>
+
+                            <div className="relative">
+                                <pre className="language-java rounded-lg">
+                                    <code className="language-java">
+                                        {commits[currentIndex].content}
+                                    </code>
+                                </pre>
+                                <div className="absolute top-2 right-2 text-xs text-slate-400 bg-slate-800/50 px-2 py-1 rounded">
+                                    Java
+                                </div>
+                            </div>
+                        </>
+                    )}
+                </div>
+            );
+        };
+
+        ReactDOM.render(
+            <CommitPlayer />,
+            document.getElementById('root')
+        );
+    </script>
+</body>
+</html>
