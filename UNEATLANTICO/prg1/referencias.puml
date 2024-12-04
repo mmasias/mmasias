@@ -1,0 +1,58 @@
+@startuml
+
+
+title Estructura en Memoria: int[][] a = new int[10][100]
+
+package "Stack" {
+    rectangle "referencia a" as ref_a
+}
+
+package "Heap" {
+    package "Array Principal" as array_principal {
+        rectangle "length=10" as length0
+        rectangle "ref[0]" as ref0
+        rectangle "ref[1]" as ref1
+        rectangle "ref[2]" as ref2
+        rectangle "..." as dots1
+        rectangle "ref[9]" as ref9
+    }
+
+    package "Array[0]" as array0 {
+        rectangle "length=100" as length1
+        rectangle "0" as val00
+        rectangle "1" as val01
+        rectangle "2" as val02
+        rectangle "..." as dots2
+        rectangle "99" as val099
+    }
+
+    package "Array[1]" as array1 {
+        rectangle "length=100" as length2
+        rectangle "0" as val10
+        rectangle "1" as val11
+        rectangle "2" as val12
+        rectangle "..." as dots3
+        rectangle "99" as val199
+    }
+
+    package "array..." as arrayx {
+        rectangle "..."
+    }
+
+    package "Array[9]" as array9 {
+        rectangle "length=100" as length10
+        rectangle "0" as val90
+        rectangle "1" as val91
+        rectangle "2" as val92
+        rectangle "..." as dots5
+        rectangle "99" as val999
+    }
+}
+
+ref_a --> array_principal
+ref0 --> array0
+ref1 --> array1
+ref9 --> array9
+dots1 ...> arrayx
+
+@enduml

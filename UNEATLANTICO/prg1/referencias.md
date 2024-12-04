@@ -132,38 +132,8 @@ int[][] x = new [10][100];
 
 ---
 
-```java
+<div align=center>
 
-```
+![](/images/UNEATLANTICO/prg1/referencias.svg)
 
----
-
-```java
-
-```
-
----
-
-```java
-
-```
-
----
-
-```java
-
-```
-
----
-
-```java
-
-```
-
----
-
-```java
-
-```
-
----
+</div>
