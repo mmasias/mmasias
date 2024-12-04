@@ -106,26 +106,28 @@ if (t==tt){
 
 ---
 
-```java
+## ¿Cuántas zonas se reservan?
 
+```java
+new int[10];
 ```
 
 ---
 
 ```java
-
+int[] a;
 ```
 
 ---
 
 ```java
-
+int[] a = new int[10];
 ```
 
 ---
 
 ```java
-
+int[][] x = new [10][100];
 ```
 
 ---
