@@ -127,10 +127,12 @@ int[] a = new int[10];
 ---
 
 ```java
-int[][] x = new [10][100];
+int[][] a = new [10][100];
 ```
 
 ---
+
+## `int[][] a = new [10][100];`
 
 <div align=center>
 
