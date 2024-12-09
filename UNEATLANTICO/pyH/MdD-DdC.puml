@@ -1,0 +1,34 @@
+@startuml
+
+
+
+' Relaciones
+PeriodoAcademico "1" *-- "1" Horario
+Horario "1" *-- "n" PlanificacionSemanal
+PlanificacionSemanal "1" *-- "n" FranjaHoraria
+FranjaHoraria "1" -- "1" Sesion
+Horario "1" -- "n" Conflicto
+Horario "1" -- "n" Vista
+Sesion "n" -- "1" Aula
+Sesion "n" -- "1" Profesor
+
+note right of Horario
+  El horario gestiona la planificación 
+  temporal completa de un período académico,
+  incluyendo validación de conflictos
+  y diferentes vistas
+end note
+
+note right of FranjaHoraria
+  Representa un bloque temporal específico
+  y puede validar solapamientos con
+  otras franjas horarias
+end note
+
+note right of PlanificacionSemanal
+  Organiza las sesiones por semanas
+  académicas, diferenciando entre 
+  semanas regulares y de exámenes
+end note
+
+@enduml

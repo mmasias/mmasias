@@ -1,0 +1,104 @@
+@startuml PeriodoAcademico
+skinparam StateBackgroundColor LightBlue
+skinparam StateBorderColor Blue
+
+[*] --> Planificacion
+Planificacion --> EnConstruccion : Iniciar programación
+EnConstruccion --> Publicado : Validar y publicar
+Publicado --> EnAjuste : Solicitud de cambios
+EnAjuste --> Publicado : Confirmar cambios
+Publicado --> Activo : Iniciar clases
+Activo --> Cerrado : Finalizar periodo
+Cerrado --> [*]
+
+note right of Planificacion
+  Estado inicial del período
+  Se definen parámetros base
+end note
+
+note right of EnConstruccion
+  Creación de horarios
+  Asignación de recursos
+end note
+
+note right of Publicado
+  Horarios visibles
+  Permite inscripción
+end note
+@enduml
+
+@startuml Seccion
+skinparam StateBackgroundColor LightGreen
+skinparam StateBorderColor Green
+
+[*] --> Propuesta
+Propuesta --> Programada : Asignar horario
+Programada --> Confirmada : Validar recursos
+Confirmada --> Activa : Iniciar clases
+Activa --> EnCurso : Registrar asistencia
+EnCurso --> Finalizada : Completar sesiones
+Finalizada --> [*]
+Programada --> Cancelada : No cumple mínimo
+Confirmada --> Cancelada : Liberar recursos
+Cancelada --> [*]
+
+note right of Propuesta
+  Sección sugerida
+  Sin recursos asignados
+end note
+
+note right of Programada
+  Con horario tentativo
+  Pendiente validación
+end note
+@enduml
+
+@startuml Aula
+skinparam StateBackgroundColor LightYellow
+skinparam StateBorderColor Orange
+
+[*] --> Disponible
+Disponible --> Reservada : Asignar a sesión
+Reservada --> EnUso : Iniciar clase
+EnUso --> Disponible : Finalizar clase
+Disponible --> EnMantenimiento : Programar mantenimiento
+EnMantenimiento --> Disponible : Completar mantenimiento
+EnMantenimiento --> NoDisponible : Reportar daños
+NoDisponible --> Disponible : Reparar
+NoDisponible --> [*] : Dar de baja
+
+note right of Disponible
+  Aula lista para usar
+  Sin reservas activas
+end note
+
+note right of EnMantenimiento
+  Mantenimiento programado
+  No disponible temporalmente
+end note
+@enduml
+
+@startuml Sesion
+skinparam StateBackgroundColor LightPink
+skinparam StateBorderColor Red
+
+[*] --> Programada
+Programada --> Confirmada : Validar recursos
+Confirmada --> EnProceso : Iniciar clase
+EnProceso --> Completada : Registrar asistencia
+EnProceso --> Cancelada : Reportar incidencia
+Completada --> [*]
+Cancelada --> Reprogramada : Asignar nuevo horario
+Reprogramada --> Confirmada
+Cancelada --> [*]
+
+note right of Programada
+  Sesión planificada
+  Recursos tentativos
+end note
+
+note right of EnProceso
+  Clase en ejecución
+  Registro de asistencia
+end note
+@enduml
