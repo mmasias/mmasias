@@ -13,5 +13,5 @@ Ajuste en la implementación de la impresión del mapa, mediante la inclusión d
 * [Se agrega la funcion *imprimeLinea*](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo002.java#L165) que imprime una línea horizontal del tamaño del viewport.  
 
 <div align=center>
-    <img src="../../../imagenes/ArrayAsociativoV2.png" width="50%" />
+    <img src="/imagenes/ArrayAsociativoV2.png" width="50%" />
 </div>
