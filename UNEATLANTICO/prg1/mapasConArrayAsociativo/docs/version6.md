@@ -8,7 +8,7 @@ Teniendo en el centro al personaje P y definiendo además un alcance de visión 
 
 
 <div align=center>
-    <img src="../../../imagenes/alcanceVision.jpg" width="50%" />
+    <img src="/imagenes/alcanceVision.jpg" width="50%" />
 </div>
 
 Aterrizándolo a código, con las variables que manejamos, la condición de visibilidad a comprobar sería:
