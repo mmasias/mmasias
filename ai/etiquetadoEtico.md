@@ -123,6 +123,6 @@ Para asegurar la precisión y confiabilidad:
 
 |*H*|*IA*|
 |-|-|
-|*65*|*35*|
+|*70*|*30*|
 
 </div>
