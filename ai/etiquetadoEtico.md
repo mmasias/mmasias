@@ -42,24 +42,24 @@ El sistema combina:
 
 ### Roles de contribución
 
-Adaptando el sistema CRediT, se definen roles específicos para el contexto humano-IA:
+Adaptando el [sistema CRediT](https://credit.niso.org/), se definen roles específicos para el contexto humano-IA:
 
 <div align=center>
 
 |||
 |-|-|
-|**Conceptualización**|Desarrollo de ideas iniciales.
-||Planificación estructural.
-||Definición de objetivos.
-|**Análisis**|Procesamiento de datos.
-||Evaluación de resultados.
-||Interpretación de outputs.
-|**Implementación**|Ejecución técnica.
-||Desarrollo de contenido.
-||Aplicación de herramientas.
-|**Validación**|Control de calidad.
-||Verificación de resultados.
-||Ajustes y correcciones.
+|**Conceptualización**|Desarrollo de ideas iniciales..
+||Planificación estructural..
+||Definición de objetivos..
+|**Análisis**|Procesamiento de datos..
+||Evaluación de resultados..
+||Interpretación de outputs..
+|**Implementación**|Ejecución técnica..
+||Desarrollo de contenido..
+||Aplicación de herramientas..
+|**Validación**|Control de calidad..
+||Verificación de resultados..
+||Ajustes y correcciones..
 
 </div>
 
