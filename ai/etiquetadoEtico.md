@@ -21,7 +21,7 @@ El sistema combina:
 - Niveles de contribución cuantificables.
 - Visualización clara mediante una etiqueta gráfica.
 - Metadatos para trazabilidad.
-- Documentación del proceso creativo.
+- Documentación del [proceso creativo](https://github.com/mmasias/mmasias/blob/main/procesoDeCreacion.md).
 
 ## ¿Para qué?
 
@@ -48,27 +48,30 @@ Adaptando el [sistema CRediT](https://credit.niso.org/), se definen roles espec�
 
 |||
 |-|-|
-|**Conceptualización**|Desarrollo de ideas iniciales..
-||Planificación estructural..
-||Definición de objetivos..
-|**Análisis**|Procesamiento de datos..
-||Evaluación de resultados..
-||Interpretación de outputs..
-|**Implementación**|Ejecución técnica..
-||Desarrollo de contenido..
-||Aplicación de herramientas..
-|**Validación**|Control de calidad..
-||Verificación de resultados..
-||Ajustes y correcciones..
+|**Conceptualización**|Desarrollo de ideas iniciales.|
+||Planificación estructural.|
+||Definición de objetivos.|
+|**Análisis**|Procesamiento de datos.|
+||Evaluación de resultados.|
+||Interpretación de outputs.|
+|**Implementación**|Ejecución técnica.|
+||Desarrollo de contenido.|
+||Aplicación de herramientas.|
+|**Validación**|Control de calidad.|
+||Verificación de resultados.|
+||Ajustes y correcciones.|
 
 </div>
 
 ### Niveles de contribución
 
+<div align=center>
+
 |Principal|Igual|Apoyo|Ninguna|
 |-|-|-|-|
-|Responsabilidad y aporte mayoritario|Contribución equilibrada|Participación secundaria o auxiliar|Sin participación en ese rol específico|
+|Responsabilidad y aporte mayoritario.|Contribución equilibrada.|Participación secundaria o auxiliar.|Sin participación en ese rol específico.|
 
+</div>
 
 ### Borrador v0
 
@@ -119,7 +122,7 @@ Para asegurar la precisión y confiabilidad:
 
 <div align=right>
 
-*Para este documento:*
+***Para este documento:***
 
 |*H*|*IA*|
 |-|-|
