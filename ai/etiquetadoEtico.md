@@ -75,16 +75,16 @@ Adaptando el [sistema CRediT](https://credit.niso.org/), se definen roles espec�
 
 ### Borrador v0
 
-<div align=center>
+<div align=center width=45%>
 
-![](/imagenes/ethical-credit-label.svg)
+<img src="/imagenes/ethical-credit-label.svg" width=45%>
 
 </div>
 
-- Fácilmente legible
-- Adaptable a diferentes contextos
-- Compatible con sistemas digitales e impresos
-- Verificable y rastreable
+- Fácilmente legible.
+- Adaptable a diferentes contextos.
+- Compatible con sistemas digitales e impresos.
+- Verificable y rastreable.
 
 ### Implementación
 
