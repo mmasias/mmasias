@@ -17,7 +17,7 @@
 El sistema combina:
 
 - Los ejes *Humano*-*IA* e *Individual*-*Grupal*.
-- La metodología de roles del sistema CRediT.
+- La metodología de [roles del sistema CRediT](https://credit.niso.org/).
 - Niveles de contribución cuantificables.
 - Visualización clara mediante una etiqueta gráfica.
 - Metadatos para trazabilidad.
