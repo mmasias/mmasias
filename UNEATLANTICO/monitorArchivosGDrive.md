@@ -13,11 +13,19 @@ Un script de Google Apps Script que monitoriza automáticamente una carpeta espe
 Este script permite:
 
 - Mantener un registro de todas las modificaciones en los archivos.
-- Recibir notificaciones automáticas de cambios.
+- **Recibir notificaciones automáticas** de cambios.
 - Identificar quién ha realizado modificaciones.
 - Acceder directamente a los archivos modificados mediante URLs.
 - Asegurar que ningún cambio pase desapercibido.
 - Mantener un histórico de revisiones a través de los emails.
+
+<div align=center>
+
+|||
+|-|-|
+|![](/imagenes/monitorDeCambios001.png)|![](/imagenes/monitorDeCambios002.png)|
+
+</div>
 
 ## ¿Cómo?
 
