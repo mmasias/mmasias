@@ -44,3 +44,9 @@ La implementación de estos criterios en la evaluación se realiza mediante:
 - Problemas que requieren pensar y argumentar.
 - Atención a cómo organizan y presentan sus ideas.
 - Ejemplos que demuestren que entienden la aplicación real.
+
+<div align=center>
+
+![](/imagenes/CdEx.png)
+
+</div>
