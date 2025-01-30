@@ -12,6 +12,8 @@
 
 </div>
 
+
+
 ## [24][25]
 - [Programación 1](https://github.com/mmasias/24-25-prg1)
 - [Estructura de datos 1](https://github.com/mmasias/24-25-eda1)
@@ -29,6 +31,10 @@
 |[v0](https://manuel.masiasweb.com/gh-s-v0/github-stats-page-contributors.html)
 
 </div>
+
+- [Monitor de entregas por GitHub](entregasGithub.md)
+- [Monitor de archivos en GoogleDrive](monitorArchivosGDrive.md)
+- [Criterios de valoración](CdEx.md)
 
 ## [23][24]
 
