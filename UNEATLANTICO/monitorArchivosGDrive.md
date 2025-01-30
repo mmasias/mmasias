@@ -46,7 +46,7 @@ Este script permite:
 
 ### 3. Implementar el código
 
-1. Copia el código del archivo [**code.gs**](code.gs) al editor
+1. Copia el código del archivo [**monitorArchivosGDrive.gs**](monitorArchivosGDrive.gs) al editor
 1. Modifica las variables:
 
    ```javascript
