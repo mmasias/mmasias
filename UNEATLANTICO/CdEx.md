@@ -2,7 +2,9 @@
 
 ## ¿Por qué?
 
-En tercer curso de universidad, ya no basta con que los estudiantes memoricen y escupan datos en un examen. Además, ya han cursado muchas asignaturas relacionadas y deben ser capaces de conectar y usar todo lo que han aprendido - no tiene sentido ver cada materia como un compartimento estanco. Necesitamos ver que realmente entienden la materia, que saben usarla y que pueden explicar sus ideas con claridad. Al fin y al cabo, en unos meses podrían estar trabajando y necesitarán estas habilidades.
+||||
+|-|-|-|
+|En tercer curso de universidad no se busca que los estudiantes memoricen y lancen datos en un examen.|Además, ya han cursado muchas asignaturas relacionadas y deben ser capaces de conectar y usar todo lo que han aprendido: no tiene sentido ver cada materia como un compartimento estanco.|Necesitamos ver que realmente entienden la materia, que saben usarla y que pueden explicar sus ideas con claridad. Al fin y al cabo, en unos meses podrían estar trabajando y necesitarán estas habilidades.|
 
 ## ¿Qué?
 
