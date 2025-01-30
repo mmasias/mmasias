@@ -28,11 +28,12 @@ Con esta forma de evaluar conseguimos:
 
 |Criterio|¿Qué es?|¿Para qué se usa?|
 |-|-|-|
-|Comprensión y conocimiento|Capacidad de entender y explicar los conceptos fundamentales más allá de la simple memorización|Verificar que el estudiante ha asimilado realmente la materia y puede explicarla con sus propias palabras|
-|Aplicación y análisis|Habilidad para usar los conceptos teóricos en situaciones prácticas y analizar problemas desde múltiples perspectivas|Evaluar si el estudiante puede trasladar lo aprendido a escenarios reales y resolver problemas nuevos|
-|Argumentación y justificación|Capacidad de construir razonamientos lógicos y defender las decisiones tomadas con fundamentos sólidos|Comprobar el pensamiento crítico y la capacidad de defender soluciones de manera profesional|
-|Claridad y organización|Habilidad para estructurar y presentar ideas de manera coherente y bien ordenada|Evaluar competencias de comunicación profesional y capacidad de transmitir ideas complejas|
-|Ejemplos y evidencia|Capacidad de ilustrar conceptos con casos concretos y respaldar argumentos con evidencias relevantes|Verificar que pueden conectar la teoría con la práctica y demostrar experiencia en aplicaciones reales|
+|**Comprensión y conocimiento**|Capacidad de entender y explicar los conceptos fundamentales más allá de la simple memorización|Verificar que el estudiante ha asimilado realmente la materia y puede explicarla con sus propias palabras|
+|**Aplicación y análisis**|Habilidad para usar los conceptos teóricos en situaciones prácticas y analizar problemas desde múltiples perspectivas|Evaluar si el estudiante puede trasladar lo aprendido a escenarios reales y resolver problemas nuevos|
+|**Argumentación y justificación**|Capacidad de construir razonamientos lógicos y defender las decisiones tomadas con fundamentos sólidos|Comprobar el pensamiento crítico y la capacidad de defender soluciones de manera profesional|
+|**Claridad y organización**|Habilidad para estructurar y presentar ideas de manera coherente y bien ordenada|Evaluar competencias de comunicación profesional y capacidad de transmitir ideas complejas|
+|**Ejemplos y evidencia**|Capacidad de ilustrar conceptos con casos concretos y respaldar argumentos con evidencias relevantes|Verificar que pueden conectar la teoría con la práctica y demostrar experiencia en aplicaciones reales|
+|**Innovación y pensamiento crítico**|Capacidad de proponer soluciones originales y evaluar diferentes alternativas de manera fundamentada|Valorar la creatividad y la capacidad de pensar más allá de las soluciones convencionales|
 
 ### En la asignatura
 
