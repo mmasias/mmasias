@@ -4,7 +4,7 @@
 
 <div align=right>
 
-*— Lucien Nocturne, para revistas especializadas en la intemperie del arte.*
+*— [Lucien Nocturne](chat5.md), para revistas especializadas en la intemperie del arte.*
 
 </div>
 
