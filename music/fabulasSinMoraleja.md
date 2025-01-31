@@ -4,7 +4,7 @@
 
 ||Reseñas|
 |-|:-:|
-|*Ocho cuentos nocturnos sin redención*|[*1*](analisis.md) - [*2*](analisis2.md) - [*3*](analisis3.md)|
+|*Ocho cuentos nocturnos sin redención*|[*1*](analisis.md) - [*2*](analisis2.md) - [*3*](analisis3.md) - [*4*](analisis4.md) - [*5*](analisis5.md)|
 
 <img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
 
