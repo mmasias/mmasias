@@ -64,7 +64,7 @@ Doctor en Proyectos, especializado en ecosistemas tecnológicos y gestión acad�
 - Implementación de tabla de composición de alimentos española.
 - Sistema de generación de informes y análisis nutricional.
 
-### [Herramientas financieras](https://www.udep.edu.pe/publicaciones/publicacion/herramientas-financieras/) (1998-2003)
+### [Herramientas financieras](https://web.archive.org/web/20050421013428/http://www.cceeee.udep.edu.pe/software/hf/) (1998-2003)
 
 - Complemento para Microsoft Excel de cálculos financieros.
 - Primer software comercial desarrollado en la Universidad de Piura.
