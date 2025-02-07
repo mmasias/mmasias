@@ -50,28 +50,28 @@ Doctor en Proyectos, especializado en ecosistemas tecnológicos y gestión acad�
 - Seguimiento de inversiones en medios digitales.
 - Enlace entre departamentos de marketing, comercial y académico.
 
-### PANAL (2009-actual)
+### [PANAL](https://panal.funiber.org/Login) (2009-actual)
 
 - Plataforma de acceso unificado e-learning.
 - Gestión de servicios académicos integrados.
 - Desarrollo de herramientas de soporte estudiantil.
 - Implementación de servicios informativos automatizados.
 
-### NutrIber - software de gestión nutricional (2003-2005)
+### [NutrIber](https://www.funiber.org/software-calculo-de-dietas) - software de gestión nutricional (2003-2005)
 
 - Desarrollo de software profesional para cálculo nutricional.
 - Gestión de datos de pacientes y personalización de dietas.
 - Implementación de tabla de composición de alimentos española.
 - Sistema de generación de informes y análisis nutricional.
 
-### Herramientas financieras (1998-2003)
+### [Herramientas financieras](https://www.udep.edu.pe/publicaciones/publicacion/herramientas-financieras/) (1998-2003)
 
 - Complemento para Microsoft Excel de cálculos financieros.
 - Primer software comercial desarrollado en la Universidad de Piura.
 - Desarrollo de asistentes para cálculos de interés, VAN, TIR y más.
 - Implementación de versiones 1.0 y 2.0.
 
-## Formación Académica
+## Formación académica
 
 - Doctor en Proyectos - Universidad Internacional Iberoamericana (2018).
   - Tesis: Ecosistemas tecnológicos en la gestión interuniversitaria.
