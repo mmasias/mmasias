@@ -59,12 +59,16 @@ Doctor en Proyectos, especializado en ecosistemas tecnológicos y gestión acad�
 
 ### [NutrIber](https://www.funiber.org/software-calculo-de-dietas) - software de gestión nutricional (2003-2005)
 
+> [*Video*](https://www.youtube.com/watch?v=aZB9jt-C-Lk&list=PLb9-eXiultyM2j9eulf4ibVx73QJusonf)
+
 - Desarrollo de software profesional para cálculo nutricional.
 - Gestión de datos de pacientes y personalización de dietas.
 - Implementación de tabla de composición de alimentos española.
 - Sistema de generación de informes y análisis nutricional.
 
 ### [Herramientas financieras](https://web.archive.org/web/20050421013428/http://www.cceeee.udep.edu.pe/software/hf/) (1998-2003)
+
+> [*Video 1*](https://www.youtube.com/watch?v=qpy_-dtumoE) / [*Video 2*](https://www.youtube.com/watch?v=NiGsl9FWuts)
 
 - Complemento para Microsoft Excel de cálculos financieros.
 - Primer software comercial desarrollado en la Universidad de Piura.
