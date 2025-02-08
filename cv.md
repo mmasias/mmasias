@@ -90,3 +90,11 @@ Doctor en Proyectos, especializado en ecosistemas tecnológicos y gestión acad�
 - Consultoría estratégica en TI.
 - Gestión de proyectos de innovación.
 - Desarrollo de sistemas e-learning.
+
+## Intereses y actividades
+
+- Creador de contenido sobre tecnología retro y videojuegos en los canales [RetroShrine](https://www.tiktok.com/@mmasiasv) y [HerculeanPixels](https://www.youtube.com/playlist?list=PLcdTMD9xtoG-6lvFwWOpcMwjx4cYNyOw1), con énfasis en informática de los 80s, las gráficas Hercules monocromática, CGA monocromática y el sonido Roland MT-32
+- Teclista en MorganBill, (anteriormente en [The Gordini](https://www.thegordini.com/) y [Estériles imperfectos](https://www.facebook.com/esterilesimperfectos/))
+- Aficionado a la historia de la informática y coleccionista de [ordenadores](https://www.instagram.com/mmasias/reel/BOUl0D-lFb1/) y [videojuegos](https://www.instagram.com/mmasias/p/BQaQwgMAqYs/) vintage.
+- Escritor aficionado de código, poesía, música.
+
