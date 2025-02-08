@@ -9,7 +9,7 @@ Doctor en Proyectos, especializado en ecosistemas tecnológicos y gestión acad�
 ### Escuela Politécnica Superior - [UNEATLANTICO](https://www.uneatlantico.es/) - Director (2014-actual)
 
 - Dirección de la Escuela Politécnica Superior.
-- Dirección del Grado en Ingeniería Informática.
+- Dirección del [Grado en Ingeniería Informática](https://www.uneatlantico.es/escuela-politecnica-superior/estudios-grado-oficial-en-ingenieria-informatica).
 - Gestión de calidad académica y procesos.
 - Implementación de sistemas de evaluación.
 - Impartición de materias relacionadas con la tecnología, empresa e innovación.
