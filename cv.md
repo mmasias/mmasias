@@ -1,4 +1,10 @@
-# Curriculum Vitae @mmasias
+# Curriculum Vitae Manuel Masías Vergara
+
+<div align=right>
+
+*@mmasias*
+
+</div>
 
 ## Perfil
 
