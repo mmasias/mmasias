@@ -17,6 +17,13 @@ Como señala L. Fernández: "*En programación tradicional, se definirían todas
 
 "Flipping on the Beach" es una metodología de diseño que adapta los principios del Diseño Orientado a Objetos Jerárquico (HOOD) de manera simplificada e intuitiva.
 
+### Visión estática y dinámica
+
+Como señala Fernández: "*Un programa orientado a objetos en ejecución es una colección jerárquica de objetos contenidos en otros objetos sucesivas veces que colaboran todos entre sí. Paralelamente, un programa en edición/compilación es una colección de las clases de estos objetos relacionadas entre sí.*"
+
+- **Visión estática**: Corresponde al código que escribimos. Un programa orientado a objetos es una colección de clases que permiten la abstracción, la encapsulación, la modularidad y la jerarquía. Esta visión muestra cómo las clases se "apoyan" en otras clases, utilizando objetos como atributos, parámetros o variables locales.
+- **Visión dinámica**: Corresponde al programa en ejecución. Es un universo de objetos que colaboran entre sí gracias al desencadenamiento de objetos (instanciaciones) y mensajes. Esta visión muestra el flujo de ejecución y la interacción entre los objetos vivos.
+
 Esta metodología propone diseñar el sistema de manera descendente (top-down), comenzando por la visión global del programa y refinando progresivamente cada componente. El término "flipping" (o "flipar") hace referencia al proceso creativo de imaginar o visualizar los componentes necesarios y sus responsabilidades.
 
 Como define Budd: "*Cuando los programadores piensan en los problemas, en términos de comportamientos y responsabilidades de los objetos, traen con ellos un caudal de intuición, ideas y conocimientos provenientes de su experiencia diaria*". Esta es precisamente la esencia de "flipping on the beach": aprovechar nuestra intuición natural sobre las responsabilidades de los objetos.
@@ -164,6 +171,44 @@ Para cada nueva clase identificada, se repite el proceso cíclicamente:
 3. **Definir atributos**: Identificar datos y colaboradores necesarios
 4. **Codificar métodos**: Implementar delegando tareas a colaboradores
 5. **Recapitular**: Identificar nuevas clases y métodos necesarios
+
+### Visiones
+
+La aplicación de "Flipping on the Beach" supone trabajar simultáneamente con las visiones estática y dinámica del programa:
+
+#### Visión estática: Las clases y sus relaciones
+
+En la visión estática, se construye una jerarquía de clases relacionadas entre sí. Por ejemplo:
+
+```
+Aplicacion
+  |
+  |-- GestorDatos
+  |     |-- Validador
+  |
+  |-- Procesador
+  |
+  |-- Visualizador
+```
+
+Cada clase ofrece un nombre y una interfaz pública de métodos que permite la abstracción de un concepto: esencialmente qué es y qué puede hacer. La vista privada encapsula los detalles: cómo se soportan los datos y cómo se manipulan.
+
+#### Visión dinámica: Los objetos y su colaboración
+
+En la visión dinámica, se crea un universo jerarquizado de objetos construido "automáticamente" mediante instanciaciones, que colaboran entre sí mediante mensajes:
+
+```
+main:
+  crea una aplicacion que:
+    crea un gestor que:
+      crea un validador
+    crea un procesador
+    crea un visualizador
+  lanza el mensaje ejecutar() a aplicacion que:
+    lanza el mensaje cargarDatos() a gestor que:
+      lanza validar() a validador
+    ...
+```
 
 ## ¿Y ahora qué?
 
