@@ -27,24 +27,18 @@ El objetivo de este ejercicio es organizar, profundizar y sistematizar el conoci
 
 ### Segunda parte: enriquecimiento y ampliación (*Grupal*)
 
-1. Los estudiantes formarán equipos y compartirán sus mapeos individuales.
-1. Trabajarán en conjunto para completar al menos dos filas completas de la matriz:
+1. Trabajo en conjunto para completar **al menos dos filas completas** de la matriz:
    - La fila Contextual (vista general del sistema)
    - Una fila adicional a elección del equipo
 1. Para cada celda, deberán proporcionar:
-   - Al menos tres elementos concretos
-   - Una explicación de cómo estos elementos funcionan en el sistema del hormiguero
+   - Al menos dos elementos concretos
+   - Una (brevísima) explicación de cómo estos elementos funcionan en el sistema del hormiguero
 <!--   - Su equivalente en un sistema de información organizacional real -->
 
 ### Tercera parte: análisis iterativo (*Grupal*)
 
 1. Utilizando la matriz parcialmente completada, los equipos volverán al modelo de componentes básicos de un SI:
-   - ¿Qué nuevos elementos de hardware se identifican ahora?
-   - ¿Qué aspectos del software no fueron considerados inicialmente?
-   - ¿Qué nuevas categorías de datos pueden ahora reconocerse?
-   - ¿Qué procesos adicionales son visibles desde esta perspectiva?
-   - ¿Qué tipos de usuarios no habían sido considerados?
-2. Se actualizarán tanto la matriz de Zachman como el modelo de componentes básicos.
+2. Se actualizará tanto la matriz de Zachman como el modelo de componentes básicos.
 
 ## Entregables
 
