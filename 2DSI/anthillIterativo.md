@@ -28,11 +28,11 @@ Esta redistribución revela áreas vacías en la matriz.
 
 |**Perspectiva**|**Por qué** <br> (Motivación)|**Cómo** <br> (Función)|**Qué** <br> (Datos)|**Quién** <br> (Personas)|**Dónde** <br> (Redes)|**Cuándo** <br> (Tiempo)|
 |-|-|-|-|-|-|-|
-|**Contextual** <br> (Vista del planificador)||Alimentación <br> Mantenimiento <br> Defensa|Humedad y temperatura <br> Cantidad hormigas <br> Estado colonia|Reina <br> Obreras <br> Larvas|Hormiguero <br> Túneles <br> Cámara de cría||
-|**Conceptual** <br> (Modelo del negocio)||Jerarquía <br> Distribución|||||
-|**Lógico** <br> (Modelo del sistema)|||||||
-|**Físico** <br> (Modelo tecnológico)||Feromonas||Hormiga|Alimento||
-|**Detallado** <br> (Componentes)|||||||
+|**Contextual**||Alimentación <br> Mantenimiento <br> Defensa|Humedad y temperatura <br> Cantidad hormigas <br> Estado colonia|Reina <br> Obreras <br> Larvas|Hormiguero <br> Túneles <br> Cámara de cría||
+|**Conceptual**||Jerarquía <br> Distribución|||||
+|**Lógico**|||||||
+|**Físico**||Feromonas||Hormiga|Alimento||
+|**Detallado**|||||||
 
 ## 3ra iteración: Análisis & ampliación de Matriz de Zachman
 
@@ -40,11 +40,11 @@ En esta iteración se completa la matriz analizando cada perspectiva desde lo m�
 
 |**Perspectiva**|**Por qué** <br> (Motivación)|**Cómo** <br> (Función)|**Qué** <br> (Datos)|**Quién** <br> (Personas)|**Dónde** <br> (Redes)|**Cuándo** <br> (Tiempo)|
 |-|-|-|-|-|-|-|
-|**Contextual** <br> (Vista del planificador)|Supervivencia <br> Reproducción <br> Expansión|Alimentación <br> Mantenimiento <br> Defensa|Humedad y temperatura <br> Cantidad hormigas <br> Estado colonia|Reina <br> Obreras <br> Larvas|Hormiguero <br> Túneles <br> Cámara de cría|Ciclos estacionales <br> Ciclos día/noche|
-|**Conceptual** <br> (Modelo del negocio)|Eficiencia colectiva <br> Especialización|Jerarquía <br> Distribución <br> Recolección|Mapa de recursos <br> Estado nutricional <br> Amenazas|Soldados <br> Nodrizas <br> Exploradoras|Áreas de forrajeo <br> Zona de cría <br> Depósitos|Ciclo de desarrollo <br> Períodos de actividad|
-|**Lógico** <br> (Modelo del sistema)|Reglas de priorización <br> Umbrales de acción|Algoritmos de búsqueda <br> Procedimientos defensivos|Intensidad de feromonas <br> Gradientes químicos|División de tareas <br> Comunicación entre castas|Rutas de forrajeo <br> Estructura de túneles|Secuencia de tareas <br> Tiempos de respuesta|
-|**Físico** <br> (Modelo tecnológico)|Estímulos químicos <br> Comportamientos innatos|Feromonas <br> Intercambio alimentos|Composición química <br> Vibraciones <br> Contacto táctil|Hormiga (morfología) <br> Adaptaciones físicas|Alimento <br> Materiales construcción <br> Microclimas|Duración de feromonas <br> Ciclos de actividad|
-|**Detallado** <br> (Componentes)|Genes específicos <br> Umbrales neuronales|Movimientos mandibulares <br> Patrones de antenas|Moléculas específicas <br> Receptores sensoriales|Glándulas específicas <br> Órganos sensoriales|Estructura molecular <br> Propiedades físicas|Ritmos circadianos <br> Tiempos de reacción|
+|**Contextual**|Supervivencia <br> Reproducción <br> Expansión|Alimentación <br> Mantenimiento <br> Defensa|Humedad y temperatura <br> Cantidad hormigas <br> Estado colonia|Reina <br> Obreras <br> Larvas|Hormiguero <br> Túneles <br> Cámara de cría|Ciclos estacionales <br> Ciclos día/noche|
+|**Conceptual**|Eficiencia colectiva <br> Especialización|Jerarquía <br> Distribución <br> Recolección|Mapa de recursos <br> Estado nutricional <br> Amenazas|Soldados <br> Nodrizas <br> Exploradoras|Áreas de forrajeo <br> Zona de cría <br> Depósitos|Ciclo de desarrollo <br> Períodos de actividad|
+|**Lógico**|Reglas de priorización <br> Umbrales de acción|Algoritmos de búsqueda <br> Procedimientos defensivos|Intensidad de feromonas <br> Gradientes químicos|División de tareas <br> Comunicación entre castas|Rutas de forrajeo <br> Estructura de túneles|Secuencia de tareas <br> Tiempos de respuesta|
+|**Físico**|Estímulos químicos <br> Comportamientos innatos|Feromonas <br> Intercambio alimentos|Composición química <br> Vibraciones <br> Contacto táctil|Hormiga (morfología) <br> Adaptaciones físicas|Alimento <br> Materiales construcción <br> Microclimas|Duración de feromonas <br> Ciclos de actividad|
+|**Detallado**|Genes específicos <br> Umbrales neuronales|Movimientos mandibulares <br> Patrones de antenas|Moléculas específicas <br> Receptores sensoriales|Glándulas específicas <br> Órganos sensoriales|Estructura molecular <br> Propiedades físicas|Ritmos circadianos <br> Tiempos de reacción|
 
 ## 4ta iteración: SI ampliado tras aplicar Zachman
 
