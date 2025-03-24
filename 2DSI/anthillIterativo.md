@@ -38,6 +38,8 @@ Esta redistribución revela áreas vacías en la matriz.
 
 En esta iteración se completa la matriz analizando cada perspectiva desde lo más abstracto (Contextual) hasta lo más detallado (Componentes), identificando elementos específicos para cada nivel de abstracción.
 
+> *Propuesta: [Meta-Zachman](metaZachman.md)*
+
 |**Perspectiva**|**Por qué** <br> (Motivación)|**Cómo** <br> (Función)|**Qué** <br> (Datos)|**Quién** <br> (Personas)|**Dónde** <br> (Redes)|**Cuándo** <br> (Tiempo)|
 |-|-|-|-|-|-|-|
 |**Contextual**|Supervivencia <br> Reproducción <br> Expansión|Alimentación <br> Mantenimiento <br> Defensa|Humedad y temperatura <br> Cantidad hormigas <br> Estado colonia|Reina <br> Obreras <br> Larvas|Hormiguero <br> Túneles <br> Cámara de cría|Ciclos estacionales <br> Ciclos día/noche|
