@@ -14,7 +14,7 @@
 
 Trasladamos elementos del SI original a la columna que consideremos más apropiada, por ejemplo, "Feromonas" se ha movido del Software a una implementación física de "Cómo".
 
-Algunos elementos como "Hormiga" necesitan ser redefinidos ya que las hormigas en general serían usuarios, pero específicas adaptaciones físicas de la hormiga podrían ser parte del "Dónde" físico.
+Algunos elementos como "Hormiga" necesitan ser redefinidos ya que las hormigas en general serían usuarios, pero específicas adaptaciones físicas de la hormiga podrían ser parte del "Quién" físico.
 
 |**Perspectiva**|**Por qué** <br> (Motivación)|**Cómo** <br> (Función)|**Qué** <br> (Datos)|**Quién** <br> (Personas)|**Dónde** <br> (Redes)|**Cuándo** <br> (Tiempo)|
 |-|-|-|-|-|-|-|
