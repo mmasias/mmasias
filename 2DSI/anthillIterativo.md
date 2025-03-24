@@ -38,8 +38,6 @@ Esta redistribución revela áreas vacías en la matriz.
 
 En esta iteración se completa la matriz analizando cada perspectiva desde lo más abstracto (Contextual) hasta lo más detallado (Componentes), identificando elementos específicos para cada nivel de abstracción.
 
-> *Propuesta: [Meta-Zachman](metaZachman.md)*
-
 |**Perspectiva**|**Por qué** <br> (Motivación)|**Cómo** <br> (Función)|**Qué** <br> (Datos)|**Quién** <br> (Personas)|**Dónde** <br> (Redes)|**Cuándo** <br> (Tiempo)|
 |-|-|-|-|-|-|-|
 |**Contextual**|Supervivencia <br> Reproducción <br> Expansión|Alimentación <br> Mantenimiento <br> Defensa|Humedad y temperatura <br> Cantidad hormigas <br> Estado colonia|Reina <br> Obreras <br> Larvas|Hormiguero <br> Túneles <br> Cámara de cría|Ciclos estacionales <br> Ciclos día/noche|
@@ -47,6 +45,8 @@ En esta iteración se completa la matriz analizando cada perspectiva desde lo m�
 |**Lógico**|Reglas de priorización <br> Umbrales de acción|Algoritmos de búsqueda <br> Procedimientos defensivos|Intensidad de feromonas <br> Gradientes químicos|División de tareas <br> Comunicación entre castas|Rutas de forrajeo <br> Estructura de túneles|Secuencia de tareas <br> Tiempos de respuesta|
 |**Físico**|Estímulos químicos <br> Comportamientos innatos|Feromonas <br> Intercambio alimentos|Composición química <br> Vibraciones <br> Contacto táctil|Hormiga (morfología) <br> Adaptaciones físicas|Alimento <br> Materiales construcción <br> Microclimas|Duración de feromonas <br> Ciclos de actividad|
 |**Detallado**|Genes específicos <br> Umbrales neuronales|Movimientos mandibulares <br> Patrones de antenas|Moléculas específicas <br> Receptores sensoriales|Glándulas específicas <br> Órganos sensoriales|Estructura molecular <br> Propiedades físicas|Ritmos circadianos <br> Tiempos de reacción|
+
+> *Propuesta: [Meta-Zachman](metaZachman.md)*
 
 ## 4ta iteración: SI ampliado tras aplicar Zachman
 
