@@ -95,11 +95,11 @@ La fase de comunicación transforma el ejercicio de una simple elección individ
 - Pregunta elegida por 10-25% de la clase: +10% de puntos
 - Pregunta elegida por 25-50% de la clase: +5% de puntos
 
-**Instrucciones para estudiantes**:
+#### Instrucciones para estudiantes
 
-- Seleccionen preguntas hasta alcanzar entre 6 y 7 puntos totales.
-- Existe una bonificación especial para quienes elijan preguntas menos populares.
-- Cuantos menos compañeros seleccionen la misma pregunta que ustedes, mayor será la bonificación (hasta un 20% adicional).
+- *Seleccionen preguntas hasta alcanzar entre 6 y 7 puntos totales.*
+- *Existe una bonificación especial para quienes elijan preguntas menos populares.*
+- *Cuantos menos compañeros seleccionen la misma pregunta que ustedes, mayor será la bonificación (hasta un 20% adicional).*
 
 ### Consideraciones para la implementación
 
