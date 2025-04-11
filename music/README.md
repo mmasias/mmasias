@@ -222,7 +222,7 @@ afecto estéril imperfecto que la locura no puede quitar
 
 Silba en silencio texturas vacías en cuadros que nadie verá
 sujetas sin clavos en la sepultura del alma de esta gran ciudad
-la luz de la noche -aliada invisible- le incita dónde hay que pinchar
+la luz de la noche -aliada invisible- le indica dónde hay que pinchar
 para que no duela, para que si vuela su voz pueda gritar
 
 Habla y refuta los dogmas sagrados a un cirio de cincuenta watts
@@ -233,5 +233,5 @@ retórica oscura en frases que exudan hedor espiritual
 Sale esta noche inseguro a un viaje del cual no va a regresar
 con frágil linterna va casi a cuestas: no sabe ni por qué se va
 buscando más dudas para sus respuestas, alguna ya encontrará
-cargó su mochila con todas sus penas, durmiendo se irá..."
+cargó su mochila con todas sus penas, durmiendo se irá...
 ```
