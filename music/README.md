@@ -4,7 +4,7 @@
 
 ||Reseñas|
 |-|:-:|
-|*Ocho cuentos nocturnos sin redención*|[*1*](analisis.md) - [*2*](analisis2.md) - [*3*](analisis3.md) - [*4*](analisis4.md) - [*5*](analisis5.md)|
+|*Ocho cuentos nocturnos sin redención*|[*1*](analisis.md) - [*2*](analisis2.md) - [*3*](analisis3.md)|
 
 <img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
 
@@ -214,6 +214,8 @@ que una línea traiga tu voz
 
 ### Diógenes
 
+<img src="../imagenes/diogenes" align=right width=30%>
+
 ```markdown
 Diógenes frota su vientre en la esquina muy cerca a la estación de Sants
 Con sus harapos a cuestas remienda unos sueños que cuestan hilar
@@ -222,7 +224,7 @@ afecto estéril imperfecto que la locura no puede quitar
 
 Silba en silencio texturas vacías en cuadros que nadie verá
 sujetas sin clavos en la sepultura del alma de esta gran ciudad
-la luz de la noche -aliada invisible- le indica dónde hay que pinchar
+la luz de la noche -aliada invisible- le incita dónde hay que pinchar
 para que no duela, para que si vuela su voz pueda gritar
 
 Habla y refuta los dogmas sagrados a un cirio de cincuenta watts
@@ -233,5 +235,5 @@ retórica oscura en frases que exudan hedor espiritual
 Sale esta noche inseguro a un viaje del cual no va a regresar
 con frágil linterna va casi a cuestas: no sabe ni por qué se va
 buscando más dudas para sus respuestas, alguna ya encontrará
-cargó su mochila con todas sus penas, durmiendo se irá...
+cargó su mochila con todas sus penas, durmiendo se irá..."
 ```
