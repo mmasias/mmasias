@@ -154,6 +154,8 @@ Me encontraba los lunes si me daba la gana...
 
 ### 27, y sigue...
 
+<img src="../imagenes/27ySigue.png" align=right width=30%>
+
 ```markdown
 Se abalanzó a la mañana al llegar la puesta del sol
 y se juró que mañana lo haría un poco peor
@@ -214,7 +216,7 @@ que una línea traiga tu voz
 
 ### Diógenes
 
-<img src="../imagenes/diogenes" align=right width=30%>
+<img src="../imagenes/diogenes.png" align=right width=30%>
 
 ```markdown
 Diógenes frota su vientre en la esquina muy cerca a la estación de Sants
