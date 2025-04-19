@@ -8,6 +8,16 @@ TsP / TpR: 20 min / 7 min
 
 Del [canal oficial](https://www.google.com/chrome/?platform=linux) de la distro.
 
+```manjaro
+# Manjaro
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+
+yay -S google-chrome
+```
+
 ## Instalar GIT
 
 ```bash
@@ -35,8 +45,11 @@ sudo apt install gdebi
 ```bash
 # Debian_Based distro:
 sudo apt install curl
-```
 
+
+# Manjaro
+sudo pacman -Syu curl
+```
 ## Instalar jdk
 
 ```bash
@@ -45,6 +58,9 @@ sudo apt install openjdk-17-jdk-headless
 
 # RPM_Based distro:
 sudo dnf install java-latest-openjdk-devel.x86_64
+
+# Manjaro
+ sudo pacman -Syu jdk-openjdk
 ```
 
 ## Instalar graphviz
@@ -52,6 +68,9 @@ sudo dnf install java-latest-openjdk-devel.x86_64
 ```bash
 # Debian_Based distro:
 sudo apt install graphviz
+
+# Manjaro
+ sudo pacman -Syu graphviz
 ```
 
 ## Instalar Visual Studio Code
@@ -65,6 +84,10 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 dnf check-update
 sudo dnf install code
+
+
+# Manjaro
+sudo pacman -Syu code
 ```
 
 ## Instalar Spotify
@@ -75,6 +98,10 @@ sudo snap install spotify
 
 # RPM_Based distro:
 sudo snap install spotify
+
+# Manjaro
+# Habiendo instalado yay
+yay -S spotify 
 ```
 
 ## Instalar VLC
