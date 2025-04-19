@@ -27,6 +27,10 @@ sudo apt install git
 # RPM_Based distro:
 sudo dnf install git
 
+# Manjaro
+sudo pacman -Syu git
+
+# Común a las tres
 git config --global user.name "manuel@dondeSea"
 git config --global user.email "manuel@masiasweb.com"
 ```
@@ -38,6 +42,15 @@ git config --global user.email "manuel@masiasweb.com"
 ```bash
 # Debian_Based distro:
 sudo apt install gdebi
+
+# RPM_Based distro:
+# No es necesario gdebi en distribuciones RPM
+# Para instalar paquetes rpm, usa dnf directamente:
+# sudo dnf install ./paquete.rpm
+
+# Manjaro
+# No es necesario gdebi, para paquetes .pkg.tar.zst usa pacman
+# Para paquetes AUR usa yay o pamac
 ```
 
 ## Instalar curl
@@ -46,10 +59,13 @@ sudo apt install gdebi
 # Debian_Based distro:
 sudo apt install curl
 
+# RPM_Based distro:
+sudo dnf install curl
 
 # Manjaro
 sudo pacman -Syu curl
 ```
+
 ## Instalar jdk
 
 ```bash
@@ -69,6 +85,9 @@ sudo dnf install java-latest-openjdk-devel.x86_64
 # Debian_Based distro:
 sudo apt install graphviz
 
+# RPM_Based distro:
+sudo dnf install graphviz
+
 # Manjaro
  sudo pacman -Syu graphviz
 ```
@@ -87,8 +106,7 @@ sudo dnf install code
 
 
 # Manjaro
-# sudo pacman -Syu code
-yay -S visual-studio-code-bin 
+yay -S visual-studio-code-bin # sudo pacman -Syu code lo instala sin posibilidad de conectar con GIT
 ```
 
 ## Instalar Spotify
@@ -101,7 +119,6 @@ sudo snap install spotify
 sudo snap install spotify
 
 # Manjaro
-# Habiendo instalado yay
 yay -S spotify 
 ```
 
@@ -113,6 +130,9 @@ sudo apt install vlc
 
 # RPM_Based distro:
 sudo snap install vlc
+
+# Manjaro
+sudo pacman -Syu vlc
 ```
 
 ### Instalar la impresora
@@ -136,6 +156,7 @@ sudo systemctl restart cups
 ### Instalar oh-my-posh
 
 ```bash
+# Debian_Based distro y RPM_Based distro:
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
 mkdir ~/.poshthemes
@@ -143,6 +164,9 @@ wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/theme
 unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
 chmod u+rw ~/.poshthemes/*.omp.*
 rm ~/.poshthemes/themes.zip
+
+# Manjaro
+# Preinstalado por defecto
 ```
 
 1. Download a [Nerd Font](http://nerdfonts.com/): [FiraCode](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) && [MesloLG](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip)
@@ -162,8 +186,17 @@ eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.js
 ## Otros utilitarios interesantes
 
 ```bash
+# Debian_Based distro:
 sudo apt install tree # tree -pugh
 sudo apt install eza  # eza -l --tree --group --header
+
+# RPM_Based distro:
+sudo dnf install tree
+sudo dnf install eza  # Si no está disponible en los repos oficiales, puede requerir EPEL
+
+# Manjaro - Otros utilitarios
+sudo pacman -Syu tree
+sudo pacman -Syu eza  # O instalarlo desde AUR con: yay -S eza
 ```
 
 ### Tema (KDE)
@@ -174,7 +207,16 @@ Utterly Nord Ligth Solid
 ## Configuración Github classroom
 
 ```bash
+# Debian_Based distro:
 sudo apt install gh
+
+# RPM_Based distro:
+sudo dnf install gh
+
+# Manjaro
+sudo pacman -Syu github-cli
+
+# Común a las tres
 gh auth login
 gh extension install github/gh-classroom
 gh classroom list
