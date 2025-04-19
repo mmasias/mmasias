@@ -10,6 +10,12 @@ Este tutorial explica cómo configurar la firma de commits en Git usando GPG par
 sudo apt-get install gnupg
 ```
 
+### Manjaro
+
+```bash
+sudo pacman -Syu gnupg
+```
+
 ### macOS (usando Homebrew)
 
 ```bash
