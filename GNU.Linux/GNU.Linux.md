@@ -4,6 +4,8 @@ Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distri
 
 TsP / TpR: 20 min / 7 min
 
+> Gracias a [Claude (Anthropic)](https://claude.ai), habemus [archivo de instalación](setup-linux.sh) que realiza todo esto!
+
 ## Instalar Chrome
 
 Del [canal oficial](https://www.google.com/chrome/?platform=linux) de la distro.
@@ -151,7 +153,7 @@ sudo systemctl restart cups
 #### Semi-Auto
 
 - [Drivers](https://drive.google.com/drive/folders/1HjncE-cJPyxzEuDZsfUW21V7-b5mSSA3?usp=sharing)
-- [Config](imagenes/impresoraCanonGNU.png)
+- [Config](../imagenes/impresoraCanonGNU.png)
 
 ### Instalar oh-my-posh
 
