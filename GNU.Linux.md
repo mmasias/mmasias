@@ -87,7 +87,8 @@ sudo dnf install code
 
 
 # Manjaro
-sudo pacman -Syu code
+# sudo pacman -Syu code
+yay -S visual-studio-code-bin 
 ```
 
 ## Instalar Spotify
