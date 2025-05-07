@@ -3,4 +3,4 @@
 |<sup>***[ingeniero, ra](temasVarios/ingeniero.md)***: *m. y f. `[iŋ.xeˈnje.ɾo]`* - Dícese de aquella persona que realiza conjeturas precisas<br>basadas en datos poco fiables proporcionados por personas de conocimiento dudoso (véase también ***mago*** o ***hechicero***)
 |<sup>**#2Read**: [*The big ideas in software development*](https://www.softdevbigideas.com/the-big-ideas-in-software-development.html) / [*Proceso de creación*](procesoDeCreacion.md) / [*Unamuno*](unamuno.md) / [*Esquema*](acercaDeEsquema.md)
 |![](/imagenes/2Monitors/ultima_vi_desktop_background_wallpaper_5760x1080_by_mecandes_d87e0fg.png)|
-|<sup><i>La sencillez es una gran virtud pero requiere mucho trabajo para lograrla y educación para apreciarla.<br>Y para empeorar las cosas: la complejidad se vende mejor - <b>Edsger Dijkstra</b></i></sup>
+|<sup><i>La sencillez es una gran virtud pero requiere mucho trabajo para lograrla y educación para apreciarla.<br>Y para empeorar las cosas: la complejidad se vende mejor - <b>Edsger W. Dijkstra - On the nature of Computing Science</b></i></sup>
