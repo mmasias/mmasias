@@ -224,3 +224,8 @@ gh extension install github/gh-classroom
 gh classroom list
 gh classroom clone student-repos
 ```
+
+## Otras utilidades
+
+- https://flathub.org/apps/com.vixalien.sticky
+- 
