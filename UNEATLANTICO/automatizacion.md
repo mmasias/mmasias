@@ -229,4 +229,4 @@ Una vez implementado el sistema básico, se abren múltiples posibilidades de ex
 - **Análisis de plagio automático**: Implementación de herramientas que detecten similitudes sospechosas entre trabajos de diferentes estudiantes.
 - **Gamificación del proceso**: Creación de un sistema de badges y logros que reconozca buenas prácticas de entrega y calidad de código.
 
-La implementación puede comenzarse inmediatamente con la Fase 1, obteniendo beneficios inmediatos en la reducción de tiempo de evaluación manual, y progresarse gradualmente según las necesidades específicas de cada asignatura.
+La implementación puede comenzarse inmediatamente con la [Fase 1](automatizacion-fase1.md), obteniendo beneficios inmediatos en la reducción de tiempo de evaluación manual, y progresarse gradualmente según las necesidades específicas de cada asignatura.
