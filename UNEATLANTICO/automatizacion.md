@@ -95,7 +95,7 @@ public class ValidacionAutomatica {
 
 #### Fase 4: Análisis de calidad (*Opcional*)
 
-Integración con herramientas de análisis estático como SpotBugs o Checkstyle para evaluar:
+Integración con herramientas de análisis estático como [SpotBugs](https://spotbugs.github.io/) o [Checkstyle](https://checkstyle.sourceforge.io/) para evaluar:
 
 - Cumplimiento de convenciones de codificación
 - Detección de problemas potenciales de rendimiento
