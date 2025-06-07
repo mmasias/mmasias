@@ -43,23 +43,39 @@ confirm() {
     esac
 }
 
-# Detectar el tipo de distribución
+# Detectar el tipo de distribución - MEJORADO
 detect_distro() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
         DISTRO=$ID
         DISTRO_FAMILY=""
 
-        # Determinar la familia de la distribución
-        if [[ "$ID" == "manjaro" || "$ID" == "arch" || "$ID_LIKE" == *"arch"* ]]; then
+        # Determinar la familia de la distribución con casos adicionales
+        if [[ "$ID" == "manjaro" || "$ID" == "arch" || "$ID" == "endeavouros" || "$ID_LIKE" == *"arch"* ]]; then
             DISTRO_FAMILY="arch"
-        elif [[ "$ID" == "ubuntu" || "$ID" == "debian" || "$ID" == "elementary" || "$ID_LIKE" == *"debian"* ]]; then
+        elif [[ "$ID" == "ubuntu" || "$ID" == "debian" || "$ID" == "linuxmint" || "$ID" == "elementary" || "$ID" == "pop" || "$ID" == "zorin" || "$ID_LIKE" == *"debian"* || "$ID_LIKE" == *"ubuntu"* ]]; then
             DISTRO_FAMILY="debian"
-        elif [[ "$ID" == "fedora" || "$ID" == "rhel" || "$ID" == "centos" || "$ID_LIKE" == *"fedora"* || "$ID_LIKE" == *"rhel"* ]]; then
+        elif [[ "$ID" == "fedora" || "$ID" == "rhel" || "$ID" == "centos" || "$ID" == "rocky" || "$ID" == "almalinux" || "$ID_LIKE" == *"fedora"* || "$ID_LIKE" == *"rhel"* ]]; then
             DISTRO_FAMILY="rpm"
         else
-            error "Distribución no reconocida: $ID"
-            exit 1
+            warning "Distribución '$ID' no reconocida específicamente, intentando detectar gestor de paquetes..."
+            # Fallback: detectar por gestor de paquetes disponible
+            if command -v apt &> /dev/null; then
+                DISTRO_FAMILY="debian"
+                info "Detectado gestor apt, asumiendo familia Debian"
+            elif command -v dnf &> /dev/null; then
+                DISTRO_FAMILY="rpm"
+                info "Detectado gestor dnf, asumiendo familia RPM"
+            elif command -v yum &> /dev/null; then
+                DISTRO_FAMILY="rpm"
+                info "Detectado gestor yum, asumiendo familia RPM"
+            elif command -v pacman &> /dev/null; then
+                DISTRO_FAMILY="arch"
+                info "Detectado gestor pacman, asumiendo familia Arch"
+            else
+                error "No se pudo determinar el gestor de paquetes de la distribución"
+                exit 1
+            fi
         fi
 
         success "Distribución detectada: $DISTRO (Familia: $DISTRO_FAMILY)"
@@ -69,30 +85,54 @@ detect_distro() {
     fi
 }
 
-# Instalar dependencias básicas según la distribución
+# Instalar dependencias básicas según la distribución - MEJORADO
 install_dependencies() {
     info "Instalando dependencias básicas para $DISTRO_FAMILY..."
     
     case $DISTRO_FAMILY in
         debian)
+            # Actualizar primero
+            info "Actualizando repositorios..."
             sudo apt update
-            sudo apt install -y curl wget git unzip
+            
+            # Instalar herramientas básicas
+            sudo apt install -y curl wget git unzip zip software-properties-common apt-transport-https ca-certificates gnupg lsb-release
+            
+            # Verificar si universe está habilitado en Ubuntu
+            if [[ "$DISTRO" == "ubuntu" ]]; then
+                sudo add-apt-repository universe -y
+                sudo apt update
+            fi
             ;;
         rpm)
-            sudo dnf check-update
-            sudo dnf install -y curl wget git unzip
+            info "Actualizando repositorios..."
+            sudo dnf check-update || true  # No fallar si no hay actualizaciones
+            
+            # Instalar herramientas básicas
+            sudo dnf install -y curl wget git unzip zip dnf-plugins-core
+            
+            # Habilitar repositorios adicionales si están disponibles
+            if command -v dnf &> /dev/null; then
+                # Para Fedora
+                if [[ "$DISTRO" == "fedora" ]]; then
+                    sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
+                fi
+            fi
             ;;
         arch)
-            sudo pacman -Syu --noconfirm curl wget git unzip
+            info "Actualizando sistema..."
+            sudo pacman -Syu --noconfirm
+            
+            sudo pacman -S --noconfirm curl wget git unzip zip base-devel
             
             # Instalar yay si no está instalado
             if ! command -v yay &> /dev/null; then
                 info "Instalando yay para acceso a AUR..."
-                sudo pacman -S --needed --noconfirm base-devel
                 git clone https://aur.archlinux.org/yay-git.git /tmp/yay-git
                 cd /tmp/yay-git
                 makepkg -si --noconfirm
                 cd - > /dev/null
+                rm -rf /tmp/yay-git
                 success "yay instalado correctamente"
             else
                 info "yay ya está instalado"
@@ -103,20 +143,45 @@ install_dependencies() {
     success "Dependencias básicas instaladas"
 }
 
-# Instalar Google Chrome
+# Instalar Google Chrome - MEJORADO
 install_chrome() {
     info "Instalando Google Chrome..."
     
+    # Verificar si ya está instalado
+    if command -v google-chrome &> /dev/null; then
+        success "Google Chrome ya está instalado"
+        return 0
+    fi
+    
     case $DISTRO_FAMILY in
         debian)
-            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-            sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
-            sudo apt update
-            sudo apt install -y google-chrome-stable
+            # Método más robusto
+            temp_dir=$(mktemp -d)
+            cd "$temp_dir"
+            
+            wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            
+            if sudo dpkg -i google-chrome-stable_current_amd64.deb; then
+                success "Google Chrome instalado correctamente"
+            else
+                info "Corrigiendo dependencias..."
+                sudo apt install -f -y
+                success "Google Chrome instalado correctamente (con corrección de dependencias)"
+            fi
+            
+            cd - > /dev/null
+            rm -rf "$temp_dir"
             ;;
         rpm)
-            sudo dnf install -y fedora-workstation-repositories
-            sudo dnf config-manager --set-enabled google-chrome
+            # Agregar repositorio
+            sudo tee /etc/yum.repos.d/google-chrome.repo > /dev/null <<EOF
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://dl.google.com/linux/linux_signing_key.pub
+EOF
             sudo dnf install -y google-chrome-stable
             ;;
         arch)
@@ -127,29 +192,55 @@ install_chrome() {
     success "Google Chrome instalado correctamente"
 }
 
-# Configurar Git
+# Configurar Git - MEJORADO
 configure_git() {
     info "Configurando Git..."
     
     # Instalar Git si no está instalado
-    case $DISTRO_FAMILY in
-        debian)
-            sudo apt install -y git
-            ;;
-        rpm)
-            sudo dnf install -y git
-            ;;
-        arch)
-            sudo pacman -S --noconfirm git
-            ;;
-    esac
+    if ! command -v git &> /dev/null; then
+        case $DISTRO_FAMILY in
+            debian)
+                sudo apt install -y git
+                ;;
+            rpm)
+                sudo dnf install -y git
+                ;;
+            arch)
+                sudo pacman -S --noconfirm git
+                ;;
+        esac
+    fi
+    
+    # Verificar si ya está configurado
+    current_name=$(git config --global user.name 2>/dev/null || echo "")
+    current_email=$(git config --global user.email 2>/dev/null || echo "")
+    
+    if [[ -n "$current_name" && -n "$current_email" ]]; then
+        info "Git ya está configurado:"
+        info "  Nombre: $current_name"
+        info "  Email: $current_email"
+        
+        if ! confirm; then
+            return 0
+        fi
+    fi
     
     # Preguntar por el nombre y email para la configuración
     read -p "Introduce tu nombre para Git: " git_name
     read -p "Introduce tu email para Git: " git_email
     
+    # Validar email básico
+    if [[ ! "$git_email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+        warning "El formato del email parece incorrecto, pero se configurará de todos modos"
+    fi
+    
     git config --global user.name "$git_name"
     git config --global user.email "$git_email"
+    
+    # Configuraciones adicionales útiles
+    git config --global init.defaultBranch main
+    git config --global pull.rebase false
+    git config --global core.autocrlf input
     
     success "Git configurado con nombre: $git_name y email: $git_email"
 }
@@ -169,6 +260,12 @@ install_gdebi() {
 install_curl() {
     info "Instalando curl..."
     
+    # Verificar si ya está instalado
+    if command -v curl &> /dev/null; then
+        success "curl ya está instalado"
+        return 0
+    fi
+    
     case $DISTRO_FAMILY in
         debian)
             sudo apt install -y curl
@@ -184,23 +281,49 @@ install_curl() {
     success "curl instalado correctamente"
 }
 
-# Instalar JDK
+# Instalar JDK - MEJORADO
 install_jdk() {
     info "Instalando JDK..."
     
+    # Verificar si ya está instalado
+    if command -v java &> /dev/null; then
+        java_version=$(java -version 2>&1 | head -n 1)
+        info "Java ya está instalado: $java_version"
+        
+        if ! confirm; then
+            return 0
+        fi
+    fi
+    
     case $DISTRO_FAMILY in
         debian)
-            sudo apt install -y openjdk-17-jdk-headless
+            # Ofrecer opción entre OpenJDK y Oracle JDK
+            echo "¿Qué JDK prefieres?"
+            echo "1) OpenJDK 17 (recomendado)"
+            echo "2) OpenJDK 11"
+            echo "3) OpenJDK 21"
+            read -p "Selecciona (1-3): " jdk_choice
+            
+            case $jdk_choice in
+                1) sudo apt install -y openjdk-17-jdk-headless openjdk-17-jdk ;;
+                2) sudo apt install -y openjdk-11-jdk-headless openjdk-11-jdk ;;
+                3) sudo apt install -y openjdk-21-jdk-headless openjdk-21-jdk ;;
+                *) sudo apt install -y openjdk-17-jdk-headless openjdk-17-jdk ;;
+            esac
             ;;
         rpm)
-            sudo dnf install -y java-latest-openjdk-devel.x86_64
+            sudo dnf install -y java-latest-openjdk-devel java-latest-openjdk
             ;;
         arch)
-            sudo pacman -S --noconfirm jdk-openjdk
+            sudo pacman -S --noconfirm jdk-openjdk openjdk-doc
             ;;
     esac
     
-    success "JDK instalado correctamente"
+    # Mostrar versión instalada
+    if command -v java &> /dev/null; then
+        java_version=$(java -version 2>&1 | head -n 1)
+        success "JDK instalado correctamente: $java_version"
+    fi
 }
 
 # Instalar graphviz
@@ -222,20 +345,63 @@ install_graphviz() {
     success "graphviz instalado correctamente"
 }
 
-# Instalar Visual Studio Code
+# Instalar Visual Studio Code - CORREGIDO
 install_vscode() {
     info "Instalando Visual Studio Code..."
     
+    # Verificar si ya está instalado
+    if command -v code &> /dev/null; then
+        success "Visual Studio Code ya está instalado"
+        return 0
+    fi
+    
     case $DISTRO_FAMILY in
         debian)
-            # Verificar si snap está instalado, si no, instalarlo
+            # Método 1: Intentar con repositorio oficial de Microsoft
+            info "Instalando desde el repositorio oficial de Microsoft..."
+            
+            # Agregar clave y repositorio de Microsoft
+            wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+            sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+            sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+            
+            # Actualizar e instalar
+            sudo apt update
+            if sudo apt install -y code; then
+                success "Visual Studio Code instalado correctamente desde repositorio oficial"
+                return 0
+            else
+                warning "Falló la instalación desde repositorio oficial, intentando con snap..."
+            fi
+            
+            # Método 2: Intentar con snap como respaldo
             if ! command -v snap &> /dev/null; then
                 info "Instalando snap..."
-                sudo apt install -y snapd
-                sudo systemctl enable snapd
-                sudo systemctl start snapd
+                if sudo apt install -y snapd; then
+                    sudo systemctl enable snapd
+                    sudo systemctl start snapd
+                    # Esperar a que snap esté listo
+                    sleep 5
+                    sudo snap install code --classic
+                else
+                    warning "No se pudo instalar snapd. Intentando descarga directa..."
+                    # Método 3: Descarga directa como último recurso
+                    temp_dir=$(mktemp -d)
+                    cd "$temp_dir"
+                    wget -O vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+                    if sudo dpkg -i vscode.deb; then
+                        success "Visual Studio Code instalado correctamente desde descarga directa"
+                    else
+                        # Corregir dependencias rotas si es necesario
+                        sudo apt install -f -y
+                        success "Visual Studio Code instalado correctamente (con corrección de dependencias)"
+                    fi
+                    cd - > /dev/null
+                    rm -rf "$temp_dir"
+                fi
+            else
+                sudo snap install code --classic
             fi
-            sudo snap install code --classic
             ;;
         rpm)
             sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -251,30 +417,90 @@ install_vscode() {
     success "Visual Studio Code instalado correctamente"
 }
 
-# Instalar Spotify
+# Instalar Spotify - CORREGIDO
 install_spotify() {
     info "Instalando Spotify..."
     
+    # Verificar si ya está instalado
+    if command -v spotify &> /dev/null; then
+        success "Spotify ya está instalado"
+        return 0
+    fi
+    
     case $DISTRO_FAMILY in
         debian)
-            # Verificar si snap está instalado, si no, instalarlo
+            # Método 1: Intentar con repositorio oficial de Spotify
+            info "Instalando desde el repositorio oficial de Spotify..."
+            
+            # Agregar clave y repositorio de Spotify
+            curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+            echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+            
+            # Actualizar e instalar
+            sudo apt update
+            if sudo apt install -y spotify-client; then
+                success "Spotify instalado correctamente desde repositorio oficial"
+                return 0
+            else
+                warning "Falló la instalación desde repositorio oficial, intentando con snap..."
+            fi
+            
+            # Método 2: Intentar con snap como respaldo
             if ! command -v snap &> /dev/null; then
                 info "Instalando snap..."
-                sudo apt install -y snapd
-                sudo systemctl enable snapd
-                sudo systemctl start snapd
+                if sudo apt install -y snapd; then
+                    sudo systemctl enable snapd
+                    sudo systemctl start snapd
+                    # Esperar a que snap esté listo
+                    sleep 5
+                    sudo snap install spotify
+                else
+                    warning "No se pudo instalar snapd ni el repositorio oficial de Spotify"
+                    info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
+                    return 1
+                fi
+            else
+                sudo snap install spotify
             fi
-            sudo snap install spotify
             ;;
         rpm)
-            # Verificar si snap está instalado, si no, instalarlo
+            # Método 1: Intentar con repositorio oficial
+            info "Instalando desde repositorio oficial de Spotify..."
+            sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+            
+            # Crear archivo de repositorio
+            sudo tee /etc/yum.repos.d/spotify.repo > /dev/null <<EOF
+[spotify]
+name=Spotify repository
+baseurl=http://repository.spotify.com/rpm/stable/x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+EOF
+            
+            if sudo dnf install -y spotify-client; then
+                success "Spotify instalado correctamente desde repositorio oficial"
+                return 0
+            else
+                warning "Falló la instalación desde repositorio oficial, intentando con snap..."
+            fi
+            
+            # Método 2: Respaldo con snap
             if ! command -v snap &> /dev/null; then
                 info "Instalando snap..."
-                sudo dnf install -y snapd
-                sudo systemctl enable snapd
-                sudo systemctl start snapd
+                if sudo dnf install -y snapd; then
+                    sudo systemctl enable snapd
+                    sudo systemctl start snapd
+                    sleep 5
+                    sudo snap install spotify
+                else
+                    warning "No se pudo instalar snapd ni el repositorio oficial de Spotify"
+                    info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
+                    return 1
+                fi
+            else
+                sudo snap install spotify
             fi
-            sudo snap install spotify
             ;;
         arch)
             yay -S --noconfirm spotify
@@ -504,7 +730,155 @@ configure_gpg() {
     fi
 }
 
-# Menú principal
+# Función para instalar utilidades adicionales - NUEVO
+install_additional_utilities() {
+    info "Instalando utilidades adicionales..."
+    
+    case $DISTRO_FAMILY in
+        debian)
+            sudo apt install -y \
+                htop \
+                neofetch \
+                bat \
+                fd-find \
+                ripgrep \
+                tmux \
+                vim \
+                build-essential
+            ;;
+        rpm)
+            sudo dnf install -y \
+                htop \
+                neofetch \
+                bat \
+                fd-find \
+                ripgrep \
+                tmux \
+                vim \
+                gcc \
+                gcc-c++ \
+                make
+            ;;
+        arch)
+            sudo pacman -S --noconfirm \
+                htop \
+                neofetch \
+                bat \
+                fd \
+                ripgrep \
+                tmux \
+                vim \
+                base-devel
+            ;;
+    esac
+    
+    success "Utilidades adicionales instaladas"
+}
+
+# Función para limpiar sistema después de instalaciones - NUEVO
+cleanup_system() {
+    info "Limpiando sistema..."
+    
+    case $DISTRO_FAMILY in
+        debian)
+            sudo apt autoremove -y
+            sudo apt autoclean
+            ;;
+        rpm)
+            sudo dnf autoremove -y
+            sudo dnf clean all
+            ;;
+        arch)
+            sudo pacman -Sc --noconfirm
+            ;;
+    esac
+    
+    success "Sistema limpiado"
+}
+
+# Función para quitar bloatware - NUEVO
+remove_bloatware() {
+    info "Quitando bloatware (LibreOffice, Firefox, Thunderbird)..."
+    
+    warning "Esta opción eliminará LibreOffice, Firefox y Thunderbird del sistema."
+    warning "Si usas alguno de estos programas, cancela ahora."
+    
+    if ! confirm; then
+        info "Operación cancelada"
+        return 0
+    fi
+    
+    case $DISTRO_FAMILY in
+        debian)
+            info "Removiendo Firefox..."
+            sudo apt remove -y firefox firefox-esr || true
+            
+            info "Removiendo LibreOffice..."
+            sudo apt remove -y libreoffice* || true
+            
+            info "Removiendo Thunderbird..."
+            sudo apt remove -y thunderbird || true
+            
+            # Limpiar paquetes huérfanos
+            sudo apt autoremove -y
+            ;;
+        rpm)
+            info "Removiendo Firefox..."
+            sudo dnf remove -y firefox || true
+            
+            info "Removiendo LibreOffice..."
+            sudo dnf remove -y libreoffice* || true
+            
+            info "Removiendo Thunderbird..."
+            sudo dnf remove -y thunderbird || true
+            
+            # Limpiar paquetes huérfanos
+            sudo dnf autoremove -y
+            ;;
+        arch)
+            info "Removiendo Firefox..."
+            sudo pacman -Rns --noconfirm firefox || true
+            
+            info "Removiendo LibreOffice..."
+            # En Arch, LibreOffice puede estar instalado como paquetes individuales
+            sudo pacman -Rns --noconfirm libreoffice-fresh libreoffice-still || true
+            # También remover componentes individuales si existen
+            sudo pacman -Rns --noconfirm $(pacman -Qq | grep libreoffice) 2>/dev/null || true
+            
+            info "Removiendo Thunderbird..."
+            sudo pacman -Rns --noconfirm thunderbird || true
+            ;;
+    esac
+    
+    # Limpiar configuraciones de usuario (opcional)
+    info "¿Deseas también eliminar las configuraciones de usuario de estos programas?"
+    warning "Esto borrará perfiles, marcadores, emails guardados, etc."
+    
+    if confirm; then
+        info "Eliminando configuraciones de usuario..."
+        
+        # Firefox
+        rm -rf ~/.mozilla/firefox/ 2>/dev/null || true
+        rm -rf ~/.cache/mozilla/ 2>/dev/null || true
+        
+        # LibreOffice
+        rm -rf ~/.config/libreoffice/ 2>/dev/null || true
+        rm -rf ~/.libreoffice/ 2>/dev/null || true
+        
+        # Thunderbird
+        rm -rf ~/.thunderbird/ 2>/dev/null || true
+        rm -rf ~/.cache/thunderbird/ 2>/dev/null || true
+        
+        success "Configuraciones de usuario eliminadas"
+    else
+        info "Configuraciones de usuario conservadas"
+    fi
+    
+    success "Bloatware removido correctamente"
+    info "Nota: Si instalaste Google Chrome, ahora será tu navegador principal"
+}
+
+# Menú principal - ACTUALIZADO
 show_menu() {
     clear
     echo "======================================"
@@ -513,7 +887,7 @@ show_menu() {
     echo "Distribución detectada: $DISTRO (Familia: $DISTRO_FAMILY)"
     echo
     echo "Selecciona una opción:"
-    echo "1) Instalar todo"
+    echo "1) Instalar todo (configuración completa)"
     echo "2) Instalar dependencias básicas"
     echo "3) Instalar Google Chrome"
     echo "4) Configurar Git"
@@ -528,6 +902,10 @@ show_menu() {
     echo "13) Instalar utilitarios (tree, eza)"
     echo "14) Instalar GitHub CLI"
     echo "15) Configurar firma GPG para Git"
+    echo "16) Instalar utilidades adicionales (htop, neofetch, bat, etc.)"
+    echo "17) Limpiar sistema"
+    echo "18) Quitar bloatware (LibreOffice, Firefox, Thunderbird)"
+    echo "19) Mostrar información del sistema"
     echo "0) Salir"
     echo
     read -p "Ingresa tu opción: " option
@@ -548,6 +926,8 @@ show_menu() {
             install_utilities
             install_github_cli
             configure_gpg
+            install_additional_utilities
+            cleanup_system
             ;;
         2) install_dependencies ;;
         3) install_chrome ;;
@@ -563,6 +943,20 @@ show_menu() {
         13) install_utilities ;;
         14) install_github_cli ;;
         15) configure_gpg ;;
+        16) install_additional_utilities ;;
+        17) cleanup_system ;;
+        18) remove_bloatware ;;
+        19) 
+            echo "Información del sistema:"
+            echo "OS: $PRETTY_NAME"
+            echo "Kernel: $(uname -r)"
+            echo "Arquitectura: $(uname -m)"
+            echo "Uptime: $(uptime -p)"
+            echo "Memoria: $(free -h | grep Mem | awk '{print $3"/"$2}')"
+            if command -v lscpu &> /dev/null; then
+                echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
+            fi
+            ;;
         0) 
             echo "¡Gracias por usar el script!"
             exit 0
