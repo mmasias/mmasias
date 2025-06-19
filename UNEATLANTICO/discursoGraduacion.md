@@ -19,7 +19,7 @@ Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando ll
 
 - Los hábitos de consumo y alimentación de poblaciones enteras se formaron mucho antes de que ustedes nacieran.
 
-- Los sistemas informáticos que sostienen las empresas fueron diseñados hace décadas.|
+- Los sistemas informáticos que sostienen las empresas fueron diseñados hace décadas.
 
 Este es el mundo que heredan. No lo construyeron, pero ahora tienen que trabajar en él.
 
