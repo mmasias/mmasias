@@ -1,12 +1,5 @@
 # Discurso
 
-<div align=center>
-
-|![](/images/modelosUML/discurso.svg)
-|-
-
-</div>
-
 > *La noticia apareció en un periódico sensacionalista. Decía, simplemente, que se había producido un incendio.*
 > 
 > *Después de llegar los bomberos, la policía, la prensa, rescatar un hombre, apagar el fuego, le hicieron la pregunta obvia:*
@@ -72,3 +65,12 @@ Pero ustedes ya no son el hombre de la cama en llamas.
 Ustedes saben que están ahí. Y saben qué hacer.
 
 Háganlo.
+
+## Mapa mental de base
+
+<div align=center>
+
+|![](/images/modelosUML/discurso.svg)
+|-
+
+</div>
