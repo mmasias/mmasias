@@ -9,6 +9,8 @@
 > - *No sé... ya estaba en llamas cuando me acosté.*
 > 
 
+*Distinguido rector magnífico, señor secretario general, don Carlos Gutiérrez presidente del Consejo de Colegios Oficiales de Ingenieros Agrícolas, compañeros, familiares, amigos: permítanme dirigirme a los graduados...*
+
 Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas.
 
 <div align=center>
@@ -31,7 +33,7 @@ En estos once años de vida de la universidad, y diez años de la Escuela Polit�
 
 Pero no hemos sido los únicos: Mientras ustedes aprendían, alguien les hizo espacio para hacerlo. Padres, madres, hermanos, parejas, amigos. Algunos hoy están aquí, otros no pudieron. Pero sin ellos, ustedes no estarían ahora escuchando esto.
 
-Ahora, tras cuatro años tienen:
+Tras estos cuatro años tienen:
 
 - Primero, la capacidad de analizar sistemas y ver más allá de los síntomas para entender las causas reales.
 - Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven.
