@@ -9,7 +9,7 @@
 > - *No sé... ya estaba en llamas cuando me acosté.*
 > 
 
-Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas. 
+Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas.
 
 <div align=center>
 
@@ -27,7 +27,9 @@ Su responsabilidad no es romper lo que existe, sino entender que tiene que segui
 
 No se trata de revolución, se trata de ***evolución consciente***.
 
-En estos once años de vida de la universidad -diez de Escuela Politécnica Superior-, hemos intentado darles herramientas para gestionar esta complejidad.
+En estos once años de vida de la universidad, y diez años de la Escuela Politécnica Superior, hemos intentado darles herramientas para gestionar esta complejidad. Pero no hemos sido los únicos: familias, padres, amigos, han estado ahí para que ustedes pudieran llegar hasta aquí, para que pudieran concentrarse en aprender mientras otros se ocupaban de sostenerlos.
+
+Ahora tienen:
 
 - Primero, la capacidad de analizar sistemas y ver más allá de los síntomas para entender las causas reales.
 - Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven.
@@ -35,9 +37,9 @@ En estos once años de vida de la universidad -diez de Escuela Politécnica Supe
 
 Y quizás lo más importante: la adaptabilidad. Porque el mundo que heredan seguirá cambiando, y las soluciones de hoy serán los problemas de mañana.
 
-Viven en un momento único. 
+Viven en un momento único.
 
-La tecnología avanza más rápido que nunca, pero también las consecuencias de las decisiones técnicas se sienten más rápido que nunca en la sociedad. 
+La tecnología avanza más rápido que nunca, pero también las consecuencias de las decisiones técnicas se sienten más rápido que nunca en la sociedad.
 
 Como ingenieros y profesionales de la alimentación y la salud, sus decisiones no solo afectan sistemas y procesos, sino vidas humanas reales.
 
