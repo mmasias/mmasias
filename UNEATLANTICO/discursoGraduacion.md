@@ -13,13 +13,13 @@
 
 Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas.
 
-<div align=center>
+- Los procesos industriales tienen inercias que parecen imposibles de cambiar. 
 
-|||||
-|-|-|-|-|
-|Los procesos industriales tienen inercias que parecen imposibles de cambiar. |Las cadenas de producción agroalimentaria arrastran prácticas que afectan tanto la sostenibilidad como la calidad nutricional. |Los hábitos de consumo y alimentación de poblaciones enteras se formaron mucho antes de que ustedes nacieran.|Los sistemas informáticos que sostienen las empresas fueron diseñados hace décadas.|
+- Las cadenas de producción agroalimentaria arrastran prácticas que afectan tanto la sostenibilidad como la calidad nutricional. 
 
-</div>
+- Los hábitos de consumo y alimentación de poblaciones enteras se formaron mucho antes de que ustedes nacieran.
+
+- Los sistemas informáticos que sostienen las empresas fueron diseñados hace décadas.|
 
 Este es el mundo que heredan. No lo construyeron, pero ahora tienen que trabajar en él.
 
@@ -36,7 +36,9 @@ Pero no hemos sido los únicos: Mientras ustedes aprendían, alguien les hizo es
 Tras estos cuatro años tienen:
 
 - Primero, la capacidad de analizar sistemas y ver más allá de los síntomas para entender las causas reales.
+
 - Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven.
+
 - Tercero, la ética para tomar decisiones que consideren no solo la eficiencia técnica, sino el impacto humano y ambiental de sus soluciones.
 
 Y quizás lo más importante: la adaptabilidad. Porque el mundo que heredan seguirá cambiando, y las soluciones de hoy serán los problemas de mañana.
@@ -58,8 +60,11 @@ A diferencia del hombre de la noticia, ustedes no se acostarán mientras el mund
 Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. Con la capacidad de preguntarse:
 
 - ***qué*** está pasando realmente
+
 - ***por qué*** está pasando
+
 - ***para qué*** sirve que pase y 
+
 - ***cómo*** se puede actuar de manera diferente. 
 
 Con la responsabilidad de actuar conscientemente, no solo de reaccionar.
@@ -73,6 +78,8 @@ Ustedes saben que están ahí. Y saben qué hacer.
 Háganlo.
 
 Y cuando llegue el momento de dejar este mundo a quienes vengan después, que no tengan que acostarse entre llamas, sino caminar entre soluciones que ustedes construyeron.
+
+---
 
 ## Mapa mental de base
 
