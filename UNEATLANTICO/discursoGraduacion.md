@@ -16,15 +16,25 @@
 > - *No sé... ya estaba en llamas cuando me acosté.*
 > 
 
-Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas. Los sistemas informáticos que sostienen las empresas fueron diseñados hace décadas. Los procesos industriales tienen inercias que parecen imposibles de cambiar. Las cadenas de producción agroalimentaria arrastran prácticas que afectan tanto la sostenibilidad como la calidad nutricional. Los hábitos de consumo y alimentación de poblaciones enteras se formaron mucho antes de que ustedes nacieran.
+Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas. 
+
+<div align=center>
+
+|||||
+|-|-|-|-|
+|Los procesos industriales tienen inercias que parecen imposibles de cambiar. |Las cadenas de producción agroalimentaria arrastran prácticas que afectan tanto la sostenibilidad como la calidad nutricional. |Los hábitos de consumo y alimentación de poblaciones enteras se formaron mucho antes de que ustedes nacieran.|Los sistemas informáticos que sostienen las empresas fueron diseñados hace décadas.|
+
+</div>
 
 Este es el mundo que heredan. No lo construyeron, pero ahora tienen que trabajar en él.
 
-Pero aquí está la diferencia fundamental: este mundo en movimiento no puede detenerse mientras ustedes lo arreglan. Las fábricas tienen que seguir produciendo, los sistemas tienen que seguir funcionando, la gente tiene que seguir comiendo. Su responsabilidad no es romper lo que existe, sino entender que tiene que seguir funcionando mientras ustedes trabajan para mejorarlo.
+Pero aquí está la diferencia fundamental: este mundo en movimiento no puede detenerse mientras ustedes lo arreglan. Las fábricas tienen que seguir produciendo, los sistemas tienen que seguir funcionando, la gente tiene que seguir comiendo.
+
+Su responsabilidad no es romper lo que existe, sino entender que tiene que seguir funcionando mientras ustedes trabajan para mejorarlo.
 
 No se trata de revolución, se trata de ***evolución consciente***.
 
-En estos años, hemos intentado darles herramientas para gestionar esta complejidad. Primero, la capacidad de analizar sistemas complejos, de ver más allá de los síntomas para entender las causas reales. Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven. Tercero, la ética para tomar decisiones que consideren no solo la eficiencia técnica, sino el impacto humano y ambiental de sus soluciones.
+En estos once años de vida de la universidad -diez de la Escuela Politécnica Superior-, hemos intentado darles herramientas para gestionar esta complejidad. Primero, la capacidad de analizar sistemas complejos, de ver más allá de los síntomas para entender las causas reales. Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven. Tercero, la ética para tomar decisiones que consideren no solo la eficiencia técnica, sino el impacto humano y ambiental de sus soluciones.
 
 Y quizás lo más importante: la adaptabilidad. Porque el mundo que heredan seguirá cambiando, y las soluciones de hoy serán los problemas de mañana.
 
@@ -38,7 +48,7 @@ A diferencia del hombre de la noticia, ustedes no se acostarán mientras el mund
 
 Ustedes van a trabajar.
 
-Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. Con la capacidad de ver los sistemas, de entender por qué funcionan como funcionan, y sobre todo, con la responsabilidad de actuar conscientemente.
+Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. Con la capacidad de preguntarse ***qué*** está pasando realmente, ***por qué*** está pasando, ***para qué*** sirve que pase y ***cómo*** se puede actuar de manera diferente. Con la responsabilidad de actuar conscientemente, no solo de reaccionar.
 
 El mundo seguirá moviéndose. Seguirá siendo complejo. Seguirá teniendo problemas que parecen imposibles de resolver.
 
@@ -46,4 +56,4 @@ Pero ustedes ya no son el hombre de la noticia.
 
 Ustedes saben que están ahí. Y saben qué hacer.
 
-Háganlo
+Háganlo.
