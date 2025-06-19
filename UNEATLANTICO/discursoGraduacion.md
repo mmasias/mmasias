@@ -27,9 +27,11 @@ Su responsabilidad no es romper lo que existe, sino entender que tiene que segui
 
 No se trata de revolución, se trata de ***evolución consciente***.
 
-En estos once años de vida de la universidad, y diez años de la Escuela Politécnica Superior, hemos intentado darles herramientas para gestionar esta complejidad. Pero no hemos sido los únicos: familias, padres, amigos, han estado ahí para que ustedes pudieran llegar hasta aquí, para que pudieran concentrarse en aprender mientras otros se ocupaban de sostenerlos.
+En estos once años de vida de la universidad, y diez años de la Escuela Politécnica Superior, hemos intentado darles herramientas para gestionar esta complejidad. 
 
-Ahora tienen:
+Pero no hemos sido los únicos: Mientras ustedes aprendían, alguien les hizo espacio para hacerlo. Padres, madres, hermanos, parejas, amigos. Algunos hoy están aquí, otros no pudieron. Pero sin ellos, ustedes no estarían ahora escuchando esto.
+
+Ahora, tras cuatro años tienen:
 
 - Primero, la capacidad de analizar sistemas y ver más allá de los síntomas para entender las causas reales.
 - Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven.
@@ -67,6 +69,8 @@ Pero ustedes ya no son el hombre de la cama en llamas.
 Ustedes saben que están ahí. Y saben qué hacer.
 
 Háganlo.
+
+Y cuando llegue el momento de dejar este mundo a quienes vengan después, que no tengan que acostarse entre llamas, sino caminar entre soluciones que ustedes construyeron.
 
 ## Mapa mental de base
 
