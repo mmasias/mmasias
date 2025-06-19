@@ -34,11 +34,19 @@ Su responsabilidad no es romper lo que existe, sino entender que tiene que segui
 
 No se trata de revolución, se trata de ***evolución consciente***.
 
-En estos once años de vida de la universidad -diez de la Escuela Politécnica Superior-, hemos intentado darles herramientas para gestionar esta complejidad. Primero, la capacidad de analizar sistemas complejos, de ver más allá de los síntomas para entender las causas reales. Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven. Tercero, la ética para tomar decisiones que consideren no solo la eficiencia técnica, sino el impacto humano y ambiental de sus soluciones.
+En estos once años de vida de la universidad -diez de Escuela Politécnica Superior-, hemos intentado darles herramientas para gestionar esta complejidad.
+
+- Primero, la capacidad de analizar sistemas y ver más allá de los síntomas para entender las causas reales.
+- Segundo, el pensamiento crítico para cuestionar lo que parece obvio y encontrar alternativas que otros no ven.
+- Tercero, la ética para tomar decisiones que consideren no solo la eficiencia técnica, sino el impacto humano y ambiental de sus soluciones.
 
 Y quizás lo más importante: la adaptabilidad. Porque el mundo que heredan seguirá cambiando, y las soluciones de hoy serán los problemas de mañana.
 
-Viven en un momento único. La tecnología avanza más rápido que nunca, pero también las consecuencias de las decisiones técnicas se sienten más rápido que nunca en la sociedad. Como ingenieros y profesionales de la alimentación y la salud, sus decisiones no solo afectan sistemas y procesos, sino vidas humanas reales.
+Viven en un momento único. 
+
+La tecnología avanza más rápido que nunca, pero también las consecuencias de las decisiones técnicas se sienten más rápido que nunca en la sociedad. 
+
+Como ingenieros y profesionales de la alimentación y la salud, sus decisiones no solo afectan sistemas y procesos, sino vidas humanas reales.
 
 Este es su momento histórico. No el de inventar todo desde cero, sino el de aplicar conocimiento y consciencia a sistemas que ya existen y que necesitan evolucionar.
 
@@ -46,13 +54,20 @@ Este es su momento histórico. No el de inventar todo desde cero, sino el de apl
 
 A diferencia del hombre de la noticia, ustedes no se acostarán mientras el mundo arde.
 
-Ustedes van a trabajar.
+***Ustedes van a trabajar.***
 
-Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. Con la capacidad de preguntarse ***qué*** está pasando realmente, ***por qué*** está pasando, ***para qué*** sirve que pase y ***cómo*** se puede actuar de manera diferente. Con la responsabilidad de actuar conscientemente, no solo de reaccionar.
+Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. Con la capacidad de preguntarse:
+
+- ***qué*** está pasando realmente
+- ***por qué*** está pasando
+- ***para qué*** sirve que pase y 
+- ***cómo*** se puede actuar de manera diferente. 
+
+Con la responsabilidad de actuar conscientemente, no solo de reaccionar.
 
 El mundo seguirá moviéndose. Seguirá siendo complejo. Seguirá teniendo problemas que parecen imposibles de resolver.
 
-Pero ustedes ya no son el hombre de la noticia.
+Pero ustedes ya no son el hombre de la cama en llamas.
 
 Ustedes saben que están ahí. Y saben qué hacer.
 
