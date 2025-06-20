@@ -29,9 +29,9 @@ Su responsabilidad no es romper lo que existe, sino entender que tiene que segui
 
 No se trata de revolución, se trata de ***evolución consciente***.
 
-En estos once años de vida de la universidad, y diez años de la Escuela Politécnica Superior, hemos intentado darles herramientas para gestionar esta complejidad. 
+En estos once años de vida de la universidad, y diez años de la Escuela Politécnica Superior, hemos intentado darles herramientas para gestionar esta complejidad.
 
-Pero no hemos sido los únicos: Mientras ustedes aprendían, alguien les hizo espacio para hacerlo. Padres, madres, hermanos, parejas, amigos. Algunos hoy están aquí, otros no pudieron. Pero sin ellos, ustedes no estarían ahora escuchando esto.
+Pero no hemos sido los únicos: Mientras ustedes aprendían, alguien les hizo espacio para hacerlo. Padres, madres, hermanos, parejas, amigos. Las empresas que los acogieron en prácticas y les permitieron explorar este mundo real del que hablamos. Algunos hoy están aquí, otros no pudieron. Pero sin ellos, ustedes no estarían ahora escuchando esto.
 
 Tras estos cuatro años tienen:
 
