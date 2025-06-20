@@ -9,7 +9,7 @@
 > - *No sé... ya estaba en llamas cuando me acosté.*
 > 
 
-*Distinguido rector magnífico, señor secretario general, don Carlos Gutiérrez presidente del Consejo de Colegios Oficiales de Ingenieros Agrícolas, compañeros, familiares, amigos: permítanme dirigirme a los graduados...*
+*Distinguido rector, señor secretario general, don Carlos Gutiérrez presidente del Consejo de Colegios Oficiales de Ingenieros Agrícolas, compañeros, familiares, amigos: permítanme dirigirme a los graduados...*
 
 Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas.
 
@@ -57,7 +57,9 @@ A diferencia del hombre de la noticia, ustedes no se acostarán mientras el mund
 
 ***Ustedes van a trabajar.***
 
-Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. Con la capacidad de preguntarse:
+Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que generaciones anteriores no tuvieron. 
+
+Con la capacidad de preguntarse:
 
 - ***qué*** está pasando realmente
 
@@ -65,11 +67,11 @@ Han llegado a un mundo con problemas, sí. Pero llegan con herramientas que gene
 
 - ***para qué*** sirve que pase y 
 
-- ***cómo*** se puede actuar de manera diferente. 
+- ***cómo*** se puede actuar de manera diferente.
 
-Con la responsabilidad de actuar conscientemente, no solo de reaccionar.
+En un mundo donde las máquinas procesan datos, ustedes aportan contexto. Con la responsabilidad de actuar conscientemente, no solo de reaccionar.
 
-El mundo seguirá moviéndose. Seguirá siendo complejo. Seguirá teniendo problemas que parecen imposibles de resolver.
+Y este mundo seguirá moviéndose. Seguirá siendo complejo. Seguirá teniendo problemas que parecen imposibles de resolver.
 
 Pero ustedes ya no son el hombre de la cama en llamas.
 
@@ -77,7 +79,7 @@ Ustedes saben que están ahí. Y saben qué hacer.
 
 Háganlo.
 
-Y cuando llegue el momento de dejar este mundo a quienes vengan después, que no tengan que acostarse entre llamas, sino caminar entre soluciones que ustedes construyeron.
+Y cuando llegue el momento de dejar su legado, que quienes continúen no tengan que acostarse entre llamas, sino avanzar sobre un camino que ustedes ayudaron a transformar.
 
 ---
 
