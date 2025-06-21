@@ -1,5 +1,7 @@
 # Cómo lo hubiera resuelto
 
+> <sup>**NOTA:** *No se evalúa solo la solución, sino la capacidad -incluso en estas etapas iniciales de nuestra disciplina- de empezar a pensar, generar y presentar una arquitectura formal, comprensible y mantenible. Esa es la competencia profesional a la que estamos aspirando.*</sup>
+
 ## Primer paso
 
 Empiezo por resolver el problema, usando HOOD, lo que me dará la vista pública de objetos.
