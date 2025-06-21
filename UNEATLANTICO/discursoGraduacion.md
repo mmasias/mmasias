@@ -1,21 +1,20 @@
-# Discurso
+# Discurso graduación 2025
 
 > *La noticia apareció en un periódico sensacionalista. Decía, simplemente, que se había producido un incendio.*
-> 
+>
 > *Después de llegar los bomberos, la policía, la prensa, rescatar un hombre, apagar el fuego, le hicieron la pregunta obvia:*
-> 
+>
 > - *¿Cómo se inició el incendio?*
-> 
+>
 > - *No sé... ya estaba en llamas cuando me acosté.*
-> 
 
 *Distinguido rector, señor secretario general, don Carlos Gutiérrez presidente del Consejo de Colegios Oficiales de Ingenieros Agrícolas, compañeros, familiares, amigos: permítanme dirigirme a los graduados...*
 
 Llegan a un mundo que no eligieron. Un mundo que ya estaba funcionando cuando llegaron, con sus propias reglas, sus propios problemas, sus propias llamas.
 
-- Los procesos industriales tienen inercias que parecen imposibles de cambiar. 
+- Los procesos industriales tienen inercias que parecen imposibles de cambiar.
 
-- Las cadenas de producción agroalimentaria arrastran prácticas que afectan tanto la sostenibilidad como la calidad nutricional. 
+- Las cadenas de producción agroalimentaria arrastran prácticas que afectan tanto la sostenibilidad como la calidad nutricional.
 
 - Los hábitos de consumo y alimentación de poblaciones enteras se formaron mucho antes de que ustedes nacieran.
 
@@ -81,13 +80,9 @@ Háganlo.
 
 Y cuando llegue el momento de dejar su legado, que quienes continúen no tengan que acostarse entre llamas, sino avanzar sobre un camino que ustedes ayudaron a transformar.
 
----
+## Proceso de creación
 
-## Mapa mental de base
-
-<div align=center>
-
-|![](/images/modelosUML/discurso.svg)
-|-
-
-</div>
+|Intro|Estructura|
+|-|-|
+|Basada en <a href="https://www.youtube.com/watch?v=xFyCBDQaMcA&t=145s">SNM</a> y <a href="https://esquesobranlosmotivos.blogspot.com/2008/07/todo-lo-que-hacemos-sin-saber-por-que.html">Todo lo que hacemos sin saber por qué*</a>|Mapa mental de brainstorming:|
+||![](/images/modelosUML/discurso.svg)
