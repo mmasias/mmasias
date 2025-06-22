@@ -1,0 +1,12 @@
+=== 4. SERVICIOS Y PROCESOS ===
+Servicios systemd relacionados:
+
+Servicios de usuario:
+  pipewire-pulse.service                loaded active running PipeWire PulseAudio
+  pipewire.service                      loaded active running PipeWire Multimedia Service
+
+Procesos de audio activos:
+manuel      1080  1.0  0.1 127548 23668 ?        S<sl 19:54   2:38 /usr/bin/pipewire
+manuel      1081  0.0  0.0 100352  5888 ?        Ssl  19:54   0:00 /usr/bin/pipewire -c filter-chain.conf
+manuel      1083  1.4  0.4 171368 59960 ?        S<Lsl 19:54   3:34 /usr/bin/pipewire-pulse
+

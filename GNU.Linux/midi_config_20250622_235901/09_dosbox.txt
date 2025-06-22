@@ -1,0 +1,6 @@
+=== 9. DOSBOX-X CONFIGURACIÓN ===
+/home/manuel/.config/dosbox-x/dosbox-x.conf: No existe
+/home/manuel/.dosbox-x/dosbox-x.conf: No existe
+/home/manuel/.dosbox/dosbox.conf: No existe
+/etc/dosbox/dosbox.conf: No existe
+Versión DOSBox-X:

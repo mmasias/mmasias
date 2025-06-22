@@ -1,0 +1,2 @@
+=== 11. LOGS RECIENTES ===
+Logs de audio de las últimas 2 horas:

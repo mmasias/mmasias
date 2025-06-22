@@ -1,0 +1,14 @@
+=== 7. ARCHIVOS DE CONFIGURACIÓN ===
+Archivos de configuración de usuario:
+/home/manuel/.asoundrc: No existe
+/home/manuel/.config/pulse/default.pa: No existe
+/home/manuel/.config/pipewire/pipewire.conf: No existe
+/home/manuel/.config/pipewire/pipewire-pulse.conf: No existe
+/home/manuel/.qsynth.conf: No existe
+/home/manuel/.fluidsynth: No existe
+/home/manuel/.timidity/timidity.cfg: No existe
+Archivos de configuración del sistema:
+/etc/asound.conf: No existe
+/etc/pulse/default.pa: No existe
+/etc/timidity/timidity.cfg: No existe
+/etc/pipewire/pipewire.conf: No existe
