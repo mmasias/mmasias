@@ -1,8 +1,0 @@
-=== 8. SOUNDFONTS ===
-=== /usr/share/sounds/sf2/ ===
-total 5840
-drwxr-xr-x 2 root root    4096 jun  9 17:25 .
-drwxr-xr-x 8 root root    4096 jun  9 17:25 ..
-lrwxrwxrwx 1 root root      32 jun 17  2015 default-GM.sf2 -> /etc/alternatives/default-GM.sf2
--rw-r--r-- 1 root root 5969788 jun 17  2015 TimGM6mb.sf2
-
