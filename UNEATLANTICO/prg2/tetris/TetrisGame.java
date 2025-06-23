@@ -31,28 +31,12 @@ public class TetrisGame {
         char command = input.charAt(0);
         
         switch (command) {
-            case '4':
-                if (board.canMovePiece(board.currentPiece, -1, 0)) {
-                    board.currentPiece.moveLeft();
-                }
-                break;
-                
-            case '6':
-                if (board.canMovePiece(board.currentPiece, 1, 0)) {
-                    board.currentPiece.moveRight();
-                }
-                break;
-                
-            case '7':
-                board.canRotatePiece(board.currentPiece, false);
-                break;
-                
-            case '9':
-                board.canRotatePiece(board.currentPiece, true);
-                break;
-                
-            default:
-                break;
+            case '4' -> {if (board.canMovePiece(board.currentPiece, -1, 0)) 
+                            board.currentPiece.moveLeft();}
+            case '6' -> {if (board.canMovePiece(board.currentPiece, 1, 0)) 
+                            board.currentPiece.moveRight();}
+            case '7' -> board.canRotatePiece(board.currentPiece, false);
+            case '9' -> board.canRotatePiece(board.currentPiece, true);
         }
     }
     
@@ -80,7 +64,6 @@ public class TetrisGame {
             System.out.println("Score: " + score);
             System.out.println();
             System.out.print("Comando (4=izq, 6=der, 7=rotar↺, 9=rotar↻): ");
-            
             String input = scanner.nextLine().trim();           
             processUserInput(input);
             
