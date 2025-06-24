@@ -102,10 +102,9 @@ public class Board {
         for (int i = height - 1; i >= 0; i--) {
             boolean isComplete = true;
 
-            for (int j = 0; j < width; j++) {
+            for (int j = 0; j < width && isComplete; j++ ) {
                 if (grid[i][j] == '.') {
                     isComplete = false;
-                    break;
                 }
             }
 
@@ -153,6 +152,7 @@ public class Board {
             }
         }
 
+        console.clearScreen();
         console.writeln("<!" + "=".repeat(((width+2)*2)-1) + "!>");
         for (int i = 0; i < height; i++) {
             console.write("<!  ");

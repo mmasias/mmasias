@@ -38,26 +38,10 @@ public class Tetris {
         }
     }
     
-    private void showInstructions() {
-        console.writeln("CONTROLES");
-        console.writeln("4     : Mover izquierda");
-        console.writeln("6     : Mover derecha");
-        console.writeln("7     : Rotar levógiro (antihorario)");
-        console.writeln("9     : Rotar dextrógiro (horario)");
-        console.writeln("Enter : Pasar turno");
-        console.writeln("-".repeat(20));
-        console.writeln();
-    }
-    
     public void gameLoop() {
-        showInstructions();
-        spawnNewPiece();
-        
-        while (gameRunning) {
-            for (int i = 0; i < 50; i++) {
-                System.out.println();
-            }
-            
+    
+        spawnNewPiece();    
+        while (gameRunning) {          
             board.display();
             String input = console.readString("Score: " + score + "\n\nComando (4=izq, 6=der, 7=rotar↺, 9=rotar↻): ");
             processUserInput(input);
