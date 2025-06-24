@@ -1,17 +1,9 @@
 {
     "java.project.sourcePaths": [
-        "UNEATLANTICO/eda1/refactoring/src/v002",
-        "UNEATLANTICO/eda1/refactoring/src/v001",
-        "UNEATLANTICO/eda1/refactoring/src/spotifyV002",
-        "UNEATLANTICO/eda1/refactoring/src/spotifyV001",
         "UNEATLANTICO/eda1/refactoring/src/spotify/v002",
-        "UNEATLANTICO/eda1/refactoring/src/spotify/v001",
-        "UNEATLANTICO/eda1/refactoring/src/spotify-r002",
-        "UNEATLANTICO/eda1/refactoring/src/spotify-r001",
-        "UNEATLANTICO/eda1/refactoring/spotify-r002",
-        "UNEATLANTICO/eda1/refactoring/spotify-r001",
+        "UNEATLANTICO/eda1/refactoring/src",
         "UNEATLANTICO/eda1/generosMusicales/src",
-        "UNEATLANTICO/eda1/refactoring/src"
+        "UNEATLANTICO/prg2/tetris"
     ],
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#66b2ff",

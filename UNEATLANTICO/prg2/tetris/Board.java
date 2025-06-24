@@ -2,12 +2,14 @@ public class Board {
     private char[][] grid;
     private int width;
     private int height;
-    Piece currentPiece;
+    private Piece currentPiece;
+    private Console console;
 
-    public Board(int width, int height) {
+    public Board(int width, int height, Console console) {
         this.width = width;
         this.height = height;
         this.grid = new char[height][width];
+        this.console = console;
         clearBoard();
     }
 
@@ -23,6 +25,10 @@ public class Board {
         this.currentPiece = piece;
         piece.getPosition().setX(width / 2 - piece.getShape()[0].length / 2);
         piece.getPosition().setY(0);
+    }
+
+    public Piece getCurrentPiece(){
+        return currentPiece;
     }
 
     public boolean canMovePiece(Piece piece, int deltaX, int deltaY) {
@@ -95,6 +101,7 @@ public class Board {
 
         for (int i = height - 1; i >= 0; i--) {
             boolean isComplete = true;
+
             for (int j = 0; j < width; j++) {
                 if (grid[i][j] == '.') {
                     isComplete = false;
@@ -146,15 +153,15 @@ public class Board {
             }
         }
 
-        System.out.println("<!=======================!>");
+        console.writeln("<!" + "=".repeat(((width+2)*2)-1) + "!>");
         for (int i = 0; i < height; i++) {
-            System.out.print("<!  ");
+            console.write("<!  ");
             for (int j = 0; j < width; j++) {
-                System.out.print(displayGrid[i][j] + " ");
+                console.write(displayGrid[i][j] + " ");
             }
-            System.out.println(" !>");
+            console.writeln(" !>");
         }
-        System.out.println("<!=======================!>");
-        System.out.println("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/");
+        console.writeln("<!" + "=".repeat(((width+2)*2)-1) + "!>");
+        console.writeln("\\/".repeat(width+4));
     }
 }
