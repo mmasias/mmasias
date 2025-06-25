@@ -45,21 +45,23 @@ Desarrollar tres superpoderes que te harán destacar:
 - Graba sonidos interesantes y explica por qué te llaman la atención
 
 ### Miércoles: "Día de Revisión Inteligente" (15 minutos)
-**Objetivo**: Desarrollar tu superpoder anti-despistes
+**Objetivo**: Desarrollar tu superpoder anti-despistes y maestría en entregas
 
 **La Rutina del Miércoles:**
 1. **Revisa tu agenda**: ¿Qué tienes pendiente? ¿Qué has logrado?
-2. **Planifica el resto de la semana**: ¿Qué materiales necesitarás?
-3. **Haz tu "Checklist Personal"**: Una lista de verificación que te ayude a no olvidar nada
-4. **Reflexiona**: ¿Cómo te has sentido esta semana? ¿Qué ha funcionado mejor?
+2. **Gestión de Entregas**: Practica identificar fechas límite y calcular cuánto tiempo necesitas
+3. **Planifica el resto de la semana**: ¿Qué materiales necesitarás?
+4. **Haz tu "Checklist Personal"**: Una lista de verificación que te ayude a no olvidar nada
+5. **Reflexiona**: ¿Cómo te has sentido esta semana? ¿Qué ha funcionado mejor?
 
-### Domingo: "Planificación de Campeón" (10 minutos)
-**Objetivo**: Empezar cada semana con todo controlado
+### Domingo: "Planificación de Campeón" (15 minutos)
+**Objetivo**: Empezar cada semana con todo controlado y sin sorpresas de última hora
 
-- Revisa la semana que viene
+- **Revisa fechas de entrega**: ¿Hay algo que vence la próxima semana?
+- **Método "Trabajo hacia atrás"**: Si algo se entrega el viernes, programa cuándo empezar
 - Prepara los materiales que necesitarás
 - Establece una pequeña meta semanal
-- Programa recordatorios para entregas importantes
+- **Crea tu "Agenda de Entregas"**: Una lista visual de todo lo que tienes pendiente con fechas
 
 ## 🎮 Tu Proyecto Personal (Opcional pero Divertido)
 
@@ -88,12 +90,15 @@ Elige algo que realmente te emocione y trabaja en ello durante las tardes o fine
 - Qué vas a hacer cada día
 - Qué tareas completaste
 - Cómo te sentiste haciéndolo
-- Fechas importantes que no puedes olvidar
+- **Fechas importantes con sistema de colores**: Rojo (muy urgente), Amarillo (importante), Verde (puede esperar)
+- **Planificación inversa**: Si algo se entrega el viernes, ¿cuándo debo empezar?
 
-### Sistema Anti-Despistes
+### Sistema Anti-Despistes y Maestro de Entregas
 **Crea tu propia checklist:**
 - Lista de materiales por asignatura
-- Recordatorios de entregas
+- **Calendario de entregas**: Practica anotar fechas límite y trabajar hacia atrás
+- **Regla de los 3 días**: Siempre termina las tareas 3 días antes de la fecha límite
+- **Sistema de alertas**: Pon recordatorios 1 semana antes, 3 días antes y 1 día antes
 - Rutina de "antes de salir de casa"
 - Rutina de "antes de ir a clase"
 
