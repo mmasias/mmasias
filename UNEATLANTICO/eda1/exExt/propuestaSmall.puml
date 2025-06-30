@@ -1,0 +1,21 @@
+@startuml
+
+!define ENTITY class
+!define LIST_RELATION o--
+!define COMPOSITION_RELATION *--
+
+Examen COMPOSITION_RELATION Estudiante
+Examen LIST_RELATION Pregunta : contiene >
+
+BancoPreguntas LIST_RELATION Pregunta : almacena >
+ListaEstudiantes LIST_RELATION Estudiante : gestiona >
+
+RegistroTrazabilidad LIST_RELATION AsignacionPregunta : mantiene >
+AsignacionPregunta LIST_RELATION Estudiante : referencia >
+AsignacionPregunta LIST_RELATION Pregunta : referencia >
+
+GeneradorExamenes COMPOSITION_RELATION BancoPreguntas : usa >
+GeneradorExamenes COMPOSITION_RELATION ListaEstudiantes : usa >
+GeneradorExamenes COMPOSITION_RELATION RegistroTrazabilidad : usa >
+
+@enduml

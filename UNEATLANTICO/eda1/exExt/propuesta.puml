@@ -1,0 +1,107 @@
+@startuml
+
+!define ENTITY class
+!define LIST_RELATION o--
+!define COMPOSITION_RELATION *--
+
+ENTITY Pregunta {
+    - id: int
+    - enunciado: String
+    - opcionA: String
+    - opcionB: String
+    - opcionC: String
+    - opcionD: String
+    - respuestaCorrecta: char
+    - tema: String
+    - dificultad: int
+    + Pregunta(id: int, enunciado: String, opciones: String[], correcta: char)
+    + getId(): int
+    + getEnunciado(): String
+    + getTema(): String
+    + esCorrecta(respuesta: char): boolean
+}
+
+ENTITY Estudiante {
+    - id: String
+    - nombre: String
+    - seccion: String
+    + Estudiante(id: String, nombre: String, seccion: String)
+    + getId(): String
+    + getNombre(): String
+    + getSeccion(): String
+}
+
+ENTITY Examen {
+    - estudiante: Estudiante
+    - preguntas: List<Pregunta>
+    - fechaGeneracion: Date
+    + Examen(estudiante: Estudiante)
+    + agregarPregunta(pregunta: Pregunta): void
+    + getPreguntas(): List<Pregunta>
+    + getEstudiante(): Estudiante
+    + getTamaño(): int
+}
+
+ENTITY BancoPreguntas {
+    - preguntas: List<Pregunta>
+    - indiceDistribucion: int
+    + BancoPreguntas()
+    + agregarPregunta(pregunta: Pregunta): void
+    + obtenerPreguntasPorTema(tema: String): List<Pregunta>
+    + obtenerSiguientesPreguntas(cantidad: int): List<Pregunta>
+    + getTotalPreguntas(): int
+    + reiniciarDistribucion(): void
+}
+
+ENTITY ListaEstudiantes {
+    - estudiantes: List<Estudiante>
+    + ListaEstudiantes()
+    + agregarEstudiante(estudiante: Estudiante): void
+    + buscarEstudiante(id: String): Estudiante
+    + obtenerTodosLosEstudiantes(): List<Estudiante>
+    + getTotalEstudiantes(): int
+}
+
+ENTITY RegistroTrazabilidad {
+    - asignaciones: List<AsignacionPregunta>
+    + RegistroTrazabilidad()
+    + registrarAsignacion(estudiante: Estudiante, pregunta: Pregunta): void
+    + obtenerPreguntasDeEstudiante(estudiante: Estudiante): List<Pregunta>
+    + obtenerEstudiantesConPregunta(pregunta: Pregunta): List<Estudiante>
+}
+
+ENTITY AsignacionPregunta {
+    - estudiante: Estudiante
+    - pregunta: Pregunta
+    - fechaAsignacion: Date
+    + AsignacionPregunta(estudiante: Estudiante, pregunta: Pregunta)
+    + getEstudiante(): Estudiante
+    + getPregunta(): Pregunta
+}
+
+ENTITY GeneradorExamenes {
+    - bancoPreguntas: BancoPreguntas
+    - listaEstudiantes: ListaEstudiantes
+    - registro: RegistroTrazabilidad
+    - preguntasPorExamen: int
+    + GeneradorExamenes(banco: BancoPreguntas, estudiantes: ListaEstudiantes)
+    + generarExamenPara(estudiante: Estudiante): Examen
+    + generarTodosLosExamenes(): List<Examen>
+    + configurarPreguntasPorExamen(cantidad: int): void
+}
+
+Examen COMPOSITION_RELATION Estudiante
+Examen LIST_RELATION Pregunta : contiene >
+
+BancoPreguntas LIST_RELATION Pregunta : almacena >
+ListaEstudiantes LIST_RELATION Estudiante : gestiona >
+
+RegistroTrazabilidad LIST_RELATION AsignacionPregunta : mantiene >
+AsignacionPregunta LIST_RELATION Estudiante : referencia >
+AsignacionPregunta LIST_RELATION Pregunta : referencia >
+
+GeneradorExamenes COMPOSITION_RELATION BancoPreguntas : usa >
+GeneradorExamenes COMPOSITION_RELATION ListaEstudiantes : usa >
+GeneradorExamenes COMPOSITION_RELATION RegistroTrazabilidad : usa >
+
+@enduml
