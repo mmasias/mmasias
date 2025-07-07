@@ -53,6 +53,8 @@ Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿
 
 > ¿Innovación? [Por acá por favor](https://docs.google.com/presentation/d/1DVgF_6Gcah3kXjft_soy8DPOWgy62u-KTZbFQNEcLOE/edit?usp=sharing), pero solo si hace falta...
 
+> [Ay AI...](https://github.com/mmasias/ai-prompts/blob/main/documentos/itinerarios/itinerarioCPICCR.md)
+
 # Manifiesto cluetrain
 
 [95 tesis](https://web.archive.org/web/19990828010639/http://tremendo.com/cluetrain/) que conviene revisar de vez en cuando
