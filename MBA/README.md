@@ -8,7 +8,7 @@
 
 ## Presentación(es)
 
-- Me presento: [Manuel Masías](https://www.linkedin.com/in/mmasias/) [![manuel@masiasweb.com](../imagenes/Gmail-icon-16x16.png)](mailto:manuel@masiasweb.com)  [![](../imagenes/twitter-icon-16x16.png)](https://twitter.com/mmasias)  [![](../imagenes/linkedin-icon-16x16.png)](https://www.linkedin.com/in/mmasias/), [Ing. Industrial y de Sistemas por UDEP](https://www.udep.edu.pe/ingenieria/carrera/ingenieria-industrial-y-de-sistemas/) - Universidad de [Piura](https://es.wikipedia.org/wiki/Piura). Dr. en Proyectos por la [Universidad Internacional Iberoamericana](https://www.unib.org/).
+- Me presento: Manuel [![](https://img.shields.io/badge/--FFF?style=flat&logo=gmail&logoColor=black)](mailto:manuel@masiasweb.com) [![](https://img.shields.io/badge/--FFF?style=flat&logo=X&logoColor=black)](https://twitter.com/mmasias) [![](https://img.shields.io/badge/--FFF?style=flat&logo=GitHub&logoColor=black)](https://github.com/mmasias) [![](https://img.shields.io/badge/-In-FFF?style=flat)](https://www.linkedin.com/in/mmasias/), [Ing. Industrial y de Sistemas por UDEP](https://www.udep.edu.pe/ingenieria/carrera/ingenieria-industrial-y-de-sistemas/) - Universidad de [Piura](https://es.wikipedia.org/wiki/Piura). Dr. en Proyectos por la [Universidad Internacional Iberoamericana](https://www.unib.org/).
 - ¿Nos presentamos?
 
 # MBA
