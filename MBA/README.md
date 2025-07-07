@@ -41,8 +41,6 @@ Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿
 
 [Otra sencilla presentación...](https://docs.google.com/presentation/d/1PxBcCihyPK1mwv9PErElJVNbQcRhRhwyPoZAv-U_Ees/edit?usp=sharing)
 
-> ¿Innovación? [Por acá por favor](https://docs.google.com/presentation/d/1DVgF_6Gcah3kXjft_soy8DPOWgy62u-KTZbFQNEcLOE/edit?usp=sharing), pero solo si hace falta...
-
 > [Ay AI...](https://github.com/mmasias/ai-prompts/blob/main/documentos/itinerarios/itinerarioCPICCR.md)
 
 <dv align=center>
