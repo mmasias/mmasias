@@ -40,9 +40,9 @@ El entorno es tan cambiante, que incluso definiciones como [VUCA (Volatilidad, i
 
 ### VUCA y BANI *(extraido de [Quint](https://www.quintgroup.com/es-es/insights/adios-vuca-bienvenido-bani/))*
 > Pensadores como [Jamais Cascio](https://es.wikipedia.org/wiki/Jamais_Cascio), miembro del Instituto de Estudios del Futuro y uno de los Top 100 Global Thinkers de la revista Foreign Policy, plantea la necesidad de sustituir o complementar el marco conceptual que aporta la fórmula V.U.C.A. (por considerarse insuficiente) por otro nuevo que nos ayude a encontrar sentido, aceptar y orientar nuestras acciones en un mundo de caos. En palabras de Cascio, “un marco que nos permita ilustrar la escala de las disrupciones, el caos en curso y qué tipo de respuestas serían útiles”. 
-
+>
 > Cascio defiende que el acrónimo V.U.C.A. (Volátil, Incierto, Complejo, Ambiguo) se ha quedado obsoleto. Por ello, dio vida al acrónimo BANI, un término compuesto por las iniciales de las palabras inglesas Brittle (quebradizo), Anxious (que genera ansiedad), Non-linear (no lineal) e Incomprehensible (incomprensible). 
-
+>
 > Al ser frágil, estar ansiosos por encontrar la solución y ser no lineal se torna impenetrable y lo hace más frágil, nos pone más ansiosos y provoca menor linealidad (Shutterstock)
 
 Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿Miedo a lo desconocido?](https://docs.google.com/presentation/d/1O6AF3OdhmQ2Zd6KPyKDRTYZ39V2jJWZ6ZnulcDFyVKQ/edit?usp=sharing))*
