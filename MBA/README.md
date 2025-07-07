@@ -43,7 +43,7 @@ Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿
 
 > [Ay AI...](https://github.com/mmasias/ai-prompts/blob/main/documentos/itinerarios/itinerarioCPICCR.md)
 
-<dv align=center>
+<div align=center>
 
 |TE|TR|I|S|
 |-|-|-|-|
