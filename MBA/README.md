@@ -55,30 +55,22 @@ Pero en el fondo, es algo más de lo mismo. *(¿Patrones / Recursividad?)* *([¿
 
 > [Ay AI...](https://github.com/mmasias/ai-prompts/blob/main/documentos/itinerarios/itinerarioCPICCR.md)
 
-# Manifiesto cluetrain
+|TE|TR|I|S|
+|-|-|-|-|
+|Tecnología|Transformación|Innovación|Sociedad|
+
+## Manifiesto cluetrain
 
 [95 tesis](https://web.archive.org/web/19990828010639/http://tremendo.com/cluetrain/) que conviene revisar de vez en cuando
 
 - Reflexionemos sobre algunas de ellas...
 
-# Dinámica de "La idea", parte I
-
-- Grupos de 3 personas, pensar una idea
-- Vender idea en formato elevator pitch
-- Votemos
-
-# TETRIS
-
-- **TE**cnología
-- **TR**ansformación
-- **I**nnovación
-- **S**ociedad
-
 [Y una sencilla presentación más...](https://docs.google.com/presentation/d/1qQXZE0g10PZHzisHxJbp32Dkxx9gktXhPHh3fNLmgDs/edit?usp=sharing)
 
-## Dinámica de "La idea", parte II
-
-- ;)
-# pyNutriber
+## pyNutriber
 
 - Si nos da el tiempo, [lo comentamos](https://docs.google.com/presentation/d/0B0tHzaS3tbKpLTlJREpFa2xXM0k/edit?usp=sharing&ouid=109884286478208474474&resourcekey=0-VIZ2KaCLuVfvuTRnbYFYAQ&rtpof=true&sd=true).
+
+## De LLMs va el mundo...
+
+- [Pequeñas anécdotas sobre los LLMs](https://github.com/mmasias/ai-prompts/tree/main?tab=readme-ov-file#peque%C3%B1as-an%C3%A9cdotas-sobre-la-ia)
