@@ -1,0 +1,223 @@
+@startuml
+
+class Blues {
+  + características
+  + artistas[]
+  + influencia
+}
+
+class Jazz {
+  + origen
+  + características
+  + evolución
+}
+
+class Country {
+  + instrumentos[]
+  + temas[]
+  + regiones[]
+}
+
+class Folk {
+  + tradiciones[]
+  + narrativa
+  + instrumentos[]
+}
+
+class RnB {
+  + ritmo
+  + vocales
+  + instrumentación
+}
+
+class Soul {
+  + expresión
+  + gospel_influence
+  + artistas_clave[]
+}
+
+class DooWop {
+  + armonías
+  + estructura
+  + época
+}
+
+class RockBilly {
+  + fusión
+  + tempo
+  + artistas[]
+}
+
+class FolkRock {
+  + mensaje_social
+  + instrumentos_eléctricos
+  + lírica
+}
+
+class BritInvasion {
+  + bandas[]
+  + sonido
+  + impacto_cultural
+}
+
+class PsychedelicRock {
+  + experimentación
+  + efectos_sonoros[]
+  + cultura_contracultura
+}
+
+class HardRock {
+  + volumen
+  + guitarras_distorsionadas
+  + energía
+}
+
+class ProgRock {
+  + complejidad
+  + conceptos_álbum
+  + virtuosismo
+}
+
+class Punk {
+  + rebeldía
+  + simplicidad
+  + actitud
+}
+
+class NewWave {
+  + sintetizadores
+  + estética
+  + comercialización
+}
+
+class Metal {
+  + subgéneros[]
+  + intensidad
+  + técnica
+}
+
+class GlitterGlam {
+  + teatralidad
+  + androginia
+  + espectáculo
+}
+
+class Disco {
+  + ritmo_bailable
+  + producción
+  + cultura_club
+}
+
+class Funk {
+  + groove
+  + bajo_prominente
+  + sincronización
+}
+
+class HipHop {
+  + rap
+  + beats
+  + cultura_urbana
+}
+
+class Electronic {
+  + sintetizadores
+  + programación
+  + tecnología
+}
+
+class Alternative {
+  + independiente
+  + diversidad
+  + anti_mainstream
+}
+
+class Grunge {
+  + Seattle
+  + distorsión
+  + actitud_anti_glam
+}
+
+class IndiePop {
+  + producción_independiente
+  + melodías
+  + sensibilidad
+}
+
+class Emo {
+  + emocional
+  + confesional
+  + subcultura
+}
+
+class PostPunk {
+  + experimentación
+  + art_rock_influence
+  + diversidad_sonora
+}
+
+class NewMetal {
+  + fusión_géneros
+  + agresividad
+  + modernidad
+}
+
+class PostRock {
+  + instrumental
+  + atmósferas
+  + construcción_dinámica
+}
+
+class IndieMetal {
+  + fusión
+  + independencia
+  + innovación
+}
+
+' COMPOSICIÓN (◆) - El género hijo no puede existir sin el padre
+Blues *-- RnB : compone
+Country *-- RockBilly : compone
+Folk *-- FolkRock : compone
+RnB *-- Soul : compone
+Soul *-- DooWop : compone
+BritInvasion *-- HardRock : compone
+PsychedelicRock *-- ProgRock : compone
+HardRock *-- Metal : compone
+Soul *-- Funk : compone
+Funk *-- HipHop : compone
+Alternative *-- Grunge : compone
+Alternative *-- IndiePop : compone
+PostPunk *-- Emo : compone
+
+' AGREGACIÓN (◇) - El género hijo puede existir independientemente
+Blues o-- RockBilly : contiene
+Jazz o-- Blues : contiene
+HardRock o-- Punk : contiene
+Punk o-- NewWave : contiene
+Punk o-- PostPunk : contiene
+NewWave o-- Alternative : contiene
+Metal o-- NewMetal : contiene
+Soul o-- Disco : contiene
+Disco o-- Electronic : contiene
+Electronic o-- Alternative : contiene
+Alternative o-- PostRock : contiene
+Metal o-- IndieMetal : contiene
+
+' ASOCIACIÓN (—) - Géneros que evolucionan juntos o se relacionan
+FolkRock -- BritInvasion : coexisten
+BritInvasion -- PsychedelicRock : coexisten
+HardRock -- GlitterGlam : coexisten
+Punk -- GlitterGlam : coexisten
+NewWave -- Electronic : coexisten
+HipHop -- Electronic : coexisten
+
+' DEPENDENCIA/USO (- - >) - Un género usa elementos de otro sin contenerlo
+Blues ..> Jazz : usa_elementos
+Country ..> Folk : usa_elementos
+Funk ..> Electronic : usa_elementos
+HipHop ..> Electronic : usa_elementos
+Punk ..> Metal : usa_elementos
+ProgRock ..> PostRock : usa_elementos
+GlitterGlam ..> NewWave : usa_elementos
+
+@enduml
