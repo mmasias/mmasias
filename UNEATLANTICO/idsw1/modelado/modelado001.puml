@@ -1,0 +1,9 @@
+@startuml
+class Horario {
+}
+
+class BloqueHorario {
+}
+
+Horario *-- BloqueHorario : compuesto por
+@enduml
