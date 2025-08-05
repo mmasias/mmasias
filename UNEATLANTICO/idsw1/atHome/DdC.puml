@@ -39,6 +39,17 @@ hide circle
         enviarAudio()
     }
     
+
+    package INSTRUMENTOS {
+
+    class Teclado
+    class Guitarra
+    class Micrófono
+        
+    }
+
+        Ordenador <-d- INSTRUMENTOS : envia señal
+
     FuenteAudio <|-- Tocadiscos
     FuenteAudio <|-- Ordenador
     FuenteAudio -r--> Amplificador : envía señal

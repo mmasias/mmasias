@@ -1,0 +1,39 @@
+@startuml
+
+[*] --> Espresso : agregarCafe()
+[*] --> LecheCaliente : calentarLeche()
+
+Espresso --> Americano : agregarAgua()
+Espresso --> Doble : agregarCafe()
+Espresso --> Macchiato : agregarEspuma(poca)
+Espresso --> EspressoPanna : agregarCremaBatida()
+Espresso --> Cortado : agregarLeche(poca)
+Espresso --> Lagrima : agregarLeche(mucha)
+Espresso --> Arabe : agregarEspecias()
+
+Espresso --> Irlandes : agregarWhisky()\nagregarCremaBatida()
+Espresso --> Caribeno : agregarRon()\nagregarEspecias()\nagregarVainilla()
+
+Cortado --> CafeConLeche : agregarLeche(mas)
+
+CafeConLeche --> Cappuchino : agregarEspuma(mucha)
+CafeConLeche --> Mocha : agregarChocolate()
+CafeConLeche --> CaramelMacchiato : agregarCaramelo()
+CafeConLeche --> Hawaiano : agregarCoco()
+
+Mocha --> MochaVienes : agregarCanela()
+
+Lagrima --> CafeLatte : agregarEspuma(poca)
+Lagrima --> QuitafrioWhisky : agregarLicor(whisky)\nagregarMiel()\nagregarEspecias()
+Lagrima --> QuitafrioRon : agregarLicor(ron)\nagregarMiel()\nagregarEspecias()
+
+Lagrima --> Breve : agregarCrema()\nagregarEspuma(poca)
+
+Hawaiano --> CafeAmaretto : agregarLicor(amaretto)
+
+LecheCaliente --> Submarino : agregarBarraDeChocolate()
+LecheCaliente --> LagrimaAlt : agregarCafe(poco)
+
+LagrimaAlt --> Lagrima
+
+@enduml
