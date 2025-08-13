@@ -147,6 +147,38 @@ Que esto de la muerte no es drama o misterio:
 total de morirse aún nadie se ha muerto...
 ```
 
+### Caín
+
+```markdown
+Lluvia de abril, dogma de fe.
+Sin descansar sigo por hoy.
+Al discutir la reflexión
+dejé de oír a la razón
+
+Y hoy también soñé (x2)
+
+Tanto ignorar sin dirección
+tiende a alargar algo que sé:
+Todo el azul ya lo tiré.
+Nunca entendí lo que encontré.
+
+Y hoy también soñé (x2)
+
+Al contestar sin responder
+más de una vez sentí temor.
+Sé que no lo van a entender
+porque mi cruz llegó después.
+
+Y hoy también soñé (x2)
+
+La fraternal rabia infantil
+A su señal impartiré.
+Tú ya no estás; ellos, no sé.
+Mañana yo ya no estaré
+
+Y hoy también soñé (x2)
+```
+
 ### 27, y sigue...
 
 <img src="../imagenes/27ySigue.png" align=right width=30%>
