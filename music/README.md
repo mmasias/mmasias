@@ -1,14 +1,8 @@
 # Fábulas sin moraleja
 
-<div align=center>
+Ocho cuentos nocturnos (y una coda) sin redención.
 
-||Reseñas|
-|-|:-:|
-|*Ocho cuentos nocturnos (y una coda) sin redención*|[*1*](analisis.md) - [*2*](analisis2.md) - [*3*](analisis3.md)|
-
-<img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
-
-</div>
+Un album de *Morgan Bill*
 
 ## Temas
 
@@ -181,8 +175,6 @@ Y hoy también soñé (x2)
 
 ### 27, y sigue...
 
-<img src="../imagenes/27ySigue.png" align=right width=30%>
-
 ```markdown
 Se abalanzó a la ventana al llegar la puesta del sol
 y se juró que mañana lo haría un poco peor
@@ -243,8 +235,6 @@ que una línea traiga tu voz
 
 ### Diógenes
 
-<img src="../imagenes/diogenes.png" align=right width=30%>
-
 ```markdown
 Diógenes frota su vientre en la esquina muy cerca a la estación de Sants
 Con sus harapos a cuestas remienda unos sueños que cuestan hilar
@@ -268,3 +258,15 @@ con débil linterna va casi a tientas, no sabe ni porqué se va
 buscando las dudas para sus respuestas, alguna allá encontrará:
 cargó en la mochila sus mejores penas, durmiendo se irá...
 ```
+
+## Reseñas
+
+- [*1*](analisis.md)
+- [*2*](analisis2.md)
+- [*3*](analisis3.md)|
+
+<div align=center>
+
+<img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
+
+</div>
