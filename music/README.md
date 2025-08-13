@@ -259,14 +259,15 @@ buscando las dudas para sus respuestas, alguna allá encontrará:
 cargó en la mochila sus mejores penas, durmiendo se irá...
 ```
 
-## Reseñas
-
-- [*1*](analisis.md)
-- [*2*](analisis2.md)
-- [*3*](analisis3.md)|
+---
 
 <div align=center>
 
 <img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
 
 </div>
+
+
+## Reseñas
+
+[*1*](analisis.md) / [*2*](analisis2.md) / [*3*](analisis3.md) / [*4*](analisis4.md) / [*5*](analisis5.md) / [*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
