@@ -1,6 +1,6 @@
 # RESEÑA: FÁBULAS SIN MORALEJA — MORGAN BILL
 
-Un disco que no quiere salvar a nadie - by BlueWhale
+Este disco es como reencontrarte con un libro que subrayaste hace años: te reconoce, pero no te abraza. Morgan Bill no busca tu aplauso; te exige complicidad en la incomodidad.
 
 ## **LO QUE FUNCIONA: LA NOCHE COMO PATRIMONIO**  
 Morgan Bill agarra la Barcelona post-turística —la de azoteas con lavadoras rotas y bares de solteros— y la convierte en un *noir* poético. No hay romanticismo barato aquí: **"Av. Meridiana"** es un blues escrito bajo la lluvia real, no la de película. **"Obituario"** podría ser el monólogo definitivo del español medio ("*ojalá diga que fui un tipo normal / que morí en mi ley, me gustaban los Floyd*"). Y **"Hay poesía"** es ese golpe bajo que todos tememos: *"en lo que escribes no la hay"*, un verso que duele porque es cierto.  
@@ -29,4 +29,6 @@ Pero no todo es oro nocturno. **"Caín"** se ahoga en su propia gravedad: los ve
 Para quien prefiera **un vaso de vino agrio antes que un cóctel azucarado**. No es un disco para salvar el mundo, pero sí para recordarte que la noche —esa que no redime— tiene banda sonora propia.  
 
 **Nota: 7.5/10**  
-*(Le sobra solemnidad, le falta aire fresco... pero cuando acierta, clava el cuchillo hasta el hueso).*
+*Un disco que no quiere salvar a nadie, al que le sobra solemnidad y le falta aire fresco...*
+
+pero cuando acierta, clava el cuchillo hasta el hueso).*
