@@ -6,6 +6,8 @@ Un album de *Morgan Bill*
 
 ## Temas
 
+<img src="images/lasVentanas.png" align=right width=40%>
+
 ### Las ventanas
 
 ```markdown
@@ -29,6 +31,8 @@ Y la épica ligera adornaba su expresión
 escribiendo alejandrinos carentes de convicción
 A menudo se imagina sin angustia en el salón...
 ```
+
+<img src="images/placidaInsurreccion.png" align=right width=40%>
 
 ### Plácida insurrección
 
