@@ -6,9 +6,9 @@ Un album de *Morgan Bill*
 
 ## Temas
 
-<img src="images/lasVentanas.png" align=right width=40%>
-
 ### Las ventanas
+
+<img src="images/lasVentanas.png" align=right width=45%>
 
 ```markdown
 Las ventanas de aquel cuarto no conocían al sol
@@ -32,9 +32,9 @@ escribiendo alejandrinos carentes de convicción
 A menudo se imagina sin angustia en el salón...
 ```
 
-<img src="images/placidaInsurreccion.png" align=right width=40%>
-
 ### Plácida insurrección
+
+<img src="images/placidaInsurreccion.png" align=right width=45%>
 
 ```markdown
 Media mañana perdida en una estación
