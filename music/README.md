@@ -150,28 +150,28 @@ Sin descansar sigo por hoy.
 Al discutir la reflexión  
 dejé de oír a la razón  
   
-Y hoy también soñé (x2)  
+*Y hoy también soñé*  
   
 Tanto ignorar sin dirección  
 tiende a alargar algo que sé:  
 Todo el azul ya lo tiré.  
 Nunca entendí lo que encontré.  
   
-Y hoy también soñé (x2)  
+*Y hoy también soñé*  
   
 Al contestar sin responder  
 más de una vez sentí temor.  
 Sé que no lo van a entender  
 porque mi cruz llegó después.  
   
-Y hoy también soñé (x2)  
+*Y hoy también soñé*  
   
 La fraternal rabia infantil  
 A su señal impartiré.  
 Tú ya no estás; ellos, no sé.  
 Mañana yo ya no estaré  
   
-Y hoy también soñé (x2)  
+*Y hoy también soñé*  
 
 ### 27, y sigue...
 
@@ -187,7 +187,7 @@ que hace dos años se quedó a las puertas del selecto club
 por un espejo que negó su filo a la oportunidad  
 y le adorno las muñecas con sendas sonrisas sin luz  
   
-Sin luz...  
+*Sin luz...*  
   
 Oye venir a la lluvia como quien espera un favor  
 y se santigua con la convicción del que nunca creyó  
@@ -199,7 +199,7 @@ nota que faltan las flores que ayer por la tarde dejó
 y recogiendo sus pasos vacíos en el Poblenou  
 se hunde en la playa ignorando el frío, la lluvia y a dios  
   
-Y adios...  
+*Y adios...*  
 
 ### Que una línea traiga tu voz
 
@@ -209,29 +209,25 @@ Me duermo cada vez que me levanto
 me caigo y aunque esté a ras de suelo  
 Si vuelo escribo alguna canción  
 y espero que una línea traiga tu voz  
-oh Dios  
-que una línea traiga tu voz  
+*oh Dios: que una línea traiga tu voz*  
   
 Dejaste de discutir en mis sueños  
 me aturde que en tu lugar hay silencios  
 Los lleno con frases por entender  
 me grito que voy a hacerte volver  
-oh Dios  
-que una línea traiga tu voz  
+*oh Dios: que una línea traiga tu voz*  
   
 Arrastro pena inconclusa en mi duelo  
 mi alma se desconoce al espejo  
 El alba duda del amanecer  
 mis cuentos no me logran convencer  
-oh Dios  
-que una línea traiga tu voz  
+*oh Dios: que una línea traiga tu voz*  
   
 Si acepto que no vendrás -de momento-  
 me asusta que ese momento sea eterno  
 quisiera poder heredar tu fe  
 la luna ya no me da su poder  
-oh Dios  
-que una línea traiga tu voz  
+*oh Dios: que una línea traiga tu voz*  
 
 ### Diógenes
 
@@ -245,9 +241,9 @@ afecto estéril imperfecto que la locura no puede quitar...
 Silba en silencio texturas vacías en cuadros que nadie verá  
 las cuelga sin clavos en la sepultura del alma de esta gran ciudad.  
 La luz de la noche -aliada invisible- le indica donde hay que pinchar  
-para que no duela, para que si vuela su voz pueda gritar  
+para que no duela, para que si vuela su voz pueda gritar:  
   
-Ahhhhhhh....  
+*Ahhhhhhh....*  
   
 Habla y refuta los dogmas sagrados a un cirio de cincuenta watts  
 acólito blando de la sacristía del templo de una sociedad  
