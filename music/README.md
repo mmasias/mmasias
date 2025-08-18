@@ -6,6 +6,8 @@ Un album de *Morgan Bill*
 
 ## Temas
 
+<div align=center>
+
 ### Av. Meridiana
 
 Me alcanzó una lluvia fría  
@@ -240,8 +242,6 @@ buscando las dudas para sus respuestas, alguna allá encontrará:
 cargó en la mochila sus mejores penas, durmiendo se irá...  
 
 ---
-
-<div align=center>
 
 |<img src="images/portada.png" width=45%><br>Fábulas sin moraleja
 |:-:
