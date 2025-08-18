@@ -6,29 +6,39 @@ Un album de *Morgan Bill*
 
 ## Temas
 
-### Las ventanas
+### Av. Meridiana
 
-<img src="images/lasVentanas.png" align=right width=45%>
+<img src="images/avMeridiana.png" align=right width=45%>
 
-Las ventanas de aquel cuarto no conocían al sol  
-y los poemas vacíos describían el rincón  
-de un alma atormentada deambulando en el salón  
-al que todos los domingos visitaba la razón...  
+Me alcanzó una lluvia fría  
+paseando en Meridiana  
+y por no mojarte el alma  
+mejor te veo otro día  
   
-La vida le ha vestido de azulado-represión  
-que a menudo se contempla al otro lado del salón  
-Acallar en lo que él cree le inquieta el corazón  
-pendular la ideología que gobierna su nación...  
+Caminando se me pasa  
+y en la calle un apagón  
+sacudió los pensamientos  
+llamando a la inspiración  
   
-Barcelona por las noches no disipa su dolor  
-Aun con todos los colores que su espíritu probó  
-Genuflexas posiciones de lujuria y de oración  
-que a menudo las practica sin angustia en el salón...  
+*Mediqué la redacción*  
+*pero me faltaba luz*  
+*y aunque te hice una canción (un blues)*  
+*no lo pude escribir*  
   
-Convertía sus temores en acordes de canción  
-Y la épica ligera adornaba su expresión  
-escribiendo alejandrinos carentes de convicción  
-A menudo se imagina sin angustia en el salón...  
+Creo que hablaba de las cosas  
+que nos han pasado y junto  
+a tu recuerdo borroso  
+hasta me hizo sonreír  
+  
+Lo que queda escrito ahora  
+lo robé a la memoria  
+y aunque no sea ni su sombra  
+algo tendrá que decir  
+  
+*Luego regresé a mi cuarto*  
+*pues mi cama me dolía*  
+*No me llama la atención*  
+*que mi casa esté vacía*  
 
 ### Plácida insurrección
 
@@ -36,7 +46,7 @@ A menudo se imagina sin angustia en el salón...
 
 Media mañana perdida en una estación  
 por culpa de algún cretino que nunca llegó  
-y que ha dejado sus pasos repasando otros ritmos (varios)  
+y que ha dejado sus pasos repasando otros ritmos varios  
   
 Ha convencido a su alma que la solución  
 pasa por hacer a un lado lo que no pasó  
@@ -56,122 +66,29 @@ Sueña volver a los vicios de la juventud
 esos que años atrás le sentaban tan mal  
 y cuyos puntos finales terminaban en perversos bares  
 
-### Hay poesía
+### Las ventanas
 
-<img src="images/hayPoesia.png" align=right width=45%>
+<img src="images/lasVentanas.png" align=right width=45%>
 
-Hay poesía en tus ojos tan serenos  
-que pasean por mi mundo y lo intentan entender...  
+Las ventanas de aquel cuarto no conocían al sol  
+y los poemas vacíos describían el rincón  
+de un alma atormentada deambulando en el salón  
+al que todos los domingos visitaba la razón...  
   
-Hay poesía en tus modales tan calmados  
-muchas veces me han sonado a un total desinterés...  
+La vida le ha vestido de azulado-represión  
+que a menudo se contempla al otro lado del salón  
+Acallar en lo que él cree le inquieta el corazón  
+pendular la ideología que gobierna su nación...  
   
-Hay poesía en las cosas que a veces te inventas  
-y que dichas a tu modo, prosa parecían ser...  
+Barcelona por las noches no disipa su dolor  
+aún con todos los colores que su espíritu probó  
+Genuflexas posiciones de lujuria y de oración  
+que a menudo las practica sin angustia en el salón...  
   
-Hay poesía en las cosas que no escribes  
-(Eso tiene que ser cierto: en lo que escribes no la hay)  
-  
-Hay poesía en los sábados vacíos  
-en llamadas que me haces que no quiero contestar  
-  
-Hay poesía en nuestras formas de fondo tan absurdo  
-Hay poesía en tu mundo que no quiero perder...  
-
-### Av. Meridiana
-
-<img src="images/avMeridiana.png" align=right width=45%>
-
-Me alcanzó una lluvia fría  
-paseando en Meridiana  
-y por no mojar tu alma   
-ya mejor te veo otro día  
-  
-Caminando se me pasa   
-y en la calle un apagón  
-sacudió los pensamientos   
-llamando a la inspiración  
-  
-*Mediqué la redacción*  
-*pero me faltaba luz*  
-*y aunque te hice una canción (un blues)*  
-*no lo pude escribir*  
-  
-Creo que hablaba de las cosas   
-que nos han pasado y junto  
-a tu recuerdo borroso   
-hasta me hizo sonreír  
-  
-Lo que queda escrito ahora   
-lo apunté de la memoria  
-y aunque no sea ni su sombra   
-algo tendrá que decir  
-  
-*Luego regresé a mi cuarto*  
-*pues mi cama me dolía*  
-*No me llama la atención*  
-*que mi casa esté vacía*  
-
-### Obituario
-
-<img src="images/obituario.png" align=right width=45%>
-
-Anoche que estaba pasado de copas  
-tumbado en la cama, oyendo la radio  
-con luz apagada, ligero de ropas,   
-me dió por pensar en mi obituario...  
-  
-No escrito por mi, algo mal redactado;  
-plantado a pulso en mármol pesado.   
-Supongo dirá que fui bueno y malvado:   
-que toda mi vida quise ser humano...  
-  
-*Y ojalá diga allí: que fui un tipo normal.*  
-*Que morí en mi ley, me gustaban los Floyd.*  
-*Me perdían el rastro cada fin de semana*  
-*Me encontraba los lunes si me daba la gana...*  
-  
-Juntando las frases que me han dedicado   
-no encuentro ninguna que diga "lo siento"  
-será que muy pocos me han perdonado   
-o que mi partida los dejó contentos...  
-  
-Si queda espacio le grito al mundo   
-que me fui cansado de tanto concepto  
-Que esto de la muerte no es drama o misterio:   
-total de morirse aún nadie se ha muerto...  
-
-### Caín
-
-<img src="images/cain.png" align=right width=45%>
-
-Lluvia de abril, dogma de fe.  
-Sin descansar sigo por hoy.  
-Al discutir la reflexión  
-dejé de oír a la razón  
-  
-*Y hoy también soñé*  
-  
-Tanto ignorar sin dirección  
-tiende a alargar algo que sé:  
-Todo el azul ya lo tiré.  
-Nunca entendí lo que encontré.  
-  
-*Y hoy también soñé*  
-  
-Al contestar sin responder  
-más de una vez sentí temor.  
-Sé que no lo van a entender  
-porque mi cruz llegó después.  
-  
-*Y hoy también soñé*  
-  
-La fraternal rabia infantil  
-A su señal impartiré.  
-Tú ya no estás; ellos, no sé.  
-Mañana yo ya no estaré  
-  
-*Y hoy también soñé*  
+Convertía sus temores en acordes de canción  
+y la épica ligera adornaba su expresión  
+escribiendo alejandrinos carentes de convicción  
+A menudo se imagina sin angustia en el salón...  
 
 ### 27, y sigue...
 
@@ -200,6 +117,89 @@ y recogiendo sus pasos vacíos en el Poblenou
 se hunde en la playa ignorando el frío, la lluvia y a dios  
   
 *Y adios...*  
+
+### Hay poesía
+
+<img src="images/hayPoesia.png" align=right width=45%>
+
+Hay poesía en tus ojos tan serenos  
+que pasean por mi mundo y lo intentan entender...  
+  
+Hay poesía en tus modales tan calmados  
+muchas veces me han sonado a un total desinterés...  
+  
+Hay poesía en las cosas que a veces te inventas  
+y que dichas a tu modo, prosa parecían ser...  
+  
+Hay poesía en las cosas que no escribes  
+(eso tiene que ser cierto: en lo que escribes no la hay)  
+  
+Hay poesía en los sábados vacíos  
+en llamadas que me haces que no quiero contestar  
+  
+Hay poesía en nuestras formas de fondo tan absurdo  
+Hay poesía en tu mundo que no quiero perder...  
+
+### Obituario
+
+<img src="images/obituario.png" align=right width=45%>
+
+Anoche que estaba pasado de copas  
+tumbado en la cama, oyendo la radio  
+con luz apagada, ligero de ropas,  
+me dió por pensar en mi obituario...  
+  
+No escrito por mi, algo mal redactado;  
+plantado a pulso en mármol pesado.  
+Supongo dirá que fui bueno y malvado:  
+que toda mi vida quise ser humano...  
+  
+*Y ojalá diga así: que fui un tipo normal.*  
+*Que morí en mi ley, me gustaban los Floyd.*  
+*Me perdían el rastro cada fin de semana*  
+*Me encontraba los lunes si me daba la gana...*  
+  
+Juntando las frases que me han dedicado  
+no encuentro ninguna que diga "lo siento"  
+será que muy pocos me han perdonado  
+o que mi partida los dejó contentos...  
+  
+Si queda espacio le grito al mundo  
+que me fui cansado de tanto concepto  
+Que esto de la muerte no es drama o misterio:  
+total de morirse aún nadie se ha muerto...  
+
+### Caín
+
+<img src="images/cain.png" align=right width=45%>
+
+Lluvia de abril, dogma de fe.  
+Sin descansar sigo por hoy.  
+Al discutir la reflexión  
+dejé de oír a la razón  
+  
+*Y hoy también soñé*  
+  
+Tanto ignorar sin dirección  
+tiende a alargar algo que sé:  
+Todo el azul ya lo tiré.  
+Nunca entendí lo que encontré.  
+  
+*Y hoy también soñé*  
+  
+Al contestar sin responder  
+más de una vez sentí temor.  
+Sé que no lo van a entender  
+porque mi cruz llegó después.  
+  
+*Y hoy también soñé*  
+  
+La fraternal rabia infantil  
+A una señal impartiré.  
+Tú ya no estás; ellos, no sé.  
+Mañana yo ya no estaré  
+  
+*Y hoy también soñé*  
 
 ### Que una línea traiga tu voz
 
