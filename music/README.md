@@ -247,16 +247,16 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 <div align=center>
 
-|<img src="images/portada.png" width=45%>
+|<img src="images/portada.png" width=45%><br>Fábulas sin moraleja
 |:-:
-|<img src="images/avMeridiana.png" width=45%>
-|<img src="images/placidaInsurreccion.png" width=45%>
-|<img src="images/lasVentanas.png" width=45%>
-|<img src="images/27ySigue.png" width=45%>
-|<img src="images/hayPoesia.png" width=45%>
-|<img src="images/obituario.png" width=45%>
-|<img src="images/cain.png" width=45%>
-|<img src="images/queUnaLineaTraigaTuVoz.png" width=45%>
-|<img src="images/diogenes.png" width=45%>
+|<img src="images/avMeridiana.png" width=45%><br>Av. Meridiana
+|<img src="images/placidaInsurreccion.png" width=45%><br>Plácida insurrección
+|<img src="images/lasVentanas.png" width=45%><br>Las ventanas
+|<img src="images/27ySigue.png" width=45%><br>27 y sigue...
+|<img src="images/hayPoesia.png" width=45%><br>Hay poesía
+|<img src="images/obituario.png" width=45%><br>Obituario
+|<img src="images/cain.png" width=45%><br>Caín
+|<img src="images/queUnaLineaTraigaTuVoz.png" width=45%><br>Que una línea traiga tu voz
+|<img src="images/diogenes.png" width=45%><br>Diógenes
 
 </div>
