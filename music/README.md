@@ -8,8 +8,6 @@ Un album de *Morgan Bill*
 
 ### Av. Meridiana
 
-<img src="images/avMeridiana.png" align=right width=45%>
-
 Me alcanzó una lluvia fría  
 paseando en Meridiana  
 y por no mojarte el alma  
@@ -42,8 +40,6 @@ algo tendrá que decir
 
 ### Plácida insurrección
 
-<img src="images/placidaInsurreccion.png" align=right width=45%>
-
 Media mañana perdida en una estación  
 por culpa de algún cretino que nunca llegó  
 y que ha dejado sus pasos repasando otros ritmos varios  
@@ -68,8 +64,6 @@ y cuyos puntos finales terminaban en perversos bares
 
 ### Las ventanas
 
-<img src="images/lasVentanas.png" align=right width=45%>
-
 Las ventanas de aquel cuarto no conocían al sol  
 y los poemas vacíos describían el rincón  
 de un alma atormentada deambulando en el salón  
@@ -90,9 +84,9 @@ y la épica ligera adornaba su expresión
 escribiendo alejandrinos carentes de convicción  
 A menudo se imagina sin angustia en el salón...  
 
-### 27, y sigue...
 
-<img src="images/27ySigue.png" align=right width=45%>
+
+### 27, y sigue...
 
 Se abalanzó a la ventana al llegar la puesta del sol  
 y se juró que mañana lo haría un poco peor  
@@ -120,8 +114,6 @@ se hunde en la playa ignorando el frío, la lluvia y a dios
 
 ### Hay poesía
 
-<img src="images/hayPoesia.png" align=right width=45%>
-
 Hay poesía en tus ojos tan serenos  
 que pasean por mi mundo y lo intentan entender...  
   
@@ -141,8 +133,6 @@ Hay poesía en nuestras formas de fondo tan absurdo
 Hay poesía en tu mundo que no quiero perder...  
 
 ### Obituario
-
-<img src="images/obituario.png" align=right width=45%>
 
 Anoche que estaba pasado de copas  
 tumbado en la cama, oyendo la radio  
@@ -170,8 +160,6 @@ Que esto de la muerte no es drama o misterio:
 total de morirse aún nadie se ha muerto...  
 
 ### Caín
-
-<img src="images/cain.png" align=right width=45%>
 
 Lluvia de abril, dogma de fe.  
 Sin descansar sigo por hoy.  
@@ -203,8 +191,6 @@ Mañana yo ya no estaré
 
 ### Que una línea traiga tu voz
 
-<img src="images/queUnaLineaTraigaTuVoz.png" align=right width=45%>
-
 Me duermo cada vez que me levanto  
 me caigo y aunque esté a ras de suelo  
 Si vuelo escribo alguna canción  
@@ -231,8 +217,6 @@ la luna ya no me da su poder
 
 ### Diógenes
 
-<img src="images/diogenes.png" align=right width=45%>
-
 Diógenes frota su vientre en la esquina muy cerca a la estación de Sants  
 Con sus harapos a cuestas remienda unos sueños que cuestan hilar  
 Anda y vuelve a su estación que aprendió a extrañar  
@@ -257,13 +241,22 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 ---
 
-<div align=center>
-
-<img src="images/portada.png" width=45%>
-
-</div>
-
-
-## Reseñas
+## Reseñas (by AIs)
 
 [*1*](analisis.md) / [*2*](analisis2.md) / [*3*](analisis3.md) / [*4*](analisis4.md) / [*5*](analisis5.md) / [*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
+
+<div align=center>
+
+|<img src="images/portada.png" width=45%>
+|:-:
+|<img src="images/avMeridiana.png" width=45%>
+|<img src="images/placidaInsurreccion.png" width=45%>
+|<img src="images/lasVentanas.png" width=45%>
+|<img src="images/27ySigue.png" width=45%>
+|<img src="images/hayPoesia.png" width=45%>
+|<img src="images/obituario.png" width=45%>
+|<img src="images/cain.png" width=45%>
+|<img src="images/queUnaLineaTraigaTuVoz.png" width=45%>
+|<img src="images/diogenes.png" width=45%>
+
+</div>
