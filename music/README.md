@@ -259,7 +259,7 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 <div align=center>
 
-<img src="https://github.com/user-attachments/assets/b0baee01-ffc3-4227-9072-8a43b86b93c7" width=40%>
+<img src="images/portada.png" width=45%>
 
 </div>
 
