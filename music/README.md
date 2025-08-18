@@ -241,10 +241,6 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 ---
 
-## Reseñas (by AIs)
-
-[*1*](analisis.md) / [*2*](analisis2.md) / [*3*](analisis3.md) / [*4*](analisis4.md) / [*5*](analisis5.md) / [*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
-
 <div align=center>
 
 |<img src="images/portada.png" width=45%><br>Fábulas sin moraleja
@@ -260,3 +256,10 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 |<img src="images/diogenes.png" width=45%><br>Diógenes
 
 </div>
+
+---
+
+## Reseñas (by AIs)
+
+[*1*](analisis.md) / [*2*](analisis2.md) / [*3*](analisis3.md) / [*4*](analisis4.md) / [*5*](analisis5.md) / [*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
+
