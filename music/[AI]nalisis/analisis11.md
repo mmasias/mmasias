@@ -1,4 +1,4 @@
-# Reseña de *Fábulas sin moraleja - Ocho cuentos nocturnos (y una coda) sin redención* de Morgan Bill**  
+# Reseña de *Fábulas sin moraleja - Ocho cuentos nocturnos (y una coda) sin redención* de Morgan Bill
 
 *by el tío Qwenceslao*
 
