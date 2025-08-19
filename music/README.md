@@ -256,5 +256,5 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 ## Reseñas (by AIs)
 
-[*1*]([AI]nalisis/analisis.[AI]nalisis/analisis2.[AI]nalisis/analisis3.[AI]nalisis/analisis4.[AI]nalisis/analisis5.[AI]nalisis/analisis6.[AI]nalisis/analisis7.[AI]nalisis/analisis8.[AI]nalisis/analisis9.m[AI]nalisis/analisis10.md[*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
+[1]([AI]nalisis/analisis01.md) / [2]([AI]nalisis/analisis02.md) / [3]([AI]nalisis/analisis03.md) / [4]([AI]nalisis/analisis04.md) / [5]([AI]nalisis/analisis05.md) / [6]([AI]nalisis/analisis06.md) / [7]([AI]nalisis/analisis07.md) / [8]([AI]nalisis/analisis08.md) / [9]([AI]nalisis/analisis09.md) / [10]([AI]nalisis/analisis10.md)
 
