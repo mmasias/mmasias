@@ -3,7 +3,7 @@
 |<img src="images/portada.png" width=35%>
 |:-:
 |Ocho cuentos nocturnos (y una coda) sin redención.
-|<div align=right>**Un album de *Morgan Bill***</div>
+|<div align=right>**Un álbum de *Morgan Bill***</div>
 
 <div align=right>
 <sub><i>"¿Qué significa ser un animal consciente de sí mismo?<br>La idea es ridícula, si no monstruosa. Significa saber que uno es alimento para gusanos.”<br>- Ernest Becker</i></sub>
