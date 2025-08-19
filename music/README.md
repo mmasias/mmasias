@@ -87,8 +87,6 @@ y la épica ligera adornaba su expresión
 escribiendo alejandrinos carentes de convicción  
 A menudo se imagina sin angustia en el salón...  
 
-
-
 ### 27, y sigue...
 
 Se abalanzó a la ventana al llegar la puesta del sol  
@@ -176,21 +174,15 @@ tiende a alargar algo que sé:
 Todo el azul ya lo tiré.  
 Nunca entendí lo que encontré.  
   
-*Y hoy también soñé*  
-  
 Al contestar sin responder  
 más de una vez sentí temor.  
 Sé que no lo van a entender  
 porque mi cruz llegó después.  
   
-*Y hoy también soñé*  
-  
 La fraternal rabia infantil  
 A una señal impartiré.  
 Tú ya no estás; ellos, no sé.  
 Mañana yo ya no estaré  
-  
-*Y hoy también soñé*  
 
 ### Que una línea traiga tu voz
 
