@@ -1,8 +1,9 @@
 # Fábulas sin moraleja
 
-Ocho cuentos nocturnos (y una coda) sin redención.
-
-Un album de *Morgan Bill*
+|<img src="images/portada.png" width=35%>
+|:-:
+|Ocho cuentos nocturnos (y una coda) sin redención.
+|<div align=right>Un album de *Morgan Bill*</div>
 
 ## Temas
 
