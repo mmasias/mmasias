@@ -236,17 +236,19 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 ---
 
-|<img src="images/portada.png" width=45%><br>Fábulas sin moraleja
-|:-:
-|<img src="images/avMeridiana.png" width=45%><br>Av. Meridiana
-|<img src="images/placidaInsurreccion.png" width=45%><br>Plácida insurrección
-|<img src="images/lasVentanas.png" width=45%><br>Las ventanas
-|<img src="images/27ySigue.png" width=45%><br>27 y sigue...
-|<img src="images/hayPoesia.png" width=45%><br>Hay poesía
-|<img src="images/obituario.png" width=45%><br>Obituario
-|<img src="images/cain.png" width=45%><br>Caín
-|<img src="images/queUnaLineaTraigaTuVoz.png" width=45%><br>Que una línea traiga tu voz
-|<img src="images/diogenes.png" width=45%><br>Diógenes
+<img src="images/portada.png" width=45%>
+
+||Fábulas sin moraleja||
+|:-:|:-:|:-:|
+|<img src="images/avMeridiana.png" width=35%>|Av. Meridiana|<img src="images/avMeridiana-2.png" width=45%>
+|<img src="images/placidaInsurreccion.png" width=35%>|Plácida insurrección|<img src="images/placidaInsurreccion-2.png" width=45%>
+|<img src="images/lasVentanas.png" width=35%>|Las ventanas|<img src="images/lasVentanas-2.png" width=45%>
+|<img src="images/27ySigue.png" width=35%>|27 y sigue...|<img src="images/27ySigue-2.png" width=45%>
+|<img src="images/hayPoesia.png" width=35%>|Hay poesía|<img src="images/hayPoesia-2.png" width=45%>
+|<img src="images/obituario.png" width=35%>|Obituario|<img src="images/obituario-2.png" width=45%>
+|<img src="images/cain.png" width=35%>|Caín|<img src="images/cain-2.png" width=45%>
+|<img src="images/queUnaLineaTraigaTuVoz.png" width=35%>|Que una línea traiga tu voz|<img src="images/queUnaLineaTraigaTuVoz-2.png" width=45%>
+|<img src="images/diogenes.png" width=35%>|Diógenes|<img src="images/diogenes-2.png" width=45%>
 
 </div>
 
@@ -254,5 +256,5 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 ## Reseñas (by AIs)
 
-[*1*](analisis.md) / [*2*](analisis2.md) / [*3*](analisis3.md) / [*4*](analisis4.md) / [*5*](analisis5.md) / [*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
+[*1*]([AI]nalisis/analisis.[AI]nalisis/analisis2.[AI]nalisis/analisis3.[AI]nalisis/analisis4.[AI]nalisis/analisis5.[AI]nalisis/analisis6.[AI]nalisis/analisis7.[AI]nalisis/analisis8.[AI]nalisis/analisis9.m[AI]nalisis/analisis10.md[*6*](analisis6.md) / [*7*](analisis7.md) / [*8*](analisis8.md) / [*9*](analisis9.md) / [*10*](analisis10.md)
 
