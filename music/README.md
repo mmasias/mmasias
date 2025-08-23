@@ -6,7 +6,7 @@
 |<div align=right>**Un álbum de *Morgan Bill***</div>
 
 <div align=right>
-<a href="https://x.com/pitiklinov/status/1304766169673592832"><sub><i>"¿Qué significa ser un animal consciente de sí mismo?<br>La idea es ridícula, si no monstruosa. Significa saber que uno es alimento para gusanos.”<br>- Ernest Becker</i></sub></a>
+<sub><i>"¿Qué significa ser un animal consciente de sí mismo?<br>La idea es ridícula, si no monstruosa. Significa saber que uno es alimento para gusanos.”<br>- Ernest Becker</i><a href="https://x.com/pitiklinov/status/1304766169673592832">*</a></sub>
 
 </div>
 
