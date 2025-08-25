@@ -1,20 +1,14 @@
-# Fábulas sin moraleja
-
-|<img src="images/portada.png" width=35%>
-|:-:
-|Ocho cuentos nocturnos (y una coda) sin redención.
-|<div align=right>**Un álbum de *Morgan Bill***</div>
-
-<div align=right>
-<sub><i>"¿Qué significa ser un animal consciente de sí mismo?<br>La idea es ridícula, si no monstruosa. Significa saber que uno es alimento para gusanos.”<br>- Ernest Becker</i><a href="https://x.com/pitiklinov/status/1304766169673592832">*</a></sub>
-
+<div align=center>
+<img src="images/portada.png" width=35%>
 </div>
 
-## Temas
+<div align=right>
+<sub><i>"¿Qué significa ser un animal consciente de sí mismo?<br>La idea es ridícula, si no monstruosa. Significa saber que uno es alimento para gusanos."<br>- Ernest Becker</i> <a href="https://x.com/pitiklinov/status/1304766169673592832">*</a></sub>
+</div>
 
 <div align=center>
 
-### Av. Meridiana
+## Av. Meridiana
 
 Me alcanzó una lluvia fría  
 paseando en Meridiana  
@@ -46,7 +40,7 @@ algo tendrá que decir
 *No me llama la atención*  
 *que mi casa esté vacía*  
 
-### Plácida insurrección
+## Plácida insurrección
 
 Media mañana perdida en una estación  
 por culpa de algún cretino que nunca llegó  
@@ -70,7 +64,7 @@ Sueña volver a los vicios de la juventud
 esos que años atrás le sentaban tan mal  
 y cuyos puntos finales terminaban en perversos bares  
 
-### Las ventanas
+## Las ventanas
 
 Las ventanas de aquel cuarto no conocían al sol  
 y los poemas vacíos describían el rincón  
@@ -92,7 +86,7 @@ y la épica ligera adornaba su expresión
 escribiendo alejandrinos carentes de convicción  
 A menudo se imagina sin angustia en el salón...  
 
-### 27, y sigue...
+## 27, y sigue...
 
 Se abalanzó a la ventana al llegar la puesta del sol  
 y se juró que mañana lo haría un poco peor  
@@ -118,7 +112,7 @@ se hunde en la playa ignorando el frío, la lluvia y a dios
   
 *Y adios...*  
 
-### Hay poesía
+## Hay poesía
 
 Hay poesía en tus ojos tan serenos  
 que pasean por mi mundo y lo intentan entender...  
@@ -138,7 +132,7 @@ en llamadas que me haces que no quiero contestar
 Hay poesía en nuestras formas de fondo tan absurdo  
 Hay poesía en tu mundo que no quiero perder...  
 
-### Obituario
+## Obituario
 
 Anoche que estaba pasado de copas  
 tumbado en la cama, oyendo la radio  
@@ -165,7 +159,7 @@ que me fui cansado de tanto concepto
 Que esto de la muerte no es drama o misterio:  
 total de morirse aún nadie se ha muerto...  
 
-### Caín
+## Caín
 
 Lluvia de abril, dogma de fe.  
 Sin descansar sigo por hoy.  
@@ -189,7 +183,7 @@ A una señal impartiré.
 Tú ya no estás; ellos, no sé.  
 Mañana yo ya no estaré  
 
-### Que una línea traiga tu voz
+## Que una línea traiga tu voz
 
 Me duermo cada vez que me levanto  
 me caigo y aunque esté a ras de suelo  
@@ -215,7 +209,7 @@ quisiera poder heredar tu fe
 la luna ya no me da su poder  
 *oh Dios: que una línea traiga tu voz*  
 
-### Diógenes
+## Diógenes
 
 Diógenes frota su vientre en la esquina muy cerca a la estación de Sants  
 Con sus harapos a cuestas remienda unos sueños que cuestan hilar  
@@ -259,6 +253,6 @@ cargó en la mochila sus mejores penas, durmiendo se irá...
 
 ---
 
-## Reseñas (by AIs)
+# Reseñas (by AIs)
 
 [1]([AI]nalisis/analisis01.md) / [2]([AI]nalisis/analisis02.md) / [3]([AI]nalisis/analisis03.md) / [4]([AI]nalisis/analisis04.md) / [5]([AI]nalisis/analisis05.md) / [6]([AI]nalisis/analisis06.md) / [7]([AI]nalisis/analisis07.md) / [8]([AI]nalisis/analisis08.md) / [9]([AI]nalisis/analisis09.md) / [10]([AI]nalisis/analisis10.md) / [11]([AI]nalisis/analisis11.md) / [12]([AI]nalisis/analisis12.md)
