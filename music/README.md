@@ -132,32 +132,6 @@ en llamadas que me haces que no quiero contestar
 Hay poesía en nuestras formas de fondo tan absurdo  
 Hay poesía en tu mundo que no quiero perder...  
 
-## Días raros
-
-En la vida no se puede ser simplemente majo  
-Hace falta también el calzar algún codo duro  
-Las películas que viste omiten este gran concepto:  
-"Que el mundo nos puede tratar  
-muchas veces mal"  
-  
-Esos días que pasan tranquilos se te hacen raros  
-Tus virtudes sientes que se hallan infravaloradas  
-En el colmo del absurdo extrañas algunos problemas  
-Y si estos nunca llegan ya  
-te los crearás  
-  
-Las sagradas escrituras fluyen desapercibidas  
-Apuntaste en los laterales notas de consuelo  
-Reconoces que nunca has tenido buena ortografía  
-Y por eso siempre se te dió  
-mejor el cantar  
-  
-Los periódicos del día lucen desactualizados  
-El infierno en días lluviosos hasta es atractivo  
-La locura y el desorden te hablan como dos hermanos  
-Y es que el caos en el fondo  
-tampoco está tan mal  
-  
 ## Obituario
 
 Anoche que estaba pasado de copas  
