@@ -714,7 +714,10 @@ configure_gpg() {
                 echo "max-cache-ttl 34560000" >> ~/.gnupg/gpg-agent.conf
                 info "Se ha configurado el cache de contraseña GPG"
             fi
-            
+
+            # Configurar pinentry para evitar problemas con aplicaciones gráficas
+            configure_pinentry
+
             # Solución para macOS si es necesario
             if [[ "$(uname)" == "Darwin" ]]; then
                 echo "export GPG_TTY=\$(tty)" >> ~/.gnupg/gpg-agent.conf
@@ -984,6 +987,82 @@ main() {
     
     # Mostrar menú
     show_menu
+}
+
+# Función para detectar entorno de escritorio
+detect_desktop_environment() {
+    if [[ "$XDG_CURRENT_DESKTOP" == *"KDE"* ]] || [[ "$DESKTOP_SESSION" == *"kde"* ]]; then
+        echo "kde"
+    elif [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] || [[ "$DESKTOP_SESSION" == *"gnome"* ]]; then
+        echo "gnome"
+    elif [[ "$XDG_CURRENT_DESKTOP" == *"XFCE"* ]]; then
+        echo "xfce"
+    else
+        echo "generic"
+    fi
+}
+
+# Función para configurar pinentry según el escritorio
+configure_pinentry() {
+    local desktop_env=$(detect_desktop_environment)
+    info "Configurando pinentry para entorno $desktop_env..."
+    
+    case $DISTRO_FAMILY in
+        debian)
+            case $desktop_env in
+                kde)
+                    sudo apt install -y pinentry-qt
+                    echo "pinentry-program /usr/bin/pinentry-qt" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+                gnome)
+                    sudo apt install -y pinentry-gnome3
+                    echo "pinentry-program /usr/bin/pinentry-gnome3" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+                *)
+                    sudo apt install -y pinentry-gtk2
+                    echo "pinentry-program /usr/bin/pinentry-gtk2" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+            esac
+            ;;
+        rpm)
+            case $desktop_env in
+                kde)
+                    sudo dnf install -y pinentry-qt
+                    echo "pinentry-program /usr/bin/pinentry-qt" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+                gnome)
+                    sudo dnf install -y pinentry-gnome3
+                    echo "pinentry-program /usr/bin/pinentry-gnome3" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+                *)
+                    sudo dnf install -y pinentry-gtk
+                    echo "pinentry-program /usr/bin/pinentry-gtk" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+            esac
+            ;;
+        arch)
+            case $desktop_env in
+                kde)
+                    sudo pacman -S --noconfirm pinentry-qt
+                    echo "pinentry-program /usr/bin/pinentry-qt" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+                gnome)
+                    sudo pacman -S --noconfirm pinentry-gnome
+                    echo "pinentry-program /usr/bin/pinentry-gnome3" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+                *)
+                    sudo pacman -S --noconfirm pinentry-gtk
+                    echo "pinentry-program /usr/bin/pinentry-gtk2" >> ~/.gnupg/gpg-agent.conf
+                    ;;
+            esac
+            ;;
+    esac
+    
+    # Reiniciar agente GPG
+    gpgconf --kill gpg-agent
+    gpgconf --launch gpg-agent
+    
+    success "Pinentry configurado correctamente para $desktop_env"
 }
 
 # Ejecutar script
