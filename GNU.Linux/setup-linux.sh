@@ -763,7 +763,18 @@ install_github_cli() {
 # Configurar firma GPG para Git
 configure_gpg() {
     info "Configurando firma GPG para Git..."
-    
+
+    # Verificar si ya está configurado GPG para Git
+    current_signing_key=$(git config --global user.signingkey 2>/dev/null || echo "")
+    gpg_sign_enabled=$(git config --global commit.gpgsign 2>/dev/null || echo "")
+
+    if [[ -n "$current_signing_key" && "$gpg_sign_enabled" == "true" ]]; then
+        success "GPG ya está configurado para Git"
+        info "Clave de firma: $current_signing_key"
+        info "Firma automática: habilitada"
+        return 0
+    fi
+
     # Instalar GPG
     case $DISTRO_FAMILY in
         debian)
