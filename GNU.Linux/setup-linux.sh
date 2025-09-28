@@ -526,7 +526,7 @@ install_spotify() {
 
     case $DISTRO_FAMILY in
         debian)
-            # Intentar con repositorio oficial de Spotify únicamente
+            # Intentar con repositorio oficial de Spotify
             info "Instalando desde el repositorio oficial de Spotify..."
 
             # Agregar clave y repositorio de Spotify
@@ -544,14 +544,25 @@ install_spotify() {
                     sudo rm -f /etc/apt/trusted.gpg.d/spotify.gpg
                     sudo apt update
                 fi
+            else
+                warning "No se pudo configurar el repositorio oficial de Spotify"
             fi
 
-            error "No se pudo instalar Spotify desde el repositorio oficial"
+            # Método de respaldo: snap
+            warning "Intentando instalar Spotify desde snap como respaldo..."
+            if command -v snap &> /dev/null || sudo apt install -y snapd; then
+                if sudo snap install spotify; then
+                    success "Spotify instalado correctamente desde snap"
+                    return 0
+                fi
+            fi
+
+            error "No se pudo instalar Spotify desde ningún método"
             info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
             return 1
             ;;
         rpm)
-            # Intentar con repositorio oficial únicamente
+            # Intentar con repositorio oficial de Spotify
             info "Instalando desde repositorio oficial de Spotify..."
 
             if sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg; then
@@ -574,9 +585,20 @@ EOF
                     sudo rm -f /etc/yum.repos.d/spotify.repo
                     sudo dnf clean all
                 fi
+            else
+                warning "No se pudo configurar el repositorio oficial de Spotify"
             fi
 
-            error "No se pudo instalar Spotify desde el repositorio oficial"
+            # Método de respaldo: snap
+            warning "Intentando instalar Spotify desde snap como respaldo..."
+            if command -v snap &> /dev/null || sudo dnf install -y snapd; then
+                if sudo snap install spotify; then
+                    success "Spotify instalado correctamente desde snap"
+                    return 0
+                fi
+            fi
+
+            error "No se pudo instalar Spotify desde ningún método"
             info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
             return 1
             ;;
@@ -640,35 +662,62 @@ install_oh_my_posh() {
     chmod u+rw ~/.poshthemes/*.omp.*
     rm ~/.poshthemes/themes.zip
 
-    # Instalar Nerd Fonts (FiraCode y MesloLG)
-    info "Descargando e instalando Nerd Fonts (FiraCode y MesloLG)..."
+    # Verificar e instalar Nerd Fonts (FiraCode y MesloLG)
     mkdir -p ~/.fonts
 
-    # Crear directorio temporal para descargas
-    temp_fonts=$(mktemp -d)
-    cd "$temp_fonts"
+    # Verificar si las fuentes ya están instaladas
+    firacode_installed=false
+    meslo_installed=false
 
-    # Descargar FiraCode Nerd Font
-    info "Descargando FiraCode Nerd Font..."
-    wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip
-    unzip -q FiraCode.zip -d FiraCode/
-    cp FiraCode/*.ttf ~/.fonts/ 2>/dev/null || true
+    if ls ~/.fonts/*FiraCode* &> /dev/null; then
+        firacode_installed=true
+    fi
 
-    # Descargar MesloLG Nerd Font
-    info "Descargando MesloLG Nerd Font..."
-    wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
-    unzip -q Meslo.zip -d Meslo/
-    cp Meslo/*.ttf ~/.fonts/ 2>/dev/null || true
+    if ls ~/.fonts/*Meslo* &> /dev/null; then
+        meslo_installed=true
+    fi
 
-    # Volver al directorio anterior y limpiar
-    cd - > /dev/null
-    rm -rf "$temp_fonts"
+    if [[ "$firacode_installed" == true && "$meslo_installed" == true ]]; then
+        success "Nerd Fonts (FiraCode y MesloLG) ya están instaladas"
+    else
+        info "Descargando e instalando Nerd Fonts faltantes..."
 
-    # Reconstruir cache de fuentes
-    info "Reconstruyendo cache de fuentes..."
-    fc-cache -fv > /dev/null 2>&1
+        # Crear directorio temporal para descargas
+        temp_fonts=$(mktemp -d)
+        cd "$temp_fonts"
 
-    success "Nerd Fonts instaladas correctamente (FiraCode y MesloLG)"
+        # Descargar FiraCode si no está instalado
+        if [[ "$firacode_installed" == false ]]; then
+            info "Descargando FiraCode Nerd Font..."
+            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip
+            unzip -q FiraCode.zip -d FiraCode/
+            cp FiraCode/*.ttf ~/.fonts/ 2>/dev/null || true
+        else
+            info "FiraCode ya está instalado"
+        fi
+
+        # Descargar MesloLG si no está instalado
+        if [[ "$meslo_installed" == false ]]; then
+            info "Descargando MesloLG Nerd Font..."
+            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
+            unzip -q Meslo.zip -d Meslo/
+            cp Meslo/*.ttf ~/.fonts/ 2>/dev/null || true
+        else
+            info "MesloLG ya está instalado"
+        fi
+
+        # Volver al directorio anterior y limpiar
+        cd - > /dev/null
+        rm -rf "$temp_fonts"
+
+        # Reconstruir cache de fuentes solo si se instaló algo nuevo
+        if [[ "$firacode_installed" == false || "$meslo_installed" == false ]]; then
+            info "Reconstruyendo cache de fuentes..."
+            fc-cache -fv > /dev/null 2>&1
+        fi
+
+        success "Nerd Fonts instaladas correctamente"
+    fi
     
     # Determinar qué shell está usando el usuario
     SHELL_RC=""
@@ -740,7 +789,32 @@ install_utilities() {
 # Instalar GitHub CLI
 install_github_cli() {
     info "Instalando GitHub CLI..."
-    
+
+    # Verificar si ya está instalado
+    if command -v gh &> /dev/null; then
+        success "GitHub CLI ya está instalado"
+        gh_version=$(gh --version | head -n 1)
+        info "Versión: $gh_version"
+
+        # Verificar si ya está autenticado
+        if gh auth status &> /dev/null; then
+            info "GitHub CLI ya está autenticado"
+        else
+            info "Configurando autenticación de GitHub CLI..."
+            gh auth login
+        fi
+
+        # Verificar si ya tiene la extensión classroom
+        if gh extension list | grep -q "github/gh-classroom"; then
+            info "Extensión gh-classroom ya está instalada"
+        else
+            info "Instalando extensión gh-classroom..."
+            gh extension install github/gh-classroom
+        fi
+
+        return 0
+    fi
+
     case $DISTRO_FAMILY in
         debian)
             sudo apt install -y gh
@@ -752,11 +826,11 @@ install_github_cli() {
             sudo pacman -S --noconfirm github-cli
             ;;
     esac
-    
+
     info "Configurando GitHub CLI..."
     gh auth login
     gh extension install github/gh-classroom
-    
+
     success "GitHub CLI instalado y configurado correctamente"
 }
 
