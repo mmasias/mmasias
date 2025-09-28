@@ -261,6 +261,17 @@ install_browsers() {
     install_chrome
     install_brave
     success "Navegadores instalados correctamente"
+
+    # Pausa informativa para acciones manuales necesarias
+    echo
+    info "ACCIONES NECESARIAS ANTES DE CONTINUAR:"
+    info "1. Definir navegador por defecto (Chrome o Brave)"
+    info "2. Loguearse en GitHub en el navegador elegido"
+    info "   (Necesario para configuración de Git y GPG en pasos siguientes)"
+    echo
+    warning "Por favor, realiza estas acciones ahora y luego continúa."
+    read -p "Presiona Enter cuando hayas terminado de configurar los navegadores..."
+    echo
 }
 
 # Configurar Git - MEJORADO
@@ -1122,6 +1133,7 @@ show_menu() {
             configure_gpg
             install_additional_utilities
             setup_repos_directory
+            remove_bloatware
             cleanup_system
             ;;
         2) install_dependencies ;;
