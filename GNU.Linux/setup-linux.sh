@@ -270,7 +270,7 @@ install_browsers() {
     info "   (Necesario para configuración de Git y GPG en pasos siguientes)"
     echo
     warning "Por favor, realiza estas acciones ahora y luego continúa."
-    read -p "Presiona Enter cuando hayas terminado de configurar los navegadores..."
+    read -p "Presiona Enter cuando hayas terminado de configurar los navegadores..." < /dev/tty
     echo
 }
 
