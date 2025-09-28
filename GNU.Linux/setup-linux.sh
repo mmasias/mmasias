@@ -1186,11 +1186,36 @@ main() {
         info "Usa 'bash $0' como usuario normal."
         exit 1
     fi
-    
+
     # Detectar distribución
     detect_distro
-    
-    # Mostrar menú
+
+    # Detectar si se ejecuta desde pipe (curl | bash)
+    if [ ! -t 0 ]; then
+        info "Ejecutando instalación completa automática..."
+        install_dependencies
+        install_browsers
+        configure_git
+        install_gdebi
+        install_curl
+        install_jdk
+        install_graphviz
+        install_vscode
+        install_spotify
+        install_vlc
+        install_oh_my_posh
+        install_utilities
+        install_github_cli
+        configure_gpg
+        install_additional_utilities
+        setup_repos_directory
+        remove_bloatware
+        cleanup_system
+        success "¡Instalación completa terminada!"
+        exit 0
+    fi
+
+    # Mostrar menú solo si se ejecuta interactivamente
     show_menu
 }
 
