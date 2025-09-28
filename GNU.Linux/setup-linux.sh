@@ -732,13 +732,16 @@ install_oh_my_posh() {
         read -p "¿Qué tema de oh-my-posh deseas usar? (por defecto: nordtron): " theme
         theme=${theme:-nordtron}
         
+        # Obtener nombre del shell
+        shell_name=$(basename "$SHELL" | tr -d '\n')
+
         # Verificar si ya existe la configuración
         if grep -q "oh-my-posh init" "$SHELL_RC"; then
             # Actualizar la configuración existente
-            sed -i "s|oh-my-posh init .* --config .*|oh-my-posh init $(basename $SHELL | tr -d '\n') --config $HOME/.poshthemes/$theme.omp.json|g" "$SHELL_RC"
+            sed -i "s|oh-my-posh init .* --config .*|oh-my-posh init $shell_name --config $HOME/.poshthemes/$theme.omp.json|g" "$SHELL_RC"
         else
             # Añadir configuración
-            echo "eval \"\$(oh-my-posh init $(basename $SHELL | tr -d '\n') --config $HOME/.poshthemes/$theme.omp.json)\"" >> "$SHELL_RC"
+            echo "eval \"\$(oh-my-posh init $shell_name --config $HOME/.poshthemes/$theme.omp.json)\"" >> "$SHELL_RC"
         fi
         
         info "Configuración añadida a $SHELL_RC con el tema $theme"
