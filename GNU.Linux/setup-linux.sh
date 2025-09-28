@@ -146,35 +146,33 @@ install_dependencies() {
 # Instalar Google Chrome - MEJORADO
 install_chrome() {
     info "Instalando Google Chrome..."
-    
+
     # Verificar si ya está instalado
     if command -v google-chrome &> /dev/null; then
         success "Google Chrome ya está instalado"
-        return 0
-    fi
-    
-    case $DISTRO_FAMILY in
-        debian)
-            # Método más robusto
-            temp_dir=$(mktemp -d)
-            cd "$temp_dir"
-            
-            wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            
-            if sudo dpkg -i google-chrome-stable_current_amd64.deb; then
-                success "Google Chrome instalado correctamente"
-            else
-                info "Corrigiendo dependencias..."
-                sudo apt install -f -y
-                success "Google Chrome instalado correctamente (con corrección de dependencias)"
-            fi
-            
-            cd - > /dev/null
-            rm -rf "$temp_dir"
-            ;;
-        rpm)
-            # Agregar repositorio
-            sudo tee /etc/yum.repos.d/google-chrome.repo > /dev/null <<EOF
+    else
+        case $DISTRO_FAMILY in
+            debian)
+                # Método más robusto
+                temp_dir=$(mktemp -d)
+                cd "$temp_dir"
+
+                wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+                if sudo dpkg -i google-chrome-stable_current_amd64.deb; then
+                    success "Google Chrome instalado correctamente"
+                else
+                    info "Corrigiendo dependencias..."
+                    sudo apt install -f -y
+                    success "Google Chrome instalado correctamente (con corrección de dependencias)"
+                fi
+
+                cd - > /dev/null
+                rm -rf "$temp_dir"
+                ;;
+            rpm)
+                # Agregar repositorio
+                sudo tee /etc/yum.repos.d/google-chrome.repo > /dev/null <<EOF
 [google-chrome]
 name=google-chrome
 baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
@@ -182,14 +180,87 @@ enabled=1
 gpgcheck=1
 gpgkey=https://dl.google.com/linux/linux_signing_key.pub
 EOF
-            sudo dnf install -y google-chrome-stable
+                sudo dnf install -y google-chrome-stable
+                success "Google Chrome instalado correctamente"
+                ;;
+            arch)
+                yay -S --noconfirm google-chrome
+                success "Google Chrome instalado correctamente"
+                ;;
+        esac
+    fi
+}
+
+# Instalar Brave Browser - NUEVO
+install_brave() {
+    info "Instalando Brave Browser..."
+
+    # Verificar si ya está instalado
+    if command -v brave-browser &> /dev/null; then
+        success "Brave Browser ya está instalado"
+        return 0
+    fi
+
+    case $DISTRO_FAMILY in
+        debian)
+            # Agregar clave y repositorio de Brave
+            if curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg; then
+                echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+                if sudo apt update && sudo apt install -y brave-browser; then
+                    success "Brave Browser instalado correctamente desde repositorio oficial"
+                    return 0
+                else
+                    # Limpiar repositorio fallido
+                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                    sudo rm -f /etc/apt/sources.list.d/brave-browser-release.list
+                    sudo rm -f /usr/share/keyrings/brave-browser-archive-keyring.gpg
+                    sudo apt update
+                fi
+            fi
+
+            error "No se pudo instalar Brave Browser desde el repositorio oficial"
+            info "Puedes instalarlo manualmente desde: https://brave.com/download/"
+            return 1
+            ;;
+        rpm)
+            # Agregar repositorio de Brave
+            sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+            sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+
+            if sudo dnf install -y brave-browser; then
+                success "Brave Browser instalado correctamente desde repositorio oficial"
+                return 0
+            else
+                # Limpiar repositorio fallido
+                warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                sudo rm -f /etc/yum.repos.d/brave-browser.repo
+                sudo dnf clean all
+            fi
+
+            error "No se pudo instalar Brave Browser desde el repositorio oficial"
+            info "Puedes instalarlo manualmente desde: https://brave.com/download/"
+            return 1
             ;;
         arch)
-            yay -S --noconfirm google-chrome
+            if yay -S --noconfirm brave-bin; then
+                success "Brave Browser instalado correctamente desde AUR"
+                return 0
+            else
+                error "No se pudo instalar Brave Browser desde AUR"
+                info "Puedes instalarlo manualmente desde: https://brave.com/download/"
+                return 1
+            fi
             ;;
     esac
-    
-    success "Google Chrome instalado correctamente"
+}
+
+# Instalar Chrome y Brave - COMBINADO
+install_browsers() {
+    info "Instalando navegadores (Chrome & Brave)..."
+    install_chrome
+    install_brave
+    success "Navegadores instalados correctamente"
 }
 
 # Configurar Git - MEJORADO
@@ -226,13 +297,25 @@ configure_git() {
     fi
     
     # Preguntar por el nombre y email para la configuración
-    read -p "Introduce tu nombre para Git: " git_name
-    read -p "Introduce tu email para Git: " git_email
-    
-    # Validar email básico
-    if [[ ! "$git_email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
-        warning "El formato del email parece incorrecto, pero se configurará de todos modos"
-    fi
+    read -p "Introduce tu nombre para Git (sugerencia: usuario@lugar): " git_name
+
+    # Validar email con oportunidad de corrección
+    while true; do
+        read -p "Introduce tu email para Git: " git_email
+
+        # Validar email básico
+        if [[ "$git_email" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+            break
+        else
+            error "El formato del email '$git_email' no es válido"
+            info "Formato esperado: usuario@dominio.com"
+
+            if ! confirm; then
+                warning "Configurando con email inválido. Esto puede causar problemas con Git."
+                break
+            fi
+        fi
+    done
     
     git config --global user.name "$git_name"
     git config --global user.email "$git_email"
@@ -359,49 +442,52 @@ install_vscode() {
         debian)
             # Método 1: Intentar con repositorio oficial de Microsoft
             info "Instalando desde el repositorio oficial de Microsoft..."
-            
+
             # Agregar clave y repositorio de Microsoft
-            wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-            sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
-            sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
-            
-            # Actualizar e instalar
-            sudo apt update
-            if sudo apt install -y code; then
-                success "Visual Studio Code instalado correctamente desde repositorio oficial"
-                return 0
-            else
-                warning "Falló la instalación desde repositorio oficial, intentando con snap..."
-            fi
-            
-            # Método 2: Intentar con snap como respaldo
-            if ! command -v snap &> /dev/null; then
-                info "Instalando snap..."
-                if sudo apt install -y snapd; then
-                    sudo systemctl enable snapd
-                    sudo systemctl start snapd
-                    # Esperar a que snap esté listo
-                    sleep 5
-                    sudo snap install code --classic
+            if wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg; then
+                sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+                sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+
+                # Actualizar e instalar
+                if sudo apt update && sudo apt install -y code; then
+                    success "Visual Studio Code instalado correctamente desde repositorio oficial"
+                    return 0
                 else
-                    warning "No se pudo instalar snapd. Intentando descarga directa..."
-                    # Método 3: Descarga directa como último recurso
-                    temp_dir=$(mktemp -d)
-                    cd "$temp_dir"
-                    wget -O vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-                    if sudo dpkg -i vscode.deb; then
-                        success "Visual Studio Code instalado correctamente desde descarga directa"
-                    else
-                        # Corregir dependencias rotas si es necesario
-                        sudo apt install -f -y
-                        success "Visual Studio Code instalado correctamente (con corrección de dependencias)"
-                    fi
+                    # Limpiar repositorio fallido
+                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                    sudo rm -f /etc/apt/sources.list.d/vscode.list
+                    sudo rm -f /etc/apt/trusted.gpg.d/packages.microsoft.gpg
+                    sudo apt update
+                fi
+            fi
+
+            # Método 2: Descarga directa como respaldo
+            info "Intentando descarga directa..."
+            temp_dir=$(mktemp -d)
+            cd "$temp_dir"
+
+            if wget -O vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"; then
+                if sudo dpkg -i vscode.deb; then
+                    success "Visual Studio Code instalado correctamente desde descarga directa"
                     cd - > /dev/null
                     rm -rf "$temp_dir"
+                    return 0
+                else
+                    # Corregir dependencias rotas si es necesario
+                    if sudo apt install -f -y; then
+                        success "Visual Studio Code instalado correctamente (con corrección de dependencias)"
+                        cd - > /dev/null
+                        rm -rf "$temp_dir"
+                        return 0
+                    fi
                 fi
-            else
-                sudo snap install code --classic
             fi
+
+            cd - > /dev/null
+            rm -rf "$temp_dir"
+            error "No se pudo instalar Visual Studio Code"
+            info "Puedes instalarlo manualmente desde: https://code.visualstudio.com/download"
+            return 1
             ;;
         rpm)
             sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -420,56 +506,46 @@ install_vscode() {
 # Instalar Spotify - CORREGIDO
 install_spotify() {
     info "Instalando Spotify..."
-    
+
     # Verificar si ya está instalado
     if command -v spotify &> /dev/null; then
         success "Spotify ya está instalado"
         return 0
     fi
-    
+
     case $DISTRO_FAMILY in
         debian)
-            # Método 1: Intentar con repositorio oficial de Spotify
+            # Intentar con repositorio oficial de Spotify únicamente
             info "Instalando desde el repositorio oficial de Spotify..."
-            
+
             # Agregar clave y repositorio de Spotify
-            curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-            echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-            
-            # Actualizar e instalar
-            sudo apt update
-            if sudo apt install -y spotify-client; then
-                success "Spotify instalado correctamente desde repositorio oficial"
-                return 0
-            else
-                warning "Falló la instalación desde repositorio oficial, intentando con snap..."
-            fi
-            
-            # Método 2: Intentar con snap como respaldo
-            if ! command -v snap &> /dev/null; then
-                info "Instalando snap..."
-                if sudo apt install -y snapd; then
-                    sudo systemctl enable snapd
-                    sudo systemctl start snapd
-                    # Esperar a que snap esté listo
-                    sleep 5
-                    sudo snap install spotify
+            if curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg; then
+                echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+                # Actualizar e instalar
+                if sudo apt update && sudo apt install -y spotify-client; then
+                    success "Spotify instalado correctamente desde repositorio oficial"
+                    return 0
                 else
-                    warning "No se pudo instalar snapd ni el repositorio oficial de Spotify"
-                    info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
-                    return 1
+                    # Limpiar repositorio fallido
+                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                    sudo rm -f /etc/apt/sources.list.d/spotify.list
+                    sudo rm -f /etc/apt/trusted.gpg.d/spotify.gpg
+                    sudo apt update
                 fi
-            else
-                sudo snap install spotify
             fi
+
+            error "No se pudo instalar Spotify desde el repositorio oficial"
+            info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
+            return 1
             ;;
         rpm)
-            # Método 1: Intentar con repositorio oficial
+            # Intentar con repositorio oficial únicamente
             info "Instalando desde repositorio oficial de Spotify..."
-            sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
-            
-            # Crear archivo de repositorio
-            sudo tee /etc/yum.repos.d/spotify.repo > /dev/null <<EOF
+
+            if sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg; then
+                # Crear archivo de repositorio
+                sudo tee /etc/yum.repos.d/spotify.repo > /dev/null <<EOF
 [spotify]
 name=Spotify repository
 baseurl=http://repository.spotify.com/rpm/stable/x86_64/
@@ -477,37 +553,33 @@ enabled=1
 gpgcheck=1
 gpgkey=https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
 EOF
-            
-            if sudo dnf install -y spotify-client; then
-                success "Spotify instalado correctamente desde repositorio oficial"
-                return 0
-            else
-                warning "Falló la instalación desde repositorio oficial, intentando con snap..."
-            fi
-            
-            # Método 2: Respaldo con snap
-            if ! command -v snap &> /dev/null; then
-                info "Instalando snap..."
-                if sudo dnf install -y snapd; then
-                    sudo systemctl enable snapd
-                    sudo systemctl start snapd
-                    sleep 5
-                    sudo snap install spotify
+
+                if sudo dnf install -y spotify-client; then
+                    success "Spotify instalado correctamente desde repositorio oficial"
+                    return 0
                 else
-                    warning "No se pudo instalar snapd ni el repositorio oficial de Spotify"
-                    info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
-                    return 1
+                    # Limpiar repositorio fallido
+                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                    sudo rm -f /etc/yum.repos.d/spotify.repo
+                    sudo dnf clean all
                 fi
-            else
-                sudo snap install spotify
             fi
+
+            error "No se pudo instalar Spotify desde el repositorio oficial"
+            info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
+            return 1
             ;;
         arch)
-            yay -S --noconfirm spotify
+            if yay -S --noconfirm spotify; then
+                success "Spotify instalado correctamente desde AUR"
+                return 0
+            else
+                error "No se pudo instalar Spotify desde AUR"
+                info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
+                return 1
+            fi
             ;;
     esac
-    
-    success "Spotify instalado correctamente"
 }
 
 # Instalar VLC
@@ -556,6 +628,36 @@ install_oh_my_posh() {
     unzip -o ~/.poshthemes/themes.zip -d ~/.poshthemes
     chmod u+rw ~/.poshthemes/*.omp.*
     rm ~/.poshthemes/themes.zip
+
+    # Instalar Nerd Fonts (FiraCode y MesloLG)
+    info "Descargando e instalando Nerd Fonts (FiraCode y MesloLG)..."
+    mkdir -p ~/.fonts
+
+    # Crear directorio temporal para descargas
+    temp_fonts=$(mktemp -d)
+    cd "$temp_fonts"
+
+    # Descargar FiraCode Nerd Font
+    info "Descargando FiraCode Nerd Font..."
+    wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip
+    unzip -q FiraCode.zip -d FiraCode/
+    cp FiraCode/*.ttf ~/.fonts/ 2>/dev/null || true
+
+    # Descargar MesloLG Nerd Font
+    info "Descargando MesloLG Nerd Font..."
+    wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
+    unzip -q Meslo.zip -d Meslo/
+    cp Meslo/*.ttf ~/.fonts/ 2>/dev/null || true
+
+    # Volver al directorio anterior y limpiar
+    cd - > /dev/null
+    rm -rf "$temp_fonts"
+
+    # Reconstruir cache de fuentes
+    info "Reconstruyendo cache de fuentes..."
+    fc-cache -fv > /dev/null 2>&1
+
+    success "Nerd Fonts instaladas correctamente (FiraCode y MesloLG)"
     
     # Determinar qué shell está usando el usuario
     SHELL_RC=""
@@ -580,10 +682,8 @@ install_oh_my_posh() {
         fi
         
         info "Configuración añadida a $SHELL_RC con el tema $theme"
-        info "Por favor, instala una Nerd Font para una visualización correcta: https://www.nerdfonts.com/"
-        info "Sugerencias: FiraCode (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip)"
-        info "             MesloLG (https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip)"
-        info "Después de descargar, descomprime y copia a ~/.fonts y ejecuta 'fc-cache -fv'"
+        info "Las fuentes Nerd Font (FiraCode y MesloLG) ya han sido instaladas automáticamente"
+        info "Si deseas usar otras fuentes Nerd Font, visita: https://www.nerdfonts.com/"
     else
         warning "No se pudo determinar el shell que estás usando. Por favor, configura oh-my-posh manualmente."
     fi
@@ -781,7 +881,7 @@ install_additional_utilities() {
 # Función para limpiar sistema después de instalaciones - NUEVO
 cleanup_system() {
     info "Limpiando sistema..."
-    
+
     case $DISTRO_FAMILY in
         debian)
             sudo apt autoremove -y
@@ -795,8 +895,55 @@ cleanup_system() {
             sudo pacman -Sc --noconfirm
             ;;
     esac
-    
+
     success "Sistema limpiado"
+}
+
+# Configurar carpeta de repositorios y directorio por defecto - NUEVO
+setup_repos_directory() {
+    info "Configurando carpeta de repositorios..."
+
+    # Crear carpeta ~/misRepos si no existe
+    if [ ! -d "$HOME/misRepos" ]; then
+        mkdir -p "$HOME/misRepos"
+        success "Carpeta ~/misRepos creada"
+    else
+        info "Carpeta ~/misRepos ya existe"
+    fi
+
+    # Determinar qué shell está usando el usuario
+    SHELL_RC=""
+    if [[ "$SHELL" == *"bash"* ]]; then
+        SHELL_RC="$HOME/.bashrc"
+    elif [[ "$SHELL" == *"zsh"* ]]; then
+        SHELL_RC="$HOME/.zshrc"
+    fi
+
+    if [[ -n "$SHELL_RC" ]]; then
+        # Verificar si ya existe la configuración
+        if ! grep -q "cd.*misRepos" "$SHELL_RC"; then
+            # Añadir configuración para cambiar al directorio al abrir terminal
+            echo "" >> "$SHELL_RC"
+            echo "# Cambiar al directorio de repositorios al abrir terminal" >> "$SHELL_RC"
+            echo "if [ \"\$PWD\" = \"\$HOME\" ]; then" >> "$SHELL_RC"
+            echo "    cd ~/misRepos 2>/dev/null || true" >> "$SHELL_RC"
+            echo "fi" >> "$SHELL_RC"
+
+            success "Configuración añadida a $SHELL_RC"
+            info "El terminal abrirá en ~/misRepos por defecto"
+            info "Para aplicar los cambios: source $SHELL_RC"
+        else
+            info "La configuración de directorio por defecto ya existe en $SHELL_RC"
+        fi
+    else
+        warning "No se pudo determinar el shell que estás usando. Configuración manual necesaria."
+        info "Añade manualmente a tu archivo de configuración de shell:"
+        info "if [ \"\$PWD\" = \"\$HOME\" ]; then"
+        info "    cd ~/misRepos 2>/dev/null || true"
+        info "fi"
+    fi
+
+    success "Carpeta de repositorios configurada correctamente"
 }
 
 # Función para quitar bloatware - NUEVO
@@ -814,42 +961,95 @@ remove_bloatware() {
     case $DISTRO_FAMILY in
         debian)
             info "Removiendo Firefox..."
-            sudo apt remove -y firefox firefox-esr || true
-            
+            sudo apt purge -y firefox firefox-esr || true
+            # Remover paquetes de idiomas de Firefox
+            sudo apt purge -y firefox-locale-* firefox-l10n-* || true
+
             info "Removiendo LibreOffice..."
-            sudo apt remove -y libreoffice* || true
-            
+            sudo apt purge -y libreoffice* || true
+            # Remover paquetes de idiomas de LibreOffice
+            sudo apt purge -y libreoffice-l10n-* libreoffice-help-* || true
+
             info "Removiendo Thunderbird..."
-            sudo apt remove -y thunderbird || true
-            
-            # Limpiar paquetes huérfanos
-            sudo apt autoremove -y
+            sudo apt purge -y thunderbird || true
+            # Remover paquetes de idiomas de Thunderbird
+            sudo apt purge -y thunderbird-locale-* || true
+
+            # Prevenir reinstalación automática
+            info "Marcando paquetes como retenidos para prevenir reinstalación automática..."
+            echo -e "firefox hold\nfirefox-esr hold\nlibreoffice* hold\nthunderbird hold" | sudo dpkg --set-selections 2>/dev/null || true
+
+            # Limpiar paquetes huérfanos con purge
+            info "Limpiando dependencias huérfanas..."
+            sudo apt autoremove --purge -y
+
+            # Limpiar registros dpkg residuales
+            info "Limpiando registros dpkg residuales..."
+            dpkg -l | grep "^rc" | awk '{print $2}' | sudo xargs dpkg --purge 2>/dev/null || true
             ;;
         rpm)
             info "Removiendo Firefox..."
             sudo dnf remove -y firefox || true
-            
+            # Remover paquetes de idiomas de Firefox
+            sudo dnf remove -y firefox-langpacks-* || true
+
             info "Removiendo LibreOffice..."
             sudo dnf remove -y libreoffice* || true
-            
+            # Remover paquetes de idiomas de LibreOffice
+            sudo dnf remove -y libreoffice-langpack-* || true
+
             info "Removiendo Thunderbird..."
             sudo dnf remove -y thunderbird || true
-            
+            # Remover paquetes de idiomas de Thunderbird
+            sudo dnf remove -y thunderbird-langpacks-* || true
+
+            # Prevenir reinstalación automática (añadir a excludes)
+            info "Agregando paquetes a excludes para prevenir reinstalación automática..."
+            if ! grep -q "exclude=firefox" /etc/dnf/dnf.conf; then
+                echo "exclude=firefox firefox-esr libreoffice* thunderbird" | sudo tee -a /etc/dnf/dnf.conf >/dev/null
+            fi
+
             # Limpiar paquetes huérfanos
+            info "Limpiando dependencias huérfanas..."
             sudo dnf autoremove -y
+
+            # Limpiar cache y metadatos
+            info "Limpiando cache de dnf..."
+            sudo dnf clean all
             ;;
         arch)
             info "Removiendo Firefox..."
             sudo pacman -Rns --noconfirm firefox || true
-            
+            # Remover paquetes de idiomas de Firefox
+            sudo pacman -Rns --noconfirm $(pacman -Qq | grep firefox-i18n) 2>/dev/null || true
+
             info "Removiendo LibreOffice..."
             # En Arch, LibreOffice puede estar instalado como paquetes individuales
             sudo pacman -Rns --noconfirm libreoffice-fresh libreoffice-still || true
             # También remover componentes individuales si existen
             sudo pacman -Rns --noconfirm $(pacman -Qq | grep libreoffice) 2>/dev/null || true
-            
+
             info "Removiendo Thunderbird..."
             sudo pacman -Rns --noconfirm thunderbird || true
+            # Remover paquetes de idiomas de Thunderbird
+            sudo pacman -Rns --noconfirm $(pacman -Qq | grep thunderbird-i18n) 2>/dev/null || true
+
+            # Prevenir reinstalación automática agregando a IgnorePkg
+            info "Agregando paquetes a IgnorePkg para prevenir reinstalación automática..."
+            if ! grep -q "IgnorePkg.*firefox" /etc/pacman.conf; then
+                sudo sed -i '/^#IgnorePkg/a IgnorePkg = firefox libreoffice-fresh libreoffice-still thunderbird' /etc/pacman.conf
+            fi
+
+            # Limpiar cache de pacman
+            info "Limpiando cache de pacman..."
+            sudo pacman -Sc --noconfirm
+
+            # Verificar paquetes huérfanos adicionales
+            info "Verificando paquetes huérfanos adicionales..."
+            orphans=$(pacman -Qdtq 2>/dev/null) || true
+            if [[ -n "$orphans" ]]; then
+                sudo pacman -Rns --noconfirm $orphans || true
+            fi
             ;;
     esac
     
@@ -890,33 +1090,24 @@ show_menu() {
     echo "Distribución detectada: $DISTRO (Familia: $DISTRO_FAMILY)"
     echo
     echo "Selecciona una opción:"
-    echo "1) Instalar todo (configuración completa)"
-    echo "2) Instalar dependencias básicas"
-    echo "3) Instalar Google Chrome"
-    echo "4) Configurar Git"
-    echo "5) Instalar gdebi (solo Debian)"
-    echo "6) Instalar curl"
-    echo "7) Instalar JDK"
-    echo "8) Instalar graphviz"
-    echo "9) Instalar Visual Studio Code"
-    echo "10) Instalar Spotify"
-    echo "11) Instalar VLC"
-    echo "12) Instalar oh-my-posh"
-    echo "13) Instalar utilitarios (tree, eza)"
-    echo "14) Instalar GitHub CLI"
-    echo "15) Configurar firma GPG para Git"
-    echo "16) Instalar utilidades adicionales (htop, neofetch, bat, etc.)"
-    echo "17) Limpiar sistema"
-    echo "18) Quitar bloatware (LibreOffice, Firefox, Thunderbird)"
-    echo "19) Mostrar información del sistema"
-    echo "0) Salir"
+    printf "%-42s %s\n" "1)  Instalar todo (configuración completa)" "12) Instalar oh-my-posh"
+    printf "%-42s %s\n" "2)  Instalar dependencias básicas" "13) Instalar utilitarios (tree, eza)"
+    printf "%-42s %s\n" "3)  Instalar navegadores (Chrome & Brave)" "14) Instalar GitHub CLI"
+    printf "%-42s %s\n" "4)  Configurar Git" "15) Configurar firma GPG para Git"
+    printf "%-42s %s\n" "5)  Instalar gdebi (solo Debian)" "16) Instalar utilidades adicionales"
+    printf "%-42s %s\n" "6)  Instalar curl" "17) Configurar carpeta repositorios"
+    printf "%-42s %s\n" "7)  Instalar JDK" "18) Limpiar sistema"
+    printf "%-42s %s\n" "8)  Instalar graphviz" "19) Quitar bloatware"
+    printf "%-42s %s\n" "9)  Instalar Visual Studio Code" "20) Mostrar información del sistema"
+    printf "%-42s %s\n" "10) Instalar Spotify" "0)  Salir"
+    printf "%-42s %s\n" "11) Instalar VLC" ""
     echo
     read -p "Ingresa tu opción: " option
     
     case $option in
         1)
             install_dependencies
-            install_chrome
+            install_browsers
             configure_git
             install_gdebi
             install_curl
@@ -930,10 +1121,11 @@ show_menu() {
             install_github_cli
             configure_gpg
             install_additional_utilities
+            setup_repos_directory
             cleanup_system
             ;;
         2) install_dependencies ;;
-        3) install_chrome ;;
+        3) install_browsers ;;
         4) configure_git ;;
         5) install_gdebi ;;
         6) install_curl ;;
@@ -947,9 +1139,10 @@ show_menu() {
         14) install_github_cli ;;
         15) configure_gpg ;;
         16) install_additional_utilities ;;
-        17) cleanup_system ;;
-        18) remove_bloatware ;;
-        19) 
+        17) setup_repos_directory ;;
+        18) cleanup_system ;;
+        19) remove_bloatware ;;
+        20)
             echo "Información del sistema:"
             echo "OS: $PRETTY_NAME"
             echo "Kernel: $(uname -r)"
@@ -960,7 +1153,7 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
-        0) 
+        0)
             echo "¡Gracias por usar el script!"
             exit 0
             ;;

@@ -19,16 +19,18 @@ Esta carpeta contiene documentación, scripts y guías para configurar y adminis
 
 **Herramientas que instala:**
 - Desarrollo: Git, GitHub CLI, JDK, VS Code, Graphviz
-- Navegación: Google Chrome
+- Navegación: Google Chrome, Brave Browser
 - Multimedia: Spotify, VLC
-- Terminal: oh-my-posh, tree, eza, htop, neofetch, bat, ripgrep
+- Terminal: oh-my-posh (con Nerd Fonts incluidas), tree, eza, htop, neofetch, bat, ripgrep
 - Utilidades: curl, gdebi, firma GPG
 
 **Características especiales:**
-- ✅ Opción para **quitar bloatware** (LibreOffice, Firefox, Thunderbird)
-- ✅ **Configuración completa de Git** con firma GPG
-- ✅ **Personalización del terminal** con oh-my-posh
-- ✅ **Limpieza automática** del sistema
+- ✅ Opción para **quitar bloatware** (LibreOffice, Firefox, Thunderbird) con limpieza profunda
+- ✅ **Configuración completa de Git** con firma GPG y validación de email
+- ✅ **Personalización del terminal** con oh-my-posh y Nerd Fonts automáticas (FiraCode & MesloLG)
+- ✅ **Doble navegador** (Chrome + Brave) para compatibilidad y privacidad
+- ✅ **Limpieza automática** del sistema con purge y eliminación de huérfanos
+- ✅ **Gestión de errores robusta** con limpieza de repositorios fallidos
 
 ### 📚 Documentación
 
@@ -146,10 +148,10 @@ cat reconnectBluetooth.md
 - **Graphviz** para diagramas
 
 ### Productividad
-- **Google Chrome** como navegador principal
-- **Spotify** para música
+- **Navegadores duales**: Google Chrome (compatibilidad) y Brave (privacidad)
+- **Spotify** para música (desde repositorios oficiales)
 - **VLC** para multimedia
-- **Terminal personalizado** con oh-my-posh
+- **Terminal personalizado** con oh-my-posh y Nerd Fonts automáticas
 
 ### Sistema
 - **Utilidades modernas**: `eza`, `bat`, `ripgrep`, `fd`
@@ -173,19 +175,23 @@ cat reconnectBluetooth.md
 - Verificación de software existente para evitar reinstalaciones
 
 ### 🎨 Personalización
-- Terminal personalizado con oh-my-posh y Nerd Fonts
-- Múltiples temas disponibles
+- Terminal personalizado con oh-my-posh y Nerd Fonts automáticas (FiraCode & MesloLG)
+- Múltiples temas disponibles (recomendado: nordtron)
 - Configuración específica para cada shell (bash/zsh)
+- Doble navegador para diferentes necesidades (compatibilidad vs privacidad)
 
 ### 🔒 Seguridad
 - Configuración completa de GPG para firma de commits
-- Validación de emails y configuraciones
+- Validación de emails con oportunidad de corrección
+- Brave Browser con bloqueo de ads/trackers por defecto
 - Buenas prácticas de seguridad integradas
 
 ### 🧹 Mantenimiento
-- Opción de limpieza de bloatware
-- Herramientas de limpieza del sistema
-- Gestión automática de dependencias
+- Limpieza profunda de bloatware con `purge` y eliminación de configuraciones
+- Prevención de reinstalación automática de paquetes eliminados
+- Limpieza de registros dpkg residuales y dependencias huérfanas
+- Gestión automática de dependencias con verificación de errores
+- Limpieza de repositorios fallidos automáticamente
 
 ## 🤝 Contribuciones
 

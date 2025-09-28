@@ -2,15 +2,47 @@
 
 Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distribución de elementaryOS en un ordenador nuevo, ha crecido hasta convertirse en un chuletón de cosas por hacer cuando instale casi que cualquier distribución de GNU/Linux en un ordenador nuevo. Y que está mejor detallado en [aquí](README_detallado.md)
 
-TsP / TpR: 20 min / 7 min
+TsP / TpR: 20 min / 30 min
+
+> TsP: Tiempo en ser productivo | TpR: Tiempo productividad recuperada
+
+> **Actualizado**: Navegadores duales (Chrome + Brave), Nerd Fonts automáticas, limpieza mejorada de bloatware
 
 > Gracias a [Claude (Anthropic)](https://claude.ai), habemus [archivo de instalación](setup-linux.sh) que realiza todo esto!
 
-## Instalar Chrome
+## Instalar Chrome & Brave
 
-Del [canal oficial](https://www.google.com/chrome/?platform=linux) de la distro.
+Chrome del [canal oficial](https://www.google.com/chrome/?platform=linux) y Brave del [canal oficial](https://brave.com/download/).
 
-```manjaro
+```bash
+# Debian_Based distro:
+# Chrome
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+# Brave
+curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
+
+# RPM_Based distro:
+# Chrome
+sudo tee /etc/yum.repos.d/google-chrome.repo > /dev/null <<EOF
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64
+enabled=1
+gpgcheck=1
+gpgkey=https://dl.google.com/linux/linux_signing_key.pub
+EOF
+sudo dnf install google-chrome-stable
+
+# Brave
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+sudo dnf install brave-browser
+
 # Manjaro
 sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/yay-git.git
@@ -18,6 +50,7 @@ cd yay-git
 makepkg -si
 
 yay -S google-chrome
+yay -S brave-bin
 ```
 
 ## Instalar GIT
@@ -98,14 +131,17 @@ sudo dnf install graphviz
 
 ```bash
 # Debian_Based distro:
-sudo snap install code --classic
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install code
 
 # RPM_Based distro:
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 dnf check-update
 sudo dnf install code
-
 
 # Manjaro
 yay -S visual-studio-code-bin # sudo pacman -Syu code lo instala sin posibilidad de conectar con GIT
@@ -115,13 +151,25 @@ yay -S visual-studio-code-bin # sudo pacman -Syu code lo instala sin posibilidad
 
 ```bash
 # Debian_Based distro:
-sudo snap install spotify
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update
+sudo apt install spotify-client
 
 # RPM_Based distro:
-sudo snap install spotify
+sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+sudo tee /etc/yum.repos.d/spotify.repo > /dev/null <<EOF
+[spotify]
+name=Spotify repository
+baseurl=http://repository.spotify.com/rpm/stable/x86_64/
+enabled=1
+gpgcheck=1
+gpgkey=https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+EOF
+sudo dnf install spotify-client
 
 # Manjaro
-yay -S spotify 
+yay -S spotify
 ```
 
 ## Instalar VLC
@@ -131,7 +179,7 @@ yay -S spotify
 sudo apt install vlc
 
 # RPM_Based distro:
-sudo snap install vlc
+sudo dnf install vlc
 
 # Manjaro
 sudo pacman -Syu vlc
@@ -171,9 +219,7 @@ rm ~/.poshthemes/themes.zip
 # Preinstalado por defecto
 ```
 
-1. Download a [Nerd Font](http://nerdfonts.com/): [FiraCode](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) && [MesloLG](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip)
-1. Unzip and copy to ```~/.fonts```
-1. Run the command ```fc-cache -fv``` to manually rebuild the font cache
+Nerd Fonts incluidas automáticamente: [FiraCode](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) && [MesloLG](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip) (el script las descarga e instala automáticamente)
 
 Tema: nordtron
 
