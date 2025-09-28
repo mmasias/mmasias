@@ -2,13 +2,19 @@
 
 Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distribución de elementaryOS en un ordenador nuevo, ha crecido hasta convertirse en un chuletón de cosas por hacer cuando instale casi que cualquier distribución de GNU/Linux en un ordenador nuevo. Y que está mejor detallado en [aquí](README_detallado.md)
 
-TsP / TpR: 20 min / 30 min
+## Instalación rápida
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/mmasias/GNU.Linux/main/setup-linux.sh | bash
+```
+
+> TsP / TpR: 20 min / 30 min
+>
 > TsP: Tiempo en ser productivo | TpR: Tiempo productividad recuperada
-
+>
 > **Actualizado**: Navegadores duales (Chrome + Brave), Nerd Fonts automáticas, limpieza mejorada de bloatware
-
-> Gracias a [Claude (Anthropic)](https://claude.ai), habemus [archivo de instalación](setup-linux.sh) que realiza todo esto!
+>
+> Ahora, gracias a [Claude (Anthropic)](https://claude.ai), habemus [archivo de instalación](setup-linux.sh) que realiza todo esto!
 
 ## Instalar Chrome & Brave
 
