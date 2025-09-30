@@ -1,0 +1,143 @@
+@startuml
+
+hide empty members
+
+class Solicitud {
+  destinatario
+  fechaSolicitud
+  asunto
+  informacionBasica
+}
+
+abstract class Noticia {
+  tipo
+  momento
+  titular
+  protagonistas
+  contexto
+  fechaPublicacion
+}
+
+enum TipoNoticia {
+  INSTITUCIONAL
+  INVESTIGACION
+  PREMIOS_RECONOCIMIENTOS
+  ESTANCIAS_EXTRANJERO
+  EVENTOS_CAMPUS
+  ACTIVIDADES_AULA
+  ACTIVIDADES_FUERA_CAMPUS
+  VIDA_UNIVERSITARIA
+}
+
+enum MomentoPublicacion {
+  PREVIO
+  POSTERIOR
+}
+
+class NoticiaInstitucional extends Noticia
+
+class NoticiaInvestigacion extends Noticia
+
+class NoticiaPremios extends Noticia
+
+class NoticiaEstancia extends Noticia {
+  paisDestino
+}
+
+class NoticiaEvento extends Noticia
+
+class Evento {
+  fecha
+  hora
+  aula
+  ubicacion
+  diasAnticipacionMinimos
+}
+
+enum UbicacionEvento {
+  DENTRO_CAMPUS
+  FUERA_CAMPUS
+}
+
+class EventoCampus extends Evento {
+  requiereCreatividades
+  diasAnticipacionCreatividades
+}
+
+class ActividadPonente extends Evento {
+  diasAnticipacionMinimos
+}
+
+class Ponente {
+  nombre
+  institucion
+}
+
+class Cobertura {
+  requiereFoto
+  requiereVideo
+  solicitada
+}
+
+class Fotografia {
+  formato
+  tipoArchivo
+  esPortada
+}
+
+enum FormatoFoto {
+  HORIZONTAL_16_9
+  HORIZONTAL_4_3
+}
+
+enum TipoArchivo {
+  JPG
+  PNG
+}
+
+class CalidadFoto {
+  bienEnfocada
+  buenaIluminacion
+}
+
+class MiembroComunidad {
+  nombre
+  rol
+}
+
+class Convenio {
+  objetivo
+  partes
+}
+
+class MaterialGrafico {
+  tipo
+  descripcion
+}
+
+class DepartamentoComunicacion {
+  correo
+}
+
+class DepartamentoProtocolo {
+  correo
+}
+
+Solicitud "1" --> "1" Noticia : contiene
+Solicitud "1" --> "0..1" Cobertura : solicita
+Solicitud --> DepartamentoComunicacion : enviada a
+
+NoticiaEvento "1" --> "1" Evento : describe
+Evento "1" --> "0..1" Cobertura : requiere
+EventoCampus --> DepartamentoProtocolo : coordina con
+EventoCampus "1" --> "0..*" MaterialGrafico : requiere
+
+ActividadPonente "1" --> "1" Ponente : incluye
+
+Noticia "1" --> "0..*" Fotografia : contiene
+Fotografia "1" --> "1" MiembroComunidad : protagoniza
+Fotografia "1" --> "1" CalidadFoto : cumple
+
+NoticiaInstitucional "0..1" --> "0..1" Convenio : documenta
+
+@enduml

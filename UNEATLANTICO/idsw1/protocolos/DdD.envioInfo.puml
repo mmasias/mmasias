@@ -1,0 +1,52 @@
+@startuml
+start
+
+:Identificar información de interés;
+
+:Determinar tipo de noticia;
+note right
+  - Institucional
+  - Investigación
+  - Premios/reconocimientos
+  - Estancias extranjero
+  - Eventos campus
+  - Actividades aula
+  - Actividades fuera campus
+  - Vida universitaria
+end note
+
+:Determinar momento de publicación\n(previo/posterior);
+
+:Componer asunto del correo:\nTIPO_NOTICIA_(previo/post)_(titular);
+
+:Incluir información básica:\n- Nombres protagonistas\n- Contexto de la noticia;
+
+fork
+  if (¿Es convenio?) then (sí)
+    :Incluir objetivo del convenio;
+  endif
+fork again
+  if (¿Es actividad fuera del campus?) then (sí)
+    :Preparar fotografías;
+    
+    :Verificar requisitos fotográficos;
+    note right
+      - Formato horizontal (16:9 o 4:3)
+      - Archivo jpg o png
+      - Bien enfocada y con buena iluminación
+      - Protagonista: miembro comunidad educativa
+    end note
+    
+    :Indicar foto de portada;
+  endif
+end fork
+
+:Enviar correo a:\ncomunicacion@uneatlantico.es;
+
+:Departamento de Comunicación\nevalúa solicitud;
+
+:Publicación en tiempo\ny forma adecuados;
+
+stop
+
+@enduml

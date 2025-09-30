@@ -1,9 +1,10 @@
 {
     "java.project.sourcePaths": [
+        "UNEATLANTICO/prg2/tetris",
         "UNEATLANTICO/eda1/refactoring/src/spotify/v002",
         "UNEATLANTICO/eda1/refactoring/src",
         "UNEATLANTICO/eda1/generosMusicales/src",
-        "UNEATLANTICO/prg2/tetris"
+        "UNEATLANTICO/prg1/mapasConArrayAsociativo"
     ],
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#66b2ff",
