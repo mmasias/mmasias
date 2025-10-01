@@ -1,0 +1,73 @@
+@startuml
+title Secuencia de Evacuación - Interacción Temporal
+
+actor "Jefe de\nEmergencia" as JE
+participant "CCI\n(Central Control)" as CCI
+participant "Equipo de\nAlarma" as EA
+participant "Evacuados\n(Alumnos/Personal)" as EVAC
+participant "Punto de\nEncuentro" as PE
+
+== Fase 1: Detección ==
+JE -> CCI : Decide activar\nevacuación
+activate CCI
+
+== Fase 2: Activación ==
+CCI -> EA : Señal acústica\nde alarma
+activate EA
+note right
+  Todos los miembros
+  del equipo reciben
+  señal simultáneamente
+end note
+
+== Fase 3: Evacuación ==
+EA -> EVAC : "ATENCIÓN, VAMOS A\nEVACUAR EL EDIFICIO"
+activate EVAC
+EA -> EVAC : "MANTENGAN LA CALMA\nY NO CORRAN"
+EA -> EVAC : "NO RECOJAN OBJETOS\nPERSONALES"
+EA -> EVAC : "CIERREN LA PUERTA\nAL SALIR"
+
+EVAC -> EVAC : Abandonan estancias
+note right of EVAC
+  Cierran puertas
+  sin regresar
+end note
+
+EA -> EVAC : "DIRÍJANSE A SALIDA\nEN [UBICACIÓN]"
+EA -> EVAC : "NO SE DETENGAN EN\nPASILLOS/ESCALERAS"
+
+loop Repetir hasta completar evacuación
+  EA -> EA : Verificar zonas
+  EA -> EA : Comprobar temperatura\nde puertas cerradas
+  EA -> EA : Asistir impedidos/heridos
+end
+
+== Fase 4: Verificación de Zonas ==
+EA -> EA : Comprobar no quedan\npersonas rezagadas
+EA -> EA : Cerrar puertas\nde zonas verificadas
+
+== Fase 5: Salida del Equipo ==
+EA -> PE : Abandona edificio\ncuando zona evacuada
+deactivate EA
+activate PE
+
+EVAC -> PE : Llegan a punto\nde encuentro
+note right of PE
+  Fachada Norte
+  Entrada Principal
+  (en la calle)
+end note
+
+== Fase 6: Control en Punto de Encuentro ==
+PE -> PE : Comprobar ausencias
+PE -> PE : Verificar uso\nde mascarilla
+PE -> PE : Verificar distancias\nde seguridad
+PE -> EVAC : "PERMANEZCAN AQUÍ\nHASTA NUEVO AVISO"
+
+== Fase 7: Finalización ==
+JE -> PE : Aviso de fin\nde emergencia
+deactivate PE
+deactivate EVAC
+deactivate CCI
+
+@enduml

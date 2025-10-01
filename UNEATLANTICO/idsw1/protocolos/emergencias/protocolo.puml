@@ -1,0 +1,78 @@
+@startuml
+title Protocolo de Emergencia - Estados del Equipo de Alarma y Evacuación
+
+[*] --> Operacion_Normal
+
+state Operacion_Normal {
+  state "Posición de trabajo habitual" as Normal
+  Normal : Actividades regulares
+  Normal : Disponibilidad telefónica (EXT)
+}
+
+state Alerta_Preventiva {
+  state "Alumnos sospechan / preguntan" as Alerta
+  Alerta : **ACCIONES:**
+  Alerta : • Calmar sin confirmar emergencia
+  Alerta : • Mantener a evacuados en posición
+  Alerta : • Prepararse para evacuación
+  Alerta : 
+  Alerta : **MENSAJE:**
+  Alerta : "POR FAVOR, MANTENGAN LA CALMA"
+  Alerta : "SE TRATA DE UN PEQUEÑO INCIDENTE"
+  Alerta : "PERMANEZCAN TRANQUILOS, ATENTOS"
+  Alerta : "A POSIBLE ORDEN DE EVACUACIÓN"
+}
+
+state Evacuacion_Activa {
+  state "Orden de CCI recibida" as Evacuando
+  Evacuando : **ACCIONES:**
+  Evacuando : 1. Dar orden de evacuación
+  Evacuando : 2. Dirigir a salida más cercana
+  Evacuando : 3. Impedir recogida de objetos
+  Evacuando : 4. Asistir a impedidos/heridos
+  Evacuando : 5. Verificar zonas vacías
+  Evacuando : 6. Cerrar puertas (comprobar temperatura)
+  Evacuando : 7. Salir cuando zona evacuada
+  Evacuando :
+  Evacuando : **MENSAJE (repetir):**
+  Evacuando : "ATENCIÓN, VAMOS A EVACUAR EL EDIFICIO"
+  Evacuando : "MANTENGAN LA CALMA Y NO CORRAN"
+  Evacuando : "NO RECOJAN OBJETOS PERSONALES"
+  Evacuando : "CIERREN LA PUERTA AL SALIR"
+  Evacuando : "NO REGRESEN POR NINGÚN MOTIVO"
+  Evacuando : "DIRÍJANSE A SALIDA EN [UBICACIÓN]"
+  Evacuando : "NO SE DETENGAN EN PASILLOS/ESCALERAS"
+}
+
+state Punto_Encuentro {
+  state "Fachada Norte - Entrada Principal" as Encuentro
+  Encuentro : **ACCIONES:**
+  Encuentro : • Dirigir evacuados al punto
+  Encuentro : • Comprobar ausencias
+  Encuentro : • Verificar uso de mascarilla
+  Encuentro : • Verificar distancias de seguridad
+  Encuentro : • Mantener orden hasta nuevo aviso
+}
+
+Operacion_Normal --> Alerta_Preventiva : Sospechas de\nalumnos detectadas\n(sin orden oficial)
+Operacion_Normal --> Evacuacion_Activa : Señal acústica\nde alarma CCI
+Alerta_Preventiva --> Evacuacion_Activa : Señal acústica\nde alarma CCI
+Evacuacion_Activa --> Punto_Encuentro : Zona evacuada\ncompletamente
+Punto_Encuentro --> [*] : Jefe de Emergencia\nda aviso de fin
+
+note right of Evacuacion_Activa
+  **CRÍTICO:**
+  Antes de abrir puerta para
+  verificar zonas, tocar con
+  envés de mano. Si está
+  caliente, NO ABRIR (fuego).
+end note
+
+note right of Punto_Encuentro
+  **UBICACIÓN:**
+  Entrada principal
+  Fachada Norte
+  (en la calle)
+end note
+
+@enduml

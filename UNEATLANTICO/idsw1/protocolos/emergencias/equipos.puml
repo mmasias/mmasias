@@ -1,0 +1,106 @@
+@startuml
+title Equipo de Alarma y Evacuación - Despliegue por Plantas
+
+left to right direction
+
+package "Planta 3" #LightCyan {
+  component [Personal de\ncomunicación] as COM3
+  note right of COM3
+    EXT: 5213
+  end note
+}
+
+package "Planta 2" #LightBlue {
+  component [Leticia Díaz\nArribas] as LDA
+  component [Susana Otero\nCastro] as SOC
+  component [Ana Medina\nPinilla] as AMP
+  component [Lucía Terán\nCanduela] as LTC
+  
+  note right of LDA
+    EXT: 5042
+  end note
+  note right of SOC
+    EXT: 5084
+  end note
+  note right of AMP
+    EXT: 5079
+  end note
+  note right of LTC
+    EXT: 5080
+  end note
+}
+
+package "Planta 1" #LightGreen {
+  component [Docentes] as DOC1
+  component [Personal\nradio] as RAD
+  
+  note right of RAD
+    EXT: 5127/5128
+  end note
+}
+
+package "Planta 0" #LightYellow {
+  component [Rosa Ana Briz\nGutiérrez] as RABG
+  component [María Teresa\nGalán Sanchidrián] as MTGS
+  component [Docentes] as DOC0
+  
+  note right of RABG
+    EXT: 5038
+  end note
+  note right of MTGS
+    EXT: 5069
+  end note
+}
+
+package "Planta -1" #LightSalmon {
+  component [Docentes] as DOCM1
+}
+
+package "Planta -2" #LightPink {
+  component [Personal de\ncafetería] as CAF
+  component [Personal de\nBiblioteca] as BIB
+  component [Personal de\nLaboratorios] as LAB
+  component [Personal\nPlató TV] as TV
+  component [Docentes] as DOCM2
+  
+  note right of CAF
+    EXT: 5092
+  end note
+  note right of BIB
+    EXT: 5020
+  end note
+  note right of LAB
+    EXT: 5033/5321
+    5093/5073/5074
+  end note
+  note right of TV
+    EXT: 5077
+  end note
+}
+
+cloud "CCI\n(Central Control\nIncendios)" as CCI
+
+CCI ..> COM3 : Orden evacuación
+CCI ..> LDA : Orden evacuación
+CCI ..> SOC : Orden evacuación
+CCI ..> AMP : Orden evacuación
+CCI ..> LTC : Orden evacuación
+CCI ..> DOC1 : Orden evacuación
+CCI ..> RAD : Orden evacuación
+CCI ..> RABG : Orden evacuación
+CCI ..> MTGS : Orden evacuación
+CCI ..> DOC0 : Orden evacuación
+CCI ..> DOCM1 : Orden evacuación
+CCI ..> CAF : Orden evacuación
+CCI ..> BIB : Orden evacuación
+CCI ..> LAB : Orden evacuación
+CCI ..> TV : Orden evacuación
+CCI ..> DOCM2 : Orden evacuación
+
+note bottom of CCI
+  Señal acústica de alarma
+  activa evacuación simultánea
+  en todas las plantas
+end note
+
+@enduml
