@@ -1,10 +1,8 @@
 # Medidas de emergencia
 
-<div align=center>
+> Versión alterntiva del [protocolo formal](README.md)
 
-|![](/images/UNEATLANTICO/idsw1/protocolos/emergencias/equipos.svg)
-|:-:
-|Equipos
+<div align=center>
 
 |![](/images/UNEATLANTICO/idsw1/protocolos/emergencias/protocolo.svg)
 |:-:
@@ -14,5 +12,8 @@
 |:-:
 |Protocolo de emergencia
 
-</div>
+|![](/images/UNEATLANTICO/idsw1/protocolos/emergencias/equipos.svg)
+|:-:
+|Equipos
 
+</div>

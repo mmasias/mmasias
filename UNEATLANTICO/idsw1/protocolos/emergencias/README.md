@@ -1,6 +1,6 @@
-# Medidas de emergencia
-
 # MEDIDAS DE EMERGENCIA UNIVERSIDAD EUROPEA DEL ATLÁNTICO
+
+> Versión alterntiva con [diagramas](README_ALTERNATIVO.md)
 
 ## PAUTAS DE ACTUACIÓN EN CASO DE EMERGENCIA
 
