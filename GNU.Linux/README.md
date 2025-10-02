@@ -142,6 +142,8 @@ sudo dnf install graphviz
 
 ## Instalar Visual Studio Code
 
+> [*Link oficial*](https://code.visualstudio.com/docs/setup/linux)
+
 ```bash
 # Debian_Based distro:
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
