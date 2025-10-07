@@ -1,4 +1,4 @@
-# Control de entregas mediante GIT
+# Control de entregas mediante GIT - v2.0
 
 El siguiente artículo propone un método para realizar un seguimiento de la entrega de trabajos mediante github y la hoja de cálculo de Google.
 
@@ -36,7 +36,7 @@ Devuelve TRUE o FALSE en función a si el profesor (propietario del repositorio)
 
 La función `verificaPR()` se puede utilizar combinándola con el resto de funciones de la hoja de cálculo para construir un enlace que se active únicamente si el usuario lo entregó bajo determinadas condiciones.
 
-En la imagen inferior, para dos actividades, se pueden ver la lista de alumnos que han entregado a tiempo (columnas M y P), los que entregaron pero fuera de tiempo (columnas N y Q) y el enlace a las entregas de los que lo hicieron a tiempo (columnas O y R). Asimismo, información adicional en las columnas O y R como número de entregas, etc.
+En la imagen inferior, para dos actividades, se pueden ver la lista de alumnos que han entregado a tiempo (columnas O y S), los que entregaron pero fuera de tiempo (columnas P y T) y el enlace a las entregas de los que lo hicieron a tiempo (columnas R y V). Asimismo, las columnas Q y U indican si el profesor ha dejado algún comentario en el PR del alumno.
 
 <div align=center>
 
