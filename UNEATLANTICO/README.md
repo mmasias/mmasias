@@ -2,6 +2,8 @@
 
 - [IngenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO)
 - [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico)
+- [PlantillaAsignaturas](https://github.com/mmasias/repoPlantillaAsignatura)
+- [PlantillaExámenes](https://github.com/mmasias/repoPlantillaExamen)
 
 <div align=center>
 
