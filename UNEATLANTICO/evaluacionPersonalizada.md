@@ -148,13 +148,14 @@ curso-prg1/
 
 **Flujo de trabajo del estudiante:**
 
-1. El estudiante crea una branch personal: `entregas/nombreEstudiante`
-2. Desarrolla su solución en su directorio: `entregas/nombreEstudiante/reto2/`
+1. El estudiante crea una branch personal: `entregas/nombreEstudiante` (o bien forkea el repo)
+2. Desarrolla su solución en su directorio: `entregas/nombreEstudiante/reto2/` (o bien, modifica únicamente su archivo personalizado)
 3. Crea un Pull Request contra la rama principal
 4. El docente revisa y hace merge (o solicita cambios)
 5. El historial completo queda registrado: qué código, cuándo, qué cambios
 
 Este flujo captura automáticamente:
+
 - Código final de cada entrega
 - Evolución temporal (commits sucesivos)
 - Versiones previas (historial de cambios)
@@ -164,26 +165,7 @@ Este flujo captura automáticamente:
 
 **Extracción de datos mediante GitHub API:**
 
-Script de análisis recorre la lista de estudiantes y por cada uno:
-
-```python
-import requests
-
-def obtener_prs_estudiante(repo, estudiante, token):
-    url = f"https://api.github.com/repos/{repo}/pulls"
-    headers = {"Authorization": f"token {token}"}
-    params = {"state": "all", "head": f"{estudiante}"}
-    
-    response = requests.get(url, headers=headers, params=params)
-    return response.json()
-
-def extraer_archivos_pr(repo, pr_number, token):
-    url = f"https://api.github.com/repos/{repo}/pulls/{pr_number}/files"
-    headers = {"Authorization": f"token {token}"}
-    
-    response = requests.get(url, headers=headers)
-    return response.json()
-```
+[Script de análisis](scriptsEvaluacionPersonalizada/scriptAnalisis.py) recorre la lista de estudiantes y por cada uno:
 
 Para cada PR, se descargan los archivos `.java` (o el lenguaje relevante) y se construye un corpus del código del estudiante.
 
@@ -264,60 +246,7 @@ El sistema clasifica los fragmentos identificados en categorías con distribuci�
 
 Por cada estudiante, se genera un archivo markdown siguiendo esta plantilla:
 
-```markdown
-# Examen Parcial Personalizado - [Nombre Estudiante]
-
-Instrucciones: Se presentan 10 fragmentos extraídos de tu código en los retos 
-entregados. Por cada fragmento:
-
-1. Indica qué observas en el código
-2. Determina si es correcto o presenta algún problema
-3. Si presenta problema, explica cuál es y cómo lo corregirías
-4. Justifica tu respuesta
-
-Debes responder obligatoriamente 5 preguntas de las 10 presentadas.
-
----
-
-## Pregunta 1
-
-**Contexto:** Extraído de tu entrega del Reto 2, archivo `Validacion.java`
-
-**Código:**
-```java
-if (edad >= 18 == true) {
-    System.out.println("Eres mayor de edad");
-}
-```
-
-**Enlace al código original:** [Ver en GitHub](https://github.com/repo/commit/abc123)
-
-**¿Qué observas? ¿Es correcto o presenta algún problema? Justifica.**
-
----
-
-## Pregunta 2
-
-**Contexto:** Extraído de tu entrega del Reto 3, archivo `Control.java`
-
-**Código:**
-```java
-final String LUZ_ENCENCIDA = "ON";
-final String LUZ_APAGADA = "OFF";
-
-if (estado.equals(LUZ_ENCENCIDA)) {
-    // ...
-}
-```
-
-**Enlace al código original:** [Ver en GitHub](https://github.com/repo/commit/def456)
-
-**¿Qué observas? ¿Es correcto o presenta algún problema? Justifica.**
-
----
-
-[... 8 preguntas más con la misma estructura]
-```
+[Plantilla](scriptsEvaluacionPersonalizada/plantillaExamen.md)
 
 **Trazabilidad completa:**
 
@@ -340,7 +269,7 @@ Esta trazabilidad permite:
 Por cada pregunta seleccionada (5 de 10), el estudiante debe proporcionar:
 
 ```markdown
-### Respuesta Pregunta X
+**Respuesta Pregunta X**
 
 **Observación:**
 [Descripción de qué identifica en el código]
@@ -370,126 +299,7 @@ No se evalúa si el código original era correcto/incorrecto, sino si el estudia
 
 **Script de generación de exámenes:**
 
-```python
-import os
-import json
-from github import Github
-from anthropic import Anthropic
-
-def generar_examenes(estudiantes, repo_name, github_token, anthropic_key):
-    """
-    Genera exámenes personalizados para lista de estudiantes.
-    
-    Parámetros:
-    - estudiantes: lista de nombres/IDs
-    - repo_name: nombre del repositorio (ej: "user/repo")
-    - github_token: token de acceso a GitHub API
-    - anthropic_key: API key de Anthropic para Claude
-    """
-    
-    g = Github(github_token)
-    repo = g.get_repo(repo_name)
-    client = Anthropic(api_key=anthropic_key)
-    
-    examenes_generados = []
-    
-    for estudiante in estudiantes:
-        print(f"Procesando: {estudiante}")
-        
-        # 1. Obtener PRs del estudiante
-        prs = repo.get_pulls(state='all', head=estudiante)
-        
-        # 2. Extraer código de todos los PRs
-        codigo_completo = []
-        for pr in prs:
-            archivos = pr.get_files()
-            for archivo in archivos:
-                if archivo.filename.endswith('.java'):
-                    contenido = repo.get_contents(
-                        archivo.filename, 
-                        ref=pr.head.sha
-                    ).decoded_content.decode()
-                    
-                    codigo_completo.append({
-                        'archivo': archivo.filename,
-                        'contenido': contenido,
-                        'pr_number': pr.number,
-                        'commit_sha': pr.head.sha
-                    })
-        
-        # 3. Analizar código con LLM
-        prompt = construir_prompt_analisis(codigo_completo)
-        
-        response = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=4000,
-            messages=[{"role": "user", "content": prompt}]
-        )
-        
-        fragmentos = json.loads(response.content[0].text)
-        
-        # 4. Generar markdown del examen
-        examen_md = generar_markdown_examen(
-            estudiante, 
-            fragmentos, 
-            repo_name
-        )
-        
-        # 5. Guardar archivo
-        ruta = f"examenes/{estudiante}_examen.md"
-        with open(ruta, 'w', encoding='utf-8') as f:
-            f.write(examen_md)
-        
-        examenes_generados.append(ruta)
-        print(f"  ✓ Examen generado: {ruta}")
-    
-    return examenes_generados
-
-def construir_prompt_analisis(codigo_completo):
-    """Construye el prompt para el LLM"""
-    codigo_texto = "\n\n".join([
-        f"=== {c['archivo']} ===\n{c['contenido']}" 
-        for c in codigo_completo
-    ])
-    
-    return f"""
-    Analiza el siguiente código Java de un estudiante de programación nivel inicial.
-    
-    TAREA: Identificar 10 fragmentos de código que presenten oportunidades de reflexión.
-    [... resto del prompt como se especificó anteriormente]
-    
-    CÓDIGO DEL ESTUDIANTE:
-    {codigo_texto}
-    
-    FORMATO DE SALIDA: JSON con estructura {{\"fragmentos\": [...]}}
-    """
-
-def generar_markdown_examen(estudiante, fragmentos, repo_name):
-    """Genera el markdown del examen a partir de los fragmentos"""
-    md = f"# Examen Parcial Personalizado - {estudiante}\n\n"
-    md += "## Instrucciones\n\n"
-    md += "Se presentan 10 fragmentos extraídos de tu código...\n\n"
-    md += "---\n\n"
-    
-    for i, frag in enumerate(fragmentos['fragmentos'][:10], 1):
-        md += f"## Pregunta {i}\n\n"
-        md += f"**Contexto:** {frag['archivo']}\n\n"
-        md += f"**Código:**\n```java\n{frag['codigo']}\n```\n\n"
-        md += f"**Enlace:** [{frag['commit_url']}]\n\n"
-        md += "**¿Qué observas? ¿Es correcto o presenta algún problema?**\n\n"
-        md += "---\n\n"
-    
-    return md
-
-# Uso:
-estudiantes = ["estudiante1", "estudiante2", ...]  # Lista completa
-generar_examenes(
-    estudiantes, 
-    "mmasias/25-26-PRG1",
-    github_token="ghp_xxx",
-    anthropic_key="sk-ant-xxx"
-)
-```
+[Script](scriptsEvaluacionPersonalizada/scriptGeneracion.py)
 
 **Tiempo de ejecución:**
 
@@ -509,6 +319,7 @@ El docente necesita:
 ### Resultados del caso de estudio
 
 **Contexto:**
+
 - Asignatura: Programación 1, UNEATLANTICO
 - Periodo: Septiembre-Octubre 2025
 - Estudiantes totales: 52
@@ -516,6 +327,7 @@ El docente necesita:
 - Retos base: 3 principales
 
 **Producción:**
+
 - 45 exámenes personalizados (estudiantes activos)
 - 10 exámenes genéricos (estudiantes sin entregas)
 - 450 preguntas únicas generadas (45 × 10)
