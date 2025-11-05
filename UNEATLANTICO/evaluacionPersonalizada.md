@@ -461,4 +461,4 @@ Los siguientes aspectos requieren desarrollo adicional:
 **Institución:** UNEATLANTICO  
 **Caso de estudio:** 52 estudiantes, Programación 1, curso 2025-26
 
-Repositorio del caso: [github.com/mmasias/25-26-PRG1](https://github.com/mmasias/25-26-PRG1)
+Repositorios del caso: [github.com/mmasias/25-26-PRG1](https://github.com/mmasias/25-26-PRG1) [github.com/mmasias/25-26-PRG1-ExamenParcial](https://github.com/mmasias/25-26-PRG1-ExamenParcial)
