@@ -257,15 +257,24 @@ install_brave() {
 
 # Instalar Chrome y Brave - COMBINADO
 install_browsers() {
-    info "Instalando navegadores (Chrome & Brave)..."
+    info "Instalando navegadores..."
     install_chrome
-    install_brave
+    
+    # Hacer Brave opcional
+    echo
+    info "¿Deseas instalar Brave Browser?"
+    if confirm; then
+        install_brave
+    else
+        info "Instalación de Brave Browser omitida"
+    fi
+    
     success "Navegadores instalados correctamente"
 
     # Pausa informativa para acciones manuales necesarias
     echo
     info "ACCIONES NECESARIAS ANTES DE CONTINUAR:"
-    info "1. Definir navegador por defecto (Chrome o Brave)"
+    info "1. Definir navegador por defecto"
     info "2. Loguearse en GitHub en el navegador elegido"
     info "   (Necesario para configuración de Git y GPG en pasos siguientes)"
     echo
@@ -634,6 +643,229 @@ install_vlc() {
     success "VLC instalado correctamente"
 }
 
+# Instalar Node.js - NUEVO
+install_nodejs() {
+    info "Instalando Node.js..."
+    
+    # Verificar si ya está instalado
+    if command -v node &> /dev/null; then
+        node_version=$(node --version)
+        info "Node.js ya está instalado: $node_version"
+        
+        if ! confirm; then
+            return 0
+        fi
+    fi
+    
+    case $DISTRO_FAMILY in
+        debian)
+            # Instalar usando NodeSource para obtener la última versión LTS
+            info "Instalando Node.js desde NodeSource (LTS)..."
+            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+            sudo apt install -y nodejs
+            ;;
+        rpm)
+            info "Instalando Node.js desde NodeSource (LTS)..."
+            curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+            sudo dnf install -y nodejs
+            ;;
+        arch)
+            sudo pacman -S --noconfirm nodejs npm
+            ;;
+    esac
+    
+    # Verificar instalación
+    if command -v node &> /dev/null; then
+        node_version=$(node --version)
+        npm_version=$(npm --version)
+        success "Node.js instalado correctamente: $node_version"
+        info "npm versión: $npm_version"
+    else
+        error "No se pudo instalar Node.js"
+        return 1
+    fi
+}
+
+# Instalar Cursor (Claude Code & Codex) - NUEVO
+install_cursor() {
+    info "Instalando Cursor (Claude Code & Codex)..."
+    
+    # Verificar si ya está instalado
+    if command -v cursor &> /dev/null; then
+        success "Cursor ya está instalado"
+        return 0
+    fi
+    
+    case $DISTRO_FAMILY in
+        debian)
+            # Método 1: Intentar descarga directa del AppImage
+            info "Descargando Cursor AppImage..."
+            temp_dir=$(mktemp -d)
+            cd "$temp_dir"
+            
+            # Descargar la última versión de Cursor
+            if wget -O cursor.AppImage "https://downloader.cursor.sh/linux/appImage/x64"; then
+                # Hacer ejecutable
+                chmod +x cursor.AppImage
+                
+                # Mover a directorio de aplicaciones local
+                mkdir -p "$HOME/.local/bin"
+                mv cursor.AppImage "$HOME/.local/bin/cursor"
+                
+                # Crear acceso directo desktop
+                mkdir -p "$HOME/.local/share/applications"
+                cat > "$HOME/.local/share/applications/cursor.desktop" <<EOF
+[Desktop Entry]
+Name=Cursor
+Comment=AI-powered code editor
+Exec=$HOME/.local/bin/cursor %F
+Icon=cursor
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=Cursor
+EOF
+                
+                success "Cursor instalado correctamente en $HOME/.local/bin/cursor"
+                info "Puedes ejecutarlo con: cursor"
+                
+                # Asegurarse de que ~/.local/bin está en el PATH
+                shell_rc=""
+                if [[ "$SHELL" == *"bash"* ]]; then
+                    shell_rc="$HOME/.bashrc"
+                elif [[ "$SHELL" == *"zsh"* ]]; then
+                    shell_rc="$HOME/.zshrc"
+                fi
+                
+                if [[ -n "$shell_rc" ]]; then
+                    if ! grep -q "export PATH=\"\$HOME/.local/bin:\$PATH\"" "$shell_rc"; then
+                        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
+                        info "Se ha añadido $HOME/.local/bin al PATH en $shell_rc"
+                    fi
+                fi
+                
+                cd - > /dev/null
+                rm -rf "$temp_dir"
+                return 0
+            fi
+            
+            cd - > /dev/null
+            rm -rf "$temp_dir"
+            error "No se pudo descargar Cursor"
+            info "Puedes instalarlo manualmente desde: https://cursor.sh"
+            return 1
+            ;;
+        rpm)
+            # Similar para RPM
+            info "Descargando Cursor AppImage..."
+            temp_dir=$(mktemp -d)
+            cd "$temp_dir"
+            
+            if wget -O cursor.AppImage "https://downloader.cursor.sh/linux/appImage/x64"; then
+                chmod +x cursor.AppImage
+                mkdir -p "$HOME/.local/bin"
+                mv cursor.AppImage "$HOME/.local/bin/cursor"
+                
+                mkdir -p "$HOME/.local/share/applications"
+                cat > "$HOME/.local/share/applications/cursor.desktop" <<EOF
+[Desktop Entry]
+Name=Cursor
+Comment=AI-powered code editor
+Exec=$HOME/.local/bin/cursor %F
+Icon=cursor
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=Cursor
+EOF
+                
+                success "Cursor instalado correctamente en $HOME/.local/bin/cursor"
+                
+                shell_rc=""
+                if [[ "$SHELL" == *"bash"* ]]; then
+                    shell_rc="$HOME/.bashrc"
+                elif [[ "$SHELL" == *"zsh"* ]]; then
+                    shell_rc="$HOME/.zshrc"
+                fi
+                
+                if [[ -n "$shell_rc" ]]; then
+                    if ! grep -q "export PATH=\"\$HOME/.local/bin:\$PATH\"" "$shell_rc"; then
+                        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
+                        info "Se ha añadido $HOME/.local/bin al PATH en $shell_rc"
+                    fi
+                fi
+                
+                cd - > /dev/null
+                rm -rf "$temp_dir"
+                return 0
+            fi
+            
+            cd - > /dev/null
+            rm -rf "$temp_dir"
+            error "No se pudo descargar Cursor"
+            info "Puedes instalarlo manualmente desde: https://cursor.sh"
+            return 1
+            ;;
+        arch)
+            # Intentar instalar desde AUR
+            if yay -S --noconfirm cursor-bin; then
+                success "Cursor instalado correctamente desde AUR"
+                return 0
+            else
+                # Fallback a AppImage
+                info "Descargando Cursor AppImage..."
+                temp_dir=$(mktemp -d)
+                cd "$temp_dir"
+                
+                if wget -O cursor.AppImage "https://downloader.cursor.sh/linux/appImage/x64"; then
+                    chmod +x cursor.AppImage
+                    mkdir -p "$HOME/.local/bin"
+                    mv cursor.AppImage "$HOME/.local/bin/cursor"
+                    
+                    mkdir -p "$HOME/.local/share/applications"
+                    cat > "$HOME/.local/share/applications/cursor.desktop" <<EOF
+[Desktop Entry]
+Name=Cursor
+Comment=AI-powered code editor
+Exec=$HOME/.local/bin/cursor %F
+Icon=cursor
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=Cursor
+EOF
+                    
+                    success "Cursor instalado correctamente en $HOME/.local/bin/cursor"
+                    
+                    shell_rc=""
+                    if [[ "$SHELL" == *"bash"* ]]; then
+                        shell_rc="$HOME/.bashrc"
+                    elif [[ "$SHELL" == *"zsh"* ]]; then
+                        shell_rc="$HOME/.zshrc"
+                    fi
+                    
+                    if [[ -n "$shell_rc" ]]; then
+                        if ! grep -q "export PATH=\"\$HOME/.local/bin:\$PATH\"" "$shell_rc"; then
+                            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
+                            info "Se ha añadido $HOME/.local/bin al PATH en $shell_rc"
+                        fi
+                    fi
+                    
+                    cd - > /dev/null
+                    rm -rf "$temp_dir"
+                    return 0
+                fi
+                
+                cd - > /dev/null
+                rm -rf "$temp_dir"
+                error "No se pudo descargar Cursor"
+                info "Puedes instalarlo manualmente desde: https://cursor.sh"
+                return 1
+            fi
+            ;;
+    esac
+}
+
 # Instalar oh-my-posh
 install_oh_my_posh() {
     info "Instalando oh-my-posh..."
@@ -756,7 +988,7 @@ install_oh_my_posh() {
 
 # Instalar utilitarios adicionales
 install_utilities() {
-    info "Instalando utilitarios adicionales (tree, eza)..."
+    info "Instalando utilitarios adicionales (tree, eza, Jorts, KDEnLive, VirtualBox)..."
     
     case $DISTRO_FAMILY in
         debian)
@@ -767,6 +999,24 @@ install_utilities() {
                 sudo apt install -y cargo
                 cargo install eza
             fi
+            
+            # Instalar Jorts (cliente de Mastodon)
+            if ! command -v jorts &> /dev/null; then
+                info "Instalando Jorts..."
+                # Jorts puede instalarse como flatpak o snap
+                if command -v flatpak &> /dev/null || sudo apt install -y flatpak; then
+                    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
+                    flatpak install -y flathub ca.joshuadoes.Jorts || info "Jorts no disponible en Flathub"
+                fi
+            fi
+            
+            # Instalar KDEnLive
+            info "Instalando KDEnLive..."
+            sudo apt install -y kdenlive
+            
+            # Instalar VirtualBox
+            info "Instalando VirtualBox..."
+            sudo apt install -y virtualbox virtualbox-ext-pack || sudo apt install -y virtualbox
             ;;
         rpm)
             sudo dnf install -y tree
@@ -776,6 +1026,23 @@ install_utilities() {
                 sudo dnf install -y cargo
                 cargo install eza
             fi
+            
+            # Instalar Jorts
+            if ! command -v jorts &> /dev/null; then
+                info "Instalando Jorts..."
+                if command -v flatpak &> /dev/null || sudo dnf install -y flatpak; then
+                    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
+                    flatpak install -y flathub ca.joshuadoes.Jorts || info "Jorts no disponible en Flathub"
+                fi
+            fi
+            
+            # Instalar KDEnLive
+            info "Instalando KDEnLive..."
+            sudo dnf install -y kdenlive
+            
+            # Instalar VirtualBox
+            info "Instalando VirtualBox..."
+            sudo dnf install -y VirtualBox
             ;;
         arch)
             sudo pacman -S --noconfirm tree
@@ -783,6 +1050,20 @@ install_utilities() {
             if ! sudo pacman -S --noconfirm eza 2>/dev/null; then
                 yay -S --noconfirm eza
             fi
+            
+            # Instalar Jorts
+            if ! command -v jorts &> /dev/null; then
+                info "Instalando Jorts..."
+                yay -S --noconfirm jorts || info "Jorts no disponible en AUR"
+            fi
+            
+            # Instalar KDEnLive
+            info "Instalando KDEnLive..."
+            sudo pacman -S --noconfirm kdenlive
+            
+            # Instalar VirtualBox
+            info "Instalando VirtualBox..."
+            sudo pacman -S --noconfirm virtualbox virtualbox-host-modules-arch
             ;;
     esac
     
@@ -1189,17 +1470,18 @@ show_menu() {
     echo "Distribución detectada: $DISTRO (Familia: $DISTRO_FAMILY)"
     echo
     echo "Selecciona una opción:"
-    printf "%-42s %s\n" "1)  Instalar todo (configuración completa)" "12) Instalar oh-my-posh"
-    printf "%-42s %s\n" "2)  Instalar dependencias básicas" "13) Instalar utilitarios (tree, eza)"
-    printf "%-42s %s\n" "3)  Instalar navegadores (Chrome & Brave)" "14) Instalar GitHub CLI"
-    printf "%-42s %s\n" "4)  Configurar Git" "15) Configurar firma GPG para Git"
-    printf "%-42s %s\n" "5)  Instalar gdebi (solo Debian)" "16) Instalar utilidades adicionales"
-    printf "%-42s %s\n" "6)  Instalar curl" "17) Configurar carpeta repositorios"
-    printf "%-42s %s\n" "7)  Instalar JDK" "18) Limpiar sistema"
-    printf "%-42s %s\n" "8)  Instalar graphviz" "19) Quitar bloatware"
-    printf "%-42s %s\n" "9)  Instalar Visual Studio Code" "20) Mostrar información del sistema"
-    printf "%-42s %s\n" "10) Instalar Spotify" "0)  Salir"
-    printf "%-42s %s\n" "11) Instalar VLC" ""
+    printf "%-42s %s\n" "1)  Instalar todo (configuración completa)" "13) Instalar utilitarios"
+    printf "%-42s %s\n" "2)  Instalar dependencias básicas" "14) Instalar GitHub CLI"
+    printf "%-42s %s\n" "3)  Instalar navegadores (Chrome & Brave)" "15) Configurar firma GPG para Git"
+    printf "%-42s %s\n" "4)  Configurar Git" "16) Instalar utilidades adicionales"
+    printf "%-42s %s\n" "5)  Instalar gdebi (solo Debian)" "17) Configurar carpeta repositorios"
+    printf "%-42s %s\n" "6)  Instalar curl" "18) Limpiar sistema"
+    printf "%-42s %s\n" "7)  Instalar JDK" "19) Quitar bloatware"
+    printf "%-42s %s\n" "8)  Instalar graphviz" "20) Mostrar información del sistema"
+    printf "%-42s %s\n" "9)  Instalar Visual Studio Code" "21) Instalar Node.js"
+    printf "%-42s %s\n" "10) Instalar Spotify" "22) Instalar Cursor (Claude Code)"
+    printf "%-42s %s\n" "11) Instalar VLC" "0)  Salir"
+    printf "%-42s %s\n" "12) Instalar oh-my-posh" ""
     echo
     read -p "Ingresa tu opción: " option
     
@@ -1215,6 +1497,8 @@ show_menu() {
             install_vscode
             install_spotify
             install_vlc
+            install_nodejs
+            install_cursor
             install_oh_my_posh
             install_utilities
             install_github_cli
@@ -1253,6 +1537,8 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
+        21) install_nodejs ;;
+        22) install_cursor ;;
         0)
             echo "¡Gracias por usar el script!"
             exit 0
@@ -1291,6 +1577,8 @@ main() {
         install_vscode
         install_spotify
         install_vlc
+        install_nodejs
+        install_cursor
         install_oh_my_posh
         install_utilities
         install_github_cli
