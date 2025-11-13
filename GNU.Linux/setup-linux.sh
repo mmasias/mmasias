@@ -88,29 +88,31 @@ detect_distro() {
 # Instalar dependencias básicas según la distribución - MEJORADO
 install_dependencies() {
     info "Instalando dependencias básicas para $DISTRO_FAMILY..."
-    
+
     case $DISTRO_FAMILY in
         debian)
             # Actualizar primero
             info "Actualizando repositorios..."
             sudo apt update
-            
-            # Instalar herramientas básicas
-            sudo apt install -y curl wget git unzip zip software-properties-common apt-transport-https ca-certificates gnupg lsb-release
-            
+
+            # Instalar herramientas básicas (incluyendo curl y gdebi)
+            sudo apt install -y curl wget git unzip zip software-properties-common apt-transport-https ca-certificates gnupg lsb-release gdebi-core
+
             # Verificar si universe está habilitado en Ubuntu
             if [[ "$DISTRO" == "ubuntu" ]]; then
                 sudo add-apt-repository universe -y
                 sudo apt update
             fi
+
+            success "Dependencias básicas instaladas (incluyendo curl y gdebi)"
             ;;
         rpm)
             info "Actualizando repositorios..."
             sudo dnf check-update || true  # No fallar si no hay actualizaciones
-            
-            # Instalar herramientas básicas
+
+            # Instalar herramientas básicas (incluyendo curl)
             sudo dnf install -y curl wget git unzip zip dnf-plugins-core
-            
+
             # Habilitar repositorios adicionales si están disponibles
             if command -v dnf &> /dev/null; then
                 # Para Fedora
@@ -118,13 +120,15 @@ install_dependencies() {
                     sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
                 fi
             fi
+
+            success "Dependencias básicas instaladas (incluyendo curl)"
             ;;
         arch)
             info "Actualizando sistema..."
             sudo pacman -Syu --noconfirm
-            
+
             sudo pacman -S --noconfirm curl wget git unzip zip base-devel
-            
+
             # Instalar yay si no está instalado
             if ! command -v yay &> /dev/null; then
                 info "Instalando yay para acceso a AUR..."
@@ -137,10 +141,10 @@ install_dependencies() {
             else
                 info "yay ya está instalado"
             fi
+
+            success "Dependencias básicas instaladas (incluyendo curl)"
             ;;
     esac
-    
-    success "Dependencias básicas instaladas"
 }
 
 # Instalar Google Chrome - MEJORADO
@@ -348,42 +352,6 @@ configure_git() {
     success "Git configurado con nombre: $git_name y email: $git_email"
 }
 
-# Instalar gdebi (solo para distribuciones basadas en Debian)
-install_gdebi() {
-    if [[ "$DISTRO_FAMILY" == "debian" ]]; then
-        info "Instalando gdebi..."
-        sudo apt install -y gdebi
-        success "gdebi instalado correctamente"
-    else
-        info "gdebi es específico para distribuciones basadas en Debian, saltando..."
-    fi
-}
-
-# Instalar curl
-install_curl() {
-    info "Instalando curl..."
-    
-    # Verificar si ya está instalado
-    if command -v curl &> /dev/null; then
-        success "curl ya está instalado"
-        return 0
-    fi
-    
-    case $DISTRO_FAMILY in
-        debian)
-            sudo apt install -y curl
-            ;;
-        rpm)
-            sudo dnf install -y curl
-            ;;
-        arch)
-            sudo pacman -S --noconfirm curl
-            ;;
-    esac
-    
-    success "curl instalado correctamente"
-}
-
 # Instalar JDK - MEJORADO
 install_jdk() {
     info "Instalando JDK..."
@@ -429,10 +397,12 @@ install_jdk() {
     fi
 }
 
-# Instalar graphviz
-install_graphviz() {
+# Instalar JDK y graphviz juntos
+install_jdk_and_graphviz() {
+    install_jdk
+
     info "Instalando graphviz..."
-    
+
     case $DISTRO_FAMILY in
         debian)
             sudo apt install -y graphviz
@@ -444,7 +414,7 @@ install_graphviz() {
             sudo pacman -S --noconfirm graphviz
             ;;
     esac
-    
+
     success "graphviz instalado correctamente"
 }
 
@@ -523,7 +493,7 @@ install_vscode() {
     success "Visual Studio Code instalado correctamente"
 }
 
-# Instalar Spotify - CORREGIDO
+# Instalar Spotify - ACTUALIZADO según documentación oficial
 install_spotify() {
     info "Instalando Spotify..."
 
@@ -538,9 +508,9 @@ install_spotify() {
             # Intentar con repositorio oficial de Spotify
             info "Instalando desde el repositorio oficial de Spotify..."
 
-            # Agregar clave y repositorio de Spotify
-            if curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg; then
-                echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+            # Agregar clave y repositorio de Spotify (clave actualizada)
+            if curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg; then
+                echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
                 # Actualizar e instalar
                 if sudo apt update && sudo apt install -y spotify-client; then
@@ -571,35 +541,8 @@ install_spotify() {
             return 1
             ;;
         rpm)
-            # Intentar con repositorio oficial de Spotify
-            info "Instalando desde repositorio oficial de Spotify..."
-
-            if sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg; then
-                # Crear archivo de repositorio
-                sudo tee /etc/yum.repos.d/spotify.repo > /dev/null <<EOF
-[spotify]
-name=Spotify repository
-baseurl=http://repository.spotify.com/rpm/stable/x86_64/
-enabled=1
-gpgcheck=1
-gpgkey=https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
-EOF
-
-                if sudo dnf install -y spotify-client; then
-                    success "Spotify instalado correctamente desde repositorio oficial"
-                    return 0
-                else
-                    # Limpiar repositorio fallido
-                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
-                    sudo rm -f /etc/yum.repos.d/spotify.repo
-                    sudo dnf clean all
-                fi
-            else
-                warning "No se pudo configurar el repositorio oficial de Spotify"
-            fi
-
-            # Método de respaldo: snap
-            warning "Intentando instalar Spotify desde snap como respaldo..."
+            # Método preferido: snap
+            info "Instalando Spotify desde snap..."
             if command -v snap &> /dev/null || sudo dnf install -y snapd; then
                 if sudo snap install spotify; then
                     success "Spotify instalado correctamente desde snap"
@@ -607,7 +550,7 @@ EOF
                 fi
             fi
 
-            error "No se pudo instalar Spotify desde ningún método"
+            error "No se pudo instalar Spotify"
             info "Puedes instalarlo manualmente desde: https://www.spotify.com/download/linux/"
             return 1
             ;;
@@ -643,168 +586,103 @@ install_vlc() {
     success "VLC instalado correctamente"
 }
 
-# Instalar Node.js via nvm - NUEVO
-install_nodejs() {
-    info "Instalando Node.js vía nvm..."
-    
-    # Verificar si nvm ya está instalado
-    if [ -s "$HOME/.nvm/nvm.sh" ]; then
-        info "nvm ya está instalado"
-        # Cargar nvm
-        \. "$HOME/.nvm/nvm.sh"
-    else
-        # Descargar e instalar nvm
-        info "Descargando e instalando nvm..."
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-        
-        # Cargar nvm para usarlo inmediatamente
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        
-        if [ -s "$HOME/.nvm/nvm.sh" ]; then
-            success "nvm instalado correctamente"
+# Instalar agentes de IA (Claude Code, Gemini CLI, Codex) - CONSOLIDADO
+install_agents() {
+    info "Instalando agentes de IA..."
+
+    # Verificar si Node.js está instalado
+    if ! command -v npm &> /dev/null; then
+        error "npm no está instalado. Por favor, instala las utilidades primero (incluye Node.js)."
+        return 1
+    fi
+
+    # Cargar nvm si está disponible
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    # Array con los agentes disponibles
+    declare -A agents=(
+        ["claude-code"]="@anthropic-ai/claude-code"
+        ["gemini-cli"]="@google/gemini-cli"
+        ["codex"]="@openai/codex"
+    )
+
+    # Preguntar qué agentes instalar
+    echo
+    info "¿Qué agentes deseas instalar?"
+    echo "1) Claude Code"
+    echo "2) Gemini CLI"
+    echo "3) Codex"
+    echo "4) Todos"
+    read -p "Selecciona (1-4, o varios separados por comas): " agent_choice
+
+    # Determinar qué instalar
+    install_claude=false
+    install_gemini=false
+    install_codex_agent=false
+
+    case $agent_choice in
+        *4*|*"todos"*|*"Todos"*)
+            install_claude=true
+            install_gemini=true
+            install_codex_agent=true
+            ;;
+        *)
+            [[ $agent_choice == *1* ]] && install_claude=true
+            [[ $agent_choice == *2* ]] && install_gemini=true
+            [[ $agent_choice == *3* ]] && install_codex_agent=true
+            ;;
+    esac
+
+    # Instalar Claude Code
+    if [ "$install_claude" = true ]; then
+        info "Instalando Claude Code..."
+        if npm list -g @anthropic-ai/claude-code &> /dev/null; then
+            success "Claude Code ya está instalado"
         else
-            error "No se pudo instalar nvm"
-            return 1
+            npm install -g @anthropic-ai/claude-code
+            if npm list -g @anthropic-ai/claude-code &> /dev/null; then
+                success "Claude Code instalado correctamente"
+                info "Ejecutar con: claude-code"
+            else
+                error "No se pudo instalar Claude Code"
+            fi
         fi
     fi
-    
-    # Cargar nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    
-    # Verificar si Node.js 24 ya está instalado
-    if command -v node &> /dev/null; then
-        node_version=$(node --version)
-        info "Node.js ya está instalado: $node_version"
-        
-        if ! confirm; then
-            return 0
-        fi
-    fi
-    
-    # Instalar Node.js versión 24
-    info "Descargando e instalando Node.js v24..."
-    nvm install 24
-    
-    # Verificar instalación
-    if command -v node &> /dev/null; then
-        node_version=$(node --version)
-        npm_version=$(npm --version)
-        success "Node.js instalado correctamente: $node_version"
-        info "npm versión: $npm_version"
-    else
-        error "No se pudo instalar Node.js"
-        return 1
-    fi
-}
 
-# Instalar Claude Code - NUEVO
-install_claude_code() {
-    info "Instalando Claude Code..."
-    
-    # Verificar si Node.js está instalado
-    if ! command -v npm &> /dev/null; then
-        error "npm no está instalado. Por favor, instala Node.js primero (opción 21)."
-        return 1
-    fi
-    
-    # Cargar nvm si está disponible
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    
-    # Verificar si ya está instalado
-    if npm list -g @anthropic-ai/claude-code &> /dev/null; then
-        info "Claude Code ya está instalado"
-        
-        if ! confirm; then
-            return 0
+    # Instalar Gemini CLI
+    if [ "$install_gemini" = true ]; then
+        info "Instalando Gemini CLI..."
+        if npm list -g @google/gemini-cli &> /dev/null; then
+            success "Gemini CLI ya está instalado"
+        else
+            npm install -g @google/gemini-cli
+            if npm list -g @google/gemini-cli &> /dev/null; then
+                success "Gemini CLI instalado correctamente"
+                info "Ejecutar con: gemini-cli"
+            else
+                error "No se pudo instalar Gemini CLI"
+            fi
         fi
     fi
-    
-    # Instalar Claude Code globalmente
-    info "Instalando @anthropic-ai/claude-code..."
-    npm install -g @anthropic-ai/claude-code
-    
-    if npm list -g @anthropic-ai/claude-code &> /dev/null; then
-        success "Claude Code instalado correctamente"
-        info "Puedes ejecutarlo con: claude-code"
-    else
-        error "No se pudo instalar Claude Code"
-        return 1
-    fi
-}
 
-# Instalar Gemini CLI - NUEVO
-install_gemini_cli() {
-    info "Instalando Gemini CLI..."
-    
-    # Verificar si Node.js está instalado
-    if ! command -v npm &> /dev/null; then
-        error "npm no está instalado. Por favor, instala Node.js primero (opción 21)."
-        return 1
-    fi
-    
-    # Cargar nvm si está disponible
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    
-    # Verificar si ya está instalado
-    if npm list -g @google/gemini-cli &> /dev/null; then
-        info "Gemini CLI ya está instalado"
-        
-        if ! confirm; then
-            return 0
+    # Instalar Codex
+    if [ "$install_codex_agent" = true ]; then
+        info "Instalando Codex..."
+        if npm list -g @openai/codex &> /dev/null; then
+            success "Codex ya está instalado"
+        else
+            npm install -g @openai/codex
+            if npm list -g @openai/codex &> /dev/null; then
+                success "Codex instalado correctamente"
+                info "Ejecutar con: codex"
+            else
+                error "No se pudo instalar Codex"
+            fi
         fi
     fi
-    
-    # Instalar Gemini CLI globalmente
-    info "Instalando @google/gemini-cli..."
-    npm install -g @google/gemini-cli
-    
-    if npm list -g @google/gemini-cli &> /dev/null; then
-        success "Gemini CLI instalado correctamente"
-        info "Puedes ejecutarlo con: gemini-cli"
-    else
-        error "No se pudo instalar Gemini CLI"
-        return 1
-    fi
-}
 
-# Instalar Codex - NUEVO
-install_codex() {
-    info "Instalando Codex..."
-    
-    # Verificar si Node.js está instalado
-    if ! command -v npm &> /dev/null; then
-        error "npm no está instalado. Por favor, instala Node.js primero (opción 21)."
-        return 1
-    fi
-    
-    # Cargar nvm si está disponible
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    
-    # Verificar si ya está instalado
-    if npm list -g @openai/codex &> /dev/null; then
-        info "Codex ya está instalado"
-        
-        if ! confirm; then
-            return 0
-        fi
-    fi
-    
-    # Instalar Codex globalmente
-    info "Instalando @openai/codex..."
-    npm install -g @openai/codex
-    
-    if npm list -g @openai/codex &> /dev/null; then
-        success "Codex instalado correctamente"
-        info "Puedes ejecutarlo con: codex"
-    else
-        error "No se pudo instalar Codex"
-        return 1
-    fi
+    success "Agentes de IA configurados correctamente"
 }
 
 # Instalar oh-my-posh
@@ -927,47 +805,92 @@ install_oh_my_posh() {
     success "oh-my-posh instalado correctamente"
 }
 
-# Instalar utilitarios adicionales
+# Instalar utilitarios adicionales y herramientas de desarrollo
 install_utilities() {
-    info "Instalando utilitarios adicionales (tree, eza, Jorts, KDEnLive, VirtualBox)..."
-    
+    info "Instalando utilitarios y herramientas de desarrollo..."
+
     case $DISTRO_FAMILY in
         debian)
-            sudo apt install -y tree
-            # eza no está en los repositorios estándar de debian, usar snap o instalar manualmente
+            # Herramientas de sistema básicas
+            sudo apt install -y \
+                tree \
+                htop \
+                neofetch \
+                bat \
+                fd-find \
+                ripgrep \
+                tmux \
+                vim \
+                build-essential
+
+            # eza no está en los repositorios estándar de debian
             if ! command -v eza &> /dev/null; then
                 warning "eza no está disponible en los repositorios estándar. Instalando mediante cargo..."
                 sudo apt install -y cargo
                 cargo install eza
             fi
-            
+
+            # Instalar DOSBox-X
+            info "Instalando DOSBox-X..."
+            if ! command -v dosbox-x &> /dev/null; then
+                if command -v flatpak &> /dev/null || sudo apt install -y flatpak; then
+                    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
+                    flatpak install -y flathub com.dosbox_x.DOSBox-X || warning "DOSBox-X no disponible en Flathub"
+                fi
+            else
+                info "DOSBox-X ya está instalado"
+            fi
+
             # Instalar Jorts (cliente de Mastodon)
             if ! command -v jorts &> /dev/null; then
                 info "Instalando Jorts..."
-                # Jorts puede instalarse como flatpak o snap
                 if command -v flatpak &> /dev/null || sudo apt install -y flatpak; then
                     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
                     flatpak install -y flathub ca.joshuadoes.Jorts || info "Jorts no disponible en Flathub"
                 fi
             fi
-            
+
             # Instalar KDEnLive
             info "Instalando KDEnLive..."
             sudo apt install -y kdenlive
-            
+
             # Instalar VirtualBox
             info "Instalando VirtualBox..."
             sudo apt install -y virtualbox virtualbox-ext-pack || sudo apt install -y virtualbox
             ;;
         rpm)
-            sudo dnf install -y tree
+            # Herramientas de sistema básicas
+            sudo dnf install -y \
+                tree \
+                htop \
+                neofetch \
+                bat \
+                fd-find \
+                ripgrep \
+                tmux \
+                vim \
+                gcc \
+                gcc-c++ \
+                make
+
             # eza puede requerir EPEL
             if ! sudo dnf install -y eza 2>/dev/null; then
                 warning "eza no está disponible en los repositorios estándar. Instalando mediante cargo..."
                 sudo dnf install -y cargo
                 cargo install eza
             fi
-            
+
+            # Instalar DOSBox-X
+            info "Instalando DOSBox-X..."
+            if ! command -v dosbox-x &> /dev/null; then
+                if command -v flatpak &> /dev/null || sudo dnf install -y flatpak; then
+                    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
+                    flatpak install -y flathub com.dosbox_x.DOSBox-X || warning "DOSBox-X no disponible en Flathub"
+                fi
+            else
+                info "DOSBox-X ya está instalado"
+            fi
+
             # Instalar Jorts
             if ! command -v jorts &> /dev/null; then
                 info "Instalando Jorts..."
@@ -976,39 +899,112 @@ install_utilities() {
                     flatpak install -y flathub ca.joshuadoes.Jorts || info "Jorts no disponible en Flathub"
                 fi
             fi
-            
+
             # Instalar KDEnLive
             info "Instalando KDEnLive..."
             sudo dnf install -y kdenlive
-            
+
             # Instalar VirtualBox
             info "Instalando VirtualBox..."
             sudo dnf install -y VirtualBox
             ;;
         arch)
-            sudo pacman -S --noconfirm tree
+            # Herramientas de sistema básicas
+            sudo pacman -S --noconfirm \
+                tree \
+                htop \
+                neofetch \
+                bat \
+                fd \
+                ripgrep \
+                tmux \
+                vim \
+                base-devel
+
             # eza podría estar en los repositorios oficiales o en AUR
             if ! sudo pacman -S --noconfirm eza 2>/dev/null; then
                 yay -S --noconfirm eza
             fi
-            
+
+            # Instalar DOSBox-X
+            info "Instalando DOSBox-X..."
+            if ! command -v dosbox-x &> /dev/null; then
+                yay -S --noconfirm dosbox-x || warning "DOSBox-X no disponible en AUR"
+            else
+                info "DOSBox-X ya está instalado"
+            fi
+
             # Instalar Jorts
             if ! command -v jorts &> /dev/null; then
                 info "Instalando Jorts..."
                 yay -S --noconfirm jorts || info "Jorts no disponible en AUR"
             fi
-            
+
             # Instalar KDEnLive
             info "Instalando KDEnLive..."
             sudo pacman -S --noconfirm kdenlive
-            
+
             # Instalar VirtualBox
             info "Instalando VirtualBox..."
             sudo pacman -S --noconfirm virtualbox virtualbox-host-modules-arch
             ;;
     esac
-    
-    success "Utilitarios adicionales instalados correctamente"
+
+    # Instalar Node.js via nvm
+    info "Instalando Node.js vía nvm..."
+
+    # Verificar si nvm ya está instalado
+    if [ -s "$HOME/.nvm/nvm.sh" ]; then
+        info "nvm ya está instalado"
+        # Cargar nvm
+        \. "$HOME/.nvm/nvm.sh"
+    else
+        # Descargar e instalar nvm
+        info "Descargando e instalando nvm..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+        # Cargar nvm para usarlo inmediatamente
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+        if [ -s "$HOME/.nvm/nvm.sh" ]; then
+            success "nvm instalado correctamente"
+        else
+            error "No se pudo instalar nvm"
+            return 1
+        fi
+    fi
+
+    # Cargar nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    # Verificar si Node.js 24 ya está instalado
+    if command -v node &> /dev/null; then
+        node_version=$(node --version)
+        info "Node.js ya está instalado: $node_version"
+
+        if ! confirm; then
+            success "Utilitarios instalados correctamente"
+            return 0
+        fi
+    fi
+
+    # Instalar Node.js versión 24
+    info "Descargando e instalando Node.js v24..."
+    nvm install 24
+
+    # Verificar instalación
+    if command -v node &> /dev/null; then
+        node_version=$(node --version)
+        npm_version=$(npm --version)
+        success "Node.js instalado correctamente: $node_version"
+        info "npm versión: $npm_version"
+    else
+        error "No se pudo instalar Node.js"
+    fi
+
+    success "Utilitarios y herramientas instalados correctamente"
 }
 
 # Instalar GitHub CLI
@@ -1152,51 +1148,6 @@ configure_gpg() {
     else
         info "Configuración de GPG cancelada"
     fi
-}
-
-# Función para instalar utilidades adicionales - NUEVO
-install_additional_utilities() {
-    info "Instalando utilidades adicionales..."
-    
-    case $DISTRO_FAMILY in
-        debian)
-            sudo apt install -y \
-                htop \
-                neofetch \
-                bat \
-                fd-find \
-                ripgrep \
-                tmux \
-                vim \
-                build-essential
-            ;;
-        rpm)
-            sudo dnf install -y \
-                htop \
-                neofetch \
-                bat \
-                fd-find \
-                ripgrep \
-                tmux \
-                vim \
-                gcc \
-                gcc-c++ \
-                make
-            ;;
-        arch)
-            sudo pacman -S --noconfirm \
-                htop \
-                neofetch \
-                bat \
-                fd \
-                ripgrep \
-                tmux \
-                vim \
-                base-devel
-            ;;
-    esac
-    
-    success "Utilidades adicionales instaladas"
 }
 
 # Función para limpiar sistema después de instalaciones - NUEVO
@@ -1402,75 +1353,62 @@ remove_bloatware() {
     info "Nota: Si instalaste Google Chrome, ahora será tu navegador principal"
 }
 
-# Menú principal - ACTUALIZADO
+# Menú principal - REORGANIZADO
 show_menu() {
     clear
     echo "======================================"
-    echo "     SCRIPT DE CONFIGURACIÓN LINUX    "
+    echo "  SCRIPT DE CONFIGURACIÓN LINUX"
     echo "======================================"
-    echo "Distribución detectada: $DISTRO (Familia: $DISTRO_FAMILY)"
+    echo "Distribución: $DISTRO ($DISTRO_FAMILY)"
     echo
-    echo "Selecciona una opción:"
-    printf "%-42s %s\n" "1)  Instalar todo (configuración completa)" "14) Instalar GitHub CLI"
-    printf "%-42s %s\n" "2)  Instalar dependencias básicas" "15) Configurar firma GPG para Git"
-    printf "%-42s %s\n" "3)  Instalar navegadores (Chrome & Brave)" "16) Instalar utilidades adicionales"
-    printf "%-42s %s\n" "4)  Configurar Git" "17) Configurar carpeta repositorios"
-    printf "%-42s %s\n" "5)  Instalar gdebi (solo Debian)" "18) Limpiar sistema"
-    printf "%-42s %s\n" "6)  Instalar curl" "19) Quitar bloatware"
-    printf "%-42s %s\n" "7)  Instalar JDK" "20) Mostrar información del sistema"
-    printf "%-42s %s\n" "8)  Instalar graphviz" "21) Instalar Node.js (via nvm)"
-    printf "%-42s %s\n" "9)  Instalar Visual Studio Code" "22) Instalar Claude Code"
-    printf "%-42s %s\n" "10) Instalar Spotify" "23) Instalar Gemini CLI"
-    printf "%-42s %s\n" "11) Instalar VLC" "24) Instalar Codex"
-    printf "%-42s %s\n" "12) Instalar oh-my-posh" "0)  Salir"
-    printf "%-42s %s\n" "13) Instalar utilitarios" ""
+    printf "%-45s %s\n" "1)  Todo!" "10) Spotify"
+    printf "%-45s %s\n" "2)  Dependencias básicas" "11) VLC"
+    printf "%-45s %s\n" "3)  Configurar Git" "12) Utilitarios"
+    printf "%-45s %s\n" "4)  JDK & graphviz" "13) oh-my-posh"
+    printf "%-45s %s\n" "5)  Visual Studio Code" "14) Carpeta repo"
+    printf "%-45s %s\n" "6)  GitHub CLI" "15) Limpiar sistema"
+    printf "%-45s %s\n" "7)  Configurar firma GPG" "16) Quitar bloatware"
+    printf "%-45s %s\n" "8)  Agentes IA (Claude/Gemini/Codex)" "17) Información del sistema"
+    printf "%-45s %s\n" "9)  Navegadores (Chrome & Brave)" ""
+    printf "%-45s %s\n" "" "0)  Salir"
     echo
     read -p "Ingresa tu opción: " option
     
     case $option in
         1)
+            # Instalación completa
             install_dependencies
             install_browsers
             configure_git
-            install_gdebi
-            install_curl
-            install_jdk
-            install_graphviz
+            install_jdk_and_graphviz
             install_vscode
             install_spotify
             install_vlc
-            install_nodejs
-            install_claude_code
-            install_gemini_cli
-            install_codex
-            install_oh_my_posh
             install_utilities
+            install_agents
+            install_oh_my_posh
             install_github_cli
             configure_gpg
-            install_additional_utilities
             setup_repos_directory
             remove_bloatware
             cleanup_system
             ;;
         2) install_dependencies ;;
-        3) install_browsers ;;
-        4) configure_git ;;
-        5) install_gdebi ;;
-        6) install_curl ;;
-        7) install_jdk ;;
-        8) install_graphviz ;;
-        9) install_vscode ;;
+        3) configure_git ;;
+        4) install_jdk_and_graphviz ;;
+        5) install_vscode ;;
+        6) install_github_cli ;;
+        7) configure_gpg ;;
+        8) install_agents ;;
+        9) install_browsers ;;
         10) install_spotify ;;
         11) install_vlc ;;
-        12) install_oh_my_posh ;;
-        13) install_utilities ;;
-        14) install_github_cli ;;
-        15) configure_gpg ;;
-        16) install_additional_utilities ;;
-        17) setup_repos_directory ;;
-        18) cleanup_system ;;
-        19) remove_bloatware ;;
-        20)
+        12) install_utilities ;;
+        13) install_oh_my_posh ;;
+        14) setup_repos_directory ;;
+        15) cleanup_system ;;
+        16) remove_bloatware ;;
+        17)
             echo "Información del sistema:"
             echo "OS: $PRETTY_NAME"
             echo "Kernel: $(uname -r)"
@@ -1481,10 +1419,6 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
-        21) install_nodejs ;;
-        22) install_claude_code ;;
-        23) install_gemini_cli ;;
-        24) install_codex ;;
         0)
             echo "¡Gracias por usar el script!"
             exit 0
@@ -1516,22 +1450,15 @@ main() {
         install_dependencies
         install_browsers
         configure_git
-        install_gdebi
-        install_curl
-        install_jdk
-        install_graphviz
+        install_jdk_and_graphviz
         install_vscode
         install_spotify
         install_vlc
-        install_nodejs
-        install_claude_code
-        install_gemini_cli
-        install_codex
-        install_oh_my_posh
         install_utilities
+        install_agents
+        install_oh_my_posh
         install_github_cli
         configure_gpg
-        install_additional_utilities
         setup_repos_directory
         remove_bloatware
         cleanup_system
