@@ -643,11 +643,37 @@ install_vlc() {
     success "VLC instalado correctamente"
 }
 
-# Instalar Node.js - NUEVO
+# Instalar Node.js via nvm - NUEVO
 install_nodejs() {
-    info "Instalando Node.js..."
+    info "Instalando Node.js vía nvm..."
     
-    # Verificar si ya está instalado
+    # Verificar si nvm ya está instalado
+    if [ -s "$HOME/.nvm/nvm.sh" ]; then
+        info "nvm ya está instalado"
+        # Cargar nvm
+        \. "$HOME/.nvm/nvm.sh"
+    else
+        # Descargar e instalar nvm
+        info "Descargando e instalando nvm..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+        
+        # Cargar nvm para usarlo inmediatamente
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        
+        if [ -s "$HOME/.nvm/nvm.sh" ]; then
+            success "nvm instalado correctamente"
+        else
+            error "No se pudo instalar nvm"
+            return 1
+        fi
+    fi
+    
+    # Cargar nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    # Verificar si Node.js 24 ya está instalado
     if command -v node &> /dev/null; then
         node_version=$(node --version)
         info "Node.js ya está instalado: $node_version"
@@ -657,22 +683,9 @@ install_nodejs() {
         fi
     fi
     
-    case $DISTRO_FAMILY in
-        debian)
-            # Instalar usando NodeSource para obtener la última versión LTS
-            info "Instalando Node.js desde NodeSource (LTS)..."
-            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-            sudo apt install -y nodejs
-            ;;
-        rpm)
-            info "Instalando Node.js desde NodeSource (LTS)..."
-            curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-            sudo dnf install -y nodejs
-            ;;
-        arch)
-            sudo pacman -S --noconfirm nodejs npm
-            ;;
-    esac
+    # Instalar Node.js versión 24
+    info "Descargando e instalando Node.js v24..."
+    nvm install 24
     
     # Verificar instalación
     if command -v node &> /dev/null; then
@@ -686,184 +699,112 @@ install_nodejs() {
     fi
 }
 
-# Instalar Cursor (Claude Code & Codex) - NUEVO
-install_cursor() {
-    info "Instalando Cursor (Claude Code & Codex)..."
+# Instalar Claude Code - NUEVO
+install_claude_code() {
+    info "Instalando Claude Code..."
     
-    # Verificar si ya está instalado
-    if command -v cursor &> /dev/null; then
-        success "Cursor ya está instalado"
-        return 0
+    # Verificar si Node.js está instalado
+    if ! command -v npm &> /dev/null; then
+        error "npm no está instalado. Por favor, instala Node.js primero (opción 21)."
+        return 1
     fi
     
-    case $DISTRO_FAMILY in
-        debian)
-            # Método 1: Intentar descarga directa del AppImage
-            info "Descargando Cursor AppImage..."
-            temp_dir=$(mktemp -d)
-            cd "$temp_dir"
-            
-            # Descargar la última versión de Cursor
-            if wget -O cursor.AppImage "https://downloader.cursor.sh/linux/appImage/x64"; then
-                # Hacer ejecutable
-                chmod +x cursor.AppImage
-                
-                # Mover a directorio de aplicaciones local
-                mkdir -p "$HOME/.local/bin"
-                mv cursor.AppImage "$HOME/.local/bin/cursor"
-                
-                # Crear acceso directo desktop
-                mkdir -p "$HOME/.local/share/applications"
-                cat > "$HOME/.local/share/applications/cursor.desktop" <<EOF
-[Desktop Entry]
-Name=Cursor
-Comment=AI-powered code editor
-Exec=$HOME/.local/bin/cursor %F
-Icon=cursor
-Terminal=false
-Type=Application
-Categories=Development;IDE;
-StartupWMClass=Cursor
-EOF
-                
-                success "Cursor instalado correctamente en $HOME/.local/bin/cursor"
-                info "Puedes ejecutarlo con: cursor"
-                
-                # Asegurarse de que ~/.local/bin está en el PATH
-                shell_rc=""
-                if [[ "$SHELL" == *"bash"* ]]; then
-                    shell_rc="$HOME/.bashrc"
-                elif [[ "$SHELL" == *"zsh"* ]]; then
-                    shell_rc="$HOME/.zshrc"
-                fi
-                
-                if [[ -n "$shell_rc" ]]; then
-                    if ! grep -q "export PATH=\"\$HOME/.local/bin:\$PATH\"" "$shell_rc"; then
-                        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
-                        info "Se ha añadido $HOME/.local/bin al PATH en $shell_rc"
-                    fi
-                fi
-                
-                cd - > /dev/null
-                rm -rf "$temp_dir"
-                return 0
-            fi
-            
-            cd - > /dev/null
-            rm -rf "$temp_dir"
-            error "No se pudo descargar Cursor"
-            info "Puedes instalarlo manualmente desde: https://cursor.sh"
-            return 1
-            ;;
-        rpm)
-            # Similar para RPM
-            info "Descargando Cursor AppImage..."
-            temp_dir=$(mktemp -d)
-            cd "$temp_dir"
-            
-            if wget -O cursor.AppImage "https://downloader.cursor.sh/linux/appImage/x64"; then
-                chmod +x cursor.AppImage
-                mkdir -p "$HOME/.local/bin"
-                mv cursor.AppImage "$HOME/.local/bin/cursor"
-                
-                mkdir -p "$HOME/.local/share/applications"
-                cat > "$HOME/.local/share/applications/cursor.desktop" <<EOF
-[Desktop Entry]
-Name=Cursor
-Comment=AI-powered code editor
-Exec=$HOME/.local/bin/cursor %F
-Icon=cursor
-Terminal=false
-Type=Application
-Categories=Development;IDE;
-StartupWMClass=Cursor
-EOF
-                
-                success "Cursor instalado correctamente en $HOME/.local/bin/cursor"
-                
-                shell_rc=""
-                if [[ "$SHELL" == *"bash"* ]]; then
-                    shell_rc="$HOME/.bashrc"
-                elif [[ "$SHELL" == *"zsh"* ]]; then
-                    shell_rc="$HOME/.zshrc"
-                fi
-                
-                if [[ -n "$shell_rc" ]]; then
-                    if ! grep -q "export PATH=\"\$HOME/.local/bin:\$PATH\"" "$shell_rc"; then
-                        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
-                        info "Se ha añadido $HOME/.local/bin al PATH en $shell_rc"
-                    fi
-                fi
-                
-                cd - > /dev/null
-                rm -rf "$temp_dir"
-                return 0
-            fi
-            
-            cd - > /dev/null
-            rm -rf "$temp_dir"
-            error "No se pudo descargar Cursor"
-            info "Puedes instalarlo manualmente desde: https://cursor.sh"
-            return 1
-            ;;
-        arch)
-            # Intentar instalar desde AUR
-            if yay -S --noconfirm cursor-bin; then
-                success "Cursor instalado correctamente desde AUR"
-                return 0
-            else
-                # Fallback a AppImage
-                info "Descargando Cursor AppImage..."
-                temp_dir=$(mktemp -d)
-                cd "$temp_dir"
-                
-                if wget -O cursor.AppImage "https://downloader.cursor.sh/linux/appImage/x64"; then
-                    chmod +x cursor.AppImage
-                    mkdir -p "$HOME/.local/bin"
-                    mv cursor.AppImage "$HOME/.local/bin/cursor"
-                    
-                    mkdir -p "$HOME/.local/share/applications"
-                    cat > "$HOME/.local/share/applications/cursor.desktop" <<EOF
-[Desktop Entry]
-Name=Cursor
-Comment=AI-powered code editor
-Exec=$HOME/.local/bin/cursor %F
-Icon=cursor
-Terminal=false
-Type=Application
-Categories=Development;IDE;
-StartupWMClass=Cursor
-EOF
-                    
-                    success "Cursor instalado correctamente en $HOME/.local/bin/cursor"
-                    
-                    shell_rc=""
-                    if [[ "$SHELL" == *"bash"* ]]; then
-                        shell_rc="$HOME/.bashrc"
-                    elif [[ "$SHELL" == *"zsh"* ]]; then
-                        shell_rc="$HOME/.zshrc"
-                    fi
-                    
-                    if [[ -n "$shell_rc" ]]; then
-                        if ! grep -q "export PATH=\"\$HOME/.local/bin:\$PATH\"" "$shell_rc"; then
-                            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
-                            info "Se ha añadido $HOME/.local/bin al PATH en $shell_rc"
-                        fi
-                    fi
-                    
-                    cd - > /dev/null
-                    rm -rf "$temp_dir"
-                    return 0
-                fi
-                
-                cd - > /dev/null
-                rm -rf "$temp_dir"
-                error "No se pudo descargar Cursor"
-                info "Puedes instalarlo manualmente desde: https://cursor.sh"
-                return 1
-            fi
-            ;;
-    esac
+    # Cargar nvm si está disponible
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    # Verificar si ya está instalado
+    if npm list -g @anthropic-ai/claude-code &> /dev/null; then
+        info "Claude Code ya está instalado"
+        
+        if ! confirm; then
+            return 0
+        fi
+    fi
+    
+    # Instalar Claude Code globalmente
+    info "Instalando @anthropic-ai/claude-code..."
+    npm install -g @anthropic-ai/claude-code
+    
+    if npm list -g @anthropic-ai/claude-code &> /dev/null; then
+        success "Claude Code instalado correctamente"
+        info "Puedes ejecutarlo con: claude-code"
+    else
+        error "No se pudo instalar Claude Code"
+        return 1
+    fi
+}
+
+# Instalar Gemini CLI - NUEVO
+install_gemini_cli() {
+    info "Instalando Gemini CLI..."
+    
+    # Verificar si Node.js está instalado
+    if ! command -v npm &> /dev/null; then
+        error "npm no está instalado. Por favor, instala Node.js primero (opción 21)."
+        return 1
+    fi
+    
+    # Cargar nvm si está disponible
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    # Verificar si ya está instalado
+    if npm list -g @google/gemini-cli &> /dev/null; then
+        info "Gemini CLI ya está instalado"
+        
+        if ! confirm; then
+            return 0
+        fi
+    fi
+    
+    # Instalar Gemini CLI globalmente
+    info "Instalando @google/gemini-cli..."
+    npm install -g @google/gemini-cli
+    
+    if npm list -g @google/gemini-cli &> /dev/null; then
+        success "Gemini CLI instalado correctamente"
+        info "Puedes ejecutarlo con: gemini-cli"
+    else
+        error "No se pudo instalar Gemini CLI"
+        return 1
+    fi
+}
+
+# Instalar Codex - NUEVO
+install_codex() {
+    info "Instalando Codex..."
+    
+    # Verificar si Node.js está instalado
+    if ! command -v npm &> /dev/null; then
+        error "npm no está instalado. Por favor, instala Node.js primero (opción 21)."
+        return 1
+    fi
+    
+    # Cargar nvm si está disponible
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    
+    # Verificar si ya está instalado
+    if npm list -g @openai/codex &> /dev/null; then
+        info "Codex ya está instalado"
+        
+        if ! confirm; then
+            return 0
+        fi
+    fi
+    
+    # Instalar Codex globalmente
+    info "Instalando @openai/codex..."
+    npm install -g @openai/codex
+    
+    if npm list -g @openai/codex &> /dev/null; then
+        success "Codex instalado correctamente"
+        info "Puedes ejecutarlo con: codex"
+    else
+        error "No se pudo instalar Codex"
+        return 1
+    fi
 }
 
 # Instalar oh-my-posh
@@ -1470,18 +1411,19 @@ show_menu() {
     echo "Distribución detectada: $DISTRO (Familia: $DISTRO_FAMILY)"
     echo
     echo "Selecciona una opción:"
-    printf "%-42s %s\n" "1)  Instalar todo (configuración completa)" "13) Instalar utilitarios"
-    printf "%-42s %s\n" "2)  Instalar dependencias básicas" "14) Instalar GitHub CLI"
-    printf "%-42s %s\n" "3)  Instalar navegadores (Chrome & Brave)" "15) Configurar firma GPG para Git"
-    printf "%-42s %s\n" "4)  Configurar Git" "16) Instalar utilidades adicionales"
-    printf "%-42s %s\n" "5)  Instalar gdebi (solo Debian)" "17) Configurar carpeta repositorios"
-    printf "%-42s %s\n" "6)  Instalar curl" "18) Limpiar sistema"
-    printf "%-42s %s\n" "7)  Instalar JDK" "19) Quitar bloatware"
-    printf "%-42s %s\n" "8)  Instalar graphviz" "20) Mostrar información del sistema"
-    printf "%-42s %s\n" "9)  Instalar Visual Studio Code" "21) Instalar Node.js"
-    printf "%-42s %s\n" "10) Instalar Spotify" "22) Instalar Cursor (Claude Code)"
-    printf "%-42s %s\n" "11) Instalar VLC" "0)  Salir"
-    printf "%-42s %s\n" "12) Instalar oh-my-posh" ""
+    printf "%-42s %s\n" "1)  Instalar todo (configuración completa)" "14) Instalar GitHub CLI"
+    printf "%-42s %s\n" "2)  Instalar dependencias básicas" "15) Configurar firma GPG para Git"
+    printf "%-42s %s\n" "3)  Instalar navegadores (Chrome & Brave)" "16) Instalar utilidades adicionales"
+    printf "%-42s %s\n" "4)  Configurar Git" "17) Configurar carpeta repositorios"
+    printf "%-42s %s\n" "5)  Instalar gdebi (solo Debian)" "18) Limpiar sistema"
+    printf "%-42s %s\n" "6)  Instalar curl" "19) Quitar bloatware"
+    printf "%-42s %s\n" "7)  Instalar JDK" "20) Mostrar información del sistema"
+    printf "%-42s %s\n" "8)  Instalar graphviz" "21) Instalar Node.js (via nvm)"
+    printf "%-42s %s\n" "9)  Instalar Visual Studio Code" "22) Instalar Claude Code"
+    printf "%-42s %s\n" "10) Instalar Spotify" "23) Instalar Gemini CLI"
+    printf "%-42s %s\n" "11) Instalar VLC" "24) Instalar Codex"
+    printf "%-42s %s\n" "12) Instalar oh-my-posh" "0)  Salir"
+    printf "%-42s %s\n" "13) Instalar utilitarios" ""
     echo
     read -p "Ingresa tu opción: " option
     
@@ -1498,7 +1440,9 @@ show_menu() {
             install_spotify
             install_vlc
             install_nodejs
-            install_cursor
+            install_claude_code
+            install_gemini_cli
+            install_codex
             install_oh_my_posh
             install_utilities
             install_github_cli
@@ -1538,7 +1482,9 @@ show_menu() {
             fi
             ;;
         21) install_nodejs ;;
-        22) install_cursor ;;
+        22) install_claude_code ;;
+        23) install_gemini_cli ;;
+        24) install_codex ;;
         0)
             echo "¡Gracias por usar el script!"
             exit 0
@@ -1578,7 +1524,9 @@ main() {
         install_spotify
         install_vlc
         install_nodejs
-        install_cursor
+        install_claude_code
+        install_gemini_cli
+        install_codex
         install_oh_my_posh
         install_utilities
         install_github_cli
