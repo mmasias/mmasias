@@ -1361,15 +1361,15 @@ show_menu() {
     echo "======================================"
     echo "Distribución: $DISTRO ($DISTRO_FAMILY)"
     echo
-    printf "%-45s %s\n" "1)  Todo!" "10) Spotify"
-    printf "%-45s %s\n" "2)  Dependencias básicas" "11) VLC"
-    printf "%-45s %s\n" "3)  Configurar Git" "12) Utilitarios"
-    printf "%-45s %s\n" "4)  JDK & graphviz" "13) oh-my-posh"
-    printf "%-45s %s\n" "5)  Visual Studio Code" "14) Carpeta repo"
-    printf "%-45s %s\n" "6)  GitHub CLI" "15) Limpiar sistema"
-    printf "%-45s %s\n" "7)  Configurar firma GPG" "16) Quitar bloatware"
-    printf "%-45s %s\n" "8)  Agentes IA (Claude/Gemini/Codex)" "17) Información del sistema"
-    printf "%-45s %s\n" "9)  Navegadores (Chrome & Brave)" ""
+    printf "%-45s %s\n" "1)  Todo!" "2)  Dependencias básicas"
+    printf "%-45s %s\n" "3)  Configurar Git" "4)  Navegadores (Chrome & Brave)"
+    printf "%-45s %s\n" "5)  JDK & graphviz" "6)  Visual Studio Code"
+    printf "%-45s %s\n" "7)  GitHub CLI" "8)  Configurar firma GPG"
+    printf "%-45s %s\n" "9)  Agentes IA (Claude/Gemini/Codex)" "10) Spotify"
+    printf "%-45s %s\n" "11) VLC" "12) Utilitarios"
+    printf "%-45s %s\n" "13) oh-my-posh" "14) Carpeta repo"
+    printf "%-45s %s\n" "15) Limpiar sistema" "16) Quitar bloatware"
+    printf "%-45s %s\n" "17) Información del sistema" ""
     printf "%-45s %s\n" "" "0)  Salir"
     echo
     read -p "Ingresa tu opción: " option
@@ -1378,29 +1378,29 @@ show_menu() {
         1)
             # Instalación completa
             install_dependencies
-            install_browsers
             configure_git
+            install_browsers
             install_jdk_and_graphviz
             install_vscode
+            install_github_cli
+            configure_gpg
+            install_agents
             install_spotify
             install_vlc
             install_utilities
-            install_agents
             install_oh_my_posh
-            install_github_cli
-            configure_gpg
             setup_repos_directory
             remove_bloatware
             cleanup_system
             ;;
         2) install_dependencies ;;
         3) configure_git ;;
-        4) install_jdk_and_graphviz ;;
-        5) install_vscode ;;
-        6) install_github_cli ;;
-        7) configure_gpg ;;
-        8) install_agents ;;
-        9) install_browsers ;;
+        4) install_browsers ;;
+        5) install_jdk_and_graphviz ;;
+        6) install_vscode ;;
+        7) install_github_cli ;;
+        8) configure_gpg ;;
+        9) install_agents ;;
         10) install_spotify ;;
         11) install_vlc ;;
         12) install_utilities ;;
@@ -1448,17 +1448,17 @@ main() {
     if [ ! -t 0 ]; then
         info "Ejecutando instalación completa automática..."
         install_dependencies
-        install_browsers
         configure_git
+        install_browsers
         install_jdk_and_graphviz
         install_vscode
+        install_github_cli
+        configure_gpg
+        install_agents
         install_spotify
         install_vlc
         install_utilities
-        install_agents
         install_oh_my_posh
-        install_github_cli
-        configure_gpg
         setup_repos_directory
         remove_bloatware
         cleanup_system
