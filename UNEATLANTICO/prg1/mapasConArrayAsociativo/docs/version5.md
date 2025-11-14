@@ -33,7 +33,7 @@ La fórmula es `((viewPort * 2)) - ((hora - 6) * (viewPort * 2) / 12)`.
 Supongamos que `viewPort` es 10. Entonces `viewPort * 2` es 20, representando el ancho total del cielo.
 
 <div align=center>
-    <img src="../../../imagenes/viewPort.jpg" width="75%" />
+    <img src="../../../../imagenes/viewPort.jpg" width="75%" />
 </div>
 
 - A las 6 AM (`hora = 6`), la fórmula sería `20 - ((6 - 6) * 20 / 12)`, lo que da 20. Esto coloca el sol en el extremo derecho.
