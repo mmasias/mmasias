@@ -1353,6 +1353,159 @@ remove_bloatware() {
     info "Nota: Si instalaste Google Chrome, ahora será tu navegador principal"
 }
 
+# Función para verificar estado de instalaciones
+check_status() {
+    clear
+    echo "======================================"
+    echo "  ESTADO DE INSTALACIÓN"
+    echo "======================================"
+    echo "Distribución: $DISTRO ($DISTRO_FAMILY)"
+    echo
+    
+    # Función auxiliar para verificar estado
+    check_item() {
+        local name="$1"
+        local command="$2"
+        
+        printf "%-40s " "$name:"
+        if command -v "$command" &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+            return 0
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+            return 1
+        fi
+    }
+    
+    # Función auxiliar para verificar configuración
+    check_config() {
+        local name="$1"
+        local check_command="$2"
+        
+        printf "%-40s " "$name:"
+        if eval "$check_command" &> /dev/null; then
+            echo -e "${GREEN}✓ CONFIGURADO${NC}"
+            return 0
+        else
+            echo -e "${RED}✗ NO CONFIGURADO${NC}"
+            return 1
+        fi
+    }
+    
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "HERRAMIENTAS BÁSICAS"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_item "curl" "curl"
+    check_item "wget" "wget"
+    check_item "git" "git"
+    check_item "unzip" "unzip"
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "CONFIGURACIÓN DE GIT"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_config "Git user.name" "git config --global user.name"
+    check_config "Git user.email" "git config --global user.email"
+    check_config "Git GPG signing" "git config --global commit.gpgsign | grep -q 'true'"
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "NAVEGADORES"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_item "Google Chrome" "google-chrome"
+    check_item "Brave Browser" "brave-browser"
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "DESARROLLO"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_item "Java (JDK)" "java"
+    check_item "graphviz" "dot"
+    check_item "Visual Studio Code" "code"
+    check_item "GitHub CLI" "gh"
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "MULTIMEDIA"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_item "Spotify" "spotify"
+    check_item "VLC" "vlc"
+    check_item "KDEnLive" "kdenlive"
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "UTILIDADES"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_item "Node.js" "node"
+    check_item "npm" "npm"
+    check_item "nvm" "nvm"
+    check_item "tree" "tree"
+    check_item "htop" "htop"
+    check_item "neofetch" "neofetch"
+    check_item "bat" "bat"
+    check_item "ripgrep" "rg"
+    check_item "tmux" "tmux"
+    check_item "vim" "vim"
+    check_item "eza" "eza"
+    check_item "VirtualBox" "virtualbox"
+    check_item "DOSBox-X" "dosbox-x"
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "PERSONALIZACIÓN"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    check_item "oh-my-posh" "oh-my-posh"
+    
+    # Verificar configuración de oh-my-posh
+    if [[ "$SHELL" == *"bash"* ]]; then
+        check_config "oh-my-posh en .bashrc" "grep -q 'oh-my-posh init' ~/.bashrc"
+    elif [[ "$SHELL" == *"zsh"* ]]; then
+        check_config "oh-my-posh en .zshrc" "grep -q 'oh-my-posh init' ~/.zshrc"
+    fi
+    
+    # Verificar carpeta de repos
+    printf "%-40s " "Carpeta ~/misRepos:"
+    if [ -d "$HOME/misRepos" ]; then
+        echo -e "${GREEN}✓ CREADA${NC}"
+    else
+        echo -e "${RED}✗ NO CREADA${NC}"
+    fi
+    
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "AGENTES DE IA"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    
+    # Verificar agentes de IA (requieren npm)
+    if command -v npm &> /dev/null; then
+        printf "%-40s " "Claude Code:"
+        if npm list -g @anthropic-ai/claude-code &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+        fi
+        
+        printf "%-40s " "Gemini CLI:"
+        if npm list -g @google/gemini-cli &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+        fi
+        
+        printf "%-40s " "Codex:"
+        if npm list -g @openai/codex &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+        fi
+    else
+        echo -e "${YELLOW}[INFO]${NC} npm no está instalado. Los agentes de IA requieren Node.js/npm."
+    fi
+    
+    echo
+    echo "======================================"
+}
+
 # Menú principal - REORGANIZADO
 show_menu() {
     clear
@@ -1369,7 +1522,7 @@ show_menu() {
     printf "%-45s %s\n" "11) VLC" "12) Utilitarios"
     printf "%-45s %s\n" "13) oh-my-posh" "14) Carpeta repo"
     printf "%-45s %s\n" "15) Limpiar sistema" "16) Quitar bloatware"
-    printf "%-45s %s\n" "17) Información del sistema" ""
+    printf "%-45s %s\n" "17) Información del sistema" "18) Ver estado"
     printf "%-45s %s\n" "" "0)  Salir"
     echo
     read -p "Ingresa tu opción: " option
@@ -1419,6 +1572,7 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
+        18) check_status ;;
         0)
             echo "¡Gracias por usar el script!"
             exit 0
