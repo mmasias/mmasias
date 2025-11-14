@@ -11,7 +11,7 @@ Implementamos:
 * [El cielo en la parte superior](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo005.java#L286), que muestra el sol en el día (sale a las 6:00h, a las 12:00h está en mitad del cielo y se oculta a las 18:00h).
 
 <div align=center>
-    <img src="../../../imagenes/ArrayAsociativoV5.png" width="50%" />
+    <img src="../../../../imagenes/ArrayAsociativoV5.png" width="50%" />
 </div>
 
 ## Simplificación & explicación de imprimirElCielo()
