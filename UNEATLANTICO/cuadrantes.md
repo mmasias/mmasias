@@ -5,9 +5,9 @@
 <div align=center>
 
 ||Conoce poco|Conoce mucho|
-|-|-|-|
-|Sabe usar<br>mucho|Práctico|Experto|
-|Sabe usar<br>poco |Principiante|Teórico|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|Práctico|Experto|
+|**Sabe usar<br>poco**|Principiante|Teórico|
 
 </div>
 
@@ -16,9 +16,9 @@
 <div align=center>
 
 ||Conoce poco|Conoce mucho|
-|-|-|-|
-|Sabe usar<br>mucho|Manitas|Crack|
-|Sabe usar<br>poco |Neófito|Académico|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|Manitas|Crack|
+|**Sabe usar<br>poco**|Neófito|Académico|
 
 </div>
 
@@ -27,9 +27,9 @@
 <div align=center>
 
 ||Conoce poco|Conoce mucho|
-|-|-|-|
-|Sabe usar<br>mucho|McGyver|Sensei|
-|Sabe usar<br>poco |Novatín|Ing. de sofá|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|McGyver|Sensei|
+|**Sabe usar<br>poco**|Novatín|Ing. de sofá|
 
 </div>
 
@@ -38,9 +38,9 @@
 <div align=center>
 
 ||Conoce poco|Conoce mucho|
-|-|-|-|
-|Sabe usar<br>mucho|Navegante por instinto|Arquitecto del camino|
-|Sabe usar<br>poco |Recién despertado|Guardián de pergaminos|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|Navegante por instinto|Arquitecto del camino|
+|**Sabe usar<br>poco**|Recién despertado|Guardián de pergaminos|
 
 </div>
 
@@ -49,8 +49,30 @@
 <div align=center>
 
 ||Conoce poco|Conoce mucho|
-|-|-|-|
-|Sabe usar<br>mucho|Improvisador|El Legendario|
-|Sabe usar<br>poco |El Recluta|Oráculo empolvado|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|Improvisador|El Legendario|
+|**Sabe usar<br>poco**|El Recluta|Oráculo empolvado|
+
+</div>
+
+## Versión E
+
+<div align=center>
+
+||Conoce poco|Conoce mucho|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|Le contratan pero no asciende|Se lo rifan|
+|**Sabe usar<br>poco**|Becario perpetuo|Se queda en la entrevista técnica|
+
+</div>
+
+## Versión F
+
+<div align=center>
+
+||Conoce poco|Conoce mucho|
+|-|:-:|:-:|
+|**Sabe usar<br>mucho**|Hace que funcione|Lo hace bien|
+|**Sabe usar<br>poco**|Hace poco útil|Habla mucho|
 
 </div>
