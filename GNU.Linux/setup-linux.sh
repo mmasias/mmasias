@@ -418,10 +418,181 @@ install_jdk_and_graphviz() {
     success "graphviz instalado correctamente"
 }
 
+# Instalar PlantUML
+install_plantuml() {
+    info "Instalando PlantUML..."
+
+    # Verificar si ya está instalado
+    if command -v plantuml &> /dev/null; then
+        success "PlantUML ya está instalado"
+        return 0
+    fi
+
+    # Verificar dependencias: Java y graphviz
+    if ! command -v java &> /dev/null; then
+        warning "Java no está instalado. PlantUML requiere Java."
+        info "Instalando Java automáticamente..."
+        if ! install_jdk; then
+            error "No se pudo instalar Java. PlantUML no puede instalarse sin Java."
+            return 1
+        fi
+    fi
+
+    if ! command -v dot &> /dev/null; then
+        warning "Graphviz no está instalado. PlantUML requiere graphviz para algunos diagramas."
+        info "Instalando graphviz automáticamente..."
+        case $DISTRO_FAMILY in
+            debian)
+                sudo apt install -y graphviz
+                ;;
+            rpm)
+                sudo dnf install -y graphviz
+                ;;
+            arch)
+                sudo pacman -S --noconfirm graphviz
+                ;;
+        esac
+    fi
+
+    case $DISTRO_FAMILY in
+        debian)
+            # Intentar instalar desde repositorio
+            if sudo apt install -y plantuml; then
+                success "PlantUML instalado correctamente desde repositorio"
+                return 0
+            else
+                warning "PlantUML no disponible en repositorio, instalando manualmente..."
+            fi
+            ;;
+        rpm)
+            # Intentar instalar desde repositorio
+            if sudo dnf install -y plantuml; then
+                success "PlantUML instalado correctamente desde repositorio"
+                return 0
+            else
+                warning "PlantUML no disponible en repositorio, instalando manualmente..."
+            fi
+            ;;
+        arch)
+            # En Arch, PlantUML suele estar disponible
+            if sudo pacman -S --noconfirm plantuml; then
+                success "PlantUML instalado correctamente desde repositorio"
+                return 0
+            else
+                warning "PlantUML no disponible en repositorio, instalando manualmente..."
+            fi
+            ;;
+    esac
+
+    # Método de respaldo: descargar JAR directamente
+    info "Descargando PlantUML JAR..."
+    sudo mkdir -p /opt/plantuml
+
+    if sudo curl -L -o /opt/plantuml/plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar; then
+        # Crear script wrapper
+        sudo tee /usr/local/bin/plantuml > /dev/null <<'EOF'
+#!/bin/bash
+java -jar /opt/plantuml/plantuml.jar "$@"
+EOF
+        sudo chmod +x /usr/local/bin/plantuml
+
+        success "PlantUML instalado correctamente desde JAR oficial"
+        info "Versión instalada: 1.2024.8"
+        info "Ubicación del JAR: /opt/plantuml/plantuml.jar"
+        return 0
+    else
+        error "No se pudo descargar PlantUML"
+        info "Puedes instalarlo manualmente desde: https://plantuml.com/download"
+        return 1
+    fi
+}
+
+# Instalar Antigravity IDE
+install_antigravity() {
+    info "Instalando Antigravity IDE..."
+
+    # Verificar si ya está instalado
+    if command -v antigravity &> /dev/null; then
+        success "Antigravity IDE ya está instalado"
+        return 0
+    fi
+
+    case $DISTRO_FAMILY in
+        debian)
+            info "Configurando repositorio de Antigravity para Debian/Ubuntu..."
+
+            # Crear directorio para keyrings
+            sudo mkdir -p /etc/apt/keyrings
+
+            # Agregar clave GPG
+            if curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg; then
+                # Agregar repositorio
+                echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
+
+                # Actualizar e instalar
+                if sudo apt update && sudo apt install -y antigravity; then
+                    success "Antigravity IDE instalado correctamente desde repositorio oficial"
+                    return 0
+                else
+                    # Limpiar repositorio fallido
+                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                    sudo rm -f /etc/apt/sources.list.d/antigravity.list
+                    sudo rm -f /etc/apt/keyrings/antigravity-repo-key.gpg
+                    sudo apt update
+                fi
+            fi
+
+            error "No se pudo instalar Antigravity IDE desde el repositorio oficial"
+            info "Puedes descargar el tarball manualmente desde: https://antigravity.google/download/linux"
+            return 1
+            ;;
+        rpm)
+            info "Configurando repositorio de Antigravity para RPM..."
+
+            # Agregar repositorio
+            sudo tee /etc/yum.repos.d/antigravity.repo << 'EOL'
+[antigravity-rpm]
+name=Antigravity RPM Repository
+baseurl=https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
+enabled=1
+gpgcheck=0
+EOL
+
+            # Actualizar cache e instalar
+            if sudo dnf makecache && sudo dnf install -y antigravity; then
+                success "Antigravity IDE instalado correctamente desde repositorio oficial"
+                return 0
+            else
+                # Limpiar repositorio fallido
+                warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
+                sudo rm -f /etc/yum.repos.d/antigravity.repo
+                sudo dnf clean all
+            fi
+
+            error "No se pudo instalar Antigravity IDE desde el repositorio oficial"
+            info "Puedes descargar el tarball manualmente desde: https://antigravity.google/download/linux"
+            return 1
+            ;;
+        arch)
+            warning "Antigravity IDE no tiene repositorio oficial para Arch Linux"
+            info "Intentando buscar en AUR..."
+
+            if yay -S --noconfirm antigravity 2>/dev/null; then
+                success "Antigravity IDE instalado correctamente desde AUR"
+                return 0
+            else
+                warning "No se encontró en AUR"
+                info "Puedes descargar el tarball manualmente desde: https://antigravity.google/download/linux"
+                return 1
+            fi
+            ;;
+    esac
+}
+
 # Instalar Visual Studio Code - CORREGIDO
 install_vscode() {
     info "Instalando Visual Studio Code..."
-    
+
     # Verificar si ya está instalado
     if command -v code &> /dev/null; then
         success "Visual Studio Code ya está instalado"
@@ -590,10 +761,15 @@ install_vlc() {
 install_agents() {
     info "Instalando agentes de IA..."
 
-    # Verificar si Node.js está instalado
+    # Verificar si Node.js está instalado, si no, instalarlo automáticamente
     if ! command -v npm &> /dev/null; then
-        error "npm no está instalado. Por favor, instala las utilidades primero (incluye Node.js)."
-        return 1
+        warning "Node.js no está instalado. Es requerido para los agentes de IA."
+        info "Instalando Node.js automáticamente..."
+
+        if ! install_nodejs; then
+            error "No se pudo instalar Node.js. No se pueden instalar los agentes de IA."
+            return 1
+        fi
     fi
 
     # Cargar nvm si está disponible
@@ -805,6 +981,68 @@ install_oh_my_posh() {
     success "oh-my-posh instalado correctamente"
 }
 
+# Instalar Node.js via nvm
+install_nodejs() {
+    info "Instalando Node.js vía nvm..."
+
+    # Verificar si nvm ya está instalado
+    if [ -s "$HOME/.nvm/nvm.sh" ]; then
+        info "nvm ya está instalado"
+        # Cargar nvm
+        \. "$HOME/.nvm/nvm.sh"
+    else
+        # Descargar e instalar nvm
+        info "Descargando e instalando nvm..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+        # Cargar nvm para usarlo inmediatamente
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+        if [ -s "$HOME/.nvm/nvm.sh" ]; then
+            success "nvm instalado correctamente"
+        else
+            error "No se pudo instalar nvm"
+            return 1
+        fi
+    fi
+
+    # Cargar nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+    # Verificar si Node.js 24 ya está instalado
+    if command -v node &> /dev/null; then
+        node_version=$(node --version)
+        info "Node.js ya está instalado: $node_version"
+
+        # Si se llama desde otra función (agents o utilities), no preguntar, solo retornar
+        if [[ "${FUNCNAME[1]}" == "install_agents" || "${FUNCNAME[1]}" == "install_utilities" ]]; then
+            return 0
+        fi
+
+        # Si se llama directamente desde el menú, preguntar si quiere reinstalar
+        if ! confirm; then
+            return 0
+        fi
+    fi
+
+    # Instalar Node.js versión 24
+    info "Descargando e instalando Node.js v24..."
+    nvm install 24
+
+    # Verificar instalación
+    if command -v node &> /dev/null; then
+        node_version=$(node --version)
+        npm_version=$(npm --version)
+        success "Node.js instalado correctamente: $node_version"
+        info "npm versión: $npm_version"
+    else
+        error "No se pudo instalar Node.js"
+        return 1
+    fi
+}
+
 # Instalar utilitarios adicionales y herramientas de desarrollo
 install_utilities() {
     info "Instalando utilitarios y herramientas de desarrollo..."
@@ -950,59 +1188,8 @@ install_utilities() {
             ;;
     esac
 
-    # Instalar Node.js via nvm
-    info "Instalando Node.js vía nvm..."
-
-    # Verificar si nvm ya está instalado
-    if [ -s "$HOME/.nvm/nvm.sh" ]; then
-        info "nvm ya está instalado"
-        # Cargar nvm
-        \. "$HOME/.nvm/nvm.sh"
-    else
-        # Descargar e instalar nvm
-        info "Descargando e instalando nvm..."
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-
-        # Cargar nvm para usarlo inmediatamente
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-        if [ -s "$HOME/.nvm/nvm.sh" ]; then
-            success "nvm instalado correctamente"
-        else
-            error "No se pudo instalar nvm"
-            return 1
-        fi
-    fi
-
-    # Cargar nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-    # Verificar si Node.js 24 ya está instalado
-    if command -v node &> /dev/null; then
-        node_version=$(node --version)
-        info "Node.js ya está instalado: $node_version"
-
-        if ! confirm; then
-            success "Utilitarios instalados correctamente"
-            return 0
-        fi
-    fi
-
-    # Instalar Node.js versión 24
-    info "Descargando e instalando Node.js v24..."
-    nvm install 24
-
-    # Verificar instalación
-    if command -v node &> /dev/null; then
-        node_version=$(node --version)
-        npm_version=$(npm --version)
-        success "Node.js instalado correctamente: $node_version"
-        info "npm versión: $npm_version"
-    else
-        error "No se pudo instalar Node.js"
-    fi
+    # Instalar Node.js llamando a la función dedicada
+    install_nodejs
 
     success "Utilitarios y herramientas instalados correctamente"
 }
@@ -1421,7 +1608,9 @@ check_status() {
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     check_item "Java (JDK)" "java"
     check_item "graphviz" "dot"
+    check_item "PlantUML" "plantuml"
     check_item "Visual Studio Code" "code"
+    check_item "Antigravity IDE" "antigravity"
     check_item "GitHub CLI" "gh"
     
     echo
@@ -1516,14 +1705,15 @@ show_menu() {
     echo
     printf "%-45s %s\n" "1)  Todo!" "2)  Dependencias básicas"
     printf "%-45s %s\n" "3)  Configurar Git" "4)  Navegadores (Chrome & Brave)"
-    printf "%-45s %s\n" "5)  JDK & graphviz" "6)  Visual Studio Code"
-    printf "%-45s %s\n" "7)  GitHub CLI" "8)  Configurar firma GPG"
-    printf "%-45s %s\n" "9)  Agentes IA (Claude/Gemini/Codex)" "10) Spotify"
-    printf "%-45s %s\n" "11) VLC" "12) Utilitarios"
-    printf "%-45s %s\n" "13) oh-my-posh" "14) Carpeta repo"
-    printf "%-45s %s\n" "15) Limpiar sistema" "16) Quitar bloatware"
-    printf "%-45s %s\n" "17) Información del sistema" "18) Ver estado"
-    printf "%-45s %s\n" "" "0)  Salir"
+    printf "%-45s %s\n" "5)  JDK & graphviz" "6)  PlantUML"
+    printf "%-45s %s\n" "7)  Visual Studio Code" "8)  Antigravity IDE"
+    printf "%-45s %s\n" "9)  GitHub CLI" "10) Configurar firma GPG"
+    printf "%-45s %s\n" "11) Node.js (nvm)" "12) Agentes IA (Claude/Gemini/Codex)"
+    printf "%-45s %s\n" "13) Spotify" "14) VLC"
+    printf "%-45s %s\n" "15) Utilitarios" "16) oh-my-posh"
+    printf "%-45s %s\n" "17) Carpeta repo" "18) Limpiar sistema"
+    printf "%-45s %s\n" "19) Quitar bloatware" "20) Información del sistema"
+    printf "%-45s %s\n" "21) Ver estado" "0)  Salir"
     echo
     read -p "Ingresa tu opción: " option
     
@@ -1534,9 +1724,12 @@ show_menu() {
             configure_git
             install_browsers
             install_jdk_and_graphviz
+            install_plantuml
             install_vscode
+            install_antigravity
             install_github_cli
             configure_gpg
+            install_nodejs  # Instalar Node.js antes de agentes y utilities
             install_agents
             install_spotify
             install_vlc
@@ -1550,18 +1743,21 @@ show_menu() {
         3) configure_git ;;
         4) install_browsers ;;
         5) install_jdk_and_graphviz ;;
-        6) install_vscode ;;
-        7) install_github_cli ;;
-        8) configure_gpg ;;
-        9) install_agents ;;
-        10) install_spotify ;;
-        11) install_vlc ;;
-        12) install_utilities ;;
-        13) install_oh_my_posh ;;
-        14) setup_repos_directory ;;
-        15) cleanup_system ;;
-        16) remove_bloatware ;;
-        17)
+        6) install_plantuml ;;
+        7) install_vscode ;;
+        8) install_antigravity ;;
+        9) install_github_cli ;;
+        10) configure_gpg ;;
+        11) install_nodejs ;;
+        12) install_agents ;;
+        13) install_spotify ;;
+        14) install_vlc ;;
+        15) install_utilities ;;
+        16) install_oh_my_posh ;;
+        17) setup_repos_directory ;;
+        18) cleanup_system ;;
+        19) remove_bloatware ;;
+        20)
             echo "Información del sistema:"
             echo "OS: $PRETTY_NAME"
             echo "Kernel: $(uname -r)"
@@ -1572,7 +1768,7 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
-        18) check_status ;;
+        21) check_status ;;
         0)
             echo "¡Gracias por usar el script!"
             exit 0
@@ -1605,9 +1801,12 @@ main() {
         configure_git
         install_browsers
         install_jdk_and_graphviz
+        install_plantuml
         install_vscode
+        install_antigravity
         install_github_cli
         configure_gpg
+        install_nodejs  # Instalar Node.js antes de agentes y utilities
         install_agents
         install_spotify
         install_vlc
