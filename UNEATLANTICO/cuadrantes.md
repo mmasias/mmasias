@@ -31,7 +31,7 @@
 ||Conoce poco|Conoce mucho|
 |-|:-:|:-:|
 |**Sabe usar<br>mucho**|McGyver|Sensei|
-|**Sabe usar<br>poco**|Novatín|Ing. de sofá|
+|**Sabe usar<br>poco**|Novatín|Ingeniero de sofá|
 
 </div>
 
@@ -63,8 +63,8 @@
 
 ||Conoce poco|Conoce mucho|
 |-|:-:|:-:|
-|**Sabe usar<br>mucho**|Le contratan pero no asciende|Se lo rifan|
-|**Sabe usar<br>poco**|Becario perpetuo|Se queda en la entrevista técnica|
+|**Sabe usar<br>mucho**|Hace que funcione|Lo hace bien|
+|**Sabe usar<br>poco**|Hace poco útil|Habla mucho|
 
 </div>
 
@@ -74,8 +74,8 @@
 
 ||Conoce poco|Conoce mucho|
 |-|:-:|:-:|
-|**Sabe usar<br>mucho**|Hace que funcione|Lo hace bien|
-|**Sabe usar<br>poco**|Hace poco útil|Habla mucho|
+|**Sabe usar<br>mucho**|Le contratan pero no asciende|Se lo rifan|
+|**Sabe usar<br>poco**|Becario perpetuo|Se queda en la entrevista técnica|
 
 </div>
 
