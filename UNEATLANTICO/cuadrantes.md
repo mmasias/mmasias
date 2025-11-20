@@ -1,6 +1,8 @@
 # Conoce vs Sabe usar
 
-## miVersion
+## Variaciones sobre la misma idea
+
+### miVersion original
 
 <div align=center>
 
@@ -11,7 +13,7 @@
 
 </div>
 
-## Versión A
+### Versión A
 
 <div align=center>
 
@@ -22,7 +24,7 @@
 
 </div>
 
-## Versión B
+### Versión B
 
 <div align=center>
 
@@ -33,7 +35,7 @@
 
 </div>
 
-## Versión C
+### Versión C
 
 <div align=center>
 
@@ -44,7 +46,7 @@
 
 </div>
 
-## Versión D
+### Versión D
 
 <div align=center>
 
@@ -55,7 +57,7 @@
 
 </div>
 
-## Versión E
+### Versión E
 
 <div align=center>
 
@@ -66,7 +68,7 @@
 
 </div>
 
-## Versión F
+### Versión F
 
 <div align=center>
 
@@ -76,3 +78,17 @@
 |**Sabe usar<br>poco**|Hace poco útil|Habla mucho|
 
 </div>
+
+## Conclusión
+
+### La realidad
+
+- Primer año: Es normal estar en "Principiante/Neófito/Recluta".
+- Cuarto año: Si se sigue en "Becario perpetuo", algo anda mal.
+- El mercado no perdona: "Habla mucho" no paga facturas.
+
+### El camino
+
+No es magia ni necesita genialidad: hablamos de **proyectos + teoría + más proyectos**
+
+El golpe de realidad es que 4 años pasan volando, y si no equilibras teoría con práctica desde primer año, llegas al final de los cuatro años a estar en el cuadrante equivocado.
