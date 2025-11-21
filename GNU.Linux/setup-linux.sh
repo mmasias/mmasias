@@ -781,6 +781,7 @@ install_agents() {
         ["claude-code"]="@anthropic-ai/claude-code"
         ["gemini-cli"]="@google/gemini-cli"
         ["codex"]="@openai/codex"
+        ["qwen-code"]="@qwen-code/qwen-code"
     )
 
     # Preguntar qué agentes instalar
@@ -789,24 +790,28 @@ install_agents() {
     echo "1) Claude Code"
     echo "2) Gemini CLI"
     echo "3) Codex"
-    echo "4) Todos"
-    read -p "Selecciona (1-4, o varios separados por comas): " agent_choice
+    echo "4) Qwen Code"
+    echo "5) Todos"
+    read -p "Selecciona (1-5, o varios separados por comas): " agent_choice
 
     # Determinar qué instalar
     install_claude=false
     install_gemini=false
     install_codex_agent=false
+    install_qwen=false
 
     case $agent_choice in
-        *4*|*"todos"*|*"Todos"*)
+        *5*|*"todos"*|*"Todos"*)
             install_claude=true
             install_gemini=true
             install_codex_agent=true
+            install_qwen=true
             ;;
         *)
             [[ $agent_choice == *1* ]] && install_claude=true
             [[ $agent_choice == *2* ]] && install_gemini=true
             [[ $agent_choice == *3* ]] && install_codex_agent=true
+            [[ $agent_choice == *4* ]] && install_qwen=true
             ;;
     esac
 
@@ -854,6 +859,22 @@ install_agents() {
                 info "Ejecutar con: codex"
             else
                 error "No se pudo instalar Codex"
+            fi
+        fi
+    fi
+
+    # Instalar Qwen Code
+    if [ "$install_qwen" = true ]; then
+        info "Instalando Qwen Code..."
+        if npm list -g @qwen-code/qwen-code &> /dev/null; then
+            success "Qwen Code ya está instalado"
+        else
+            npm install -g @qwen-code/qwen-code@latest
+            if npm list -g @qwen-code/qwen-code &> /dev/null; then
+                success "Qwen Code instalado correctamente"
+                info "Ejecutar con: qwen-code"
+            else
+                error "No se pudo instalar Qwen Code"
             fi
         fi
     fi
@@ -1683,6 +1704,13 @@ check_status() {
         
         printf "%-40s " "Codex:"
         if npm list -g @openai/codex &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+        fi
+
+        printf "%-40s " "Qwen Code:"
+        if npm list -g @qwen-code/qwen-code &> /dev/null; then
             echo -e "${GREEN}✓ INSTALADO${NC}"
         else
             echo -e "${RED}✗ NO INSTALADO${NC}"
