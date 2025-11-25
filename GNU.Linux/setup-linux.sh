@@ -85,6 +85,36 @@ detect_distro() {
     fi
 }
 
+# Helpers para configuración de GPG idempotente
+set_gpg_agent_option() {
+    local key="$1"
+    local value="$2"
+    local file="$HOME/.gnupg/gpg-agent.conf"
+
+    mkdir -p "$HOME/.gnupg"
+
+    if [ -f "$file" ]; then
+        sed -i "/^${key}[[:space:]]/d" "$file"
+    fi
+
+    echo "${key} ${value}" >> "$file"
+}
+
+select_gpg_key_for_email() {
+    local email="$1"
+    local key_id=""
+
+    if [[ -n "$email" ]]; then
+        key_id=$(gpg --list-secret-keys --keyid-format=long --with-colons "$email" 2>/dev/null | awk -F: '/^sec/{print $5; exit}')
+    fi
+
+    if [[ -z "$key_id" ]]; then
+        key_id=$(gpg --list-secret-keys --keyid-format=long --with-colons 2>/dev/null | awk -F: '/^sec/{print $5; exit}')
+    fi
+
+    echo "$key_id"
+}
+
 # Instalar dependencias básicas según la distribución - MEJORADO
 install_dependencies() {
     info "Instalando dependencias básicas para $DISTRO_FAMILY..."
@@ -1270,6 +1300,7 @@ configure_gpg() {
     # Verificar si ya está configurado GPG para Git
     current_signing_key=$(git config --global user.signingkey 2>/dev/null || echo "")
     gpg_sign_enabled=$(git config --global commit.gpgsign 2>/dev/null || echo "")
+    git_email=$(git config --global user.email 2>/dev/null || echo "")
 
     if [[ -n "$current_signing_key" && "$gpg_sign_enabled" == "true" ]]; then
         success "GPG ya está configurado para Git"
@@ -1302,7 +1333,7 @@ configure_gpg() {
         gpg --full-generate-key
         
         # Obtener el ID de la clave
-        key_id=$(gpg --list-secret-keys --keyid-format=long | grep sec | awk '{print $2}' | cut -d'/' -f2)
+        key_id=$(select_gpg_key_for_email "$git_email")
         
         if [[ -n "$key_id" ]]; then
             # Exportar clave para GitHub
@@ -1333,12 +1364,9 @@ configure_gpg() {
             fi
             
             # Configurar cache de contraseña GPG
-            mkdir -p ~/.gnupg
-            if ! grep -q "default-cache-ttl" ~/.gnupg/gpg-agent.conf 2>/dev/null; then
-                echo "default-cache-ttl 34560000" >> ~/.gnupg/gpg-agent.conf
-                echo "max-cache-ttl 34560000" >> ~/.gnupg/gpg-agent.conf
-                info "Se ha configurado el cache de contraseña GPG"
-            fi
+            set_gpg_agent_option "default-cache-ttl" "34560000"
+            set_gpg_agent_option "max-cache-ttl" "34560000"
+            info "Se ha configurado el cache de contraseña GPG"
 
             # Configurar pinentry para evitar problemas con aplicaciones gráficas
             configure_pinentry
@@ -1355,6 +1383,33 @@ configure_gpg() {
         fi
     else
         info "Configuración de GPG cancelada"
+    fi
+}
+
+# Limpia entradas duplicadas en gpg-agent.conf manteniendo la última
+cleanup_gpg_agent_conf() {
+    local file="$HOME/.gnupg/gpg-agent.conf"
+
+    if [ ! -f "$file" ]; then
+        info "No existe $file; nada que limpiar"
+        return 0
+    fi
+
+    local cleaned=false
+
+    for key in "pinentry-program" "default-cache-ttl" "max-cache-ttl"; do
+        if grep -q "^${key}[[:space:]]" "$file"; then
+            last_line=$(grep "^${key}[[:space:]]" "$file" | tail -n 1)
+            sed -i "/^${key}[[:space:]]/d" "$file"
+            echo "$last_line" >> "$file"
+            cleaned=true
+        fi
+    done
+
+    if [[ "$cleaned" == true ]]; then
+        success "Limpieza de $file completada (se conservaron los últimos valores)"
+    else
+        info "No se encontraron entradas duplicadas en $file"
     fi
 }
 
@@ -1375,6 +1430,18 @@ cleanup_system() {
             sudo pacman -Sc --noconfirm
             ;;
     esac
+
+    echo
+    info "¿Deseas limpiar entradas duplicadas en ~/.gnupg/gpg-agent.conf?"
+    if [ -t 0 ]; then
+        if confirm; then
+            cleanup_gpg_agent_conf
+        else
+            info "Limpieza de configuración GPG omitida"
+        fi
+    else
+        info "Modo no interactivo: omitiendo limpieza de gpg-agent.conf"
+    fi
 
     success "Sistema limpiado"
 }
@@ -1424,6 +1491,57 @@ setup_repos_directory() {
     fi
 
     success "Carpeta de repositorios configurada correctamente"
+}
+
+# Descargar repositorios predefinidos
+download_repos() {
+    info "Descargando repositorios en ~/misRepos..."
+
+    # Asegurar carpeta base
+    setup_repos_directory
+
+    # Verificar git
+    if ! command -v git &> /dev/null; then
+        warning "Git no está instalado. Instalándolo para poder clonar repos..."
+        case $DISTRO_FAMILY in
+            debian) sudo apt install -y git ;;
+            rpm) sudo dnf install -y git ;;
+            arch) sudo pacman -S --noconfirm git ;;
+        esac
+    fi
+
+    # Lista de repos a clonar
+    repos=(
+        "https://github.com/mmasias/prg1"
+        "https://github.com/mmasias/prg2"
+        "https://github.com/mmasias/eda1"
+        "https://github.com/mmasias/eda2"
+        "https://github.com/mmasias/idsw1"
+        "https://github.com/mmasias/idsw2"
+    )
+
+    for repo_url in "${repos[@]}"; do
+        repo_name=$(basename "$repo_url")
+        target_dir="$HOME/misRepos/$repo_name"
+
+        if [ -d "$target_dir/.git" ]; then
+            info "Repositorio $repo_name ya existe. Actualizando..."
+            if git -C "$target_dir" pull --ff-only; then
+                success "$repo_name actualizado"
+            else
+                warning "No se pudo actualizar $repo_name (revisa el repo manualmente)"
+            fi
+        else
+            info "Clonando $repo_name..."
+            if git clone "$repo_url" "$target_dir"; then
+                success "$repo_name clonado en ~/misRepos"
+            else
+                error "Falló la clonación de $repo_name"
+            fi
+        fi
+    done
+
+    success "Repositorios descargados/actualizados"
 }
 
 # Función para quitar bloatware - NUEVO
@@ -1726,10 +1844,31 @@ check_status() {
 # Menú principal - REORGANIZADO
 show_menu() {
     clear
-    echo "======================================"
-    echo "  SCRIPT DE CONFIGURACIÓN LINUX"
-    echo "======================================"
-    echo "Distribución: $DISTRO ($DISTRO_FAMILY)"
+    local pretty_name="${PRETTY_NAME:-$DISTRO}"
+    pretty_name="${pretty_name//\"/}"
+    local git_user
+    git_user=$(git config --global user.name 2>/dev/null || true)
+    local identity="$USER@$pretty_name"
+    if [[ -n "$git_user" ]]; then
+        identity="$identity | git: $git_user"
+    fi
+
+    # Estado rápido de apps
+    local chrome_status="Chrome:-"
+    local code_status="VSCode:-"
+    if command -v google-chrome &> /dev/null; then chrome_status="Chrome"; fi
+    if command -v code &> /dev/null; then code_status="VSCode"; fi
+
+    # Estado de agentes (C/G/C/Q)
+    local agent_c=$(command -v claude &> /dev/null && echo "C" || echo "-")
+    local agent_g=$(command -v gemini &> /dev/null && echo "G" || echo "-")
+    local agent_x=$(command -v codex &> /dev/null && echo "C" || echo "-")
+    local agent_q=$(command -v qwen &> /dev/null && echo "Q" || echo "-")
+    local agents_summary="$agent_c/$agent_g/$agent_x/$agent_q"
+
+    echo "SCRIPT DE CONFIGURACIÓN LINUX"
+    echo "$identity | $chrome_status | $code_status | Agentes: $agents_summary"
+    echo "=============================================="
     echo
     printf "%-45s %s\n" "1)  Todo!" "2)  Dependencias básicas"
     printf "%-45s %s\n" "3)  Configurar Git" "4)  Navegadores (Chrome & Brave)"
@@ -1739,9 +1878,10 @@ show_menu() {
     printf "%-45s %s\n" "11) Node.js (nvm)" "12) Agentes IA (Claude/Gemini/Codex)"
     printf "%-45s %s\n" "13) Spotify" "14) VLC"
     printf "%-45s %s\n" "15) Utilitarios" "16) oh-my-posh"
-    printf "%-45s %s\n" "17) Carpeta repo" "18) Limpiar sistema"
-    printf "%-45s %s\n" "19) Quitar bloatware" "20) Información del sistema"
-    printf "%-45s %s\n" "21) Ver estado" "0)  Salir"
+    printf "%-45s %s\n" "17) Carpeta repo" "18) Descargar repos"
+    printf "%-45s %s\n" "19) Limpiar sistema" "20) Quitar bloatware"
+    printf "%-45s %s\n" "21) SysInfo" "22) Ver estado"
+    printf "%-45s %s\n" "99)  Salir" ""
     echo
     read -p "Ingresa tu opción: " option
     
@@ -1764,6 +1904,7 @@ show_menu() {
             install_utilities
             install_oh_my_posh
             setup_repos_directory
+            download_repos
             remove_bloatware
             cleanup_system
             ;;
@@ -1783,9 +1924,10 @@ show_menu() {
         15) install_utilities ;;
         16) install_oh_my_posh ;;
         17) setup_repos_directory ;;
-        18) cleanup_system ;;
-        19) remove_bloatware ;;
-        20)
+        18) download_repos ;;
+        19) cleanup_system ;;
+        20) remove_bloatware ;;
+        21)
             echo "Información del sistema:"
             echo "OS: $PRETTY_NAME"
             echo "Kernel: $(uname -r)"
@@ -1796,8 +1938,8 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
-        21) check_status ;;
-        0)
+        22) check_status ;;
+        99)
             echo "¡Gracias por usar el script!"
             exit 0
             ;;
@@ -1841,6 +1983,7 @@ main() {
         install_utilities
         install_oh_my_posh
         setup_repos_directory
+        download_repos
         remove_bloatware
         cleanup_system
         success "¡Instalación completa terminada!"
@@ -1874,15 +2017,15 @@ configure_pinentry() {
             case $desktop_env in
                 kde)
                     sudo apt install -y pinentry-qt
-                    echo "pinentry-program /usr/bin/pinentry-qt" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-qt"
                     ;;
                 gnome)
                     sudo apt install -y pinentry-gnome3
-                    echo "pinentry-program /usr/bin/pinentry-gnome3" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gnome3"
                     ;;
                 *)
                     sudo apt install -y pinentry-gtk2
-                    echo "pinentry-program /usr/bin/pinentry-gtk2" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk2"
                     ;;
             esac
             ;;
@@ -1890,15 +2033,15 @@ configure_pinentry() {
             case $desktop_env in
                 kde)
                     sudo dnf install -y pinentry-qt
-                    echo "pinentry-program /usr/bin/pinentry-qt" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-qt"
                     ;;
                 gnome)
                     sudo dnf install -y pinentry-gnome3
-                    echo "pinentry-program /usr/bin/pinentry-gnome3" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gnome3"
                     ;;
                 *)
                     sudo dnf install -y pinentry-gtk
-                    echo "pinentry-program /usr/bin/pinentry-gtk" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk"
                     ;;
             esac
             ;;
@@ -1906,15 +2049,15 @@ configure_pinentry() {
             case $desktop_env in
                 kde)
                     sudo pacman -S --noconfirm pinentry-qt
-                    echo "pinentry-program /usr/bin/pinentry-qt" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-qt"
                     ;;
                 gnome)
                     sudo pacman -S --noconfirm pinentry-gnome
-                    echo "pinentry-program /usr/bin/pinentry-gnome3" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gnome3"
                     ;;
                 *)
                     sudo pacman -S --noconfirm pinentry-gtk
-                    echo "pinentry-program /usr/bin/pinentry-gtk2" >> ~/.gnupg/gpg-agent.conf
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk2"
                     ;;
             esac
             ;;
