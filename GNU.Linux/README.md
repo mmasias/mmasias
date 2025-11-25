@@ -1,6 +1,27 @@
 # :robot:
 
-Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distribución de elementaryOS en un ordenador nuevo, ha crecido hasta convertirse en un chuletón de cosas por hacer cuando instale casi que cualquier distribución de GNU/Linux en un ordenador nuevo. Y que está mejor detallado en [aquí](README_detallado.md)
+Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distribución de elementaryOS en un ordenador nuevo, ha crecido hasta convertirse en un chuletón que automatiza (hasta donde es posible) las cosas que hago cuando instalo casi que cualquier distribución de GNU/Linux en un ordenador nuevo.
+
+```console
+SCRIPT DE CONFIGURACIÓN LINUX
+manuel@Ubuntu 25.10 | git: manuel@oficina | Chrome | VSCode | Agentes: C/G/C/Q
+==============================================
+
+1)  Todo!                                     2)  Dependencias básicas
+3)  Configurar Git                            4)  Navegadores (Chrome & Brave)
+5)  JDK & graphviz                            6)  PlantUML
+7)  Visual Studio Code                        8)  Antigravity IDE
+9)  GitHub CLI                                10) Configurar firma GPG
+11) Node.js (nvm)                             12) Agentes IA (Claude/Gemini/Codex)
+13) Spotify                                   14) VLC
+15) Utilitarios                               16) oh-my-posh
+17) Carpeta repo                              18) Descargar repos
+19) Limpiar sistema                           20) Quitar bloatware
+21) SysInfo                                   22) Ver estado
+99)  Salir                                    
+
+Ingresa tu opción:
+```
 
 ## Instalación rápida
 
@@ -19,13 +40,25 @@ bash setup-linux.sh
 >
 > TsP: Tiempo en ser productivo | TpR: Tiempo productividad recuperada
 >
-> **Actualizado**: Navegadores duales (Chrome + Brave), Nerd Fonts automáticas, limpieza mejorada de bloatware
+> **Actualizado**: menú extendido (PlantUML, Antigravity, GitHub CLI, agentes IA con Node/nvm, utilitarios DOSBox-X/Jorts/KDEnLive/VirtualBox), limpieza avanzada de bloatware, carpeta `~/misRepos` con clonado automático, pinentry GPG
 >
 > Ahora, gracias a [Claude (Anthropic)](https://claude.ai), habemus [archivo de instalación](setup-linux.sh) que realiza todo esto!
 
-## Instalar Chrome & Brave
+Las secciones siguientes son solo para instalación manual o puntual. Si ya usas el script, no necesitas repetirlas.
 
-Chrome del [canal oficial](https://www.google.com/chrome/?platform=linux) y Brave del [canal oficial](https://brave.com/download/).
+### ¿Qué hace ahora el script?
+
+- Detecta la distro (Debian/Ubuntu, RPM/Fedora, Arch/Manjaro) y adapta cada instalación.
+- Instala Chrome y, si quieres, Brave; luego pausa para que los configures como predeterminados y loguees GitHub.
+- Configura Git (nombre/email), GPG con pinentry según escritorio y GitHub CLI + extensión Classroom.
+- Java (elige versión), graphviz, PlantUML; VSCode y Antigravity IDE.
+- Node.js v24 vía nvm, agentes de IA (`claude-code`, `gemini-cli`, `codex`, `qwen-code`), utilitarios (tree/htop/neofetch/bat/fd/rg/tmux/vim/eza), DOSBox-X, Jorts, KDEnLive, VirtualBox.
+- oh-my-posh con temas y Nerd Fonts (FiraCode/Meslo) automáticas.
+- Crea `~/misRepos`, puede clonar/actualizar tus repos de clase y dejar el terminal apuntando allí.
+- Limpieza de bloatware (Firefox, LibreOffice, Thunderbird) opcional y limpieza de paquetes/cache.
+
+## Instalar Chrome & Brave
+Manual (si no usas el script): Chrome del [canal oficial](https://www.google.com/chrome/?platform=linux) y Brave del [canal oficial](https://brave.com/download/).
 
 ```bash
 # Debian_Based distro:
@@ -79,109 +112,31 @@ sudo dnf install git
 sudo pacman -Syu git
 
 # Común a las tres
-git config --global user.name "manuel@dondeSea"
-git config --global user.email "manuel@masiasweb.com"
+git config --global user.name "nick@dondeSea" # usa algo que te ubique (casa/oficina/aula/portátil)
+git config --global user.email "tu@email"
 ```
 
 > [Configurar GPG para firma](GNU.Linux.GPG.md)
 
-## Instalar gdebi
+## Instalar gdebi, curl, jdk, graphviz, VSCode
 
-```bash
-# Debian_Based distro:
-sudo apt install gdebi
-
-# RPM_Based distro:
-# No es necesario gdebi en distribuciones RPM
-# Para instalar paquetes rpm, usa dnf directamente:
-# sudo dnf install ./paquete.rpm
-
-# Manjaro
-# No es necesario gdebi, para paquetes .pkg.tar.zst usa pacman
-# Para paquetes AUR usa yay o pamac
-```
-
-## Instalar curl
-
-```bash
-# Debian_Based distro:
-sudo apt install curl
-
-# RPM_Based distro:
-sudo dnf install curl
-
-# Manjaro
-sudo pacman -Syu curl
-```
-
-## Instalar jdk
-
-```bash
-# Debian_Based distro:
-sudo apt install openjdk-17-jdk-headless
-
-# RPM_Based distro:
-sudo dnf install java-latest-openjdk-devel.x86_64
-
-# Manjaro
- sudo pacman -Syu jdk-openjdk
-```
-
-## Instalar graphviz
-
-```bash
-# Debian_Based distro:
-sudo apt install graphviz
-
-# RPM_Based distro:
-sudo dnf install graphviz
-
-# Manjaro
- sudo pacman -Syu graphviz
-```
-
-## Instalar Visual Studio Code
-
-> [*Link oficial*](https://code.visualstudio.com/docs/setup/linux)
-
-```bash
-# Debian_Based distro:
-sudo apt-get install wget gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo install -D -o root -g root -m 644 microsoft.gpg /usr/share/keyrings/microsoft.gpg
-rm -f microsoft.gpg
-sudo sh -c 'cat > /etc/apt/sources.list.d/vscode.sources << EOF
-Types: deb
-URIs: https://packages.microsoft.com/repos/code
-Suites: stable
-Components: main
-Architectures: amd64,arm64,armhf
-Signed-By: /usr/share/keyrings/microsoft.gpg
-EOF'
-sudo apt install apt-transport-https
-sudo apt update
-sudo apt install code
-
-# RPM_Based distro:
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-dnf check-update
-sudo dnf install code
-
-# Manjaro
-yay -S visual-studio-code-bin # sudo pacman -Syu code lo instala sin posibilidad de conectar con GIT
-```
+Ya lo hace el script. Solo si quieres a mano: gdebi (Debian), curl en tu gestor, `openjdk`/`graphviz` desde repos, y VSCode desde el [link oficial](https://code.visualstudio.com/docs/setup/linux).
 
 ## Instalar Spotify
 
 ```bash
 # Debian_Based distro:
-curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb https://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update
 sudo apt install spotify-client
 
-# RPM_Based distro:
+# RPM_Based distro (snap es la vía más estable):
+sudo dnf install snapd
+sudo ln -s /var/lib/snapd/snap /snap 2>/dev/null || true
+sudo systemctl enable --now snapd.socket
+sudo snap install spotify
+# Alternativa con repo oficial:
 sudo rpm --import https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
 sudo tee /etc/yum.repos.d/spotify.repo > /dev/null <<EOF
 [spotify]
@@ -191,7 +146,7 @@ enabled=1
 gpgcheck=1
 gpgkey=https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
 EOF
-sudo dnf install spotify-client
+sudo dnf install spotify-client || echo "Si falla, usa snap arriba"
 
 # Manjaro
 yay -S spotify
@@ -260,16 +215,125 @@ eval "$(oh-my-posh init bash --config /home/USERNAME/.poshthemes/nordtron.omp.js
 
 ```bash
 # Debian_Based distro:
-sudo apt install tree # tree -pugh
-sudo apt install eza  # eza -l --tree --group --header
+sudo apt install tree htop neofetch bat fd-find ripgrep tmux vim
+# eza no está en los repos oficiales, instálalo con cargo
+sudo apt install cargo && cargo install eza
+sudo apt install kdenlive virtualbox virtualbox-ext-pack || sudo apt install virtualbox
+# DOSBox-X y Jorts (cliente Mastodon) van mejor por flatpak:
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install -y flathub com.dosbox_x.DOSBox-X ca.joshuadoes.Jorts
 
 # RPM_Based distro:
-sudo dnf install tree
-sudo dnf install eza  # Si no está disponible en los repos oficiales, puede requerir EPEL
+sudo dnf install tree htop neofetch bat fd-find ripgrep tmux vim gcc gcc-c++ make
+sudo dnf install eza || (sudo dnf install cargo && cargo install eza)
+sudo dnf install kdenlive VirtualBox
+# DOSBox-X y Jorts por flatpak (añadir Flathub si hace falta)
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install -y flathub com.dosbox_x.DOSBox-X ca.joshuadoes.Jorts
 
 # Manjaro - Otros utilitarios
-sudo pacman -Syu tree
-sudo pacman -Syu eza  # O instalarlo desde AUR con: yay -S eza
+sudo pacman -Syu tree htop neofetch bat fd ripgrep tmux vim base-devel
+sudo pacman -Syu eza || yay -S --noconfirm eza
+sudo pacman -Syu kdenlive virtualbox virtualbox-host-modules-arch
+yay -S --noconfirm dosbox-x jorts
+```
+
+## Node.js (nvm)
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+nvm install 24
+```
+
+## Agentes IA (CLI)
+
+Requieren Node/npm global:
+
+```bash
+npm install -g @anthropic-ai/claude-code @google/gemini-cli @openai/codex @qwen-code/qwen-code
+```
+
+## PlantUML
+
+```bash
+# Debian_Based distro:
+sudo apt install plantuml graphviz
+
+# RPM_Based distro:
+sudo dnf install plantuml graphviz
+
+# Manjaro
+sudo pacman -Syu plantuml graphviz
+
+# Si no está en repos, descargar JAR
+sudo mkdir -p /opt/plantuml
+sudo curl -L -o /opt/plantuml/plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar
+sudo tee /usr/local/bin/plantuml >/dev/null <<'EOF'
+#!/bin/bash
+java -jar /opt/plantuml/plantuml.jar "$@"
+EOF
+sudo chmod +x /usr/local/bin/plantuml
+```
+
+## Antigravity IDE
+
+```bash
+# Debian_Based distro:
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | sudo tee /etc/apt/sources.list.d/antigravity.list
+sudo apt update && sudo apt install antigravity
+
+# RPM_Based distro:
+sudo tee /etc/yum.repos.d/antigravity.repo <<'EOL'
+[antigravity-rpm]
+name=Antigravity RPM Repository
+baseurl=https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
+enabled=1
+gpgcheck=0
+EOL
+sudo dnf makecache && sudo dnf install antigravity
+
+# Manjaro (AUR)
+yay -S --noconfirm antigravity || echo "No disponible en AUR, usar tarball"
+```
+
+## Carpeta de repos y clones
+
+```bash
+mkdir -p ~/misRepos
+cd ~/misRepos
+for repo in prg1 prg2 eda1 eda2 idsw1 idsw2; do
+  git clone https://github.com/mmasias/$repo || git -C "$repo" pull --ff-only
+done
+```
+
+En tu shell (`.bashrc`/`.zshrc`), puedes añadir:
+
+```bash
+if [ "$PWD" = "$HOME" ]; then
+  cd ~/misRepos 2>/dev/null || true
+fi
+```
+
+## Quitar bloatware (opcional)
+
+El script ofrece purgar Firefox, LibreOffice y Thunderbird (y sus idiomas) y marcar que no se reinstalen. Manualmente:
+
+```bash
+# Debian_Based distro:
+sudo apt purge -y firefox firefox-esr libreoffice* thunderbird
+sudo apt autoremove --purge -y && sudo apt autoclean
+
+# RPM_Based distro:
+sudo dnf remove -y firefox libreoffice* thunderbird
+sudo dnf autoremove -y && sudo dnf clean all
+
+# Manjaro
+sudo pacman -Rns --noconfirm firefox libreoffice-fresh thunderbird
+sudo pacman -Sc --noconfirm
 ```
 
 ### Tema (KDE)
