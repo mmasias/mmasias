@@ -42,7 +42,7 @@ bash setup-linux.sh
 >
 > **Actualizado**: menú extendido (PlantUML, Antigravity, GitHub CLI, agentes IA con Node/nvm, utilitarios DOSBox-X/Jorts/KDEnLive/VirtualBox), limpieza avanzada de bloatware, carpeta `~/misRepos` con clonado automático, pinentry GPG
 >
-> Ahora, gracias a [Claude (Anthropic)](https://claude.ai), habemus [archivo de instalación](setup-linux.sh) que realiza todo esto!
+> Agradecimientos a [Claude (Anthropic)](https://claude.ai) y [Codex (OpenAI)](https://platform.openai.com/docs/assistants/coding) por ayudar a iterar el [archivo de instalación](setup-linux.sh) que realiza todo esto.
 
 Las secciones siguientes son solo para instalación manual o puntual. Si ya usas el script, no necesitas repetirlas.
 
