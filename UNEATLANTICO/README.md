@@ -18,11 +18,17 @@
 
 ### [25][26]
 
-- [iGPySw](https://github.com/miguelancabezon/25-26-igps)
-- [PRG1](https://github.com/mmasias/25-26-PRG1)
-- [EDA1](https://github.com/mmasias/25-26-EDA1)
-- [BBDD](https://github.com/LorenzoPerezUnea/BaseDeDatos1-25-26)
-- [IdSw1](https://github.com/mmasias/25-26-IdSW1)
+<div align=center>
+
+|S1|S2|
+|-|-|
+[Introducción a la gestión de proyectos de software](https://github.com/miguelancabezon/25-26-igps)
+[Bases de datos 1](https://github.com/LorenzoPerezUnea/BaseDeDatos1-25-26)
+[Programación 1](https://github.com/mmasias/25-26-PRG1)
+[Estructura de datos 1](https://github.com/mmasias/25-26-EDA1)
+[Ingeniería del software 1](https://github.com/mmasias/25-26-IdSW1)<br>- [*Sesiones de requisitado*](https://github.com/mmasias/25-26-idsw1-sdr)|
+
+</div>
 
 ### [24][25]
 
