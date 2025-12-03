@@ -22,15 +22,17 @@ La IA es herramienta legítima de aprendizaje. El fraude no es usar IA, sino ent
 
 ## Marco operacional
 
-Distinguimos tres categorías de uso con obligaciones diferenciadas
+Distinguimos dos categorías de uso con obligaciones diferenciadas
 
-|Uso instrumental-mecánico|Uso generativo-conceptual|Uso delegativo-completo
-|-|-|-|
-|*reformulación, corrección sintáctica, traducción entre lenguajes, generación de código base estándar*|*generación de lógica, estructuras de datos, algoritmos, diseño de clases*|*IA genera solución completa sin intervención conceptual del alumno*
-|Permitido sin documentación explícita|Permitido con documentación obligatoria|Detectable mediante **code review**: si el alumno no puede explicar decisiones de diseño o modificar código bajo demanda
-||Debe aparecer en commit message o PR description indicando qué se generó y qué herramienta se usó
-|Ejemplos: corregir errores de sintaxis, generar getters/setters, formatear código|Ejemplo mensaje commit: "Implementa búsqueda binaria con asistencia de Claude para estructura del loop"
-|Justificación: equivalente a usar IDE con autocompletado|Obligación adicional: capacidad de explicar línea por línea en code review|No requiere prohibición explícita: nuestra metodología ya lo hace inviable
+|Uso instrumental-mecánico|Uso generativo-conceptual|
+|-|-|
+|*reformulación, corrección sintáctica, traducción entre lenguajes, generación de código base estándar*|*generación de lógica, estructuras de datos, algoritmos, diseño de clases*|
+|Permitido sin documentación explícita|Permitido con documentación obligatoria: debe aparecer en commit message o PR description indicando qué se generó y qué herramienta se usó.
+||Código generativo-conceptual sin documentación que el estudiante no puede explicar en code review se considera trabajo no defendible.
+|Ejemplos: corregir errores de sintaxis, generar getters/setters, formatear código|Ejemplo mensaje commit: "Implementa búsqueda binaria. Claude generó estructura inicial del loop (líneas 23-35) tras descripción del algoritmo. Adapté manejo de caso base y condiciones límite manualmente."
+|Justificación: equivalente a usar IDE con autocompletado|
+
+**Delegación completa sin comprensión** no es categoría de uso sino **fraude académico**, detectable mediante code review donde el estudiante no puede justificar decisiones. No requiere prohibición explícita: nuestra metodología ya lo hace inviable
 
 ## Criterios evaluativos
 
@@ -72,6 +74,10 @@ Documento para alumnos: redactar política de una página con esta estructura:
 
 ## Justificación
 
-En ingeniería profesional, usar herramientas (incluyendo IA) es esperado. Lo inaceptable es entregar código que no se comprende o no se puede mantener.
+En ingeniería profesional, delegar trabajo a herramientas es práctica estándar. Lo inaceptable no es usar la herramienta sino entregar artefactos que no se puedan mantener, extender o defender técnicamente. 
 
-Nuestro grado, nuestras asignaturas replican expectativas profesionales.
+Un ingeniero que usa biblioteca externa debe comprender qué hace esa biblioteca suficientemente para integrarla, debuggearla y adaptarla a requisitos cambiantes. 
+
+El mismo principio aplica a código generado por IA: usarlo es legítimo; entregarlo sin comprenderlo es incompetencia técnica, independientemente de cómo se generó.
+
+Nuestro grado forma ingenieros capaces de asumir responsabilidad técnica por el código que producen. Esta política replica expectativas profesionales donde la responsabilidad no se delega junto con la generación.
