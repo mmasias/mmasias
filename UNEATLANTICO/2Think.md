@@ -16,7 +16,7 @@
 
 ---
 
-# gII@UNEATLANTICO - Nuesta política con respecto a la IA
+# gII@UNEATLANTICO - Nuestra política con respecto a la IA - Documento de trabajo
 
 La IA es herramienta legítima de aprendizaje. El fraude no es usar IA, sino entregar trabajo que no se puede defender o cuyo proceso de creación no se puede explicar.
 
