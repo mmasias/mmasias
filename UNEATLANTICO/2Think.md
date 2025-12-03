@@ -1,0 +1,3 @@
+# 2Think...
+
+[¿Qué vende exactamente la universidad?](https://www.wosu.org/2025-06-17/ohio-state-university-will-discipline-fewer-students-for-using-ai-under-new-initiative)
