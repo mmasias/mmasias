@@ -48,7 +48,7 @@ Si usó IA para generar parte del código, debe haber interiorizado suficienteme
 
 ## 2DO!!!
 
-> Desarrollar [Rubrica](Rubricus.md)
+> Desarrollar [Rubrica](Rubricus.md) / [Zonas +(topologiaActuacion.md)
 
 ### Documento para alumnos
 
