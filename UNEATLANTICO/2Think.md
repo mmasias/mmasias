@@ -40,9 +40,9 @@ Distinguimos dos categorías de uso con obligaciones diferenciadas
 
 El alumno asume responsabilidad completa del código entregado. Esto significa:
 
-- Capacidad de explicar cada decisión de diseño
-- Capacidad de defender por qué esa solución es apropiada
-- Capacidad de modificar el código ante nuevos requisitos
+- Capacidad de **explicar** cada decisión de diseño
+- Capacidad de **defender** por qué esa solución es apropiada
+- Capacidad de **modificar** el código ante nuevos requisitos
 
 Si usó IA para generar parte del código, debe haber interiorizado suficientemente el contenido para poder defenderlo. Usar IA y no comprender lo generado viola el principio de responsabilidad.
 
