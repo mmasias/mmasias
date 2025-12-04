@@ -48,9 +48,11 @@ Si usó IA para generar parte del código, debe haber interiorizado suficienteme
 
 ## 2DO!!!
 
-Documento para alumnos: redactar política de una página con esta estructura:
+### Documento para alumnos
 
-- Principio: La IA es herramienta legítima. El criterio de evaluación es tu capacidad de responsabilizarte del código entregado.
+> Completar/redactar política de una página con esta estructura:
+
+- Principio: ***La IA es herramienta legítima***. *El criterio de evaluación es la capacidad de responsabilizarse del código entregado.*
 - Obligaciones:
   - Documentar en commits/PRs cuando se use IA para generar lógica o estructuras no triviales
   - Estar preparado para explicar y modificar cualquier línea de código en code reviews
