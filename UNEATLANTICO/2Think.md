@@ -48,6 +48,8 @@ Si usó IA para generar parte del código, debe haber interiorizado suficienteme
 
 ## 2DO!!!
 
+> Desarrollar [Rubrica](Rubricus.md)
+
 ### Documento para alumnos
 
 > Completar/redactar política de una página con esta estructura:
