@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de Mapa Armónico Dinámico</title>
+    <style>
+        /* Estilos para una mejor visualización */
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f0f8ff; }
+        .container { max-width: 800px; margin: auto; background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        h2 { color: #007bff; border-bottom: 2px solid #a0c3e7; padding-bottom: 10px; }
+        label { display: block; margin-bottom: 10px; font-weight: bold; color: #333; }
+        select, button { padding: 12px; margin-bottom: 25px; border-radius: 6px; border: 1px solid #007bff; width: 100%; box-sizing: border-box; font-size: 16px; background-color: #e6f0ff; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #007bff; color: white; font-weight: bold; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        .secundario-row { background-color: #fff0f0; font-style: italic; } /* Para acordes secundarios */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Generador de Tabla de Vectores Armónicos</h2>
+        
+        <label for="tonica">Selecciona la Tónica (Centro del Mapa):</label>
+        <select id="tonica">
+            <option value="C">C (Do)</option>
+            <option value="D">D (Re)</option>
+            <option value="E">E (Mi)</option>
+            <option value="F">F (Fa)</option>
+            <option value="G">G (Sol)</option>
+            <option value="A">A (La)</option>
+            <option value="B">B (Si)</option>
+        </select>
+        
+        <button onclick="calcularAcordesAvanzados()">Generar Tabla de Progresiones</button>
+        
+        <div id="resultado">Aquí verás los nodos y sus flechas armónicas.</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
