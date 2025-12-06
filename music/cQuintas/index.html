@@ -55,8 +55,14 @@
             <option value="A#">A# (La#)</option>
             <option value="B">B (Si)</option>
         </select>
-        
-        <button onclick="calcularAcordesAvanzados()">Generar Tabla de Progresiones</button>
+
+        <label for="modo">Selecciona el Modo:</label>
+        <select id="modo" onchange="calcularAcordesAvanzados()">
+            <option value="Mayor">Mayor</option>
+            <option value="Menor">Menor Natural</option>
+        </select>
+
+        <button id="btnGenerar" onclick="iniciarOResetear()">Generar Tabla de Progresiones</button>
         
         <div id="resultado">Aquí verás los nodos y sus flechas armónicas.</div>
     </div>
