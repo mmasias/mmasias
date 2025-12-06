@@ -1,6 +1,9 @@
 // Array de las 12 notas para el cálculo de intervalos
 const notasBase = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 
+// Estado global para navegación
+let acordeActual = null;
+
 /**
  * Función que calcula la nota raíz del acorde en base al desplazamiento de semitonos.
  * @param {string} tonica - La nota tónica.
@@ -40,10 +43,65 @@ function generarAcorde(nota, calidad) {
 }
 
 /**
+ * Función que envuelve un acorde en un elemento clickeable.
+ * @param {string} nombreAcorde - El nombre del acorde (ej: "C", "Dm", "G7").
+ * @returns {string} El HTML del acorde clickeable.
+ */
+function hacerAcordeClickeable(nombreAcorde) {
+    return `<a href="#" class="acorde-link" onclick="navegarAcorde('${nombreAcorde}'); return false;">${nombreAcorde}</a>`;
+}
+
+/**
+ * Función que convierte todos los acordes en un texto a enlaces clickeables.
+ * @param {string} texto - Texto que puede contener nombres de acordes.
+ * @returns {string} El texto con acordes convertidos en enlaces.
+ */
+function hacerAcordesClickeablesEnTexto(texto) {
+    // Regex para detectar acordes: Nota + (#)? + (m|°|7)?
+    // Necesita ser más preciso para evitar falsos positivos
+    const regexAcorde = /\b([A-G](#)?(m|°|7)?)\b/g;
+
+    return texto.replace(regexAcorde, (match) => {
+        // Verificar que realmente es un acorde válido
+        if (match.match(/^[A-G](#)?(m|°|7)?$/)) {
+            return hacerAcordeClickeable(match);
+        }
+        return match;
+    });
+}
+
+/**
+ * Función que navega a un acorde específico.
+ * @param {string} nombreAcorde - El nombre del acorde al que navegar.
+ */
+function navegarAcorde(nombreAcorde) {
+    acordeActual = nombreAcorde;
+    calcularAcordesAvanzados();
+}
+
+/**
+ * Extrae la nota raíz de un nombre de acorde.
+ * @param {string} nombreAcorde - El nombre completo del acorde (ej: "Dm", "G7", "F#").
+ * @returns {string} La nota raíz (ej: "D", "G", "F#").
+ */
+function extraerNotaRaiz(nombreAcorde) {
+    // Regex para capturar la nota raíz (letra + sostenido opcional)
+    const match = nombreAcorde.match(/^([A-G](#)?)/);
+    return match ? match[1] : nombreAcorde;
+}
+
+/**
  * Función principal para generar la tabla de vectores armónicos.
  */
 function calcularAcordesAvanzados() {
-    const tonica = document.getElementById('tonica').value;
+    // Usar acordeActual si existe, sino usar el selector
+    let tonica;
+    if (acordeActual) {
+        tonica = extraerNotaRaiz(acordeActual);
+    } else {
+        tonica = document.getElementById('tonica').value;
+    }
+
     const resultadoDiv = document.getElementById('resultado');
     
     // Grados Diatónicos (I, II, III, IV, V, VI, VII)
@@ -192,10 +250,10 @@ function calcularAcordesAvanzados() {
         // 4. Inserción de la fila: Negrita SOLO en el Acorde (Nodo) central
         tablaHTML += `
             <tr class="${claseFila}">
-                <td>${progresionEntrante}</td>
+                <td>${hacerAcordesClickeablesEnTexto(progresionEntrante)}</td>
                 <td><strong>${acorde.nombre}</strong></td>
                 <td>${acorde.funcion}</td>
-                <td>${progresionSaliente}</td>
+                <td>${hacerAcordesClickeablesEnTexto(progresionSaliente)}</td>
             </tr>
         `;
     }
