@@ -34,36 +34,89 @@
             color: #0056b3;
             border-bottom: 1px solid #0056b3;
         }
+        /* Estilos para botones */
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        button:enabled:hover {
+            background-color: #0056b3;
+            cursor: pointer;
+        }
+        /* Estilos para historial */
+        #historial {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        #historial:empty {
+            display: none;
+        }
+        /* Layout para controles en línea */
+        .controles-linea {
+            display: flex;
+            gap: 15px;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+        .control-grupo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .control-grupo.modo {
+            flex: 0.6;
+        }
+        .botones-linea {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .botones-linea button {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Generador de Tabla de Vectores Armónicos</h2>
-        
-        <label for="tonica">Selecciona la Tónica (Centro del Mapa):</label>
-        <select id="tonica">
-            <option value="C">C (Do)</option>
-            <option value="C#">C# (Do#)</option>
-            <option value="D">D (Re)</option>
-            <option value="D#">D# (Re#)</option>
-            <option value="E">E (Mi)</option>
-            <option value="F">F (Fa)</option>
-            <option value="F#">F# (Fa#)</option>
-            <option value="G">G (Sol)</option>
-            <option value="G#">G# (Sol#)</option>
-            <option value="A">A (La)</option>
-            <option value="A#">A# (La#)</option>
-            <option value="B">B (Si)</option>
-        </select>
 
-        <label for="modo">Selecciona el Modo:</label>
-        <select id="modo" onchange="calcularAcordesAvanzados()">
-            <option value="Mayor">Mayor</option>
-            <option value="Menor">Menor Natural</option>
-        </select>
+        <div class="controles-linea">
+            <div class="control-grupo">
+                <label for="tonica">Tónica:</label>
+                <select id="tonica">
+                    <option value="C">C (Do)</option>
+                    <option value="C#">C# (Do#)</option>
+                    <option value="D">D (Re)</option>
+                    <option value="D#">D# (Re#)</option>
+                    <option value="E">E (Mi)</option>
+                    <option value="F">F (Fa)</option>
+                    <option value="F#">F# (Fa#)</option>
+                    <option value="G">G (Sol)</option>
+                    <option value="G#">G# (Sol#)</option>
+                    <option value="A">A (La)</option>
+                    <option value="A#">A# (La#)</option>
+                    <option value="B">B (Si)</option>
+                </select>
+            </div>
 
-        <button id="btnGenerar" onclick="iniciarOResetear()">Generar Tabla de Progresiones</button>
-        
+            <div class="control-grupo modo">
+                <label for="modo">Modo:</label>
+                <select id="modo" onchange="calcularAcordesAvanzados()">
+                    <option value="Mayor">Mayor</option>
+                    <option value="Menor">Menor Natural</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="botones-linea">
+            <button id="btnGenerar" onclick="iniciarOResetear()">Generar Tabla de Progresiones</button>
+            <button id="btnVolverAtras" onclick="volverAtras()" disabled style="background-color: #6c757d;">← Volver Atrás</button>
+        </div>
+
+        <div id="historial"></div>
+
         <div id="resultado">Aquí verás los nodos y sus flechas armónicas.</div>
     </div>
 

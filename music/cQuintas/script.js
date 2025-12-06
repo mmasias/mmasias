@@ -4,6 +4,7 @@ const notasBase = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "
 // Estado global para navegación
 let acordeActual = null;
 let enModoNavegacion = false;
+let historialProgresion = []; // Array de acordes visitados
 
 /**
  * Función que calcula la nota raíz del acorde en base al desplazamiento de semitonos.
@@ -76,9 +77,15 @@ function hacerAcordesClickeablesEnTexto(texto) {
  * @param {string} nombreAcorde - El nombre del acorde al que navegar.
  */
 function navegarAcorde(nombreAcorde) {
+    // Agregar el acorde actual al historial ANTES de cambiar
+    if (acordeActual && acordeActual !== nombreAcorde) {
+        historialProgresion.push(acordeActual);
+    }
+
     acordeActual = nombreAcorde;
     enModoNavegacion = true;
     actualizarInterfaz();
+    actualizarHistorialDisplay();
     calcularAcordesAvanzados();
 }
 
@@ -90,13 +97,74 @@ function iniciarOResetear() {
         // Resetear
         acordeActual = null;
         enModoNavegacion = false;
+        historialProgresion = [];
         actualizarInterfaz();
+        actualizarHistorialDisplay();
     } else {
-        // Iniciar navegación
+        // Iniciar navegación - establecer acordeActual al valor del selector
+        const tonica = document.getElementById('tonica').value;
+        const modo = document.getElementById('modo').value;
+
+        // Generar el acorde inicial según el modo
+        if (modo === "Mayor") {
+            acordeActual = tonica; // Acorde mayor (sin sufijo)
+        } else {
+            acordeActual = tonica + "m"; // Acorde menor
+        }
+
         enModoNavegacion = true;
         actualizarInterfaz();
+        actualizarHistorialDisplay();
     }
     calcularAcordesAvanzados();
+}
+
+/**
+ * Función que vuelve al acorde anterior en el historial.
+ */
+function volverAtras() {
+    if (historialProgresion.length > 0) {
+        // Quitar el último acorde del historial y usarlo como nuevo acorde actual
+        acordeActual = historialProgresion.pop();
+        actualizarInterfaz();
+        actualizarHistorialDisplay();
+        calcularAcordesAvanzados();
+    }
+}
+
+/**
+ * Actualiza el display visual del historial de progresión.
+ */
+function actualizarHistorialDisplay() {
+    const historialDiv = document.getElementById('historial');
+    const btnVolverAtras = document.getElementById('btnVolverAtras');
+
+    if (historialProgresion.length > 0 || acordeActual) {
+        // Crear la cadena de progresión
+        let progresion = '';
+        if (historialProgresion.length > 0) {
+            progresion = historialProgresion.join(' → ');
+        }
+        if (acordeActual) {
+            if (progresion) {
+                progresion += ' → <strong>' + acordeActual + '</strong>';
+            } else {
+                progresion = '<strong>' + acordeActual + '</strong>';
+            }
+        }
+
+        historialDiv.innerHTML = '<p style="margin-top: 15px; font-size: 18px;">Progresión actual: ' + progresion + '</p>';
+
+        // Habilitar/deshabilitar botón volver atrás
+        if (btnVolverAtras) {
+            btnVolverAtras.disabled = historialProgresion.length === 0;
+        }
+    } else {
+        historialDiv.innerHTML = '';
+        if (btnVolverAtras) {
+            btnVolverAtras.disabled = true;
+        }
+    }
 }
 
 /**
@@ -400,13 +468,6 @@ function calcularAcordesAvanzados() {
         </tbody>
         </table>
     `;
-
-    // Texto descriptivo según el modo
-    if (modo === "Mayor") {
-        tablaHTML += `<p style="margin-top: 15px;">Las filas en rojo pálido son Dominantes Secundarios. Las filas en verde pálido son Acordes de Intercambio Modal (IVm). Las filas en azul claro son Sustitutos Dominantes (SubV7).</p>`;
-    } else {
-        tablaHTML += `<p style="margin-top: 15px;">Las filas en rojo pálido son Dominantes Secundarios. Las filas en verde pálido son Acordes Prestados (IV Mayor). Las filas en azul claro son el Dominante Mayor (V7).</p>`;
-    }
 
     resultadoDiv.innerHTML = tablaHTML;
 }
