@@ -21,9 +21,10 @@ function calcularNota(tonica, desplazamiento) {
 }
 
 /**
- * Función que genera el acorde con su calidad (mayor, menor, disminuido).
+ * Función que genera el acorde con su calidad (mayor, menor, disminuido, dominante).
+ * NOTA: Esta función ahora solo devuelve el texto sin negritas.
  * @param {string} nota - La nota raíz.
- * @param {string} calidad - La calidad ("Mayor", "Menor", "Disminuido", "Dominante7").
+ * @param {string} calidad - La calidad.
  * @returns {string} El acorde formateado.
  */
 function generarAcorde(nota, calidad) {
@@ -47,35 +48,38 @@ function calcularAcordesAvanzados() {
     
     // Grados Diatónicos (I, II, III, IV, V, VI, VII)
     const gradosDiatonicos = [
-        [0, "Mayor", "Tónica (I)", false],
-        [2, "Menor", "Subdominante (II)", false],
-        [4, "Menor", "Mediante (III)", false],
-        [5, "Mayor", "Subdominante (IV)", false],
-        [7, "Mayor", "Dominante (V)", false],
-        [9, "Menor", "Tónica Menor (VI)", false],
-        [11, "Disminuido", "Dominante Auxiliar (VII)", false]
+        [0, "Mayor", "Tónica (I)", false, "I"],
+        [2, "Menor", "Subdominante (II)", false, "II"],
+        [4, "Menor", "Mediante (III)", false, "III"],
+        [5, "Mayor", "Subdominante (IV)", false, "IV"],
+        [7, "Mayor", "Dominante (V)", false, "V"],
+        [9, "Menor", "Tónica Menor (VI)", false, "VI"],
+        [11, "Disminuido", "Dominante Auxiliar (VII)", false, "VII"]
     ];
 
-    // Definición de los Dominantes Secundarios clave (V/X): Desplazamiento absoluto desde la Tónica (I).
+    // Dominantes Secundarios (V/X): Desplazamiento absoluto desde la Tónica (I).
     const dominantesSecundarios = [
-        // V/II (A7 en C): Desplazamiento = 9
-        [9, "Dominante7", "Dominante Secundario (V/II)", true, "II"], 
-        // V/IV (C7 en C): Desplazamiento = 0
-        [0, "Dominante7", "Dominante Secundario (V/IV)", true, "IV"], 
-        // V/VI (E7 en C): Desplazamiento = 4
-        [4, "Dominante7", "Dominante Secundario (V/VI)", true, "VI"]
+        [9, "Dominante7", "Dominante Secundario (V/II)", true, "V/II"], 
+        [0, "Dominante7", "Dominante Secundario (V/IV)", true, "V/IV"], 
+        [4, "Dominante7", "Dominante Secundario (V/VI)", true, "V/VI"]
     ];
     
-    // 1. Calcular todos los acordes necesarios (diatónicos + secundarios)
-    const todosLosAcordes = gradosDiatonicos.concat(dominantesSecundarios);
+    // Acordes Alterados (IVm y SubV7)
+    const acordesAlterados = [
+        [5, "Menor", "Subdominante Alterado (IVm)", true, "IVm"],
+        [1, "Dominante7", "Sustituto Dominante (SubV7)", true, "SubV7"] 
+    ];
+
+    // 1. Calcular todos los acordes necesarios
+    const todosLosAcordes = gradosDiatonicos.concat(dominantesSecundarios).concat(acordesAlterados);
     const acordesCalculados = [];
 
     for (let i = 0; i < todosLosAcordes.length; i++) {
-        const [desplazamiento, calidad, funcion, esSecundario, resuelveEnGrado] = todosLosAcordes[i];
+        const [desplazamiento, calidad, funcion, esSecundario, gradoFormal] = todosLosAcordes[i];
         
-        // Simplemente usa el desplazamiento directo (posición absoluta)
         const notaRaiz = calcularNota(tonica, desplazamiento); 
 
+        // Generamos el nombre del acorde SIN negrita aquí
         const nombreAcorde = generarAcorde(notaRaiz, calidad);
 
         acordesCalculados.push({
@@ -83,12 +87,12 @@ function calcularAcordesAvanzados() {
             nombre: nombreAcorde,
             funcion: funcion,
             esSecundario: esSecundario,
-            resuelveEn: resuelveEnGrado || "" 
+            gradoFormal: gradoFormal 
         });
     }
 
-    // 2. Generar la estructura HTML de la tabla con el nuevo orden de columnas
-    let tablaHTML = `<h3>Tonalidad de **${tonica}** Mayor: Vectores Armónicos</h3>`;
+    // 2. Generar la estructura HTML de la tabla
+    let tablaHTML = `<h3>Tonalidad de ${tonica} Mayor: Vectores Armónicos</h3>`;
     tablaHTML += `<table cellspacing="0" cellpadding="8">`;
     tablaHTML += `
         <thead>
@@ -107,9 +111,24 @@ function calcularAcordesAvanzados() {
         const acorde = acordesCalculados[i];
         let progresionSaliente = "";
         let progresionEntrante = "";
-        const claseFila = acorde.esSecundario ? 'secundario-row' : '';
+        
+        // Asignación de clases CSS para diferenciar visualmente los tipos de acordes
+        let claseFila = '';
 
-        // Obtenemos los acordes necesarios para la lógica V -> I
+        // Separador entre acordes diatónicos (I-VII) y cromáticos
+        if (i === 7) {
+            claseFila = 'separador-cromaticos';
+        }
+
+        if (acorde.gradoFormal === "IVm") {
+            claseFila += (claseFila ? ' ' : '') + 'modal-row';
+        } else if (acorde.gradoFormal === "SubV7") {
+            claseFila += (claseFila ? ' ' : '') + 'tritone-row';
+        } else if (acorde.gradoFormal.startsWith("V/")) {
+            claseFila += (claseFila ? ' ' : '') + 'secundario-row';
+        }
+
+        // Obtención de grados para el flujo. Se usa generarAcorde() para obtener el nombre SIN negrita.
         const acorde_I = generarAcorde(calcularNota(tonica, 0), "Mayor"); 
         const acorde_II = generarAcorde(calcularNota(tonica, 2), "Menor"); 
         const acorde_IV = generarAcorde(calcularNota(tonica, 5), "Mayor"); 
@@ -117,52 +136,64 @@ function calcularAcordesAvanzados() {
         const acorde_VI = generarAcorde(calcularNota(tonica, 9), "Menor"); 
         const acorde_VII = generarAcorde(calcularNota(tonica, 11), "Disminuido");
         
-        // Dominantes secundarios calculados
-        const acorde_A7 = generarAcorde(calcularNota(tonica, 9), "Dominante7"); // V/II
-        const acorde_C7 = generarAcorde(calcularNota(tonica, 0), "Dominante7"); // V/IV
-        const acorde_E7 = generarAcorde(calcularNota(tonica, 4), "Dominante7"); // V/VI
+        // Acordes Alterados
+        const acorde_V_II = generarAcorde(calcularNota(tonica, 9), "Dominante7"); 
+        const acorde_V_IV = generarAcorde(calcularNota(tonica, 0), "Dominante7"); 
+        const acorde_V_VI = generarAcorde(calcularNota(tonica, 4), "Dominante7"); 
+        const acorde_IVm = generarAcorde(calcularNota(tonica, 5), "Menor"); 
+        const acorde_SubV7 = generarAcorde(calcularNota(tonica, 1), "Dominante7"); 
 
-        // Lógica de Progresión Saliente y Entrante
-        if (acorde.esSecundario) {
-            if (acorde.resuelveEn === "II") {
+        // Lógica de Progresión
+        if (acorde.gradoFormal === "SubV7") {
+            progresionSaliente = acorde.nombre + " -> " + acorde_I + " (Res. Cromática) / " + acorde_IV;
+            progresionEntrante = acorde_II + ", " + acorde_IV + ", " + acorde_V; 
+        } else if (acorde.gradoFormal === "IVm") {
+            progresionSaliente = acorde.nombre + " -> " + acorde_V + " / " + acorde_I;
+            progresionEntrante = acorde_I + ", " + acorde_VI;
+            
+        } else if (acorde.gradoFormal.startsWith("V/")) {
+            if (acorde.gradoFormal === "V/II") {
                 progresionSaliente = acorde.nombre + " -> " + acorde_II + " (Res. a II)";
                 progresionEntrante = acorde_IV + ", " + acorde_V;
-            } else if (acorde.resuelveEn === "IV") {
+            } else if (acorde.gradoFormal === "V/IV") {
                 progresionSaliente = acorde.nombre + " -> " + acorde_IV + " (Res. a IV)";
                 progresionEntrante = acorde_I + ", " + acorde_V;
-            } else if (acorde.resuelveEn === "VI") {
+            } else if (acorde.gradoFormal === "V/VI") {
                 progresionSaliente = acorde.nombre + " -> " + acorde_VI + " (Res. a VI)";
                 progresionEntrante = acorde_V + ", " + acorde_I;
             }
             
-        } else if (acorde.funcion.includes("Tónica (I)")) { 
-            progresionSaliente = acorde.nombre + " -> " + acorde_IV + " / " + acorde_VI;
-            progresionEntrante = acorde_V + ", " + acorde_VII;
-        } else if (acorde.funcion.includes("Subdominante (II)")) { 
-            progresionSaliente = acorde.nombre + " -> " + acorde_V;
-            progresionEntrante = acorde_VI + ", " + acorde_I + ", " + acorde_A7; 
-        } else if (acorde.funcion.includes("Subdominante (IV)")) { 
-            progresionSaliente = acorde.nombre + " -> " + acorde_V;
-            progresionEntrante = acorde_I + ", " + acorde_II + ", " + acorde_C7;
-        } else if (acorde.funcion.includes("Dominante (V)")) { 
-            progresionSaliente = acorde.nombre + " -> **" + acorde_I + "** (Res. Principal)";
-            progresionEntrante = acorde_II + ", " + acorde_IV + ", " + acorde_VII;
-        } else if (acorde.funcion.includes("Tónica Menor (VI)")) { 
-            progresionSaliente = acorde.nombre + " -> " + acorde_II;
-            progresionEntrante = acorde_I + ", " + acorde_E7;
-        } else if (acorde.funcion.includes("Dominante Auxiliar (VII)")) { 
+        } else if (acorde.gradoFormal === "I") { 
+            // CORRECCIÓN AQUÍ: Se elimina el ** del acorde_IV y acorde_VI.
+            progresionSaliente = acorde.nombre + " -> " + acorde_IV + " / " + acorde_VI + " / " + acorde_IVm;
+            progresionEntrante = acorde_V + ", " + acorde_VII + ", " + acorde_SubV7; 
+        } else if (acorde.gradoFormal === "II") { 
+            progresionSaliente = acorde.nombre + " -> " + acorde_V + " / " + acorde_SubV7;
+            progresionEntrante = acorde_VI + ", " + acorde_I + ", " + acorde_V_II; 
+        } else if (acorde.gradoFormal === "IV") { 
+            progresionSaliente = acorde.nombre + " -> " + acorde_V + " / " + acorde_SubV7;
+            progresionEntrante = acorde_I + ", " + acorde_II + ", " + acorde_V_IV + ", " + acorde_SubV7;
+        } else if (acorde.gradoFormal === "V") { 
+            // CORRECCIÓN AQUÍ: Se elimina el ** del acorde_I.
+            progresionSaliente = acorde.nombre + " -> " + acorde_I + " (Res. Principal)";
+            progresionEntrante = acorde_II + ", " + acorde_IV + ", " + acorde_VII + ", " + acorde_IVm;
+        } else if (acorde.gradoFormal === "VI") { 
+            progresionSaliente = acorde.nombre + " -> " + acorde_II + " / " + acorde_IVm;
+            progresionEntrante = acorde_I + ", " + acorde_V_VI;
+        } else if (acorde.gradoFormal === "VII") { 
             progresionSaliente = acorde.nombre + " -> " + acorde_I + " (Tensión)";
             progresionEntrante = acorde_V + ", " + acorde_I;
         } else {
-            progresionSaliente = "Varias (Movimiento Débil)";
+             // III (Mediante)
+            progresionSaliente = "Varias (Movimiento Débil a VIm o IV)";
             progresionEntrante = acorde_I + ", " + acorde_V;
         }
 
-        // Inserción de la fila con el nuevo orden y negrita en el nodo
+        // 4. Inserción de la fila: Negrita SOLO en el Acorde (Nodo) central
         tablaHTML += `
             <tr class="${claseFila}">
                 <td>${progresionEntrante}</td>
-                <td>**${acorde.nombre}**</td>
+                <td><strong>${acorde.nombre}</strong></td>
                 <td>${acorde.funcion}</td>
                 <td>${progresionSaliente}</td>
             </tr>
@@ -172,7 +203,7 @@ function calcularAcordesAvanzados() {
     tablaHTML += `
         </tbody>
         </table>
-        <p style="margin-top: 15px;">Las filas en **rojo pálido** son Dominantes Secundarios, que actúan como "puentes" fuera de la tonalidad principal para crear modulación.</p>
+        <p style="margin-top: 15px;">Las filas en rojo pálido son Dominantes Secundarios. Las filas en verde pálido son Acordes de Intercambio Modal (IVm). Las filas en azul claro son Sustitutos Dominantes (SubV7).</p>
     `;
 
     resultadoDiv.innerHTML = tablaHTML;
