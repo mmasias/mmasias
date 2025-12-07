@@ -1,4 +1,4 @@
-# diagramaDeContexto@disciplinaRequisitos.RUP
+# [diagramaDeContexto]@[disciplinaRequisitos.RUP]
 
 ## ¿Por qué?
 
@@ -343,8 +343,10 @@ El diagrama revela patrones de navegación que impactan directamente UX:
 
 **Ejemplo de nivel apropiado**:
 
-- ✅ Correcto: `PROGRAMA_ABIERTO` (contexto conceptual)
-- ❌ Muy detallado: `FORMULARIO_EDICION_PROGRAMA_CON_TABS` (detalle de interfaz)
+|Correcto|Excesivo|
+|-|-|
+`PROGRAMA_ABIERTO`|`FORMULARIO_EDICION_PROGRAMA_CON_TABS`
+Contexto conceptual|Detalle de interfaz
 
 ### Complementariedad con especificaciones textuales
 
