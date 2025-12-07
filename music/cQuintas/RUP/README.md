@@ -1,6 +1,6 @@
-# pyVectoresArmonicos: generador de vectores armónicos
+# pyProgresionesArmonicas
 
-El sistema debe resolver la complejidad de navegar por el espacio armónico musical, permitiendo a usuarios con diferentes niveles de conocimiento teórico:
+El sistema permite la construcción de progresiones armónicas coherentes mediante mapas armónicos navegables, permitiendo a usuarios con diferentes niveles de conocimiento teórico:
 
 1. **Explorar progresiones coherentes**: Identificar qué acordes pueden seguir a otros de forma musicalmente válida
 2. **Visualizar contexto armónico**: Comprender de dónde viene y hacia dónde puede ir cada acorde

@@ -1,8 +1,8 @@
-# Generador de vectores armónicos > Modelo del dominio
+# pyProgresionesArmonicas > Modelo del dominio
 
 |||
 |-|-|
-Proyecto|pyVectoresArmonicos
+Proyecto|pyProgresionesArmonicas
 Fase|Inicio
 Disciplina|Requisitos
 Iteración|1.0
