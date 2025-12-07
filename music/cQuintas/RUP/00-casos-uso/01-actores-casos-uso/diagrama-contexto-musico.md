@@ -1,3 +1,10 @@
+<div align=right>
+
+|[![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](../../../README.md) [![](https://img.shields.io/badge/-RUP-FFF?style=flat&logo=Elsevier&logoColor=black)](../../) [![](https://img.shields.io/badge/-Modelo_del_dominio-FFF?style=flat&logo=freedesktop.org&logoColor=black)](../00-modelo-del-dominio/README.md) [![](https://img.shields.io/badge/-Actores_&_Casos_de_Uso-FFF?style=flat&logo=crewunited&logoColor=black)](./README.md) [![](https://img.shields.io/badge/-Diagrama_de_contexto-FFF?style=flat&logo=diagramsdotnet&logoColor=black)](./diagrama-contexto-musico.md) [![](https://img.shields.io/badge/-Detalle_&_Prototipo-FFF?style=flat&logo=typeorm&logoColor=black)](./00-detalle/) ![](https://img.shields.io/badge/-Análisis-FFF?style=flat&logo=multisim&logoColor=black)|
+|-:|
+
+</div>
+
 # pyProgresionesArmonicas > Diagrama de contexto > Músico
 
 |||
@@ -8,20 +15,6 @@ Disciplina|Requisitos
 Iteración|1.0
 Fecha|2025-12-07
 Autor|Manuel Masías
-
-## Introducción
-
-Este documento presenta el diagrama de contexto para el actor "Músico", mostrando su perspectiva completa del sistema como una máquina de estados. El diagrama especifica la secuencialidad de navegación y hace explícitas las precondiciones que de otro modo requerirían especificación textual.
-
-## Propósito
-
-- Mostrar la perspectiva completa del sistema desde el punto de vista del Músico
-- Especificar la secuencialidad de navegación mediante estados y transiciones
-- Hacer explícitas las precondiciones de navegación de forma visual
-- Validar que todos los casos de uso del músico tienen lugar en el flujo del sistema
-- Identificar posibles casos de uso omitidos o innecesarios para este actor
-
-## Diagrama
 
 <div align=center>
 
