@@ -25,10 +25,10 @@ Autor|Manuel Masías
 |-|-|-|
 |**Nota**|Unidad básica del sistema musical occidental|Representa las 12 notas cromáticas (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)|
 |**Calidad**|Característica tonal de un acorde|Puede ser: Mayor, Menor, Disminuido, Dominante7|
+|**Escala**|Conjunto organizado de notas que define una tonalidad (lo que se conoce como contexto tonal)|Actualmente soporta: Mayor y Menor Natural|
 |**Acorde**|Combinación de una nota raíz con una calidad|Unidad fundamental del movimiento armónico (ej: C, Dm, G7, F#°)|
-|**Escala**|Conjunto organizado de notas que define un contexto tonal|Actualmente soporta: Mayor y Menor Natural|
-|**GradoArmónico**|Posición funcional de un acorde dentro de una escala|Identificado por numeración romana (I, II, iii, IV, V, vi, vii°) según el modo|
 |**FunciónArmónica**|Rol que cumple un acorde en el contexto tonal|Puede ser: Tónica, Dominante, Subdominante, Mediante, Superdominante, Sensible|
+|**GradoArmónico**|Posición funcional de un acorde dentro de una escala|Identificado por numeración romana (I, II, iii, IV, V, vi, vii°) según el modo|
 |**EnlaceArmónico**|Relación direccional válida entre dos acordes|Define los movimientos armónicos permitidos y su naturaleza (diatónica, cromática, modal)|
 |**MapaArmónico**|Conjunto completo de enlaces armónicos para una tonalidad específica|Contiene todos los acordes diatónicos, dominantes secundarios y acordes alterados para una tónica y modo dados|
 |**ProgresiónArmónica**|Secuencia de acordes encadenados en el tiempo|Representa una sucesión coherente de movimientos armónicos, permitiendo análisis de patrones y cadencias|
