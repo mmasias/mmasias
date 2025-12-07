@@ -1,6 +1,7 @@
 @startuml modelo-dominio
 
 'skinparam linetype polyline
+hide empty members
 
 class ProgresionArmonica
 
@@ -19,20 +20,20 @@ package SistemaArmonico {
 }
 
 ' Relaciones de Teoría Musical
-Escala *-- Nota : contiene
-Acorde o-- Nota : raíz
-Acorde o-- Calidad : tiene
+Escala *-r- Nota : contiene
+Acorde o-l- Nota : raíz
+Acorde o-r- Calidad : tiene
 
 ' Relaciones del Sistema Armónico
 MapaArmonico *- EnlaceArmonico : compone
 GradoArmonico o-- Acorde : representa
 GradoArmonico o- FuncionArmonica : cumple
-EnlaceArmonico o-- Acorde : origen
+EnlaceArmonico o-u- Acorde : origen
 EnlaceArmonico o-- Acorde : destino
-MapaArmonico o-- Escala : en
+MapaArmonico o-- Escala : corresponde a
 
 ' Relaciones de Progresión
-ProgresionArmonica o-- Acorde : secuencia
-ProgresionArmonica ..> MapaArmonico : consulta
+ProgresionArmonica ...l.> MapaArmonico : consulta
+ProgresionArmonica o--- Acorde : secuencia
 
 @enduml

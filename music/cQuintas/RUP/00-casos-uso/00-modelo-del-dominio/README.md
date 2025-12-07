@@ -47,7 +47,7 @@ Autor|Manuel Masías
 ||**GradoArmónico** ○─ **FunciónArmónica**: Cada grado cumple una función armónica determinada.
 ||**EnlaceArmónico** ○─ **Acorde** (origen): El enlace parte de un acorde.
 ||**EnlaceArmónico** ○─ **Acorde** (destino): El enlace llega a un acorde.
-||**MapaArmónico** ○─ **Escala**: El mapa está construido sobre una escala específica.
+||**MapaArmónico** ○─ **Escala**: El mapa corresponde a una escala específica.
 ||**ProgresiónArmónica** ○─ **Acorde**: La progresión contiene una secuencia ordenada de acordes.
 
 </div>
