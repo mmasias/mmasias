@@ -1,0 +1,20 @@
+@startuml
+
+left to right direction
+
+actor "Músico" as musico
+
+package "Configuración del contexto tonal" {
+    usecase seleccionarTonica as "seleccionarTónica()"
+    usecase seleccionarModo as "seleccionarModo()"
+    usecase generarMapaArmonico as "generarMapaArmónico()"
+}
+
+musico --> (seleccionarTonica)
+musico --> (seleccionarModo)
+musico --> (generarMapaArmonico)
+
+generarMapaArmonico .> seleccionarTonica : <<include>>
+generarMapaArmonico ..> seleccionarModo : <<include>>
+
+@enduml

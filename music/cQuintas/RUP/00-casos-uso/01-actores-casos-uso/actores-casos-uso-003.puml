@@ -1,0 +1,43 @@
+@startuml
+
+left to right direction
+
+actor "Músico" as musico
+
+package "Configuración del Contexto Tonal" {
+    usecase seleccionarTonica as "seleccionarTónica()"
+    usecase seleccionarModo as "seleccionarModo()"
+    usecase generarMapaArmonico as "generarMapaArmónico()"
+}
+
+package "Gestión de Progresión Armónica" {
+    usecase iniciarProgresion as "iniciarProgresión()"
+    usecase consultarProgresion as "consultarProgresión()"
+    usecase extenderProgresion as "extenderProgresión()"
+    usecase retrocederEnProgresion as "retrocederEnProgresión()"
+    usecase reiniciarProgresion as "reiniciarProgresión()"
+}
+
+' Relaciones con actor
+musico -> (seleccionarTonica)
+musico -> (seleccionarModo)
+musico -> (generarMapaArmonico)
+musico -> (iniciarProgresion)
+musico -> (consultarProgresion)
+musico -> (extenderProgresion)
+musico -> (retrocederEnProgresion)
+musico -> (reiniciarProgresion)
+
+' Relaciones dentro de Configuración
+generarMapaArmonico ..> seleccionarTonica : <<include>>
+generarMapaArmonico ..> seleccionarModo : <<include>>
+
+' Relaciones dentro de Gestión
+extenderProgresion ..> consultarProgresion : <<include>>
+retrocederEnProgresion ..> consultarProgresion : <<include>>
+
+' Relaciones entre paquetes
+iniciarProgresion ..> generarMapaArmonico : <<include>>
+extenderProgresion ..> generarMapaArmonico : <<include>>
+
+@enduml

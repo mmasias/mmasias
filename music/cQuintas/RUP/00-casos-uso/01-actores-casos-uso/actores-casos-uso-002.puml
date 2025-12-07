@@ -1,0 +1,24 @@
+@startuml
+
+left to right direction
+
+actor "Músico" as musico
+
+package "Gestión de progresión armónica (CRUD)" {
+    usecase iniciarProgresion as "iniciarProgresión()\n<<Create>>"
+    usecase consultarProgresion as "consultarProgresión()\n<<Read>>"
+    usecase extenderProgresion as "extenderProgresión()\n<<Update>>"
+    usecase retrocederEnProgresion as "retrocederEnProgresión()\n<<Update>>"
+    usecase reiniciarProgresion as "reiniciarProgresión()\n<<Delete>>"
+}
+
+musico --> (iniciarProgresion)
+musico --> (consultarProgresion)
+musico --> (extenderProgresion)
+musico --> (retrocederEnProgresion)
+musico --> (reiniciarProgresion)
+
+extenderProgresion .> consultarProgresion : <<include>>
+retrocederEnProgresion .> consultarProgresion : <<include>>
+
+@enduml

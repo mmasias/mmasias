@@ -15,8 +15,8 @@
 
 <div align=center>
 
-[Modelo del dominio](./00-casos-uso/00-modelo-del-dominio/README.md)|Actores y casos de uso|Diagrama de contexto
+[Modelo del dominio](./00-casos-uso/00-modelo-del-dominio/README.md)|[Actores y casos de uso](./00-casos-uso/01-actores-casos-uso/actores-casos-uso.md)|Diagrama de contexto
 |-|-|-|
 ||||
 
-</center>
+</div>
