@@ -16,15 +16,6 @@ Autor|Manuel Masías
 ![](/images/music/cQuintas/RUP/00-casos-uso/01-actores-casos-uso/00-detalle/iniciarProgresion/iniciarProgresion.svg)|![](/images/music/cQuintas/RUP/00-casos-uso/01-actores-casos-uso/00-detalle/iniciarProgresion/iniciarProgresionWireframes.svg)
 |Código fuente: [especificacion.puml](especificacion.puml)|**Código fuente**: [wireframes.puml](wireframes.puml)
 
-
-</div>
-
-
-<div align=center>
-
-
-
-
 </div>
 
 ## Referencias
