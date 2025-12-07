@@ -14,7 +14,7 @@ package TeoriaMusical {
 package SistemaArmonico {
     class GradoArmonico
     class FuncionArmonica
-    class VectorArmonico
+    class EnlaceArmonico
     class MapaArmonico
 }
 
@@ -24,15 +24,15 @@ Acorde o-- Nota : raíz
 Acorde o-- Calidad : tiene
 
 ' Relaciones del Sistema Armónico
-MapaArmonico *- VectorArmonico : compone
+MapaArmonico *- EnlaceArmonico : compone
 GradoArmonico o-- Acorde : representa
-GradoArmonico o- FuncionArmonica : tiene
-VectorArmonico o-- Acorde : desde
-VectorArmonico o-- Acorde : hacia
-MapaArmonico o-- Escala : basado en
+GradoArmonico o- FuncionArmonica : cumple
+EnlaceArmonico o-- Acorde : origen
+EnlaceArmonico o-- Acorde : destino
+MapaArmonico o-- Escala : en
 
-' Relaciones de Navegación
+' Relaciones de Progresión
 ProgresionArmonica o-- Acorde : secuencia
-ProgresionArmonica ..> MapaArmonico : usa
+ProgresionArmonica ..> MapaArmonico : consulta
 
 @enduml
