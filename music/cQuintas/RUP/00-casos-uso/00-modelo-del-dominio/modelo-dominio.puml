@@ -1,0 +1,38 @@
+@startuml modelo-dominio
+
+'skinparam linetype polyline
+
+class ProgresionArmonica
+
+package TeoriaMusical {
+    class Nota
+    class Calidad
+    class Acorde
+    class Escala
+}
+
+package SistemaArmonico {
+    class GradoArmonico
+    class FuncionArmonica
+    class VectorArmonico
+    class MapaArmonico
+}
+
+' Relaciones de Teoría Musical
+Escala *-- Nota : contiene
+Acorde o-- Nota : raíz
+Acorde o-- Calidad : tiene
+
+' Relaciones del Sistema Armónico
+MapaArmonico *- VectorArmonico : compone
+GradoArmonico o-- Acorde : representa
+GradoArmonico o- FuncionArmonica : tiene
+VectorArmonico o-- Acorde : desde
+VectorArmonico o-- Acorde : hacia
+MapaArmonico o-- Escala : basado en
+
+' Relaciones de Navegación
+ProgresionArmonica o-- Acorde : secuencia
+ProgresionArmonica ..> MapaArmonico : usa
+
+@enduml
