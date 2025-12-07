@@ -80,7 +80,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Generador de Tabla de Vectores Armónicos</h2>
+        <h2>Generador de Mapa Armónico</h2>
 
         <div class="controles-linea">
             <div class="control-grupo">
@@ -103,7 +103,7 @@
 
             <div class="control-grupo modo">
                 <label for="modo">Modo:</label>
-                <select id="modo" onchange="calcularAcordesAvanzados()">
+                <select id="modo" onchange="generarMapaArmonico()">
                     <option value="Mayor">Mayor</option>
                     <option value="Menor">Menor Natural</option>
                 </select>
@@ -111,15 +111,15 @@
         </div>
 
         <div class="botones-linea">
-            <button id="btnGenerar" onclick="iniciarOResetear()">Generar Tabla de Progresiones</button>
+            <button id="btnGenerar" onclick="iniciarOResetear()">Generar Mapa Armónico</button>
             <button id="btnVolverAtras" onclick="volverAtras()" disabled style="background-color: #6c757d;">← Volver Atrás</button>
         </div>
 
         <div id="historial"></div>
 
-        <div id="resultado">Aquí verás los nodos y sus flechas armónicas.</div>
+        <div id="resultado">Aquí verás el mapa armónico con todos los enlaces posibles.</div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="cQuintas.js"></script>
 </body>
 </html>

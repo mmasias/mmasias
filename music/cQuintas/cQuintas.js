@@ -86,7 +86,7 @@ function navegarAcorde(nombreAcorde) {
     enModoNavegacion = true;
     actualizarInterfaz();
     actualizarHistorialDisplay();
-    calcularAcordesAvanzados();
+    generarMapaArmonico();
 }
 
 /**
@@ -116,7 +116,7 @@ function iniciarOResetear() {
         actualizarInterfaz();
         actualizarHistorialDisplay();
     }
-    calcularAcordesAvanzados();
+    generarMapaArmonico();
 }
 
 /**
@@ -128,7 +128,7 @@ function volverAtras() {
         acordeActual = historialProgresion.pop();
         actualizarInterfaz();
         actualizarHistorialDisplay();
-        calcularAcordesAvanzados();
+        generarMapaArmonico();
     }
 }
 
@@ -182,7 +182,7 @@ function actualizarInterfaz() {
             selectorTonica.value = notaRaiz;
         }
     } else {
-        btnGenerar.textContent = 'Generar Tabla de Progresiones';
+        btnGenerar.textContent = 'Generar Mapa Armónico';
     }
 }
 
@@ -198,9 +198,9 @@ function extraerNotaRaiz(nombreAcorde) {
 }
 
 /**
- * Función principal para generar la tabla de vectores armónicos.
+ * Función principal para generar el mapa armónico.
  */
-function calcularAcordesAvanzados() {
+function generarMapaArmonico() {
     // Usar acordeActual si existe, sino usar el selector
     let tonica;
     if (acordeActual) {
@@ -288,7 +288,7 @@ function calcularAcordesAvanzados() {
 
     // 2. Generar la estructura HTML de la tabla
     const nombreModo = modo === "Mayor" ? "Mayor" : "Menor Natural";
-    let tablaHTML = `<h3>Tonalidad de ${tonica} ${nombreModo}: Vectores Armónicos</h3>`;
+    let tablaHTML = `<h3>Mapa Armónico de ${tonica} ${nombreModo}</h3>`;
     tablaHTML += `<table cellspacing="0" cellpadding="8">`;
     tablaHTML += `
         <thead>
