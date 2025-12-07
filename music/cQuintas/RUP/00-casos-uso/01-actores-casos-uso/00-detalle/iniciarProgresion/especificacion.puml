@@ -1,0 +1,52 @@
+@startuml iniciarProgresion
+
+skinparam linetype polyline
+
+
+MAPA_DISPONIBLE -[#green]-> iniciarProgresion
+state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_2 -[#green]-> iniciarProgresion
+PROGRESION_FINALIZADA -[#green]-> iniciarProgresion
+
+state iniciarProgresion as "iniciarProgresión()" {
+
+    state " " as SeleccionandoAcorde
+    state " " as ProgresionIniciada
+
+    [*] -[#green]-> SeleccionandoAcorde
+    note on link
+    <b>Músico</b> solicita iniciar progresión
+    end note
+
+    SeleccionandoAcorde -[#green]-> ProgresionIniciada
+    note on link
+    <b>Sistema</b> presenta mapa armónico
+    • Todos los acordes diatónicos (I-VII)
+    • Dominantes secundarios disponibles
+    • Acordes de intercambio modal
+    • Enlaces armónicos posibles desde cada acorde
+
+    <b>Sistema</b> permite solicitar:
+    • Acorde inicial
+    end note
+
+    ProgresionIniciada -[#green]-> [*]
+    note on link
+    <b>Músico</b> introduce acorde inicial
+
+    <b>Sistema</b> registra acorde como inicio de progresión
+    • Establece acorde como acorde actual de navegación
+    • Presenta historial de progresión con acorde inicial
+    • Activa modo de construcción de progresión
+
+    <b>Sistema</b> permite solicitar:
+    • extender progresión hacia siguiente acorde
+    • modificar modo de escala
+    • reiniciar progresión
+    end note
+
+}
+
+iniciarProgresion -[#green]-> PROGRESION_EN_CONSTRUCCION
+
+@enduml
