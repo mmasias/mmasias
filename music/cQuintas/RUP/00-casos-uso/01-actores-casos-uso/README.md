@@ -32,10 +32,21 @@ Autor|Manuel Masías
 **seleccionarModo()**: Elegir entre Escala Mayor o Menor Natural|**consultarProgresión()**: Visualizar la secuencia actual de acordes en la progresión
 **generarMapaArmónico()**: Calcular y visualizar todos los acordes y enlaces armónicos válidos para la tonalidad seleccionada|**extenderProgresión()**: Añadir un nuevo acorde a la progresión navegando desde el acorde actual
 ||**retrocederEnProgresión()**: Eliminar el último acorde añadido (deshacer)
+||**finalizarProgresión()**: Marcar la progresión como completada, bloqueando edición
 ||**reiniciarProgresión()**: Eliminar toda la progresión y comenzar una nueva exploración
 
 |![](/images/music/cQuintas/RUP/00-casos-uso/01-actores-casos-uso/actores-casos-uso-003.svg)
 |-
+
+</div>
+
+### Diagrama de contexto
+
+<div align=center>
+
+|![](/images/music/cQuintas/RUP/00-casos-uso/01-actores-casos-uso/diagrama-contexto-musico.svg)
+|-
+|Código fuente: [diagrama-contexto-musico.puml](diagrama-contexto-musico.puml)
 
 </div>
 
@@ -54,6 +65,7 @@ Autor|Manuel Masías
 |consultarProgresión()|ProgresiónArmónica
 |extenderProgresión()|ProgresiónArmónica, Acorde, EnlaceArmónico, MapaArmónico
 |retrocederEnProgresión()|ProgresiónArmónica
+|finalizarProgresión()|ProgresiónArmónica
 |reiniciarProgresión()|ProgresiónArmónica
 
 </div>

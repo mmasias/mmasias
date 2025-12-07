@@ -1,0 +1,33 @@
+@startuml diagrama-contexto-musico
+
+left to right direction
+
+state "SISTEMA_INICIAL" as Inicial
+state "MAPA_DISPONIBLE" as Mapa
+state "PROGRESION_EN_CONSTRUCCION" as Construccion
+state "PROGRESION_FINALIZADA" as Finalizada
+
+[*] --> Inicial
+
+' Desde SISTEMA_INICIAL
+Inicial --> Inicial : seleccionarTónica()
+Inicial --> Inicial : seleccionarModo()
+Inicial --> Mapa : generarMapaArmónico()
+
+' Desde MAPA_DISPONIBLE
+Mapa --> Mapa : seleccionarTónica()
+Mapa --> Mapa : seleccionarModo()
+Mapa --> Construccion : iniciarProgresión()
+
+' Desde PROGRESION_EN_CONSTRUCCION
+Construccion --> Construccion : extenderProgresión()
+Construccion --> Construccion : retrocederEnProgresión()
+Construccion --> Construccion : seleccionarModo()
+Construccion --> Finalizada : finalizarProgresión()
+Construccion --> Mapa : reiniciarProgresión()
+
+' Desde PROGRESION_FINALIZADA
+Finalizada --> Construccion : iniciarProgresión()
+Finalizada --> Mapa : reiniciarProgresión()
+
+@enduml
