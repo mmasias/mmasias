@@ -17,5 +17,6 @@
  
 |[![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](README.md) [![](https://img.shields.io/badge/-RUP-FFF?style=flat&logo=Elsevier&logoColor=black)](./RUP/README.md) [![](https://img.shields.io/badge/-Modelo_del_dominio-FFF?style=flat&logo=freedesktop.org&logoColor=black)](./RUP/00-casos-uso/00-modelo-del-dominio/README.md) [![](https://img.shields.io/badge/-Actores_&_Casos_de_Uso-FFF?style=flat&logo=crewunited&logoColor=black)](./RUP/00-casos-uso/01-actores-casos-uso/README.md) [![](https://img.shields.io/badge/-Diagrama_de_contexto-FFF?style=flat&logo=diagramsdotnet&logoColor=black)](./RUP/00-casos-uso/01-actores-casos-uso/diagrama-contexto-musico.md) [![](https://img.shields.io/badge/-Detalle_&_Prototipo-FFF?style=flat&logo=typeorm&logoColor=black)](./RUP/00-casos-uso/01-actores-casos-uso/00-detalle/README.md) ![](https://img.shields.io/badge/-Análisis-FFF?style=flat&logo=multisim&logoColor=black)|
 |-:|
+<sub>*#2Think: [Reflexiones alrededor del diagrama de contexto](RUP/00-casos-uso/reflexionesSobreDiagramaContexto.md) / [propuesta CLI](RUP/00-casos-uso/propuestaCLI.md)*</sub>
 
 </div>
