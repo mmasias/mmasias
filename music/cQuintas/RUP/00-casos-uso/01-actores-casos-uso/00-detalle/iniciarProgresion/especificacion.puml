@@ -32,7 +32,7 @@ state iniciarProgresion as "iniciarProgresión()" {
 
     ProgresionIniciada -[#green]-> [*]
     note on link
-    <b>Músico</b> introduce acorde inicial
+    <b>Músico</b> solicita introducir acorde inicial
 
     <b>Sistema</b> registra acorde como inicio de progresión
     • Establece acorde como acorde actual de navegación
