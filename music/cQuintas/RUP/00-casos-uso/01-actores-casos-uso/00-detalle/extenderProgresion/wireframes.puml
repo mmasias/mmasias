@@ -1,0 +1,40 @@
+@startsalt extenderProgresionWireframes
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | ^Mayor^
+    }
+
+    {
+      [Nueva Progresión / Reiniciar] | [  Volver Atrás  ]
+    }
+
+    {#
+      **Progresión actual: C → F → G7**
+    }
+
+    {SI
+      == Mapa Armónico de C Mayor
+
+      {#
+        . | De dónde viene | **Acorde** | Función | A dónde va
+        . | II, IV, VII    | **G7**     | Dominante (V) | C (Res.)
+        . | ...            | ...        | ... | ...
+      }
+    }
+  }
+}
+
+note right
+  **Estado**: ProgresionExtendida
+
+  Sistema presenta:
+  • Mapa armónico actualizado desde acorde actual
+  • Historial de progresión con todos los acordes navegados
+  • Opciones para continuar, retroceder o finalizar
+end note
+
+@endsalt

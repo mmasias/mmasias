@@ -1,0 +1,51 @@
+@startuml extenderProgresion
+
+skinparam linetype polyline
+
+state PROGRESION_EN_CONSTRUCCION_1 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_1 -[#green]-> extenderProgresion
+
+state extenderProgresion as "extenderProgresión()" {
+
+    state " " as SeleccionandoSiguienteAcorde
+    state " " as ProgresionExtendida
+
+    [*] -[#green]-> SeleccionandoSiguienteAcorde
+    note on link
+    <b>Músico</b> solicita extender progresión
+    end note
+
+    SeleccionandoSiguienteAcorde -[#green]-> ProgresionExtendida
+    note on link
+    <b>Sistema</b> presenta mapa armónico actualizado
+    • Acordes disponibles desde acorde actual
+    • Enlaces armónicos posibles
+    • Historial de progresión actual
+
+    <b>Sistema</b> permite solicitar:
+    • Acorde siguiente
+    end note
+
+    ProgresionExtendida -[#green]-> [*]
+    note on link
+    <b>Músico</b> solicita introducir acorde siguiente
+
+    <b>Sistema</b> registra acorde en progresión
+    • Agrega acorde al historial de progresión
+    • Establece acorde como acorde actual de navegación
+    • Presenta historial actualizado
+
+    <b>Sistema</b> permite solicitar:
+    • extender progresión hacia siguiente acorde
+    • retroceder en progresión
+    • modificar modo de escala
+    • finalizar progresión
+    • reiniciar progresión
+    end note
+
+}
+
+state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
+extenderProgresion -[#green]-> PROGRESION_EN_CONSTRUCCION_2
+
+@enduml

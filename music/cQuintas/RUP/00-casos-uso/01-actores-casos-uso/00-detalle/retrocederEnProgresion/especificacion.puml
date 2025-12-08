@@ -1,0 +1,40 @@
+@startuml retrocederEnProgresion
+
+skinparam linetype polyline
+
+state PROGRESION_EN_CONSTRUCCION_1 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_1 -[#green]-> retrocederEnProgresion
+
+state retrocederEnProgresion as "retrocederEnProgresión()" {
+
+    state " " as SolicitandoRetroceso
+    state " " as ProgresionRetrocedida
+
+    [*] -[#green]-> SolicitandoRetroceso
+    note on link
+    <b>Músico</b> solicita retroceder en progresión
+    end note
+
+    SolicitandoRetroceso -[#green]-> ProgresionRetrocedida
+    note on link
+    <b>Sistema</b> presenta progresión actualizada
+    • Elimina último acorde del historial de progresión
+    • Establece acorde anterior como acorde actual
+    • Presenta historial actualizado
+    • Presenta mapa armónico desde acorde actual
+
+    <b>Sistema</b> permite solicitar:
+    • extender progresión hacia siguiente acorde
+    • retroceder en progresión (si historial no vacío)
+    • modificar modo de escala
+    • reiniciar progresión
+    end note
+
+    ProgresionRetrocedida -[#green]-> [*]
+
+}
+
+state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
+retrocederEnProgresion -[#green]-> PROGRESION_EN_CONSTRUCCION_2
+
+@enduml

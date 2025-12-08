@@ -1,0 +1,40 @@
+@startsalt retrocederEnProgresionWireframes
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | ^Mayor^
+    }
+
+    {
+      [Nueva Progresión / Reiniciar] | [  Volver Atrás  ]
+    }
+
+    {#
+      **Progresión actual: C → F** (antes era C → F → G7)
+    }
+
+    {SI
+      == Mapa Armónico de C Mayor
+
+      {#
+        . | De dónde viene | **Acorde** | Función | A dónde va
+        . | I, II, V/IV    | **F**      | Subdominante (IV) | G7 / SubV7
+        . | ...            | ...        | ... | ...
+      }
+    }
+  }
+}
+
+note right
+  **Estado**: ProgresionRetrocedida
+
+  Sistema presenta:
+  • Progresión con último acorde eliminado
+  • Mapa armónico desde acorde anterior (ahora actual)
+  • Opciones para continuar construcción desde punto anterior
+end note
+
+@endsalt
