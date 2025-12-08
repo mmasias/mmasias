@@ -1,5 +1,5 @@
 /**
- * Adaptador CLI - pyProgresionesArmonicas
+ * CLI (Vista + Controlador) - pyProgresionesArmonicas
  * Disciplina de Diseño - RUP
  *
  * Máquina de estados: Implementación directa del diagrama de contexto.

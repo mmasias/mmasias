@@ -1,5 +1,5 @@
 /**
- * Adaptador CLI - pyProgresionesArmonicas
+ * CLI (Vista + Controlador) - pyProgresionesArmonicas
  * Disciplina de Diseño - RUP
  *
  * Renderizadores: Generan salidas ASCII para consola.

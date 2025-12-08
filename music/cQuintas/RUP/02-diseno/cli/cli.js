@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Adaptador CLI - pyProgresionesArmonicas
+ * CLI (Vista + Controlador) - pyProgresionesArmonicas
  * Disciplina de Diseño - RUP
  *
  * Punto de entrada de la aplicación CLI.

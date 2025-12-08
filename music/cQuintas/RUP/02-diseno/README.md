@@ -17,20 +17,25 @@ Iteración|1.0
 Fecha|2025-12-08
 Autor|Manuel Masías
 
-## Adaptadores de plataforma
+## Implementaciones (Vista + Controlador)
 
 <div align=center>
 
 |CLI|Web|
 |-|-|
 [cli/](cli/README.md)|web/ (pendiente)
+Vista + Controlador combinados|Vista y Controlador separados
 Línea de comandos (Node.js)|Navegador (HTML + JavaScript)
 
 </div>
 
+**Decisión arquitectural**:
+- **CLI**: Por el tamaño del proyecto, no hace falta separar Vista y Controlador. `cli.js` combina ambas responsabilidades.
+- **Web**: Se separarán por propósitos pedagógicos, mostrando la separación clásica MVC (además, en web es más orgánica la separación).
+
 ## Independencia de plataforma
 
-Ambos adaptadores reutilizan el mismo [modelo del dominio](../01-analisis/README.md) sin modificaciones:
+Ambas implementaciones reutilizan el mismo [modelo del dominio](../01-analisis/README.md) sin modificaciones:
 
 ```
 01-analisis/         → Modelo del dominio (JavaScript puro)
@@ -39,18 +44,19 @@ Ambos adaptadores reutilizan el mismo [modelo del dominio](../01-analisis/README
 └── progression.js   → ProgresiónArmónica
 
 02-diseno/
-├── cli/             → Adaptador para consola
+├── cli/             → Vista + Controlador combinados
 │   ├── cli.js       → Entrada: process.stdin, Salida: console.log
 │   ├── state-machine.js
 │   └── renderer.js  → Renderizadores ASCII
-└── web/             → Adaptador para navegador (pendiente)
-    ├── index.html   → Entrada: eventos DOM, Salida: innerHTML
-    └── ui.js        → Renderizadores HTML
+└── web/             → Vista y Controlador separados (pendiente)
+    ├── index.html   → Vista: HTML
+    ├── controller.js → Controlador: manejo de eventos
+    └── view.js      → Vista: renderizado dinámico
 ```
 
 ## Trazabilidad
 
-Los adaptadores implementan los mismos [casos de uso](../00-requisitos/01-casos-de-uso/README.md), solo cambia la presentación:
+Las implementaciones (CLI y Web) ejecutan los mismos [casos de uso](../00-requisitos/01-casos-de-uso/README.md), solo cambia la presentación:
 
 |Caso de Uso|CLI|Web|
 |-|-|-|

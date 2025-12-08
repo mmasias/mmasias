@@ -206,7 +206,7 @@ extender(nuevoAcorde) {
 ```javascript
 // 02-diseno/cli/cli.js
 function comandoSetTonica(nota) {
-    // VALIDA porque es entrada del usuario (boundary)
+    // VALIDA porque es entrada del usuario (frontera del sistema)
     if (!NOTAS_CROMATICAS.includes(nota)) {
         throw new Error(`Nota inválida: ${nota}. Notas válidas: ${NOTAS_CROMATICAS.join(', ')}`);
     }
@@ -214,7 +214,7 @@ function comandoSetTonica(nota) {
 }
 ```
 
-**Razón**: `nota` es **entrada externa del usuario**. No es estado interno - es dato que cruza el boundary del sistema.
+**Razón**: `nota` es **entrada externa del usuario**. No es estado interno - es dato que cruza la frontera del sistema.
 
 ## Decisión adoptada: opción C (híbrida)
 
