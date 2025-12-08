@@ -2,10 +2,10 @@
 
 skinparam linetype polyline
 
-SISTEMA_INICIAL -[#green]-> seleccionarModo
+SISTEMA_INICIAL -[#blue]-> seleccionarModo
 MAPA_DISPONIBLE -[#green]-> seleccionarModo
-state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
-PROGRESION_EN_CONSTRUCCION_2 -[#green]-> seleccionarModo
+state PROGRESION_EN_CONSTRUCCION_1 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_1 -[#Black]-> seleccionarModo
 
 state seleccionarModo as "seleccionarModo()" {
 
@@ -44,8 +44,12 @@ state seleccionarModo as "seleccionarModo()" {
 
 }
 
-seleccionarModo -[#green]-> SISTEMA_INICIAL
-seleccionarModo -[#green]-> MAPA_DISPONIBLE
-seleccionarModo -[#green]-> PROGRESION_EN_CONSTRUCCION
+state SISTEMA_INICIAL_2 as "SISTEMA_INICIAL"
+state MAPA_DISPONIBLE_2 as "MAPA_DISPONIBLE"
+state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
+
+seleccionarModo -[#blue]-> SISTEMA_INICIAL_2
+seleccionarModo -[#green]-> MAPA_DISPONIBLE_2
+seleccionarModo -[#Black]-> PROGRESION_EN_CONSTRUCCION_2
 
 @enduml

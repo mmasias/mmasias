@@ -2,10 +2,7 @@
 
 skinparam linetype polyline
 
-
 MAPA_DISPONIBLE -[#green]-> iniciarProgresion
-state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
-PROGRESION_EN_CONSTRUCCION_2 -[#green]-> iniciarProgresion
 PROGRESION_FINALIZADA -[#green]-> iniciarProgresion
 
 state iniciarProgresion as "iniciarProgresión()" {
