@@ -1,0 +1,38 @@
+@startuml reiniciarProgresion
+
+skinparam linetype polyline
+
+state PROGRESION_EN_CONSTRUCCION_1 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_1 -[#green]-> reiniciarProgresion
+PROGRESION_FINALIZADA -[#green]-> reiniciarProgresion
+
+state reiniciarProgresion as "reiniciarProgresión()" {
+
+    state " " as SolicitandoReinicio
+    state " " as ProgresionReinicada
+
+    [*] -[#green]-> SolicitandoReinicio
+    note on link
+    <b>Músico</b> solicita reiniciar progresión
+    end note
+
+    SolicitandoReinicio -[#green]-> ProgresionReinicada
+    note on link
+    <b>Sistema</b> presenta mapa armónico
+    • Limpia historial de progresión
+    • Restablece mapa armónico con contexto tonal actual
+    • Presenta todos los acordes disponibles sin navegación activa
+
+    <b>Sistema</b> permite solicitar:
+    • iniciar nueva progresión
+    • modificar tónica
+    • modificar modo
+    end note
+
+    ProgresionReinicada -[#green]-> [*]
+
+}
+
+reiniciarProgresion -[#green]-> MAPA_DISPONIBLE
+
+@enduml

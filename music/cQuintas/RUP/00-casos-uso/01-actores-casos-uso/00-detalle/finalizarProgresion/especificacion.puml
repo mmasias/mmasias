@@ -1,0 +1,36 @@
+@startuml finalizarProgresion
+
+skinparam linetype polyline
+
+state PROGRESION_EN_CONSTRUCCION_1 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_1 -[#green]-> finalizarProgresion
+
+state finalizarProgresion as "finalizarProgresión()" {
+
+    state " " as SolicitandoFinalizacion
+    state " " as ProgresionFinalizada
+
+    [*] -[#green]-> SolicitandoFinalizacion
+    note on link
+    <b>Músico</b> solicita finalizar progresión
+    end note
+
+    SolicitandoFinalizacion -[#green]-> ProgresionFinalizada
+    note on link
+    <b>Sistema</b> presenta progresión finalizada
+    • Marca progresión como completada
+    • Presenta historial completo de progresión
+    • Presenta análisis armónico de la progresión
+
+    <b>Sistema</b> permite solicitar:
+    • iniciar nueva progresión
+    • reiniciar progresión
+    end note
+
+    ProgresionFinalizada -[#green]-> [*]
+
+}
+
+finalizarProgresion -[#green]-> PROGRESION_FINALIZADA
+
+@enduml

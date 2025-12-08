@@ -1,0 +1,39 @@
+@startsalt reiniciarProgresionWireframes
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | ^Mayor^
+    }
+
+    {
+      [ Generar Mapa Armónico ]
+    }
+
+    {SI
+      == Mapa Armónico de C Mayor
+
+      {#
+        . | De dónde viene | Acorde | Función | A dónde va
+        . | V, VII, SubV7  | C      | Tónica (I) | F / Am / Fm
+        . | Am, I, V/II    | Dm     | Supertónica (II) | G7 / SubV7
+        . | I, II, V/IV    | F      | Subdominante (IV) | G7 / SubV7
+        . | II, IV, VII    | G7     | Dominante (V) | C (Res.)
+        . | ...            | ...    | ... | ...
+      }
+    }
+  }
+}
+
+note right
+  **Estado**: ProgresionReinicada
+
+  Sistema presenta:
+  • Mapa armónico sin historial de progresión
+  • Estado equivalente a MAPA_DISPONIBLE
+  • Opciones para iniciar nueva progresión o modificar contexto
+end note
+
+@endsalt
