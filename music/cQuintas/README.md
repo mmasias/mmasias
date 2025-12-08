@@ -1,6 +1,6 @@
 <div align=right>
  
-|![](https://img.shields.io/badge/-Inicio-CCC?style=flat&logo=Emlakjet&logoColor=black) [![](https://img.shields.io/badge/-RUP-FFF?style=flat&logo=Elsevier&logoColor=black)](./RUP/README.md) [![](https://img.shields.io/badge/-Requisitos-FFF?style=flat&logo=crewunited&logoColor=black)](./RUP/00-requisitos/README.md) [![](https://img.shields.io/badge/-Análisis-FFF?style=flat&logo=multisim&logoColor=black)](./RUP/01-analisis/README.md) ![](https://img.shields.io/badge/-Diseño-FFF?style=flat&logo=diagramsdotnet&logoColor=black)|
+|![](https://img.shields.io/badge/-Inicio-CCC?style=flat&logo=Emlakjet&logoColor=black) [![](https://img.shields.io/badge/-RUP-FFF?style=flat&logo=Elsevier&logoColor=black)](./RUP/README.md) [![](https://img.shields.io/badge/-Requisitos-FFF?style=flat&logo=crewunited&logoColor=black)](./RUP/00-requisitos/README.md) [![](https://img.shields.io/badge/-Análisis-FFF?style=flat&logo=multisim&logoColor=black)](./RUP/01-analisis/README.md) [![](https://img.shields.io/badge/-Diseño-FFF?style=flat&logo=diagramsdotnet&logoColor=black)](./RUP/02-diseno/README.md)|
 |-:|
 
 </div>
