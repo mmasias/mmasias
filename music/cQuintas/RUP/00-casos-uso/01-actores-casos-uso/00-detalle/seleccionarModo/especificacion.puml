@@ -1,0 +1,51 @@
+@startuml seleccionarModo
+
+skinparam linetype polyline
+
+SISTEMA_INICIAL -[#green]-> seleccionarModo
+MAPA_DISPONIBLE -[#green]-> seleccionarModo
+state PROGRESION_EN_CONSTRUCCION_2 as "PROGRESION_EN_CONSTRUCCION"
+PROGRESION_EN_CONSTRUCCION_2 -[#green]-> seleccionarModo
+
+state seleccionarModo as "seleccionarModo()" {
+
+    state " " as PresentandoOpciones
+    state " " as ModoSeleccionado
+
+    [*] -[#green]-> PresentandoOpciones
+    note on link
+    <b>Músico</b> solicita seleccionar modo
+    end note
+
+    PresentandoOpciones -[#green]-> ModoSeleccionado
+    note on link
+    <b>Sistema</b> presenta opciones de modo
+    • Mayor
+    • Menor Natural
+
+    <b>Sistema</b> permite solicitar:
+    • Modo
+    end note
+
+    ModoSeleccionado -[#green]-> [*]
+    note on link
+    <b>Músico</b> solicita introducir modo
+
+    <b>Sistema</b> registra modo como contexto tonal
+    • Establece modo como tipo de escala del sistema armónico
+    • Actualiza presentación del contexto tonal actual
+    • Si existe mapa armónico previo, lo regenera con el nuevo modo
+
+    <b>Sistema</b> permite solicitar:
+    • seleccionar tónica
+    • generar mapa armónico (si está en SISTEMA_INICIAL)
+    • continuar construcción de progresión (si está en PROGRESION_EN_CONSTRUCCION)
+    end note
+
+}
+
+seleccionarModo -[#green]-> SISTEMA_INICIAL
+seleccionarModo -[#green]-> MAPA_DISPONIBLE
+seleccionarModo -[#green]-> PROGRESION_EN_CONSTRUCCION
+
+@enduml

@@ -1,0 +1,30 @@
+@startsalt
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | ^Mayor^
+    }
+
+    {
+      [ Generar Mapa Armónico ]
+    }
+
+    {#
+      Seleccione el modo para establecer el carácter tonal
+    }
+  }
+}
+
+note right
+  **Estado**: ModoSeleccionado
+
+  Sistema presenta:
+  • Selector de modo (Mayor / Menor Natural)
+  • Contexto tonal actual
+  • Opciones para continuar configuración o generar mapa
+end note
+
+@endsalt

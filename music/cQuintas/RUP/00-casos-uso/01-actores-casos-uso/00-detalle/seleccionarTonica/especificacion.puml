@@ -1,0 +1,44 @@
+@startuml seleccionarTonica
+
+skinparam linetype polyline
+
+SISTEMA_INICIAL -[#green]-> seleccionarTonica
+MAPA_DISPONIBLE -[#green]-> seleccionarTonica
+
+state seleccionarTonica as "seleccionarTónica()" {
+
+    state " " as PresentandoOpciones
+    state " " as TonicaSeleccionada
+
+    [*] -[#green]-> PresentandoOpciones
+    note on link
+    <b>Músico</b> solicita seleccionar tónica
+    end note
+
+    PresentandoOpciones -[#green]-> TonicaSeleccionada
+    note on link
+    <b>Sistema</b> presenta opciones de tónica
+    • Las 12 notas cromáticas disponibles (C, C#, D, D#, E, F, F#, G, G#, A, A#, B)
+
+    <b>Sistema</b> permite solicitar:
+    • Tónica
+    end note
+
+    TonicaSeleccionada -[#green]-> [*]
+    note on link
+    <b>Músico</b> solicita introducir tónica
+
+    <b>Sistema</b> registra tónica como contexto tonal
+    • Establece tónica como nota base del sistema armónico
+    • Actualiza presentación del contexto tonal actual
+
+    <b>Sistema</b> permite solicitar:
+    • seleccionar modo
+    • generar mapa armónico
+    end note
+
+}
+
+seleccionarTonica -[#green]-> SISTEMA_INICIAL
+
+@enduml

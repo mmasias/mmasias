@@ -1,0 +1,36 @@
+@startuml generarMapaArmonico
+
+skinparam linetype polyline
+
+SISTEMA_INICIAL -[#green]-> generarMapaArmonico
+
+state generarMapaArmonico as "generarMapaArmónico()" {
+
+    state " " as SolicitandoMapa
+    state " " as MapaGenerado
+
+    [*] -[#green]-> SolicitandoMapa
+    note on link
+    <b>Músico</b> solicita generar mapa armónico
+    end note
+
+    SolicitandoMapa -[#green]-> MapaGenerado
+    note on link
+    <b>Sistema</b> presenta mapa armónico completo
+    • Tabla de acordes con funciones armónicas
+    • Enlaces entrantes y salientes para cada acorde
+    • Información de grados armónicos
+
+    <b>Sistema</b> permite solicitar:
+    • iniciar progresión
+    • modificar tónica
+    • modificar modo
+    end note
+
+    MapaGenerado -[#green]-> [*]
+
+}
+
+generarMapaArmonico -[#green]-> MAPA_DISPONIBLE
+
+@enduml
