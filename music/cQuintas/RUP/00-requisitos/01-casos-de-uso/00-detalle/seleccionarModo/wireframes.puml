@@ -1,0 +1,21 @@
+@startsalt seleccionarModoWireframes
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | ^Mayor^
+    }
+
+    {
+      [ Generar Mapa Armónico ]
+    }
+
+    {#
+      Seleccione el modo para establecer el carácter tonal
+    }
+  }
+}
+
+@endsalt

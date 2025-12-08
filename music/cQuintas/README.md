@@ -1,3 +1,10 @@
+<div align=right>
+ 
+|![](https://img.shields.io/badge/-Inicio-CCC?style=flat&logo=Emlakjet&logoColor=black) [![](https://img.shields.io/badge/-RUP-FFF?style=flat&logo=Elsevier&logoColor=black)](./RUP/README.md) [![](https://img.shields.io/badge/-Requisitos-FFF?style=flat&logo=crewunited&logoColor=black)](./RUP/00-requisitos/README.md) [![](https://img.shields.io/badge/-Análisis-FFF?style=flat&logo=multisim&logoColor=black)](./RUP/01-analisis/README.md) ![](https://img.shields.io/badge/-Diseño-FFF?style=flat&logo=diagramsdotnet&logoColor=black)|
+|-:|
+
+</div>
+
 # pyProgresionesArmonicas
 
 > *Al componer música, necesito construir progresiones armónicas que sean coherentes y expresivas, pero me enfrento a varias dificultades:*
@@ -13,10 +20,7 @@
 
 ## Disciplinas & artefactos
 
-<div align=center>
- 
-|[![](https://img.shields.io/badge/-Inicio-FFF?style=flat&logo=Emlakjet&logoColor=black)](README.md) [![](https://img.shields.io/badge/-RUP-FFF?style=flat&logo=Elsevier&logoColor=black)](./RUP/README.md) [![](https://img.shields.io/badge/-Modelo_del_dominio-FFF?style=flat&logo=freedesktop.org&logoColor=black)](./RUP/00-casos-uso/00-modelo-del-dominio/README.md) [![](https://img.shields.io/badge/-Actores_&_Casos_de_Uso-FFF?style=flat&logo=crewunited&logoColor=black)](./RUP/00-casos-uso/01-actores-casos-uso/README.md) [![](https://img.shields.io/badge/-Diagrama_de_contexto-FFF?style=flat&logo=diagramsdotnet&logoColor=black)](./RUP/00-casos-uso/01-actores-casos-uso/diagrama-contexto-musico.md) [![](https://img.shields.io/badge/-Detalle_&_Prototipo-FFF?style=flat&logo=typeorm&logoColor=black)](./RUP/00-casos-uso/01-actores-casos-uso/00-detalle/README.md) ![](https://img.shields.io/badge/-Análisis-FFF?style=flat&logo=multisim&logoColor=black)|
-|-:|
-<sub>*#2Think: [Reflexiones alrededor del diagrama de contexto](RUP/00-casos-uso/reflexionesSobreDiagramaContexto.md) / [propuesta CLI](RUP/00-casos-uso/propuestaCLI.md)*</sub>
+Se buscará seguir lo más fielmente posible, evitando dogmatismos y asumiendo compromisos adecuadamente documentados, la metodología RUP en la resolución del presente escenario.
 
-</div>
+<sub>*#2Think: [Reflexiones alrededor del diagrama de contexto](RUP/00-requisitos/reflexionesSobreDiagramaContexto.md) / [Propuesta CLI](RUP/00-requisitos/propuestaCLI.md) / [Reflexiones sobre programación defensiva](RUP/01-analisis/reflexionesAcercaProgramacionDefensiva.md)*</sub>
+

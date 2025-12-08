@@ -1,0 +1,26 @@
+@startsalt finalizarProgresionWireframes
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | ^Mayor^
+    }
+
+    {
+      [Nueva Progresión / Reiniciar]
+    }
+
+    {#
+      **Progresión finalizada: C → F → G7 → C**
+
+      Análisis armónico:
+      • Tónica (I) → Subdominante (IV) → Dominante (V) → Tónica (I)
+      • Cadencia auténtica completa
+      • Progresión diatónica coherente
+    }
+  }
+}
+
+@endsalt

@@ -1,0 +1,21 @@
+@startsalt seleccionarTonicaWireframes
+{
+  {+
+    == Generador de Mapa Armónico
+
+    {
+      Tónica: | ^C^
+      Modo:   | (seleccionar tónica primero)
+    }
+
+    {
+      [ Generar Mapa Armónico ]
+    }
+
+    {#
+      Seleccione la tónica para establecer el contexto tonal
+    }
+  }
+}
+
+@endsalt
