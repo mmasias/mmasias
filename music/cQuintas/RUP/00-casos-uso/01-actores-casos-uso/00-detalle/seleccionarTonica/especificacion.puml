@@ -2,7 +2,7 @@
 
 skinparam linetype polyline
 
-SISTEMA_INICIAL -[#green]-> seleccionarTonica
+SISTEMA_INICIAL -[#blue]-> seleccionarTonica
 MAPA_DISPONIBLE -[#green]-> seleccionarTonica
 
 state seleccionarTonica as "seleccionarTónica()" {
@@ -39,6 +39,10 @@ state seleccionarTonica as "seleccionarTónica()" {
 
 }
 
-seleccionarTonica -[#green]-> SISTEMA_INICIAL
+state SISTEMA_INICIAL_2 as "SISTEMA_INICIAL"
+state MAPA_DISPONIBLE_2 as "MAPA_DISPONIBLE"
+
+seleccionarTonica -[#blue]-> SISTEMA_INICIAL_2
+seleccionarTonica -[#green]-> MAPA_DISPONIBLE_2
 
 @enduml
