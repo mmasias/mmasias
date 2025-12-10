@@ -11,4 +11,4 @@ Esta aproximación aborda diferentes aspectos clave del aprendizaje y la compren
 ¿Para qué?|Ayuda a entender las aplicaciones y usos del tema en estudio. Al conocer el propósito práctico y las implicaciones de un concepto, se puede apreciar su utilidad y valor, lo que a su vez aumenta la retención y el interés.
 ¿Cómo?|Finalmente, esta pregunta se centra en la aplicación y el proceso para llevar a cabo una tarea o resolver un problema relacionado con el tema. Al explicar las técnicas, métodos y herramientas relacionadas con el concepto, se adquieren habilidades prácticas y conocimientos aplicables en situaciones reales.
 
-Este esquema lo aprendí de dos personas: el Sensei Luis y el Prof. Pedro Mauriola (que nos hacía pensar de este modo cuando teníamos 12 años, durante sus clases de historia)
+Este esquema lo aprendí de dos personas: el Sensei Luis (al que extraño muchísimo) y el Prof. Pedro Mauriola (que nos hacía pensar de este modo cuando teníamos 12 años, durante sus clases de historia)

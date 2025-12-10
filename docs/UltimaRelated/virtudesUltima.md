@@ -10,10 +10,10 @@
 ### Derivadas lúdicas a partir de la idea de virtudes
 
 - [Virtudes del programador](virtudesProgramador.md)
-- [Virtudes MVC](../../UltimaRelated/modeloVistaControlador.md)
-- [Estados de la materia](../../UltimaRelated/estadosMateria.md)
-- [Familia, Escuela y Sociedad](../../UltimaRelated/FamEscSoc.md)
-- [Ver, Pensar, Actuar](../../UltimaRelated/VerPensarActuar.md)
+- [Virtudes MVC](modeloVistaControlador.md)
+- [Estados de la materia](estadosMateria.md)
+- [Familia, Escuela y Sociedad](FamEscSoc.md)
+- [Ver, Pensar, Actuar](VerPensarActuar.md)
 
 ## Contexto: los juegos
 

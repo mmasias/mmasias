@@ -1,5 +1,5 @@
 <div align=center>
 
-![](github-metrics.svg)
+![](../github-metrics.svg)
 
 </div>
