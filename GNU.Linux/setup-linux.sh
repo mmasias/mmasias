@@ -1032,7 +1032,10 @@ configure_bundungun_launcher() {
     cat > "$launcher" <<'EOF'
 #!/bin/bash
 CURRENT_DIR="$(pwd)"
-terminator --working-directory="$CURRENT_DIR" --layout=sabios & disown
+terminator --working-directory="$CURRENT_DIR" --layout=sabios </dev/null >/dev/null 2>&1 &
+TERMINATOR_PID=$!
+sleep 2
+disown "$TERMINATOR_PID"
 EOF
 
     chmod +x "$launcher"
