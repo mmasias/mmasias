@@ -1224,6 +1224,53 @@ install_nodejs() {
     fi
 }
 
+# Instalar Terminator
+install_terminator() {
+    info "Instalando Terminator..."
+
+    # Verificar si ya está instalado
+    if command -v terminator &> /dev/null; then
+        success "Terminator ya está instalado"
+        return 0
+    fi
+
+    case $DISTRO_FAMILY in
+        debian)
+            if sudo apt install -y terminator; then
+                success "Terminator instalado correctamente"
+            else
+                error "No se pudo instalar Terminator"
+                return 1
+            fi
+            ;;
+        rpm)
+            if sudo dnf install -y terminator; then
+                success "Terminator instalado correctamente"
+            else
+                error "No se pudo instalar Terminator"
+                return 1
+            fi
+            ;;
+        arch)
+            if sudo pacman -S --noconfirm terminator; then
+                success "Terminator instalado correctamente"
+            else
+                error "No se pudo instalar Terminator"
+                return 1
+            fi
+            ;;
+    esac
+
+    # Verificar instalación
+    if command -v terminator &> /dev/null; then
+        success "Terminator está disponible y listo para usar"
+        return 0
+    else
+        error "Terminator no está disponible después de la instalación"
+        return 1
+    fi
+}
+
 # Instalar utilitarios adicionales y herramientas de desarrollo
 install_utilities() {
     info "Instalando utilitarios y herramientas de desarrollo..."
@@ -1240,8 +1287,7 @@ install_utilities() {
                 ripgrep \
                 tmux \
                 vim \
-                build-essential \
-                terminator
+                build-essential
 
             # eza no está en los repositorios estándar de debian
             if ! command -v eza &> /dev/null; then
@@ -1289,7 +1335,6 @@ install_utilities() {
                 ripgrep \
                 tmux \
                 vim \
-                terminator \
                 gcc \
                 gcc-c++ \
                 make
@@ -1340,7 +1385,6 @@ install_utilities() {
                 ripgrep \
                 tmux \
                 vim \
-                terminator \
                 base-devel
 
             # eza podría estar en los repositorios oficiales o en AUR
@@ -1375,11 +1419,16 @@ install_utilities() {
     # Instalar Node.js llamando a la función dedicada
     install_nodejs
 
-    # Configurar layout de Terminator con la plantilla conocida
-    configure_terminator_layout
+    # Instalar y configurar Terminator
+    if install_terminator; then
+        # Configurar layout de Terminator con la plantilla conocida
+        configure_terminator_layout
 
-    # Crear lanzador bundungun y asegurar PATH
-    configure_bundungun_launcher
+        # Crear lanzador bundungun y asegurar PATH
+        configure_bundungun_launcher
+    else
+        warning "Terminator no se instaló correctamente. Saltando configuración de layout y bundungun."
+    fi
 
     success "Utilitarios y herramientas instalados correctamente"
 }
