@@ -19,7 +19,7 @@ Autor|Manuel Masías
 
 <div align=center>
 
-|![Modelo de Dominio](../../../../../images/music/cQuintas/RUP/00-requisitos/00-modelo-del-dominio/modelo-dominio.svg)
+|![Modelo de Dominio](../../../../../../images/music/cQuintas/RUP/00-requisitos/00-modelo-del-dominio/modelo-dominio.svg)
 |:-:
 |**Código fuente:** [modelo-dominio.puml](modelo-dominio.puml)
 

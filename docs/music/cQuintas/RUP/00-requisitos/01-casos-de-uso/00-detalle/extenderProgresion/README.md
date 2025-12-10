@@ -21,7 +21,7 @@ Autor|Manuel Masías
 
 |Especificación|Prototipo|
 |:-:|:-:|
-![](../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/extenderProgresion/extenderProgresion.svg)|![](../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/extenderProgresion/extenderProgresionWireframes.svg)
+![](../../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/extenderProgresion/extenderProgresion.svg)|![](../../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/extenderProgresion/extenderProgresionWireframes.svg)
 |Código fuente: [especificacion.puml](especificacion.puml)|**Código fuente**: [wireframes.puml](wireframes.puml)
 
 </div>

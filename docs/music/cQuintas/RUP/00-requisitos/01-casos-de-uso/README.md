@@ -35,7 +35,7 @@ Autor|Manuel Masías
 
 |Configuración del contexto tonal|Gestión de la progresión armónica|
 |-|-|
-![](../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/actores-casos-uso-001.svg)|![](../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/actores-casos-uso-002.svg)
+![](../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/actores-casos-uso-001.svg)|![](../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/actores-casos-uso-002.svg)
 **seleccionarTónica()**: Elegir la nota base (tónica) de la tonalidad a explorar|**iniciarProgresión()**: Crear una nueva progresión armónica desde la tónica en el modo seleccionado
 **seleccionarModo()**: Elegir entre Escala Mayor o Menor Natural|**consultarProgresión()**: Visualizar la secuencia actual de acordes en la progresión
 **generarMapaArmónico()**: Calcular y visualizar todos los acordes y enlaces armónicos válidos para la tonalidad seleccionada|**extenderProgresión()**: Añadir un nuevo acorde a la progresión navegando desde el acorde actual
@@ -43,7 +43,7 @@ Autor|Manuel Masías
 ||**finalizarProgresión()**: Marcar la progresión como completada, bloqueando edición
 ||**reiniciarProgresión()**: Eliminar toda la progresión y comenzar una nueva exploración
 
-|![](../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/actores-casos-uso-003.svg)
+|![](../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/actores-casos-uso-003.svg)
 |-
 
 </div>
@@ -52,7 +52,7 @@ Autor|Manuel Masías
 
 <div align=center>
 
-|![](../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/diagrama-contexto-musico.svg)
+|![](../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/diagrama-contexto-musico.svg)
 |-
 |Código fuente: [diagrama-contexto-musico.puml](diagrama-contexto-musico.puml)
 

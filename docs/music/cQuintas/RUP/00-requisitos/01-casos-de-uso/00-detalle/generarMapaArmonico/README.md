@@ -21,7 +21,7 @@ Autor|Manuel Masías
 
 |Especificación|Prototipo|
 |:-:|:-:|
-![](../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/generarMapaArmonico/generarMapaArmonico.svg)|![](../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/generarMapaArmonico/generarMapaArmonicoWireframes.svg)
+![](../../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/generarMapaArmonico/generarMapaArmonico.svg)|![](../../../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/00-detalle/generarMapaArmonico/generarMapaArmonicoWireframes.svg)
 |Código fuente: [especificacion.puml](especificacion.puml)|**Código fuente**: [wireframes.puml](wireframes.puml)
 
 </div>

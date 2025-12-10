@@ -19,7 +19,7 @@ Autor|Manuel Masías
 
 <div align=center>
 
-|![](../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/diagrama-contexto-musico.svg)
+|![](../../../../../../images/music/cQuintas/RUP/00-requisitos/01-casos-de-uso/diagrama-contexto-musico.svg)
 |-
 |Código fuente: [diagrama-contexto-musico.puml](diagrama-contexto-musico.puml)
 
