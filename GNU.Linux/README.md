@@ -46,6 +46,8 @@ bash setup-linux.sh
 
 Las secciones siguientes son solo para instalación manual o puntual. Si ya usas el script, no necesitas repetirlas.
 
+## Funcionalidades destacadas del script
+
 ### ¿Qué hace ahora el script?
 
 - Detecta la distro (Debian/Ubuntu, RPM/Fedora, Arch/Manjaro) y adapta cada instalación.
@@ -56,6 +58,113 @@ Las secciones siguientes son solo para instalación manual o puntual. Si ya usas
 - oh-my-posh con temas y Nerd Fonts (FiraCode/Meslo) automáticas.
 - Crea `~/misRepos`, puede clonar/actualizar tus repos de clase y dejar el terminal apuntando allí.
 - Limpieza de bloatware (Firefox, LibreOffice, Thunderbird) opcional y limpieza de paquetes/cache.
+
+### Terminator con layout "sabios"
+
+El script configura automáticamente Terminator con un layout personalizado de 4 paneles que ejecuta los agentes de IA:
+
+- **Panel superior izquierdo**: Claude Code (`claude`)
+- **Panel inferior izquierdo**: Gemini CLI (`gemini`)
+- **Panel superior derecho**: Codex (`codex`)
+- **Panel inferior derecho**: Qwen Code (`qwen`)
+
+La configuración incluye la fuente FiraCode Nerd Font Propo Medium 15 y se guarda en `~/.config/terminator/config`.
+
+### Lanzador bundungun
+
+<img src="../imagenes/bundungunLogo.png" width=25% align=right>
+
+El script crea un lanzador llamado `bundungun` en `~/.local/bin/` que:
+
+- Lanza Terminator con el layout "sabios" (4 paneles con agentes IA)
+- Se ejecuta desde cualquier directorio conservando tu ubicación actual
+- Abre los 4 agentes de IA listos para usar en un solo comando
+
+Uso:
+```bash
+bundungun
+```
+
+El script se asegura de que `~/.local/bin` esté en tu PATH automáticamente.
+
+### Verificación de estado (Opción 22)
+
+El script incluye una función completa de diagnóstico que muestra el estado de instalación de todos los componentes:
+
+```console
+======================================
+  ESTADO DE INSTALACIÓN
+======================================
+Distribución: ubuntu (debian)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HERRAMIENTAS BÁSICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+curl:                                    ✓ INSTALADO
+wget:                                    ✓ INSTALADO
+git:                                     ✓ INSTALADO
+unzip:                                   ✓ INSTALADO
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONFIGURACIÓN DE GIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Git user.name:                           ✓ CONFIGURADO
+Git user.email:                          ✓ CONFIGURADO
+Git GPG signing:                         ✓ CONFIGURADO
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+AGENTES DE IA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Claude Code:                             ✓ INSTALADO
+Gemini CLI:                              ✓ INSTALADO
+Codex:                                   ✓ INSTALADO
+Qwen Code:                               ✓ INSTALADO
+```
+
+Incluye verificaciones de:
+- Herramientas básicas (curl, wget, git, unzip)
+- Configuración de Git y GPG
+- Navegadores (Chrome, Brave)
+- IDEs (VS Code, Antigravity)
+- Herramientas de desarrollo (Java, graphviz, PlantUML, GitHub CLI)
+- Multimedia (Spotify, VLC, KDEnLive)
+- Utilidades (Node.js, npm, nvm, tree, htop, neofetch, bat, ripgrep, tmux, vim, eza, bundungun, Terminator, VirtualBox, DOSBox-X)
+- Personalización (oh-my-posh)
+- Agentes de IA con formato visual C/G/C/Q
+- Carpeta ~/misRepos
+
+### Pausa inteligente para configuración de navegadores
+
+Después de instalar Chrome y Brave, el script pausa la ejecución y solicita que realices manualmente:
+
+1. Definir el navegador por defecto del sistema
+2. Iniciar sesión en GitHub en el navegador elegido (necesario para configuración de Git y GPG)
+
+Esta pausa garantiza que los pasos siguientes (configuración de GPG, GitHub CLI) funcionen correctamente.
+
+### Detección automática de pinentry
+
+El script detecta automáticamente tu entorno de escritorio (KDE, GNOME, XFCE u otros) e instala y configura el pinentry correcto:
+
+- **KDE**: `pinentry-qt`
+- **GNOME**: `pinentry-gnome3`
+- **Otros**: `pinentry-gtk2`
+
+Esto evita problemas al firmar commits con GPG en diferentes entornos gráficos.
+
+### Limpieza de configuración GPG
+
+La opción de limpieza de sistema (19) incluye una función que:
+
+- Detecta entradas duplicadas en `~/.gnupg/gpg-agent.conf`
+- Mantiene solo los últimos valores configurados de cada parámetro
+- Limpia `pinentry-program`, `default-cache-ttl` y `max-cache-ttl`
+
+Esto evita conflictos causados por ejecuciones múltiples del script.
+
+---
+
+## Instalación manual (opcional)
 
 ## Instalar Chrome & Brave
 Manual (si no usas el script): Chrome del [canal oficial](https://www.google.com/chrome/?platform=linux) y Brave del [canal oficial](https://brave.com/download/).
