@@ -912,6 +912,136 @@ install_agents() {
     success "Agentes de IA configurados correctamente"
 }
 
+# Configurar layout y perfil de Terminator
+configure_terminator_layout() {
+    info "Configurando layout de Terminator..."
+
+    local config_dir="$HOME/.config/terminator"
+    local config_file="$config_dir/config"
+
+    mkdir -p "$config_dir"
+
+    if [ -f "$config_file" ]; then
+        local ts
+        ts=$(date +%s)
+        cp -p "$config_file" "$config_file.bak.$ts"
+        info "Respaldo creado: $config_file.bak.$ts"
+    fi
+
+    cat > "$config_file" <<'EOF'
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    font = FiraCode Nerd Font Propo Medium 15
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+  [[sabios]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1008
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 958
+      ratio = 0.5002610966057441
+    [[[child2]]]
+      type = VPaned
+      parent = child1
+      order = 0
+      position = 502
+      ratio = 0.5004985044865404
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      profile = default
+      command = 'bash -c "source ~/.nvm/nvm.sh && claude"'
+    [[[terminal4]]]
+      type = Terminal
+      parent = child2
+      order = 1
+      profile = default
+      command = 'bash -c "source ~/.nvm/nvm.sh && gemini"'
+    [[[child5]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 502
+      ratio = 0.5004985044865404
+    [[[terminal6]]]
+      type = Terminal
+      parent = child5
+      order = 0
+      profile = default
+      command = 'bash -c "source ~/.nvm/nvm.sh && codex"'
+    [[[terminal7]]]
+      type = Terminal
+      parent = child5
+      order = 1
+      profile = default
+      command = 'bash -c "source ~/.nvm/nvm.sh && qwen"'
+[plugins]
+EOF
+
+    success "Layout de Terminator aplicado en $config_file"
+}
+
+ensure_local_bin_in_path() {
+    local shell_rc=""
+    if [[ "$SHELL" == *"bash"* ]]; then
+        shell_rc="$HOME/.bashrc"
+    elif [[ "$SHELL" == *"zsh"* ]]; then
+        shell_rc="$HOME/.zshrc"
+    fi
+
+    if [[ -n "$shell_rc" ]]; then
+        if ! grep -q '\$HOME/.local/bin' "$shell_rc"; then
+            echo '' >> "$shell_rc"
+            echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$shell_rc"
+            info "Añadido ~/.local/bin al PATH en $shell_rc"
+        else
+            info "~/.local/bin ya está en PATH en $shell_rc"
+        fi
+    else
+        warning "No se pudo determinar el shell para añadir ~/.local/bin al PATH. Hazlo manualmente si es necesario."
+    fi
+}
+
+configure_bundungun_launcher() {
+    info "Creando lanzador bundungun en ~/.local/bin..."
+
+    local bin_dir="$HOME/.local/bin"
+    local launcher="$bin_dir/bundungun"
+
+    mkdir -p "$bin_dir"
+
+    cat > "$launcher" <<'EOF'
+#!/bin/bash
+CURRENT_DIR="$(pwd)"
+terminator --working-directory="$CURRENT_DIR" --layout=sabios &
+EOF
+
+    chmod +x "$launcher"
+    info "Lanzador bundungun creado en $launcher"
+
+    ensure_local_bin_in_path
+    success "bundungun disponible en el PATH"
+}
+
 # Instalar oh-my-posh
 install_oh_my_posh() {
     info "Instalando oh-my-posh..."
@@ -1110,7 +1240,8 @@ install_utilities() {
                 ripgrep \
                 tmux \
                 vim \
-                build-essential
+                build-essential \
+                terminator
 
             # eza no está en los repositorios estándar de debian
             if ! command -v eza &> /dev/null; then
@@ -1158,6 +1289,7 @@ install_utilities() {
                 ripgrep \
                 tmux \
                 vim \
+                terminator \
                 gcc \
                 gcc-c++ \
                 make
@@ -1208,6 +1340,7 @@ install_utilities() {
                 ripgrep \
                 tmux \
                 vim \
+                terminator \
                 base-devel
 
             # eza podría estar en los repositorios oficiales o en AUR
@@ -1241,6 +1374,12 @@ install_utilities() {
 
     # Instalar Node.js llamando a la función dedicada
     install_nodejs
+
+    # Configurar layout de Terminator con la plantilla conocida
+    configure_terminator_layout
+
+    # Crear lanzador bundungun y asegurar PATH
+    configure_bundungun_launcher
 
     success "Utilitarios y herramientas instalados correctamente"
 }
@@ -1775,6 +1914,8 @@ check_status() {
     check_item "tmux" "tmux"
     check_item "vim" "vim"
     check_item "eza" "eza"
+    check_item "bundungun" "bundungun"
+    check_item "Terminator" "terminator"
     check_item "VirtualBox" "virtualbox"
     check_item "DOSBox-X" "dosbox-x"
     
