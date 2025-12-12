@@ -77,7 +77,7 @@ Adaptando el [sistema CRediT](https://credit.niso.org/), se definen roles espec√
 
 <div align=center width=45%>
 
-<img src="/imagenes/ethical-credit-label.svg" width=45%>
+<img src="/images/ethical-credit-label.svg" width=45%>
 
 </div>
 
