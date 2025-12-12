@@ -30,7 +30,7 @@ La educación en la ingeniería informática, en campos técnicos en particular 
 |Estructura de Datos y Algoritmos II||[[23][24]](https://github.com/mmasias/23-24-eda2)
 |Ingeniería de software I  | [[22][23]](https://github.com/mmasias/IdSw1-22-23) | [[23][24]](https://github.com/mmasias/23-24-IdSw1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-ingenieria-del-software)| [[24][25]](https://github.com/mmasias/24-25-IdSw1)| [[25][26]](https://github.com/mmasias/25-26-IdSw1)
 |- Sesiones de requisitado |[[22][23]](https://github.com/mmasias/IdSw1-22-23/tree/main/000-entregas)|[[23][24]](https://github.com/mmasias/23-24-IdSw1-SDR)|[[24][25]](https://github.com/mmasias/24-25-IdSw1-SDR)|[[25][26]](https://github.com/mmasias/25-26-IdSw1-SDR)
-|Ingeniería de software II |[[22][23]](https://github.com/mmasias/IdSw1-22-23) |[[23][24]](https://github.com/mmasias/23-24-IdSw1)|[[24][25]](https://github.com/mmasias/23-24-IdSw1)|[25][26]
+|Ingeniería de software II |[[22][23]](https://github.com/mmasias/IdSw2-22-23) |[[23][24]](https://github.com/mmasias/23-24-IdSw2)|[[24][25]](https://github.com/mmasias/23-24-IdSw2)|[25][26]
 |Dirección de sistemas de información|[[22][23]](https://github.com/mmasias/DSI-22-23)|[[23][24]](https://github.com/mmasias/23-24-DSI)|[[24][25]](https://github.com/mmasias/24-25-DSI)
 
 </div>
