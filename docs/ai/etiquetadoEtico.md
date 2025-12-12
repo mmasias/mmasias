@@ -21,7 +21,7 @@ El sistema combina:
 - Niveles de contribución cuantificables.
 - Visualización clara mediante una etiqueta gráfica.
 - Metadatos para trazabilidad.
-- Documentación del [proceso creativo](https://github.com/mmasias/mmasias/blob/main/procesoDeCreacion.md).
+- Documentación del [proceso creativo](../procesoDeCreacion.md).
 
 ## ¿Para qué?
 
