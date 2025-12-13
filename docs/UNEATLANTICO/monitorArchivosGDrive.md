@@ -23,7 +23,7 @@ Este script permite:
 
 |||
 |-|-|
-|![](/imagenes/monitorDeCambios001.png)|![](/imagenes/monitorDeCambios002.png)|
+|![](/images/monitorDeCambios001.png)|![](/images/monitorDeCambios002.png)|
 
 </div>
 
