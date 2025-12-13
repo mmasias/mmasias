@@ -1,6 +1,6 @@
 <div align=center>
 
-![](/imagenes/ingeniero.jpeg)
+![](/images/ingeniero.jpeg)
 
 </div>
 
