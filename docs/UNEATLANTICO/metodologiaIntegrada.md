@@ -263,7 +263,7 @@ Documento establecido curso 2025-26 (tras aparición de ChatGPT):
 
 **Categorías de uso:**
 
-</div align=center>
+<div align=center>
 
 |Uso instrumental-mecánico|Uso generativo-conceptual|
 |-|-|
@@ -377,4 +377,4 @@ Esta es la lección fundamental: si tu sistema de evaluación se vuelve inútil 
 - [Criterios de valoración](CdEx.md) - Framework de evaluación
 - [Cuadrantes de competencia](cuadrantes.md) - Conocer vs. saber usar
 - [Política de IA](2Think.md) - Marco para uso responsable de herramientas
-- [Etiquetado ético](../ai/etiquetadoEtico.md) - Transparencia en contribuciones humano-IA
+- [Etiquetado ético](../ai/etiquetadoEtico.md) - Transparencia en contribuciones humano-IA - [Debate sobre esto durante la creación de este documento](metaEtiqueda.md)
