@@ -40,7 +40,7 @@ En la imagen inferior, para dos actividades, se pueden ver la lista de alumnos q
 
 <div align=center>
 
-|![](/imagenes/asistenciaGIT.png)
+|![](/images/asistenciaGIT.png)
 |-
 |
 
@@ -78,7 +78,7 @@ Y la celda A1 tenga la URL del repositorio
 
 <div align=center>
 
-![](/imagenes/Screenshot_20241003_165747.png)
+![](/images/Screenshot_20241003_165747.png)
 
 </div>
 
