@@ -1,9 +1,7 @@
 # mmasias@UNEATLANTICO
 
-- [IngenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO)
-- [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico)
-- [PlantillaAsignaturas](https://github.com/mmasias/repoPlantillaAsignatura)
-- [PlantillaExámenes](https://github.com/mmasias/repoPlantillaExamen)
+
+> [ingenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO) / [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico) / [PlantillaAsignaturas](https://github.com/mmasias/repoPlantillaAsignatura) / [PlantillaExámenes](https://github.com/mmasias/repoPlantillaExamen)
 
 <div align=center>
 
@@ -13,6 +11,17 @@
 |Programación 2|[Estructuras de datos y algoritmos 2](https://github.com/mmasias/eda2)|[Ingeniería del software 2](https://github.com/mmasias/idsw2)|
 
 </div>
+
+## Reflexiones
+
+- [Evaluación personalizada](evaluacionPersonalizada.md)
+- [El proceso de creación](../procesoDeCreacion.md)
+- [Rubricas](Rubricus.md)
+- [Monitor de entregas por GitHub](entregasGithub.md)
+- [Monitor de archivos en GoogleDrive](monitorArchivosGDrive.md)
+- [Criterios de valoración](CdEx.md)
+- [Conocer vs Saber usar](cuadrantes.md)
+- [Nuestra política con respecto a la IA](2Think.md)
 
 ## Cursos
 
@@ -80,6 +89,3 @@
 
 </div>
 
-- [Monitor de entregas por GitHub](entregasGithub.md)
-- [Monitor de archivos en GoogleDrive](monitorArchivosGDrive.md)
-- [Criterios de valoración](CdEx.md)
