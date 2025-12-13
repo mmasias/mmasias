@@ -13,7 +13,7 @@
 
 ## Reflexiones
 
-> **[Metodología integrada de enseñanza](metodologiaIntegrada.md)***
+> ***[Metodología integrada](metodologiaIntegrada.md)***
 
 - [Evaluación personalizada](evaluacionPersonalizada.md)
 - [El proceso de creación](../procesoDeCreacion.md)
