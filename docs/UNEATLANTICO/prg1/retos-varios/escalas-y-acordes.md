@@ -2,11 +2,11 @@
 
 La escala cromática, también llamada escala dodecáfona, dodecafónica o duodécuple, en música es una escala o modo musical constituido por una sucesión de doce sonidos, alturas o notas diferentes. Contiene los doce semitonos de la escala temperada occidental.
 
-![](../../imagenes/escalas002.png)
+![](../../images/escalas002.png)
 
 En un piano, cada tecla contigua está a una distancia de un semitono.
 
-![](../../imagenes/escalas001.png)
+![](../../images/escalas001.png)
 
 **T** = tono  / **S** = semitono
 
@@ -25,15 +25,15 @@ Es posible *construir* una escala mayor sobre cualquier nota, simplemente manten
 
 De acuerdo a esto, la escala de ***Do mayor*** sería la siguiente:
 
-![](../../imagenes/escalas003.png)
+![](../../images/escalas003.png)
 
 La escala de ***Re mayor*** sería:
 
-![](../../imagenes/escalas004.png)
+![](../../images/escalas004.png)
 
 Y finalmente la escala de ***Si mayor*** sería:
 
-![](../../imagenes/escalas005.png)
+![](../../images/escalas005.png)
 
 ## Acorde mayor
 
@@ -41,7 +41,7 @@ A partir de la ***escala mayor*** podemos obtener el ***acorde mayor***, que res
 
 De acuerdo a esto, tendríamos que el acorde de **Do Mayor** lo conforman las notas **DO**, **MI** y **SOL**:
 
-![](../../imagenes/escalas006.png)
+![](../../images/escalas006.png)
 
 # Retos
 

@@ -3,7 +3,7 @@
 > [Color](../ArrayAsociativo007.java): un poco de color y ajustes menores de código.
 
 <div align=center>
-    <img src="/imagenes/ArrayAsociativoV7.png" width="50%" />
+    <img src="/images/ArrayAsociativoV7.png" width="50%" />
 </div>
 
 ## Cómo agregamos color

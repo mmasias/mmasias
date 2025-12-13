@@ -16,7 +16,7 @@ Link: **[aquí](https://docs.google.com/spreadsheets/d/1d9UC03syn03oDDp1CU8s0rqL
 
 |Tipo de Terreno|Mapa
 |-|-
-|![](/imagenes/2020-mapaTipoTerreno.png)|![](/imagenes/2020-mapaTotal.png)
+|![](/images/2020-mapaTipoTerreno.png)|![](/images/2020-mapaTotal.png)
 
 ### 2022 - Mapas de Ultima III 64x64
 
@@ -24,7 +24,7 @@ Link: **[aquí](https://docs.google.com/spreadsheets/d/1wgDUYuLw5eu9Ri_1ppY6vDm5
 
 |Mapa|Mapa
 |-|-
-|![](/imagenes/2022-mapaU3-001.png)|![](/imagenes/2022-mapaU3-002.png)
+|![](/images/2022-mapaU3-001.png)|![](/images/2022-mapaU3-002.png)
 
 ### ASCII Mapper 
 

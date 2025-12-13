@@ -8,7 +8,7 @@ Conversión a [hoja de cálculo de Google](https://docs.google.com/spreadsheets/
 
 | | |
 |-|-|
-![](/imagenes/utrilogyjap-u1map.jpg)|![](/imagenes/ultima_ascii.png)
+![](/images/utrilogyjap-u1map.jpg)|![](/images/ultima_ascii.png)
 
 </div>
 

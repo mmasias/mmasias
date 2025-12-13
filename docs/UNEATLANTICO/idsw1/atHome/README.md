@@ -1,6 +1,6 @@
 # Xmas planning
 
-![](/imagenes/theWall.jpeg)
+![](/images/theWall.jpeg)
 
 ## DdC
 

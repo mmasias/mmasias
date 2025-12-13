@@ -1,7 +1,6 @@
 # mmasias@UNEATLANTICO
 
-
-> [ingenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO) / [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico) / [PlantillaAsignaturas](https://github.com/mmasias/repoPlantillaAsignatura) / [PlantillaExámenes](https://github.com/mmasias/repoPlantillaExamen)
+> *[ingenieríaInformática@gitHub](https://github.com/Ingenieria-Informatica-UNEATLANTICO) / [UNEATLANTICO@Github](https://github.com/enterprises/uneatlantico) / [PlantillaAsignaturas](https://github.com/mmasias/repoPlantillaAsignatura) / [PlantillaExámenes](https://github.com/mmasias/repoPlantillaExamen)*
 
 <div align=center>
 
@@ -22,6 +21,7 @@
 - [Criterios de valoración](CdEx.md)
 - [Conocer vs Saber usar](cuadrantes.md)
 - [Nuestra política con respecto a la IA](2Think.md)
+- [Propuesta de etiquetado ético](/docs/ai/etiquetadoEtico.md)
 
 ## Cursos
 

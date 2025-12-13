@@ -44,4 +44,4 @@ Hoy, los fundadores se encuentran en una encrucijada. Aquellos que tienen secret
 
 Te dejo con un gráfico de muchas de las tecnologías que han emergido, ascendido rápidamente y luego se han desacelerado en los últimos años. Notarás que a medida que la comunicación/publicación/computación moderna ha tomado posesión, la adopción de tecnología se está acelerando cada vez más. Prepárate para montar la curva S.
 
-![](/imagenes/GG9BfE-aYAA28xa.jpeg)
+![](/images/GG9BfE-aYAA28xa.jpeg)

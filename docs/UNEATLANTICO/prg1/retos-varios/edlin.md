@@ -6,7 +6,7 @@ EDLIN era el único editor de textos proporcionado con el MS-DOS antes de la ver
 
 Edlin fue creado por Tim Paterson en dos semanas en 1980, y se esperaba que tuviese una vida de seis meses. Edlin realmente fue escrito originalmente para el QDOS de Seattle Computer Products, que más tarde fue comprado por Microsoft convirtiéndose finalmente en el MS-DOS.
 
-![](../../imagenes/edlin001.png) 
+![](../../images/edlin001.png) 
  
 # Reto
 
@@ -32,22 +32,22 @@ En base a lo definido arriba, plantee como implementaría la opción de deshacer
 
 ## Edlin con dos líneas de texto ingresadas, teniendo la segunda línea como línea activa.
 
-![](../../imagenes/edlin002.png)
+![](../../images/edlin002.png)
 
 ---
 
 ## Proceso de cambio de línea activa
 
-![](../../imagenes/edlin003.png)
+![](../../images/edlin003.png)
 
 ---
 
 ## Proceso de ingreso de información:
 
-![](../../imagenes/edlin004.png) 
+![](../../images/edlin004.png) 
 
 ---
 
 ## Edición de información
 
-![](../../imagenes/edlin005.png)
+![](../../images/edlin005.png)

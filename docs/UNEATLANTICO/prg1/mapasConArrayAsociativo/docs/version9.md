@@ -4,7 +4,7 @@
 
 |Tema 0|Tema 1|Tema 2|Tema 3
 |-|-|-|-
-|![](/imagenes/ArrayAsociativoV9SKIN0.png)|![](/imagenes/ArrayAsociativoV9SKIN1.png)|![](/imagenes/ArrayAsociativoV9SKIN2.png)|![](/imagenes/ArrayAsociativoV9SKIN3.png)
+|![](/images/ArrayAsociativoV9SKIN0.png)|![](/images/ArrayAsociativoV9SKIN1.png)|![](/images/ArrayAsociativoV9SKIN2.png)|![](/images/ArrayAsociativoV9SKIN3.png)
 |Full color|Sin color|Tiles puros|Matriz colisiones
 
 * Lao temas 1 y 2 son similares en el concepto de parsear el mapa almacenado, con la diferencia de la inclusión del color. 

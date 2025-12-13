@@ -1,5 +1,5 @@
 
-![](/imagenes/Virt1.webp)
+![](/images/Virt1.webp)
 
 - La **Honestidad** es el respeto por la ***Verdad***.
 - La **Compasión** es el ***Amor*** por los demás.

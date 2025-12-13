@@ -12,7 +12,7 @@ Permítanme compartir mi experiencia, de hace casi 40 años, cuando trasteaba la
 
 Es particular la tesitura en la que nos encontramos: [tecnología](https://es.wikipedia.org/wiki/Tecnolog%C3%ADa) e [informática](https://www.techopedia.com/definition/30332/informatics) son apreciadas y cuestionadas en partes iguales. Apreciadas porque en estos tiempos de confinamiento, son las que han permitido que podamos mantener el contacto con nuestros familiares y colegas en el ámbito personal y profesional respectivamente, estar informados y en definitiva que hayamos podido abordar una situación compleja como es una pandemia de un modo que hace escasos 50 años hubiera sido totalmente distinto. Pero también cuestionadas, porque como reflexionaremos en las siguientes líneas, probablemente aún no terminen de llegar de forma adecuada a los sectores a los que, sin ninguna duda, pretenden mejorar.
 
-|![](/imagenes/aaron-burden-0fA3gVTGwjQ-unsplash.jpg)|
+|![](/images/aaron-burden-0fA3gVTGwjQ-unsplash.jpg)|
 |-:|
 *Foto: [Aaron Burden](https://unsplash.com/@aaronburden?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) en [Unsplash](https://unsplash.com/@mmasias/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 

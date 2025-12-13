@@ -104,5 +104,5 @@ do {
 Esta versión mueve al personaje pero ni verifica límites ni tampoco verifica el terreno sobre el cual se mueve el personaje, por lo que de momento el personaje podrá moverse libremente atravesando paredes y agua. Asimismo, si se acerca mucho a los límites de la pantalla, el programa lanzará un error: ambas situaciones serán abordadas en las siguientes versiones.
 
 <div align=center>
-    <img src="../../../../imagenes/ArrayAsociativoV3.png" width="50%" />
+    <img src="../../../../images/ArrayAsociativoV3.png" width="50%" />
 </div>

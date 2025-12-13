@@ -72,7 +72,7 @@ La configuración incluye la fuente FiraCode Nerd Font Propo Medium 15 y se guar
 
 ### Lanzador bundungun
 
-<img src="../imagenes/bundungunLogo.png" width=25% align=right>
+<img src="../images/bundungunLogo.png" width=25% align=right>
 
 El script crea un lanzador llamado `bundungun` en `~/.local/bin/` que:
 
@@ -290,7 +290,7 @@ sudo systemctl restart cups
 #### Semi-Auto
 
 - [Drivers](https://drive.google.com/drive/folders/1HjncE-cJPyxzEuDZsfUW21V7-b5mSSA3?usp=sharing)
-- [Config](../imagenes/impresoraCanonGNU.png)
+- [Config](../images/impresoraCanonGNU.png)
 
 ### Instalar oh-my-posh
 

@@ -23,6 +23,6 @@ Fuente: [*Brij kishore Pandey*](https://www.linkedin.com/posts/brijpandeyji_unde
 
 <div align=center>
 
-![alt text](../imagenes/1707280558193.gif)
+![alt text](../images/1707280558193.gif)
 
 </div>

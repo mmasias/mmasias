@@ -2,7 +2,7 @@
 
 |Mandrake el Bardo 
 |-
-|![](/imagenes/Mandrake.GIF.webp)
+|![](/images/Mandrake.GIF.webp)
 
 
 # Virtudes 

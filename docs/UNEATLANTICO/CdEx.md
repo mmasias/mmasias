@@ -49,6 +49,6 @@ La implementación de estos criterios en la evaluación se realiza mediante:
 
 <div align=center>
 
-![](/imagenes/CdEx.png)
+![](/images/CdEx.png)
 
 </div>

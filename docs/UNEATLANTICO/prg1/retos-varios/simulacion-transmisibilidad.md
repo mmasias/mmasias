@@ -6,18 +6,18 @@ Las enfermedades infecciosas son causadas por microorganismos patógenos como la
 
 En un momento dado, una persona puede estar sana o enferma. En el caso de estar sano, si entra en contacto con una persona enferma existe la probabilidad de ser contagiado, con capacidad de contagiar a otras personas a partir del momento inmediatamente posterior al contagio.
 
-![](../../imagenes/transmisibilidad001.png)
+![](../../images/transmisibilidad001.png)
 
 La probabilidad de contagio se ha establecido en un 15 %: incluso con esta probabilidad relativamente baja, la propagación es bastante rápida. 
 
 A continuación, nótese el efecto en una semana:
 
 Situación al inicio: 2 enfermos
-![](../../imagenes/transmisibilidad002.png)
+![](../../images/transmisibilidad002.png)
 
 Situación luego de una semana: 
 79 enfermos en total, de los cuales 22 fueron contagiados ese día.
-![](../../imagenes/transmisibilidad003.png)
+![](../../images/transmisibilidad003.png)
 
 ## Reto 1
 
@@ -37,11 +37,11 @@ Resueltos los retos 1 y 2, deje configurada la simulación de modo que se minimi
 
 # Sugerencias de presentación
 
-![](../../imagenes/transmisibilidad004.png)
+![](../../images/transmisibilidad004.png)
 
 
-![](../../imagenes/transmisibilidad005.png)
+![](../../images/transmisibilidad005.png)
 
 
-![](../../imagenes/transmisibilidad006.png)
+![](../../images/transmisibilidad006.png)
 
