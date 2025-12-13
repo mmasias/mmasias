@@ -291,6 +291,10 @@ Si usó IA y no puede defender lo generado, viola el principio de responsabilida
 
 Lo crítico: esta política **no prohíbe IA, exige responsabilidad**. El mismo principio que aplicábamos cuando los estudiantes copiaban de StackOverflow o de compañeros.
 
+**Ejemplo de documentación transparente:**
+
+Este mismo documento aplica el principio de transparencia en el uso de herramientas. Ver [sistema de etiquetado ético](../ai/etiquetadoEtico.md) para framework completo de documentación de contribuciones humano-IA en creación de contenidos.
+
 ### La integración: un sistema cohesivo
 
 Estos tres pilares no son iniciativas aisladas. Forman un sistema que se refuerza mutuamente:
@@ -378,3 +382,22 @@ Esta es la lección fundamental: si tu sistema de evaluación se vuelve inútil 
 - [Cuadrantes de competencia](cuadrantes.md) - Conocer vs. saber usar
 - [Política de IA](2Think.md) - Marco para uso responsable de herramientas
 - [Etiquetado ético](../ai/etiquetadoEtico.md) - Transparencia en contribuciones humano-IA - [Debate sobre esto durante la creación de este documento](metaEtiqueda.md)
+
+### Sobre este documento
+
+<div align=center>
+
+|H|IA|
+|-|-|
+|70|30|
+
+</div>
+
+**Desglose por roles:**
+
+- **Conceptualización:** 100% humano (metodología desarrollada 2018-2025, 7 años de implementación)
+- **Análisis:** 70% humano, 30% IA (selección y organización de contenidos desde documentos existentes)
+- **Implementación:** 60% IA (redacción estructura inicial), 40% humano (tablas, ajustes, reorganización)
+- **Validación:** 100% humano (revisión final, correcciones, aprobación)
+
+Todo el conocimiento, experiencia y casos de estudio son resultado de implementación real en aula. La IA asistió en síntesis y estructura, pero no generó contenido original. Ver [propuesta de etiquetado ético](../ai/etiquetadoEtico.md) para más detalles sobre este sistema de transparencia.

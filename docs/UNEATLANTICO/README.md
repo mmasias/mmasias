@@ -13,6 +13,12 @@
 
 ## Reflexiones
 
+### Documento integrador
+
+- **[Metodología integrada de enseñanza](metodologiaIntegrada.md)** - *Visión completa del sistema pedagógico: proceso sobre producto, trazabilidad y evaluación auténtica. Preparada para la era de la IA antes de que existiera.*
+
+### Componentes específicos
+
 - [Evaluación personalizada](evaluacionPersonalizada.md)
 - [El proceso de creación](../procesoDeCreacion.md)
 - [Rubricas](Rubricus.md)
