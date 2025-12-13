@@ -8,11 +8,13 @@ Una aproximación pedagógica centrada en la comprensión real, preparada para l
 
 La educación en programación enfrenta una contradicción fundamental: enseñamos a resolver problemas complejos, a tomar decisiones de diseño, a argumentar soluciones técnicas... pero luego evaluamos mediante exámenes que miden memorización y reproducción de patrones en un contexto artificial.
 
-### Tres síntomas del problema
+### Tres síntomas del mismo problema
 
 |Desconexión entre práctica y evaluación|Simulación vs. competencia real|Facilidad de fraude, dificultad de evidencia|
 |-|-|-|
-Los estudiantes pasan semanas desarrollando código, cometiendo errores específicos, evolucionando su comprensión. El examen final ignora completamente esta trayectoria individual y presenta un problema genérico desde cero. No existe relación entre lo que hicieron y lo que deben demostrar.|En contextos profesionales, los ingenieros raramente escriben código desde cero sin restricciones. Mantienen código existente, revisan implementaciones ajenas, justifican decisiones técnicas, depuran código heredado. Pero evaluamos la capacidad de escribir código nuevo en papel, sin documentación, sin herramientas, sin colaboración.|Exámenes idénticos invitan a soluciones idénticas. La detección de plagio se dificulta porque las respuestas correctas son necesariamente similares. Mientras tanto, el estudiante que realmente comprende no tiene forma de diferenciarse del que memorizó patrones.
+Los estudiantes pasan semanas desarrollando código, cometiendo errores específicos, evolucionando su comprensión.|En contextos profesionales, los ingenieros raramente escriben código desde cero sin restricciones.|Exámenes idénticos invitan a soluciones idénticas.
+El examen final ignora completamente esta trayectoria individual y presenta un problema genérico desde cero.|Mantienen código existente, revisan implementaciones ajenas, justifican decisiones técnicas, depuran código heredado. |La detección de plagio se dificulta porque las respuestas correctas son necesariamente similares.
+No existe relación entre lo que hicieron y lo que deben demostrar.|Pero evaluamos la capacidad de escribir código nuevo en papel, sin documentación, sin herramientas, sin colaboración.|Mientras tanto, el estudiante que realmente comprende no tiene forma de diferenciarse del que memorizó patrones.
 
 ### La llegada de los LLMs: ¿crisis o confirmación?
 
