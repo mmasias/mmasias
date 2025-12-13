@@ -53,7 +53,7 @@ Estos pilares se implementan mediante un ecosistema de prácticas y herramientas
 #### Desarrollar competencias profesionales reales
 
 - Capacidad de revisar y mantener código (propio y ajeno)
-- Habilidad de justificar decisiones técnicas ante stakeholders
+- Habilidad de justificar decisiones técnicas ante clientes y pares
 - Competencia de modificar implementaciones ante nuevos requisitos
 - Responsabilidad sobre el código producido
 
@@ -94,18 +94,18 @@ Los repositorios Git no son un sistema de entrega, son la plataforma de captura 
 
 Cada asignatura opera sobre un repositorio central (ej: `mmasias/25-26-PRG1`) donde los estudiantes:
 
-1. Crean branches personales o forkean el repositorio
+1. Crean copias personales a partir del repositorio principal (*forks*)
 1. Desarrollan soluciones en su espacio
-1. Crean Pull Requests para entregar
+1. Envían entregas (*pull requests*)
 1. Reciben revisiones del docente
 1. Iteran basándose en feedback
 
 El historial captura automáticamente:
 
 - Código final de cada entrega
-- Evolución temporal (commits sucesivos)
+- Evolución temporal (entregas sucesivas *commits*)
 - Versiones previas (historial de cambios)
-- Contexto (comentarios en PRs)
+- Contexto (comentarios en *pull requests*)
 - Interacciones con el docente
 
 #### Documentación activa del proceso
