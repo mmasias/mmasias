@@ -10,7 +10,7 @@ state HACER as "<b>Que sepan hacer\n<b>lo que hacen los profesionales</b>" {
 
 }
 
-state DISTINGUIR as "<b>Distinguir quien *entiende*\n<b>de quien memoriza</b>" {
+state DISTINGUIR as "<b>Distinguir quien entiende\n<b>de quien memoriza</b>" {
     state DISTINGUIR1 as "Identificar\nquién realmente comprende\nfrente a quién memorizó patrones"
     state DISTINGUIR2 as "Detectar cuando alguien entrega\ncódigo que no entiende\nsea de IA, compañeros o internet"
     state DISTINGUIR3 as "Valorar\nla evolución del pensamiento\ny no solo el resultado final"
