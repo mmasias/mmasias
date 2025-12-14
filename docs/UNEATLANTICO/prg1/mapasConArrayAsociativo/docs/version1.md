@@ -6,5 +6,5 @@
 * Traducción (parseo) de los tiles mediante mapea()
 
 <div align=center>
-    <img src="../../../../images/ArrayAsociativoV1.png" width="50%" />
+    <img src="/images/ArrayAsociativoV1.png" width="50%" />
 </div>
