@@ -52,31 +52,13 @@ Estos pilares los veníamos aplicando **antes de que apareciera ChatGPT**, pero 
 
 ### ¿Qué buscamos?
 
-#### Que sepan hacer lo que hacen los profesionales de verdad
+<div align=center>
 
-- Capacidad de revisar y mantener código (propio y ajeno)
-- Habilidad de justificar decisiones técnicas ante clientes y pares
-- Competencia de modificar implementaciones ante nuevos requisitos
-- Responsabilidad sobre el código producido
+|![](/images/modelosUML/queBuscamos.svg)
+|-
 
-#### Distinguir quien *entiende* de quien *memoriza*
 
-- Identificar quién realmente comprende vs. quién memorizó patrones
-- Detectar cuando alguien entrega código que no entiende (sea de IA, compañeros o internet)
-- Valorar la evolución del pensamiento, no solo el resultado final
-
-#### Hacer que copiar, *en el sentido "clásico" del término*, no tenga sentido
-
-- Cada examen es único porque deriva del código único de cada estudiante
-- Copiar código de otro se vuelve un problema: te examinan sobre código que no entiendes
-- Las revisiones continuas detectan cuando el estilo de código cambia repentinamente
-
-#### Preparar para la realidad profesional (con IA)
-
-- Usar IA como herramienta legítima, con responsabilidad sobre el output
-- Documentar el proceso de creación, no solo el producto
-- Demostrar capacidad de auditar, corregir y extender código generado
-
+</div>
 ### Resultados observables
 
 |Para los estudiantes|Para los docentes|Para la institución|

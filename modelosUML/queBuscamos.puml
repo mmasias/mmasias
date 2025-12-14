@@ -1,0 +1,50 @@
+@startuml
+
+hide empty members
+
+
+state HACER as "<b>Que sepan hacer lo que hacen los profesionales de verdad</b>" {
+    state HACER1 as "Capacidad de revisar y mantener código (propio y ajeno)"
+    state HACER2 as "Habilidad de justificar decisiones técnicas ante clientes y pares"
+    state HACER3 as "Competencia de modificar implementaciones ante nuevos requisitos"
+    state HACER4 as "Responsabilidad sobre el código producido"
+
+}
+
+state DISTINGUIR as "<b>Distinguir quien *entiende* de quien memoriza</b>" {
+    state DISTINGUIR1 as "Identificar quién realmente comprende vs. quién memorizó patrones"
+    state DISTINGUIR2 as "Detectar cuando alguien entrega código que no entiende (sea de IA, compañeros o internet)"
+    state DISTINGUIR3 as "Valorar la evolución del pensamiento, no solo el resultado final"
+}
+
+state COPIAR as "<b>Hacer que copiar, en el sentido 'clásico' del término, no tenga sentido</b>" {
+    state COPIAR1 as "Cada examen es único porque deriva del código único de cada estudiante"
+    state COPIAR2 as "Copiar código de otro se vuelve un problema: te examinan sobre código que no entiendes"
+    state COPIAR3 as "Las revisiones continuas detectan cuando el estilo de código cambia repentinamente"
+}
+
+
+state PREPARAR as "<b>Preparar para la realidad profesional (con IA)</b>" {
+    state PREPARAR1 as "Usar IA como herramienta legítima, con responsabilidad sobre el output"
+    state PREPARAR2 as "Documentar el proceso de creación, no solo el producto"
+    state PREPARAR3 as "Demostrar capacidad de auditar, corregir y extender código generado"
+}
+
+HACER -[hidden]r-> DISTINGUIR
+DISTINGUIR -[hidden]d-> COPIAR
+COPIAR -[hidden]l-> PREPARAR
+
+HACER1 -[hidden]-> HACER2
+HACER2 -[hidden]-> HACER3
+HACER3 -[hidden]-> HACER4
+
+DISTINGUIR1 -[hidden]-> DISTINGUIR2
+DISTINGUIR2 -[hidden]-> DISTINGUIR3
+
+COPIAR1 -[hidden]-> COPIAR2
+COPIAR2 -[hidden]-> COPIAR3
+
+PREPARAR1 -[hidden]-> PREPARAR2
+PREPARAR2 -[hidden]-> PREPARAR3
+
+@enduml
