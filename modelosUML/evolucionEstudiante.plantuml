@@ -1,0 +1,77 @@
+@startuml evolucionEstudiante
+
+skinparam state {
+    BackgroundColor<<profesional>> LightGreen
+    BackgroundColor<<inicial>> LightYellow
+    BackgroundColor<<intermedio>> LightBlue
+}
+
+[*] --> Principiante
+
+state "Principiante" as Principiante <<inicial>> {
+    state "Necesita ejemplos\npara hacer" as NecesitaEjemplos
+    state "Copia patrones\nsin entender" as CopiaPatrones
+
+    NecesitaEjemplos --> CopiaPatrones : Trabaja con modelos
+}
+
+state "Ejecutor" as Ejecutor <<intermedio>> {
+    state "Hace sin copiar\npatrones directamente" as HaceSinCopiar
+    state "Modifica código\nexistente" as ModificaCodigo
+
+    HaceSinCopiar --> ModificaCodigo : Practica
+}
+
+state "Comprensor" as Comprensor <<intermedio>> {
+    state "Entiende lo\nque hace" as Entiende
+    state "Explica sus\ndecisiones" as Explica
+    state "Detecta sus\npropios errores" as DetectaErrores
+
+    Entiende --> Explica : Reflexiona
+    Explica --> DetectaErrores : Revisa
+}
+
+state "Autónomo" as Autonomo <<intermedio>> {
+    state "Defiende su\ncódigo" as Defiende
+    state "Propone\nalternativas" as ProponeAlternativas
+    state "Copiar no\nle ayuda" as CopiarNoAyuda
+
+    Defiende --> ProponeAlternativas : Analiza
+    ProponeAlternativas --> CopiarNoAyuda : Comprende profundamente
+}
+
+state "Profesional" as Profesional <<profesional>> {
+    state "Usa IA con\ncriterio" as UsaIA
+    state "Documenta su\nproceso" as Documenta
+    state "Asume responsabilidad\nsobre su código" as Responsabilidad
+
+    UsaIA --> Documenta : Transparencia
+    Documenta --> Responsabilidad : Madurez profesional
+}
+
+Principiante --> Ejecutor : Aprende a hacer\n(Objetivo 1)
+Ejecutor --> Comprensor : Distingue comprensión\nde memorización\n(Objetivo 2)
+Comprensor --> Autonomo : Ya no necesita\ncopiar\n(Objetivo 3)
+Autonomo --> Profesional : Listo para entorno\nprofesional\n(Objetivo 4)
+
+Profesional --> [*]
+
+note right of Principiante
+  **Estado inicial**
+  Típico de primeras semanas
+end note
+
+note right of Profesional
+  **Estado objetivo**
+  Preparado para
+  entorno laboral
+end note
+
+note bottom of Comprensor
+  Aquí es donde la evaluación
+  tradicional falla: mide si están
+  en "Ejecutor" cuando necesitamos
+  que estén en "Comprensor"
+end note
+
+@enduml

@@ -1,0 +1,67 @@
+@startuml evolucionSimple
+
+skinparam state {
+    BackgroundColor<<objetivo>> LightCyan
+    FontSize 14
+    
+}
+
+[*] --> Hace
+
+state "<b>1. Sabe HACER\n<b>lo que hacen los profesionales" as Hace <<objetivo>> {
+    Hace : Revisar y mantener código
+    Hace : Justificar decisiones técnicas
+    Hace : Modificar implementaciones
+    Hace : Asumir responsabilidad
+}
+
+state "<b>2. ENTIENDE\n<b>vs. memoriza" as Entiende <<objetivo>> {
+    Entiende : Comprende realmente
+    Entiende : No solo reproduce patrones
+    Entiende : Detecta código que no entiende
+    Entiende : Valora el pensamiento evolutivo
+}
+
+state "<b>3. COPIAR no ayuda\n<b>en la evaluación" as NoCopia <<objetivo>> {
+    NoCopia : Examen sobre SU código
+    NoCopia : Copiar genera problema
+    NoCopia : Estilo evolutivo es detectable
+}
+
+state "<b>4. LISTO para\n<b>realidad profesional" as Listo <<objetivo>> {
+    Listo : IA como herramienta legítima
+    Listo : Documenta su proceso
+    Listo : Audita y gestiona lo generado
+}
+
+Hace --> Entiende : Desarrolla\ncomprensión
+Entiende --> NoCopia : Ya no\nnecesita
+NoCopia --> Listo : Preparado para\nIA + responsabilidad
+
+Listo --> [*]
+
+note right of Hace
+  **Punto de partida**
+  Adquirir habilidades prácticas
+end note
+
+note right of Entiende
+  **Clave del sistema**
+  Aquí falla la evaluación tradicional:
+  mide "Hace" pero no "Entiende"
+end note
+
+note right of NoCopia
+  **Efecto natural**
+  No prohibimos copiar,
+  simplemente no sirve
+  para aprobar
+end note
+
+note right of Listo
+  **Estado objetivo**
+  Profesional competente
+  en era de IA
+end note
+
+@enduml

@@ -55,7 +55,8 @@ Estos pilares los veníamos aplicando **antes de que apareciera ChatGPT**, pero 
 <div align=center>
 
 |![](/images/modelosUML/queBuscamos.svg)
-|-
+|:-:
+<sub>Evolución [1](/images/modelosUML/evolucionSimple.svg) / [2](/images/modelosUML/evolucionEstudiante.svg)</sub>
 
 
 </div>
