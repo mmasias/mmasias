@@ -59,6 +59,7 @@ Estos pilares los veníamos aplicando **antes de que apareciera ChatGPT**, pero 
 
 
 </div>
+
 ### Resultados observables
 
 |Para los estudiantes|Para los docentes|Para la institución|
