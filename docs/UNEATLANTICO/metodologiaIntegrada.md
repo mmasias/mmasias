@@ -1,12 +1,12 @@
 # Metodología integrada de enseñanza en ingeniería informática
 
-Una aproximación pedagógica centrada en la comprensión real, preparada para la era de la IA antes de que existiera
+Enseñar programación como se trabaja en la realidad, no como piden los exámenes tradicionales
 
 ## ¿Por qué?
 
-### El problema estructural de la evaluación tradicional
+### Lo que no funciona
 
-La educación en programación enfrenta una contradicción fundamental: enseñamos a resolver problemas complejos, a tomar decisiones de diseño, a argumentar soluciones técnicas... pero luego evaluamos mediante exámenes que miden memorización y reproducción de patrones en un contexto artificial.
+Hay una contradicción que vemos todos: enseñamos a resolver problemas complejos, a tomar decisiones de diseño, a argumentar soluciones técnicas... pero luego evaluamos con exámenes que miden memorización y reproducción de patrones en un contexto artificial.
 
 ### Tres síntomas del mismo problema
 
@@ -26,17 +26,17 @@ La pregunta real no es *¿cómo evitar que usen IA?* sino *¿por qué nuestro si
 
 Esto es porque no evaluamos comprensión real, sino capacidad de reproducir patrones en contexto controlado.
 
-### El principio rector
+### La idea base
 
 Si un estudiante no puede explicar, defender y modificar el código que entrega, **ese código no demuestra aprendizaje**. Independientemente de cómo se haya generado.
 
-Este principio no nace con ChatGPT. Es la base de la competencia profesional en ingeniería: la responsabilidad técnica no se delega.
+Esta idea no nace con ChatGPT. Es la base de la competencia profesional en ingeniería: la responsabilidad técnica no se delega.
 
 ## ¿Qué?
 
-### Un sistema pedagógico basado en tres pilares
+### Tres ideas que se refuerzan entre sí
 
-La metodología implementada en el grado de Ingeniería Informática de UNEATLANTICO se estructura sobre tres pilares complementarios:
+Lo que hacemos en el grado de Ingeniería Informática de UNEATLANTICO se basa en tres pilares complementarios:
 
 <div align=center>
 
@@ -46,32 +46,32 @@ El aprendizaje ocurre durante la creación, no solo en el resultado final. Se ca
 
 </div>
 
-Estos pilares se implementan mediante un ecosistema de prácticas y herramientas que **preceden a la aparición de los LLMs**, pero que resultan naturalmente resistentes a su uso indiscriminado.
+Estos pilares los veníamos aplicando **antes de que apareciera ChatGPT**, pero resultan naturalmente resistentes al uso indiscriminado de IA.
 
 ## ¿Para qué?
 
-### Objetivos pedagógicos del sistema
+### ¿Qué buscamos?
 
-#### Desarrollar competencias profesionales reales
+#### Que sepan hacer lo que hacen los profesionales de verdad
 
 - Capacidad de revisar y mantener código (propio y ajeno)
 - Habilidad de justificar decisiones técnicas ante clientes y pares
 - Competencia de modificar implementaciones ante nuevos requisitos
 - Responsabilidad sobre el código producido
 
-#### Distinguir comprensión real de reproducción superficial
+#### Distinguir quien *entiende* de quien *memoriza*
 
-- Identificar quién entiende vs. quién memorizó patrones
-- Detectar delegación sin comprensión (a IA, a compañeros, a StackOverflow)
+- Identificar quién realmente comprende vs. quién memorizó patrones
+- Detectar cuando alguien entrega código que no entiende (sea de IA, compañeros o internet)
 - Valorar la evolución del pensamiento, no solo el resultado final
 
-#### Imposibilitar el fraude estructuralmente
+#### Hacer que copiar no tenga sentido
 
 - Cada examen es único porque deriva del código único de cada estudiante
-- Copiar código ajeno se vuelve contraproducente: genera examen sobre código no comprendido
-- La evaluación continua mediante revisiones de código detecta inconsistencias de estilo
+- Copiar código de otro se vuelve un problema: te examinan sobre código que no entiendes
+- Las revisiones continuas detectan cuando el estilo de código cambia repentinamente
 
-#### Preparar para la realidad profesional con IA
+#### Preparar para la realidad profesional (con IA)
 
 - Usar IA como herramienta legítima, con responsabilidad sobre el output
 - Documentar el proceso de creación, no solo el producto
@@ -90,9 +90,9 @@ Estos pilares se implementan mediante un ecosistema de prácticas y herramientas
 
 ### Pilar 1: Captura del proceso de creación
 
-#### Repositorios como infraestructura pedagógica
+#### Git no es solo para entregar trabajos
 
-Los repositorios Git no son un sistema de entrega, son la plataforma de captura de evidencias del proceso de aprendizaje.
+Los repositorios Git no son un simple buzón de entregas. Son la herramienta que captura todo el proceso de aprendizaje.
 
 Cada asignatura opera sobre un repositorio central (ej: `mmasias/25-26-PRG1`) donde los estudiantes:
 
@@ -182,11 +182,11 @@ Estas herramientas permiten:
 
 #### Exámenes personalizados desde código real
 
-Metodología implementada desde curso 2024-25:
+Lo hacemos desde el curso 2024-25:
 
-En lugar de presentar problemas genéricos a todos los estudiantes, cada uno recibe un examen único generado mediante análisis automatizado de su código en Git.
+En lugar de dar el mismo examen a todos, cada estudiante recibe preguntas únicas generadas automáticamente desde su propio código en Git.
 
-Proceso:
+Cómo funciona:
 
 1. Sistema extrae código de todos los PRs del estudiante
 1. LLM analiza el código buscando fragmentos interesantes (lógica redundante, nomenclatura inconsistente, estructuras complejas, errores tipográficos)
@@ -257,27 +257,27 @@ En lugar de preguntas de opción múltiple o ejercicios algorítmicos aislados, 
 
 Estos criterios no pueden satisfacerse mediante memorización. Requieren comprensión profunda.
 
-#### Política explícita sobre uso de IA
+#### Nuestra postura sobre el uso de IA
 
-Documento establecido curso 2025-26 (tras aparición de ChatGPT):
+Lo tenemos claro "desde siempre" y explicitado el curso 2025-26:
 
-**Principio:** La IA es herramienta legítima. El fraude no es usarla, sino entregar trabajo no defendible.
+**La idea base:** La IA es una herramienta legítima. El problema no es usarla, sino entregar código que no puedes explicar.
 
-**Categorías de uso:**
+**Dos situaciones diferentes:**
 
 <div align=center>
 
-|Uso instrumental-mecánico|Uso generativo-conceptual|
+|Uso básico (correcciones, formato)|Uso avanzado (generar lógica)|
 |-|-|
-| Corrección sintáctica, reformulación, código base estándar | Generación de lógica, algoritmos, estructuras |
-| Permitido sin documentación | Permitido con documentación obligatoria en commits/PRs |
-| Equivalente a autocompletado de IDE | Debe poder explicarse en *code review* |
+| Corrección de sintaxis, reformulación, código estándar | Generación de algoritmos, estructuras de datos, lógica compleja |
+| No hace falta documentarlo | Hay que documentarlo en commits/PRs |
+| Como usar el autocompletado del editor | Tienes que poder explicarlo en las revisiones |
 
 </div>
 
-#### Responsabilidad del estudiante
+#### Lo que pedimos al estudiante
 
-Capacidad de:
+Debe ser capaz de:
 
 - Explicar cada decisión de diseño
 - Defender por qué esa solución es apropiada
@@ -295,43 +295,43 @@ Lo crítico: esta política **no prohíbe IA, exige responsabilidad**. El mismo 
 
 **Ejemplo de documentación transparente:**
 
-Este mismo documento aplica el principio de transparencia en el uso de herramientas. Ver [sistema de etiquetado ético](../ai/etiquetadoEtico.md) para framework completo de documentación de contribuciones humano-IA en creación de contenidos.
+Este mismo documento aplica el principio de transparencia en el uso de herramientas. Ver [sistema de etiquetado ético](../ai/etiquetadoEtico.md) para más detalles sobre cómo documentar contribuciones humano-IA.
 
-### La integración: un sistema cohesivo
+### Cómo se conecta todo
 
-Estos tres pilares no son iniciativas aisladas. Forman un sistema que se refuerza mutuamente:
+Estos tres pilares no están aislados. Se refuerzan entre sí:
 
-|El proceso capturado en Git alimenta la evaluación personalizada|Las herramientas de seguimiento automatizado liberan tiempo para evaluación auténtica|La evaluación auténtica incentiva documentación honesta del proceso|El sistema es resistente a IA no porque la bloquee, sino porque la integra bajo principio de responsabilidad|
+|El proceso capturado en Git alimenta la evaluación personalizada|Las herramientas automáticas liberan tiempo para lo importante|La evaluación sobre código propio incentiva documentación honesta|El sistema es resistente a IA no porque la bloquee, sino porque la integra con responsabilidad|
 |-|-|-|-|
 Los commits del estudiante son la materia prima para generar su examen único. No hay desconexión entre lo que hizo durante el curso y lo que debe defender.|El docente no pierde horas verificando entregas manualmente, sino que dedica ese tiempo a revisiones de código significativas.|Si sé que me van a preguntar sobre mi código, tengo incentivo para comprenderlo realmente, no solo para que funcione. Si usé IA, debo documentarlo porque me ayudará a recordar qué generé y qué adapté.|Usar ChatGPT para generar código no es trampa. Entregar código que no puedes explicar, sí.
 
 ### La cronología que importa
 
-|2022-2023: Antes de ChatGPT|Noviembre 2022: Aparece ChatGPT|2023-2024: Consolidación|2024-2025: Operación a escala|2025-2026: Explicitación|
+|2022-2023: Antes de ChatGPT|Noviembre 2022: Aparece ChatGPT|2023-2024: Ajustes|2024-2025: A toda máquina|2025-2026: Por escrito|
 |-|-|-|-|-|
-|Ya usábamos Git como infraestructura pedagógica|No cambiamos la metodología fundamental|Automatización completa de seguimiento de entregas|45 exámenes personalizados generados en 3 horas|Política explícita sobre IA (formalización de principios existentes)
-|Ya evaluábamos mediante defensa oral de código|Añadimos requisito de documentación para uso generativo de IA|Primer piloto de exámenes personalizados automatizados|Sistema de seguimiento integrado en todas las asignaturas
-|Ya permitíamos consultar materiales durante exámenes|Reforzamos énfasis en code reviews||Trackers públicos de actividad estudiantil
-|Ya aplicábamos rúbricas de comprensión vs. memorización|Desarrollamos sistema de exámenes personalizados (ya planeado, acelerado por contexto)||
+|Ya usábamos Git para todo|No cambiamos lo fundamental|Seguimiento automatizado de entregas|45 exámenes personalizados en 3 horas|Política sobre IA por escrito (lo que ya hacíamos)
+|Ya evaluábamos con defensa oral|Pedimos documentar cuando la IA genera lógica|Primera prueba de exámenes personalizados|Sistema de seguimiento en todas las asignaturas
+|Ya se podía consultar material en exámenes|Más énfasis en revisiones de código||Herramientas públicas de actividad
+|Ya buscábamos comprensión vs. memorización|Aceleramos el sistema de exámenes personalizados (ya lo teníamos planeado)||
 
 **La lección:** No adaptamos nuestro sistema para resistir a la IA. Nuestro sistema ya era resistente porque nunca evaluamos memorización. Los LLMs solo hicieron evidente lo que siempre fue verdad: los exámenes tradicionales no miden comprensión real.
 
 ## ¿Y ahora qué?
 
-### Replicabilidad y adopción
+### Si quieres aplicar esto en tu contexto
 
-#### Requisitos mínimos para implementar este modelo
+#### Qué hace falta
 
-|Técnicos|Pedagógicos|Organizacionales|
+|Técnicos|De enseñanza|De organización|
 |-|-|-|
-|Repositorio Git operativo (GitHub, GitLab, Bitbucket)|Cultura de uso de control de versiones establecida|Aceptación de que exámenes personalizados tienen dificultad variable (característica, no bug)
-|Acceso a LLM para generación de exámenes (opcional, acelera proceso)|Estudiantes que entreguen código periódicamente
-|Conocimientos básicos de scripting (Python, Google Apps Script)|Disposición docente a ceder control de generación de preguntas al proceso automatizado
-||Tiempo para revisiones de código (compensado por automatización de seguimiento)
+|Git funcionando (GitHub, GitLab, Bitbucket)|Que los estudiantes usen Git habitualmente|Aceptar que cada examen es diferente (y eso está bien)
+|Acceso a IA para generar exámenes (opcional, va más rápido)|Estudiantes que entreguen código regularmente
+|Saber algo de programación básica (Python, Google Apps Script)|Docente dispuesto a que las preguntas las genere el sistema
+||Tiempo para revisar código (que se gana automatizando el seguimiento)
 
-#### Casos de uso más allá del espectro informático
+#### Esto sirve para más cosas, no solo programación
 
-Aunque desarrollado para ingeniería informática, el modelo aplica a cualquier disciplina donde:
+Aunque lo desarrollamos para ingeniería informática, funciona en cualquier disciplina donde:
 
 - Exista producción incremental de artefactos (código, diseños, textos, modelos)
 - Se valore el proceso sobre el producto final
@@ -347,9 +347,9 @@ Adaptaciones posibles:
 
 El principio permanece: **si no puedes defender tu trabajo, no demuestras aprendizaje**.
 
-### Limitaciones reconocidas
+### Dónde no funciona
 
-**Este modelo no es solución universal:**
+**Esto no sirve para todo:**
 
 - No aplica cuando no existe producción previa. Primera semana de curso, conceptos puramente teóricos sin implementación, estudiantes que no entregaron nada. Solución: mantener banco de evaluaciones tradicionales para estos casos.
 
@@ -357,21 +357,21 @@ El principio permanece: **si no puedes defender tu trabajo, no demuestras aprend
 
 - Genera exámenes de dificultad variable. El estudiante que produjo código más sofisticado enfrenta examen más complejo. Esto es característica (evalúa lo que hicieron), pero puede percibirse como inequidad. Requiere comunicación clara.
 
-- Depende de infraestructura tecnológica. Requiere acceso a Git, APIs, LLMs. En contextos sin recursos tecnológicos, el modelo se dificulta o requiere adaptación manual (viable pero más costosa en tiempo).
+- Necesita tecnología. Requiere Git, APIs, acceso a IA. Sin estos recursos, hay que hacerlo manualmente (funciona pero lleva mucho más tiempo).
 
 - No elimina completamente la posibilidad de fraude sofisticado. Un estudiante podría pagar a alguien para que le genere código y luego estudiar ese código para defenderlo. Pero esto requiere esfuerzo equivalente a aprender genuinamente.
 
 ### Conclusión
 
-La llegada de los LLMs no ha requerido reinventar nuestra metodología porque nunca basamos la evaluación en reproducción mecánica de conocimiento.
+No tuvimos que reinventar nada cuando apareció ChatGPT porque nunca evaluamos la capacidad de memorizar y reproducir.
 
-Cuando los estudiantes pueden generar código funcional en segundos con ChatGPT, la pregunta relevante no es "¿cómo lo evitamos?" sino **"¿qué estábamos evaluando realmente?"**
+Cuando los estudiantes pueden generar código en segundos con ChatGPT, la pregunta importante no es "¿cómo lo evitamos?" sino **"¿qué estábamos evaluando realmente?"**
 
-Si lo que evaluábamos era capacidad de escribir algoritmos estándar sin ayuda externa, efectivamente, los LLMs destruyen ese modelo. Pero si evaluábamos **comprensión profunda, capacidad de justificación técnica y responsabilidad sobre código producido**, los LLMs son irrelevantes para la evaluación. De hecho, se vuelven herramienta legítima que los estudiantes deben aprender a usar responsablemente.
+Si evaluábamos escribir algoritmos estándar sin ayuda, sí, los LLMs rompen ese modelo. Pero si evaluábamos **comprensión, capacidad de justificar decisiones y responsabilidad sobre el código**, los LLMs no afectan. De hecho, son una herramienta más que los estudiantes deben aprender a usar con responsabilidad.
 
-El sistema descrito en este documento no fue diseñado para resistir a la IA. Fue diseñado para medir aprendizaje real. Y resulta que medir aprendizaje real es inherentemente resistente a cualquier herramienta de generación automática, porque **comprender no es lo mismo que generar**.
+Este sistema no se diseñó para resistir a la IA. Se diseñó para medir aprendizaje real. Y resulta que medir aprendizaje real es resistente a cualquier herramienta de generación automática, porque **comprender no es lo mismo que generar**.
 
-Esta es la lección fundamental: si tu sistema de evaluación se vuelve inútil cuando los estudiantes tienen acceso a herramientas modernas, el problema no son las herramientas. El problema es que nunca estuviste evaluando lo que creías evaluar.
+La lección: si tu sistema de evaluación deja de funcionar cuando los estudiantes tienen acceso a herramientas modernas, el problema no son las herramientas. El problema es que nunca estuviste evaluando lo que creías.
 
 ## Referencias
 
