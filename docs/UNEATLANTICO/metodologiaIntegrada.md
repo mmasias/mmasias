@@ -65,7 +65,7 @@ Estos pilares los veníamos aplicando **antes de que apareciera ChatGPT**, pero 
 - Detectar cuando alguien entrega código que no entiende (sea de IA, compañeros o internet)
 - Valorar la evolución del pensamiento, no solo el resultado final
 
-#### Hacer que copiar no tenga sentido
+#### Hacer que copiar, *en el sentido "clásico" del término*, no tenga sentido
 
 - Cada examen es único porque deriva del código único de cada estudiante
 - Copiar código de otro se vuelve un problema: te examinan sobre código que no entiendes
@@ -110,9 +110,9 @@ El historial captura automáticamente:
 - Contexto (comentarios en *pull requests*)
 - Interacciones con el docente
 
-#### Documentación activa del proceso
+#### Qué miramos más allá del código
 
-No se evalúa solo el código final. Se analiza:
+No evaluamos solo el código final. Analizamos:
 
 - ¿Cómo evolucionó la solución? (commits incrementales vs. commit único final)
 - ¿Qué decisiones se tomaron? (mensajes de commit descriptivos)
@@ -125,9 +125,9 @@ Esta documentación permite distinguir:
 - Comprensión progresiva vs. código generado externamente
 - Evolución de habilidades vs. estancamiento
 
-### Pilar 2: Automatización del seguimiento
+### Pilar 2: Herramientas que ahorran tiempo
 
-#### Sistema de control de entregas
+#### Saber quién entregó y cuándo
 
 Herramientas desarrolladas: funciones `verificaPR()` y `hayComentarios()` integradas en Google Sheets.
 
@@ -139,25 +139,25 @@ Capacidades:
 - Generación de enlaces directos a cada entrega
 - Actualización en tiempo real
 
-Beneficios operativos:
+Para qué sirve:
 
-- El docente no dedica tiempo a verificar manualmente quién entregó
+- El docente no pierde tiempo verificando manualmente quién entregó
 - Los estudiantes ven inmediatamente si su entrega fue registrada
 - Se mantiene registro histórico automático de todas las entregas
 - Se facilita la trazabilidad para casos de disputa
 
 #### Monitor de cambios en Google Drive
 
-Para documentos no versionados en Git (reflexiones, diagramas, documentación colaborativa):
+Para archivos que no están en Git (reflexiones, diagramas, documentación colaborativa):
 
 Script de Google Apps Script que:
 
-- Monitoriza carpetas específicas recursivamente
+- Vigila carpetas y todas sus subcarpetas
 - Detecta modificaciones en cualquier archivo
 - Envía notificaciones por email con detalles de cambios
 - Mantiene registro de quién modificó qué
 
-Aplicación pedagógica:
+Para qué lo usamos:
 
 - Seguimiento de documentación de proyectos
 - Verificación de contribuciones en trabajos grupales
@@ -206,7 +206,7 @@ Observa este fragmento. ¿Qué identificas? ¿Es correcto o hay algún problema?
 Si hay problema, ¿cuál es y cómo lo corregirías? Justifica tu respuesta.
 ```
 
-Resultados del caso de estudio (curso 25-26, PRG1):
+Resultados (curso 25-26, PRG1):
 
 - 45 exámenes personalizados (estudiantes con entregas)
 - 10 exámenes genéricos (estudiantes sin entregas)
@@ -214,10 +214,10 @@ Resultados del caso de estudio (curso 25-26, PRG1):
 - 100% trazabilidad con enlaces a commits
 - Generación: ~3 horas para 52 estudiantes
 
-Ventajas demostradas:
+Lo que conseguimos:
 
-- Imposibilidad técnica de plagio (cada examen es único)
-- Evaluación de competencia real (code review de código propio)
+- Copiar no ayuda en la evaluación (cada examen pregunta sobre tu propio código)
+- Miden comprensión real (revisión de su propio código)
 - Conexión directa entre práctica y evaluación
 - El estudiante no puede argumentar "esto no lo vimos" (es su código)
 
@@ -333,17 +333,17 @@ Los commits del estudiante son la materia prima para generar su examen único. N
 
 Aunque lo desarrollamos para ingeniería informática, funciona en cualquier disciplina donde:
 
-- Exista producción incremental de artefactos (código, diseños, textos, modelos)
-- Se valore el proceso sobre el producto final
-- La comprensión profunda sea más importante que la memorización
-- Las herramientas automatizadas (IA u otras) estén disponibles para estudiantes
+- Se produzca trabajo de forma progresiva (código, diseños, textos, modelos)
+- Importe más el proceso que el producto final
+- Se valore la comprensión por encima de la memorización
+- Los estudiantes tengan acceso a herramientas automatizadas (IA u otras)
 
-Adaptaciones posibles:
+Por ejemplo:
 
-- Arquitectura: defensa de decisiones de diseño en proyectos iterativos
-- Redacción académica: explicación de evolución de argumentos a través de borradores
-- Ingeniería en general: justificación de cálculos y suposiciones en entregas
-- Diseño: defensa de iteraciones y decisiones estéticas
+- Arquitectura: explicar por qué diseñaste así, mostrando las versiones previas
+- Redacción académica: defender cómo evolucionaron tus argumentos entre borradores
+- Ingeniería en general: justificar los cálculos y decisiones que tomaste
+- Diseño: explicar tus iteraciones y por qué elegiste cada opción
 
 El principio permanece: **si no puedes defender tu trabajo, no demuestras aprendizaje**.
 
@@ -351,15 +351,15 @@ El principio permanece: **si no puedes defender tu trabajo, no demuestras aprend
 
 **Esto no sirve para todo:**
 
-- No aplica cuando no existe producción previa. Primera semana de curso, conceptos puramente teóricos sin implementación, estudiantes que no entregaron nada. Solución: mantener banco de evaluaciones tradicionales para estos casos.
+- No funciona sin trabajo previo. Primera semana de curso, temas puramente teóricos, estudiantes que no entregaron nada. Solución: tener exámenes tradicionales para estos casos.
 
-- No evalúa conocimiento abstracto directamente. Complejidad algorítmica teórica, teoría de tipos, paradigmas sin implementación. Requiere evaluación complementaria tradicional.
+- No evalúa conocimiento teórico abstracto. Complejidad algorítmica teórica, teoría de tipos, paradigmas sin código. Necesitas evaluación tradicional complementaria.
 
-- Genera exámenes de dificultad variable. El estudiante que produjo código más sofisticado enfrenta examen más complejo. Esto es característica (evalúa lo que hicieron), pero puede percibirse como inequidad. Requiere comunicación clara.
+- Cada examen tiene diferente dificultad. Quien hizo código más complejo enfrenta preguntas más difíciles. Es lógico (defendes lo que hiciste), pero puede verse como injusto. Hay que explicarlo bien.
 
-- Necesita tecnología. Requiere Git, APIs, acceso a IA. Sin estos recursos, hay que hacerlo manualmente (funciona pero lleva mucho más tiempo).
+- Necesita tecnología. Sin Git, APIs e IA hay que hacerlo todo a mano (funciona pero lleva mucho más tiempo).
 
-- No elimina completamente la posibilidad de fraude sofisticado. Un estudiante podría pagar a alguien para que le genere código y luego estudiar ese código para defenderlo. Pero esto requiere esfuerzo equivalente a aprender genuinamente.
+- No elimina el fraude sofisticado al 100%. Alguien podría pagar por código y luego estudiarlo para defenderlo. Pero eso requiere tanto esfuerzo como aprender de verdad.
 
 ### Conclusión
 
@@ -375,14 +375,14 @@ La lección: si tu sistema de evaluación deja de funcionar cuando los estudiant
 
 ## Referencias
 
-- [Evaluación personalizada](evaluacionPersonalizada.md) - Detalle técnico del sistema de exámenes
-- [Proceso de creación](../procesoDeCreacion.md) - Filosofía del proceso sobre producto
-- [Rúbricas de defensa](Rubricus.md) - Criterios de evaluación de código
-- [Control de entregas](entregasGithub.md) - Sistema automatizado de seguimiento
+- [Evaluación personalizada](evaluacionPersonalizada.md) - Detalle de cómo generamos exámenes únicos
+- [Proceso de creación](../procesoDeCreacion.md) - Por qué importa el proceso, no solo el producto
+- [Rúbricas de defensa](Rubricus.md) - Cómo evaluamos cuando defienden código
+- [Control de entregas](entregasGithub.md) - Herramienta para saber quién entregó qué y cuándo
 - [Monitor de archivos](monitorArchivosGDrive.md) - Seguimiento en Google Drive
-- [Criterios de valoración](CdEx.md) - Framework de evaluación
+- [Criterios de valoración](CdEx.md) - Qué miramos al evaluar
 - [Cuadrantes de competencia](cuadrantes.md) - Conocer vs. saber usar
-- [Política de IA](2Think.md) - Marco para uso responsable de herramientas
+- [Política de IA](2Think.md) - Nuestra postura sobre uso de IA
 - [Etiquetado ético](../ai/etiquetadoEtico.md) - Transparencia en contribuciones humano-IA - [Debate sobre esto durante la creación de este documento](metaEtiqueda.md)
 
 ### Sobre este documento
