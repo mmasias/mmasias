@@ -11,7 +11,7 @@ Implementamos:
 * [El cielo en la parte superior](https://github.com/mmasias/misApuntes/blob/a0493da8552d566407f4f1b6329ea58f16982676/PROGRAMACION-1/mapasConArrayAsociativo/ArrayAsociativo005.java#L286), que muestra el sol en el día (sale a las 6:00h, a las 12:00h está en mitad del cielo y se oculta a las 18:00h).
 
 <div align=center>
-    <img src="../../../../images/ArrayAsociativoV5.png" width="50%" />
+    <img src="/images/ArrayAsociativoV5.png" width="50%" />
 </div>
 
 ## Simplificación & explicación de imprimirElCielo()
@@ -33,7 +33,7 @@ La fórmula es `((viewPort * 2)) - ((hora - 6) * (viewPort * 2) / 12)`.
 Supongamos que `viewPort` es 10. Entonces `viewPort * 2` es 20, representando el ancho total del cielo.
 
 <div align=center>
-    <img src="../../../../images/viewPort.jpg" width="75%" />
+    <img src="/images/viewPort.jpg" width="75%" />
 </div>
 
 - A las 6 AM (`hora = 6`), la fórmula sería `20 - ((6 - 6) * 20 / 12)`, lo que da 20. Esto coloca el sol en el extremo derecho.
