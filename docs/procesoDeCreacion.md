@@ -39,7 +39,7 @@ La educación en la ingeniería informática, en campos técnicos en particular 
 
 ### Para las dinámicas de trabajo
 
-- [Trazabilidad](https://github.com/mmasias/23-24-prg1/pulls?q=is%3Apr+is%3Aclosed).
+- [Trazabilidad](https://github.com/mmasias/23-24-prg1/pulls?q=is%3Apr+is%3Aclosed) / [Trazabilidad@GoogleDocs](https://docs.google.com/document/d/1KR5l9I9ykzrbq2YJ1wR0ys1lc44gGJyTnCqOoa_29qM/edit?tab=t.0)
 - Proceso de creación:
   - Trabajo individual
     - [Entrega](https://github.com/Ingenieria-Informatica-UNEATLANTICO/23-24-prg1-examen-final-Andecochea/commits/main/)
