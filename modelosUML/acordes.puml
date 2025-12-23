@@ -1,6 +1,8 @@
 @startuml
+skinparam defaultFontName Arial
+skinparam nodesep 25
+skinparam ranksep 35
 
-left to right direction
 ' Nivel 0: C
 circle C #FF6B6B
 
