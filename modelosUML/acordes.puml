@@ -1,0 +1,178 @@
+@startuml
+
+left to right direction
+' Nivel 0: C
+circle C #FF6B6B
+
+' Nivel 1 desde C: P=Cm, R=Am, L=Em
+circle Cm #4ECDC4
+circle Am #4ECDC4
+circle Em #4ECDC4
+
+C --> Cm : G7
+C --> Am : E7
+C --> Em : B7
+
+' Nivel 2 desde Cm: P=C(existe), R=Eb, L=Ab
+circle Eb #FF6B6B
+circle Ab #FF6B6B
+circle "C" as CM
+
+Cm --> CM : G7
+Cm --> Eb : Bb7
+Cm --> Ab : Eb7
+
+' Nivel 2 desde Am: P=A, R=C(existe), L=F
+circle A #FF6B6B
+circle F #FF6B6B
+circle "C" as CM2
+
+Am --> A : E7
+Am --> CM2 : G7
+Am --> F : C7
+
+' Nivel 2 desde Em: P=E, R=G, L=C(existe)
+circle E #FF6B6B
+circle G #FF6B6B
+circle "C" as CM3
+
+Em --> E : B7
+Em --> G : D7
+Em --> CM3 : G7
+
+' Nivel 3 desde Eb: P=Ebm, R=Cm(existe), L=Gm
+circle Ebm #4ECDC4
+circle Gm #4ECDC4
+circle "Cm" as Cm2
+
+Eb --> Ebm : Bb7
+Eb --> Cm2 : G7
+Eb --> Gm : D7
+
+' Nivel 3 desde Ab: P=Abm, R=Fm, L=Cm(existe)
+circle Abm #4ECDC4
+circle Fm #4ECDC4
+circle "Cm" as Cm3
+
+Ab --> Abm : Eb7
+Ab --> Fm : C7
+Ab --> Cm3 : G7
+
+' Nivel 3 desde A: P=Am(existe), R=F#m, L=C#m
+circle "F#m" as Fshm #4ECDC4
+circle "C#m" as Cshm #4ECDC4
+circle "Am" as Am2
+
+A --> Am2 : E7
+A --> Fshm : C#7
+A --> Cshm : G#7
+
+' Nivel 3 desde F: P=Fm, R=Dm, L=Am(existe)
+circle Dm #4ECDC4
+circle "Am" as Am3
+circle "Fm" as Fm2
+
+F --> Fm2 : C7
+F --> Dm : A7
+F --> Am3 : E7
+
+' Nivel 3 desde E: P=Em(existe), R=C#m(existe), L=G#m
+circle "G#m" as Gshm #4ECDC4
+circle "Em" as Em2
+circle "C#m" as Cshm2
+
+E --> Em2 : B7
+E --> Cshm2 : G#7
+E --> Gshm : D#7
+
+' Nivel 3 desde G: P=Gm, R=Em(existe), L=Bm
+circle Bm #4ECDC4
+circle "Em" as Em3
+circle "Gm" as Gm2
+
+G --> Gm2 : D7
+G --> Em3 : B7
+G --> Bm : F#7
+
+' Nivel 4 desde Ebm: P=Eb(existe), R=Gb, L=Cb
+circle Gb #FF6B6B
+circle Cb #FF6B6B
+circle "Eb" as Eb2
+
+Ebm --> Eb2 : Bb7
+Ebm --> Gb : Db7
+Ebm --> Cb : Gb7
+
+' Nivel 4 desde Gm: P=G(existe), R=Bb, L=Eb(existe)
+circle Bb #FF6B6B
+circle "G" as G2
+circle "Eb" as Eb3
+
+Gm2 --> G2 : D7
+Gm2 --> Bb : F7
+Gm2 --> Eb3 : Bb7
+
+' Nivel 4 desde Abm: P=Ab(existe), R=Cb(existe), L=Fb
+circle Fb #FF6B6B
+circle "Ab" as Ab2
+circle "Cb" as Cb2
+
+Abm --> Ab2 : Eb7
+Abm --> Cb2 : Gb7
+Abm --> Fb : Cb7
+
+' Nivel 4 desde Fm: P=F(existe), R=Ab(existe), L=Db
+circle Db #FF6B6B
+circle "F" as F2
+circle "Ab" as Ab3
+
+Fm2 --> F2 : C7
+Fm2 --> Ab3 : Eb7
+Fm2 --> Db : Ab7
+
+' Nivel 4 desde F#m: P=F#, R=A(existe), L=D
+circle "F#" as Fsh #FF6B6B
+circle D #FF6B6B
+circle "A" as A2
+
+Fshm --> Fsh : C#7
+Fshm --> A2 : E7
+Fshm --> D : A7
+
+' Nivel 4 desde C#m: P=C#, R=E(existe), L=A(existe)
+circle "C#" as Csh #FF6B6B
+circle "E" as E2
+circle "A" as A3
+
+Cshm --> Csh : G#7
+Cshm --> E2 : B7
+Cshm --> A3 : E7
+
+' Nivel 4 desde Dm: P=D(existe), R=F(existe), L=Am(existe)
+circle "D" as D2
+circle "F" as F3
+circle "Am" as Am4
+
+Dm --> D2 : A7
+Dm --> F3 : C7
+Dm --> Am4 : E7
+
+' Nivel 4 desde G#m: P=G#, R=B, L=E(existe)
+circle "G#" as Gsh #FF6B6B
+circle B #FF6B6B
+circle "E" as E3
+
+Gshm --> Gsh : D#7
+Gshm --> B : F#7
+Gshm --> E3 : B7
+
+' Nivel 4 desde Bm: P=B(existe), R=D(existe), L=G(existe)
+circle "B" as B2
+circle "D" as D3
+circle "G" as G3
+
+Bm --> B2 : F#7
+Bm --> D3 : A7
+Bm --> G3 : D7
+
+@enduml
