@@ -2222,7 +2222,14 @@ configure_pinentry() {
                     ;;
                 *)
                     sudo apt install -y pinentry-gtk2
-                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk-2"
+                    # Detectar nombre real del ejecutable (puede ser pinentry-gtk2 o pinentry-gtk-2)
+                    if [ -x /usr/bin/pinentry-gtk-2 ]; then
+                        set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk-2"
+                    elif [ -x /usr/bin/pinentry-gtk2 ]; then
+                        set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk2"
+                    else
+                        warning "No se encontró el ejecutable de pinentry-gtk2"
+                    fi
                     ;;
             esac
             ;;
