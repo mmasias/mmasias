@@ -1549,6 +1549,7 @@ configure_gpg() {
             
             if [[ -n "$shell_rc" ]]; then
                 if ! grep -q "export GPG_TTY" "$shell_rc"; then
+                    echo "" >> "$shell_rc"
                     echo "export GPG_TTY=\$(tty)" >> "$shell_rc"
                     info "Se ha añadido 'export GPG_TTY=\$(tty)' a $shell_rc"
                 fi
@@ -2193,6 +2194,9 @@ detect_desktop_environment() {
         echo "kde"
     elif [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]] || [[ "$DESKTOP_SESSION" == *"gnome"* ]]; then
         echo "gnome"
+    elif [[ "$XDG_CURRENT_DESKTOP" == *"Pantheon"* ]] || [[ "$DESKTOP_SESSION" == *"pantheon"* ]]; then
+        # Elementary OS usa Pantheon (basado en GNOME)
+        echo "gnome"
     elif [[ "$XDG_CURRENT_DESKTOP" == *"XFCE"* ]]; then
         echo "xfce"
     else
@@ -2218,7 +2222,7 @@ configure_pinentry() {
                     ;;
                 *)
                     sudo apt install -y pinentry-gtk2
-                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk2"
+                    set_gpg_agent_option "pinentry-program" "/usr/bin/pinentry-gtk-2"
                     ;;
             esac
             ;;
