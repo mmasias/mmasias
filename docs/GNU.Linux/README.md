@@ -72,7 +72,7 @@ La configuración incluye la fuente FiraCode Nerd Font Propo Medium 15 y se guar
 
 ### Lanzador bundungun
 
-<img src="../images/bundungunLogo.png" width=25% align=right>
+<img src="../../images/bundungunLogo.png" width=25% align=right>
 
 El script crea un lanzador llamado `bundungun` en `~/.local/bin/` que:
 
