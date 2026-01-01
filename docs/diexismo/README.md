@@ -2,11 +2,11 @@
 
 Cosas que he ido recopilando relativas al diexismo
 
-<div align=center
+<div align=center>
 
-|![](https://github.com/user-attachments/assets/12525367-518b-423f-b6ef-3673cd69f7eb)
-|-
-[Receptor de la Universidad de Twente](http://websdr.ewi.utwente.nl:8901/)
+|![](https://github.com/user-attachments/assets/12525367-518b-423f-b6ef-3673cd69f7eb)|[Receptor de la Universidad de Twente](http://websdr.ewi.utwente.nl:8901/)|
+|-|-|
+||El WebSDR de la Universidad de Twente es una interfaz web que permite sintonizar señales de radiofrecuencia reales capturadas por antenas físicas ubicadas en los Países Bajos, sin necesidad de poseer equipo receptor propio.
 
 </div>
 
