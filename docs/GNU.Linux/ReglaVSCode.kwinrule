@@ -1,0 +1,7 @@
+[Preferencias para la aplicación Code]
+Description=Preferencias para la aplicación Code
+clientmachine=localhost
+noborderrule=3
+wmclass=code Code
+wmclasscomplete=true
+wmclassmatch=1
