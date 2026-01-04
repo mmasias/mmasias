@@ -145,9 +145,11 @@ install_dependencies() {
 
             # Habilitar repositorios adicionales si están disponibles
             if command -v dnf &> /dev/null; then
-                # Para Fedora
+                # Para Fedora - Instalar RPM Fusion (free y nonfree)
                 if [[ "$DISTRO" == "fedora" ]]; then
+                    info "Instalando RPM Fusion (free y nonfree)..."
                     sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
+                    sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm || true
                 fi
             fi
 
@@ -225,85 +227,12 @@ EOF
     fi
 }
 
-# Instalar Brave Browser - NUEVO
-install_brave() {
-    info "Instalando Brave Browser..."
-
-    # Verificar si ya está instalado
-    if command -v brave-browser &> /dev/null; then
-        success "Brave Browser ya está instalado"
-        return 0
-    fi
-
-    case $DISTRO_FAMILY in
-        debian)
-            # Agregar clave y repositorio de Brave
-            if sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg; then
-                echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
-                if sudo apt update && sudo apt install -y brave-browser; then
-                    success "Brave Browser instalado correctamente desde repositorio oficial"
-                    return 0
-                else
-                    # Limpiar repositorio fallido
-                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
-                    sudo rm -f /etc/apt/sources.list.d/brave-browser-release.list
-                    sudo rm -f /usr/share/keyrings/brave-browser-archive-keyring.gpg
-                    sudo apt update
-                fi
-            fi
-
-            error "No se pudo instalar Brave Browser desde el repositorio oficial"
-            info "Puedes instalarlo manualmente desde: https://brave.com/download/"
-            return 1
-            ;;
-        rpm)
-            # Agregar repositorio de Brave
-            sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-            sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-
-            if sudo dnf install -y brave-browser; then
-                success "Brave Browser instalado correctamente desde repositorio oficial"
-                return 0
-            else
-                # Limpiar repositorio fallido
-                warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
-                sudo rm -f /etc/yum.repos.d/brave-browser.repo
-                sudo dnf clean all
-            fi
-
-            error "No se pudo instalar Brave Browser desde el repositorio oficial"
-            info "Puedes instalarlo manualmente desde: https://brave.com/download/"
-            return 1
-            ;;
-        arch)
-            if yay -S --noconfirm brave-bin; then
-                success "Brave Browser instalado correctamente desde AUR"
-                return 0
-            else
-                error "No se pudo instalar Brave Browser desde AUR"
-                info "Puedes instalarlo manualmente desde: https://brave.com/download/"
-                return 1
-            fi
-            ;;
-    esac
-}
-
-# Instalar Chrome y Brave - COMBINADO
+# Instalar Chrome
 install_browsers() {
-    info "Instalando navegadores..."
+    info "Instalando Google Chrome..."
     install_chrome
-    
-    # Hacer Brave opcional
-    echo
-    info "¿Deseas instalar Brave Browser?"
-    if confirm; then
-        install_brave
-    else
-        info "Instalación de Brave Browser omitida"
-    fi
-    
-    success "Navegadores instalados correctamente"
+
+    success "Navegador instalado correctamente"
 
     # Pausa informativa para acciones manuales necesarias
     echo
@@ -744,11 +673,30 @@ install_spotify() {
         rpm)
             # Método preferido: snap
             info "Instalando Spotify desde snap..."
-            if command -v snap &> /dev/null || sudo dnf install -y snapd; then
-                if sudo snap install spotify; then
-                    success "Spotify instalado correctamente desde snap"
-                    return 0
+
+            # Instalar snapd si no está instalado
+            if ! command -v snap &> /dev/null; then
+                info "Instalando snapd..."
+                sudo dnf install -y snapd
+
+                # Habilitar el servicio snapd en Fedora
+                info "Habilitando servicio snapd..."
+                sudo systemctl enable --now snapd.socket
+
+                # Crear symlink /snap necesario en Fedora
+                if [ ! -e /snap ]; then
+                    info "Creando symlink /snap..."
+                    sudo ln -s /var/lib/snapd/snap /snap
                 fi
+
+                # Esperar a que snapd esté listo
+                info "Esperando a que snapd esté listo..."
+                sleep 5
+            fi
+
+            if sudo snap install spotify; then
+                success "Spotify instalado correctamente desde snap"
+                return 0
             fi
 
             error "No se pudo instalar Spotify"
@@ -771,19 +719,28 @@ install_spotify() {
 # Instalar VLC
 install_vlc() {
     info "Instalando VLC..."
-    
+
     case $DISTRO_FAMILY in
         debian)
             sudo apt install -y vlc
             ;;
         rpm)
+            # En Fedora, VLC requiere RPM Fusion
+            if [[ "$DISTRO" == "fedora" ]]; then
+                # Verificar si RPM Fusion está instalado
+                if ! rpm -qa | grep -q rpmfusion-free-release; then
+                    info "RPM Fusion no detectado. Instalando RPM Fusion para VLC..."
+                    sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
+                    sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm || true
+                fi
+            fi
             sudo dnf install -y vlc
             ;;
         arch)
             sudo pacman -S --noconfirm vlc
             ;;
     esac
-    
+
     success "VLC instalado correctamente"
 }
 
@@ -1375,7 +1332,23 @@ install_utilities() {
 
             # Instalar VirtualBox
             info "Instalando VirtualBox..."
-            sudo dnf install -y VirtualBox
+            # VirtualBox requiere el repositorio oficial o RPM Fusion
+            if [[ "$DISTRO" == "fedora" ]]; then
+                # Verificar si RPM Fusion está instalado (método preferido para Fedora)
+                if ! rpm -qa | grep -q rpmfusion-free-release; then
+                    info "RPM Fusion no detectado. Instalando para VirtualBox..."
+                    sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
+                    sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm || true
+                fi
+                # Instalar VirtualBox y los módulos del kernel
+                sudo dnf install -y VirtualBox kernel-devel kernel-headers
+                # Agregar el usuario al grupo vboxusers
+                sudo usermod -aG vboxusers "$USER" || true
+                info "NOTA: Debes reiniciar la sesión para que los cambios del grupo vboxusers tengan efecto"
+            else
+                # Para otras distribuciones RPM (RHEL, CentOS, etc.)
+                sudo dnf install -y VirtualBox
+            fi
             ;;
         arch)
             # Herramientas de sistema básicas
@@ -1470,6 +1443,13 @@ install_github_cli() {
             sudo apt install -y gh
             ;;
         rpm)
+            # Agregar repositorio oficial de GitHub CLI para Fedora
+            if [ ! -f /etc/yum.repos.d/gh-cli.repo ]; then
+                info "Agregando repositorio oficial de GitHub CLI..."
+                sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+            else
+                info "Repositorio de GitHub CLI ya configurado"
+            fi
             sudo dnf install -y gh
             ;;
         arch)
@@ -1931,7 +1911,6 @@ check_status() {
     echo "NAVEGADORES"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     check_item "Google Chrome" "google-chrome"
-    check_item "Brave Browser" "brave-browser"
     
     echo
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -2065,7 +2044,7 @@ show_menu() {
     echo "=============================================="
     echo
     printf "%-45s %s\n" "1)  Todo!" "2)  Dependencias básicas"
-    printf "%-45s %s\n" "3)  Configurar Git" "4)  Navegadores (Chrome & Brave)"
+    printf "%-45s %s\n" "3)  Configurar Git" "4)  Google Chrome"
     printf "%-45s %s\n" "5)  JDK & graphviz" "6)  PlantUML"
     printf "%-45s %s\n" "7)  Visual Studio Code" "8)  Antigravity IDE"
     printf "%-45s %s\n" "9)  GitHub CLI" "10) Configurar firma GPG"
