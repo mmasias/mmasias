@@ -322,6 +322,21 @@ sudo cupsctl --no-debug-logging
    tail -50 /var/log/cups/error_log | grep -i error
    ```
 
+### PDFs firmados digitalmente no imprimen
+
+Los PDFs con firma digital pueden contener estructuras internas complejas (capas de firma, anotaciones, certificados embebidos) que el filtro `rastertoufr2` de Canon no procesa correctamente. El trabajo aparece como "completado" en CUPS pero no sale nada en la impresora.
+
+**Solución**: Aplanar el PDF antes de imprimir usando `pdftocairo`:
+
+```bash
+pdftocairo -pdf documento_firmado.pdf documento_aplanado.pdf
+lp documento_aplanado.pdf
+```
+
+Esto elimina las capas de firma y convierte el documento a un PDF simple que el driver puede procesar sin problemas.
+
+> **Nota**: El documento aplanado pierde la firma digital (ya no es verificable), pero el contenido visual se mantiene intacto.
+
 ### Error de autenticación
 
 Verificar que Job Accounting está habilitado:
