@@ -75,5 +75,15 @@ Finalmente tome los dos soportes numerados 100644 y 100402. Estos soportes se in
 
 Para completar el montaje, el armario debe fijarse a la pared usando los dispositivos 10046275 que ya instaló. Coloque el armario en su posición final contra la pared. Marque en la pared la posición de los agujeros de los dispositivos de fijación. Retire temporalmente el armario, taladre agujeros en la pared en las posiciones marcadas e inserte tacos adecuados para su tipo de pared. Vuelva a colocar el armario contra la pared y atornille los dispositivos de fijación a los tacos de la pared usando tornillos adecuados (no incluidos). Los tornillos deben tener un diámetro de 5 milímetros y ser lo suficientemente largos para atravesar el dispositivo de fijación y anclarse firmemente en el taco de la pared. Apriete los tornillos firmemente para asegurar que el armario no pueda volcarse.
 </td>
-    <td align=center valign=top> <a href="https://www.ikea.com/es/en/assembly_instructions/pax-wardrobe-frame-white__AA-2496555-2-2.pdf#page=9">Manual</a></td></tr>
+<td align=center valign=top> <a href="https://www.ikea.com/es/en/assembly_instructions/pax-wardrobe-frame-white__AA-2496555-2-2.pdf#page=9">Manual</a></td></tr>
 </table>
+
+## Ejemplo 3
+
+<table>
+<tr><td width=50%><img src="https://github.com/user-attachments/assets/fc411636-ba73-485d-8b37-baf11b0da720"></td><td width=50% align=center valign=top><img src="https://github.com/user-attachments/assets/f3836189-6d6c-498b-a160-02bbc5d6ef89"></td></tr>
+</table>
+
+
+
+
