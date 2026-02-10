@@ -1,0 +1,47 @@
+@startuml
+
+package "Patrones Temporales y Estructurales" {
+  
+  class Secuencial {
+    + orden determinado
+    + no implica repetición
+  }
+  
+  class Recurrente {
+    + reaparición eventual
+    + intervalos variables
+    + sin consecutividad
+  }
+  
+  class Iterativo {
+    + repetición consecutiva
+    + periodicidad fija
+    + ciclos independientes
+  }
+  
+  class Recursivo {
+    + autocontención estructural
+    + autosimilitud
+    + ortogonal al tiempo
+  }
+  
+  Secuencial <|-- Iterativo : requiere
+  Secuencial <.. Recurrente : puede tener
+  
+  note right of Recursivo
+    Dimensión ortogonal:
+    estructura, no tiempo
+  end note
+  
+  note bottom of Iterativo
+    Secuencial + Repetición
+    + Consecutividad
+  end note
+  
+  note bottom of Recurrente
+    Puede o no mantener
+    orden secuencial
+  end note
+}
+
+@enduml
