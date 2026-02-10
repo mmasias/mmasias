@@ -16,8 +16,9 @@ Se proponen cuatro categorías que capturan distinciones fundamentales:
 
 |Secuencial|Recurrente|Iterativo|Recursivo|
 |-|-|-|-|
-|**Definición:** Proceso o estructura donde los elementos tienen orden temporal o lógico determinado.|**Definición:** Fenómeno que reaparece eventualmente sin patrón temporal fijo.|**Definición:** Proceso donde la misma estructura operacional se repite consecutivamente sin saltos.|**Definición:** Estructura que se contiene a sí misma.|
-|A precede a B, B precede a C.|Los intervalos entre apariciones son variables o impredecibles. No hay garantía de consecutividad.|Cada instancia es cualitativamente similar a las anteriores. La repetición es predecible y regular.|Un patrón se replica dentro de sí mismo a diferentes escalas o niveles.|
+|**Definición**
+|Proceso o estructura donde los elementos tienen orden temporal o lógico determinado.|Fenómeno que reaparece eventualmente sin patrón temporal fijo.|Proceso donde la misma estructura operacional se repite consecutivamente sin saltos.|Estructura que se contiene a sí misma.|
+|*A precede a B, B precede a C.*|*Los intervalos entre apariciones son variables o impredecibles. No hay garantía de consecutividad.*|*Cada instancia es cualitativamente similar a las anteriores. La repetición es predecible y regular.*|*Un patrón se replica dentro de sí mismo a diferentes escalas o niveles.*|
 |No implica repetición ni causalidad entre elementos, solo ordenamiento.|El fenómeno puede estar ausente durante periodos indefinidos antes de reaparecer.|Cada ciclo es estructuralmente independiente: el ciclo N no determina causalmente el ciclo N+1.|No es primariamente temporal sino relacional: la entidad completa y sus componentes comparten la misma organización estructural.|
 |**Propiedad distintiva**
 |La eliminación del orden destruye el proceso.|Intermitencia. La reaparición es eventual, no programada.|Consecutividad. Entre dos instancias iterativas no hay intervalos aleatorios.|Autosimilitud o autorreferencia. La definición del todo incluye instancias del todo mismo.|
