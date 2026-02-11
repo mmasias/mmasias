@@ -95,6 +95,6 @@ Enfrentado a un fenómeno, proceso o estructura de datos:
 
 Este análisis precede cualquier decisión de implementación. La estructura del problema dicta la estrategia de solución natural.
 
-> Con esto en mente, se puede [analizar y concretar la 🚬](respuestaREADME.md)
+> Con esto en mente, se puede [analizar y concretar la 🚬](respuestaREADME.md). Es interesante visitar además el [repo de Luis](https://codigus.dev/cursos/curso-codigus-magnificus/material/1-fundamentos/1-patrones/#tipos-de-patrones)
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
