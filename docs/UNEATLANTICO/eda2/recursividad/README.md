@@ -52,4 +52,6 @@ Clasificar los casos anteriores en grupos.
 - ¿Cuántos grupos hacen falta?
 - ¿Qué criterio se usa para asignar cada caso a un grupo?
 
+Claramente nos hace falta tomar conciencia y concretar [**patrones**](patrones.md)
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
