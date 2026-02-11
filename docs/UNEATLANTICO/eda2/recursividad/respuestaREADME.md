@@ -40,3 +40,5 @@
 |||
 |-|-|
 Como tantas otras veces en la carrera y en la vida, no existe una "respuesta única perfecta" sino que hace falta que apliquemos el razonamiento ***explícito y formal*** sobre qué dimensiones pesan más en cada clasificación.|El valor no está en memorizar "X es iterativo, Y es recursivo", sino en **poder justificar** la clasificación usando los criterios que hemos revisado. Dos personas pueden clasificar el mismo fenómeno diferente y ambas tener razón si sus justificaciones son coherentes con los criterios aplicados.
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

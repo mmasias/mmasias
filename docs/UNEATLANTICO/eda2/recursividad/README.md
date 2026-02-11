@@ -40,3 +40,5 @@ Clasificar los casos anteriores en grupos.
 
 - ¿Cuántos grupos hacen falta?
 - ¿Qué criterio se usa para asignar cada caso a un grupo?
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

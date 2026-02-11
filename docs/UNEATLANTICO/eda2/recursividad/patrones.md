@@ -96,3 +96,5 @@ Enfrentado a un fenómeno, proceso o estructura de datos:
 Este análisis precede cualquier decisión de implementación. La estructura del problema dicta la estrategia de solución natural.
 
 > Con esto en mente, se puede [analizar y concretar la 🚬](respuestaREADME.md)
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
