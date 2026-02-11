@@ -3,17 +3,34 @@
 Considere los siguientes procesos y estructuras:
 
 - El corazón
+
 - Las estaciones  
+
 - Los terremotos
+
 - Un río
+
 - Un niño
+
 - Las crisis económicas
+
 - Una oración
+
 - Los semáforos
+
 - La erosión
+
 - Las migrañas
 
 ¿Qué tienen en común? ¿En qué difieren fundamentalmente?
+
+## El problema
+
+Decir que todos estos fenómenos "se repiten" o "tienen patrones" o "son cíclicos" es claramente insuficiente.
+
+***¿Cómo distinguimos fundamentalmente entre estos fenómenos?***
+
+## Describámoslos
 
 ||||||
 |-|-|-|-|-|
@@ -27,12 +44,6 @@ Considere los siguientes procesos y estructuras:
 |Los semáforos|**ciclan**|Verde → amarillo → rojo → verde.|Cada 90 segundos exactos.|El ciclo nunca se salta ni se alarga aleatoriamente.
 |La erosión|**profundiza surcos**|El agua fluye por una irregularidad del terreno.|El flujo concentrado erosiona más ese punto. Los surcos más profundos concentran más agua.|Los surcos se profundizan porque ya son surcos.
 |Las migrañas|**reaparecen**|Dolor incapacitante durante horas. Luego desaparece completamente.|Puede volver mañana, en dos semanas, en tres meses.|No hay patrón fijo.
-
-## El problema
-
-Decir que todos estos fenómenos "se repiten" o "tienen patrones" o "son cíclicos" es claramente insuficiente.
-
-***¿Cómo distinguimos fundamentalmente entre estos fenómenos?***
 
 ## Desafío
 
