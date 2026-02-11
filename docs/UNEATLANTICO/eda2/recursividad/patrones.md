@@ -1,4 +1,4 @@
-# Taxonomía de patrones temporales y estructurales
+# Acerca de los patrones temporales y estructurales
 
 ## ¿Por qué?
 
