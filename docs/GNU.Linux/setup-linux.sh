@@ -177,6 +177,10 @@ install_dependencies() {
             success "Dependencias básicas instaladas (incluyendo curl)"
             ;;
     esac
+
+    # Node.js es una dependencia básica en 2026
+    info "Instalando Node.js (dependencia básica)..."
+    install_nodejs
 }
 
 # Instalar Google Chrome - MEJORADO
@@ -464,88 +468,6 @@ EOF
         info "Puedes instalarlo manualmente desde: https://plantuml.com/download"
         return 1
     fi
-}
-
-# Instalar Antigravity IDE
-install_antigravity() {
-    info "Instalando Antigravity IDE..."
-
-    # Verificar si ya está instalado
-    if command -v antigravity &> /dev/null; then
-        success "Antigravity IDE ya está instalado"
-        return 0
-    fi
-
-    case $DISTRO_FAMILY in
-        debian)
-            info "Configurando repositorio de Antigravity para Debian/Ubuntu..."
-
-            # Crear directorio para keyrings
-            sudo mkdir -p /etc/apt/keyrings
-
-            # Agregar clave GPG
-            if curl -fsSL https://us-central1-apt.pkg.dev/doc/repo-signing-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/antigravity-repo-key.gpg; then
-                # Agregar repositorio
-                echo "deb [signed-by=/etc/apt/keyrings/antigravity-repo-key.gpg] https://us-central1-apt.pkg.dev/projects/antigravity-auto-updater-dev/ antigravity-debian main" | sudo tee /etc/apt/sources.list.d/antigravity.list > /dev/null
-
-                # Actualizar e instalar
-                if sudo apt update && sudo apt install -y antigravity; then
-                    success "Antigravity IDE instalado correctamente desde repositorio oficial"
-                    return 0
-                else
-                    # Limpiar repositorio fallido
-                    warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
-                    sudo rm -f /etc/apt/sources.list.d/antigravity.list
-                    sudo rm -f /etc/apt/keyrings/antigravity-repo-key.gpg
-                    sudo apt update
-                fi
-            fi
-
-            error "No se pudo instalar Antigravity IDE desde el repositorio oficial"
-            info "Puedes descargar el tarball manualmente desde: https://antigravity.google/download/linux"
-            return 1
-            ;;
-        rpm)
-            info "Configurando repositorio de Antigravity para RPM..."
-
-            # Agregar repositorio
-            sudo tee /etc/yum.repos.d/antigravity.repo << 'EOL'
-[antigravity-rpm]
-name=Antigravity RPM Repository
-baseurl=https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
-enabled=1
-gpgcheck=0
-EOL
-
-            # Actualizar cache e instalar
-            if sudo dnf makecache && sudo dnf install -y antigravity; then
-                success "Antigravity IDE instalado correctamente desde repositorio oficial"
-                return 0
-            else
-                # Limpiar repositorio fallido
-                warning "Falló la instalación desde repositorio oficial. Limpiando archivos de repositorio..."
-                sudo rm -f /etc/yum.repos.d/antigravity.repo
-                sudo dnf clean all
-            fi
-
-            error "No se pudo instalar Antigravity IDE desde el repositorio oficial"
-            info "Puedes descargar el tarball manualmente desde: https://antigravity.google/download/linux"
-            return 1
-            ;;
-        arch)
-            warning "Antigravity IDE no tiene repositorio oficial para Arch Linux"
-            info "Intentando buscar en AUR..."
-
-            if yay -S --noconfirm antigravity 2>/dev/null; then
-                success "Antigravity IDE instalado correctamente desde AUR"
-                return 0
-            else
-                warning "No se encontró en AUR"
-                info "Puedes descargar el tarball manualmente desde: https://antigravity.google/download/linux"
-                return 1
-            fi
-            ;;
-    esac
 }
 
 # Instalar Visual Studio Code - CORREGIDO
@@ -1965,7 +1887,6 @@ check_status() {
     check_item "graphviz" "dot"
     check_item "PlantUML" "plantuml"
     check_item "Visual Studio Code" "code"
-    check_item "Antigravity IDE" "antigravity"
     check_item "GitHub CLI" "gh"
     
     echo
@@ -2080,10 +2001,6 @@ show_menu() {
     pretty_name="${pretty_name//\"/}"
     local git_user
     git_user=$(git config --global user.name 2>/dev/null || true)
-    local identity="$USER@$pretty_name"
-    if [[ -n "$git_user" ]]; then
-        identity="$identity | git: $git_user"
-    fi
 
     # Estado rápido de apps
     local chrome_status="Chrome:-"
@@ -2091,30 +2008,37 @@ show_menu() {
     if command -v google-chrome &> /dev/null; then chrome_status="Chrome"; fi
     if command -v code &> /dev/null; then code_status="VSCode"; fi
 
-    # Estado de agentes (C/G/C/Q/O/H)
+    # Estado de agentes - [Consejo de sabios]/Standalone
     local agent_c=$(command -v claude &> /dev/null && echo "C" || echo "-")
-    local agent_g=$(command -v gemini &> /dev/null && echo "G" || echo "-")
-    local agent_x=$(command -v codex &> /dev/null && echo "C" || echo "-")
-    local agent_q=$(command -v qwen &> /dev/null && echo "Q" || echo "-")
     local agent_o=$(command -v opencode &> /dev/null && echo "O" || echo "-")
+    local agent_g=$(command -v gemini &> /dev/null && echo "G" || echo "-")
+    local agent_q=$(command -v qwen &> /dev/null && echo "Q" || echo "-")
+    local agent_x=$(command -v codex &> /dev/null && echo "C" || echo "-")
     local agent_h=$(npm list -g @z_ai/coding-helper &> /dev/null 2>&1 && echo "H" || echo "-")
-    local agents_summary="$agent_c/$agent_g/$agent_x/$agent_q/$agent_o/$agent_h"
+    local agents_summary="[$agent_c/$agent_o/$agent_g/$agent_q]/$agent_x/$agent_h"
+
+    # Construir línea de herramientas
+    local tools_line=""
+    if [[ -n "$git_user" ]]; then
+        tools_line="git: $git_user | "
+    fi
+    tools_line="$tools_line$chrome_status | $code_status | Agentes: $agents_summary"
 
     echo "SCRIPT DE CONFIGURACIÓN LINUX"
-    echo "$identity | $chrome_status | $code_status | Agentes: $agents_summary"
+    echo "$USER@$pretty_name"
+    echo "$tools_line"
     echo "=============================================="
     echo
     printf "%-45s %s\n" "1)  Todo!" "2)  Dependencias básicas"
     printf "%-45s %s\n" "3)  Configurar Git" "4)  Google Chrome"
     printf "%-45s %s\n" "5)  JDK & graphviz" "6)  PlantUML"
-    printf "%-45s %s\n" "7)  Visual Studio Code" "8)  Antigravity IDE"
+    printf "%-45s %s\n" "7)  Visual Studio Code" "8)  Workspace IA (Agentes + bundungun)"
     printf "%-45s %s\n" "9)  GitHub CLI" "10) Configurar firma GPG"
-    printf "%-45s %s\n" "11) Node.js (nvm)" "12) Workspace IA (Agentes + bundungun)"
-    printf "%-45s %s\n" "13) Spotify" "14) VLC"
-    printf "%-45s %s\n" "15) Utilitarios" "16) oh-my-posh"
-    printf "%-45s %s\n" "17) Carpeta repo" "18) Descargar repos"
-    printf "%-45s %s\n" "19) Limpiar sistema" "20) Quitar bloatware"
-    printf "%-45s %s\n" "21) SysInfo" "22) Ver estado"
+    printf "%-45s %s\n" "11) Spotify" "12) VLC"
+    printf "%-45s %s\n" "13) Utilitarios" "14) oh-my-posh"
+    printf "%-45s %s\n" "15) Carpeta repo" "16) Descargar repos"
+    printf "%-45s %s\n" "17) Limpiar sistema" "18) Quitar bloatware"
+    printf "%-45s %s\n" "19) SysInfo" "20) Ver estado"
     printf "%-45s %s\n" "99)  Salir" ""
     echo
     read -p "Ingresa tu opción: " option
@@ -2122,17 +2046,15 @@ show_menu() {
     case $option in
         1)
             # Instalación completa
-            install_dependencies
+            install_dependencies  # Incluye Node.js
             configure_git
             install_browsers
             install_jdk_and_graphviz
             install_plantuml
             install_vscode
-            install_antigravity
+            install_agents  # Incluye Terminator + bundungun
             install_github_cli
             configure_gpg
-            install_nodejs  # Instalar Node.js antes de agentes y utilities
-            install_agents
             install_spotify
             install_vlc
             install_utilities
@@ -2148,20 +2070,18 @@ show_menu() {
         5) install_jdk_and_graphviz ;;
         6) install_plantuml ;;
         7) install_vscode ;;
-        8) install_antigravity ;;
+        8) install_agents ;;
         9) install_github_cli ;;
         10) configure_gpg ;;
-        11) install_nodejs ;;
-        12) install_agents ;;
-        13) install_spotify ;;
-        14) install_vlc ;;
-        15) install_utilities ;;
-        16) install_oh_my_posh ;;
-        17) setup_repos_directory ;;
-        18) download_repos ;;
-        19) cleanup_system ;;
-        20) remove_bloatware ;;
-        21)
+        11) install_spotify ;;
+        12) install_vlc ;;
+        13) install_utilities ;;
+        14) install_oh_my_posh ;;
+        15) setup_repos_directory ;;
+        16) download_repos ;;
+        17) cleanup_system ;;
+        18) remove_bloatware ;;
+        19)
             echo "Información del sistema:"
             echo "OS: $PRETTY_NAME"
             echo "Kernel: $(uname -r)"
@@ -2172,7 +2092,7 @@ show_menu() {
                 echo "CPU: $(lscpu | grep 'Model name' | cut -d':' -f2 | sed 's/^ *//')"
             fi
             ;;
-        22) check_status ;;
+        20) check_status ;;
         99)
             echo "¡Gracias por usar el script!"
             exit 0
