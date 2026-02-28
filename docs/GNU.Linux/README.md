@@ -4,7 +4,7 @@ Esto, que empezó como una chuleta de cosas por hacer cuando instalaba la distri
 
 ```console
 SCRIPT DE CONFIGURACIÓN LINUX
-manuel@Ubuntu 25.10 | git: manuel@oficina | Chrome | VSCode | Agentes: C/G/C/Q
+manuel@Ubuntu 25.10 | git: manuel@oficina | Chrome | VSCode | Agentes: C/G/C/Q/O/H
 ==============================================
 
 1)  Todo!                                     2)  Dependencias básicas
@@ -12,7 +12,7 @@ manuel@Ubuntu 25.10 | git: manuel@oficina | Chrome | VSCode | Agentes: C/G/C/Q
 5)  JDK & graphviz                            6)  PlantUML
 7)  Visual Studio Code                        8)  Antigravity IDE
 9)  GitHub CLI                                10) Configurar firma GPG
-11) Node.js (nvm)                             12) Agentes IA (Claude/Gemini/Codex)
+11) Node.js (nvm)                             12) Workspace IA (Agentes + bundungun)
 13) Spotify                                   14) VLC
 15) Utilitarios                               16) oh-my-posh
 17) Carpeta repo                              18) Descargar repos

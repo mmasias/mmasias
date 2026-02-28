@@ -778,27 +778,35 @@ install_agents() {
     echo "2) Gemini CLI"
     echo "3) Codex"
     echo "4) Qwen Code"
-    echo "5) Todos"
-    read -p "Selecciona (1-5, o varios separados por comas): " agent_choice
+    echo "5) OpenCode AI"
+    echo "6) Coding Helper (Z.ai)"
+    echo "7) Todos"
+    read -p "Selecciona (1-7, o varios separados por comas): " agent_choice
 
     # Determinar qué instalar
     install_claude=false
     install_gemini=false
     install_codex_agent=false
     install_qwen=false
+    install_opencode=false
+    install_coding_helper=false
 
     case $agent_choice in
-        *5*|*"todos"*|*"Todos"*)
+        *7*|*"todos"*|*"Todos"*)
             install_claude=true
             install_gemini=true
             install_codex_agent=true
             install_qwen=true
+            install_opencode=true
+            install_coding_helper=true
             ;;
         *)
             [[ $agent_choice == *1* ]] && install_claude=true
             [[ $agent_choice == *2* ]] && install_gemini=true
             [[ $agent_choice == *3* ]] && install_codex_agent=true
             [[ $agent_choice == *4* ]] && install_qwen=true
+            [[ $agent_choice == *5* ]] && install_opencode=true
+            [[ $agent_choice == *6* ]] && install_coding_helper=true
             ;;
     esac
 
@@ -866,6 +874,54 @@ install_agents() {
         fi
     fi
 
+    # Instalar OpenCode AI
+    if [ "$install_opencode" = true ]; then
+        info "Instalando OpenCode AI..."
+        if npm list -g opencode-ai &> /dev/null; then
+            success "OpenCode AI ya está instalado"
+        else
+            npm install -g opencode-ai
+            if npm list -g opencode-ai &> /dev/null; then
+                success "OpenCode AI instalado correctamente"
+                info "Ejecutar con: opencode"
+            else
+                error "No se pudo instalar OpenCode AI"
+            fi
+        fi
+    fi
+
+    # Instalar Coding Helper (Z.ai)
+    if [ "$install_coding_helper" = true ]; then
+        info "Instalando Coding Helper (Z.ai)..."
+        if npm list -g @z_ai/coding-helper &> /dev/null; then
+            success "Coding Helper ya está instalado"
+        else
+            npm install -g @z_ai/coding-helper
+            if npm list -g @z_ai/coding-helper &> /dev/null; then
+                success "Coding Helper instalado correctamente"
+                info "Ejecutar con: npx @z_ai/coding-helper"
+            else
+                error "No se pudo instalar Coding Helper"
+            fi
+        fi
+    fi
+
+    # Instalar y configurar Terminator con layout sabios + bundungun
+    info "Configurando workspace de agentes..."
+
+    if install_terminator; then
+        # Configurar layout de Terminator con el Consejo de sabios
+        configure_terminator_layout
+
+        # Crear lanzador bundungun y asegurar PATH
+        configure_bundungun_launcher
+
+        success "Workspace IA configurado: Terminator + bundungun listo"
+    else
+        warning "Terminator no se instaló correctamente. Saltando configuración de workspace."
+        warning "Los agentes están instalados pero bundungun no estará disponible."
+    fi
+
     success "Agentes de IA configurados correctamente"
 }
 
@@ -919,8 +975,8 @@ configure_terminator_layout() {
       type = VPaned
       parent = child1
       order = 0
-      position = 502
-      ratio = 0.5004985044865404
+      position = 605
+      ratio = 0.6
     [[[terminal3]]]
       type = Terminal
       parent = child2
@@ -937,14 +993,14 @@ configure_terminator_layout() {
       type = VPaned
       parent = child1
       order = 1
-      position = 502
-      ratio = 0.5004985044865404
+      position = 605
+      ratio = 0.6
     [[[terminal6]]]
       type = Terminal
       parent = child5
       order = 0
       profile = default
-      command = 'bash -c "source ~/.nvm/nvm.sh && codex"'
+      command = 'bash -c "source ~/.nvm/nvm.sh && opencode"'
     [[[terminal7]]]
       type = Terminal
       parent = child5
@@ -1394,17 +1450,6 @@ install_utilities() {
 
     # Instalar Node.js llamando a la función dedicada
     install_nodejs
-
-    # Instalar y configurar Terminator
-    if install_terminator; then
-        # Configurar layout de Terminator con la plantilla conocida
-        configure_terminator_layout
-
-        # Crear lanzador bundungun y asegurar PATH
-        configure_bundungun_launcher
-    else
-        warning "Terminator no se instaló correctamente. Saltando configuración de layout y bundungun."
-    fi
 
     success "Utilitarios y herramientas instalados correctamente"
 }
@@ -2006,6 +2051,20 @@ check_status() {
         else
             echo -e "${RED}✗ NO INSTALADO${NC}"
         fi
+
+        printf "%-40s " "OpenCode AI:"
+        if npm list -g opencode-ai &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+        fi
+
+        printf "%-40s " "Coding Helper (Z.ai):"
+        if npm list -g @z_ai/coding-helper &> /dev/null; then
+            echo -e "${GREEN}✓ INSTALADO${NC}"
+        else
+            echo -e "${RED}✗ NO INSTALADO${NC}"
+        fi
     else
         echo -e "${YELLOW}[INFO]${NC} npm no está instalado. Los agentes de IA requieren Node.js/npm."
     fi
@@ -2032,12 +2091,14 @@ show_menu() {
     if command -v google-chrome &> /dev/null; then chrome_status="Chrome"; fi
     if command -v code &> /dev/null; then code_status="VSCode"; fi
 
-    # Estado de agentes (C/G/C/Q)
+    # Estado de agentes (C/G/C/Q/O/H)
     local agent_c=$(command -v claude &> /dev/null && echo "C" || echo "-")
     local agent_g=$(command -v gemini &> /dev/null && echo "G" || echo "-")
     local agent_x=$(command -v codex &> /dev/null && echo "C" || echo "-")
     local agent_q=$(command -v qwen &> /dev/null && echo "Q" || echo "-")
-    local agents_summary="$agent_c/$agent_g/$agent_x/$agent_q"
+    local agent_o=$(command -v opencode &> /dev/null && echo "O" || echo "-")
+    local agent_h=$(npm list -g @z_ai/coding-helper &> /dev/null 2>&1 && echo "H" || echo "-")
+    local agents_summary="$agent_c/$agent_g/$agent_x/$agent_q/$agent_o/$agent_h"
 
     echo "SCRIPT DE CONFIGURACIÓN LINUX"
     echo "$identity | $chrome_status | $code_status | Agentes: $agents_summary"
@@ -2048,7 +2109,7 @@ show_menu() {
     printf "%-45s %s\n" "5)  JDK & graphviz" "6)  PlantUML"
     printf "%-45s %s\n" "7)  Visual Studio Code" "8)  Antigravity IDE"
     printf "%-45s %s\n" "9)  GitHub CLI" "10) Configurar firma GPG"
-    printf "%-45s %s\n" "11) Node.js (nvm)" "12) Agentes IA (Claude/Gemini/Codex)"
+    printf "%-45s %s\n" "11) Node.js (nvm)" "12) Workspace IA (Agentes + bundungun)"
     printf "%-45s %s\n" "13) Spotify" "14) VLC"
     printf "%-45s %s\n" "15) Utilitarios" "16) oh-my-posh"
     printf "%-45s %s\n" "17) Carpeta repo" "18) Descargar repos"
