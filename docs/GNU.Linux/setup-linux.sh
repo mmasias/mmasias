@@ -10,6 +10,12 @@ RED='\033[0;31m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Versiones de software (constantes para facilitar actualizaciones)
+PLANTUML_VERSION="v1.2024.8"
+NVM_VERSION="v0.40.3"
+NODE_VERSION="24"
+NERD_FONTS_VERSION="v3.1.1"
+
 # Función para mostrar mensajes informativos
 info() {
     echo -e "${BLUE}[INFO]${NC} $1"
@@ -41,6 +47,62 @@ confirm() {
             return 1
             ;;
     esac
+}
+
+# Función utilitaria: Obtener archivo RC del shell actual
+get_shell_rc_file() {
+    local shell_name=$(basename "$SHELL")
+    case "$shell_name" in
+        bash)
+            echo "$HOME/.bashrc"
+            ;;
+        zsh)
+            echo "$HOME/.zshrc"
+            ;;
+        *)
+            echo "$HOME/.profile"
+            ;;
+    esac
+}
+
+# Función utilitaria: Instalar RPM Fusion en Fedora
+install_rpmfusion() {
+    if [[ "$DISTRO" == "fedora" ]]; then
+        if ! rpm -qa | grep -q rpmfusion-free-release; then
+            info "Instalando RPM Fusion (free y nonfree)..."
+            sudo dnf install -y \
+                "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
+                "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" || true
+            success "RPM Fusion instalado"
+        else
+            info "RPM Fusion ya está instalado"
+        fi
+    fi
+}
+
+# Función utilitaria: Instalar Flatpak y agregar Flathub
+ensure_flatpak() {
+    if ! command -v flatpak &> /dev/null; then
+        info "Instalando Flatpak..."
+        case $DISTRO_FAMILY in
+            debian)
+                sudo apt install -y flatpak
+                ;;
+            rpm)
+                sudo dnf install -y flatpak
+                ;;
+            arch)
+                sudo pacman -S --noconfirm flatpak
+                ;;
+        esac
+    fi
+
+    if command -v flatpak &> /dev/null; then
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
+        return 0
+    else
+        return 1
+    fi
 }
 
 # Detectar el tipo de distribución - MEJORADO
@@ -143,15 +205,8 @@ install_dependencies() {
             # Instalar herramientas básicas (incluyendo curl)
             sudo dnf install -y curl wget git unzip zip dnf-plugins-core
 
-            # Habilitar repositorios adicionales si están disponibles
-            if command -v dnf &> /dev/null; then
-                # Para Fedora - Instalar RPM Fusion (free y nonfree)
-                if [[ "$DISTRO" == "fedora" ]]; then
-                    info "Instalando RPM Fusion (free y nonfree)..."
-                    sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
-                    sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm || true
-                fi
-            fi
+            # Habilitar RPM Fusion en Fedora
+            install_rpmfusion
 
             success "Dependencias básicas instaladas (incluyendo curl)"
             ;;
@@ -451,7 +506,7 @@ install_plantuml() {
     info "Descargando PlantUML JAR..."
     sudo mkdir -p /opt/plantuml
 
-    if sudo curl -L -o /opt/plantuml/plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.8/plantuml-1.2024.8.jar; then
+    if sudo curl -L -o /opt/plantuml/plantuml.jar "https://github.com/plantuml/plantuml/releases/download/$PLANTUML_VERSION/plantuml-${PLANTUML_VERSION#v}.jar"; then
         # Crear script wrapper
         sudo tee /usr/local/bin/plantuml > /dev/null <<'EOF'
 #!/bin/bash
@@ -648,14 +703,7 @@ install_vlc() {
             ;;
         rpm)
             # En Fedora, VLC requiere RPM Fusion
-            if [[ "$DISTRO" == "fedora" ]]; then
-                # Verificar si RPM Fusion está instalado
-                if ! rpm -qa | grep -q rpmfusion-free-release; then
-                    info "RPM Fusion no detectado. Instalando RPM Fusion para VLC..."
-                    sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
-                    sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm || true
-                fi
-            fi
+            install_rpmfusion
             sudo dnf install -y vlc
             ;;
         arch)
@@ -1003,10 +1051,14 @@ install_oh_my_posh() {
     
     # Configurar temas para todas las distros
     mkdir -p ~/.poshthemes
-    wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
-    unzip -o ~/.poshthemes/themes.zip -d ~/.poshthemes
-    chmod u+rw ~/.poshthemes/*.omp.*
-    rm ~/.poshthemes/themes.zip
+    if wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip; then
+        unzip -o ~/.poshthemes/themes.zip -d ~/.poshthemes
+        chmod u+rw ~/.poshthemes/*.omp.* 2>/dev/null || true
+        rm ~/.poshthemes/themes.zip
+        success "Temas de oh-my-posh instalados"
+    else
+        warning "No se pudieron descargar los temas de oh-my-posh"
+    fi
 
     # Verificar e instalar Nerd Fonts (FiraCode y MesloLG)
     mkdir -p ~/.fonts
@@ -1035,7 +1087,7 @@ install_oh_my_posh() {
         # Descargar FiraCode si no está instalado
         if [[ "$firacode_installed" == false ]]; then
             info "Descargando FiraCode Nerd Font..."
-            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip
+            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/$NERD_FONTS_VERSION/FiraCode.zip
             unzip -q FiraCode.zip -d FiraCode/
             cp FiraCode/*.ttf ~/.fonts/ 2>/dev/null || true
         else
@@ -1045,7 +1097,7 @@ install_oh_my_posh() {
         # Descargar MesloLG si no está instalado
         if [[ "$meslo_installed" == false ]]; then
             info "Descargando MesloLG Nerd Font..."
-            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Meslo.zip
+            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/$NERD_FONTS_VERSION/Meslo.zip
             unzip -q Meslo.zip -d Meslo/
             cp Meslo/*.ttf ~/.fonts/ 2>/dev/null || true
         else
@@ -1066,12 +1118,7 @@ install_oh_my_posh() {
     fi
     
     # Determinar qué shell está usando el usuario
-    SHELL_RC=""
-    if [[ "$SHELL" == *"bash"* ]]; then
-        SHELL_RC="$HOME/.bashrc"
-    elif [[ "$SHELL" == *"zsh"* ]]; then
-        SHELL_RC="$HOME/.zshrc"
-    fi
+    SHELL_RC=$(get_shell_rc_file)
     
     if [[ -n "$SHELL_RC" ]]; then
         # Preguntar por el tema
@@ -1112,7 +1159,7 @@ install_nodejs() {
     else
         # Descargar e instalar nvm
         info "Descargando e instalando nvm..."
-        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+        curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
 
         # Cargar nvm para usarlo inmediatamente
         export NVM_DIR="$HOME/.nvm"
@@ -1146,9 +1193,9 @@ install_nodejs() {
         fi
     fi
 
-    # Instalar Node.js versión 24
-    info "Descargando e instalando Node.js v24..."
-    nvm install 24
+    # Instalar Node.js
+    info "Descargando e instalando Node.js v$NODE_VERSION..."
+    nvm install "$NODE_VERSION"
 
     # Verificar instalación
     if command -v node &> /dev/null; then
@@ -1310,14 +1357,9 @@ install_utilities() {
 
             # Instalar VirtualBox
             info "Instalando VirtualBox..."
-            # VirtualBox requiere el repositorio oficial o RPM Fusion
+            # VirtualBox requiere RPM Fusion en Fedora
+            install_rpmfusion
             if [[ "$DISTRO" == "fedora" ]]; then
-                # Verificar si RPM Fusion está instalado (método preferido para Fedora)
-                if ! rpm -qa | grep -q rpmfusion-free-release; then
-                    info "RPM Fusion no detectado. Instalando para VirtualBox..."
-                    sudo dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm || true
-                    sudo dnf install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm || true
-                fi
                 # Instalar VirtualBox y los módulos del kernel
                 sudo dnf install -y VirtualBox kernel-devel kernel-headers
                 # Agregar el usuario al grupo vboxusers
@@ -1370,9 +1412,7 @@ install_utilities() {
             ;;
     esac
 
-    # Instalar Node.js llamando a la función dedicada
-    install_nodejs
-
+    # Node.js ya se instala en dependencias básicas
     success "Utilitarios y herramientas instalados correctamente"
 }
 
@@ -1598,12 +1638,7 @@ setup_repos_directory() {
     fi
 
     # Determinar qué shell está usando el usuario
-    SHELL_RC=""
-    if [[ "$SHELL" == *"bash"* ]]; then
-        SHELL_RC="$HOME/.bashrc"
-    elif [[ "$SHELL" == *"zsh"* ]]; then
-        SHELL_RC="$HOME/.zshrc"
-    fi
+    SHELL_RC=$(get_shell_rc_file)
 
     if [[ -n "$SHELL_RC" ]]; then
         # Verificar si ya existe la configuración
@@ -2121,17 +2156,15 @@ main() {
     # Detectar si se ejecuta desde pipe (curl | bash)
     if [ ! -t 0 ]; then
         info "Ejecutando instalación completa automática..."
-        install_dependencies
+        install_dependencies  # Incluye Node.js
         configure_git
         install_browsers
         install_jdk_and_graphviz
         install_plantuml
         install_vscode
-        install_antigravity
+        install_agents  # Incluye Terminator + bundungun
         install_github_cli
         configure_gpg
-        install_nodejs  # Instalar Node.js antes de agentes y utilities
-        install_agents
         install_spotify
         install_vlc
         install_utilities
