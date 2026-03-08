@@ -1,0 +1,35 @@
+@startuml
+
+actor "Humano" as H
+participant "Controlador" as CTRL
+participant "Blackboard" as BB
+participant "Agente A\n(formalismo)" as A
+participant "Agente B\n(fenomenología)" as B
+participant "Agente C\n(deconstrucción)" as C
+participant "Moderador" as MOD
+
+H -> CTRL : define objeto + marcos + rondas
+CTRL -> BB : inicializa debate.md\ncon objeto y configuración
+
+loop para cada ronda
+    CTRL -> A : turno
+    A -> BB : lee estado completo
+    A -> BB : escribe análisis (marco A)
+
+    CTRL -> B : turno
+    B -> BB : lee estado completo
+    B -> BB : escribe análisis (marco B)
+
+    CTRL -> C : turno
+    C -> BB : lee estado completo
+    C -> BB : escribe análisis (marco C)
+
+    CTRL -> MOD : turno
+    MOD -> BB : lee estado completo
+    MOD -> BB : identifica desacuerdos,\nprovoca confrontación
+end
+
+CTRL -> BB : genera síntesis final
+BB -> H : debate completo
+
+@enduml

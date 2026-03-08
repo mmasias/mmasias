@@ -1,0 +1,28 @@
+@startuml
+
+package "LYCAEUM" {
+    [Blackboard\n(filesystem)] as BB
+    [Controlador\n(inotifywait + bash)] as CTRL
+
+    package "Agentes" {
+        [Agente A\n(marco 1)] as A
+        [Agente B\n(marco 2)] as B
+        [Agente C\n(marco 3)] as C
+        [Moderador\n(adversarial)] as MOD
+    }
+}
+
+[Objeto de análisis\n(poemas, requisitos,\narquitectura, código...)] as OBJ
+
+OBJ --> BB : input inicial
+BB <--> A : lee estado / escribe turno
+BB <--> B : lee estado / escribe turno
+BB <--> C : lee estado / escribe turno
+BB <--> MOD : lee estado / provoca
+CTRL --> BB : monitoriza cambios
+CTRL --> A : señal de turno
+CTRL --> B : señal de turno
+CTRL --> C : señal de turno
+CTRL --> MOD : señal de turno
+
+@enduml
