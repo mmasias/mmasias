@@ -7,7 +7,7 @@
 |Programación|Estructura de datos y algoritmos|Ingeniería de Software|
 |-|-|-|
 |[Programación 1](https://github.com/mmasias/prg1)|[Estructuras de datos y algoritmos 1](https://github.com/mmasias/eda1)|[Ingeniería del software 1](https://github.com/mmasias/idsw1)|
-|Programación 2|[Estructuras de datos y algoritmos 2](https://github.com/mmasias/eda2)|[Ingeniería del software 2](https://github.com/mmasias/idsw2)|
+|[Programación 2](https://github.com/mmasias/prg2)|[Estructuras de datos y algoritmos 2](https://github.com/mmasias/eda2)|[Ingeniería del software 2](https://github.com/mmasias/idsw2)|
 
 </div>
 
