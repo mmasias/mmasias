@@ -1,7 +1,7 @@
 <table>
 <tr><td align=right colspan=2>
   
-<sub>[@U](docs/UNEATLANTICO/README.md) / [PuntoReflex](https://github.com/puntoReflex) / [gII](https://github.com/Ingenieria-Informatica-UNEATLANTICO/.github/blob/main/README.md) / [PRG1](https://github.com/mmasias/prg1) - [PRG2](https://github.com/mmasias/prg2) - [EDA1](https://github.com/mmasias/eda1) - [EDA2](https://github.com/mmasias/eda2) - [IdSW1](https://github.com/mmasias/idsw1) - [IdSW2](https://github.com/mmasias/idsw2) - [TFG](https://github.com/mmasias/tfgs-gii)</sub>
+<sup>[@U](docs/UNEATLANTICO/README.md) / [PuntoReflex](https://github.com/puntoReflex) / [gII](https://github.com/Ingenieria-Informatica-UNEATLANTICO/.github/blob/main/README.md) / [PRG1](https://github.com/mmasias/prg1) - [PRG2](https://github.com/mmasias/prg2) - [EDA1](https://github.com/mmasias/eda1) - [EDA2](https://github.com/mmasias/eda2) - [IdSW1](https://github.com/mmasias/idsw1) - [IdSW2](https://github.com/mmasias/idsw2) - [TFG](https://github.com/mmasias/tfgs-gii)</sup>
 ![](images/2Monitors/ultima_vi_desktop_background_wallpaper_5760x1080_by_mecandes_d87e0fg.png)
 <sup>Impartiendo: [[25][26]-PRG2](https://github.com/mmasias/25-26-PRG2) / [[25][26]-EDA2](https://github.com/mmasias/25-26-EDA2) / [[25][26]-IdSw2](https://github.com/mmasias/25-26-IdSw2) / [[25][26]-TFG](https://github.com/mmasias/25-26-TFGII) / [[25][26]-LAET](https://github.com/mmasias/25-26-LAET)<br>
 [Agendar una reunión](https://calendar.app.google/xNJxPtfwKNwRdeNm6)</sup>
