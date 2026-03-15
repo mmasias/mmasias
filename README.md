@@ -8,7 +8,7 @@
 </td></tr>
 <tr><td align=right>
 
-<sup>[*The big ideas in software development*](https://www.softdevbigideas.com/the-big-ideas-in-software-development.html)&nbsp;/&nbsp;[*Proceso de creación*](docs/procesoDeCreacion.md)&nbsp;/&nbsp;[*Unamuno*](docs/unamuno.md)&nbsp;/&nbsp;[*Esquema*](docs/acercaDeEsquema.md)<br><i>La&nbsp;sencillez&nbsp;es&nbsp;una&nbsp;virtud&nbsp;pero&nbsp;requiere&nbsp;mucho&nbsp;trabajo&nbsp;para&nbsp;lograrla&nbsp;y&nbsp;educación&nbsp;para&nbsp;apreciarla.<br>Y para empeorar las cosas: la complejidad se vende mejor<br><b>Edsger W. Dijkstra - On the nature of Computing Science</b></i></sup>  
+<sup>[*The big ideas in software development*](https://www.softdevbigideas.com/the-big-ideas-in-software-development.html)&nbsp;/&nbsp;[*Proceso de creación*](docs/procesoDeCreacion.md)&nbsp;/&nbsp;[*Unamuno*](docs/unamuno.md)&nbsp;/&nbsp;[*Esquema*](docs/acercaDeEsquema.md)<br><i>La&nbsp;sencillez&nbsp;es&nbsp;una&nbsp;virtud&nbsp;que&nbsp;requiere&nbsp;mucho&nbsp;trabajo&nbsp;para&nbsp;lograrla&nbsp;y&nbsp;educación&nbsp;para&nbsp;apreciarla.<br>Y para empeorar las cosas: la complejidad se vende mejor<br><b>Edsger W. Dijkstra - On the nature of Computing Science</b></i></sup>  
 </td><td align=right>
 
 <sup>***[ingeniero, ra](docs/temasVarios/ingeniero.md)***: *m. y f. `[iŋ.xeˈnje.ɾo]`*<br>*Persona&nbsp;que&nbsp;realiza&nbsp;conjeturas&nbsp;precisas&nbsp;basadas&nbsp;en&nbsp;datos&nbsp;poco&nbsp;fiables<br>proporcionados por personas de conocimiento dudoso (véase también ***mago*** o ***hechicero***)*</td></tr>
