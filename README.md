@@ -1,19 +1,9 @@
-<table>
-<tr><td align=right colspan=2>
-  
+|![](images/2Monitors/ultima_vi_desktop_background_wallpaper_5760x1080_by_mecandes_d87e0fg.png)|
+|-:|
 <sup>[@U](docs/UNEATLANTICO/README.md) / [PuntoReflex](https://github.com/puntoReflex) / [gII](https://github.com/Ingenieria-Informatica-UNEATLANTICO/.github/blob/main/README.md) / [PRG1](https://github.com/mmasias/prg1) - [PRG2](https://github.com/mmasias/prg2) - [EDA1](https://github.com/mmasias/eda1) - [EDA2](https://github.com/mmasias/eda2) - [IdSW1](https://github.com/mmasias/idsw1) - [IdSW2](https://github.com/mmasias/idsw2) - [TFG](https://github.com/mmasias/tfgs-gii)</sup>
-![](images/2Monitors/ultima_vi_desktop_background_wallpaper_5760x1080_by_mecandes_d87e0fg.png)
-<sup>Impartiendo: [[25][26]-PRG2](https://github.com/mmasias/25-26-PRG2) / [[25][26]-EDA2](https://github.com/mmasias/25-26-EDA2) / [[25][26]-IdSw2](https://github.com/mmasias/25-26-IdSw2) / [[25][26]-TFG](https://github.com/mmasias/25-26-TFGII) / [[25][26]-LAET](https://github.com/mmasias/25-26-LAET)<br>
-[Agendar una reunión](https://calendar.app.google/xNJxPtfwKNwRdeNm6)</sup>
-</td></tr>
-<tr><td align=right>
-
-<sup>[*The big ideas in software development*](https://www.softdevbigideas.com/the-big-ideas-in-software-development.html)&nbsp;/&nbsp;[*Proceso de creación*](docs/procesoDeCreacion.md)&nbsp;/&nbsp;[*Unamuno*](docs/unamuno.md)&nbsp;/&nbsp;[*Esquema*](docs/acercaDeEsquema.md)<br><i>La&nbsp;sencillez&nbsp;es&nbsp;una&nbsp;virtud&nbsp;que&nbsp;requiere&nbsp;mucho&nbsp;trabajo&nbsp;para&nbsp;lograrla&nbsp;y&nbsp;educación&nbsp;para&nbsp;apreciarla.<br>Y para empeorar las cosas: la complejidad se vende mejor<br><b>Edsger W. Dijkstra - On the nature of Computing Science</b></i></sup>  
-</td><td align=right>
-
-<sup>***[ingeniero, ra](docs/temasVarios/ingeniero.md)***: *m. y f. `[iŋ.xeˈnje.ɾo]`*<br>*Persona&nbsp;que&nbsp;realiza&nbsp;conjeturas&nbsp;precisas&nbsp;basadas&nbsp;en&nbsp;datos&nbsp;poco&nbsp;fiables<br>proporcionados por personas de conocimiento dudoso (véase también ***mago*** o ***hechicero***)*</td></tr>
-<tr><td align=right colspan=2>
-  
+<sup>Impartiendo: [[25][26]-PRG2](https://github.com/mmasias/25-26-PRG2) / [[25][26]-EDA2](https://github.com/mmasias/25-26-EDA2) / [[25][26]-IdSw2](https://github.com/mmasias/25-26-IdSw2) / [[25][26]-TFG](https://github.com/mmasias/25-26-TFGII) / [[25][26]-LAET](https://github.com/mmasias/25-26-LAET)
+<sup>[Agendar una reunión](https://calendar.app.google/xNJxPtfwKNwRdeNm6)</sup>
+<sup>[*The big ideas in software development*](https://www.softdevbigideas.com/the-big-ideas-in-software-development.html)&nbsp;/&nbsp;[*Proceso de creación*](docs/procesoDeCreacion.md)&nbsp;/&nbsp;[*Unamuno*](docs/unamuno.md)&nbsp;/&nbsp;[*Esquema*](docs/acercaDeEsquema.md)
+<sup><i>La sencillez es una virtud que requiere mucho trabajo para lograrla y educación para apreciarla. Y para empeorar las cosas, la complejidad se vende mejor<br><b>Edsger W. Dijkstra - On the nature of Computing Science</b></i></sup>  
+<sup>***[ingeniero, ra](docs/temasVarios/ingeniero.md)***: *m. y f. `[iŋ.xeˈnje.ɾo]`* *Persona&nbsp;que&nbsp;realiza&nbsp;conjeturas&nbsp;precisas&nbsp;basadas&nbsp;en&nbsp;datos&nbsp;poco&nbsp;fiables<br>proporcionados por personas de conocimiento dudoso (véase también ***mago*** o ***hechicero***)*
 <sup>[@GNU/Linux](docs/GNU.Linux/README.md) / [Gists](https://gist.github.com/mmasias) / [🈷️](docs/github-metrics.md) / [🔩](https://it-tools.tech/) / [🇪🇺](https://european-alternatives.eu/alternatives-to) / [📊](https://manuel.masiasweb.com/github-stats-page-contributors.html) / [👣](https://manuel.masiasweb.com/gh-history-v0/) / [🌇](https://www.tiktok.com/@mmasiasv) / [***SigHor***](https://github.com/mmasias/pySigHor) / [🎹](https://manuel.masiasweb.com/escalas.html) / [🎶](https://manuel.masiasweb.com/cQuintas.html) / [ProgresionesArmonicas](docs/music/cQuintas/README.md) / [Recursividad](https://github.com/mmasias/recursividad) / [mySpace](https://github.com/mmasias/mmasias_private) / [***buymeacoffee***](https://buymeacoffee.com/mmasias) </sup>  
-</td></tr>
-</table>
