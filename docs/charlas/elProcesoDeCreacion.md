@@ -10,7 +10,7 @@ Pero quizá lo que haya aqui sea un problema estructural, y es que el artefacto 
 
 ||||
 |-|-|-|
-El producto existe en el espacio|El proceso *existió* en el tiempo|Cuando solo se ve el espacio, el tiempo desaparece, y lo que queda parece haber surgido sin causa suficiente visible|
+El producto existe en el espacio|El proceso *existió* en el tiempo|Cuando solo se ve el espacio, el tiempo desaparece y lo que queda parece haber surgido sin causa suficiente visible|
 
 </div>
 
@@ -39,7 +39,7 @@ Y lo que realmente importa son exactamente dos cosas:
 - La primera: que "magdalenas", "café", "ganas" y "sexo convexo" estuvieran en la misma zona antes del cambio. No es casualidad: hace falta criterio de selección, exposición sostenida, experiencia acumulada. Años de saber qué material vale la pena tener cerca y tener entrenado el criterio previo.
 - La segunda: saber reconocer que el resultado es valioso. Alguien sin el oído formado hace el mismo cambio y no es capaz de identificarlo, por lo que pasa de largo. El valor no se generó sino que se reconoció y esto también es criterio: criterio posterior.
 
-El genio no está en el hacer. Está en el saber qué input es válido y en reconocer el valor del output.
+El genio no está en el hacer. Está en saber qué input es válido y en reconocer el valor del output.
 
 ## ¿Cómo?
 
