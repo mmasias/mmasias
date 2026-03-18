@@ -36,8 +36,8 @@ Como vemos, la mecánica del proceso no es misteriosa: es combinatoria, manipula
 
 Y lo que realmente importa son exactamente dos cosas:
 
-- La primera: que "magdalenas", "café", "ganas" y "sexo convexo" estuvieran en la misma zona antes del swap. No es casualidad: hace falta criterio de selección, exposición sostenida, experiencia acumulada. Años de saber qué material vale la pena tener cerca y tener entrenado el criterio previo.
-- La segunda: saber reconocer que el resultado del swap es valioso. Alguien sin el oído formado hace la misma permutación y no es capaz de identificarlo, por lo que pasa de largo. El valor no se generó sino que se reconoció. Y esto también es criterio: criterio posterior.
+- La primera: que "magdalenas", "café", "ganas" y "sexo convexo" estuvieran en la misma zona antes del cambio. No es casualidad: hace falta criterio de selección, exposición sostenida, experiencia acumulada. Años de saber qué material vale la pena tener cerca y tener entrenado el criterio previo.
+- La segunda: saber reconocer que el resultado es valioso. Alguien sin el oído formado hace el mismo cambio y no es capaz de identificarlo, por lo que pasa de largo. El valor no se generó sino que se reconoció y esto también es criterio: criterio posterior.
 
 El genio no está en el hacer. Está en el saber qué input es válido y en reconocer el valor del output.
 
