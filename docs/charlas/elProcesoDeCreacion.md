@@ -4,7 +4,7 @@
 
 Existe una narrativa dominante sobre la creación: el artista, el genio recibe una visión, la ejecuta y obtiene de la nada un resultado como consecuencia de un talento inaccesible para el común de los mortales.
 
-Pero quizá lo que haya aqui sea un problema estructural, y es que el artefacto final oculta su propia génesis.
+Pero quizá lo que haya aqui sea un problema estructural: el artefacto final oculta su propia génesis.
 
 <div align=center>
 
@@ -20,13 +20,23 @@ El producto existe en el espacio|El proceso *existió* en el tiempo|Cuando solo 
 
 Consideremos este verso del tema "Cruz de navajas" de Mecano, creado por José María Cano:
 
-*"y María se moja las ganas en el café / magdalenas del sexo convexo"*
+<div align=center>
 
-Dos imágenes cargadas. "Mojarse las ganas" captura la renuncia cotidiana, y "magdalenas del sexo convexo" activa simultáneamente la trivialidad doméstica y la dimensión del deseo. Parece el resultado de una inspiración precisa y casi literaria.
+|*"y María se moja las ganas en el café / magdalenas del sexo convexo"*
+|:-:
+
+</div
+
+Dos imágenes cargadas. "Mojarse las ganas" captura la renuncia cotidiana y "magdalenas del sexo convexo" activa simultáneamente la trivialidad doméstica y la dimensión del deseo. Parece el resultado de una inspiración precisa y casi literaria.
 
 Ahora especulemos sobre el punto de partida probable:
 
-*"y María se moja las magdalenas en el café / ganas de sexo convexo"*
+<div align=center>
+
+|*"y María se moja las magdalenas en el café / ganas de sexo convexo"*
+|:-:
+
+</div>
 
 Se trata exactamente de los mismos elementos en orden natural. La operación que separa una versión de la otra es "únicamente" un intercambio de dos sustantivos entre dos versos: Un enroque... Mecánicamente trivial.
 
