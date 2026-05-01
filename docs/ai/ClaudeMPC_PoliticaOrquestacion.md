@@ -1,3 +1,21 @@
+## Patrón async: delegar y olvidar
+
+El job_id se obtiene en el momento del lanzamiento. A partir de ahí el agente es independiente.
+
+**Flujo:**
+1. Lanzar con `_ask_async` -> obtener job_id al instante.
+2. Informar: "lanzado job `abc123` — [descripción breve de la tarea]".
+3. Olvidarlo. Seguir con el trabajo en curso.
+4. Recoger cuando convenga al usuario o cuando Claude recuerde que hay un job pendiente.
+
+**Principios:**
+- El único estado relevante es: lanzado / recogido. No hay estados intermedios útiles.
+- No hacer poll ansioso. El agente termina cuando termina; lo que importa es cuándo *nosotros* necesitamos el resultado.
+- No estimar tiempos de forma activa. El orden de magnitud se calibra con la experiencia. Si una tarea puede tardar minutos vs. horas, sí vale la pena saberlo para decidir si recogemos en esta sesión o en la siguiente.
+- Claude lleva nota del job_id y su descripción para poder recordarlo cuando sea el momento.
+
+---
+
 ## Política de orquestación (CLAUDE.md)
 
 Añadir al CLAUDE.md global o de proyecto:
