@@ -74,11 +74,15 @@ Protocolo: `ClaudeMCP_Entrevista.md`. Orquestador: Claude Code (claude-sonnet-4-
 
 ## Notas operativas
 
-### Bug conocido en el wrapper de OpenCode
+### Bugs del wrapper de OpenCode
 
-El script `opencode-wrapper.sh` pasa el prompt como `"$1"` en bash.
-Los triple-backtick de Markdown dentro del prompt se interpretan como command substitution.
-Workaround: evitar backticks en prompts enviados a OpenCode via MCP. Usar indentacion o comillas simples para bloques de codigo.
+**Bug 1 — backticks en prompts (activo):**
+El script usa `"$1"` en bash; los triple-backtick se interpretan como command substitution.
+Workaround: evitar backticks en prompts a OpenCode.
+
+**Bug 2 — captura de output TUI (corregido 2026-05-01):**
+El TUI de opencode sobreescribía la respuesta con secuencias de cursor al terminar.
+Fix: `| col -b > "$OUTFILE"` en lugar de `> "$OUTFILE"`. `col -b` procesa las secuencias y preserva el texto visible.
 
 ### Latencia observada
 
