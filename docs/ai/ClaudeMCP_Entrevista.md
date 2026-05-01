@@ -47,7 +47,7 @@ de roles.
 
 | Agente | CLI | Proveedor | Rol asignado |
 |---|---|---|---|
-| gemini_ask | gemini CLI | Google Gemini | pendiente entrevista |
-| opencode_ask | opencode CLI | z.ai / GLM | pendiente entrevista |
+| gemini_ask | gemini CLI | Google Gemini | Verificador / Critic |
+| opencode_ask | opencode CLI | z.ai / GLM-5.1 | Generador / Architect |
 
-*Actualizar tras ejecutar la entrevista de selección.*
+Entrevista ejecutada el 2026-05-01. Resultados completos en `AGENTS.md`.
