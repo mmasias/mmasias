@@ -143,7 +143,7 @@ async def call_tool(name: str, arguments: dict):
     if name == "gemini_ask":
         result = subprocess.run(
             ["/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini", "-p", arguments["prompt"]],
-            capture_output=True, text=True, timeout=120
+            capture_output=True, text=True, timeout=120, stdin=subprocess.DEVNULL
         )
         return [TextContent(type="text", text=result.stdout)]
 
@@ -153,7 +153,7 @@ async def call_tool(name: str, arguments: dict):
         with open(outfile, "w") as f:
             proc = subprocess.Popen(
                 ["/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini", "-p", arguments["prompt"]],
-                stdout=f, stderr=subprocess.DEVNULL
+                stdout=f, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL
             )
         _jobs[job_id] = {"proc": proc, "outfile": outfile}
         return [TextContent(type="text", text=job_id)]
@@ -259,7 +259,7 @@ async def call_tool(name: str, arguments: dict):
         }
         subprocess.run(
             ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
-            env=env, timeout=120
+            env=env, timeout=120, stdin=subprocess.DEVNULL
         )
         with open(outfile) as f:
             result = f.read()
@@ -277,7 +277,7 @@ async def call_tool(name: str, arguments: dict):
         }
         proc = subprocess.Popen(
             ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
-            env=env
+            env=env, stdin=subprocess.DEVNULL
         )
         _jobs[job_id] = {"proc": proc, "outfile": outfile}
         return [TextContent(type="text", text=job_id)]
@@ -393,6 +393,17 @@ wrapper tiene permisos de ejecución: `chmod +x ~/mcp-servers/opencode-wrapper.s
 El dict `_jobs` es efímero: vive solo mientras el proceso MCP server está activo.
 Si Claude Code se reinició entre el `_ask_async` y el `_result`, el job_id se perdió.
 Solución: lanzar y recoger resultados dentro de la misma sesión de Claude Code.
+
+### `_result` cuelga indefinidamente (nunca devuelve nada)
+
+Causa: el proceso lanzado con `Popen` hereda el stdin del servidor MCP (el pipe
+JSON-RPC entre Claude Code y el servidor). El CLI hijo (Gemini/OpenCode/Node.js)
+mantiene ese fd abierto; cuando Claude Code envía el siguiente mensaje al servidor
+(la llamada a `_result`), el servidor no puede leerlo porque el hijo interfiere en
+el pipe.
+
+Solución: `stdin=subprocess.DEVNULL` en todos los `Popen` y `subprocess.run` de
+los servidores MCP. Ya está incluido en los snippets de esta guía.
 
 ### `_result` devuelve `"pendiente"` indefinidamente
 
