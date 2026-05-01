@@ -1,0 +1,312 @@
+# MCP Subordinados — Claude Code como orquestador
+
+Sistema para que Claude Code invoque agentes LLM externos (Gemini, OpenCode/z.ai) como herramientas MCP durante sesiones de trabajo autónomo.
+
+## ¿Por qué?
+
+Claude Code ya tiene el bucle de control, el filesystem y el criterio de parada. Lo que le falta es poder delegar subproblemas a otros modelos con perspectivas distintas. Este sistema lo resuelve exponiendo cada CLI externo como herramienta MCP: Claude Code llama a `gemini_ask` o `opencode_ask` igual que llama a `bash`.
+
+## Arquitectura
+
+```
+Claude Code (orquestador)
+    │
+    ├── gemini_ask  →  gemini_mcp.py  →  gemini CLI  →  Google Gemini
+    └── opencode_ask → opencode_mcp.py → opencode-wrapper.sh → z.ai / OpenCode
+```
+
+Cada agente subordinado:
+
+- No sabe que está siendo orquestado
+- No tiene estado entre llamadas
+- Recibe solo el contexto mínimo necesario
+- Sus tokens se imputan a su propio proveedor (no a Anthropic)
+
+## Requisitos previos
+
+- Claude Code instalado (`npm install -g @anthropic-ai/claude-code`)
+- `gemini` CLI instalado y autenticado
+- `opencode` CLI instalado y autenticado con z.ai
+- Python 3.x disponible
+- `pip3` disponible
+- `expect` instalado (para `unbuffer`) — solo Linux
+
+## Instalación
+
+### 1. Instalar dependencia Python
+
+**Debian/Ubuntu:**
+```bash
+sudo apt install python3-pip
+pip3 install mcp --break-system-packages
+```
+
+**Fedora:**
+```bash
+sudo dnf install python3-pip expect -y
+pip3 install mcp --break-system-packages
+```
+
+> En Fedora, `expect` provee el comando `unbuffer`, necesario para que opencode
+> funcione sin TTY desde un subprocess.
+
+### 2. Crear directorio de scripts
+
+```bash
+mkdir -p ~/mcp-servers
+```
+
+### 3. Detectar rutas de Node/nvm
+
+Los CLI de gemini y opencode están instalados via nvm. La ruta varía por máquina:
+
+```bash
+which gemini   # p.ej. ~/.nvm/versions/node/v24.14.1/bin/gemini
+which opencode # misma ruta base
+```
+
+Anotar la ruta base: `~/.nvm/versions/node/vX.Y.Z/bin`
+
+### 4. Detectar modelo disponible en OpenCode
+
+```bash
+opencode models 2>/dev/null | head -10
+```
+
+Elegir un modelo disponible. Ejemplos reales por máquina:
+
+| Máquina | Node | Modelo opencode |
+|---|---|---|
+| Principal (Fedora KDE) | v24.12.0 | zai-coding-plan/glm-5.1 |
+| Prometeus (Fedora KDE) | v24.14.0 | opencode/big-pickle |
+| @U (Kubuntu 24) | v24.14.1 | opencode/big-pickle |
+
+### 5. Crear los scripts
+
+#### `~/mcp-servers/gemini_mcp.py`
+
+Sustituir `/home/manuel/.nvm/versions/node/vX.Y.Z` con la ruta real.
+
+```python
+import asyncio, subprocess
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+from mcp.types import Tool, TextContent
+
+server = Server("gemini")
+
+@server.list_tools()
+async def list_tools():
+    return [Tool(
+        name="gemini_ask",
+        description="Consulta a Gemini CLI en modo no-interactivo.",
+        inputSchema={
+            "type": "object",
+            "properties": {"prompt": {"type": "string"}},
+            "required": ["prompt"]
+        }
+    )]
+
+@server.call_tool()
+async def call_tool(name: str, arguments: dict):
+    result = subprocess.run(
+        ["/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini", "-p", arguments["prompt"]],
+        capture_output=True, text=True, timeout=120
+    )
+    return [TextContent(type="text", text=result.stdout)]
+
+async def main():
+    async with stdio_server() as streams:
+        await server.run(streams[0], streams[1], server.create_initialization_options())
+
+asyncio.run(main())
+```
+
+#### `~/mcp-servers/opencode-wrapper.sh`
+
+Sustituir `MODEL` con el modelo detectado en el paso 4.
+
+```bash
+#!/bin/bash
+export NVM_DIR="/home/manuel/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+OUTFILE="${OPENCODE_OUTFILE:-/tmp/opencode_out.txt}"
+unbuffer opencode --log-level ERROR -m "MODEL" run "$1" > "$OUTFILE" 2>&1
+sed -i 's/\x1b\[[0-9;]*m//g; s/\r//' "$OUTFILE"
+```
+
+```bash
+chmod +x ~/mcp-servers/opencode-wrapper.sh
+```
+
+> **Por qué `unbuffer`**: opencode detecta ausencia de TTY y no escribe su output
+> a stdout/stderr sino directamente a `/dev/tty`. `unbuffer` crea un pseudo-TTY
+> que engaña al proceso. En macOS usar `script -q /dev/null` en su lugar.
+
+> **Por qué fichero temporal**: aunque `unbuffer` resuelve el TTY, `capture_output`
+> de Python no captura la salida. El wrapper escribe a fichero; el MCP lee el fichero.
+
+#### `~/mcp-servers/opencode_mcp.py`
+
+Sustituir la versión de Node en PATH.
+
+```python
+import asyncio, subprocess, os
+from mcp.server import Server
+from mcp.server.stdio import stdio_server
+from mcp.types import Tool, TextContent
+
+server = Server("opencode")
+
+@server.list_tools()
+async def list_tools():
+    return [Tool(
+        name="opencode_ask",
+        description="Consulta a OpenCode (z.ai) en modo no-interactivo.",
+        inputSchema={
+            "type": "object",
+            "properties": {"prompt": {"type": "string"}},
+            "required": ["prompt"]
+        }
+    )]
+
+@server.call_tool()
+async def call_tool(name: str, arguments: dict):
+    outfile = f"/tmp/opencode_out_{os.getpid()}.txt"
+    env = {
+        **os.environ,
+        "PATH": f"/home/manuel/.nvm/versions/node/vX.Y.Z/bin:{os.environ.get('PATH', '')}",
+        "HOME": "/home/manuel",
+        "OPENCODE_OUTFILE": outfile,
+    }
+    subprocess.run(
+        ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
+        env=env, timeout=120
+    )
+    with open(outfile) as f:
+        result = f.read()
+    os.unlink(outfile)
+    return [TextContent(type="text", text=result)]
+
+async def main():
+    async with stdio_server() as streams:
+        await server.run(streams[0], streams[1], server.create_initialization_options())
+
+asyncio.run(main())
+```
+
+### 6. Verificar scripts antes de registrar
+
+```bash
+# Verificar sintaxis Python
+python3 -c "import ast; ast.parse(open('/home/manuel/mcp-servers/gemini_mcp.py').read()); print('ok')"
+python3 -c "import ast; ast.parse(open('/home/manuel/mcp-servers/opencode_mcp.py').read()); print('ok')"
+
+# Verificar subprocess de gemini
+python3 -c "
+import subprocess
+r = subprocess.run(['/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini', '-p', 'responde solo: ok'],
+    capture_output=True, text=True, timeout=60)
+print('STDOUT:', repr(r.stdout))
+print('RC:', r.returncode)
+"
+
+# Verificar wrapper de opencode
+OPENCODE_OUTFILE=/tmp/test.txt ~/mcp-servers/opencode-wrapper.sh "responde solo: ok"
+cat /tmp/test.txt
+```
+
+### 7. Registrar en Claude Code
+
+```bash
+claude mcp add gemini --scope user \
+  -- python3 /home/manuel/mcp-servers/gemini_mcp.py
+
+claude mcp add opencode --scope user \
+  -- python3 /home/manuel/mcp-servers/opencode_mcp.py
+
+claude mcp list
+# gemini:   ✓ Connected
+# opencode: ✓ Connected
+```
+
+### 8. Verificar desde Claude Code
+
+```bash
+claude
+```
+
+```
+> usa la herramienta gemini_ask para preguntarle cuál es la capital de Francia
+> usa la herramienta opencode_ask para preguntarle cuál es la capital de Alemania
+```
+
+## Diagnóstico de problemas frecuentes
+
+### `Failed to connect` en `claude mcp list`
+
+El script Python falla al arrancar. Ejecutar directamente:
+
+```bash
+python3 ~/mcp-servers/gemini_mcp.py
+# Si se queda colgado sin error: correcto (espera mensajes MCP por stdin)
+# Si muestra error: corregir antes de registrar
+```
+
+### Timeout en gemini_ask
+
+Causa más común: PATH incorrecto. Claude Code no hereda el PATH del shell.
+
+Solución: usar ruta absoluta al binario (ya está en el script).
+
+### Timeout en opencode_ask
+
+Causas posibles:
+
+1. `unbuffer` no instalado → `sudo dnf install expect`
+2. Modelo no disponible → verificar con `opencode models` y actualizar wrapper
+3. opencode no autenticado → ejecutar `opencode` en TUI y configurar proveedor
+
+### Output vacío en opencode
+
+opencode escribe a `/dev/tty` en lugar de stdout. Solución: el wrapper con
+`unbuffer` + fichero temporal ya lo resuelve. Si persiste, verificar que el
+wrapper tiene permisos de ejecución: `chmod +x ~/mcp-servers/opencode-wrapper.sh`
+
+## ¿Y ahora qué? — Incorporar nuevos agentes
+
+### Proceso de incorporación
+
+Añadir un nuevo agente subordinado sigue siempre el mismo patrón:
+
+**Paso 1 — Verificar que el CLI tiene modo no-interactivo limpio**
+```bash
+nuevo-cli --help | grep -i "prompt\|non-interactive\|headless"
+nuevo-cli -p "responde solo: ok"  # o el flag equivalente
+```
+
+**Paso 2 — Verificar captura de output**
+```bash
+python3 -c "
+import subprocess
+r = subprocess.run(['nuevo-cli', '-p', 'ok'], capture_output=True, text=True, timeout=60)
+print('STDOUT:', repr(r.stdout[:100]))
+print('STDERR:', repr(r.stderr[:100]))
+"
+```
+
+Si stdout está vacío, el CLI escribe a TTY → necesita wrapper con `unbuffer`.
+Si stdout tiene ANSI escapes → añadir `sed` de limpieza.
+
+**Paso 3 — Crear el MCP server**
+
+Copiar `gemini_mcp.py` como plantilla, cambiar:
+- Nombre del servidor: `Server("nuevo-agente")`
+- Nombre de la herramienta: `nuevo_agente_ask`
+- Comando del subprocess
+
+**Paso 4 — Registrar**
+```bash
+claude mcp add nuevo-agente --scope user \
+  -- python3 /home/manuel/mcp-servers/nuevo_agente_mcp.py
+```
