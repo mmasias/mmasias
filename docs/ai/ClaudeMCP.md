@@ -11,9 +11,19 @@ Claude Code ya tiene el bucle de control, el filesystem y el criterio de parada.
 ```
 Claude Code (orquestador)
     │
-    ├── gemini_ask  →  gemini_mcp.py  →  gemini CLI  →  Google Gemini
-    └── opencode_ask → opencode_mcp.py → opencode-wrapper.sh → z.ai / OpenCode
+    ├── gemini_ask / gemini_ask_async / gemini_result
+    │       └── gemini_mcp.py  →  gemini CLI  →  Google Gemini
+    └── opencode_ask / opencode_ask_async / opencode_result
+            └── opencode_mcp.py  →  opencode-wrapper.sh  →  z.ai / OpenCode
 ```
+
+Cada servidor expone dos modos de invocación:
+
+| Herramienta | Modo | Comportamiento |
+|---|---|---|
+| `gemini_ask` / `opencode_ask` | Síncrono | Bloquea hasta obtener respuesta |
+| `gemini_ask_async` / `opencode_ask_async` | Async | Devuelve `job_id` inmediatamente |
+| `gemini_result` / `opencode_result` | Consulta | Devuelve resultado o `"pendiente"` |
 
 Cada agente subordinado:
 
@@ -88,32 +98,78 @@ Elegir un modelo disponible. Ejemplos reales por máquina:
 Sustituir `/home/manuel/.nvm/versions/node/vX.Y.Z` con la ruta real.
 
 ```python
-import asyncio, subprocess
+import asyncio, subprocess, os, uuid
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Tool, TextContent
 
 server = Server("gemini")
+_jobs = {}
 
 @server.list_tools()
 async def list_tools():
-    return [Tool(
-        name="gemini_ask",
-        description="Consulta a Gemini CLI en modo no-interactivo.",
-        inputSchema={
-            "type": "object",
-            "properties": {"prompt": {"type": "string"}},
-            "required": ["prompt"]
-        }
-    )]
+    return [
+        Tool(
+            name="gemini_ask",
+            description="Consulta a Gemini CLI en modo no-interactivo.",
+            inputSchema={
+                "type": "object",
+                "properties": {"prompt": {"type": "string"}},
+                "required": ["prompt"]
+            }
+        ),
+        Tool(
+            name="gemini_ask_async",
+            description="Lanza una consulta a Gemini en background. Devuelve un job_id para recoger el resultado más tarde con gemini_result.",
+            inputSchema={
+                "type": "object",
+                "properties": {"prompt": {"type": "string"}},
+                "required": ["prompt"]
+            }
+        ),
+        Tool(
+            name="gemini_result",
+            description="Recoge el resultado de una consulta async lanzada con gemini_ask_async. Devuelve 'pendiente' si el proceso aún no terminó.",
+            inputSchema={
+                "type": "object",
+                "properties": {"job_id": {"type": "string"}},
+                "required": ["job_id"]
+            }
+        ),
+    ]
 
 @server.call_tool()
 async def call_tool(name: str, arguments: dict):
-    result = subprocess.run(
-        ["/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini", "-p", arguments["prompt"]],
-        capture_output=True, text=True, timeout=120
-    )
-    return [TextContent(type="text", text=result.stdout)]
+    if name == "gemini_ask":
+        result = subprocess.run(
+            ["/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini", "-p", arguments["prompt"]],
+            capture_output=True, text=True, timeout=120
+        )
+        return [TextContent(type="text", text=result.stdout)]
+
+    elif name == "gemini_ask_async":
+        job_id = str(uuid.uuid4())[:8]
+        outfile = f"/tmp/gemini_job_{job_id}.txt"
+        with open(outfile, "w") as f:
+            proc = subprocess.Popen(
+                ["/home/manuel/.nvm/versions/node/vX.Y.Z/bin/gemini", "-p", arguments["prompt"]],
+                stdout=f, stderr=subprocess.DEVNULL
+            )
+        _jobs[job_id] = {"proc": proc, "outfile": outfile}
+        return [TextContent(type="text", text=job_id)]
+
+    elif name == "gemini_result":
+        job_id = arguments["job_id"]
+        if job_id not in _jobs:
+            return [TextContent(type="text", text=f"job_id '{job_id}' no encontrado")]
+        job = _jobs[job_id]
+        if job["proc"].poll() is None:
+            return [TextContent(type="text", text="pendiente")]
+        with open(job["outfile"]) as f:
+            result = f.read()
+        os.unlink(job["outfile"])
+        del _jobs[job_id]
+        return [TextContent(type="text", text=result)]
 
 async def main():
     async with stdio_server() as streams:
@@ -151,42 +207,93 @@ chmod +x ~/mcp-servers/opencode-wrapper.sh
 Sustituir la versión de Node en PATH.
 
 ```python
-import asyncio, subprocess, os
+import asyncio, subprocess, os, uuid
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Tool, TextContent
 
 server = Server("opencode")
+_jobs = {}
 
 @server.list_tools()
 async def list_tools():
-    return [Tool(
-        name="opencode_ask",
-        description="Consulta a OpenCode (z.ai) en modo no-interactivo.",
-        inputSchema={
-            "type": "object",
-            "properties": {"prompt": {"type": "string"}},
-            "required": ["prompt"]
-        }
-    )]
+    return [
+        Tool(
+            name="opencode_ask",
+            description="Consulta a OpenCode (z.ai) en modo no-interactivo.",
+            inputSchema={
+                "type": "object",
+                "properties": {"prompt": {"type": "string"}},
+                "required": ["prompt"]
+            }
+        ),
+        Tool(
+            name="opencode_ask_async",
+            description="Lanza una consulta a OpenCode en background. Devuelve un job_id para recoger el resultado más tarde con opencode_result.",
+            inputSchema={
+                "type": "object",
+                "properties": {"prompt": {"type": "string"}},
+                "required": ["prompt"]
+            }
+        ),
+        Tool(
+            name="opencode_result",
+            description="Recoge el resultado de una consulta async lanzada con opencode_ask_async. Devuelve 'pendiente' si el proceso aún no terminó.",
+            inputSchema={
+                "type": "object",
+                "properties": {"job_id": {"type": "string"}},
+                "required": ["job_id"]
+            }
+        ),
+    ]
 
 @server.call_tool()
 async def call_tool(name: str, arguments: dict):
-    outfile = f"/tmp/opencode_out_{os.getpid()}.txt"
-    env = {
-        **os.environ,
-        "PATH": f"/home/manuel/.nvm/versions/node/vX.Y.Z/bin:{os.environ.get('PATH', '')}",
-        "HOME": "/home/manuel",
-        "OPENCODE_OUTFILE": outfile,
-    }
-    subprocess.run(
-        ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
-        env=env, timeout=120
-    )
-    with open(outfile) as f:
-        result = f.read()
-    os.unlink(outfile)
-    return [TextContent(type="text", text=result)]
+    if name == "opencode_ask":
+        outfile = f"/tmp/opencode_out_{os.getpid()}.txt"
+        env = {
+            **os.environ,
+            "PATH": f"/home/manuel/.nvm/versions/node/vX.Y.Z/bin:{os.environ.get('PATH', '')}",
+            "HOME": "/home/manuel",
+            "OPENCODE_OUTFILE": outfile,
+        }
+        subprocess.run(
+            ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
+            env=env, timeout=120
+        )
+        with open(outfile) as f:
+            result = f.read()
+        os.unlink(outfile)
+        return [TextContent(type="text", text=result)]
+
+    elif name == "opencode_ask_async":
+        job_id = str(uuid.uuid4())[:8]
+        outfile = f"/tmp/opencode_job_{job_id}.txt"
+        env = {
+            **os.environ,
+            "PATH": f"/home/manuel/.nvm/versions/node/vX.Y.Z/bin:{os.environ.get('PATH', '')}",
+            "HOME": "/home/manuel",
+            "OPENCODE_OUTFILE": outfile,
+        }
+        proc = subprocess.Popen(
+            ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
+            env=env
+        )
+        _jobs[job_id] = {"proc": proc, "outfile": outfile}
+        return [TextContent(type="text", text=job_id)]
+
+    elif name == "opencode_result":
+        job_id = arguments["job_id"]
+        if job_id not in _jobs:
+            return [TextContent(type="text", text=f"job_id '{job_id}' no encontrado")]
+        job = _jobs[job_id]
+        if job["proc"].poll() is None:
+            return [TextContent(type="text", text="pendiente")]
+        with open(job["outfile"]) as f:
+            result = f.read()
+        os.unlink(job["outfile"])
+        del _jobs[job_id]
+        return [TextContent(type="text", text=result)]
 
 async def main():
     async with stdio_server() as streams:
@@ -236,9 +343,17 @@ claude mcp list
 claude
 ```
 
+**Modo síncrono:**
 ```
 > usa la herramienta gemini_ask para preguntarle cuál es la capital de Francia
 > usa la herramienta opencode_ask para preguntarle cuál es la capital de Alemania
+```
+
+**Modo async:**
+```
+> usa gemini_ask_async para preguntarle cuál es la capital de Japón y dime el job_id
+> [seguir trabajando...]
+> usa gemini_result con el job_id anterior para ver la respuesta
 ```
 
 ## Diagnóstico de problemas frecuentes
@@ -272,6 +387,21 @@ Causas posibles:
 opencode escribe a `/dev/tty` en lugar de stdout. Solución: el wrapper con
 `unbuffer` + fichero temporal ya lo resuelve. Si persiste, verificar que el
 wrapper tiene permisos de ejecución: `chmod +x ~/mcp-servers/opencode-wrapper.sh`
+
+### `job_id 'xxx' no encontrado` en `gemini_result` / `opencode_result`
+
+El dict `_jobs` es efímero: vive solo mientras el proceso MCP server está activo.
+Si Claude Code se reinició entre el `_ask_async` y el `_result`, el job_id se perdió.
+Solución: lanzar y recoger resultados dentro de la misma sesión de Claude Code.
+
+### `_result` devuelve `"pendiente"` indefinidamente
+
+El proceso background colgó. Verificar manualmente:
+```bash
+ls /tmp/gemini_job_*.txt   # o opencode_job_
+# Si el fichero existe pero está vacío: el proceso colgó
+# Si no existe: aún está escribiendo (normal en opencode, que es más lento)
+```
 
 ## ¿Y ahora qué? — Incorporar nuevos agentes
 
