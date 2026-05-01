@@ -187,8 +187,10 @@ Sustituir `MODEL` con el modelo detectado en el paso 4.
 export NVM_DIR="/home/manuel/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 OUTFILE="${OPENCODE_OUTFILE:-/tmp/opencode_out.txt}"
-unbuffer opencode --log-level ERROR -m "MODEL" run "$1" > "$OUTFILE" 2>&1
-sed -i 's/\x1b\[[0-9;]*m//g; s/\r//' "$OUTFILE"
+PROMPT="$(cat "$1")"
+rm -f "$1"
+unbuffer opencode --log-level ERROR -m "MODEL" run "$PROMPT" 2>/dev/null | col -b > "$OUTFILE"
+sed -i 's/\x1b\[[0-9;]*m//g; s/\r//g; s/^0m$//g' "$OUTFILE"
 ```
 
 ```bash
@@ -199,8 +201,18 @@ chmod +x ~/mcp-servers/opencode-wrapper.sh
 > a stdout/stderr sino directamente a `/dev/tty`. `unbuffer` crea un pseudo-TTY
 > que engaña al proceso. En macOS usar `script -q /dev/null` en su lugar.
 
-> **Por qué fichero temporal**: aunque `unbuffer` resuelve el TTY, `capture_output`
-> de Python no captura la salida. El wrapper escribe a fichero; el MCP lee el fichero.
+> **Por qué fichero temporal para el output**: aunque `unbuffer` resuelve el TTY,
+> `capture_output` de Python no captura la salida. El wrapper escribe a fichero;
+> el MCP lee el fichero.
+
+> **Por qué `col -b`**: el TUI de opencode emite secuencias de cursor al terminar
+> que sobreescriben la respuesta en el fichero de output. `col -b` procesa esas
+> secuencias y deja solo el texto visible final.
+
+> **Por qué fichero temporal para el prompt**: pasar el prompt como `$1` permite
+> que backticks en el contenido (p.ej. código Markdown con triple-backtick) se
+> interpreten como command substitution dentro de la variable bash. Escribir el
+> prompt a fichero y leerlo con `$(cat "$1")` evita esa reinterpretación.
 
 #### `~/mcp-servers/opencode_mcp.py`
 
@@ -251,6 +263,9 @@ async def list_tools():
 async def call_tool(name: str, arguments: dict):
     if name == "opencode_ask":
         outfile = f"/tmp/opencode_out_{os.getpid()}.txt"
+        prompt_file = f"/tmp/opencode_prompt_{os.getpid()}.txt"
+        with open(prompt_file, "w") as pf:
+            pf.write(arguments["prompt"])
         env = {
             **os.environ,
             "PATH": f"/home/manuel/.nvm/versions/node/vX.Y.Z/bin:{os.environ.get('PATH', '')}",
@@ -258,7 +273,7 @@ async def call_tool(name: str, arguments: dict):
             "OPENCODE_OUTFILE": outfile,
         }
         subprocess.run(
-            ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
+            ["/home/manuel/mcp-servers/opencode-wrapper.sh", prompt_file],
             env=env, timeout=120, stdin=subprocess.DEVNULL
         )
         with open(outfile) as f:
@@ -269,6 +284,9 @@ async def call_tool(name: str, arguments: dict):
     elif name == "opencode_ask_async":
         job_id = str(uuid.uuid4())[:8]
         outfile = f"/tmp/opencode_job_{job_id}.txt"
+        prompt_file = f"/tmp/opencode_prompt_{job_id}.txt"
+        with open(prompt_file, "w") as pf:
+            pf.write(arguments["prompt"])
         env = {
             **os.environ,
             "PATH": f"/home/manuel/.nvm/versions/node/vX.Y.Z/bin:{os.environ.get('PATH', '')}",
@@ -276,7 +294,7 @@ async def call_tool(name: str, arguments: dict):
             "OPENCODE_OUTFILE": outfile,
         }
         proc = subprocess.Popen(
-            ["/home/manuel/mcp-servers/opencode-wrapper.sh", arguments["prompt"]],
+            ["/home/manuel/mcp-servers/opencode-wrapper.sh", prompt_file],
             env=env, stdin=subprocess.DEVNULL
         )
         _jobs[job_id] = {"proc": proc, "outfile": outfile}
@@ -319,7 +337,8 @@ print('RC:', r.returncode)
 "
 
 # Verificar wrapper de opencode
-OPENCODE_OUTFILE=/tmp/test.txt ~/mcp-servers/opencode-wrapper.sh "responde solo: ok"
+echo "responde solo: ok" > /tmp/test_prompt.txt
+OPENCODE_OUTFILE=/tmp/test.txt ~/mcp-servers/opencode-wrapper.sh /tmp/test_prompt.txt
 cat /tmp/test.txt
 ```
 
