@@ -39,7 +39,7 @@ Cada agente subordinado:
 - `opencode` CLI instalado y autenticado con z.ai
 - Python 3.x disponible
 - `pip3` disponible
-- `expect` instalado (para `unbuffer`) — solo Linux
+- `opencode` CLI capaz de ejecutarse sin TTY (verificado en v1.14+)
 
 ## Instalación
 
@@ -53,12 +53,9 @@ pip3 install mcp --break-system-packages
 
 **Fedora:**
 ```bash
-sudo dnf install python3-pip expect -y
+sudo dnf install python3-pip -y
 pip3 install mcp --break-system-packages
 ```
-
-> En Fedora, `expect` provee el comando `unbuffer`, necesario para que opencode
-> funcione sin TTY desde un subprocess.
 
 ### 2. Crear directorio de scripts
 
@@ -189,29 +186,24 @@ export NVM_DIR="/home/manuel/.nvm"
 OUTFILE="${OPENCODE_OUTFILE:-/tmp/opencode_out.txt}"
 PROMPT="$(cat "$1")"
 rm -f "$1"
-unbuffer opencode --log-level ERROR -m "MODEL" run "$PROMPT" 2>/dev/null | col -b > "$OUTFILE"
-sed -i 's/\x1b\[[0-9;]*m//g; s/\r//g; s/^0m$//g' "$OUTFILE"
+opencode --log-level ERROR -m "MODEL" run "$PROMPT" > "$OUTFILE" 2>/dev/null
 ```
 
 ```bash
 chmod +x ~/mcp-servers/opencode-wrapper.sh
 ```
 
-> **Por qué `unbuffer`**: opencode detecta ausencia de TTY y no escribe su output
-> a stdout/stderr sino directamente a `/dev/tty`. `unbuffer` crea un pseudo-TTY
-> que engaña al proceso. En macOS usar `script -q /dev/null` en su lugar.
+> **Por qué no `unbuffer`**: opencode v1.14+ escribe su output directamente a
+> stdout cuando no hay TTY. `unbuffer` interfiere con la captura en procesos
+> background (Popen) porque necesita un terminal controlador que no existe en ese
+> contexto — el resultado era output vacío en modo async.
 
-> **Por qué fichero temporal para el output**: aunque `unbuffer` resuelve el TTY,
-> `capture_output` de Python no captura la salida. El wrapper escribe a fichero;
-> el MCP lee el fichero.
+> **Por qué fichero temporal para el output**: `capture_output` de Python no
+> captura la salida del TUI. El wrapper escribe a fichero; el MCP lee el fichero.
 
-> **Por qué `col -b`**: el TUI de opencode emite secuencias de cursor al terminar
-> que sobreescriben la respuesta en el fichero de output. `col -b` procesa esas
-> secuencias y deja solo el texto visible final.
-
-> **Por qué fichero temporal para el prompt**: pasar el prompt como `$1` permite
-> que backticks en el contenido (p.ej. código Markdown con triple-backtick) se
-> interpreten como command substitution dentro de la variable bash. Escribir el
+> **Por qué fichero temporal para el prompt**: pasar el prompt como argumento
+> directo permite que backticks en el contenido (p.ej. código Markdown con
+> triple-backtick) se interpreten como command substitution en bash. Escribir el
 > prompt a fichero y leerlo con `$(cat "$1")` evita esa reinterpretación.
 
 #### `~/mcp-servers/opencode_mcp.py`
@@ -397,15 +389,22 @@ Solución: usar ruta absoluta al binario (ya está en el script).
 
 Causas posibles:
 
-1. `unbuffer` no instalado → `sudo dnf install expect`
-2. Modelo no disponible → verificar con `opencode models` y actualizar wrapper
-3. opencode no autenticado → ejecutar `opencode` en TUI y configurar proveedor
+1. Modelo no disponible → verificar con `opencode models` y actualizar wrapper
+2. opencode no autenticado → ejecutar `opencode` en TUI y configurar proveedor
 
 ### Output vacío en opencode
 
-opencode escribe a `/dev/tty` en lugar de stdout. Solución: el wrapper con
-`unbuffer` + fichero temporal ya lo resuelve. Si persiste, verificar que el
-wrapper tiene permisos de ejecución: `chmod +x ~/mcp-servers/opencode-wrapper.sh`
+Verificar que el wrapper tiene permisos de ejecución:
+```bash
+chmod +x ~/mcp-servers/opencode-wrapper.sh
+```
+
+Si el output sigue vacío, probar el wrapper directamente:
+```bash
+echo "responde solo: ok" > /tmp/test_prompt.txt
+OPENCODE_OUTFILE=/tmp/test_out.txt ~/mcp-servers/opencode-wrapper.sh /tmp/test_prompt.txt
+cat /tmp/test_out.txt
+```
 
 ### `job_id 'xxx' no encontrado` en `gemini_result` / `opencode_result`
 
