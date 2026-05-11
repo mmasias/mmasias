@@ -1,4 +1,4 @@
-# Aterrizaje del protocolo de integridad académica - EPS
+# Aterrizaje del protocolo de integridad académica - Grado en Ing.Informática
 
 > <sub>*Habría uno similar por grado, abordando las casuísticas y particularidades del grado, sobretodo en los puntos de verificación y trazabilidad*</sub>
 
