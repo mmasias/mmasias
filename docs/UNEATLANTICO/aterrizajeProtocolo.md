@@ -1,5 +1,7 @@
 # Aterrizaje del protocolo de integridad académica - EPS
 
+> <sub>*Habría uno similar por grado, abordando las casuísticas y particularidades del grado, sobretodo en los puntos de verificación y trazabilidad*</sub>
+
 ## Qué pedir al profesorado
 
 El protocolo institucional se concreta en cinco acciones.
