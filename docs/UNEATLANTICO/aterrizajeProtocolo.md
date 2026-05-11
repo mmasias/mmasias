@@ -14,25 +14,10 @@ El protocolo institucional se concreta en cinco acciones.
 
 En cada enunciado de entrega hay que indicar cuál aplica. Una línea es suficiente: "Esta actividad es Nivel X".
 
-### A -- Sin IA
-
-* Ningún uso de IA. El trabajo es íntegramente propio.
-* Ej.: Exámenes presenciales. Pruebas de código en aula. Ejercicios en pizarra.
-
-### B -- IA limitada
-
-* Solo uso instrumental: corrección ortográfica/gramatical, traducción, formato. Sin tocar el contenido técnico.
-* Ej.: Informe técnico donde el código y el análisis son propios pero se permite revisar la redacción.
-
-### C -- IA con declaración
-
-* Se permite IA para exploración, búsqueda de ideas, apoyo conceptual. El análisis, el diseño y el código final son propios. Uso obligatoriamente declarado.
-* Ej.: Proyecto de diseño de software. TFG/TFM. Trabajo de investigación donde la IA puede ayudar a buscar referencias o generar ideas iniciales.
-
-### D -- IA integrada
-
-* La IA es parte explícita de la tarea: el alumno la usa, la audita y la critica. Todo uso declarado y documentado. La responsabilidad final es siempre del alumno.
-* Ej.: Práctica de generación de código con IA y análisis crítico del resultado. Comparativa de soluciones humanas vs. generadas.
+|Sin IA|IA limitada|IA con declaración|IA integrada|
+|-|-|-|-|
+Ningún uso de IA. El trabajo es íntegramente propio.|Solo uso instrumental: corrección ortográfica/gramatical, traducción, formato. Sin tocar el contenido técnico.|Se permite IA para exploración, búsqueda de ideas, apoyo conceptual. El análisis, el diseño y el código final son propios. Uso obligatoriamente declarado.|La IA es parte explícita de la tarea: el alumno la usa, la audita y la critica. Todo uso declarado y documentado. La responsabilidad final es siempre del alumno.
+Ej.: Exámenes presenciales. Pruebas de código en aula. Ejercicios en pizarra.|Ej.: Informe técnico donde el código y el análisis son propios pero se permite revisar la redacción.|Ej.: Proyecto de diseño de software. TFG/TFM. Trabajo de investigación donde la IA puede ayudar a buscar referencias o generar ideas iniciales.|Ej.: Práctica de generación de código con IA y análisis crítico del resultado. Comparativa de soluciones humanas vs. generadas.
 
 ## La sección de declaración (para los niveles B, C y D)
 
