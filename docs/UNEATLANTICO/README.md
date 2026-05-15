@@ -44,7 +44,13 @@
 
 </div>
 
-## Herramientas desarrolladas
+## Herramientas
+
+- [WriteHuman](https://chromewebstore.google.com/detail/writehuman-history-replay/bfaogmhmapcefhmkdablidkcgkgnhghl)
+- [ZeroCheating](https://chromewebstore.google.com/detail/zerocheating/dlakhomnnnfbppalnpepmjcdigfpgpjm)
+- [Revision history](https://chromewebstore.google.com/detail/revision-history-writing/dlepebghjlnddgihakmnpoiifjjpmomh)
+
+### Desarrolladas
 
 <div align=center>
 
