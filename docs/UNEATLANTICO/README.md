@@ -25,6 +25,10 @@
 - [Nuestra política con respecto a la IA](2Think.md)
 - [Propuesta de etiquetado ético](/docs/ai/etiquetadoEtico.md)
 
+### Gabinete
+
+- [Protocolo](https://github.com/mmasias/mmasias/blob/main/docs/UNEATLANTICO/aterrizajeProtocolo.md)
+
 ## Cursos
 
 <div align=center>
