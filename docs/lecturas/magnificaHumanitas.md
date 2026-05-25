@@ -1,14 +1,16 @@
 # Lo que el Papa dice sobre tu móvil, tus redes y tu escuela
 
-**Magnifica Humanitas · Capítulo IV · Resumen para Ricardo**
+**Magnifica Humanitas · Capítulo IV · Resumen para jóvenes que quieren entender de qué va esto**
 
----
+> *Este texto lo preparé con ayuda de Claude pensando en Ricardo, que tiene 14 años. Pero si lo estás leyendo y no eres Ricardo, bienvenido igual.*
 
-## El negocio de tu atención
+## Empieza aquí
 
-Las plataformas que muchos usan todos los días (Instagram, TikTok, YouTube...) no son gratuitas porque sean generosas. Son gratuitas porque el producto eres tú: más exactamente, tu tiempo y tu atención. Están diseñadas por ingenieros muy inteligentes para que te resulte difícil parar.
+¿Alguna vez has abierto el móvil sin saber exactamente por qué? ¿O has intentado leer algo largo y a los dos minutos tu cabeza ya estaba en otro sitio? ¿O has pasado cuarenta minutos en TikTok sin haber decidido realmente hacerlo?
 
-El Papa no dice que esas plataformas sean malvadas. Dice algo más preciso: cuando un modelo de negocio prospera explotando tus puntos débiles, la persona que diseña ese sistema tiene una responsabilidad moral que no puede ignorar.
+No es que tengas poca fuerza de voluntad. Es que esas plataformas están diseñadas por ingenieros muy inteligentes para que eso pase. Tu atención es su negocio. Literalmente.
+
+El Papa no dice que esas plataformas sean malvadas. Dice algo más preciso: cuando un modelo de negocio prospera explotando tus puntos débiles, quien diseña ese sistema tiene una responsabilidad moral que no puede ignorar.
 
 > "Cuando los modelos de negocio prosperan a costa de la debilidad humana, la persona es tratada como un medio y no como un fin."
 
