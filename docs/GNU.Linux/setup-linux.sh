@@ -1028,6 +1028,79 @@ EOF
     success "bundungun disponible en el PATH"
 }
 
+# Corregir el target systemd de ollama.service: debe depender de multi-user.target,
+# no de graphical.target/default.target, para sobrevivir a 'systemctl isolate multi-user.target'
+configure_ollama_systemd_target() {
+    info "Comprobando el target systemd de ollama.service..."
+
+    if ! systemctl list-unit-files ollama.service &> /dev/null; then
+        warning "ollama.service no está instalado en este sistema. Omitiendo."
+        return 0
+    fi
+
+    local current_wanted_by
+    current_wanted_by=$(systemctl show ollama.service -p WantedBy --value)
+
+    if [[ "$current_wanted_by" == "multi-user.target" ]]; then
+        success "ollama.service ya está enganchado a multi-user.target"
+        return 0
+    fi
+
+    warning "ollama.service depende de '$current_wanted_by' en vez de multi-user.target"
+    info "Esto para Ollama si alguna vez se aísla la sesión a modo texto (systemctl isolate multi-user.target)"
+
+    local unit_path
+    unit_path=$(systemctl show ollama.service -p FragmentPath --value)
+
+    if [[ "$unit_path" != /etc/systemd/system/* ]]; then
+        info "La unidad viene de un paquete ($unit_path). Copiando a /etc/systemd/system/ para no tocar el original..."
+        sudo cp "$unit_path" /etc/systemd/system/ollama.service
+        unit_path="/etc/systemd/system/ollama.service"
+    fi
+
+    sudo sed -i 's/^WantedBy=.*/WantedBy=multi-user.target/' "$unit_path"
+
+    sudo systemctl disable ollama.service &> /dev/null
+    sudo systemctl enable ollama.service
+    sudo systemctl daemon-reload
+
+    local new_wanted_by
+    new_wanted_by=$(systemctl show ollama.service -p WantedBy --value)
+
+    if [[ "$new_wanted_by" == "multi-user.target" ]]; then
+        success "ollama.service reenganchado a multi-user.target: sobrevive a 'systemctl isolate multi-user.target'"
+    else
+        error "No se pudo verificar el reenganche. Revisar manualmente: systemctl show ollama.service -p WantedBy"
+    fi
+}
+
+# Crear lanzadores modo-texto / modo-grafico: liberan recursos del escritorio
+# (Plasma/kwin/Xwayland/portals/baloo/sddm) dejando activos los servicios de multi-user.target
+configure_modo_texto_launcher() {
+    info "Creando lanzadores modo-texto / modo-grafico en ~/.local/bin..."
+
+    local bin_dir="$HOME/.local/bin"
+    mkdir -p "$bin_dir"
+
+    cat > "$bin_dir/modo-texto" <<'EOF'
+#!/bin/bash
+echo "Pasando a modo texto: se detiene el escritorio gráfico y todo lo colgado de graphical.target."
+echo "Los servicios enganchados a multi-user.target (p.ej. ollama.service, si está corregido) siguen activos."
+exec sudo systemctl isolate multi-user.target
+EOF
+
+    cat > "$bin_dir/modo-grafico" <<'EOF'
+#!/bin/bash
+echo "Volviendo a modo gráfico."
+exec sudo systemctl isolate graphical.target
+EOF
+
+    chmod +x "$bin_dir/modo-texto" "$bin_dir/modo-grafico"
+
+    ensure_local_bin_in_path
+    success "modo-texto y modo-grafico disponibles en el PATH"
+}
+
 # Instalar oh-my-posh
 install_oh_my_posh() {
     info "Instalando oh-my-posh..."
@@ -2024,7 +2097,27 @@ check_status() {
     else
         echo -e "${YELLOW}[INFO]${NC} npm no está instalado. Los agentes de IA requieren Node.js/npm."
     fi
-    
+
+    echo
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "OLLAMA HEADLESS"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    if systemctl list-unit-files ollama.service &> /dev/null; then
+        local ollama_wanted_by
+        ollama_wanted_by=$(systemctl show ollama.service -p WantedBy --value 2>/dev/null)
+        printf "%-40s " "ollama.service target:"
+        if [[ "$ollama_wanted_by" == "multi-user.target" ]]; then
+            echo -e "${GREEN}✓ multi-user.target${NC}"
+        else
+            echo -e "${RED}✗ $ollama_wanted_by (debería ser multi-user.target)${NC}"
+        fi
+    else
+        printf "%-40s " "ollama.service target:"
+        echo -e "${YELLOW}- Ollama no instalado${NC}"
+    fi
+    check_item "modo-texto" "modo-texto"
+    check_item "modo-grafico" "modo-grafico"
+
     echo
     echo "======================================"
 }
@@ -2074,6 +2167,7 @@ show_menu() {
     printf "%-45s %s\n" "15) Carpeta repo" "16) Descargar repos"
     printf "%-45s %s\n" "17) Limpiar sistema" "18) Quitar bloatware"
     printf "%-45s %s\n" "19) SysInfo" "20) Ver estado"
+    printf "%-45s %s\n" "21) Ollama headless (target + modo-texto)" ""
     printf "%-45s %s\n" "99)  Salir" ""
     echo
     read -p "Ingresa tu opción: " option
@@ -2094,6 +2188,8 @@ show_menu() {
             install_vlc
             install_utilities
             install_oh_my_posh
+            configure_ollama_systemd_target  # no-op si Ollama no está instalado
+            configure_modo_texto_launcher
             setup_repos_directory
             download_repos
             remove_bloatware
@@ -2128,6 +2224,7 @@ show_menu() {
             fi
             ;;
         20) check_status ;;
+        21) configure_ollama_systemd_target; configure_modo_texto_launcher ;;
         99)
             echo "¡Gracias por usar el script!"
             exit 0
@@ -2169,6 +2266,8 @@ main() {
         install_vlc
         install_utilities
         install_oh_my_posh
+        configure_ollama_systemd_target  # no-op si Ollama no está instalado
+        configure_modo_texto_launcher
         setup_repos_directory
         download_repos
         remove_bloatware
