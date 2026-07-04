@@ -1084,6 +1084,9 @@ configure_modo_texto_launcher() {
 
     cat > "$bin_dir/modo-texto" <<'EOF'
 #!/bin/bash
+echo -en "\e]P7ffb000"
+echo -en "\e]PFffb000"
+clear
 echo "Pasando a modo texto: se detiene el escritorio gráfico y todo lo colgado de graphical.target."
 echo "Los servicios enganchados a multi-user.target (p.ej. ollama.service, si está corregido) siguen activos."
 exec sudo systemctl isolate multi-user.target
