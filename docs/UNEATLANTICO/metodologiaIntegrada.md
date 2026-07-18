@@ -300,6 +300,8 @@ Los commits del estudiante son la materia prima para generar su examen único. N
 
 **La lección:** No adaptamos nuestro sistema para resistir a la IA. Nuestro sistema ya era resistente porque nunca evaluamos memorización. Los LLMs solo hicieron evidente lo que siempre fue verdad: los exámenes tradicionales no miden comprensión real.
 
+*(Verificado 2026-07-18)* — "Ya usábamos Git para todo" no es una reconstrucción retrospectiva: el repositorio [`mmasias/prg1-22-23`](https://github.com/mmasias/prg1-22-23) se creó el 5 de septiembre de 2022, y el primer pull request de un alumno es del 3 de octubre de 2022. ChatGPT se lanzó el 30 de noviembre de 2022. Hay casi dos meses de curso completo, con alumnos entregando por PR, antes de que existiera la herramienta que esta metodología supuestamente vino a resistir.
+
 ## ¿Y ahora qué?
 
 ### Si quieres aplicar esto en tu contexto
