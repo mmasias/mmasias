@@ -33,18 +33,19 @@
 
 <div align=center>
 
-||||||[25-26 GII](https://github.com/mmasias/25-26-GII)|
+|Asignatura|14-15|22-23|23-24|24-25|25-26|
 |-|:-:|:-:|:-:|:-:|:-:|
-|Introducción a la gestión de proyectos de software|| [[22][23]](https://github.com/mmasias/iGPySw-22-23)|
-|Programación I|[[14][15]](https://docs.google.com/spreadsheets/d/1k8OPkYuepesPgod0dye1m0m4xvMbyidxupPzhOdYNqE/edit?usp=sharing) *(...)*| [[22][23]](https://github.com/mmasias/prg1-22-23) | [[23][24]](https://github.com/mmasias/23-24-prg1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-programacion-1)|[[24][25]](https://github.com/mmasias/24-25-prg1)|[[25][26]](https://github.com/mmasias/25-26-prg1)
-|Programación II||| [[23][24]](https://github.com/mmasias/23-24-prg2) / CR|[[24][25]](https://github.com/mmasias/24-25-prg2)|[25][26]
-|Estructura de datos y algoritmos I|||[[23][24]](https://github.com/mmasias/23-24-eda1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-estructura-de-datos-y-algoritmos-i)|[[24][25]](https://github.com/mmasias/24-25-eda1)|[[25][26]](https://github.com/mmasias/25-26-eda1)
-|Estructura de datos y algoritmos II|||[[23][24]](https://github.com/mmasias/23-24-eda2)|[[24][25]](https://github.com/mmasias/24-25-eda2)
-|Ingeniería de software I  || [[22][23]](https://github.com/mmasias/IdSw1-22-23) | [[23][24]](https://github.com/mmasias/23-24-IdSw1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-ingenieria-del-software)| [[24][25]](https://github.com/mmasias/24-25-IdSw1)| [[25][26]](https://github.com/mmasias/25-26-IdSw1)
-|&nbsp;&nbsp;&nbsp;&nbsp;<sub>*- Sesiones de requisitado*</sub> ||[[22][23]](https://github.com/mmasias/IdSw1-22-23/tree/main/000-entregas)|[[23][24]](https://github.com/mmasias/23-24-IdSw1-SDR)|[[24][25]](https://github.com/mmasias/24-25-IdSw1-SDR)|[[25][26]](https://github.com/mmasias/25-26-IdSw1-SDR)
-|Ingeniería de software II ||[[22][23]](https://github.com/mmasias/IdSw2-22-23) |[[23][24]](https://github.com/mmasias/23-24-IdSw2)|[[24][25]](https://github.com/mmasias/24-25-IdSw2)|[[25][26]](https://github.com/mmasias/25-26-IdSw2)
-|&nbsp;&nbsp;&nbsp;&nbsp;<sub>*- Sesiones de diseño / vibeCoding*</sub> |||[[23][24]](https://github.com/mmasias/23-24-IdSw2-SDD)|[[24][25]](https://github.com/mmasias/24-25-IdSw2-SDD)|[[25][26]](https://github.com/mmasias/25-26-IdSw2-sdvc)
-|Dirección de sistemas de información||[[22][23]](https://github.com/mmasias/DSI-22-23)|[[23][24]](https://github.com/mmasias/23-24-DSI)|[[24][25]](https://github.com/mmasias/24-25-DSI)
+|Gestión del grado|||||<sub>[[25][26]](https://github.com/mmasias/25-26-GII)</sub>|
+|iGPySw|| <sub>[[22][23]](https://github.com/mmasias/iGPySw-22-23)</sub>|
+|PRG1|<sub>[[14][15]](https://docs.google.com/spreadsheets/d/1k8OPkYuepesPgod0dye1m0m4xvMbyidxupPzhOdYNqE/edit?usp=sharing) *(...)*</sub>| <sub>[[22][23]](https://github.com/mmasias/prg1-22-23)</sub> | <sub>[[23][24]](https://github.com/mmasias/23-24-prg1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-programacion-1)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-prg1)</sub>|<sub>[[25][26]](https://github.com/mmasias/25-26-prg1)</sub>
+|PRG2||| <sub>[[23][24]](https://github.com/mmasias/23-24-prg2) / CR</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-prg2)</sub>|<sub>[25][26]</sub>
+|EDA1|||<sub>[[23][24]](https://github.com/mmasias/23-24-eda1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-estructura-de-datos-y-algoritmos-i)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-eda1)</sub>|<sub>[[25][26]](https://github.com/mmasias/25-26-eda1)</sub>
+|EDA2|||<sub>[[23][24]](https://github.com/mmasias/23-24-eda2)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-eda2)</sub>
+|IdSw1  || <sub>[[22][23]](https://github.com/mmasias/IdSw1-22-23)</sub> | <sub>[[23][24]](https://github.com/mmasias/23-24-IdSw1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-ingenieria-del-software)</sub>| <sub>[[24][25]](https://github.com/mmasias/24-25-IdSw1)</sub>| <sub>[[25][26]](https://github.com/mmasias/25-26-IdSw1)</sub>
+|&nbsp;&nbsp;&nbsp;&nbsp;<sub>*- Sesiones de requisitado*</sub> ||<sub>[[22][23]](https://github.com/mmasias/IdSw1-22-23/tree/main/000-entregas)</sub>|<sub>[[23][24]](https://github.com/mmasias/23-24-IdSw1-SDR)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-IdSw1-SDR)</sub>|<sub>[[25][26]](https://github.com/mmasias/25-26-IdSw1-SDR)</sub>
+|IdSw2 ||<sub>[[22][23]](https://github.com/mmasias/IdSw2-22-23)</sub> |<sub>[[23][24]](https://github.com/mmasias/23-24-IdSw2)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-IdSw2)</sub>|<sub>[[25][26]](https://github.com/mmasias/25-26-IdSw2)</sub>
+|&nbsp;&nbsp;&nbsp;&nbsp;<sub>*- Sesiones de diseño / vibeCoding*</sub> |||<sub>[[23][24]](https://github.com/mmasias/23-24-IdSw2-SDD)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-IdSw2-SDD)</sub>|<sub>[[25][26]](https://github.com/mmasias/25-26-IdSw2-sdvc)</sub>
+|DSI||<sub>[[22][23]](https://github.com/mmasias/DSI-22-23)</sub>|<sub>[[23][24]](https://github.com/mmasias/23-24-DSI)</sub>|<sub>[[24][25]](https://github.com/mmasias/24-25-DSI)</sub>
 
 </div>
 
