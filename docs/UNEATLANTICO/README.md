@@ -41,9 +41,9 @@
 |Estructura de datos y algoritmos I|||[[23][24]](https://github.com/mmasias/23-24-eda1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-estructura-de-datos-y-algoritmos-i)|[[24][25]](https://github.com/mmasias/24-25-eda1)|[[25][26]](https://github.com/mmasias/25-26-eda1)
 |Estructura de datos y algoritmos II|||[[23][24]](https://github.com/mmasias/23-24-eda2)|[[24][25]](https://github.com/mmasias/24-25-eda2)
 |Ingeniería de software I  || [[22][23]](https://github.com/mmasias/IdSw1-22-23) | [[23][24]](https://github.com/mmasias/23-24-IdSw1) / [CR](https://classroom.github.com/classrooms/150588315-23-24-ingenieria-del-software)| [[24][25]](https://github.com/mmasias/24-25-IdSw1)| [[25][26]](https://github.com/mmasias/25-26-IdSw1)
-|&nbsp;&nbsp;&nbsp;&nbsp;*- Sesiones de requisitado* ||[[22][23]](https://github.com/mmasias/IdSw1-22-23/tree/main/000-entregas)|[[23][24]](https://github.com/mmasias/23-24-IdSw1-SDR)|[[24][25]](https://github.com/mmasias/24-25-IdSw1-SDR)|[[25][26]](https://github.com/mmasias/25-26-IdSw1-SDR)
+|&nbsp;&nbsp;&nbsp;&nbsp;<sub>*- Sesiones de requisitado*</sub> ||[[22][23]](https://github.com/mmasias/IdSw1-22-23/tree/main/000-entregas)|[[23][24]](https://github.com/mmasias/23-24-IdSw1-SDR)|[[24][25]](https://github.com/mmasias/24-25-IdSw1-SDR)|[[25][26]](https://github.com/mmasias/25-26-IdSw1-SDR)
 |Ingeniería de software II ||[[22][23]](https://github.com/mmasias/IdSw2-22-23) |[[23][24]](https://github.com/mmasias/23-24-IdSw2)|[[24][25]](https://github.com/mmasias/24-25-IdSw2)|[[25][26]](https://github.com/mmasias/25-26-IdSw2)
-|&nbsp;&nbsp;&nbsp;&nbsp;*- Sesiones de diseño* |||[[23][24]](https://github.com/mmasias/23-24-IdSw2-SDD)|[[24][25]](https://github.com/mmasias/24-25-IdSw2-SDD)|[[25][26]](https://github.com/mmasias/25-26-IdSw2-sdvc)
+|&nbsp;&nbsp;&nbsp;&nbsp;<sub>*- Sesiones de diseño / vibeCoding*</sub> |||[[23][24]](https://github.com/mmasias/23-24-IdSw2-SDD)|[[24][25]](https://github.com/mmasias/24-25-IdSw2-SDD)|[[25][26]](https://github.com/mmasias/25-26-IdSw2-sdvc)
 |Dirección de sistemas de información||[[22][23]](https://github.com/mmasias/DSI-22-23)|[[23][24]](https://github.com/mmasias/23-24-DSI)|[[24][25]](https://github.com/mmasias/24-25-DSI)
 
 </div>
