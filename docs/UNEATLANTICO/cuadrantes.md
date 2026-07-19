@@ -1,8 +1,6 @@
 # Conoce vs Sabe usar
 
-## Variaciones sobre la misma idea
-
-### miVersion original
+## Versión oficial
 
 <div align=center>
 
@@ -12,6 +10,10 @@
 |**Sabe usar<br>poco**|Principiante|Teórico|
 
 </div>
+
+## Variantes descartadas
+
+Intento de "cuadrantizar" distintas aproximaciones a los mismos dos ejes — brainstorm, no alternativas en uso.
 
 ### Versión A
 
