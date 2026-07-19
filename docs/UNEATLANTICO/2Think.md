@@ -68,7 +68,7 @@ Este documento describe el criterio pedagógico propio (exámenes personalizados
 
 ## Pendiente
 
-[Zonas de intervención por curso](topologiaActuacion.md) sigue sin desarrollar del todo, y en su estado actual propone prohibición por defecto en 1º y 2º curso — contradice la práctica ya establecida en PRG1/PRG2 (IA permitida con documentación, no prohibida). Requiere reconciliación antes de darlo por válido, no es solo cuestión de completarlo.
+[Zonas de intervención por curso](topologiaActuacion.md) sigue sin desarrollar del todo. Su restricción en 1º-2º ("tutor socrático", sin generación de soluciones) describe el contexto de examen bajo entorno controlado, no las entregas de curso vía PR — ahí no hay conflicto con el marco operacional de arriba, que rige las entregas normales. Falta hacer esa distinción de alcance explícita en el propio documento; hoy se lee como si aplicara a todo por igual.
 
 ## Justificación
 
