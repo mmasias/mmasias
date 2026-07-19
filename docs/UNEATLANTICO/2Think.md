@@ -1,4 +1,4 @@
-# gII@UNEATLANTICO - Nuestra política con respecto a la IA - Documento de trabajo
+# gII@UNEATLANTICO - Nuestra política con respecto a la IA
 
 La IA es herramienta legítima de aprendizaje.
 
@@ -46,23 +46,29 @@ El alumno asume responsabilidad completa del código entregado. Esto significa:
 
 Si usó IA para generar parte del código, debe haber interiorizado suficientemente el contenido para poder defenderlo. Usar IA y no comprender lo generado viola el principio de responsabilidad.
 
-## 2DO!!!
+## Documento para alumnos
 
-> Desarrollar [Zonas](topologiaActuacion.md) / [Rubrica](Rubricus.md)
+**Principio:** la IA es una herramienta legítima de aprendizaje. El criterio de evaluación no es si la usaste, es si puedes responsabilizarte del código que entregas.
 
-### Documento para alumnos
+**Tus obligaciones:**
 
-> Completar/redactar política de una página con esta estructura:
+- Si usas IA para generar lógica, estructuras de datos o algoritmos (no para corregir sintaxis o formato), documéntalo en el commit o en la descripción del PR: qué generó la IA, qué cambiaste tú y por qué.
+- Tienes que poder explicar y modificar en vivo cualquier línea de tu código durante una revisión. Si no puedes, da igual quién la escribió — no demuestra que la entendiste.
+- Tu examen se genera desde tu propio código. Vas a defender decisiones que tomaste tú, no a resolver un problema genérico.
 
-- Principio: ***La IA es herramienta legítima***. *El criterio de evaluación es la capacidad de responsabilizarse del código entregado.*
-- Obligaciones:
-  - Documentar en commits/PRs cuando se use IA para generar lógica o estructuras no triviales
-  - Estar preparado para explicar y modificar cualquier línea de código en code reviews
-  - Asumir que será evaluado sobre su código real en exámenes personalizados
-- Consecuencias:
-  - Código que no se puede explicar o modificar no demuestra aprendizaje, independientemente de cómo se generó
-  - Code reviews detectarán si comprende su propio código
-  - Exámenes personalizados desde su código hacen inviable la delegación no comprendida
+**Consecuencias de no cumplirlas:**
+
+- Código que no puedes explicar o modificar no demuestra aprendizaje, se haya generado como se haya generado.
+- Las revisiones de código en clase van a detectar si entiendes lo que entregaste.
+- El examen se construye con tu propio código: delegar sin comprender se vuelve inviable, no hace falta que nadie te lo prohíba.
+
+## Relación con el protocolo institucional
+
+Este documento describe el criterio pedagógico propio (exámenes personalizados, code reviews) para esta asignatura. La alineación con el protocolo de integridad académica de la universidad — niveles de uso de IA, declaración obligatoria, régimen de reclamaciones — vive en [aterrizajeProtocolo.md](aterrizajeProtocolo.md). Son complementarios: uno explica cómo se evalúa aquí, el otro cómo eso encaja con la normativa del grado.
+
+## Pendiente
+
+[Zonas de intervención por curso](topologiaActuacion.md) sigue sin desarrollar del todo, y en su estado actual propone prohibición por defecto en 1º y 2º curso — contradice la práctica ya establecida en PRG1/PRG2 (IA permitida con documentación, no prohibida). Requiere reconciliación antes de darlo por válido, no es solo cuestión de completarlo.
 
 ## Justificación
 

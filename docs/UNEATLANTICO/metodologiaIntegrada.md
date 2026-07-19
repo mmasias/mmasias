@@ -277,6 +277,8 @@ Si usó IA y no puede defender lo generado, viola el principio de responsabilida
 
 Lo crítico: esta política **no prohíbe IA, exige responsabilidad**. El mismo principio que aplicábamos cuando los estudiantes copiaban de StackOverflow o de compañeros.
 
+Desarrollo completo del criterio pedagógico en [2Think.md](2Think.md) (incluye el documento de una página para alumnos); alineación con el protocolo de integridad académica de la universidad en [aterrizajeProtocolo.md](aterrizajeProtocolo.md).
+
 **Ejemplo de documentación transparente:**
 
 Este mismo documento aplica el principio de transparencia en el uso de herramientas. Ver [sistema de etiquetado ético](../ai/etiquetadoEtico.md) para más detalles sobre cómo documentar contribuciones humano-IA.
