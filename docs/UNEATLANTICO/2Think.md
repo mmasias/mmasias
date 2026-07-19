@@ -53,7 +53,7 @@ Si usó IA para generar parte del código, debe haber interiorizado suficienteme
 **Tus obligaciones:**
 
 - Si usas IA para generar lógica, estructuras de datos o algoritmos (no para corregir sintaxis o formato), documéntalo en el commit o en la descripción del PR: qué generó la IA, qué cambiaste tú y por qué.
-- Tienes que poder explicar y modificar en vivo cualquier línea de tu código durante una revisión. Si no puedes, da igual quién la escribió — no demuestra que la entendiste.
+- Tienes que poder explicar y modificar en vivo cualquier línea de tu código durante una revisión. Si no puedes, da igual quién la escribió: no demuestra que la entendiste.
 - Tu examen se genera desde tu propio código. Vas a defender decisiones que tomaste tú, no a resolver un problema genérico.
 
 **Consecuencias de no cumplirlas:**
@@ -64,11 +64,7 @@ Si usó IA para generar parte del código, debe haber interiorizado suficienteme
 
 ## Relación con el protocolo institucional
 
-Este documento describe el criterio pedagógico propio (exámenes personalizados, code reviews) para esta asignatura. La alineación con el protocolo de integridad académica de la universidad — niveles de uso de IA, declaración obligatoria, régimen de reclamaciones — vive en [aterrizajeProtocolo.md](aterrizajeProtocolo.md). Son complementarios: uno explica cómo se evalúa aquí, el otro cómo eso encaja con la normativa del grado.
-
-## Pendiente
-
-[Zonas de intervención por curso](topologiaActuacion.md) sigue sin desarrollar del todo. Su restricción en 1º-2º ("tutor socrático", sin generación de soluciones) describe el contexto de examen bajo entorno controlado, no las entregas de curso vía PR — ahí no hay conflicto con el marco operacional de arriba, que rige las entregas normales. Falta hacer esa distinción de alcance explícita en el propio documento; hoy se lee como si aplicara a todo por igual.
+Este documento describe el criterio pedagógico propio (exámenes personalizados, code reviews) para esta asignatura. La alineación con el protocolo de integridad académica de la universidad (niveles de uso de IA, declaración obligatoria, régimen de reclamaciones) vive en [aterrizajeProtocolo.md](aterrizajeProtocolo.md). Son complementarios: uno explica cómo se evalúa aquí, el otro cómo eso encaja con la normativa del grado.
 
 ## Justificación
 
