@@ -65,10 +65,12 @@ El script configura automáticamente Terminator con un layout personalizado de 4
 
 - **Panel superior izquierdo**: Claude Code (`claude`)
 - **Panel inferior izquierdo**: Gemini CLI (`gemini`)
-- **Panel superior derecho**: Codex (`codex`)
+- **Panel superior derecho**: OpenCode AI (`opencode`)
 - **Panel inferior derecho**: Qwen Code (`qwen`)
 
 La configuración incluye la fuente FiraCode Nerd Font Propo Medium 15 y se guarda en `~/.config/terminator/config`.
+
+Es acceso manual directo a cada becario: cada panel es una sesión interactiva independiente, no refleja cómo Claude Code orquesta a los demás vía CORRAL/MCP en el uso diario. Para eso está el lanzador `corral` (ver abajo).
 
 ### Lanzador bundungun
 
@@ -86,6 +88,26 @@ bundungun
 ```
 
 El script se asegura de que `~/.local/bin` esté en tu PATH automáticamente.
+
+### Lanzador corral
+
+El script crea además un lanzador `corral` en `~/.local/bin/` pensado para el modo de trabajo real con CORRAL: Claude Code orquesta a los demás becarios vía MCP (`opencode_run_async`, `gemini_run_async`, etc.) en vez de que cada uno se maneje en su propia terminal. El layout tiene:
+
+- **Panel izquierdo (grande)**: Claude Code (`claude`), el orquestador.
+- **Columna derecha, apilada de arriba a abajo**: cuatro paneles de solo lectura, uno por becario — OpenCode, Kiro, Gemini, Ollama — en fuente reducida (FiraCode Nerd Font Propo Medium 9).
+
+Cada panel de la derecha ejecuta `corral-tail <agente>`, un script también creado en `~/.local/bin/` que sigue el log del job MCP asíncrono más reciente de ese becario (`/tmp/<agente>_job_<id>.log`, escrito por `~/mcp-servers/<agente>_mcp.py`). El nombre del log cambia en cada invocación, así que `corral-tail` reengancha el `tail -F` cada vez que detecta un log más nuevo. Si `~/mcp-servers/<agente>_mcp.py` no existe en la máquina (CORRAL no desplegado ahí), el panel lo avisa y no falla.
+
+Uso:
+```bash
+corral            # borra los logs de /tmp de los cuatro becarios antes de abrir el layout (por defecto)
+corral --history  # no borra nada, conserva los logs de sesiones anteriores
+corral --reset    # ademas de los logs, borra output.md/output-<job_id>.md y el estado de jobs persistido
+```
+
+Por defecto `corral` empieza en limpio — evita confundir actividad de una sesión vieja con la de ahora (el caso de uso más común al abrir el layout). `--history` es el opt-in para cuando sí quieres ver el pasado (depurar el error de un job de hace días, por ejemplo). `--reset` es más agresivo: además de los logs, borra los resultados (`output*.md`) de cada becario en `~/misRepos/corral/<agente>/` y `~/.local/share/corral/jobs_<agente>.json` (el registro que usa `base.py` para reconstruir jobs tras un reinicio del servidor).
+
+> Desplegar los servidores MCP de CORRAL en sí (`~/mcp-servers/*_mcp.py`, registro en la config de Claude Code) queda fuera del alcance de este script — es responsabilidad de `myClaudeContext`. `corral` asume que ya están ahí.
 
 ### Verificación de estado (Opción 22)
 
@@ -128,7 +150,7 @@ Incluye verificaciones de:
 - IDEs (VS Code, Antigravity)
 - Herramientas de desarrollo (Java, graphviz, PlantUML, GitHub CLI)
 - Multimedia (Spotify, VLC, KDEnLive)
-- Utilidades (Node.js, npm, nvm, tree, htop, neofetch, bat, ripgrep, tmux, vim, eza, bundungun, Terminator, VirtualBox, DOSBox-X)
+- Utilidades (Node.js, npm, nvm, tree, htop, neofetch, bat, ripgrep, tmux, vim, eza, bundungun, corral, Terminator, VirtualBox, DOSBox-X)
 - Personalización (oh-my-posh)
 - Agentes de IA con formato visual C/G/C/Q
 - Carpeta ~/misRepos

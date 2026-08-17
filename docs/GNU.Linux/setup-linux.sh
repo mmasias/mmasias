@@ -886,7 +886,10 @@ install_agents() {
         # Crear lanzador bundungun y asegurar PATH
         configure_bundungun_launcher
 
-        success "Workspace IA configurado: Terminator + bundungun listo"
+        # Crear lanzador corral (Claude + columna de logs CORRAL en vivo)
+        configure_corral_launcher
+
+        success "Workspace IA configurado: Terminator + bundungun + corral listos"
     else
         warning "Terminator no se instaló correctamente. Saltando configuración de workspace."
         warning "Los agentes están instalados pero bundungun no estará disponible."
@@ -917,6 +920,9 @@ configure_terminator_layout() {
 [profiles]
   [[default]]
     font = FiraCode Nerd Font Propo Medium 15
+    use_system_font = False
+  [[corral-log]]
+    font = FiraCode Nerd Font Propo Medium 9
     use_system_font = False
 [layouts]
   [[default]]
@@ -977,6 +983,69 @@ configure_terminator_layout() {
       order = 1
       profile = default
       command = 'bash -c "source ~/.nvm/nvm.sh && qwen"'
+  [[corral]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1008
+    [[[child1]]]
+      type = HPaned
+      parent = child0
+      order = 0
+      position = 1100
+      ratio = 0.57
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      command = 'bash -c "source ~/.nvm/nvm.sh && claude"'
+    [[[child3]]]
+      type = VPaned
+      parent = child1
+      order = 1
+      position = 252
+      ratio = 0.25
+    [[[terminal4]]]
+      type = Terminal
+      parent = child3
+      order = 0
+      profile = corral-log
+      command = 'bash -c "~/.local/bin/corral-tail opencode"'
+    [[[child5]]]
+      type = VPaned
+      parent = child3
+      order = 1
+      position = 252
+      ratio = 0.333
+    [[[terminal6]]]
+      type = Terminal
+      parent = child5
+      order = 0
+      profile = corral-log
+      command = 'bash -c "~/.local/bin/corral-tail kiro"'
+    [[[child7]]]
+      type = VPaned
+      parent = child5
+      order = 1
+      position = 252
+      ratio = 0.5
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      profile = corral-log
+      command = 'bash -c "~/.local/bin/corral-tail gemini"'
+    [[[terminal9]]]
+      type = Terminal
+      parent = child7
+      order = 1
+      profile = corral-log
+      command = 'bash -c "~/.local/bin/corral-tail ollama"'
 [plugins]
 EOF
 
@@ -1026,6 +1095,116 @@ EOF
 
     ensure_local_bin_in_path
     success "bundungun disponible en el PATH"
+}
+
+# Wrapper que sigue el log del job MCP mas reciente de un becario CORRAL.
+# Los servidores (~/mcp-servers/<agente>_mcp.py) escriben /tmp/<agente>_job_<id>.log
+# por invocacion asincrona; el nombre cambia en cada job, asi que reenganchamos el
+# tail cada vez que aparece un log mas reciente.
+install_corral_tail_script() {
+    local bin_dir="$HOME/.local/bin"
+    local script="$bin_dir/corral-tail"
+
+    mkdir -p "$bin_dir"
+
+    cat > "$script" <<'EOF'
+#!/bin/bash
+agente="$1"
+if [ -z "$agente" ]; then
+    echo "Uso: corral-tail <gemini|opencode|ollama|kiro>"
+    exit 1
+fi
+
+if [ ! -f "$HOME/mcp-servers/${agente}_mcp.py" ]; then
+    echo "CORRAL no esta desplegado en esta maquina (falta ~/mcp-servers/${agente}_mcp.py)."
+    echo "Ver myClaudeContext para el despliegue de los servidores MCP."
+    exit 0
+fi
+
+echo "== $agente =="
+echo "Esperando actividad (job MCP asincrono)..."
+
+current=""
+tail_pid=""
+
+cleanup() {
+    [ -n "$tail_pid" ] && kill "$tail_pid" 2>/dev/null
+    exit 0
+}
+trap cleanup INT TERM
+
+while true; do
+    newest=$(ls -t "/tmp/${agente}_job_"*.log 2>/dev/null | head -1)
+    if [ -n "$newest" ] && [ "$newest" != "$current" ]; then
+        [ -n "$tail_pid" ] && kill "$tail_pid" 2>/dev/null
+        current="$newest"
+        echo
+        echo "== $agente: $(basename "$current") =="
+        tail -F -n 15 "$current" &
+        tail_pid=$!
+    fi
+    sleep 2
+done
+EOF
+
+    chmod +x "$script"
+    info "Script corral-tail creado en $script"
+}
+
+configure_corral_launcher() {
+    info "Creando lanzador corral en ~/.local/bin..."
+
+    local bin_dir="$HOME/.local/bin"
+    local launcher="$bin_dir/corral"
+
+    mkdir -p "$bin_dir"
+
+    install_corral_tail_script
+
+    cat > "$launcher" <<'EOF'
+#!/bin/bash
+# Por defecto, corral borra los logs de /tmp de los cuatro becarios antes de
+# empezar (evita confundir actividad vieja de otra sesion con la de ahora).
+# --history : no borra nada, conserva los logs de sesiones anteriores.
+# --reset   : ademas de los logs, borra output*.md de cada becario y el estado
+#             persistido de jobs -- empezar de cero, sin rastro de nada anterior.
+AGENTES="gemini opencode ollama kiro"
+
+DO_CLEAN=true
+DO_RESET=false
+
+for arg in "$@"; do
+    case "$arg" in
+        --history) DO_CLEAN=false ;;
+        --reset) DO_RESET=true ;;
+    esac
+done
+
+if [ "$DO_CLEAN" = true ] || [ "$DO_RESET" = true ]; then
+    for a in $AGENTES; do
+        rm -f "/tmp/${a}_job_"*.log
+    done
+fi
+
+if [ "$DO_RESET" = true ]; then
+    for a in $AGENTES; do
+        rm -f "$HOME/misRepos/corral/$a/output.md" "$HOME/misRepos/corral/$a/output-"*.md
+        rm -f "$HOME/.local/share/corral/jobs_$a.json"
+    done
+fi
+
+CURRENT_DIR="$(pwd)"
+terminator --working-directory="$CURRENT_DIR" --layout=corral </dev/null >/dev/null 2>&1 &
+TERMINATOR_PID=$!
+sleep 2
+disown "$TERMINATOR_PID"
+EOF
+
+    chmod +x "$launcher"
+    info "Lanzador corral creado en $launcher"
+
+    ensure_local_bin_in_path
+    success "corral disponible en el PATH"
 }
 
 # Corregir el target systemd de ollama.service: debe depender de multi-user.target,
@@ -2024,6 +2203,7 @@ check_status() {
     check_item "vim" "vim"
     check_item "eza" "eza"
     check_item "bundungun" "bundungun"
+    check_item "corral" "corral"
     check_item "Terminator" "terminator"
     check_item "VirtualBox" "virtualbox"
     check_item "DOSBox-X" "dosbox-x"
