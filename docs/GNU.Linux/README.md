@@ -27,12 +27,12 @@ Ingresa tu opción:
 
 ### Automática (instalación completa)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mmasias/mmasias/main/GNU.Linux/setup-linux.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mmasias/mmasias/main/docs/GNU.Linux/setup-linux.sh | bash
 ```
 
 ### Interactiva (menú de opciones)
 ```bash
-wget https://raw.githubusercontent.com/mmasias/mmasias/main/GNU.Linux/setup-linux.sh
+wget https://raw.githubusercontent.com/mmasias/mmasias/main/docs/GNU.Linux/setup-linux.sh
 bash setup-linux.sh
 ```
 
