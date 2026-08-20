@@ -919,10 +919,10 @@ configure_terminator_layout() {
 [keybindings]
 [profiles]
   [[default]]
-    font = FiraCode Nerd Font Propo Medium 15
+    font = JetBrainsMono Nerd Font Mono SemiBold 15
     use_system_font = False
   [[corral-log]]
-    font = FiraCode Nerd Font Propo Medium 9
+    font = JetBrainsMono Nerd Font Mono SemiBold 9
     use_system_font = False
 [layouts]
   [[default]]
@@ -1315,12 +1315,17 @@ install_oh_my_posh() {
         warning "No se pudieron descargar los temas de oh-my-posh"
     fi
 
-    # Verificar e instalar Nerd Fonts (FiraCode y MesloLG)
+    # Verificar e instalar Nerd Fonts (JetBrains Mono, FiraCode y MesloLG)
     mkdir -p ~/.fonts
 
     # Verificar si las fuentes ya están instaladas
+    jetbrainsmono_installed=false
     firacode_installed=false
     meslo_installed=false
+
+    if ls ~/.fonts/*JetBrainsMono* &> /dev/null; then
+        jetbrainsmono_installed=true
+    fi
 
     if ls ~/.fonts/*FiraCode* &> /dev/null; then
         firacode_installed=true
@@ -1330,14 +1335,24 @@ install_oh_my_posh() {
         meslo_installed=true
     fi
 
-    if [[ "$firacode_installed" == true && "$meslo_installed" == true ]]; then
-        success "Nerd Fonts (FiraCode y MesloLG) ya están instaladas"
+    if [[ "$jetbrainsmono_installed" == true && "$firacode_installed" == true && "$meslo_installed" == true ]]; then
+        success "Nerd Fonts (JetBrains Mono, FiraCode y MesloLG) ya están instaladas"
     else
         info "Descargando e instalando Nerd Fonts faltantes..."
 
         # Crear directorio temporal para descargas
         temp_fonts=$(mktemp -d)
         cd "$temp_fonts"
+
+        # Descargar JetBrains Mono si no está instalado (tipografía monoespaciada por defecto, ver preferencias del usuario)
+        if [[ "$jetbrainsmono_installed" == false ]]; then
+            info "Descargando JetBrains Mono Nerd Font..."
+            wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/$NERD_FONTS_VERSION/JetBrainsMono.zip
+            unzip -q JetBrainsMono.zip -d JetBrainsMono/
+            cp JetBrainsMono/*.ttf ~/.fonts/ 2>/dev/null || true
+        else
+            info "JetBrains Mono ya está instalado"
+        fi
 
         # Descargar FiraCode si no está instalado
         if [[ "$firacode_installed" == false ]]; then
@@ -1364,7 +1379,7 @@ install_oh_my_posh() {
         rm -rf "$temp_fonts"
 
         # Reconstruir cache de fuentes solo si se instaló algo nuevo
-        if [[ "$firacode_installed" == false || "$meslo_installed" == false ]]; then
+        if [[ "$jetbrainsmono_installed" == false || "$firacode_installed" == false || "$meslo_installed" == false ]]; then
             info "Reconstruyendo cache de fuentes..."
             fc-cache -fv > /dev/null 2>&1
         fi
@@ -1393,7 +1408,7 @@ install_oh_my_posh() {
         fi
         
         info "Configuración añadida a $SHELL_RC con el tema $theme"
-        info "Las fuentes Nerd Font (FiraCode y MesloLG) ya han sido instaladas automáticamente"
+        info "Las fuentes Nerd Font (JetBrains Mono, FiraCode y MesloLG) ya han sido instaladas automáticamente"
         info "Si deseas usar otras fuentes Nerd Font, visita: https://www.nerdfonts.com/"
     else
         warning "No se pudo determinar el shell que estás usando. Por favor, configura oh-my-posh manualmente."
