@@ -2,12 +2,12 @@
 
 ## El nombre y la definicion
 
-pyCelda es un acronimo interno cuyo desarrollo se omite en esta version publica. Sistema web para gestionar el ciclo de vida completo de documentos de gestion empresarial: `Borrador -> En Revision -> Aprobada`, con reapertura por incidencia o revocacion, planificacion de operaciones por sesiones, ponderaciones, referencias documentales y generacion del PDF oficial de cada documento con la plantilla de la organizacion.
+pyCelda es un sistema web para gestionar el ciclo de vida completo de documentos de gestion empresarial: `Borrador -> En Revision -> Aprobada`, con reapertura por incidencia o revocacion, planificacion de operaciones por sesiones, ponderaciones, referencias documentales y generacion del PDF oficial de cada documento con la plantilla de la organizacion.
 
 Dominio de negocio modelado (3 roles):
 
 - **Especialista**: redacta los apartados de sus documentos (contenido, referencias, planificacion de operaciones, ponderaciones), los envia a revision y descarga/previsualiza el PDF.
-- **DirectorPrograma**: mantiene el catalogo de su programa (modulos, resultados esperados, actividades del programa, asociaciones con metodologias y actividades operativas), revisa, aprueba, rechaza o escala documentos, y consulta el estado del periodo.
+- **Director**: mantiene el catalogo de su programa (modulos, resultados esperados, actividades del programa, asociaciones con metodologias y actividades operativas), revisa, aprueba, rechaza o escala documentos, y consulta el estado del periodo.
 - **Admin**: mantiene el catalogo institucional (organizacion, divisiones, programas, actividades, metodologias, sistemas de control, plantilla de personas, direccion de programa, periodo operativo) y genera/regenera los PDF.
 
 Acceso con cuenta corporativa (OAuth2/OIDC contra proveedor externo, dominio de correo restringido, sin auto-registro), JWT en cookie httpOnly.
