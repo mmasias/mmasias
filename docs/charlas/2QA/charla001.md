@@ -20,6 +20,14 @@ Un fallo que llega a producción no es una anécdota puntual, es un fallo silenc
 |1999-2024|El software de contabilidad Horizon, de Fujitsu, mostraba faltantes de dinero inexistentes en cientos de oficinas postales del Reino Unido. Cerca de 700 empleados fueron acusados y condenados por robo o fraude a partir de esos datos, varios encarcelados, arruinados, y al menos cuatro se suicidaron. Es el mayor error judicial en masa de la historia británica.|Una sentencia judicial de 2019 confirmó que Horizon "contenía errores, fallos y defectos" nunca investigados a fondo durante 16 años, mientras Fujitsu ayudaba a la fiscalía a procesar a los propios empleados perjudicados por esos defectos.|Más de 1.000 millones de libras reservados por el gobierno británico en compensaciones, cifra aún en aumento.
 |2024|El 19 de julio, una actualización de contenido de CrowdStrike Falcon provocó pantallas azules en 8,5 millones de equipos Windows en todo el mundo: vuelos cancelados en masa, hospitales que aplazaron cirugías, bancos, aeropuertos y centrales de emergencias 911 caídos. El mayor apagón informático de la historia.|El propio validador de contenido de CrowdStrike, el componente responsable de comprobar la integridad de una actualización antes de desplegarla, tenía un defecto que dejó pasar sin detectarlo el archivo defectuoso.|5.400 millones de dólares solo en empresas Fortune 500 (estimación de Parametrix); CrowdStrike perdió más de 30.000 millones de dólares en valor bursátil.
 
+### Esta semana
+
+<div align=center>
+
+<img src="https://github.com/user-attachments/assets/ad82b035-414b-4a8b-a085-8f23779c772f" />
+
+</div>
+
 ### En casa
 
 Supongamos
