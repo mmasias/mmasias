@@ -1,13 +1,74 @@
 # QA en el proceso de software: límites y responsabilidades
 
-> Charla 1 de 2 para FUNIBER. Sesión de 20 minutos. Audiencia: equipo completo (devs + QA).
-
 > "No existe ninguna otra actividad de pruebas que produzca una detección y corrección de errores de forma más eficiente (inversión/ahorro de tiempo y coste) que las pruebas estáticas basadas en revisiones."
 > — C. Kaner, J. Falk, H.Q. Nguyen, *Testing Computer Software*
 
 ## ¿Por qué?
 
-Un fallo que llega a producción no es una anécdota puntual, es un fallo silencioso que finalmente hizo ruido, demasiado tarde. RUP separa el rol "Ingeniero de pruebas" del "Ingeniero de componentes" por una razón de diseño, no burocrática: quien construye algo no puede ser el único juez de que está bien construido. Esa es la motivación entera de por qué QA existe como función independiente y no como "el desarrollador que prueba al final".
+Esa cita de apertura no es un capricho: Control de Calidad no es solo pruebas, son varias técnicas distintas, y la revisión suele ser la más barata y la más efectiva de todas. Si el proceso de calidad de un equipo empieza y termina en "ejecutar tests", ya está dejando la mitad del trabajo sobre la mesa.
+
+Un fallo que llega a producción no es una anécdota puntual, es un fallo silencioso que finalmente hizo ruido, demasiado tarde.
+
+|Fecha|Desastre|Causa|Coste|
+|-|-|-|-|
+|1962|El cohete Mariner 1, en una investigación espacial destinada a Venus, se desvió de su trayectoria de vuelo poco después de su lanzamiento. El control de la misión destruyó el cohete pasados 293 segundos desde el despegue.|Un programador codificó incorrectamente en el software una fórmula manuscrita, saltándose un simple guión sobre una expresión. Sin la función de suavizado indicada por este símbolo, el software interpretó como serias las variaciones normales de velocidad y causó correcciones erróneas en el rumbo que hicieron que el cohete saliera de su trayectoria.|18,5 millones de dólares
+|1978|Sólo unas horas después de que miles de aficionados al hockey abandonaran el Hartford Coliseum, la estructura de acero de su techo se desplomaba debido al peso de la nieve.|El desarrollador del software de diseño asistido (CAD) utilizado para diseñar el coliseo asumió incorrectamente que los soportes de acero del techo sólo debían aguantar la compresión de la propia estructura. Sin embargo, cuando uno de estos soportes se dobló debido al peso de la nieve, inició una reacción en cadena que hizo caer a las demás secciones del techo como si se tratara de piezas de dominó.|70 millones de dólares, más otros 20 millones en daños a la economía local.
+|1982|El software de control se volvió loco y produjo una presión excesiva en la tubería de gas transsiberiana, provocando la mayor explosión no nuclear, causada por el hombre, de la historia de la tierra.|los agentes de la CIA supuestamente introdujeron un error en el sistema informático canadiense adquirido por los soviéticos para controlar sus tuberías de gas. La compra era parte de un estratégico plan soviético para robar u obtener de forma encubierta tecnología secreta de los Estados Unidos. Cuando la CIA descubrió la compra, sabotearon el software de forma que éste superara la inspección soviética pero fallara una vez operativo|Millones de dólares, daño significativo a la economía soviética.
+|1996|El Ariane 5, el más novedoso cohete espacial no tripulado Europeo, fue destruido intencionadamente segundos después de su lanzamiento en su vuelo inaugural. Con él se destruyó su carga de cuatro satélites científicos destinados a estudiar la interacción del campo magnético de la tierra con los vientos solares.|El problema surgió cuando el sistema de guiado intentó convertir la velocidad lateral de la nave de 64 a 16 bits. El número era demasiado alto y se produjo un error de desbordamiento, lo que hizo que el sistema de guiado se detuviera. En ese momento, el control pasó a un sistema idéntico redundante, que también falló al ejecutar el mismo algoritmo.|500 millones de dólares.
+|2000|El software de radiación terapéutica creado por Multidata Systems International fallaba al calcular la dosis apropiada, exponiendo a los pacientes a peligrosos, y en algunos casos mortales, niveles de radiación. Los físicos, a los que legalmente se exige una doble comprobación de los cálculos del software, fueron acusados de asesinato.|El software calculaba la dosis de radiación basándose en el orden en que los datos eran introducidos, lo que provocaba que a veces generara una dosis doble de radiación.|8 personas muertas, 20 heridas de gravedad.
+|2004|El gigante de servicios EDS desarrolló un sistema informático para la agencia británica "Child Support Agency (CSA)" que accidentalmente pagó más de lo debido a 1.900.000 personas, pagó de menos a otras 700.000, tenía 3.500 millones de libras de manutención de niños sin cobrar, un atraso de 239.000 casos, 36.000 nuevos casos bloqueados en el sistema, y todavía hay más de 500 bugs documentados.|EDS introdujo un enorme y complejo sistema de información en la CSA de forma simultánea a una reestructuración de la agencia.|539 millones de libras, y sumando.
+|1999-2024|El software de contabilidad Horizon, de Fujitsu, mostraba faltantes de dinero inexistentes en cientos de oficinas postales del Reino Unido. Cerca de 700 empleados fueron acusados y condenados por robo o fraude a partir de esos datos, varios encarcelados, arruinados, y al menos cuatro se suicidaron. Es el mayor error judicial en masa de la historia británica.|Una sentencia judicial de 2019 confirmó que Horizon "contenía errores, fallos y defectos" nunca investigados a fondo durante 16 años, mientras Fujitsu ayudaba a la fiscalía a procesar a los propios empleados perjudicados por esos defectos.|Más de 1.000 millones de libras reservados por el gobierno británico en compensaciones, cifra aún en aumento.
+|2024|El 19 de julio, una actualización de contenido de CrowdStrike Falcon provocó pantallas azules en 8,5 millones de equipos Windows en todo el mundo: vuelos cancelados en masa, hospitales que aplazaron cirugías, bancos, aeropuertos y centrales de emergencias 911 caídos. El mayor apagón informático de la historia.|El propio validador de contenido de CrowdStrike, el componente responsable de comprobar la integridad de una actualización antes de desplegarla, tenía un defecto que dejó pasar sin detectarlo el archivo defectuoso.|5.400 millones de dólares solo en empresas Fortune 500 (estimación de Parametrix); CrowdStrike perdió más de 30.000 millones de dólares en valor bursátil.
+
+### En casa
+
+Supongamos
+
+- 5.000 empleados, 1.000 €/mes cada uno.
+- Jornada estándar: 40 h/semana son 173,33 horas/mes (*40×52/12, conversión que usan los convenios laborales en España*).
+- Una caída de SG a las 16:00h de España, la hora "letal": el momento del día en que todas las sedes están conectadas a la vez, así que el supuesto de que los 5.000 empleados quedan parados simultáneamente deja de ser una hipótesis pesimista y pasa a ser el escenario real de máximo impacto.
+
+<div align=center>
+
+|||
+|-|-|
+Coste/hora por empleado|1.000 / 173,33 = 5,77 €
+Coste/minuto por empleado|5,77 / 60 = 0,096 €
+Coste/minuto, 5.000 empleados parados|0,096 × 5.000 = 480,77 €/minuto
+Coste/hora, 5.000 empleados parados|28.846 €/hora
+Coste/jornada completa (8h) parada|230.769 €/día
+
+#### SG caído
+
+|Un minuto|Una hora|Un día|
+|:-:|:-:|:-:|
+481 €|~ 29.000 €|~ 230.000 €
+
+</div>
+
+Y esto es el suelo, no el techo. Solo cuenta salario bruto de gente sentada sin producir. No cuenta:
+
+- Carga social de empresa (en España ronda +30% sobre el bruto): con eso, el minuto sube a 625 € y la hora a 37.500 €.
+- Ingresos que la empresa dejó de facturar mientras el sistema estaba caído.
+- Penalizaciones de SLA con clientes.
+- El coste de recuperación posterior (horas extra deshaciendo el desastre, que casi siempre superan el tiempo de la caída original).
+
+Conocido el precio, queda la pregunta incómoda: ¿en qué fase mental se está pagando esa factura? Boris Beizer describió cinco fases por las que pasa quien entiende (o no) para qué sirven las pruebas:
+
+<div align=center>
+
+|Fase 0|Fase 1|Fase 2|Fase 3|Fase 4|
+|-|-|-|-|-|
+|No hay ninguna diferencia entre prueba y depuración. Las pruebas no tienen ningún propósito propio.|El objetivo de la prueba es demostrar que el software funciona.|El objetivo de la prueba es demostrar que el software **no** funciona.|El propósito no es demostrar nada, sino reducir el riesgo percibido cuando el software no se comporta dentro de valores aceptables.|Las pruebas no son un acto, son una disciplina mental que produce software de bajo riesgo sin esfuerzo excesivo en pruebas.|
+|Muy mal|Mal|Regular|Bien|Muy bien|
+
+</div>
+
+*(Nota de dirección: pausa breve, que cada uno se sitúe en silencio, sin decirlo en voz alta todavía.)* La mayoría de los equipos "sin rigor" viven en Fase 0 o 1: para ellos "probar" es "he pulsado el botón y no ha fallado". Eso es exactamente el nivel de rigor con el que se paga la factura de la tabla anterior.
+
+RUP separa el rol "Ingeniero de pruebas" del "Ingeniero de componentes" por una razón de diseño, no burocrática: quien construye algo no puede ser el único juez de que está bien construido.
+
+Esa es la motivación entera de por qué QA existe como función independiente y no como "el desarrollador que prueba al final".
 
 ## ¿Qué?
 
@@ -17,32 +78,49 @@ Con esa precisión hecha, el límite de responsabilidad concreto ya está en el 
 
 > "Informe los defectos **al ingeniero de componentes**, que es responsable de los componentes que probablemente contengan la falla" frente a "Informar los defectos **a los diseñadores de pruebas**, quienes luego utilizan los defectos para evaluar los resultados generales del esfuerzo de prueba."
 
-Traducido a los dos roles de esta sala:
+Traducido a los dos roles que nos ocupan:
 
 - **QA diagnostica**: reproduce, aporta evidencia, clasifica severidad/prioridad, no propone la solución técnica.
 - **Desarrollador repara**: dueño del código, dueño del arreglo.
 
-Vocabulario que necesitan compartir para que esto no sea ambiguo:
+Vocabulario que un equipo necesita compartir para que esto no sea ambiguo:
 
 | Término | Qué es | Confusión habitual |
 |---|---|---|
-| QA *vs* <br>QC *vs* <br>Testing | QA = proceso (prevenir defectos).<br>QC = producto (detectarlos).<br>Testing = técnica de QC. | Llamar "QA" a "los que testean" ya es síntoma de falta de rigor. |
+| QA *vs* <br>QC *vs* <br>Testing | QA = proceso (prevenir defectos).<br>QC = producto (detectarlos), mediante cuatro técnicas que se detallan en ¿Cómo?.<br>Testing es solo una de esas cuatro. | Llamar "QA" a "los que testean" ya es síntoma de falta de rigor. |
 | Verificación *vs* <br>Validación | Verificación: ¿construimos el producto correctamente?<br>Validación: ¿construimos el producto correcto? | Pasar el 100% de los tests y entregar algo inútil: falla la validación, no la verificación. |
 | Defecto *vs*<br>Fallo | Defecto: error en el artefacto.<br>Fallo: su manifestación observable en ejecución. | Un defecto puede vivir meses sin fallar. No detectarlo no es "no pasa nada", es un fallo silencioso en espera. |
 | Severidad *vs*<br>Prioridad | Severidad: impacto técnico.<br>Prioridad: urgencia de negocio. | Se mezclan constantemente al priorizar la lista de defectos pendientes. |
 
 ## ¿Para qué?
 
-Separar diagnóstico de reparación evita que el límite se disuelva junto con la responsabilidad de quién responde de qué. Y resuelve, de raíz, el problema real: **"ya lo he probado" dicho por un desarrollador no es evidencia, es una afirmación.** Verificar con evidencia directa antes de dar algo por bueno no es desconfianza personal, es el motivo por el que el rol de pruebas existe como rol separado. Dicho más corto: **más vale prevenir que currar.**
+|||||
+|-|-|-|-
+Separar diagnóstico de reparación evita que el límite se disuelva junto con la responsabilidad de quién responde de qué.|Y resuelve, de raíz, el problema real: **"ya lo he probado" dicho por un desarrollador no es evidencia, es una afirmación.**|Verificar con evidencia directa antes de dar algo por bueno no es desconfianza personal, es el motivo por el que el rol de pruebas existe como rol separado.|Dicho más corto: **prevenir cuesta menos que corregir.**
 
 ## ¿Cómo?
 
-Sin anestesia, esto es lo que rompe el límite en un equipo sin rigor, dicho en voz alta con ejemplos reconocibles:
+Las cuatro técnicas con las que se hace Control de Calidad:
 
-- Pruebas solo al final, todo de golpe, que contradice la naturaleza iterativa del propio proceso que siguen.
+| Técnica | En qué consiste | Naturaleza |
+|---|---|---|
+| Revisar | Repaso informal del código, iniciado por el propio autor, sin checklist. | Estática: se lee el código, no se ejecuta. |
+| Inspeccionar | Repaso formal, iniciado por el equipo, con checklist y moderador. | Estática: se lee el código, no se ejecuta. |
+| Probar | Ejecutar el software para comprobar su comportamiento frente a casos concretos. | Dinámica: se ejecuta el código y se compara el resultado con lo esperado. |
+| Depurar | Localizar y corregir, dentro del propio código, la causa de un fallo ya detectado. | Dinámica: se ejecuta el código para localizar la causa del fallo. |
+
+Un test unitario cae sin ambigüedad en Probar, no en Inspeccionar: es ejecución, no lectura. Y lo que hace QA también cae en Probar, no es una técnica distinta: la diferencia con el test unitario del desarrollador es el nivel (integración y sistema, no unidad) y el rol (QA planifica, diseña con trazabilidad y evalúa el resultado; no solo ejecuta y da por bueno).
+
+Y esto es lo que rompe el límite en un equipo sin rigor, con ejemplos fácilmente reconocibles:
+
+- Pruebas solo al final, todo de golpe, que contradice la naturaleza iterativa del propio proceso.
+
 - Reportes de defecto sin pasos de reproducción ni evidencia (capturas, logs, entorno).
+
 - Sin trazabilidad caso de uso -> caso de prueba: nadie sabe qué parte del sistema no se ha tocado.
+
 - Criterios de entrada/salida inexistentes o informales ("cuando esté tranquilo lo paso a producción").
+
 - QA proponiendo el arreglo técnico, o el desarrollador decidiendo unilateralmente qué no hace falta probar.
 
 Un equipo con este límite claro, en cambio, **rara vez** discute en la incidencia quién tiene la culpa, **rara vez** repite la pregunta "¿esto es tuyo o mío?", y **rara vez** descubre en producción algo que ya sabía que no había probado.
@@ -52,8 +130,12 @@ Un equipo con este límite claro, en cambio, **rara vez** discute en la incidenc
 > "Las buenas prácticas no son suficientes por sí mismas, tienen que entenderse bajo un conjunto de valores y principios que permiten al equipo comportarse como una unidad con un objetivo común."
 > — Kent Beck, *Extreme Programming Explained*
 
-Turno de dudas y preguntas. Cierre puente a la charla 2: un fallo en producción no es un fracaso del desarrollador ni de QA individualmente, es que el proceso no hizo ruido a tiempo. Eso se audita, no solo se cierra la incidencia.
+*(Nota de dirección: turno de dudas y preguntas. Usar lo siguiente como cierre puente a la charla 2.)* Un fallo en producción no es un fracaso del desarrollador ni de QA individualmente, es que el proceso no hizo ruido a tiempo. Eso se audita, no solo se cierra la incidencia.
 
 ---
 
 **Fuentes de la cita RUP**: tabla de roles en `idsw1/temario/00002-rup.md`; actividad "Realizar Pruebas de Integración" en el material de Luis (`3-publicaciones/USantaTecla/5-rup/5-pruebas`), adaptación directa del Rational Unified Process; corroborado externamente por OpenUP (Eclipse Process Framework, derivado abierto oficial de RUP), que define **Developer** y **Tester** como roles separados.
+
+**Fuente de las fases de madurez**: Boris Beizer, *Software Testing Techniques*, tal como aparece recogido en el material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`).
+
+**Fuente de Calidad/QA/QC y las técnicas de Control de Calidad**: apartado "Gestión de Calidad Software" del mismo material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`, sección ¿Cómo?).
