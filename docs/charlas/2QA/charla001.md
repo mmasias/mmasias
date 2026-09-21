@@ -26,7 +26,13 @@ Un fallo que llega a producción no es una anécdota puntual, es un fallo silenc
 
 <div align=center>
 
-<img width="75%" src="https://github.com/user-attachments/assets/ad82b035-414b-4a8b-a085-8f23779c772f" />
+<table>
+<tr><th align=center><img width="75%" src="https://github.com/user-attachments/assets/ad82b035-414b-4a8b-a085-8f23779c772f" /></th></tr>
+<tr><td>
+El Ayuntamiento de Santander sufre una caída de la infraestructura informática que ha paralizado su actividad al completo. Actualmente todos los servicios municipales están cerrados al público y se prevé que el problema persista, al menos, durante dos días.<br>Los trabajadores han sido enviados a sus casas ante la imposibilidad de continuar con su trabajo. No funcionan ni los servicios informáticos ni las líneas de teléfono de la casa consistorial y el edificio de la calle la Paz.<br>Fuentes cercanas al suceso denuncian que la infraestructura lleva meses dañada. Alcanzando los 40 grados el sistema, no pueden instalar aire acondicionado por riesgo de incendio de la infraestructura eléctrica. 
+</td></tr>
+</table>
+
 
 </div>
 
