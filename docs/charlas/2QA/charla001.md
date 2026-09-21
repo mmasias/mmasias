@@ -74,7 +74,7 @@ Conocido el precio, queda la pregunta incómoda: ¿en qué fase mental se está 
 
 </div>
 
-*(Nota de dirección: pausa breve, que cada uno se sitúe en silencio, sin decirlo en voz alta todavía.)* La mayoría de los equipos "sin rigor" viven en Fase 0 o 1: para ellos "probar" es "he pulsado el botón y no ha fallado". Eso es exactamente el nivel de rigor con el que se paga la factura de la tabla anterior.
+La mayoría de los equipos "sin rigor" viven en Fase 0 o 1: para ellos "probar" es "he pulsado el botón y no ha fallado". Eso es exactamente el nivel de rigor con el que se paga la factura de la tabla anterior.
 
 RUP separa el rol "Ingeniero de pruebas" del "Ingeniero de componentes" por una razón de diseño, no burocrática: quien construye algo no puede ser el único juez de que está bien construido.
 
@@ -140,7 +140,7 @@ Un equipo con este límite claro, en cambio, **rara vez** discute en la incidenc
 > "Las buenas prácticas no son suficientes por sí mismas, tienen que entenderse bajo un conjunto de valores y principios que permiten al equipo comportarse como una unidad con un objetivo común."
 > — Kent Beck, *Extreme Programming Explained*
 
-*(Nota de dirección: turno de dudas y preguntas. Usar lo siguiente como cierre puente a la charla 2.)* Un fallo en producción no es un fracaso del desarrollador ni de QA individualmente, es que el proceso no hizo ruido a tiempo. Eso se audita, no solo se cierra la incidencia.
+Un fallo en producción no es un fracaso del desarrollador ni de QA individualmente, es que el proceso no hizo ruido a tiempo. Eso se audita, no solo se cierra la incidencia.
 
 ---
 

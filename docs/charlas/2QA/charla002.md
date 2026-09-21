@@ -64,8 +64,6 @@ El semáforo en verde de una batería de pruebas no certifica nada por sí mismo
 
 > "No parchear, reescribirlo. A menudo, puede ser mucho más barato y menos doloroso tirar un fragmento de código que tiene un montón de errores y reescribirlo desde cero."
 
-*(Nota de dirección: formato taller, no charla. Lanzar cada pregunta y hacer una pausa real en silencio, sin rellenarla ni responder por el equipo, antes de pasar a la siguiente.)*
-
 - ¿Quién decide que una funcionalidad está "hecha": el equipo de QA o quien la programó?
 - Un "ya lo he probado" de un desarrollador, ¿es evidencia que el equipo acepta, o una afirmación que verifica?
 - ¿Puede el equipo nombrar, ahora mismo, qué parte del sistema no tiene ningún caso de prueba asociado?
@@ -75,7 +73,7 @@ El semáforo en verde de una batería de pruebas no certifica nada por sí mismo
 
 ## ¿Y ahora qué?
 
-*(Nota de dirección: cerrar con esta pregunta, dejada abierta a propósito.)* "Si el equipo de QA desapareciera mañana, ¿qué es lo que dejaría de pasar que hoy da por hecho la organización?" Sin respuesta clara y compartida a eso, la función de QA no está justificando su lugar en el proceso.
+"Si el equipo de QA desapareciera mañana, ¿qué es lo que dejaría de pasar que hoy da por hecho la organización?" Sin respuesta clara y compartida a eso, la función de QA no está justificando su lugar en el proceso.
 
 ---
 
