@@ -98,6 +98,17 @@ Traducido a los dos roles que nos ocupan:
 - **QA diagnostica**: reproduce, aporta evidencia, clasifica severidad/prioridad, no propone la solución técnica.
 - **Desarrollador repara**: dueño del código, dueño del arreglo.
 
+Y esa reparación, o esa detección, es sencilla o brutal según cómo se haya construido el software. Cuatro pares de cualidades, en positivo y en negativo:
+
+| Mantenible | No mantenible |
+|:-:|:-:|
+| **Fluido**: se puede entender con facilidad | **Viscoso**: no se puede entender con facilidad |
+| **Flexible**: se puede cambiar con facilidad | **Rígido**: no se puede cambiar con facilidad |
+| **Fuerte**: se puede probar con facilidad | **Frágil**: no se puede probar con facilidad |
+| **Reusable**: se puede reutilizar con facilidad | **Inmóvil**: no se puede reutilizar con facilidad |
+
+El par que le toca directamente a esta charla es fragilidad contra fortaleza. Un ejemplo real: en un sistema de comercio electrónico, modificar el cálculo de descuentos del carrito hace fallar, sin razón aparente, el sistema de notificaciones por email, la generación de facturas y la sincronización con el inventario. Cada corrección introduce más problemas de los que resuelve. Eso no es que QA no encuentre defectos: es que el propio diseño los esconde en cascada, y ningún nivel de disciplina de pruebas compensa un sistema frágil por diseño.
+
 Vocabulario que un equipo necesita compartir para que esto no sea ambiguo:
 
 | Término | Qué es | Confusión habitual |
@@ -154,3 +165,5 @@ Un fallo en producción no es un fracaso del desarrollador ni de QA individualme
 **Fuente de las fases de madurez**: Boris Beizer, *Software Testing Techniques*, tal como aparece recogido en el material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`).
 
 **Fuente de Calidad/QA/QC y las técnicas de Control de Calidad**: apartado "Gestión de Calidad Software" del mismo material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`, sección ¿Cómo?).
+
+**Fuente de las cuatro cualidades de mantenibilidad**: mismo concepto en el material de Luis (imágenes `arbolMantenible`/`arbolNoMantenible` de `3-publicaciones/USantaTecla/4-pruebas/0-itinerario`) y desarrollado con ejemplos propios en `idsw2/temario/00-introduccion/proyectosSoftware.md`.
