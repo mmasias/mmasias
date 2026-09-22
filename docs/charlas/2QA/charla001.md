@@ -107,7 +107,13 @@ Y esa reparación, o esa detección, es sencilla o brutal según cómo se haya c
 | **Fuerte**: se puede probar con facilidad | **Frágil**: no se puede probar con facilidad |
 | **Reusable**: se puede reutilizar con facilidad | **Inmóvil**: no se puede reutilizar con facilidad |
 
-El par que le toca directamente a esta charla es fragilidad contra fortaleza. Un ejemplo real, en positivo, de un proyecto en marcha ahora mismo, desarrollado por una sola persona con varios LLM como programadores, bajo un proceso con los mismos roles separados de los que habla esta charla -- quien construye no es quien da el visto bueno, cada entrega se revisa con evidencia real antes de aceptarla, no con un "ya lo he probado": al introducir `CursoAcademico` como concepto nuevo, el sistema siguió funcionando en apariencia -- con un solo curso académico activo en producción, la suite de 777 tests seguía entera en verde. Pero nueve puntos distintos del código (el listado de guías del profesor, la Auditoría, la importación de contenido entre asignaturas hermanas, los scripts de siembra de datos) asumían en silencio que solo existiría un curso académico para siempre -- una suposición que nadie había escrito como tal en ningún sitio, solo heredada de cómo se construyó cada pieza por separado, en momentos distintos. Ningún test lo detectó fallando. Lo detectó el propio proceso: antes de seguir añadiendo nada más, se paró explícitamente a auditar el diseño completo ("asegúrate de que los elementos que deben estar asociados al curso académico lo están"), y cada uno de los nueve puntos se cerró por separado, revisado con evidencia real antes de darlo por bueno, sin que ninguna corrección generara un problema nuevo. Eso es lo que separa un sistema frágil que sobrevive de uno que no: no evitar la fragilidad -- eso es casi imposible en cualquier sistema que crece por iteración -- sino tener un proceso que la encuentra antes de que la encuentre un usuario real.
+El par que le toca directamente a esta charla es fragilidad contra fortaleza. Un ejemplo real, en positivo, de un proyecto en marcha ahora mismo, desarrollado por una sola persona con varios LLM como programadores, bajo un proceso con los mismos roles separados de los que habla esta charla: quien construye no es quien da el visto bueno, y cada entrega se revisa con evidencia real antes de aceptarla, no con un "ya lo he probado".
+
+Al introducir `CursoAcademico` como concepto nuevo, el sistema siguió funcionando en apariencia. Con un solo curso académico activo en producción, la suite de 777 tests seguía entera en verde. Pero nueve puntos distintos del código -- el listado de guías del profesor, la Auditoría, la importación de contenido entre asignaturas hermanas, los scripts de siembra de datos -- asumían en silencio que solo existiría un curso académico para siempre. Nadie había escrito esa suposición en ningún sitio: se heredó de cómo se construyó cada pieza por separado, en momentos distintos.
+
+Ningún test lo detectó fallando. Lo detectó el propio proceso: antes de seguir añadiendo nada más, se paró explícitamente a auditar el diseño completo ("asegúrate de que los elementos que deben estar asociados al curso académico lo están"). Cada uno de los nueve puntos se cerró por separado, revisado con evidencia real antes de darlo por bueno, sin que ninguna corrección generara un problema nuevo.
+
+Eso es lo que separa un sistema frágil que sobrevive de uno que no: no evitar la fragilidad -- casi imposible en cualquier sistema que crece por iteración -- sino tener un proceso que la encuentra antes de que la encuentre un usuario real.
 
 Vocabulario que un equipo necesita compartir para que esto no sea ambiguo:
 
@@ -130,12 +136,12 @@ Esa "evidencia directa" no distingue jerarquías: en el mismo proyecto, quien ib
 
 Las cuatro técnicas con las que se hace Control de Calidad:
 
-| Técnica | En qué consiste | Naturaleza |
-|---|---|---|
-| Revisar | Repaso informal del código, iniciado por el propio autor, sin checklist. | Estática: se lee el código, no se ejecuta. |
-| Inspeccionar | Repaso formal, iniciado por el equipo, con checklist y moderador. | Estática: se lee el código, no se ejecuta. |
-| Probar | Ejecutar el software para comprobar su comportamiento frente a casos concretos. | Dinámica: se ejecuta el código y se compara el resultado con lo esperado. |
-| Depurar | Localizar y corregir, dentro del propio código, la causa de un fallo ya detectado. | Dinámica: se ejecuta el código para localizar la causa del fallo. |
+| Técnica | En qué consiste | Naturaleza | Responsabilidad típica |
+|---|---|---|---|
+| Revisar | Repaso informal del código, iniciado por el propio autor, sin checklist. | Estática: se lee el código, no se ejecuta. | El propio desarrollador, antes de entregar. |
+| Inspeccionar | Repaso formal, iniciado por el equipo, con checklist y moderador. | Estática: se lee el código, no se ejecuta. | Alguien que no lo construyó -- QA u otro desarrollador, nunca el autor. |
+| Probar | Ejecutar el software para comprobar su comportamiento frente a casos concretos. | Dinámica: se ejecuta el código y se compara el resultado con lo esperado. | Desarrollador a nivel de unidad; QA a nivel de integración y sistema. |
+| Depurar | Localizar y corregir, dentro del propio código, la causa de un fallo ya detectado. | Dinámica: se ejecuta el código para localizar la causa del fallo. | Siempre el desarrollador -- dueño del código, dueño del arreglo. |
 
 Un test unitario cae sin ambigüedad en Probar, no en Inspeccionar: es ejecución, no lectura. Y lo que hace QA también cae en Probar, no es una técnica distinta: la diferencia con el test unitario del desarrollador es el nivel (integración y sistema, no unidad) y el rol (QA planifica, diseña con trazabilidad y evalúa el resultado; no solo ejecuta y da por bueno).
 

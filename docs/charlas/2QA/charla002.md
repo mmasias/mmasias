@@ -82,6 +82,6 @@ El semáforo en verde de una batería de pruebas no certifica nada por sí mismo
 
 ---
 
-**Fuentes de las citas**: C. Kaner / J. Falk / H.Q. Nguyen (*Testing Computer Software*), Brian Marick, Kent Beck (*Extreme Programming Explained*) y Booch (*Object Solutions*), tal como aparecen citados como epígrafes en el material de Luis (`3-publicaciones/USantaTecla/4-pruebas`, `5-rup/6-gestion` y `6-agiles/3-eXteProgramming`). El aforismo sobre reescribir vs. parchear es afirmación propia de Luis en `5-rup/5-pruebas`, actividad "Evaluar Pruebas".
+**Fuentes de las citas**: Brian Marick, Kent Beck (*Extreme Programming Explained*) y Booch (*Object Solutions*), tal como aparecen citados como epígrafes en el material de Luis (`3-publicaciones/USantaTecla/4-pruebas`, `5-rup/6-gestion` y `6-agiles/3-eXteProgramming`). El aforismo sobre reescribir vs. parchear es afirmación propia de Luis en `5-rup/5-pruebas`, actividad "Evaluar Pruebas".
 
 **Fuente de la tabla Calidad/QA/QC y el ciclo de Deming**: apartado "Gestión de Calidad Software" del material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`, sección ¿Cómo?).
