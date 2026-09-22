@@ -31,6 +31,8 @@ Si un equipo quiere de verdad ejercer QA y no solo la Disciplina de Pruebas disf
 
 Los equipos que se limitan a ejecutar una lista de casos mecánicamente, sin cuestionar si esos casos son los que importan, ni siquiera QC hacen bien: es una función decorativa.
 
+Esa pregunta -- ¿son los casos que importan? -- es la diferencia entre verificar (hacerlo correcto: el código cumple lo que el propio código promete) y validar (hacer lo correcto: eso era lo que realmente hacía falta). No son alternativas, hace falta responder las dos: una suite entera en verde certifica lo primero, nunca lo segundo.
+
 ## ¿Para qué?
 
 Las actividades de QA detalladas en ¿Cómo? existen para producir algo medible: trazabilidad completa (saber qué NO se está probando ahora mismo), un criterio de salida que no vive solo en la cabeza de alguien y una métrica propia de la función, la **fuga de defectos** (porcentaje de defectos que se detectan en producción en vez de antes), que mide si QA está haciendo su trabajo, no solo cuántos defectos encontró.
