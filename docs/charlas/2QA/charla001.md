@@ -124,6 +124,8 @@ Vocabulario que un equipo necesita compartir para que esto no sea ambiguo:
 |-|-|-|-
 Separar diagnóstico de reparación evita que el límite se disuelva junto con la responsabilidad de quién responde de qué.|Y resuelve, de raíz, el problema real: **"ya lo he probado" dicho por un desarrollador no es evidencia, es una afirmación.**|Verificar con evidencia directa antes de dar algo por bueno no es desconfianza personal, es el motivo por el que el rol de pruebas existe como rol separado.|Dicho más corto: **prevenir cuesta menos que corregir.**
 
+Esa "evidencia directa" no distingue jerarquías: en el mismo proyecto, quien iba a desplegar una migración de base de datos no siguió a ciegas la instrucción recibida de quien coordinaba ("primero migra, luego despliega") -- comprobó el esquema real en producción, vio que la tabla nueva todavía no existía, y preguntó antes de seguir. La instrucción estaba mal: para ese cambio concreto el orden correcto era el contrario. Nadie perdió autoridad por preguntar en vez de obedecer -- se evitó un despliegue roto. La instrucción de quien coordina tampoco es evidencia por sí sola; solo lo es el estado real del sistema.
+
 ## ¿Cómo?
 
 Las cuatro técnicas con las que se hace Control de Calidad:

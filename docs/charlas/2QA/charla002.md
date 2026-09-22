@@ -9,6 +9,8 @@
 
 "Si no vas a velocidad límite, alguien lo hará y se comerá tu comida" (Kent Beck). La presión de velocidad es real y no desaparece porque un equipo de QA la señale. Precisamente por eso el valor de QA no es "encontrar más defectos que nadie": es ser el punto de la organización cuyo criterio no está capturado por los mismos incentivos que sacaron el código con prisa a producción. Esa independencia es lo que una función de QA vende, no la habilidad técnica de testear.
 
+Esa independencia no depende de que unas personas sean mejores probando que otras -- depende de que quien verifica no tenga el mismo interés en que la respuesta salga bien. Un ejemplo real, entre dos sesiones de un mismo proyecto con el mismo nivel técnico: una construía siguiendo el encargo de otra, y en vez de asumir un dato de ese encargo, fue a comprobarlo contra el código real -- y encontró que el encargo tenía un supuesto equivocado. No fue una cuestión de jerarquía ni de quién sabía más: fue que a esa sesión, en ese momento, le tocaba el papel de comprobar antes de construir, y lo hizo. La estructura produjo la verificación; nadie confió en que "seguro que alguien se dará cuenta".
+
 ## ¿Qué?
 
 Primero, la incomodidad de vocabulario que nadie les dijo. Tres términos que no son sinónimos:
@@ -55,6 +57,8 @@ Responsabilidades concretas, tomadas de las actividades reales de la disciplina 
 - Pruebas de integración y de sistema (las de unidad son responsabilidad del desarrollador).
 - Evaluar pruebas: informe de riesgo residual, no un simple semáforo verde/rojo.
 
+Matiz real, de un proyecto que no encaja en el reparto clásico de la lista anterior: en un caso reciente, la suite entera (más de 700 casos) no tiene ni un solo test unitario con dependencias sustituidas por dobles -- todo es integración real contra una base de datos real, incluidos los tests que escribe quien construye. Ahí la frontera no puede trazarse por nivel (unidad vs. integración) porque el nivel unidad casi no existe: se traza por quién verifica sin interés en que el resultado salga bien. Es la misma idea de fondo, aplicada donde la división por nivel deja de servir.
+
 Sobre ese último punto, la advertencia es vieja y sigue vigente:
 
 > "Me esperaba un alto nivel de cobertura (80%-90%)! A veces los gerentes requieren una. Hay una diferencia sutil."
@@ -70,6 +74,7 @@ El semáforo en verde de una batería de pruebas no certifica nada por sí mismo
 - Cuando se encuentra un defecto, ¿se diagnostica o ya se propone el arreglo? ¿Dónde se cruza esa línea en el día a día del equipo?
 - ¿Cuál es el criterio de salida por escrito del equipo? Si no existe, ¿quién lo decide y con qué criterio?
 - Del último fallo grave que llegó a producción, ¿se auditó qué parte del proceso no hizo ruido, o solo se cerró la incidencia?
+- ¿El equipo confirma un despliegue con evidencia propia (el sistema real, los logs, los commits), o da por bueno el reporte de quien lo hizo?
 
 ## ¿Y ahora qué?
 
