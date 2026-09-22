@@ -39,7 +39,7 @@ El Ayuntamiento de Santander sufre una caída de la infraestructura informática
 
 Supongamos
 
-- 1.000 empleados, 1.000 €/mes cada uno.
+- 1.000 empleados, 1.200 €/mes cada uno.
 - Jornada estándar: 40 h/semana son 173,33 horas/mes (*40×52/12, conversión que usan los convenios laborales en España*).
 - Una caída de SG a las 16:00h de España, la hora "letal": el momento del día en que todas las sedes están conectadas a la vez, así que el supuesto de que los 1.000 empleados quedan parados simultáneamente deja de ser una hipótesis pesimista y pasa a ser el escenario real de máximo impacto.
 
@@ -47,23 +47,23 @@ Supongamos
 
 |||
 |-|-|
-Coste/hora por empleado|1.000 / 173,33 = 5,77 €
-Coste/minuto por empleado|5,77 / 60 = 0,096 €
-Coste/minuto, 1.000 empleados parados|0,096 × 1.000 = 96,15 €/minuto
-Coste/hora, 1.000 empleados parados|5.769 €/hora
-Coste/jornada completa (8h) parada|46.154 €/día
+Coste/hora por empleado|1.200 / 173,33 = 6,92 €
+Coste/minuto por empleado|6,92 / 60 = 0,115 €
+Coste/minuto, 1.000 empleados parados|0,115 × 1.000 = 115,38 €/minuto
+Coste/hora, 1.000 empleados parados|6.923 €/hora
+Coste/jornada completa (8h) parada|55.385 €/día
 
 #### SG caído
 
 |Un minuto|Una hora|Un día|
 |:-:|:-:|:-:|
-96 €|~ 5.800 €|~ 46.000 €
+115 €|~ 6.900 €|~ 55.000 €
 
 </div>
 
 Y esto es el suelo, no el techo. Solo cuenta salario bruto de gente sentada sin producir. No cuenta:
 
-- Carga social de empresa (en España ronda +30% sobre el bruto): con eso, el minuto sube a 125 € y la hora a 7.500 €.
+- Carga social de empresa (en España ronda +30% sobre el bruto): con eso, el minuto sube a 150 € y la hora a 9.000 €.
 - Ingresos que la empresa dejó de facturar mientras el sistema estaba caído.
 - Penalizaciones de SLA con clientes.
 - El coste de recuperación posterior (horas extra deshaciendo el desastre, que casi siempre superan el tiempo de la caída original).
