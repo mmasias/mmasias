@@ -5,9 +5,9 @@
 
 ## ¿Por qué?
 
-Esa cita de apertura no es un capricho: Control de Calidad no es solo pruebas, son varias técnicas distintas, y la revisión suele ser la más barata y la más efectiva de todas. Si el proceso de calidad de un equipo empieza y termina en "ejecutar tests", ya está dejando la mitad del trabajo sobre la mesa.
+Control de Calidad no es solo pruebas, son varias técnicas distintas y la revisión suele ser la más barata y la más efectiva de todas. Si el proceso de calidad de un equipo empieza y termina en "ejecutar tests", ya está dejando la mitad del trabajo sobre la mesa.
 
-Un fallo que llega a producción no es una anécdota puntual, es un fallo silencioso que finalmente hizo ruido, demasiado tarde.
+Un fallo que llega a producción no es una anécdota puntual, es un fallo silencioso que finalmente hizo ruido demasiado tarde.
 
 |Fecha|Desastre|Causa|Coste|
 |-|-|-|-|
@@ -33,16 +33,15 @@ El Ayuntamiento de Santander sufre una caída de la infraestructura informática
 </td></tr>
 </table>
 
-
 </div>
 
-### En casa
+### Aquí, en casa
 
 Supongamos
 
-- 5.000 empleados, 1.000 €/mes cada uno.
+- 1.000 empleados, 1.000 €/mes cada uno.
 - Jornada estándar: 40 h/semana son 173,33 horas/mes (*40×52/12, conversión que usan los convenios laborales en España*).
-- Una caída de SG a las 16:00h de España, la hora "letal": el momento del día en que todas las sedes están conectadas a la vez, así que el supuesto de que los 5.000 empleados quedan parados simultáneamente deja de ser una hipótesis pesimista y pasa a ser el escenario real de máximo impacto.
+- Una caída de SG a las 16:00h de España, la hora "letal": el momento del día en que todas las sedes están conectadas a la vez, así que el supuesto de que los 1.000 empleados quedan parados simultáneamente deja de ser una hipótesis pesimista y pasa a ser el escenario real de máximo impacto.
 
 <div align=center>
 
@@ -50,21 +49,21 @@ Supongamos
 |-|-|
 Coste/hora por empleado|1.000 / 173,33 = 5,77 €
 Coste/minuto por empleado|5,77 / 60 = 0,096 €
-Coste/minuto, 5.000 empleados parados|0,096 × 5.000 = 480,77 €/minuto
-Coste/hora, 5.000 empleados parados|28.846 €/hora
-Coste/jornada completa (8h) parada|230.769 €/día
+Coste/minuto, 1.000 empleados parados|0,096 × 1.000 = 96,15 €/minuto
+Coste/hora, 1.000 empleados parados|5.769 €/hora
+Coste/jornada completa (8h) parada|46.154 €/día
 
 #### SG caído
 
 |Un minuto|Una hora|Un día|
 |:-:|:-:|:-:|
-481 €|~ 29.000 €|~ 230.000 €
+96 €|~ 5.800 €|~ 46.000 €
 
 </div>
 
 Y esto es el suelo, no el techo. Solo cuenta salario bruto de gente sentada sin producir. No cuenta:
 
-- Carga social de empresa (en España ronda +30% sobre el bruto): con eso, el minuto sube a 625 € y la hora a 37.500 €.
+- Carga social de empresa (en España ronda +30% sobre el bruto): con eso, el minuto sube a 125 € y la hora a 7.500 €.
 - Ingresos que la empresa dejó de facturar mientras el sistema estaba caído.
 - Penalizaciones de SLA con clientes.
 - El coste de recuperación posterior (horas extra deshaciendo el desastre, que casi siempre superan el tiempo de la caída original).
