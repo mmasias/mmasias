@@ -167,7 +167,7 @@ Un test unitario, por diseñado que esté, solo puede responder a la primera. Nu
 
 ||||
 |-|-|-|
-|Una suite de más de 700 tests puede quedar entera en verde -- verificación perfecta -- mientras a la funcionalidad entregada le faltan piezas enteras que nadie escribió como requisito en ningún sitio, porque el hueco estaba en el encargo, no en el código.|Eso no lo encuentra ningún test: hace falta alguien releyendo el encargo original contra lo entregado, no el código contra sí mismo.|Las pruebas que hacen falta *además de* las unitarias no son "más pruebas del mismo tipo" -- son pruebas que miran hacia fuera del código, no hacia dentro.
+|Toda la batería de pruebas puede quedar en verde -- verificación perfecta -- mientras a la funcionalidad entregada le faltan piezas enteras que nadie escribió como requisito en ningún sitio, porque el hueco estaba en el encargo, no en el código.|Eso no lo encuentra ningún test: hace falta alguien releyendo el encargo original contra lo entregado, no el código contra sí mismo.|Las pruebas que hacen falta *además de* las unitarias no son "más pruebas del mismo tipo" -- son pruebas que miran hacia fuera del código, no hacia dentro.
 
 ## ¿Para qué?
 
@@ -190,6 +190,14 @@ Las cuatro técnicas con las que se hace Control de Calidad:
 
 Un test unitario cae sin ambigüedad en Probar, no en Inspeccionar: es ejecución, no lectura. Y lo que hace QA también cae en Probar, no es una técnica distinta: la diferencia con el test unitario del desarrollador es el nivel (integración y sistema, no unidad) y el rol (QA planifica, diseña con trazabilidad y evalúa el resultado; no solo ejecuta y da por bueno).
 
+Los mismos niveles, vistos por profundidad en vez de por técnica:
+
+<div align=center>
+
+![](/images/docs/charlas/2QA/tiposPruebas.svg)
+
+</div>
+
 Y esto es lo que rompe el límite en un equipo sin rigor, con ejemplos fácilmente reconocibles:
 
 - Pruebas solo al final, todo de golpe, que contradice la naturaleza iterativa del propio proceso.
@@ -203,14 +211,6 @@ Y esto es lo que rompe el límite en un equipo sin rigor, con ejemplos fácilmen
 - QA proponiendo el arreglo técnico, o el desarrollador decidiendo unilateralmente qué no hace falta probar.
 
 Un equipo con este límite claro, en cambio, **rara vez** discute en la incidencia quién tiene la culpa, **rara vez** repite la pregunta "¿esto es tuyo o mío?", y **rara vez** descubre en producción algo que ya sabía que no había probado.
-
-### Las pruebas
-
-<div align=center>
-
-![](/images/docs/charlas/2QA/tiposPruebas.svg)
-
-</div>
 
 ## ¿Y ahora qué?
 
