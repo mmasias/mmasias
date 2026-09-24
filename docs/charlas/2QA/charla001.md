@@ -163,6 +163,14 @@ hacerlo correcto|hacer lo correcto
 
 No son alternativas -- **"vs" es la palabra equivocada aquí** --, son dos preguntas distintas y hace falta responder las dos, no una en vez de la otra.
 
+<div align=center>
+
+![](/images/docs/charlas/2QA/actores.svg)
+
+</div>
+
+El Probador es el único que aparece en los dos lados. El Usuario solo valida, el Desarrollador solo verifica -- por eso hace falta un rol que responda a las dos preguntas.
+
 Un test unitario, por diseñado que esté, solo puede responder a la primera. Nunca a la segunda: no existe ningún test que compruebe si el propio requisito que está verificando era el correcto, porque el test nace del mismo sitio que el requisito.
 
 ||||
