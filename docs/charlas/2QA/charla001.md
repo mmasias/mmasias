@@ -137,15 +137,34 @@ Eso es lo que separa un sistema frágil que sobrevive de uno que no: no evitar l
 
 Vocabulario que un equipo necesita compartir para que esto no sea ambiguo:
 
+<div align=center>
+
 | Término | Qué es | Confusión habitual |
 |---|---|---|
 | QA *vs* <br>QC *vs* <br>Testing | QA = proceso (prevenir defectos).<br>QC = producto (detectarlos), mediante cuatro técnicas que se detallan en ¿Cómo?.<br>Testing es solo una de esas cuatro. | Llamar "QA" a "los que testean" ya es síntoma de falta de rigor. |
 | Defecto *vs*<br>Fallo | Defecto: error en el artefacto.<br>Fallo: su manifestación observable en ejecución. | Un defecto puede vivir meses sin fallar. No detectarlo no es "no pasa nada", es un fallo silencioso en espera. |
 | Severidad *vs*<br>Prioridad | Severidad: impacto técnico.<br>Prioridad: urgencia de negocio. | Se mezclan constantemente al priorizar la lista de defectos pendientes. |
 
-Un par aparte, porque no es una fila más de la tabla: **verificación** y **validación**. En español se juegan en el orden de dos palabras -- "hacerlo correcto" (verificación: ¿el código cumple lo que el propio código promete?) y "hacer lo correcto" (validación: ¿era eso lo que realmente hacía falta?). No son alternativas -- **"vs" es la palabra equivocada aquí** --, son dos preguntas distintas y hace falta responder las dos, no una en vez de la otra.
+</div>
 
-Un test unitario, por diseñado que esté, solo puede responder a la primera. Nunca a la segunda: no existe ningún test que compruebe si el propio requisito que está verificando era el correcto, porque el test nace del mismo sitio que el requisito. Caso real: una suite de más de 700 tests puede quedar entera en verde -- verificación perfecta -- mientras a la funcionalidad entregada le faltan piezas enteras que nadie escribió como requisito en ningún sitio, porque el hueco estaba en el encargo, no en el código. Eso no lo encuentra ningún test, por definición: hace falta alguien releyendo el encargo original contra lo entregado, no el código contra sí mismo. Las pruebas que hacen falta *además de* las unitarias no son "más pruebas del mismo tipo" -- son pruebas que miran hacia fuera del código, no hacia dentro.
+Y un par aparte, porque no es una fila más de la tabla: 
+
+<div align=center>
+
+|Verificación|Validación|
+|-|-|
+hacerlo correcto|hacer lo correcto
+*¿el código cumple lo que el propio código promete?*|*¿era eso lo que realmente hacía falta?*
+
+</div>
+
+No son alternativas -- **"vs" es la palabra equivocada aquí** --, son dos preguntas distintas y hace falta responder las dos, no una en vez de la otra.
+
+Un test unitario, por diseñado que esté, solo puede responder a la primera. Nunca a la segunda: no existe ningún test que compruebe si el propio requisito que está verificando era el correcto, porque el test nace del mismo sitio que el requisito.
+
+||||
+|-|-|-|
+|Una suite de más de 700 tests puede quedar entera en verde -- verificación perfecta -- mientras a la funcionalidad entregada le faltan piezas enteras que nadie escribió como requisito en ningún sitio, porque el hueco estaba en el encargo, no en el código.|Eso no lo encuentra ningún test: hace falta alguien releyendo el encargo original contra lo entregado, no el código contra sí mismo.|Las pruebas que hacen falta *además de* las unitarias no son "más pruebas del mismo tipo" -- son pruebas que miran hacia fuera del código, no hacia dentro.
 
 ## ¿Para qué?
 
