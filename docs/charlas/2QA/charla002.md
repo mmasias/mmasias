@@ -51,7 +51,7 @@ QA no es un estado, es un ciclo. El ciclo de Deming aplicado al proceso de softw
 
 Traducido a actividades concretas: **auditoría de calidad, definición de procesos, selección de herramientas, capacitación en estándares.** Nada de eso está en el día a día de la mayoría de "equipos QA", y por eso lo que hacen hoy es QC, no QA, por mucho que diga su tarjeta de presentación.
 
-Responsabilidades concretas, tomadas de las actividades reales de la disciplina de pruebas (no inventadas):
+Responsabilidades concretas, tomadas de las actividades reales de la disciplina de pruebas:
 
 - Planificar pruebas: estrategia, alcance y riesgos a cubrir, no la simple ejecución mecánica de casos.
 - Diseñar pruebas con trazabilidad explícita a requisitos/casos de uso.
@@ -59,28 +59,36 @@ Responsabilidades concretas, tomadas de las actividades reales de la disciplina 
 - Pruebas de integración y de sistema (las de unidad son responsabilidad del desarrollador).
 - Evaluar pruebas: informe de riesgo residual, no un simple semáforo verde/rojo.
 
-Matiz real, de un proyecto que no encaja en el reparto clásico de la lista anterior: en un caso reciente, la suite entera (más de 700 casos) no tiene ni un solo test unitario con dependencias sustituidas por dobles -- todo es integración real contra una base de datos real, incluidos los tests que escribe quien construye. Ahí la frontera no puede trazarse por nivel (unidad vs. integración) porque el nivel unidad casi no existe: se traza por quién verifica sin interés en que el resultado salga bien. Es la misma idea de fondo, aplicada donde la división por nivel deja de servir.
+<div align=center>
 
-Sobre ese último punto, la advertencia es vieja y sigue vigente:
+|Control de calidad|Garantía de calidad|
+|-|-|
+**Revisar**, code reviews, walkthrougs|Auditoría de calidad
+**Pruebas**, software testing|Definir procesos
+**Inspección**, inspections|Identificación y selección de herramientas
+**Depuración**, debuggers|Capacitación de estándares y procesos de calidad
 
-> "Me esperaba un alto nivel de cobertura (80%-90%)! A veces los gerentes requieren una. Hay una diferencia sutil."
-> — Brian Marick
+</div>
 
 El semáforo en verde de una batería de pruebas no certifica nada por sí mismo si nadie audita qué cubre y qué deja fuera. Y evaluar pruebas a veces significa decir lo que nadie quiere firmar:
 
 > "No parchear, reescribirlo. A menudo, puede ser mucho más barato y menos doloroso tirar un fragmento de código que tiene un montón de errores y reescribirlo desde cero."
 
+## #2Think
+
 - ¿Quién decide que una funcionalidad está "hecha": el equipo de QA o quien la programó?
 - Un "ya lo he probado" de un desarrollador, ¿es evidencia que el equipo acepta, o una afirmación que verifica?
-- ¿Puede el equipo nombrar, ahora mismo, qué parte del sistema no tiene ningún caso de prueba asociado?
+- ¿Puede el equipo nombrar, ahora mismo, ***qué parte del sistema no tiene ningún caso de prueba asociado***?
 - Cuando se encuentra un defecto, ¿se diagnostica o ya se propone el arreglo? ¿Dónde se cruza esa línea en el día a día del equipo?
-- ¿Cuál es el criterio de salida por escrito del equipo? Si no existe, ¿quién lo decide y con qué criterio?
+- ¿Cuál es el criterio de salida ***por escrito*** del equipo? Si no existe, ¿quién lo decide y con qué criterio?
 - Del último fallo grave que llegó a producción, ¿se auditó qué parte del proceso no hizo ruido, o solo se cerró la incidencia?
 - ¿El equipo confirma un despliegue con evidencia propia (el sistema real, los logs, los commits), o da por bueno el reporte de quien lo hizo?
 
 ## ¿Y ahora qué?
 
-"Si el equipo de QA desapareciera mañana, ¿qué es lo que dejaría de pasar que hoy da por hecho la organización?" Sin respuesta clara y compartida a eso, la función de QA no está justificando su lugar en el proceso.
+"Si el equipo de QA desapareciera mañana, ¿qué es lo que dejaría de pasar que hoy da por hecho la organización?"
+
+Si no hay una respuesta clara y compartida a eso, la función de QA no está justificando su lugar en el proceso.
 
 ---
 
