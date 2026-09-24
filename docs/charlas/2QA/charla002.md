@@ -1,7 +1,5 @@
 # QA: visión, responsabilidades y batería de preguntas
 
-> Charla 2 de 2 para FUNIBER. Sesión de 20 minutos. Audiencia: solo equipo QA.
-
 > "Si la mayoría de los proyectos de tu organización son obsesivamente cortos, proyectos conducidos por el calendario, hay algo muy, muy malo. Cambios radicales en la organización del proceso de desarrollo software son necesarios, antes de que la compañía o su gente se arruine."
 > — Booch, *Object Solutions*
 
