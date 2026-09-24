@@ -90,8 +90,11 @@ El semáforo en verde de una batería de pruebas no certifica nada por sí mismo
 
 Si no hay una respuesta clara y compartida a eso, la función de QA no está justificando su lugar en el proceso.
 
----
+### Bibliografía
 
-**Fuentes de las citas**: Brian Marick, Kent Beck (*Extreme Programming Explained*) y Booch (*Object Solutions*), tal como aparecen citados como epígrafes en el material de Luis (`3-publicaciones/USantaTecla/4-pruebas`, `5-rup/6-gestion` y `6-agiles/3-eXteProgramming`). El aforismo sobre reescribir vs. parchear es afirmación propia de Luis en `5-rup/5-pruebas`, actividad "Evaluar Pruebas".
-
-**Fuente de la tabla Calidad/QA/QC y el ciclo de Deming**: apartado "Gestión de Calidad Software" del material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`, sección ¿Cómo?).
+|||
+|-|-|
+![](https://m.media-amazon.com/images/I/81z10vqWQuL._SY466_.jpg)|[The Art of Software Testing](https://www.amazon.es/Art-Software-Testing-Third/dp/1118031962) - Glenford J. Myers - John Wiley & Sons Inc; Edición: 3. Auflage
+![](https://m.media-amazon.com/images/I/41-iIZI1lQL._SX342_SY445_ML2_.jpg)|[Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps](https://www.amazon.es/Pragmatic-Project-Automation-Monitor-Applications/dp/0974514039) - Mike Clark - The Pragmatic Programmers
+||[Ingeniería de software: requisitos](https://github.com/mmasias/idsw1)
+||[Ingeniería de software: diseño](https://github.com/mmasias/idsw2)

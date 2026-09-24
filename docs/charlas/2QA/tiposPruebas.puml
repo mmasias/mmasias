@@ -1,0 +1,49 @@
+@startuml
+
+allow_mixing
+
+actor Usuario
+actor Probador
+actor Desarrollador
+
+class Pruebas
+class PruebaAceptación
+class PruebaSistema
+class PruebaIntegración
+class PruebaComponente
+class PruebaUnitaria
+
+class SistemaSoftware 
+class ComponenteSoftware 
+class Paquete 
+class Clase 
+class Método 
+
+Usuario -down-> PruebaAceptación
+Probador -down-> PruebaAceptación
+Probador -down-> PruebaSistema
+Probador -down-> PruebaIntegración
+Probador -down-> PruebaComponente
+Desarrollador -down-> PruebaUnitaria
+
+Pruebas *-down-> PruebaAceptación
+Pruebas *-down-> PruebaSistema
+Pruebas *-down-> PruebaIntegración
+Pruebas *-down-> PruebaComponente
+Pruebas *-down-> PruebaUnitaria
+
+
+PruebaAceptación -down-> "1" SistemaSoftware
+PruebaSistema -down-> "1" SistemaSoftware
+PruebaIntegración -down-> "*" ComponenteSoftware
+PruebaComponente -down-> "1" ComponenteSoftware
+PruebaComponente -down-> "1" Paquete
+PruebaUnitaria -down-> "1" Clase
+PruebaUnitaria -down-> "1" Método
+
+SistemaSoftware *-right-> ComponenteSoftware
+ComponenteSoftware *-right-> Paquete
+Paquete *-right-> Clase
+Clase *-right-> Método
+
+@enduml

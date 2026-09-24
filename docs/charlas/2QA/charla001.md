@@ -1,7 +1,10 @@
 # QA en el proceso de software: límites y responsabilidades
 
-> "No existe ninguna otra actividad de pruebas que produzca una detección y corrección de errores de forma más eficiente (inversión/ahorro de tiempo y coste) que las pruebas estáticas basadas en revisiones."
-> — C. Kaner, J. Falk, H.Q. Nguyen, *Testing Computer Software*
+<div align=right>
+
+[***2Think***](https://github.com/mmasias/idsw1/blob/main/temario/2think.md)
+
+</div>
 
 ## ¿Por qué?
 
@@ -201,6 +204,14 @@ Y esto es lo que rompe el límite en un equipo sin rigor, con ejemplos fácilmen
 
 Un equipo con este límite claro, en cambio, **rara vez** discute en la incidencia quién tiene la culpa, **rara vez** repite la pregunta "¿esto es tuyo o mío?", y **rara vez** descubre en producción algo que ya sabía que no había probado.
 
+### Las pruebas
+
+<div align=center>
+
+![](/images/docs/charlas/2QA/tiposPruebas.svg)
+
+</div>
+
 ## ¿Y ahora qué?
 
 > "Las buenas prácticas no son suficientes por sí mismas, tienen que entenderse bajo un conjunto de valores y principios que permiten al equipo comportarse como una unidad con un objetivo común."
@@ -208,12 +219,14 @@ Un equipo con este límite claro, en cambio, **rara vez** discute en la incidenc
 
 Un fallo en producción no es un fracaso del desarrollador ni de QA individualmente, es que el proceso no hizo ruido a tiempo. Eso se audita, no solo se cierra la incidencia.
 
----
+> "No existe ninguna otra actividad de pruebas que produzca una detección y corrección de errores de forma más eficiente (inversión/ahorro de tiempo y coste) que las pruebas estáticas basadas en revisiones."
+> — C. Kaner, J. Falk, H.Q. Nguyen, *Testing Computer Software*
 
-**Fuentes de la cita RUP**: tabla de roles en `idsw1/temario/00002-rup.md`; actividad "Realizar Pruebas de Integración" en el material de Luis (`3-publicaciones/USantaTecla/5-rup/5-pruebas`), adaptación directa del Rational Unified Process; corroborado externamente por OpenUP (Eclipse Process Framework, derivado abierto oficial de RUP), que define **Developer** y **Tester** como roles separados.
+### Bibliografía
 
-**Fuente de las fases de madurez**: Boris Beizer, *Software Testing Techniques*, tal como aparece recogido en el material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`).
-
-**Fuente de Calidad/QA/QC y las técnicas de Control de Calidad**: apartado "Gestión de Calidad Software" del mismo material de Luis (`3-publicaciones/USantaTecla/4-pruebas/0-itinerario`, sección ¿Cómo?).
-
-**Fuente de las cuatro cualidades de mantenibilidad**: mismo concepto en el material de Luis (imágenes `arbolMantenible`/`arbolNoMantenible` de `3-publicaciones/USantaTecla/4-pruebas/0-itinerario`) y desarrollado con ejemplos propios en `idsw2/temario/00-introduccion/proyectosSoftware.md`.
+|||
+|-|-|
+![](https://m.media-amazon.com/images/I/81z10vqWQuL._SY466_.jpg)|[The Art of Software Testing](https://www.amazon.es/Art-Software-Testing-Third/dp/1118031962) - Glenford J. Myers - John Wiley & Sons Inc; Edición: 3. Auflage
+![](https://m.media-amazon.com/images/I/41-iIZI1lQL._SX342_SY445_ML2_.jpg)|[Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps](https://www.amazon.es/Pragmatic-Project-Automation-Monitor-Applications/dp/0974514039) - Mike Clark - The Pragmatic Programmers
+||[Ingeniería de software: requisitos](https://github.com/mmasias/idsw1)
+||[Ingeniería de software: diseño](https://github.com/mmasias/idsw2)
