@@ -85,7 +85,7 @@ Conocido el precio, queda la pregunta incómoda: ¿en qué fase mental se está 
 
 La mayoría de los equipos "sin rigor" viven en Fase 0 o 1: para ellos "probar" es "he pulsado el botón y no ha fallado". Eso es exactamente el nivel de rigor con el que se paga la factura de la tabla anterior.
 
-RUP separa el rol "Ingeniero de pruebas" del "Ingeniero de componentes" por una razón de diseño, no burocrática: quien construye algo no puede ser el único juez de que está bien construido.
+RUP [es explícito en la separación de roles](https://github.com/mmasias/idsw1/blob/main/temario/00002-rup.md#roles): "Ingeniero de pruebas" != "Ingeniero de componentes" != "Ingeniero de requisitos" por una razón de diseño, no burocrática: ***quien construye algo no puede ser el único juez de que está bien construido***.
 
 Esa es la motivación entera de por qué QA existe como función independiente y no como "el desarrollador que prueba al final".
 
