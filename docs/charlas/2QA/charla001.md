@@ -1,4 +1,4 @@
-# QA en el proceso de software: límites y responsabilidades
+# Del proceso de software a la calidad: límites y responsabilidades
 
 <div align=right>
 
