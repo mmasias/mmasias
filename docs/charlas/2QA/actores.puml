@@ -1,0 +1,13 @@
+allow_mixing
+
+actor Usuario 
+actor Desarrollador 
+actor Probador 
+
+usecase Validar
+usecase Verificar
+
+Usuario -d-> Validar
+Probador -d-> Validar
+Desarrollador -d-> Verificar
+Probador -d-> Verificar
