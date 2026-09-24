@@ -1,5 +1,12 @@
 # Vocabulario
 
+<div align=center>
+
+|![](/images/docs/charlas/2QA/tiposPruebas.svg)
+|-:
+
+</div>
+
 ## Actores de pruebas, según el SUT
 
 | Tipo | Autor | SUT | Objetivo |
