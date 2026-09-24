@@ -2,8 +2,7 @@
 
 <div align=center>
 
-|![](/images/docs/charlas/2QA/tiposPruebas.svg)
-|-:
+![](/images/docs/charlas/2QA/tiposPruebas.svg)
 
 </div>
 
