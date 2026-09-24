@@ -30,12 +30,12 @@
 
 | Característica | SUT | Táctica | Ejecución | Herramienta | Objetivo | Cuándo | Rol |
 |---|---|---|---|---|---|---|---|
-| Func. y No Func. | Sistema, Integración, Componente y Unidad | Estática | Manual | Inspección | Verificación de Diseño (subjetiva) | Final Iteración | <sub>Arquitecto, Desarrollador Senior |
-| Func. y No Func. | Sistema, Integración, Componente y Unidad | Estática | Automática/Manual | SonarQube + Inspección | Verificación de Métricas de Diseño (subjetiva) | Final Iteración | <sub>Arquitecto, Desarrollador Senior |
-| Func. y No Func. | Sistema, Integración, Componente y Unidad | Estática | Automática | SonarQube | Verificación de Métricas de Diseño (objetiva) | Final Iteración | <sub>Arquitecto, Desarrollador Senior |
-| Funcionales | Unidad | Caja Blanca y Caja Negra | Automática | xUnit, xUnit Reproducción | Verificación de la Funcionalidad de la Implementación | Continuamente | <sub>Desarrollador |
-| Funcionales | Integración y Componente | Caja Blanca y Caja Negra | Automática | xUnit, xUnit Reproducción | Verificación de la Funcionalidad de la Implementación | Final Iteración | <sub>Probador |
-| Funcionales | Sistema | Caja Negra | Automática | Robot, xUnit Moderno, xUnit* | Verificación de la Funcionalidad de la Implementación | Final Iteración | <sub>Probador |
-| No Funcionales | Sistema, Integración, Componente y Unidad | Caja Negra | Automática | Jmeter, xUnit | Verificación de Umbrales No Funcionales de la Implementación | Final Iteración | <sub>Probador |
-| Func. y No Func. | Aceptación | Caja Negra | Manual | Inspección | Validación de Requisitos | Fin Iteración | Usuario |
+| <sub>Func. y No Func.</sub> | <sub>Sistema, Integración, Componente y Unidad</sub> | <sub>Estática</sub> | <sub>Manual</sub> | <sub>Inspección</sub> | <sub>Verificación de Diseño (subjetiva)</sub> | <sub>Final Iteración</sub> | <sub>Arquitecto, Desarrollador Senior</sub> |
+| <sub>Func. y No Func.</sub> | <sub>Sistema, Integración, Componente y Unidad</sub> | <sub>Estática</sub> | <sub>Automática/Manual</sub> | <sub>SonarQube + Inspección</sub> | <sub>Verificación de Métricas de Diseño (subjetiva)</sub> | <sub>Final Iteración</sub> | <sub>Arquitecto, Desarrollador Senior</sub> |
+| <sub>Func. y No Func.</sub> | <sub>Sistema, Integración, Componente y Unidad</sub> | <sub>Estática</sub> | <sub>Automática</sub> | <sub>SonarQube</sub> | <sub>Verificación de Métricas de Diseño (objetiva)</sub> | <sub>Final Iteración</sub> | <sub>Arquitecto, Desarrollador Senior</sub> |
+| <sub>Funcionales</sub> | <sub>Unidad</sub> | <sub>Caja Blanca y Caja Negra</sub> | <sub>Automática</sub> | <sub>xUnit, xUnit Reproducción</sub> | <sub>Verificación de la Funcionalidad de la Implementación</sub> | <sub>Continuamente</sub> | <sub>Desarrollador</sub> |
+| <sub>Funcionales</sub> | <sub>Integración y Componente</sub> | <sub>Caja Blanca y Caja Negra</sub> | <sub>Automática</sub> | <sub>xUnit, xUnit Reproducción</sub> | <sub>Verificación de la Funcionalidad de la Implementación</sub> | <sub>Final Iteración</sub> | <sub>Probador</sub> |
+| <sub>Funcionales</sub> | <sub>Sistema</sub> | <sub>Caja Negra</sub> | <sub>Automática</sub> | <sub>Robot, xUnit Moderno, xUnit*</sub> | <sub>Verificación de la Funcionalidad de la Implementación</sub> | <sub>Final Iteración</sub> | <sub>Probador</sub> |
+| <sub>No Funcionales</sub> | <sub>Sistema, Integración, Componente y Unidad</sub> | <sub>Caja Negra</sub> | <sub>Automática</sub> | <sub>Jmeter, xUnit</sub> | <sub>Verificación de Umbrales No Funcionales de la Implementación</sub> | <sub>Final Iteración</sub> | <sub>Probador</sub> |
+| <sub>Func. y No Func.</sub> | <sub>Aceptación</sub> | <sub>Caja Negra</sub> | <sub>Manual</sub> | <sub>Inspección</sub> | <sub>Validación de Requisitos</sub> | <sub>Fin Iteración</sub> | <sub>Usuario</sub> |
 
