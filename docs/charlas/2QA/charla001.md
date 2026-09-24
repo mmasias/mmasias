@@ -5,6 +5,10 @@
 
 ## ¿Por qué?
 
+Un [proyecto de software](https://github.com/mmasias/PRG1/blob/main/temario/00000-introduccion.md#proyecto-de-software) tiene problemas, por tanto se establecen unas [disciplinas](https://github.com/mmasias/PRG1/blob/main/temario/00001-disciplinasSw.md) las cuales, siguiendo un [proceso](https://github.com/mmasias/PRG1/blob/main/temario/00002-procesoSw.md) permiten la transición del [problema a una solución](https://github.com/mmasias/PRG1/blob/main/temario/00003-preAlgoritmos.md#qu%C3%A9)
+
+### ¿QA?
+
 Control de Calidad no es solo pruebas, son varias técnicas distintas y la revisión suele ser la más barata y la más efectiva de todas. Si el proceso de calidad de un equipo empieza y termina en "ejecutar tests", ya está dejando la mitad del trabajo sobre la mesa.
 
 Un fallo que llega a producción no es una anécdota puntual, es un fallo silencioso que finalmente hizo ruido demasiado tarde.
