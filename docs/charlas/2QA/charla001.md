@@ -98,7 +98,7 @@ Primera precisión, incómoda a propósito: RUP no tiene ninguna disciplina llam
 
 <div align=center>
 
-|QC: Control de calidad|QA: Aseguramiento de la calidad|
+|QC: Control de calidad|QA: Aseguramiento de la calidad (Garantía de calidad)|
 |-|-|
 QC detecta defectos en el producto ya construido.|QA previene los fallos mejorando el proceso que lo construye. 
 
@@ -144,7 +144,7 @@ Vocabulario que un equipo necesita compartir para que esto no sea ambiguo:
 
 | Término | Qué es | Confusión habitual |
 |---|---|---|
-| QA *vs* <br>QC *vs* <br>Testing | QA = proceso (prevenir defectos).<br>QC = producto (detectarlos), mediante cuatro técnicas que se detallan en ¿Cómo?.<br>Testing es solo una de esas cuatro. | Llamar "QA" a "los que testean" ya es síntoma de falta de rigor. |
+| QA <br>QC <br>Testing | QA = proceso (prevenir defectos).<br>QC = producto (detectarlos), mediante cuatro técnicas que se detallan en ¿Cómo?.<br>Testing es solo una de esas cuatro. | Llamar "QA" a "los que testean" ya es síntoma de falta de rigor. |
 | Defecto *vs*<br>Fallo | Defecto: error en el artefacto.<br>Fallo: su manifestación observable en ejecución. | Un defecto puede vivir meses sin fallar. No detectarlo no es "no pasa nada", es un fallo silencioso en espera. |
 | Severidad *vs*<br>Prioridad | Severidad: impacto técnico.<br>Prioridad: urgencia de negocio. | Se mezclan constantemente al priorizar la lista de defectos pendientes. |
 
