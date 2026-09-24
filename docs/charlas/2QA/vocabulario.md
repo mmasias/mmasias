@@ -1,6 +1,4 @@
-# Vocabulario de pruebas
-
-Dos tablas extraídas del material de Luis (`3-publicaciones/USantaTecla/4-pruebas/1-pruebasSoftware/index.html`), sección "Tipos de Pruebas". Reproducidas fieles al contenido original -- solo normalizados un par de typos de tecleo ("Mérticas"->"Métricas", "Implemen- tación"->"Implementación") y las celdas repetidas de fila combinada (`rowspan`) desdobladas en cada fila para que se lean bien como Markdown plano.
+# Vocabulario
 
 ## Actores de pruebas, según el SUT
 
@@ -14,19 +12,30 @@ Dos tablas extraídas del material de Luis (`3-publicaciones/USantaTecla/4-prueb
 
 ## Resumen de tipos de pruebas
 
-| Disciplina | Característica | SUT | Táctica | Ejecución | Herramienta | Objetivo | Cuándo | Rol |
-|---|---|---|---|---|---|---|---|---|
-| Requisitos | Funcionales y No Funcionales | Sistema | Estática | Manual | Inspección | Validación de Requisitos | Inicio Iteración | Analista de Sistemas |
-| Diseño | Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Manual | Inspección | Verificación de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
-| Diseño | Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática/Manual | CASE + Inspección | Verificación de Métricas de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
-| Diseño | Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática | CASE | Verificación de Métricas de Diseño (objetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
-| Implementación | Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Manual | Inspección | Verificación de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
-| Implementación | Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática/Manual | SonarQube + Inspección | Verificación de Métricas de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
-| Implementación | Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática | SonarQube | Verificación de Métricas de Diseño (objetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
-| Implementación | Funcionales | Unidad | Caja Blanca y Caja Negra | Automática | xUnit, xUnit Reproducción | Verificación de la Funcionalidad de la Implementación | Continuamente | Desarrollador |
-| Implementación | Funcionales | Integración y Componente | Caja Blanca y Caja Negra | Automática | xUnit, xUnit Reproducción | Verificación de la Funcionalidad de la Implementación | Final Iteración | Probador |
-| Implementación | Funcionales | Sistema | Caja Negra | Automática | Robot, xUnit Moderno, xUnit* | Verificación de la Funcionalidad de la Implementación | Final Iteración | Probador |
-| Implementación | No Funcionales | Sistema, Integración, Componente y Unidad | Caja Negra | Automática | Jmeter, xUnit | Verificación de Umbrales No Funcionales de la Implementación | Final Iteración | Probador |
-| Implementación | Funcionales y No Funcionales | Aceptación | Caja Negra | Manual | Inspección | Validación de Requisitos | Fin Iteración | Usuario |
+### Requisitos
 
-**Fuente**: Luis Fernández Muñoz, sección "Resumen de Tipos de Pruebas" y "Actores de Pruebas" (dentro de "Tipos de Pruebas" -> "Según el SUT") de `3-publicaciones/USantaTecla/4-pruebas/1-pruebasSoftware/index.html`.
+| Característica | SUT | Táctica | Ejecución | Herramienta | Objetivo | Cuándo | Rol |
+|---|---|---|---|---|---|---|---|
+| Funcionales y No Funcionales | Sistema | Estática | Manual | Inspección | Validación de Requisitos | Inicio Iteración | Analista de Sistemas |
+
+### Diseño
+
+| Característica | SUT | Táctica | Ejecución | Herramienta | Objetivo | Cuándo | Rol |
+|---|---|---|---|---|---|---|---|
+| Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Manual | Inspección | Verificación de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
+| Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática/Manual | CASE + Inspección | Verificación de Métricas de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
+| Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática | CASE | Verificación de Métricas de Diseño (objetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
+
+### Implementación
+
+| Característica | SUT | Táctica | Ejecución | Herramienta | Objetivo | Cuándo | Rol |
+|---|---|---|---|---|---|---|---|
+| Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Manual | Inspección | Verificación de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
+| Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática/Manual | SonarQube + Inspección | Verificación de Métricas de Diseño (subjetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
+| Funcionales y No Funcionales | Sistema, Integración, Componente y Unidad | Estática | Automática | SonarQube | Verificación de Métricas de Diseño (objetiva) | Final Iteración | Arquitecto, Desarrollador Senior |
+| Funcionales | Unidad | Caja Blanca y Caja Negra | Automática | xUnit, xUnit Reproducción | Verificación de la Funcionalidad de la Implementación | Continuamente | Desarrollador |
+| Funcionales | Integración y Componente | Caja Blanca y Caja Negra | Automática | xUnit, xUnit Reproducción | Verificación de la Funcionalidad de la Implementación | Final Iteración | Probador |
+| Funcionales | Sistema | Caja Negra | Automática | Robot, xUnit Moderno, xUnit* | Verificación de la Funcionalidad de la Implementación | Final Iteración | Probador |
+| No Funcionales | Sistema, Integración, Componente y Unidad | Caja Negra | Automática | Jmeter, xUnit | Verificación de Umbrales No Funcionales de la Implementación | Final Iteración | Probador |
+| Funcionales y No Funcionales | Aceptación | Caja Negra | Manual | Inspección | Validación de Requisitos | Fin Iteración | Usuario |
+
