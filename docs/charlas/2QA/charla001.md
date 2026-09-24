@@ -202,7 +202,9 @@ Los mismos niveles, vistos por profundidad en vez de por técnica:
 
 <div align=center>
 
-![](/images/docs/charlas/2QA/tiposPruebas.svg)
+|![](/images/docs/charlas/2QA/tiposPruebas.svg)
+|-:
+Lo que implica conocer un [vocabulario](vocabulario.md)
 
 </div>
 
