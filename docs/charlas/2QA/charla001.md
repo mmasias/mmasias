@@ -91,9 +91,19 @@ Esa es la motivación entera de por qué QA existe como función independiente y
 
 ## ¿Qué?
 
-Primera precisión, incómoda a propósito: RUP no tiene ninguna disciplina llamada "QA". Lo que corre en paralelo a Análisis, Diseño e Implementación es la **Disciplina de Pruebas** (Test), y eso es Control de Calidad (QC), no Aseguramiento de Calidad (QA). QC detecta defectos en el producto ya construido. QA previene mejorando el proceso que lo construye. Son categorías distintas, no sinónimos con nombre bonito.
+Primera precisión, incómoda a propósito: RUP no tiene ninguna disciplina llamada "QA". Lo que corre en paralelo a Análisis, Diseño e Implementación es la **Disciplina de Pruebas** (Test), y eso es Control de Calidad (QC), no Aseguramiento de Calidad (QA). 
 
-Con esa precisión hecha, el límite de responsabilidad concreto ya está en el propio RUP, actividad "Realizar Pruebas de Integración":
+<div align=center>
+
+|QC: Control de calidad|QA: Aseguramiento de la calidad|
+|-|-|
+QC detecta defectos en el producto ya construido.|QA previene los fallos mejorando el proceso que lo construye. 
+
+</div>
+
+Son categorías distintas, no sinónimos con nombre bonito.
+
+Con esa precisión hecha, el límite de responsabilidad concreto ya está en el propio RUP: actividad "Realizar pruebas de integración":
 
 > "Informe los defectos **al ingeniero de componentes**, que es responsable de los componentes que probablemente contengan la falla" frente a "Informar los defectos **a los diseñadores de pruebas**, quienes luego utilizan los defectos para evaluar los resultados generales del esfuerzo de prueba."
 
@@ -104,6 +114,8 @@ Traducido a los dos roles que nos ocupan:
 
 Y esa reparación, o esa detección, es sencilla o brutal según cómo se haya construido el software. Cuatro pares de cualidades, en positivo y en negativo:
 
+<div align=center>
+
 | Mantenible | No mantenible |
 |:-:|:-:|
 | **Fluido**: se puede entender con facilidad | **Viscoso**: no se puede entender con facilidad |
@@ -111,11 +123,15 @@ Y esa reparación, o esa detección, es sencilla o brutal según cómo se haya c
 | **Fuerte**: se puede probar con facilidad | **Frágil**: no se puede probar con facilidad |
 | **Reusable**: se puede reutilizar con facilidad | **Inmóvil**: no se puede reutilizar con facilidad |
 
-El par que le toca directamente a esta charla es fragilidad contra fortaleza. Un ejemplo real, en positivo, de un proyecto en marcha ahora mismo, desarrollado por una sola persona con varios LLM como programadores, bajo un proceso con los mismos roles separados de los que habla esta charla: quien construye no es quien da el visto bueno, y cada entrega se revisa con evidencia real antes de aceptarla, no con un "ya lo he probado".
+</div>
 
-Al introducir `CursoAcademico` como concepto nuevo, el sistema siguió funcionando en apariencia. Con un solo curso académico activo en producción, la suite de 777 tests seguía entera en verde. Pero nueve puntos distintos del código -- el listado de guías del profesor, la Auditoría, la importación de contenido entre asignaturas hermanas, los scripts de siembra de datos -- asumían en silencio que solo existiría un curso académico para siempre. Nadie había escrito esa suposición en ningún sitio: se heredó de cómo se construyó cada pieza por separado, en momentos distintos.
+El par que le toca directamente a esta charla es fragilidad contra fortaleza. 
 
-Ningún test lo detectó fallando. Lo detectó el propio proceso: antes de seguir añadiendo nada más, se paró explícitamente a auditar el diseño completo ("asegúrate de que los elementos que deben estar asociados al curso académico lo están"). Cada uno de los nueve puntos se cerró por separado, revisado con evidencia real antes de darlo por bueno, sin que ninguna corrección generara un problema nuevo.
+> Un ejemplo real, en positivo, de un proyecto en marcha ahora mismo, desarrollado por una sola persona con varios LLM como programadores, bajo un proceso con los mismos roles separados de los que habla esta charla: quien construye no es quien da el visto bueno, y cada entrega se revisa con evidencia real antes de aceptarla, no con un "ya lo he probado".
+> 
+> Al introducir `CursoAcademico` como concepto nuevo, el sistema siguió funcionando en apariencia. Con un solo curso académico activo en producción, la suite de 777 tests seguía entera en verde. Pero nueve puntos distintos del código -- el listado de guías del profesor, la Auditoría, la importación de contenido entre asignaturas hermanas, los scripts de siembra de datos -- asumían en silencio que solo existiría un curso académico para siempre. Nadie había escrito esa suposición en ningún sitio: se heredó de cómo se construyó cada pieza por separado, en momentos distintos.
+> 
+> Ningún test lo detectó fallando. Lo detectó el propio proceso: antes de seguir añadiendo nada más, se paró explícitamente a auditar el diseño completo ("asegúrate de que los elementos que deben estar asociados al curso académico lo están"). Cada uno de los nueve puntos se cerró por separado, revisado con evidencia real antes de darlo por bueno, sin que ninguna corrección generara un problema nuevo.
 
 Eso es lo que separa un sistema frágil que sobrevive de uno que no: no evitar la fragilidad -- casi imposible en cualquier sistema que crece por iteración -- sino tener un proceso que la encuentra antes de que la encuentre un usuario real.
 
