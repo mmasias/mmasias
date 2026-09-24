@@ -16,6 +16,18 @@
 |---|---|
 | Verifican aspectos funcionales del comportamiento del SUT. | Verifican aspectos no funcionales del comportamiento del SUT: escalabilidad, portabilidad, seguridad, ... |
 
+### Pruebas Funcionales
+
+A diferencia de las No Funcionales, la página de Luis no trae una tabla propia de subtipos -- las dos primeras están ahí, en otra sección ("Integración Continua"); el resto es taxonomía externa, estándar de la literatura de testing (ISTQB y similares), no de la fuente citada en este documento.
+
+| Tipo | Qué es | Fuente |
+|---|---|---|
+| Pruebas basadas en casos de uso / procesos de negocio | Ejercitan un flujo completo de principio a fin siguiendo un caso de uso o proceso de negocio real, no una función aislada. Son las "clásicas": el punto de partida habitual de cualquier plan de pruebas funcional. | Externa |
+| Pruebas de Regresión | Incluyen las pruebas que no se ejecutaban antes del *checkin* -- al cambiar o añadir código fácilmente se introducen errores en código que no se ha tocado. | Luis, sección "Integración Continua" |
+| Pruebas de Humo (*smoke testing*) | Subconjunto rápido y específico de pruebas (un *TestSuite* concreto) sobre aspectos funcionales, no tanto para encontrar errores como para confirmar que la funcionalidad básica del SUT está estable -- pensado para cuando las de regresión consumen demasiado tiempo. | Luis, sección "Integración Continua" |
+| Pruebas de cordura (*sanity testing*) | Verificación muy focalizada tras un cambio pequeño, subconjunto aún más estrecho que el de humo. | Externa |
+| Pruebas de interfaz/API | Verifican los puntos de comunicación entre componentes, sin pasar por la interfaz de usuario. | Externa |
+
 ### Pruebas No Funcionales
 
 | Tipo | Verifica |
