@@ -72,9 +72,6 @@ Diseño y seguimiento del desarrollo de la intranet de gestión comercial, acad�
 - Pistollato F, Bremer-Hoffmann S, Basso G, Cano SS, Elio I, **Vergara MM**, Giampieri F, Battino M. Targeting glioblastoma with the use of phytocompounds and nanoparticles. *Targeted Oncology*, 11, 1–16, 2016. [doi:10.1007/s11523-015-0378-5](https://doi.org/10.1007/s11523-015-0378-5)
 - Pistollato F, Cano SS, Elio I, **Vergara MM**, Giampieri F, Battino M. The use of neuroimaging to assess associations among diet, nutrients, metabolic syndrome, and Alzheimer's disease. *Journal of Alzheimer's Disease*, 48(2), 303–318, 2015. [doi:10.3233/JAD-150301](https://doi.org/10.3233/JAD-150301)
 - Giampieri F, *et al.* (incl. **Masias M**). Phytochemical composition and cytotoxic effects on liver hepatocellular carcinoma cells of different berries following a simulated in vitro gastrointestinal digestion. *Molecules*, 23, 2018. [doi:10.3390/molecules23081918](https://doi.org/10.3390/molecules23081918)
-- *[Autores]*. Formal modeling and analysis of security schemes of RPL protocol using Colored Petri Nets. *[Revista]*, 2022.
-- *[Autores]*. Image watermarking using least significant bit and Canny edge detection. *[Revista]*, 2022.
-- *[Autores]*. Validation of a methodology to obtain the morphological parameters in newly created tidal channels through a video monitoring system. *Applied Sciences*, 9, 796, 2019.
 
 ### Libros
 
@@ -111,15 +108,11 @@ Docencia oficial universitaria ininterrumpida desde 2015 en grado y máster, pre
 
 ### Universidad Europea del Atlántico (UNEATLANTICO)
 
-**Grado en Ingeniería Informática:** Ingeniería del Software I y II · Programación I y II · Estructuras de Datos y Algorítmica I y II · Dirección de Sistemas de Información · Introducción a la Gestión de Proyectos de Software · Tecnologías de la Información y la Comunicación.
-
-**Másteres universitarios (modalidad virtual):** Gestión del Conocimiento y Aprendizaje Organizacional · Sistemas de Gestión Empresarial y Servicios Cloud Computing (Máster en Dirección Estratégica en TI) · Business Intelligence y Sistemas de Información (MBA) · TIC y Comunicación Multimedia (Máster en Comunicación Corporativa).
-
-**Docencia transversal:** Tecnologías de la Información y la Comunicación, Fundamentos de Programación e Informática en más de una docena de grados de ingeniería, ciencias sociales, humanidades y ciencias de la salud.
-
-**Innovación docente:** metodología basada en repositorios GitHub para el aprendizaje práctico y colaborativo, con énfasis en el proceso de resolución de problemas y no solo en el producto final. Coordinación periódica con empresas del sector para alinear contenidos con las necesidades profesionales.
-
-**Dirección de trabajos fin de grado:** más de 50 TFG dirigidos (2019–2025), con orientación aplicada en inteligencia artificial, sistemas de información, gestión documental y proyectos vinculados a iniciativas financiadas por la Unión Europea.
+- **Grado en Ingeniería Informática:** Ingeniería del Software I y II · Programación I y II · Estructuras de Datos y Algorítmica I y II · Dirección de Sistemas de Información · Introducción a la Gestión de Proyectos de Software · Tecnologías de la Información y la Comunicación.
+- **Másteres universitarios (modalidad virtual):** Gestión del Conocimiento y Aprendizaje Organizacional · Sistemas de Gestión Empresarial y Servicios Cloud Computing (Máster en Dirección Estratégica en TI) · Business Intelligence y Sistemas de Información (MBA) · TIC y Comunicación Multimedia (Máster en Comunicación Corporativa).
+- **Docencia transversal:** Tecnologías de la Información y la Comunicación, Fundamentos de Programación e Informática en más de una docena de grados de ingeniería, ciencias sociales, humanidades y ciencias de la salud.
+- **Innovación docente:** metodología basada en repositorios GitHub para el aprendizaje práctico y colaborativo, con énfasis en el proceso de resolución de problemas y no solo en el producto final. Coordinación periódica con empresas del sector para alinear contenidos con las necesidades profesionales.
+- **Dirección de trabajos fin de grado:** más de 50 TFG dirigidos (2019–2025), con orientación aplicada en inteligencia artificial, sistemas de información, gestión documental y proyectos vinculados a iniciativas financiadas por la Unión Europea.
 
 ## Gestión universitaria
 
@@ -127,7 +120,3 @@ Docencia oficial universitaria ininterrumpida desde 2015 en grado y máster, pre
 - Secretario del Comité de Innovación Docente — UNEATLANTICO.
 - Representante del PDI ante el Comité de Garantía Interna de Calidad — UNEATLANTICO.
 - Responsable de la coordinación técnica de la Cátedra Jean Monnet — UNEATLANTICO.
-
-## Idiomas
-
-Español (nativo) · Inglés *[nivel]* · Catalán *[nivel]*
