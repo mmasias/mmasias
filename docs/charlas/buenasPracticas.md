@@ -34,7 +34,7 @@ Un proyecto real, en producción, desarrollado por una persona con varios LLM co
 
 </div>
 
-La conclusión que el propio proyecto saca de sus datos: aislando el esfuerzo de codificar, los primeros 20.000 LoC caben en aproximadamente una semana de trabajo. Lo que no cabe en una semana es el calendario, porque el pensamiento se hizo por delante y a fondo.
+El reparto del tiempo en la primera versión: 3,5 semanas decidiendo qué construir, sin escribir una línea de código, y 1,5 semanas construyendo los primeros ~20.000 LoC. Escribir el código fue la parte corta; la larga fue decidir qué código escribir.
 
 Si escribir código deja de ser el cuello de botella, el cuello de botella pasa a ser **decidir qué escribir** y **comprobar que lo escrito es lo que se decidió**. Ninguna de las dos se acelera con más velocidad de escritura. Las dos empeoran con ella: más código por día es más supuestos por día sin escribir y más superficie por día sin revisar.
 
