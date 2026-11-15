@@ -1,0 +1,24 @@
+@startuml
+skinparam shadowing false
+skinparam defaultFontName "Arial"
+skinparam rectangleBorderColor #555555
+skinparam actorBorderColor #555555
+skinparam ArrowColor #555555
+top to bottom direction
+
+actor "Manuel\n<size:11>arquitectura · revisión · criterio</size>" as manuel
+
+rectangle "<b>miRUP / CORRAL-RUP</b>\n<size:11>método: qué se delega</size>\n<size:11>y dónde se valida</size>" as mirup #FFF8E1
+rectangle "<b>pyCorral</b>\n<size:11>ejecución: agentes</size>\n<size:11>+ herramientas deterministas</size>" as corral #E3F2FD
+rectangle "<b>myClaudeContext</b>\n<size:11>memoria: reglas y</size>\n<size:11>contexto auditados</size>" as memoria #E8F5E9
+
+rectangle "<b>pyCelda en producción</b>\n<size:11>775 guías · 16 grados · ~200 usuarios</size>" as pycelda #F3E5F5
+
+manuel --> mirup
+manuel --> corral
+manuel --> memoria
+mirup --> pycelda
+corral --> pycelda
+memoria --> pycelda
+manuel ..> pycelda : <size:11>valida</size>
+@enduml

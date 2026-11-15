@@ -32,6 +32,12 @@ Con los LLMs el reto cambió de escala, no de naturaleza: orquestar herramientas
 ### C. Proceso sobre producto: [`miRUP`](https://github.com/mmasias/mirup) y [`CORRAL-RUP`](https://github.com/mmasias/pyCorral/discussions/3)
 * Recupera el rigor de RUP como contrato de delegabilidad: separa el espacio de proceso del de entregables validados, con *milestones* de validación humana obligatoria.
 
+<div align=center>
+
+![](/images/modelosUML/evolucion-capas.svg)
+
+</div>
+
 Las tres capas no sustituyen la revisión humana, la hacen posible. En pyCelda, un compañero encontró un fallo de autorización (un IDOR: cualquier director de grado podía leer datos de un grado ajeno cambiando un identificador en la URL) que el desarrollo con agentes había dejado pasar; quedó corregido en dos días. Y los errores de los agentes no se esconden: tienen su propio registro, un chiste de una línea por cada metedura de pata, que ya pasa de la docena.
 
 ## 4. Traslado al aula: responsabilidad técnica frente a la delegación ciega
