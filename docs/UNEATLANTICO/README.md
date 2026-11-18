@@ -28,6 +28,7 @@
 ### Gabinete
 
 - [Protocolo](https://github.com/mmasias/mmasias/blob/main/docs/UNEATLANTICO/aterrizajeProtocolo.md)
+- [IA y evaluación en un máster a distancia](iaMasterDistancia.md)
 
 ## Cursos
 
