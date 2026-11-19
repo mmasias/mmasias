@@ -6,7 +6,7 @@ skinparam actorBorderColor #555555
 skinparam ArrowColor #555555
 top to bottom direction
 
-actor "Manuel\n<size:11>arquitectura · revisión · criterio</size>" as manuel
+actor "Criterio humano\n<size:11>arquitectura · revisión</size>" as manuel
 
 rectangle "<b>miRUP / CORRAL-RUP</b>\n<size:11>método: qué se delega</size>\n<size:11>y dónde se valida</size>" as mirup #FFF8E1
 rectangle "<b>pyCorral</b>\n<size:11>ejecución: agentes</size>\n<size:11>+ herramientas deterministas</size>" as corral #E3F2FD
